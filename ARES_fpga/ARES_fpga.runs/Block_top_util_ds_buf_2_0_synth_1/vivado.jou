@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Jul 27 18:59:41 2026
+# Process ID         : 226530
+# Current directory  : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_util_ds_buf_2_0_synth_1
+# Command line       : vivado -log Block_top_util_ds_buf_2_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_util_ds_buf_2_0.tcl
+# Log file           : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_util_ds_buf_2_0_synth_1/Block_top_util_ds_buf_2_0.vds
+# Journal file       : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_util_ds_buf_2_0_synth_1/vivado.jou
+# Running On         : lovroRadiona
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 5 2600 Six-Core Processor
+# CPU Frequency      : 3629.234 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 33577 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 42167 MB
+# Available Virtual  : 32065 MB
+#-----------------------------------------------------------
+source Block_top_util_ds_buf_2_0.tcl -notrace

@@ -1,0 +1,338 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Tue Jul 28 15:05:12 2026
+| Host         : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
+| Command      : report_methodology -file Block_top_wrapper_methodology_drc_routed.rpt -pb Block_top_wrapper_methodology_drc_routed.pb -rpx Block_top_wrapper_methodology_drc_routed.rpx
+| Design       : Block_top_wrapper
+| Device       : xc7a35tftg256-2
+| Speed File   : -2
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 55
++-----------+------------------+--------------------------------------------------------+--------+
+| Rule      | Severity         | Description                                            | Checks |
++-----------+------------------+--------------------------------------------------------+--------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree     | 1      |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin              | 1      |
+| LUTAR-1   | Warning          | LUT drives async reset alert                           | 1      |
+| PDRC-190  | Warning          | Suboptimally placed synchronized register chain        | 13     |
+| TIMING-18 | Warning          | Missing input or output delay                          | 9      |
+| TIMING-24 | Warning          | Overridden Max delay datapath only                     | 10     |
+| ULMTCS-1  | Warning          | Control Sets use limits recommend reduction            | 1      |
+| XDCB-5    | Warning          | Runtime inefficient way to find pin objects            | 2      |
+| XDCC-7    | Warning          | Scoped Clock constraint overwritten on the same source | 1      |
+| REQP-1959 | Advisory         | connects_SERDES_RST_driver_not_FF                      | 16     |
++-----------+------------------+--------------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock Block_top_i/clk_wiz_1/inst/clk_in1 is defined downstream of clock clk_pll_i_1 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock Block_top_i/clk_wiz_1/inst/clk_in1 is created on an inappropriate internal pin Block_top_i/clk_wiz_1/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/rstdiv2_sync_r[11]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__7/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__8/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__9/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[0]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[10]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[11]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[1]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[2]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[3]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[4]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[5]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[6]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[7]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[8]/PRE,
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[9]/PRE
+ (the first 15 of 34 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+PDRC-190#1 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1/syncstages_ff_reg[1] in site SLICE_X62Y24 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1_CDC_1 is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#2 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X39Y77 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#3 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X39Y79 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#4 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X37Y79 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#5 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X36Y81 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#6 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X40Y80 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#7 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X35Y81 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#8 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X39Y81 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#9 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X41Y80 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#10 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X36Y79 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#11 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X40Y78 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#12 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X37Y81 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#13 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X35Y83 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on rst_n relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on spi_miso relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on uart_rx relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on ddr3_reset_n relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on spi_flash_ce_n relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on spi_mosi relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on spi_sck relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on test_tx relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on uart_tx relative to the rising and/or falling clock edge(s) of clk_0.
+Related violations: <none>
+
+TIMING-24#1 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_out1_Block_top_clk_wiz_1_0_1 and clk_pll_i_1 overrides a set_max_delay -datapath_only (position 104). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#2 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_out1_Block_top_clk_wiz_1_0_1 and clk_pll_i_1 overrides a set_max_delay -datapath_only (position 106). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#3 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_out1_Block_top_clk_wiz_1_0_1 and clk_pll_i_1 overrides a set_max_delay -datapath_only (position 114). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#4 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_out1_Block_top_clk_wiz_1_0_1 and clk_pll_i_1 overrides a set_max_delay -datapath_only (position 116). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#5 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_out1_Block_top_clk_wiz_1_0_1 and clk_pll_i_1 overrides a set_max_delay -datapath_only (position 162). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#6 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_pll_i_1 and clk_out1_Block_top_clk_wiz_1_0_1 overrides a set_max_delay -datapath_only (position 108). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#7 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_pll_i_1 and clk_out1_Block_top_clk_wiz_1_0_1 overrides a set_max_delay -datapath_only (position 110). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#8 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_pll_i_1 and clk_out1_Block_top_clk_wiz_1_0_1 overrides a set_max_delay -datapath_only (position 112). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#9 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_pll_i_1 and clk_out1_Block_top_clk_wiz_1_0_1 overrides a set_max_delay -datapath_only (position 118). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+TIMING-24#10 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 21 in the Timing Constraints window in Vivado IDE) between clocks clk_pll_i_1 and clk_out1_Block_top_clk_wiz_1_0_1 overrides a set_max_delay -datapath_only (position 163). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+ULMTCS-1#1 Warning
+Control Sets use limits recommend reduction  
+This design uses 672 control sets (vs. available limit of 8150, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hier -include_replicated_objects -filter {NAME =~ *temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[*]/D}]' of constraint 'set_max_delay' uses inefficient query to find pin objects (see constraint position '10' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc (Line: 349)
+Related violations: <none>
+
+XDCB-5#2 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hier -include_replicated_objects -filter {NAME =~ *temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[*]/D}]' of constraint 'set_max_delay' uses inefficient query to find pin objects (see constraint position '17' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc (Line: 332)
+Related violations: <none>
+
+XDCC-7#1 Warning
+Scoped Clock constraint overwritten on the same source  
+A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_clock -period 10.000 -name clk_0 -waveform {0.000 5.000} [get_ports clk] (Source: /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc (Line: 12))
+Previous: create_clock -period 10.000 [get_ports clk] (Source: /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_clk_wiz_0_0/Block_top_clk_wiz_0_0.xdc (Line: 53))
+Related violations: <none>
+
+REQP-1959#1 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[0].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#2 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#3 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#4 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#5 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#6 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#7 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#8 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[9].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#9 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[1].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#10 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#11 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#12 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#13 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#14 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#15 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#16 Advisory
+connects_SERDES_RST_driver_not_FF  
+Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[9].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+

@@ -1,0 +1,24 @@
+vhdl xpm  \
+"/opt/Vivado/2025.2/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl proc_sys_reset_v5_0_17  \
+"../../../Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_797d_psr_aclk_0.vhd" \
+
+vhdl smartconnect_v1_0  \
+"../../../Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/cb42/hdl/sc_ultralite_v1_0_rfs.vhd" \
+
+vhdl axi_lite_ipif_v3_0_4  \
+"../../../Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+
+vhdl axi_uart16550_v2_0_39  \
+"../../../Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/5a21/hdl/axi_uart16550_v2_0_vh_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../bd/Block_top/ip/Block_top_axi_uart16550_0_0/sim/Block_top_axi_uart16550_0_0.vhd" \
+"../../../Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_1/sim/bd_b9bc_psr_aclk_0.vhd" \
+
+# Do not sort compile order
+nosort

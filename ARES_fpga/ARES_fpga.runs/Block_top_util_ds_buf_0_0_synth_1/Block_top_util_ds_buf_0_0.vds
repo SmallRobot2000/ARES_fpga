@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Jul 27 19:00:38 2026
+# Process ID         : 227796
+# Current directory  : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_util_ds_buf_0_0_synth_1
+# Command line       : vivado -log Block_top_util_ds_buf_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_util_ds_buf_0_0.tcl
+# Log file           : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_util_ds_buf_0_0_synth_1/Block_top_util_ds_buf_0_0.vds
+# Journal file       : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_util_ds_buf_0_0_synth_1/vivado.jou
+# Running On         : lovroRadiona
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 5 2600 Six-Core Processor
+# CPU Frequency      : 3573.862 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 33577 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 42167 MB
+# Available Virtual  : 28991 MB
+#-----------------------------------------------------------
+source Block_top_util_ds_buf_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:06 . Memory (MB): peak = 1590.047 ; gain = 109.059 ; free physical = 9304 ; free virtual = 26905
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_IO_converter_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Vivado/2025.2/data/ip'.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP Block_top_util_ds_buf_0_0, cache-ID = 7408ee5196e629a7.
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 27 19:00:48 2026...

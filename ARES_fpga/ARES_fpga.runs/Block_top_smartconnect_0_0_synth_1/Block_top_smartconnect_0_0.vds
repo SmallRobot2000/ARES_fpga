@@ -1,0 +1,718 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Jul 28 14:22:35 2026
+# Process ID         : 329544
+# Current directory  : /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_smartconnect_0_0_synth_1
+# Command line       : vivado -log Block_top_smartconnect_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_smartconnect_0_0.tcl
+# Log file           : /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_smartconnect_0_0_synth_1/Block_top_smartconnect_0_0.vds
+# Journal file       : /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_smartconnect_0_0_synth_1/vivado.jou
+# Running On         : lovroRadiona
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 5 2600 Six-Core Processor
+# CPU Frequency      : 1492.557 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 33577 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 42167 MB
+# Available Virtual  : 34074 MB
+#-----------------------------------------------------------
+source Block_top_smartconnect_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_IO_converter_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Vivado/2025.2/data/ip'.
+Command: synth_design -top Block_top_smartconnect_0_0 -part xc7a35tftg256-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tftg256-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 329776
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2244.945 ; gain = 481.875 ; free physical = 10524 ; free virtual = 29660
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Block_top_smartconnect_0_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/synth/Block_top_smartconnect_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:10]
+INFO: [Synth 8-6157] synthesizing module 'clk_map_imp_1ETOZD4' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1235]
+INFO: [Synth 8-638] synthesizing module 'bd_797d_psr_aclk_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_1/synth/bd_797d_psr_aclk_0.vhd:74]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 1 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1243' bound to instance 'U0' of component 'proc_sys_reset' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_1/synth/bd_797d_psr_aclk_0.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1302]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1371]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1387]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1413]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1436]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER_N' to cell 'FDRE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1460]
+INFO: [Synth 8-638] synthesizing module 'lpf' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-3491] module 'SRL16' declared at '/opt/Vivado/2025.2/Vivado/scripts/rt/data/unisim_comp.v:165318' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:873]
+INFO: [Synth 8-6157] synthesizing module 'SRL16' [/opt/Vivado/2025.2/Vivado/scripts/rt/data/unisim_comp.v:165318]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (0#1) [/opt/Vivado/2025.2/Vivado/scripts/rt/data/unisim_comp.v:165318]
+	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'ACT_LO_EXT' of component 'xpm_cdc_single' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:968]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'ACT_LO_AUX' of component 'xpm_cdc_single' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1015]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1302]
+INFO: [Synth 8-256] done synthesizing module 'bd_797d_psr_aclk_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_1/synth/bd_797d_psr_aclk_0.vhd:74]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'bd_797d_psr_aclk_0' is unconnected for instance 'psr_aclk' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1278]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'bd_797d_psr_aclk_0' is unconnected for instance 'psr_aclk' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1278]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'bd_797d_psr_aclk_0' is unconnected for instance 'psr_aclk' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1278]
+WARNING: [Synth 8-7071] port 'peripheral_aresetn' of module 'bd_797d_psr_aclk_0' is unconnected for instance 'psr_aclk' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1278]
+WARNING: [Synth 8-7023] instance 'psr_aclk' of module 'bd_797d_psr_aclk_0' has 10 connections declared, but only 6 given [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1278]
+INFO: [Synth 8-6155] done synthesizing module 'clk_map_imp_1ETOZD4' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1235]
+INFO: [Synth 8-6157] synthesizing module 'm00_exit_pipeline_imp_M26QJ7' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1287]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m00e_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_25/synth/bd_797d_m00e_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_async_rst' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_async_rst' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m00e_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_25/synth/bd_797d_m00e_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'm00_exit_pipeline_imp_M26QJ7' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1287]
+INFO: [Synth 8-6157] synthesizing module 'm00_nodes_imp_8SSTMN' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1401]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m00arn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_23/synth/bd_797d_m00arn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized0' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized0' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized0' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized0' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m00arn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_23/synth/bd_797d_m00arn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m00rn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_24/synth/bd_797d_m00rn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized1' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized1' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized2' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized2' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized2' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized2' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m00rn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_24/synth/bd_797d_m00rn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'm00_nodes_imp_8SSTMN' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1401]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m00s2a_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_22/synth/bd_797d_m00s2a_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m00s2a_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_22/synth/bd_797d_m00s2a_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'm01_exit_pipeline_imp_OLNF2R' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1508]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m01e_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_32/synth/bd_797d_m01e_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m01e_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_32/synth/bd_797d_m01e_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'm01_exit_pipeline_imp_OLNF2R' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1508]
+INFO: [Synth 8-6157] synthesizing module 'm01_nodes_imp_109QK5L' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1806]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m01arn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_27/synth/bd_797d_m01arn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m01arn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_27/synth/bd_797d_m01arn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m01awn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_29/synth/bd_797d_m01awn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m01awn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_29/synth/bd_797d_m01awn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m01bn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_31/synth/bd_797d_m01bn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized3' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized3' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized3' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized3' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m01bn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_31/synth/bd_797d_m01bn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m01rn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_28/synth/bd_797d_m01rn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m01rn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_28/synth/bd_797d_m01rn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m01wn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_30/synth/bd_797d_m01wn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized4' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized4' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized4' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized4' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized5' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized5' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized5' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized5' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m01wn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_30/synth/bd_797d_m01wn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'm01_nodes_imp_109QK5L' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1806]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_m01s2a_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_26/synth/bd_797d_m01s2a_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_m01s2a_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_26/synth/bd_797d_m01s2a_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_s00a2s_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_10/synth/bd_797d_s00a2s_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_s00a2s_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_10/synth/bd_797d_s00a2s_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 's00_entry_pipeline_imp_1KSEG9C' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:2057]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_s00mmu_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_7/synth/bd_797d_s00mmu_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_s00mmu_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_7/synth/bd_797d_s00mmu_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_s00sic_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_9/synth/bd_797d_s00sic_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_s00sic_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_9/synth/bd_797d_s00sic_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_s00tr_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_8/synth/bd_797d_s00tr_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_s00tr_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_8/synth/bd_797d_s00tr_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 's00_entry_pipeline_imp_1KSEG9C' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:2057]
+INFO: [Synth 8-6157] synthesizing module 's00_nodes_imp_1O89XAI' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:2629]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_sarn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_11/synth/bd_797d_sarn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized6' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized6' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized6' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized6' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_sarn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_11/synth/bd_797d_sarn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_sawn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_13/synth/bd_797d_sawn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_sawn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_13/synth/bd_797d_sawn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_sbn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_15/synth/bd_797d_sbn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized7' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized7' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized7' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized7' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_sbn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_15/synth/bd_797d_sbn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_srn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_12/synth/bd_797d_srn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized8' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized8' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized8' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized8' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_srn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_12/synth/bd_797d_srn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_swn_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_14/synth/bd_797d_swn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized9' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized9' [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized9' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized9' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_swn_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_14/synth/bd_797d_swn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 's00_nodes_imp_1O89XAI' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:2629]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_s01a2s_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_19/synth/bd_797d_s01a2s_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_s01a2s_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_19/synth/bd_797d_s01a2s_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 's01_entry_pipeline_imp_ODGC90' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:2871]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_s01mmu_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_16/synth/bd_797d_s01mmu_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_s01mmu_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_16/synth/bd_797d_s01mmu_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_s01sic_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_18/synth/bd_797d_s01sic_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_s01sic_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_18/synth/bd_797d_s01sic_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_s01tr_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_17/synth/bd_797d_s01tr_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_s01tr_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_17/synth/bd_797d_s01tr_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 's01_entry_pipeline_imp_ODGC90' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:2871]
+INFO: [Synth 8-6157] synthesizing module 's01_nodes_imp_IWDPDO' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:3141]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_sarn_1' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_20/synth/bd_797d_sarn_1.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_sarn_1' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_20/synth/bd_797d_sarn_1.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_srn_1' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_21/synth/bd_797d_srn_1.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_srn_1' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_21/synth/bd_797d_srn_1.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 's01_nodes_imp_IWDPDO' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:3141]
+INFO: [Synth 8-6157] synthesizing module 'switchboards_imp_1DMXFBY' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:3248]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_arsw_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_2/synth/bd_797d_arsw_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_arsw_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_2/synth/bd_797d_arsw_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_awsw_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_4/synth/bd_797d_awsw_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_awsw_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_4/synth/bd_797d_awsw_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_bsw_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_6/synth/bd_797d_bsw_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_bsw_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_6/synth/bd_797d_bsw_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_rsw_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_3/synth/bd_797d_rsw_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_rsw_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_3/synth/bd_797d_rsw_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_797d_wsw_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_5/synth/bd_797d_wsw_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d_wsw_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_5/synth/bd_797d_wsw_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'switchboards_imp_1DMXFBY' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:3248]
+WARNING: [Synth 8-7071] port 'M00_SC_AW_info' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M00_SC_AW_payld' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M00_SC_AW_req' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M00_SC_AW_send' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M00_SC_W_info' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M00_SC_W_payld' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M00_SC_W_req' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M00_SC_W_send' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M01_SC_B_info' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M01_SC_B_payld' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M01_SC_B_req' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'M01_SC_B_send' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'S00_SC_B_recv' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'S01_SC_AW_recv' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7071] port 'S01_SC_W_recv' of module 'switchboards_imp_1DMXFBY' is unconnected for instance 'switchboards' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+WARNING: [Synth 8-7023] instance 'switchboards' of module 'switchboards_imp_1DMXFBY' has 102 connections declared, but only 87 given [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1145]
+INFO: [Synth 8-6155] done synthesizing module 'bd_797d' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_smartconnect_0_0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/synth/Block_top_smartconnect_0_0.v:53]
+WARNING: [Synth 8-3848] Net aresetn_out in module/entity clk_map_imp_1ETOZD4 does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/synth/bd_797d.v:1259]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_AB_reg_slice.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port din[0] in module sc_util_v1_0_4_onehot_to_binary__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[3] in module sc_switchboard_v1_0_9_top__parameterized2 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[2] in module sc_switchboard_v1_0_9_top__parameterized2 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[1] in module sc_switchboard_v1_0_9_top__parameterized2 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[0] in module sc_switchboard_v1_0_9_top__parameterized2 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized5 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized5 is either unconnected or has no load
+INFO: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized5 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[3] in module sc_switchboard_v1_0_9_top__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[2] in module sc_switchboard_v1_0_9_top__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[1] in module sc_switchboard_v1_0_9_top__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[0] in module sc_switchboard_v1_0_9_top__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized7 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized7 is either unconnected or has no load
+INFO: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized7 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[3] in module sc_switchboard_v1_0_9_top__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[2] in module sc_switchboard_v1_0_9_top__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[1] in module sc_switchboard_v1_0_9_top__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[0] in module sc_switchboard_v1_0_9_top__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized2 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized2 is either unconnected or has no load
+INFO: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized2 is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[3] in module sc_switchboard_v1_0_9_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[2] in module sc_switchboard_v1_0_9_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[1] in module sc_switchboard_v1_0_9_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port connectivity[0] in module sc_switchboard_v1_0_9_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port aresetn in module switchboards_imp_1DMXFBY is either unconnected or has no load
+INFO: [Synth 8-7129] Port din[0] in module sc_util_v1_0_4_onehot_to_binary is either unconnected or has no load
+INFO: [Synth 8-7129] Port din[0] in module sc_util_v1_0_4_onehot_to_binary__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port sleep in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port rsta in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port regcea in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port injectsbiterra in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port injectdbiterra in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port clkb in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port regceb in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port web[0] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[167] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[166] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[165] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[164] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[163] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[162] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[161] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[160] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[159] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[158] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[157] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[156] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[155] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[154] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[153] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[152] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[151] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[150] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[149] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[148] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[147] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[146] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[145] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[144] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[143] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[142] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[141] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[140] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[139] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[138] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[137] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[136] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[135] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[134] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[133] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[132] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[131] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[130] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[129] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[128] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[127] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[126] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[125] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[124] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[123] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[122] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[121] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[120] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[119] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[118] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[117] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[116] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[115] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[114] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[113] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[112] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[111] in module xpm_memory_base__parameterized8 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2556.594 ; gain = 793.523 ; free physical = 10124 ; free virtual = 29268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2556.594 ; gain = 793.523 ; free physical = 10144 ; free virtual = 29288
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2556.594 ; gain = 793.523 ; free physical = 10144 ; free virtual = 29288
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2688.891 ; gain = 0.000 ; free physical = 10112 ; free virtual = 29252
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_1/bd_797d_psr_aclk_0_board.xdc] for cell 'inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_1/bd_797d_psr_aclk_0_board.xdc] for cell 'inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/smartconnect.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_0/smartconnect.xdc] for cell 'inst'
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_smartconnect_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_smartconnect_0_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_smartconnect_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_smartconnect_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_smartconnect_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_smartconnect_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1714] 68 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3100.035 ; gain = 0.000 ; free physical = 9835 ; free virtual = 28978
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  SRL16 => SRL16E: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.71 . Memory (MB): peak = 3100.070 ; gain = 0.000 ; free physical = 9826 ; free virtual = 28969
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:55 ; elapsed = 00:00:50 . Memory (MB): peak = 3100.070 ; gain = 1337.000 ; free physical = 9767 ; free virtual = 28913
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tftg256-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:55 ; elapsed = 00:00:50 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 9767 ; free virtual = 28912
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:50 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 9766 ; free virtual = 28912
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'w_state_reg' in module 'sc_exit_v1_0_18_axilite_conv'
+INFO: [Synth 8-802] inferred FSM for state register 'r_state_reg' in module 'sc_exit_v1_0_18_axilite_conv'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_AB_reg_slice.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_AB_reg_slice.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-802] inferred FSM for state register 'gen_axi.gen_write.write_cs_reg' in module 'sc_mmu_v1_0_16_decerr_slave'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_endpoint.w_state_reg' in module 'sc_mmu_v1_0_16_top'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_endpoint.r_state_reg' in module 'sc_mmu_v1_0_16_top'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-802] inferred FSM for state register 'aw_state_reg' in module 'sc_si_converter_v1_0_16_reduced_area'
+INFO: [Synth 8-802] inferred FSM for state register 'w_state_reg' in module 'sc_si_converter_v1_0_16_reduced_area'
+INFO: [Synth 8-802] inferred FSM for state register 'b_state_reg' in module 'sc_si_converter_v1_0_16_reduced_area'
+INFO: [Synth 8-802] inferred FSM for state register 'ar_state_reg' in module 'sc_si_converter_v1_0_16_reduced_area'
+INFO: [Synth 8-802] inferred FSM for state register 'r_state_reg' in module 'sc_si_converter_v1_0_16_reduced_area'
+INFO: [Synth 8-802] inferred FSM for state register 'rd_state_reg' in module 'sc_si_converter_v1_0_16_reduced_area'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  W_IDLE |                              000 | 00000000000000000000000000000000
+                    W_RX |                              001 | 00000000000000000000000000000001
+                    W_TX |                              010 | 00000000000000000000000000000010
+              W_COMPLETE |                              011 | 00000000000000000000000000000100
+               W_RECOVER |                              100 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'w_state_reg' using encoding 'sequential' in module 'sc_exit_v1_0_18_axilite_conv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  R_IDLE |                               00 | 00000000000000000000000000000000
+                    R_RX |                               01 | 00000000000000000000000000000001
+                    R_TX |                               10 | 00000000000000000000000000000010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_state_reg' using encoding 'sequential' in module 'sc_exit_v1_0_18_axilite_conv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+            P_WRITE_IDLE |                              001 |                               00
+            P_WRITE_DATA |                              010 |                               01
+            P_WRITE_RESP |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_axi.gen_write.write_cs_reg' using encoding 'one-hot' in module 'sc_mmu_v1_0_16_decerr_slave'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 | 00000000000000000000000000000000
+*
+                 W_STALL |                               01 | 00000000000000000000000000000001
+               W_PENDING |                               10 | 00000000000000000000000000000010
+                W_DECERR |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_endpoint.w_state_reg' using encoding 'sequential' in module 'sc_mmu_v1_0_16_top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 | 00000000000000000000000000000000
+*
+                 R_STALL |                               01 | 00000000000000000000000000000001
+               R_PENDING |                               10 | 00000000000000000000000000000010
+                R_DECERR |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_endpoint.r_state_reg' using encoding 'sequential' in module 'sc_mmu_v1_0_16_top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  B_IDLE |                               00 | 00000000000000000000000000000000
+                 B_ACCUM |                               01 | 00000000000000000000000000000001
+                  B_INCR |                               10 | 00000000000000000000000000000010
+                   B_OUT |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'b_state_reg' using encoding 'sequential' in module 'sc_si_converter_v1_0_16_reduced_area'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  W_IDLE |                           000001 | 00000000000000000000000000000000
+             W_SINGLES_1 |                           000010 | 00000000000000000000000000000001
+               W_SINGLES |                           000100 | 00000000000000000000000000000010
+                  W_NULL |                           001000 | 00000000000000000000000000000100
+                  W_INCR |                           010000 | 00000000000000000000000000000011
+              W_COMPLETE |                           100000 | 00000000000000000000000000000101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'w_state_reg' using encoding 'one-hot' in module 'sc_si_converter_v1_0_16_reduced_area'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 AW_IDLE |                               00 | 00000000000000000000000000000000
+             AW_SINGLE_1 |                               01 | 00000000000000000000000000000010
+               AW_SINGLE |                               10 | 00000000000000000000000000000001
+                AW_BURST |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'aw_state_reg' using encoding 'sequential' in module 'sc_si_converter_v1_0_16_reduced_area'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  R_IDLE |                              000 | 00000000000000000000000000000000
+               R_SPLIT_1 |                              001 | 00000000000000000000000000000010
+                 R_SPLIT |                              010 | 00000000000000000000000000000001
+                  R_WAIT |                              011 | 00000000000000000000000000000101
+               R_SPLIT_2 |                              100 | 00000000000000000000000000000011
+                  R_INCR |                              101 | 00000000000000000000000000000100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_state_reg' using encoding 'sequential' in module 'sc_si_converter_v1_0_16_reduced_area'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 RD_IDLE |                                0 | 00000000000000000000000000000000
+                 RD_DATA |                                1 | 00000000000000000000000000000001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rd_state_reg' using encoding 'sequential' in module 'sc_si_converter_v1_0_16_reduced_area'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 AR_IDLE |                               00 | 00000000000000000000000000000000
+               AR_SINGLE |                               01 | 00000000000000000000000000000001
+                AR_BURST |                               10 | 00000000000000000000000000000010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ar_state_reg' using encoding 'sequential' in module 'sc_si_converter_v1_0_16_reduced_area'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:01 ; elapsed = 00:00:56 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 9801 ; free virtual = 28955
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-13161] RAM (inst/i_0/\m00_nodes/m00_ar_node/inst /\inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst/i_0) is optimized away because it doesn't have any load.
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
+WARNING: [Synth 8-13161] RAM (inst/i_0/\m01_nodes/m01_ar_node/inst /\inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst/i_0) is optimized away because it doesn't have any load.
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
+WARNING: [Synth 8-13161] RAM (inst/i_0/\m01_nodes/m01_aw_node/inst /\inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst/i_0) is optimized away because it doesn't have any load.
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
+WARNING: [Synth 8-13161] RAM (inst/i_0/\m01_nodes/m01_w_node/inst /\inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst/i_0) is optimized away because it doesn't have any load.
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
+WARNING: [Synth 8-13161] RAM (inst/i_0/\s00_nodes/s00_b_node/inst /\inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst/i_0) is optimized away because it doesn't have any load.
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
+WARNING: [Synth 8-13161] RAM (inst/i_0/\s00_nodes/s00_r_node/inst /\inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst/i_0) is optimized away because it doesn't have any load.
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
+WARNING: [Synth 8-13161] RAM (inst/i_0/\s01_nodes/s01_r_node/inst /\inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst/i_0) is optimized away because it doesn't have any load.
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_b_state_reg[1]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_b_state_reg[0]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_w_state_reg[5]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_w_state_reg[4]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_w_state_reg[3]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_w_state_reg[2]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_w_state_reg[1]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_w_state_reg[0]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_aw_state_reg[1]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_aw_state_reg[0]) is unused and will be removed from module sc_si_converter_v1_0_16_reduced_area.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:11 ; elapsed = 00:02:08 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11432 ; free virtual = 30606
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:17 ; elapsed = 00:02:15 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11431 ; free virtual = 30605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:28 ; elapsed = 00:02:25 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11429 ; free virtual = 30606
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3332] Sequential element (gen_endpoint.decerr_slave_inst/FSM_onehot_gen_axi.gen_write.write_cs_reg[2]) is unused and will be removed from module sc_mmu_v1_0_16_top.
+INFO: [Synth 8-3332] Sequential element (gen_endpoint.decerr_slave_inst/FSM_onehot_gen_axi.gen_write.write_cs_reg[1]) is unused and will be removed from module sc_mmu_v1_0_16_top.
+INFO: [Synth 8-3332] Sequential element (gen_endpoint.decerr_slave_inst/FSM_onehot_gen_axi.gen_write.write_cs_reg[0]) is unused and will be removed from module sc_mmu_v1_0_16_top.
+INFO: [Synth 8-3332] Sequential element (FSM_sequential_gen_endpoint.w_state_reg[1]) is unused and will be removed from module sc_mmu_v1_0_16_top.
+INFO: [Synth 8-3332] Sequential element (FSM_sequential_gen_endpoint.w_state_reg[0]) is unused and will be removed from module sc_mmu_v1_0_16_top.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:34 ; elapsed = 00:02:33 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11441 ; free virtual = 30615
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:39 ; elapsed = 00:02:37 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11442 ; free virtual = 30616
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:39 ; elapsed = 00:02:37 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11442 ; free virtual = 30616
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:40 ; elapsed = 00:02:39 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11437 ; free virtual = 30611
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:40 ; elapsed = 00:02:39 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11437 ; free virtual = 30611
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:41 ; elapsed = 00:02:39 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11437 ; free virtual = 30611
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:41 ; elapsed = 00:02:39 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11437 ; free virtual = 30612
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    33|
+|2     |LUT1     |   246|
+|3     |LUT2     |   476|
+|4     |LUT3     |  1873|
+|5     |LUT4     |   524|
+|6     |LUT5     |   752|
+|7     |LUT6     |  1101|
+|8     |RAM16X1D |     1|
+|9     |RAM32M   |   224|
+|10    |RAM32X1D |     6|
+|11    |SRL16    |     1|
+|12    |SRL16E   |    35|
+|13    |SRLC32E  |     9|
+|14    |FDCE     |   108|
+|15    |FDRE     |  6230|
+|16    |FDSE     |   223|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:41 ; elapsed = 00:02:39 . Memory (MB): peak = 3108.039 ; gain = 1344.969 ; free physical = 11437 ; free virtual = 30612
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 3108.039 ; gain = 801.492 ; free physical = 11437 ; free virtual = 30612
+Synthesis Optimization Complete : Time (s): cpu = 00:02:41 ; elapsed = 00:02:39 . Memory (MB): peak = 3108.047 ; gain = 1344.969 ; free physical = 11437 ; free virtual = 30612
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.48 . Memory (MB): peak = 3108.047 ; gain = 0.000 ; free physical = 11429 ; free virtual = 30608
+INFO: [Netlist 29-17] Analyzing 265 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3164.066 ; gain = 0.000 ; free physical = 11417 ; free virtual = 30597
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 232 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 224 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 6 instances
+  SRL16 => SRL16E: 1 instance 
+
+Synth Design complete | Checksum: c4fa14ec
+INFO: [Common 17-83] Releasing license: Synthesis
+332 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:53 ; elapsed = 00:02:48 . Memory (MB): peak = 3164.102 ; gain = 1573.023 ; free physical = 11435 ; free virtual = 30615
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2453.169; main = 2238.365; forked = 281.438
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4102.246; main = 3164.070; forked = 994.203
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3188.078 ; gain = 0.000 ; free physical = 11421 ; free virtual = 30601
+INFO: [Common 17-1381] The checkpoint '/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_smartconnect_0_0_synth_1/Block_top_smartconnect_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Block_top_smartconnect_0_0, cache-ID = c0b2278f8705f6df
+INFO: [Coretcl 2-1174] Renamed 482 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3188.078 ; gain = 0.000 ; free physical = 11416 ; free virtual = 30622
+INFO: [Common 17-1381] The checkpoint '/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_smartconnect_0_0_synth_1/Block_top_smartconnect_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file Block_top_smartconnect_0_0_utilization_synth.rpt -pb Block_top_smartconnect_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 28 14:25:44 2026...

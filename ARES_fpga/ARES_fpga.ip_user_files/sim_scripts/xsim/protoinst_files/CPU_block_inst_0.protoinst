@@ -1,0 +1,97 @@
+{
+	"version": "1.0",
+	"modules": {
+		"CPU_block_inst_0": {
+			"proto_instances": {
+				"/CPU_IO_converter_0/M00_AXI": {
+					"interface": "xilinx.com:interface:aximm:1.0",
+					"ports": {
+						"ACLK": { "actual": "m00_axi_aclk"},
+						"ARADDR": { "actual": "m00_axi_araddr[31:0]"},
+						"ARESETN": { "actual": "m00_axi_aresetn"},
+						"ARPROT": { "actual": "m00_axi_arprot[2:0]"},
+						"ARREADY": { "actual": "m00_axi_arready"},
+						"ARVALID": { "actual": "m00_axi_arvalid"},
+						"AWADDR": { "actual": "m00_axi_awaddr[31:0]"},
+						"AWPROT": { "actual": "m00_axi_awprot[2:0]"},
+						"AWREADY": { "actual": "m00_axi_awready"},
+						"AWVALID": { "actual": "m00_axi_awvalid"},
+						"BREADY": { "actual": "m00_axi_bready"},
+						"BRESP": { "actual": "m00_axi_bresp[1:0]"},
+						"BVALID": { "actual": "m00_axi_bvalid"},
+						"RDATA": { "actual": "m00_axi_rdata[31:0]"},
+						"RREADY": { "actual": "m00_axi_rready"},
+						"RRESP": { "actual": "m00_axi_rresp[1:0]"},
+						"RVALID": { "actual": "m00_axi_rvalid"},
+						"WDATA": { "actual": "m00_axi_wdata[31:0]"},
+						"WREADY": { "actual": "m00_axi_wready"},
+						"WSTRB": { "actual": "m00_axi_wstrb[3:0]"},
+						"WVALID": { "actual": "m00_axi_wvalid"}
+					}
+				},
+				"/VexiiRV_wrapper_0/M_AXI_D": {
+					"interface": "xilinx.com:interface:aximm:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARADDR": { "actual": "cpu_axi_d_araddr[31:0]"},
+						"ARBURST": { "actual": "cpu_axi_d_arburst[1:0]"},
+						"ARCACHE": { "actual": "cpu_axi_d_arcache[3:0]"},
+						"ARESET": { "actual": "reset"},
+						"ARID": { "actual": "cpu_axi_d_arid[0:0]"},
+						"ARLEN": { "actual": "cpu_axi_d_arlen[7:0]"},
+						"ARPROT": { "actual": "cpu_axi_d_arprot[2:0]"},
+						"ARREADY": { "actual": "cpu_axi_d_arready"},
+						"ARSIZE": { "actual": "cpu_axi_d_arsize[2:0]"},
+						"ARVALID": { "actual": "cpu_axi_d_arvalid"},
+						"AWADDR": { "actual": "cpu_axi_d_awaddr[31:0]"},
+						"AWBURST": { "actual": "cpu_axi_d_awburst[1:0]"},
+						"AWCACHE": { "actual": "cpu_axi_d_awcache[3:0]"},
+						"AWID": { "actual": "cpu_axi_d_awid[0:0]"},
+						"AWLEN": { "actual": "cpu_axi_d_awlen[7:0]"},
+						"AWPROT": { "actual": "cpu_axi_d_awprot[2:0]"},
+						"AWREADY": { "actual": "cpu_axi_d_awready"},
+						"AWSIZE": { "actual": "cpu_axi_d_awsize[2:0]"},
+						"AWVALID": { "actual": "cpu_axi_d_awvalid"},
+						"BID": { "actual": "cpu_axi_d_bid[0:0]"},
+						"BREADY": { "actual": "cpu_axi_d_bready"},
+						"BRESP": { "actual": "cpu_axi_d_bresp[1:0]"},
+						"BVALID": { "actual": "cpu_axi_d_bvalid"},
+						"RDATA": { "actual": "cpu_axi_d_rdata[31:0]"},
+						"RID": { "actual": "cpu_axi_d_rid[0:0]"},
+						"RLAST": { "actual": "cpu_axi_d_rlast"},
+						"RREADY": { "actual": "cpu_axi_d_rready"},
+						"RRESP": { "actual": "cpu_axi_d_rresp[1:0]"},
+						"RVALID": { "actual": "cpu_axi_d_rvalid"},
+						"WDATA": { "actual": "cpu_axi_d_wdata[31:0]"},
+						"WLAST": { "actual": "cpu_axi_d_wlast"},
+						"WREADY": { "actual": "cpu_axi_d_wready"},
+						"WSTRB": { "actual": "cpu_axi_d_wstrb[3:0]"},
+						"WVALID": { "actual": "cpu_axi_d_wvalid"}
+					}
+				},
+				"/VexiiRV_wrapper_0/M_AXI_I": {
+					"interface": "xilinx.com:interface:aximm:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARADDR": { "actual": "cpu_axi_i_ar_addr[31:0]"},
+						"ARBURST": { "actual": "cpu_axi_i_ar_burst[1:0]"},
+						"ARCACHE": { "actual": "cpu_axi_i_ar_cache[3:0]"},
+						"ARESET": { "actual": "reset"},
+						"ARID": { "actual": "cpu_axi_i_ar_id"},
+						"ARLEN": { "actual": "cpu_axi_i_ar_len[7:0]"},
+						"ARPROT": { "actual": "cpu_axi_i_ar_prot[2:0]"},
+						"ARREADY": { "actual": "cpu_axi_i_ar_ready"},
+						"ARSIZE": { "actual": "cpu_axi_i_ar_size[2:0]"},
+						"ARVALID": { "actual": "cpu_axi_i_ar_valid"},
+						"RDATA": { "actual": "cpu_axi_i_r_data[31:0]"},
+						"RID": { "actual": "cpu_axi_i_r_id"},
+						"RLAST": { "actual": "cpu_axi_i_r_last"},
+						"RREADY": { "actual": "cpu_axi_i_r_ready"},
+						"RRESP": { "actual": "cpu_axi_i_r_resp[1:0]"},
+						"RVALID": { "actual": "cpu_axi_i_r_valid"}
+					}
+				}
+			}
+		}
+	}
+}

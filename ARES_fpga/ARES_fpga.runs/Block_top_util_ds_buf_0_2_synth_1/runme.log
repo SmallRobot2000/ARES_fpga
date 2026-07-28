@@ -1,0 +1,22 @@
+
+*** Running vivado
+    with args -log Block_top_util_ds_buf_0_2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_util_ds_buf_0_2.tcl
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Mon Jul 27 19:00:38 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source Block_top_util_ds_buf_0_2.tcl -notrace
+create_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:05 . Memory (MB): peak = 1583.074 ; gain = 104.059 ; free physical = 9304 ; free virtual = 26905
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_IO_converter_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Vivado/2025.2/data/ip'.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP Block_top_util_ds_buf_0_2, cache-ID = 7408ee5196e629a7.
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 27 19:00:48 2026...

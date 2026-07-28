@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Alchitry AMIX_RISCV.ip_user_files/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_797d_psr_aclk_0.vhd" \
+"../../../../Alchitry AMIX_RISCV.ip_user_files/bd/Block_top/ip/Block_top_axi_uart16550_0_0/sim/Block_top_axi_uart16550_0_0.vhd" \
+"../../../../Alchitry AMIX_RISCV.ip_user_files/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_1/sim/bd_b9bc_psr_aclk_0.vhd" \
+
+# Do not sort compile order
+nosort
