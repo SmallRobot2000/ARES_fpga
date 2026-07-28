@@ -1,0 +1,133 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Addressing View_Layers":"/clk_wiz_0_clk_100:false|/clk_wiz_0_clk_200:false|/clk_in1_0_1:false|/reset:false|/rst_n_in:false|/mig_axi_wrapper_0_ui_clk:false|",
+   "Addressing View_ScaleFactor":"0.984783",
+   "Addressing View_TopLeft":"-72,0",
+   "Color Coded_ScaleFactor":"0.541219",
+   "Color Coded_TopLeft":"-336,2",
+   "Default View_Layers":"/clk_wiz_0_clk_100:true|/clk_wiz_0_clk_200:true|/clk_in1_0_1:true|/reset:true|/rst_n_in:true|/mig_axi_wrapper_0_ui_clk:true|",
+   "Default View_ScaleFactor":"0.441939",
+   "Default View_TopLeft":"1104,-102",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_ScaleFactor":"0.7248",
+   "Grouping and No Loops_TopLeft":"-130,3",
+   "Interfaces View_Layers":"/clk_wiz_0_clk_100:false|/clk_wiz_0_clk_200:false|/clk_in1_0_1:false|/reset:false|/rst_n_in:false|/mig_axi_wrapper_0_ui_clk:false|",
+   "Interfaces View_ScaleFactor":"0.989083",
+   "Interfaces View_TopLeft":"-160,2",
+   "No Loops_ScaleFactor":"0.605096",
+   "No Loops_TopLeft":"-83,0",
+   "Reduced Jogs_Layers":"/clk_wiz_0_clk_100:true|/clk_wiz_0_clk_200:true|/clk_in1_0_1:true|/reset:true|/rst_n_in:true|/mig_axi_wrapper_0_ui_clk:true|",
+   "Reduced Jogs_ScaleFactor":"0.571495",
+   "Reduced Jogs_TopLeft":"-82,-72",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_ddr3_ras_n -pg 1 -lvl 8 -x 2720 -y 470 -defaultsOSRD
+preplace port port-id_ddr3_cas_n -pg 1 -lvl 8 -x 2720 -y 500 -defaultsOSRD
+preplace port port-id_ddr3_reset_n -pg 1 -lvl 8 -x 2720 -y 560 -defaultsOSRD
+preplace port port-id_ddr3_we_n -pg 1 -lvl 8 -x 2720 -y 530 -defaultsOSRD
+preplace port port-id_rst_n -pg 1 -lvl 0 -x -30 -y 700 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x -30 -y 590 -defaultsOSRD
+preplace port port-id_spi_miso -pg 1 -lvl 8 -x 2720 -y -120 -defaultsOSRD -right
+preplace port port-id_spi_mosi -pg 1 -lvl 8 -x 2720 -y -90 -defaultsOSRD
+preplace port port-id_spi_sck -pg 1 -lvl 8 -x 2720 -y -60 -defaultsOSRD
+preplace port port-id_spi_flash_ce_n -pg 1 -lvl 8 -x 2720 -y 10 -defaultsOSRD
+preplace port port-id_uart_rx -pg 1 -lvl 8 -x 2720 -y -460 -defaultsOSRD -right
+preplace port port-id_uart_tx -pg 1 -lvl 8 -x 2720 -y -430 -defaultsOSRD
+preplace port port-id_test_tx -pg 1 -lvl 8 -x 2720 -y -400 -defaultsOSRD
+preplace portBus ddr3_dq -pg 1 -lvl 8 -x 2720 -y 320 -defaultsOSRD
+preplace portBus ddr3_dqs_n -pg 1 -lvl 8 -x 2720 -y 350 -defaultsOSRD
+preplace portBus ddr3_dqs_p -pg 1 -lvl 8 -x 2720 -y 380 -defaultsOSRD
+preplace portBus ddr3_addr -pg 1 -lvl 8 -x 2720 -y 410 -defaultsOSRD
+preplace portBus ddr3_ba -pg 1 -lvl 8 -x 2720 -y 440 -defaultsOSRD
+preplace portBus ddr3_ck_p -pg 1 -lvl 8 -x 2720 -y 590 -defaultsOSRD
+preplace portBus ddr3_ck_n -pg 1 -lvl 8 -x 2720 -y 620 -defaultsOSRD
+preplace portBus ddr3_cs_n -pg 1 -lvl 8 -x 2720 -y 680 -defaultsOSRD
+preplace portBus ddr3_odt -pg 1 -lvl 8 -x 2720 -y 710 -defaultsOSRD
+preplace portBus ddr3_dm -pg 1 -lvl 8 -x 2720 -y 740 -defaultsOSRD
+preplace portBus ddr3_cke -pg 1 -lvl 8 -x 2720 -y 650 -defaultsOSRD
+preplace portBus spi_controller_mosi -pg 1 -lvl 8 -x 2720 -y -1090 -defaultsOSRD
+preplace portBus spi_controller_miso -pg 1 -lvl 8 -x 2720 -y -970 -defaultsOSRD
+preplace portBus spi_controller_sck -pg 1 -lvl 8 -x 2720 -y -840 -defaultsOSRD
+preplace portBus spi_controller_ss -pg 1 -lvl 8 -x 2720 -y -720 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 5 -x 1580 -y 580 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 5 -x 1580 -y 700 -defaultsOSRD
+preplace inst mig_axi_wrapper_0 -pg 1 -lvl 6 -x 1930 -y 780 -defaultsOSRD
+preplace inst util_vector_logic_1 -pg 1 -lvl 6 -x 1930 -y 1070 -defaultsOSRD -orient R180
+preplace inst smartconnect_mem -pg 1 -lvl 4 -x 1270 -y 100 -defaultsOSRD
+preplace inst FLASH_SPI_wrapper_0 -pg 1 -lvl 7 -x 2420 -y -10 -defaultsOSRD
+preplace inst axi_uart16550_0 -pg 1 -lvl 7 -x 2420 -y -440 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 6 -x 1930 -y -170 -defaultsOSRD
+preplace inst smartconnect_io -pg 1 -lvl 4 -x 1270 -y -400 -defaultsOSRD
+preplace inst CPU_block_0 -pg 1 -lvl 3 -x 680 -y 310 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 7 -x 2420 -y -1100 -defaultsOSRD
+preplace inst axi_quad_spi_0 -pg 1 -lvl 6 -x 1930 -y -930 -defaultsOSRD
+preplace inst clk_wiz_1 -pg 1 -lvl 5 -x 1580 -y -900 -defaultsOSRD
+preplace inst util_ds_buf_1 -pg 1 -lvl 7 -x 2420 -y -980 -defaultsOSRD
+preplace inst util_ds_buf_2 -pg 1 -lvl 7 -x 2420 -y -850 -defaultsOSRD
+preplace inst util_ds_buf_3 -pg 1 -lvl 7 -x 2420 -y -730 -defaultsOSRD
+preplace netloc FLASH_SPI_wrapper_0_spi_ce_n 1 7 1 N 10
+preplace netloc FLASH_SPI_wrapper_0_spi_mosi 1 7 1 2560 -90n
+preplace netloc FLASH_SPI_wrapper_0_spi_sck 1 7 1 2580 -60n
+preplace netloc Net 1 6 2 NJ 590 2560
+preplace netloc Net1 1 6 2 NJ 610 2570
+preplace netloc Net2 1 6 2 NJ 630 2580
+preplace netloc Net3 1 7 1 N -1090
+preplace netloc Net4 1 7 1 N -970
+preplace netloc Net5 1 7 1 N -840
+preplace netloc Net6 1 7 1 N -720
+preplace netloc axi_quad_spi_0_io0_o 1 6 1 2110 -1090n
+preplace netloc axi_quad_spi_0_io0_t 1 6 1 2080 -1110n
+preplace netloc axi_quad_spi_0_io1_o 1 6 1 2140 -970n
+preplace netloc axi_quad_spi_0_io1_t 1 6 1 2130 -990n
+preplace netloc axi_quad_spi_0_sck_o 1 6 1 2170 -900n
+preplace netloc axi_quad_spi_0_sck_t 1 6 1 2160 -880n
+preplace netloc axi_quad_spi_0_ss_o 1 6 1 2100 -840n
+preplace netloc axi_quad_spi_0_ss_t 1 6 1 2090 -820n
+preplace netloc axi_uart16550_0_sout 1 7 1 2560 -430n
+preplace netloc clk_in1_0_1 1 0 5 NJ 590 N 590 N 590 N 590 1420
+preplace netloc clk_wiz_0_clk_100 1 5 1 1750 570n
+preplace netloc clk_wiz_0_clk_200 1 5 1 1740 590n
+preplace netloc clk_wiz_1_clk_out1 1 5 1 1730 -940n
+preplace netloc mig_axi_wrapper_0_ddr3_addr 1 6 2 NJ 650 2590
+preplace netloc mig_axi_wrapper_0_ddr3_ba 1 6 2 NJ 670 2600
+preplace netloc mig_axi_wrapper_0_ddr3_cas_n 1 6 2 NJ 710 2620
+preplace netloc mig_axi_wrapper_0_ddr3_ck_n 1 6 2 NJ 790 2660
+preplace netloc mig_axi_wrapper_0_ddr3_ck_p 1 6 2 NJ 770 2650
+preplace netloc mig_axi_wrapper_0_ddr3_cke 1 6 2 NJ 810 2670
+preplace netloc mig_axi_wrapper_0_ddr3_cs_n 1 6 2 NJ 830 2680
+preplace netloc mig_axi_wrapper_0_ddr3_dm 1 6 2 NJ 850 2700
+preplace netloc mig_axi_wrapper_0_ddr3_odt 1 6 2 2160J 840 2690
+preplace netloc mig_axi_wrapper_0_ddr3_ras_n 1 6 2 NJ 690 2610
+preplace netloc mig_axi_wrapper_0_ddr3_reset_n 1 6 2 NJ 750 2640
+preplace netloc mig_axi_wrapper_0_ddr3_we_n 1 6 2 NJ 730 2630
+preplace netloc mig_axi_wrapper_0_ui_clk 1 2 5 520 110 1100 -900 1430 -970 1770J -1120 2120
+preplace netloc reset 1 2 5 530 200 N 200 N 200 N 200 2180
+preplace netloc reset_n 1 3 4 1130 -220 N -220 1770 -430 N
+preplace netloc rst_in 1 5 1 1730J 700n
+preplace netloc rst_n_in 1 0 5 NJ 700 N 700 N 700 N 700 N
+preplace netloc sin_0_1 1 7 1 2560 -460n
+preplace netloc spi_miso_0_1 1 6 2 2280J -100 2560
+preplace netloc util_ds_buf_0_IOBUF_IO_O 1 6 2 2180 -660 2590
+preplace netloc util_ds_buf_1_IOBUF_IO_O 1 6 2 2150J -650 2580
+preplace netloc util_ds_buf_2_IOBUF_IO_O 1 6 2 2110J -640 2570
+preplace netloc util_ds_buf_3_IOBUF_IO_O 1 6 2 2080 -630 2560
+preplace netloc xlconstant_0_dout 1 6 1 2180 -410n
+preplace netloc CPU_block_0_M_AXI_D 1 3 1 830 70n
+preplace netloc CPU_block_0_M_AXI_I 1 3 1 1120 90n
+preplace netloc CPU_block_0_M_AXI_IO 1 3 1 1110 -420n
+preplace netloc smartconnect_0_M00_AXI 1 4 3 1410 -40 N -40 N
+preplace netloc smartconnect_0_M01_AXI 1 4 2 NJ 110 1780
+preplace netloc smartconnect_io_M00_AXI 1 4 3 1420 -470 NJ -470 NJ
+preplace netloc smartconnect_io_M01_AXI 1 4 2 1410 -960 NJ
+levelinfo -pg 1 -30 10 340 680 1270 1580 1930 2420 2720
+pagesize -pg 1 -db -bbox -sgen -200 -1170 3370 1370
+"
+}
+{
+   "da_axi4_cnt":"1",
+   "da_board_cnt":"2",
+   "da_clkrst_cnt":"2"
+}
