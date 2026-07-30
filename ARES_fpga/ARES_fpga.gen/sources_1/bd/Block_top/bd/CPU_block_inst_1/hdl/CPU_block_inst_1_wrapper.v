@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Tue Jul 28 14:22:30 2026
+//Date        : Wed Jul 29 23:50:06 2026
 //Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target CPU_block_inst_1_wrapper.bd
 //Design      : CPU_block_inst_1_wrapper
@@ -79,7 +79,8 @@ module CPU_block_inst_1_wrapper
     M_AXI_I_rresp,
     M_AXI_I_rvalid,
     clk,
-    cpu_int_ext,
+    cpi_int_s_ext,
+    cpu_int_m_ext,
     cpu_int_soft,
     cpu_int_timer,
     cpu_rdtime,
@@ -152,7 +153,8 @@ module CPU_block_inst_1_wrapper
   input [1:0]M_AXI_I_rresp;
   input M_AXI_I_rvalid;
   input clk;
-  input cpu_int_ext;
+  input cpi_int_s_ext;
+  input cpu_int_m_ext;
   input cpu_int_soft;
   input cpu_int_timer;
   input [63:0]cpu_rdtime;
@@ -226,7 +228,8 @@ module CPU_block_inst_1_wrapper
   wire [1:0]M_AXI_I_rresp;
   wire M_AXI_I_rvalid;
   wire clk;
-  wire cpu_int_ext;
+  wire cpi_int_s_ext;
+  wire cpu_int_m_ext;
   wire cpu_int_soft;
   wire cpu_int_timer;
   wire [63:0]cpu_rdtime;
@@ -301,7 +304,8 @@ module CPU_block_inst_1_wrapper
         .M_AXI_I_rresp(M_AXI_I_rresp),
         .M_AXI_I_rvalid(M_AXI_I_rvalid),
         .clk(clk),
-        .cpu_int_ext(cpu_int_ext),
+        .cpi_int_s_ext(cpi_int_s_ext),
+        .cpu_int_m_ext(cpu_int_m_ext),
         .cpu_int_soft(cpu_int_soft),
         .cpu_int_timer(cpu_int_timer),
         .cpu_rdtime(cpu_rdtime),

@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Jul 27 19:00:34 2026
+-- Date        : Wed Jul 29 17:25:19 2026
 -- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode synth_stub -rename_top Block_top_util_ds_buf_0_2 -prefix
 --               Block_top_util_ds_buf_0_2_ Block_top_util_ds_buf_0_1_stub.vhdl

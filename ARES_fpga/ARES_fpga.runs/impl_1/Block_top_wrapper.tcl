@@ -97,7 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -106,7 +105,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param bd.open.in_stealth_mode 3
+  set_param bd.open.in_stealth_mode 2
   set_param chipscope.maxJobs 3
   set_param general.usePosixSpawnForFork 1
   set_param runs.launchOptions { -jobs 8  }

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x881C7F9FF4D22633",
+      "boundary_crc": "0xE264486F60AD18D4",
       "device": "xc7a35tftg256-2",
       "gen_directory": "../../../../ARES_fpga.gen/sources_1/bd/CPU_block",
       "name": "CPU_block",
@@ -813,7 +813,10 @@
       "cpu_int_soft": {
         "direction": "I"
       },
-      "cpu_int_ext": {
+      "cpu_int_m_ext": {
+        "direction": "I"
+      },
+      "cpi_int_s_ext": {
         "direction": "I"
       }
     },
@@ -1730,7 +1733,10 @@
           "cpu_int_soft": {
             "direction": "I"
           },
-          "cpu_int_ext": {
+          "cpu_int_m_ext": {
+            "direction": "I"
+          },
+          "cpi_int_s_ext": {
             "direction": "I"
           },
           "cpu_axi_io_cmd_valid": {
@@ -1914,14 +1920,20 @@
       "clk_0_1": {
         "ports": [
           "clk",
-          "VexiiRV_wrapper_0/clk",
-          "CPU_IO_converter_0/m00_axi_aclk"
+          "CPU_IO_converter_0/m00_axi_aclk",
+          "VexiiRV_wrapper_0/clk"
         ]
       },
-      "cpu_int_ext_0_1": {
+      "cpi_int_s_ext_0_1": {
         "ports": [
-          "cpu_int_ext",
-          "VexiiRV_wrapper_0/cpu_int_ext"
+          "cpi_int_s_ext",
+          "VexiiRV_wrapper_0/cpi_int_s_ext"
+        ]
+      },
+      "cpu_int_m_ext_0_1": {
+        "ports": [
+          "cpu_int_m_ext",
+          "VexiiRV_wrapper_0/cpu_int_m_ext"
         ]
       },
       "cpu_int_soft_0_1": {

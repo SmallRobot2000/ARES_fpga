@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Jul 28 15:03:29 2026
+| Date         : Wed Jul 29 23:53:04 2026
 | Host         : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_incremental_reuse -file Block_top_wrapper_incremental_reuse_pre_placed.rpt
 | Design       : Block_top_wrapper
@@ -45,9 +45,9 @@ Table of Contents
 +-------+----------------------+----------------------------+--------------------+--------+
 |  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) |  Total |
 +-------+----------------------+----------------------------+--------------------+--------+
-| Cells |               100.00 |                     100.00 |               0.50 |  37805 |
-| Nets  |               100.00 |                      99.91 |               0.00 |  27121 |
-| Pins  |                    - |                      99.97 |                  - | 155565 |
+| Cells |                99.55 |                      99.38 |               0.48 |  39619 |
+| Nets  |                99.29 |                      97.68 |               0.00 |  28607 |
+| Pins  |                    - |                      98.59 |                  - | 165563 |
 | Ports |               100.00 |                     100.00 |             100.00 |     64 |
 +-------+----------------------+----------------------------+--------------------+--------+
 
@@ -65,8 +65,8 @@ Table of Contents
 +--------------------------------+----------------------------+
 | Vivado Version                 |                     2025.2 |
 | DCP State                      |                 POST_ROUTE |
-| Recorded WNS                   |                      0.978 |
-| Recorded WHS                   |                      0.014 |
+| Recorded WNS                   |                      0.567 |
+| Recorded WHS                   |                      0.036 |
 | Reference Speed File Version   | PRODUCTION 1.23 2018-06-13 |
 | Incremental Speed File Version | PRODUCTION 1.23 2018-06-13 |
 +--------------------------------+----------------------------+
@@ -84,9 +84,9 @@ Table of Contents
 | synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | read_checkpoint |             |             |     < 1 min |     < 1 min |       00:01 |       00:01 |
-| place_design    |       0.978 |             |     < 1 min |             |       00:01 |             |
-| phys_opt_design |       0.978 |             |     < 1 min |             |     < 1 min |             |
-| route_design    |       0.978 |             |       00:01 |             |       00:02 |             |
+| place_design    |      -1.127 |             |     < 1 min |             |       00:02 |             |
+| phys_opt_design |      -1.127 |             |     < 1 min |             |     < 1 min |             |
+| route_design    |      -1.103 |             |       00:01 |             |       00:02 |             |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
@@ -130,13 +130,16 @@ read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /hom
 7. Non Reuse Information
 ------------------------
 
-+-----------------------+------+
-|          Type         |   %  |
-+-----------------------+------+
-| Non-Reused Cells      | 0.00 |
-| Partially reused nets | 0.01 |
-| Non-Reused nets       | 0.07 |
-| Non-Reused Ports      | 0.00 |
-+-----------------------+------+
++------------------------------------------------------+------+
+|                         Type                         |   %  |
++------------------------------------------------------+------+
+| Non-Reused Cells                                     | 0.61 |
+|   New                                                | 0.24 |
+|   Discarded illegal placement due to netlist changes | 0.36 |
+|   Discarded to improve timing                        | 0.01 |
+| Partially reused nets                                | 0.44 |
+| Non-Reused nets                                      | 1.87 |
+| Non-Reused Ports                                     | 0.00 |
++------------------------------------------------------+------+
 
 

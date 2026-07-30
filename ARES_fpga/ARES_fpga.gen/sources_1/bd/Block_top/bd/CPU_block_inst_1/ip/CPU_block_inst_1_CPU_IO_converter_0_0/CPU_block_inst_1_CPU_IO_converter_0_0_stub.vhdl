@@ -2,11 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Jul 27 16:30:13 2026
+-- Date        : Wed Jul 29 23:02:48 2026
 -- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
--- Command     : write_vhdl -force -mode synth_stub {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry
---               AMIX_RISCV/Alchitry
---               AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.vhdl}
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.vhdl
 -- Design      : CPU_block_inst_1_CPU_IO_converter_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tftg256-2

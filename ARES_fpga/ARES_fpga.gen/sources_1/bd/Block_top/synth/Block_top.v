@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Tue Jul 28 14:22:26 2026
+//Date        : Wed Jul 29 23:49:59 2026
 //Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target Block_top.bd
 //Design      : Block_top
@@ -144,10 +144,11 @@ module Block_top
   wire axi_quad_spi_0_sck_t;
   wire [3:0]axi_quad_spi_0_ss_o;
   wire axi_quad_spi_0_ss_t;
+  wire axi_timer_0_interrupt;
+  wire [63:0]c_counter_binary_0_Q;
   wire clk;
   wire clk_wiz_0_clk_100;
   wire clk_wiz_0_clk_200;
-  wire clk_wiz_1_clk_out1;
   wire [13:0]ddr3_addr;
   wire [2:0]ddr3_ba;
   wire ddr3_cas_n;
@@ -209,10 +210,10 @@ module Block_top
   wire smartconnect_0_M01_AXI_WREADY;
   wire [15:0]smartconnect_0_M01_AXI_WSTRB;
   wire smartconnect_0_M01_AXI_WVALID;
-  wire [12:0]smartconnect_io_M00_AXI_ARADDR;
+  wire [3:0]smartconnect_io_M00_AXI_ARADDR;
   wire smartconnect_io_M00_AXI_ARREADY;
   wire smartconnect_io_M00_AXI_ARVALID;
-  wire [12:0]smartconnect_io_M00_AXI_AWADDR;
+  wire [3:0]smartconnect_io_M00_AXI_AWADDR;
   wire smartconnect_io_M00_AXI_AWREADY;
   wire smartconnect_io_M00_AXI_AWVALID;
   wire smartconnect_io_M00_AXI_BREADY;
@@ -243,6 +244,23 @@ module Block_top
   wire smartconnect_io_M01_AXI_WREADY;
   wire [3:0]smartconnect_io_M01_AXI_WSTRB;
   wire smartconnect_io_M01_AXI_WVALID;
+  wire [4:0]smartconnect_io_M02_AXI_ARADDR;
+  wire smartconnect_io_M02_AXI_ARREADY;
+  wire smartconnect_io_M02_AXI_ARVALID;
+  wire [4:0]smartconnect_io_M02_AXI_AWADDR;
+  wire smartconnect_io_M02_AXI_AWREADY;
+  wire smartconnect_io_M02_AXI_AWVALID;
+  wire smartconnect_io_M02_AXI_BREADY;
+  wire [1:0]smartconnect_io_M02_AXI_BRESP;
+  wire smartconnect_io_M02_AXI_BVALID;
+  wire [31:0]smartconnect_io_M02_AXI_RDATA;
+  wire smartconnect_io_M02_AXI_RREADY;
+  wire [1:0]smartconnect_io_M02_AXI_RRESP;
+  wire smartconnect_io_M02_AXI_RVALID;
+  wire [31:0]smartconnect_io_M02_AXI_WDATA;
+  wire smartconnect_io_M02_AXI_WREADY;
+  wire [3:0]smartconnect_io_M02_AXI_WSTRB;
+  wire smartconnect_io_M02_AXI_WVALID;
   wire [0:0]spi_controller_miso;
   wire [0:0]spi_controller_mosi;
   wire [0:0]spi_controller_sck;
@@ -257,7 +275,6 @@ module Block_top
   wire [0:0]util_ds_buf_1_IOBUF_IO_O;
   wire [0:0]util_ds_buf_2_IOBUF_IO_O;
   wire [3:0]util_ds_buf_3_IOBUF_IO_O;
-  wire [0:0]xlconstant_0_dout;
 
   assign uart_tx = test_tx;
   CPU_block_inst_1 CPU_block_0
@@ -329,10 +346,11 @@ module Block_top
         .M_AXI_I_rresp(CPU_block_0_M_AXI_I_RRESP),
         .M_AXI_I_rvalid(CPU_block_0_M_AXI_I_RVALID),
         .clk(mig_axi_wrapper_0_ui_clk),
-        .cpu_int_ext(1'b0),
+        .cpi_int_s_ext(1'b0),
+        .cpu_int_m_ext(1'b0),
         .cpu_int_soft(1'b0),
-        .cpu_int_timer(1'b0),
-        .cpu_rdtime({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .cpu_int_timer(axi_timer_0_interrupt),
+        .cpu_rdtime(c_counter_binary_0_Q),
         .reset(reset));
   Block_top_FLASH_SPI_wrapper_0_0 FLASH_SPI_wrapper_0
        (.reset(reset),
@@ -350,7 +368,7 @@ module Block_top
         .spi_mosi(spi_mosi),
         .spi_sck(spi_sck));
   Block_top_axi_quad_spi_0_1 axi_quad_spi_0
-       (.ext_spi_clk(clk_wiz_1_clk_out1),
+       (.ext_spi_clk(mig_axi_wrapper_0_ui_clk),
         .io0_i(util_ds_buf_0_IOBUF_IO_O),
         .io0_o(axi_quad_spi_0_io0_o),
         .io0_t(axi_quad_spi_0_io0_t),
@@ -382,12 +400,32 @@ module Block_top
         .ss_i(util_ds_buf_3_IOBUF_IO_O),
         .ss_o(axi_quad_spi_0_ss_o),
         .ss_t(axi_quad_spi_0_ss_t));
-  Block_top_axi_uart16550_0_0 axi_uart16550_0
-       (.ctsn(1'b1),
-        .dcdn(1'b1),
-        .dsrn(1'b1),
-        .freeze(xlconstant_0_dout),
-        .rin(1'b1),
+  Block_top_axi_timer_0_0 axi_timer_0
+       (.capturetrig0(1'b0),
+        .capturetrig1(1'b0),
+        .freeze(1'b0),
+        .interrupt(axi_timer_0_interrupt),
+        .s_axi_aclk(mig_axi_wrapper_0_ui_clk),
+        .s_axi_araddr(smartconnect_io_M02_AXI_ARADDR),
+        .s_axi_aresetn(reset_n),
+        .s_axi_arready(smartconnect_io_M02_AXI_ARREADY),
+        .s_axi_arvalid(smartconnect_io_M02_AXI_ARVALID),
+        .s_axi_awaddr(smartconnect_io_M02_AXI_AWADDR),
+        .s_axi_awready(smartconnect_io_M02_AXI_AWREADY),
+        .s_axi_awvalid(smartconnect_io_M02_AXI_AWVALID),
+        .s_axi_bready(smartconnect_io_M02_AXI_BREADY),
+        .s_axi_bresp(smartconnect_io_M02_AXI_BRESP),
+        .s_axi_bvalid(smartconnect_io_M02_AXI_BVALID),
+        .s_axi_rdata(smartconnect_io_M02_AXI_RDATA),
+        .s_axi_rready(smartconnect_io_M02_AXI_RREADY),
+        .s_axi_rresp(smartconnect_io_M02_AXI_RRESP),
+        .s_axi_rvalid(smartconnect_io_M02_AXI_RVALID),
+        .s_axi_wdata(smartconnect_io_M02_AXI_WDATA),
+        .s_axi_wready(smartconnect_io_M02_AXI_WREADY),
+        .s_axi_wstrb(smartconnect_io_M02_AXI_WSTRB),
+        .s_axi_wvalid(smartconnect_io_M02_AXI_WVALID));
+  Block_top_axi_uartlite_0_0 axi_uartlite_0
+       (.rx(uart_rx),
         .s_axi_aclk(mig_axi_wrapper_0_ui_clk),
         .s_axi_araddr(smartconnect_io_M00_AXI_ARADDR),
         .s_axi_aresetn(reset_n),
@@ -407,15 +445,14 @@ module Block_top
         .s_axi_wready(smartconnect_io_M00_AXI_WREADY),
         .s_axi_wstrb(smartconnect_io_M00_AXI_WSTRB),
         .s_axi_wvalid(smartconnect_io_M00_AXI_WVALID),
-        .sin(uart_rx),
-        .sout(test_tx));
+        .tx(test_tx));
+  Block_top_c_counter_binary_0_0 c_counter_binary_0
+       (.CLK(mig_axi_wrapper_0_ui_clk),
+        .Q(c_counter_binary_0_Q));
   Block_top_clk_wiz_0_0 clk_wiz_0
        (.clk_100(clk_wiz_0_clk_100),
         .clk_200(clk_wiz_0_clk_200),
         .clk_in1(clk));
-  Block_top_clk_wiz_1_0 clk_wiz_1
-       (.clk_in1(mig_axi_wrapper_0_ui_clk),
-        .clk_out1(clk_wiz_1_clk_out1));
   Block_top_mig_axi_wrapper_0_0 mig_axi_wrapper_0
        (.aresetn(reset_n),
         .clk_ref_i(clk_wiz_0_clk_200),
@@ -508,6 +545,23 @@ module Block_top
         .M01_AXI_wready(smartconnect_io_M01_AXI_WREADY),
         .M01_AXI_wstrb(smartconnect_io_M01_AXI_WSTRB),
         .M01_AXI_wvalid(smartconnect_io_M01_AXI_WVALID),
+        .M02_AXI_araddr(smartconnect_io_M02_AXI_ARADDR),
+        .M02_AXI_arready(smartconnect_io_M02_AXI_ARREADY),
+        .M02_AXI_arvalid(smartconnect_io_M02_AXI_ARVALID),
+        .M02_AXI_awaddr(smartconnect_io_M02_AXI_AWADDR),
+        .M02_AXI_awready(smartconnect_io_M02_AXI_AWREADY),
+        .M02_AXI_awvalid(smartconnect_io_M02_AXI_AWVALID),
+        .M02_AXI_bready(smartconnect_io_M02_AXI_BREADY),
+        .M02_AXI_bresp(smartconnect_io_M02_AXI_BRESP),
+        .M02_AXI_bvalid(smartconnect_io_M02_AXI_BVALID),
+        .M02_AXI_rdata(smartconnect_io_M02_AXI_RDATA),
+        .M02_AXI_rready(smartconnect_io_M02_AXI_RREADY),
+        .M02_AXI_rresp(smartconnect_io_M02_AXI_RRESP),
+        .M02_AXI_rvalid(smartconnect_io_M02_AXI_RVALID),
+        .M02_AXI_wdata(smartconnect_io_M02_AXI_WDATA),
+        .M02_AXI_wready(smartconnect_io_M02_AXI_WREADY),
+        .M02_AXI_wstrb(smartconnect_io_M02_AXI_WSTRB),
+        .M02_AXI_wvalid(smartconnect_io_M02_AXI_WVALID),
         .S00_AXI_araddr(CPU_block_0_M_AXI_IO_ARADDR),
         .S00_AXI_arprot(CPU_block_0_M_AXI_IO_ARPROT),
         .S00_AXI_arready(CPU_block_0_M_AXI_IO_ARREADY),
@@ -643,16 +697,14 @@ module Block_top
         .IOBUF_IO_O(util_ds_buf_2_IOBUF_IO_O),
         .IOBUF_IO_T(axi_quad_spi_0_sck_t));
   Block_top_util_ds_buf_2_0 util_ds_buf_3
-       (.IOBUF_IO_I({axi_quad_spi_0_ss_t,axi_quad_spi_0_ss_t,axi_quad_spi_0_ss_t,axi_quad_spi_0_ss_t}),
+       (.IOBUF_IO_I(axi_quad_spi_0_ss_o),
         .IOBUF_IO_IO(spi_controller_ss),
         .IOBUF_IO_O(util_ds_buf_3_IOBUF_IO_O),
-        .IOBUF_IO_T(axi_quad_spi_0_ss_o));
+        .IOBUF_IO_T({axi_quad_spi_0_ss_t,axi_quad_spi_0_ss_t,axi_quad_spi_0_ss_t,axi_quad_spi_0_ss_t}));
   Block_top_util_vector_logic_0_0 util_vector_logic_0
        (.Op1(rst_n),
         .Res(rst_in));
   Block_top_util_vector_logic_0_1 util_vector_logic_1
        (.Op1(reset),
         .Res(reset_n));
-  Block_top_xlconstant_0_0 xlconstant_0
-       (.dout(xlconstant_0_dout));
 endmodule

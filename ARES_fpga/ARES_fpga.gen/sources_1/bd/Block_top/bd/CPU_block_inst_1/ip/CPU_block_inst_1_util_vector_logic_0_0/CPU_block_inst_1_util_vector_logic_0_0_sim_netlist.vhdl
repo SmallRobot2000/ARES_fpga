@@ -2,11 +2,11 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Sun Jul 26 21:12:34 2026
+-- Date        : Wed Jul 29 13:30:03 2026
 -- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top CPU_block_inst_1_util_vector_logic_0_0 -prefix
---               CPU_block_inst_1_util_vector_logic_0_0_ CPU_block_util_vector_logic_0_0_sim_netlist.vhdl
--- Design      : CPU_block_util_vector_logic_0_0
+--               CPU_block_inst_1_util_vector_logic_0_0_ CPU_block_inst_1_util_vector_logic_0_0_sim_netlist.vhdl
+-- Design      : CPU_block_inst_1_util_vector_logic_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a35tftg256-2
@@ -101,7 +101,7 @@ entity CPU_block_inst_1_util_vector_logic_0_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of CPU_block_inst_1_util_vector_logic_0_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of CPU_block_inst_1_util_vector_logic_0_0 : entity is "CPU_block_util_vector_logic_0_0,util_vector_logic_v2_0_5_util_vector_logic,{}";
+  attribute CHECK_LICENSE_TYPE of CPU_block_inst_1_util_vector_logic_0_0 : entity is "CPU_block_inst_1_util_vector_logic_0_0,util_vector_logic_v2_0_5_util_vector_logic,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of CPU_block_inst_1_util_vector_logic_0_0 : entity is "yes";
   attribute X_CORE_INFO : string;

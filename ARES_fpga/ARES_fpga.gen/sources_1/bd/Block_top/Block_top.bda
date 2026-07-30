@@ -204,15 +204,24 @@
                 "VT": "VR"
             },
             "V5": {
+                "VH": "7",
+                "VM": "CPU_block",
+                "VT": "VR"
+            },
+            "V6": {
                 "VH": "6",
                 "VT": "PM"
             },
-            "V6": {
+            "V7": {
                 "VH": "10",
                 "VT": "PM",
                 "TU": "active"
             },
-            "V7": {
+            "V8": {
+                "VH": "14",
+                "VT": "PM"
+            },
+            "V9": {
                 "VT": "CX",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
@@ -226,71 +235,85 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V8": {
+            "V10": {
                 "VT": "CX",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MX": "/CPU_block_0",
                 "MI": "M_AXI_IO",
-                "SX": "/axi_uart16550_0",
+                "SX": "/axi_timer_0",
                 "SI": "S_AXI",
                 "MM": "S_AXI",
                 "SS": "Reg",
-                "SV": "xilinx.com:ip:axi_uart16550:2.0",
-                "TM": "both",
-                "TU": "register"
-            },
-            "V9": {
-                "VT": "CX",
-                "BA": "0x00000000",
-                "HA": "0x0FFFFFFF",
-                "BP": "C_BASEADDR",
-                "HP": "C_HIGHADDR",
-                "MX": "/CPU_block_0",
-                "MI": "M_AXI_D",
-                "SX": "/mig_axi_wrapper_0",
-                "SI": "s_axi",
-                "MM": "s_axi",
-                "SS": "reg0",
-                "SV": "xilinx.com:module_ref:mig_axi_wrapper:1.0",
-                "TM": "both",
-                "TU": "register"
-            },
-            "V10": {
-                "VT": "CX",
-                "BA": "0x00000000",
-                "HA": "0x0FFFFFFF",
-                "BP": "C_BASEADDR",
-                "HP": "C_HIGHADDR",
-                "MX": "/CPU_block_0",
-                "MI": "M_AXI_I",
-                "SX": "/mig_axi_wrapper_0",
-                "SI": "s_axi",
-                "MM": "s_axi",
-                "SS": "reg0",
-                "SV": "xilinx.com:module_ref:mig_axi_wrapper:1.0",
+                "SV": "xilinx.com:ip:axi_timer:2.0",
                 "TM": "both",
                 "TU": "register"
             },
             "V11": {
                 "VT": "CX",
-                "BA": "0x00000000",
-                "HA": "0xFFFFFFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MX": "/CPU_block_0",
-                "MI": "M_AXI_D",
-                "SX": "/FLASH_SPI_wrapper_0",
+                "MI": "M_AXI_IO",
+                "SX": "/axi_uartlite_0",
                 "SI": "S_AXI",
                 "MM": "S_AXI",
-                "SS": "reg0",
-                "SV": "xilinx.com:module_ref:FLASH_SPI_wrapper:1.0",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_uartlite:2.0",
                 "TM": "both",
                 "TU": "register"
             },
             "V12": {
                 "VT": "CX",
                 "BA": "0x00000000",
+                "HA": "0x0FFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MX": "/CPU_block_0",
+                "MI": "M_AXI_D",
+                "SX": "/mig_axi_wrapper_0",
+                "SI": "s_axi",
+                "MM": "s_axi",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:mig_axi_wrapper:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V13": {
+                "VT": "CX",
+                "BA": "0x00000000",
+                "HA": "0x0FFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MX": "/CPU_block_0",
+                "MI": "M_AXI_I",
+                "SX": "/mig_axi_wrapper_0",
+                "SI": "s_axi",
+                "MM": "s_axi",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:mig_axi_wrapper:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V14": {
+                "VT": "CX",
+                "BA": "0x00000000",
+                "HA": "0xFFFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MX": "/CPU_block_0",
+                "MI": "M_AXI_D",
+                "SX": "/FLASH_SPI_wrapper_0",
+                "SI": "S_AXI",
+                "MM": "S_AXI",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:FLASH_SPI_wrapper:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V15": {
+                "VT": "CX",
+                "BA": "0x00000000",
                 "HA": "0xFFFFFFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
@@ -304,25 +327,81 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V13": {
+            "V16": {
+                "VT": "AC",
+                "BA": "0x00000000",
+                "HA": "0xFFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "M_AXI_D",
+                "MX": "/CPU_block_0/VexiiRV_wrapper_0",
+                "MI": "M_AXI_D",
+                "MS": "SEG_mig_axi_wrapper_0_reg0",
+                "MV": "xilinx.com:module_ref:VexiiRV_wrapper:1.0",
+                "SX": "/mig_axi_wrapper_0",
+                "SI": "s_axi",
+                "MM": "s_axi",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:mig_axi_wrapper:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V17": {
+                "VT": "AC",
+                "BA": "0x00000000",
+                "HA": "0xFFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "M_AXI_I",
+                "MX": "/CPU_block_0/VexiiRV_wrapper_0",
+                "MI": "M_AXI_I",
+                "MS": "SEG_mig_axi_wrapper_0_reg0",
+                "MV": "xilinx.com:module_ref:VexiiRV_wrapper:1.0",
+                "SX": "/mig_axi_wrapper_0",
+                "SI": "s_axi",
+                "MM": "s_axi",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:mig_axi_wrapper:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V18": {
                 "VT": "AC",
                 "BA": "0x10000000",
+                "HA": "0x10000FFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "M00_AXI",
+                "MX": "/CPU_block_0/CPU_IO_converter_0",
+                "MI": "M00_AXI",
+                "MS": "SEG_axi_uartlite_0_Reg",
+                "MV": "xilinx.com:module_ref:CPU_IO_converter:1.0",
+                "SX": "/axi_uartlite_0",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_uartlite:2.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V19": {
+                "VT": "AC",
+                "BA": "0x10001000",
                 "HA": "0x10001FFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MA": "M00_AXI",
                 "MX": "/CPU_block_0/CPU_IO_converter_0",
                 "MI": "M00_AXI",
-                "MS": "SEG_axi_uart16550_0_Reg",
+                "MS": "SEG_axi_quad_spi_0_Reg",
                 "MV": "xilinx.com:module_ref:CPU_IO_converter:1.0",
-                "SX": "/axi_uart16550_0",
-                "SI": "S_AXI",
+                "SX": "/axi_quad_spi_0",
+                "SI": "AXI_LITE",
                 "SS": "Reg",
-                "SV": "xilinx.com:ip:axi_uart16550:2.0",
+                "SV": "xilinx.com:ip:axi_quad_spi:3.2",
                 "TM": "both",
                 "TU": "register"
             },
-            "V14": {
+            "V20": {
                 "VT": "AC",
                 "BA": "0x10001000",
                 "HA": "0x10001FFF",
@@ -340,25 +419,63 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V15": {
+            "V21": {
                 "VT": "AC",
                 "BA": "0x10002000",
-                "HA": "0x10003FFF",
+                "HA": "0x10002FFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MA": "M00_AXI",
                 "MX": "/CPU_block_0/CPU_IO_converter_0",
                 "MI": "M00_AXI",
-                "MS": "SEG_axi_quad_spi_0_Reg",
+                "MS": "SEG_axi_timer_0_Reg",
                 "MV": "xilinx.com:module_ref:CPU_IO_converter:1.0",
-                "SX": "/axi_quad_spi_0",
-                "SI": "AXI_LITE",
+                "SX": "/axi_timer_0",
+                "SI": "S_AXI",
                 "SS": "Reg",
-                "SV": "xilinx.com:ip:axi_quad_spi:3.2",
+                "SV": "xilinx.com:ip:axi_timer:2.0",
                 "TM": "both",
                 "TU": "register"
             },
-            "V16": {
+            "V22": {
+                "VT": "AC",
+                "BA": "0x44A00000",
+                "HA": "0x44A0FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "M_AXI_D",
+                "MX": "/CPU_block_0/VexiiRV_wrapper_0",
+                "MI": "M_AXI_D",
+                "MS": "SEG_FLASH_SPI_wrapper_0_reg0",
+                "MV": "xilinx.com:module_ref:VexiiRV_wrapper:1.0",
+                "SX": "/FLASH_SPI_wrapper_0",
+                "SI": "S_AXI",
+                "MM": "S_AXI",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:FLASH_SPI_wrapper:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V23": {
+                "VT": "AC",
+                "BA": "0x44A00000",
+                "HA": "0x44A0FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "M_AXI_I",
+                "MX": "/CPU_block_0/VexiiRV_wrapper_0",
+                "MI": "M_AXI_I",
+                "MS": "SEG_FLASH_SPI_wrapper_0_reg0",
+                "MV": "xilinx.com:module_ref:VexiiRV_wrapper:1.0",
+                "SX": "/FLASH_SPI_wrapper_0",
+                "SI": "S_AXI",
+                "MM": "S_AXI",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:FLASH_SPI_wrapper:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V24": {
                 "VT": "AC",
                 "BA": "0x80000000",
                 "HA": "0x8FFFFFFF",
@@ -376,7 +493,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V17": {
+            "V25": {
                 "VT": "AC",
                 "BA": "0x80000000",
                 "HA": "0x8FFFFFFF",
@@ -394,7 +511,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V18": {
+            "V26": {
                 "VT": "AC",
                 "BA": "0x80000000",
                 "HA": "0x8FFFFFFF",
@@ -412,7 +529,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V19": {
+            "V27": {
                 "VT": "AC",
                 "BA": "0x80000000",
                 "HA": "0x8FFFFFFF",
@@ -430,7 +547,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V20": {
+            "V28": {
                 "VT": "AC",
                 "BA": "0x90000000",
                 "HA": "0x9FFFFFFF",
@@ -448,7 +565,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V21": {
+            "V29": {
                 "VT": "AC",
                 "BA": "0x90000000",
                 "HA": "0x9FFFFFFF",
@@ -478,11 +595,7 @@
             },
             {
                 "src": "V0",
-                "trg": "V7"
-            },
-            {
-                "src": "V0",
-                "trg": "V8"
+                "trg": "V5"
             },
             {
                 "src": "V0",
@@ -501,78 +614,130 @@
                 "trg": "V12"
             },
             {
+                "src": "V0",
+                "trg": "V13"
+            },
+            {
+                "src": "V0",
+                "trg": "V14"
+            },
+            {
+                "src": "V0",
+                "trg": "V15"
+            },
+            {
                 "src": "V1",
                 "trg": "V2"
             },
             {
                 "src": "V2",
-                "trg": "V5"
+                "trg": "V6"
             },
             {
                 "src": "V2",
-                "trg": "V6"
+                "trg": "V7"
+            },
+            {
+                "src": "V2",
+                "trg": "V8",
+                "EH": "14"
             },
             {
                 "src": "V3",
-                "trg": "V5"
-            },
-            {
-                "src": "V4",
                 "trg": "V6"
             },
             {
-                "src": "V13",
-                "trg": "V6",
-                "EH": "10"
+                "src": "V4",
+                "trg": "V7"
             },
             {
-                "src": "V14",
-                "trg": "V5",
-                "EH": "6"
-            },
-            {
-                "src": "V15",
-                "trg": "V6",
-                "EH": "10"
+                "src": "V5",
+                "trg": "V8",
+                "EH": "14"
             },
             {
                 "src": "V16",
-                "trg": "V6",
-                "EH": "10"
+                "trg": "V8",
+                "EH": "14"
             },
             {
                 "src": "V17",
-                "trg": "V5",
-                "EH": "6"
+                "trg": "V8",
+                "EH": "14"
             },
             {
                 "src": "V18",
-                "trg": "V6",
+                "trg": "V7",
                 "EH": "10"
             },
             {
                 "src": "V19",
-                "trg": "V5",
-                "EH": "6"
-            },
-            {
-                "src": "V20",
-                "trg": "V5",
-                "EH": "6"
-            },
-            {
-                "src": "V20",
-                "trg": "V6",
+                "trg": "V7",
                 "EH": "10"
             },
             {
-                "src": "V21",
-                "trg": "V5",
+                "src": "V19",
+                "trg": "V8",
+                "EH": "14"
+            },
+            {
+                "src": "V20",
+                "trg": "V6",
                 "EH": "6"
             },
             {
                 "src": "V21",
+                "trg": "V7",
+                "EH": "10"
+            },
+            {
+                "src": "V22",
+                "trg": "V8",
+                "EH": "14"
+            },
+            {
+                "src": "V23",
+                "trg": "V8",
+                "EH": "14"
+            },
+            {
+                "src": "V24",
+                "trg": "V7",
+                "EH": "10"
+            },
+            {
+                "src": "V25",
                 "trg": "V6",
+                "EH": "6"
+            },
+            {
+                "src": "V26",
+                "trg": "V7",
+                "EH": "10"
+            },
+            {
+                "src": "V27",
+                "trg": "V6",
+                "EH": "6"
+            },
+            {
+                "src": "V28",
+                "trg": "V6",
+                "EH": "6"
+            },
+            {
+                "src": "V28",
+                "trg": "V7",
+                "EH": "10"
+            },
+            {
+                "src": "V29",
+                "trg": "V6",
+                "EH": "6"
+            },
+            {
+                "src": "V29",
+                "trg": "V7",
                 "EH": "10"
             }
         ]

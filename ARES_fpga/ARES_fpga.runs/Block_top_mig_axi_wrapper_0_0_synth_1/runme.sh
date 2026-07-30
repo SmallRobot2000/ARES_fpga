@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_mig_axi_wrapper_0_0_synth_1'
+HD_PWD='/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_mig_axi_wrapper_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

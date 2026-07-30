@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/CPU_block_inst_1_CPU_IO_converter_0_0_synth_1/CPU_block_inst_1_CPU_IO_converter_0_0.tcl"
+  variable script "/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/CPU_block_inst_1_CPU_IO_converter_0_0_synth_1/CPU_block_inst_1_CPU_IO_converter_0_0.tcl"
   variable category "vivado_synth"
 }
 
@@ -57,23 +57,20 @@ if {$::dispatch::connected} {
 
 OPTRACE "CPU_block_inst_1_CPU_IO_converter_0_0_synth_1" START { ROLLUP_AUTO }
 set_param bd.open.in_stealth_mode 3
-set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 3
-set_param tcl.statsThreshold 360
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
-set_param ips.modRefOverrideMrefDirPath {{/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/mref}}
+set_param ips.modRefOverrideMrefDirPath /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/mref
 create_project -in_memory -part xc7a35tftg256-2
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.cache/wt} [current_project]
-set_property parent.project_path {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.xpr} [current_project]
+set_property webtalk.parent_dir /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.cache/wt [current_project]
+set_property parent.project_path /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
@@ -83,12 +80,12 @@ set_property ip_repo_paths {
   {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0}
 } [current_project]
 update_ip_catalog
-set_property ip_output_repo {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.cache/ip} [current_project]
+set_property ip_output_repo /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib {{/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.srcs/sources_1/new/CPU_IO_converter.v}}
-read_ip -quiet {{/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0.xci}}
+read_verilog -library xil_defaultlib /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/CPU_IO_converter.v
+read_ip -quiet /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -121,45 +118,45 @@ generate_parallel_reports -reports { "report_utilization -file CPU_block_inst_1_
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/CPU_block_inst_1_CPU_IO_converter_0_0_synth_1/CPU_block_inst_1_CPU_IO_converter_0_0.dcp} {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0.dcp}
+  file copy -force /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/CPU_block_inst_1_CPU_IO_converter_0_0_synth_1/CPU_block_inst_1_CPU_IO_converter_0_0.dcp /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.v}
+  write_verilog -force -mode synth_stub /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.vhdl}
+  write_vhdl -force -mode synth_stub /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_sim_netlist.v}
+  write_verilog -force -mode funcsim /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_sim_netlist.vhdl}
+  write_vhdl -force -mode funcsim /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
-if {[file isdir {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.ip_user_files/ip/CPU_block_inst_1_CPU_IO_converter_0_0}]} {
+if {[file isdir /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/ip/CPU_block_inst_1_CPU_IO_converter_0_0]} {
   catch { 
-    file copy -force {{/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.v}} {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.ip_user_files/ip/CPU_block_inst_1_CPU_IO_converter_0_0}
+    file copy -force /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.v /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/ip/CPU_block_inst_1_CPU_IO_converter_0_0
   }
 }
 
-if {[file isdir {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.ip_user_files/ip/CPU_block_inst_1_CPU_IO_converter_0_0}]} {
+if {[file isdir /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/ip/CPU_block_inst_1_CPU_IO_converter_0_0]} {
   catch { 
-    file copy -force {{/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.vhdl}} {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.ip_user_files/ip/CPU_block_inst_1_CPU_IO_converter_0_0}
+    file copy -force /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0_stub.vhdl /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/ip/CPU_block_inst_1_CPU_IO_converter_0_0
   }
 }
 file delete __synthesis_is_running__

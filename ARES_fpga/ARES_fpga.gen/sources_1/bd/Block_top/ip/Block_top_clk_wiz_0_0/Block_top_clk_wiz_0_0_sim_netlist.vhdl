@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Sat Jul 25 21:22:50 2026
+-- Date        : Wed Jul 29 23:02:54 2026
 -- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
--- Command     : write_vhdl -force -mode funcsim -rename_top Block_top_clk_wiz_0_0 -prefix
---               Block_top_clk_wiz_0_0_ Block_top_clk_wiz_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_clk_wiz_0_0/Block_top_clk_wiz_0_0_sim_netlist.vhdl
 -- Design      : Block_top_clk_wiz_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,17 +15,17 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz is
+entity Block_top_clk_wiz_0_0_clk_wiz is
   port (
     clk_100 : out STD_LOGIC;
     clk_200 : out STD_LOGIC;
+    clk_6_25 : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-end Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz;
+end Block_top_clk_wiz_0_0_clk_wiz;
 
-architecture STRUCTURE of Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz is
+architecture STRUCTURE of Block_top_clk_wiz_0_0_clk_wiz is
   signal clk_100_Block_top_clk_wiz_0_0 : STD_LOGIC;
-  signal clk_200_Block_top_clk_wiz_0_0 : STD_LOGIC;
   signal clk_in1_Block_top_clk_wiz_0_0 : STD_LOGIC;
   signal clkfbout_Block_top_clk_wiz_0_0 : STD_LOGIC;
   signal clkfbout_buf_Block_top_clk_wiz_0_0 : STD_LOGIC;
@@ -34,7 +34,6 @@ architecture STRUCTURE of Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz is
   signal NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED : STD_LOGIC;
@@ -55,7 +54,6 @@ architecture STRUCTURE of Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz is
   attribute IFD_DELAY_VALUE : string;
   attribute IFD_DELAY_VALUE of clkin1_ibufg : label is "AUTO";
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
 begin
 clkf_buf: unisim.vcomponents.BUFG
@@ -76,28 +74,23 @@ clkout1_buf: unisim.vcomponents.BUFG
       I => clk_100_Block_top_clk_wiz_0_0,
       O => clk_100
     );
-clkout2_buf: unisim.vcomponents.BUFG
-     port map (
-      I => clk_200_Block_top_clk_wiz_0_0,
-      O => clk_200
-    );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
-      CLKFBOUT_MULT_F => 10.000000,
+      CLKFBOUT_MULT_F => 8.000000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 10.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 10.000000,
+      CLKOUT0_DIVIDE_F => 8.000000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
-      CLKOUT1_DIVIDE => 5,
+      CLKOUT1_DIVIDE => 4,
       CLKOUT1_DUTY_CYCLE => 0.500000,
       CLKOUT1_PHASE => 0.000000,
       CLKOUT1_USE_FINE_PS => false,
-      CLKOUT2_DIVIDE => 1,
+      CLKOUT2_DIVIDE => 128,
       CLKOUT2_DUTY_CYCLE => 0.500000,
       CLKOUT2_PHASE => 0.000000,
       CLKOUT2_USE_FINE_PS => false,
@@ -143,9 +136,9 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKINSTOPPED => NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED,
       CLKOUT0 => clk_100_Block_top_clk_wiz_0_0,
       CLKOUT0B => NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED,
-      CLKOUT1 => clk_200_Block_top_clk_wiz_0_0,
+      CLKOUT1 => clk_200,
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
-      CLKOUT2 => NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED,
+      CLKOUT2 => clk_6_25,
       CLKOUT2B => NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED,
       CLKOUT3 => NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED,
       CLKOUT3B => NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED,
@@ -176,6 +169,7 @@ entity Block_top_clk_wiz_0_0 is
   port (
     clk_100 : out STD_LOGIC;
     clk_200 : out STD_LOGIC;
+    clk_6_25 : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -184,10 +178,11 @@ end Block_top_clk_wiz_0_0;
 
 architecture STRUCTURE of Block_top_clk_wiz_0_0 is
 begin
-inst: entity work.Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz
+inst: entity work.Block_top_clk_wiz_0_0_clk_wiz
      port map (
       clk_100 => clk_100,
       clk_200 => clk_200,
+      clk_6_25 => clk_6_25,
       clk_in1 => clk_in1
     );
 end STRUCTURE;

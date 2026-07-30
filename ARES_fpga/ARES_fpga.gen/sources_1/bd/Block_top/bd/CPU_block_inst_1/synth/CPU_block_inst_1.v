@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Tue Jul 28 14:22:30 2026
+//Date        : Wed Jul 29 23:50:06 2026
 //Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target CPU_block_inst_1.bd
 //Design      : CPU_block_inst_1
@@ -80,7 +80,8 @@ module CPU_block_inst_1
     M_AXI_I_rresp,
     M_AXI_I_rvalid,
     clk,
-    cpu_int_ext,
+    cpi_int_s_ext,
+    cpu_int_m_ext,
     cpu_int_soft,
     cpu_int_timer,
     cpu_rdtime,
@@ -118,7 +119,7 @@ module CPU_block_inst_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_D WREADY" *) input M_AXI_D_wready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_D WSTRB" *) output [3:0]M_AXI_D_wstrb;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_D WVALID" *) output M_AXI_D_wvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_IO ARADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXI_IO, ADDR_WIDTH 32, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.0, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BIT S_PER_BYTE 0, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WIZ_DATA_WIDTH 32, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) output [31:0]M_AXI_IO_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_IO ARADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXI_IO, ADDR_WIDTH 32, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.0, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) output [31:0]M_AXI_IO_araddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_IO ARPROT" *) output [2:0]M_AXI_IO_arprot;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_IO ARREADY" *) input M_AXI_IO_arready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_IO ARVALID" *) output M_AXI_IO_arvalid;
@@ -153,7 +154,8 @@ module CPU_block_inst_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_I RRESP" *) input [1:0]M_AXI_I_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_I RVALID" *) input M_AXI_I_rvalid;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF M_AXI_D:M_AXI_I:M_AXI_IO, ASSOCIATED_RESET reset, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
-  input cpu_int_ext;
+  input cpi_int_s_ext;
+  input cpu_int_m_ext;
   input cpu_int_soft;
   input cpu_int_timer;
   input [63:0]cpu_rdtime;
@@ -240,7 +242,8 @@ module CPU_block_inst_1
   wire VexiiRV_wrapper_0_cpu_axi_io_cmd_valid;
   wire VexiiRV_wrapper_0_cpu_axi_io_cmd_wite;
   wire clk;
-  wire cpu_int_ext;
+  wire cpi_int_s_ext;
+  wire cpu_int_m_ext;
   wire cpu_int_soft;
   wire cpu_int_timer;
   wire [63:0]cpu_rdtime;
@@ -284,6 +287,7 @@ module CPU_block_inst_1
         .m00_axi_wvalid(M_AXI_IO_wvalid));
   CPU_block_inst_1_VexiiRV_wrapper_0_0 VexiiRV_wrapper_0
        (.clk(clk),
+        .cpi_int_s_ext(cpi_int_s_ext),
         .cpu_axi_d_araddr(M_AXI_D_araddr),
         .cpu_axi_d_arburst(M_AXI_D_arburst),
         .cpu_axi_d_arcache(M_AXI_D_arcache),
@@ -345,7 +349,7 @@ module CPU_block_inst_1
         .cpu_axi_io_rsp_din(CPU_IO_converter_0_cpu_io_rsp_din),
         .cpu_axi_io_rsp_error(CPU_IO_converter_0_cpu_io_rsp_error),
         .cpu_axi_io_rsp_valid(CPU_IO_converter_0_cpu_io_rsp_valid),
-        .cpu_int_ext(cpu_int_ext),
+        .cpu_int_m_ext(cpu_int_m_ext),
         .cpu_int_soft(cpu_int_soft),
         .cpu_int_timer(cpu_int_timer),
         .cpu_rdtime(cpu_rdtime),

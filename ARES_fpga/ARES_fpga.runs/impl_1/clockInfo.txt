@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2025.2
-| Date         : Tue Jul 28 15:03:46 2026
+| Date         : Wed Jul 29 23:53:20 2026
 | Host         : lovroRadiona
 | Design       : design_1
 | Device       : xc7a35t-ftg256-2--

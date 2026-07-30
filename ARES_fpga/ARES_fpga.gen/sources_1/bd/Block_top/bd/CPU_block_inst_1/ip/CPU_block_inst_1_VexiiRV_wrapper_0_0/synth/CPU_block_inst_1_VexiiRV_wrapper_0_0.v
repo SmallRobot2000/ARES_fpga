@@ -61,7 +61,8 @@ module CPU_block_inst_1_VexiiRV_wrapper_0_0 (
   cpu_rdtime,
   cpu_int_timer,
   cpu_int_soft,
-  cpu_int_ext,
+  cpu_int_m_ext,
+  cpi_int_s_ext,
   cpu_axi_d_awvalid,
   cpu_axi_d_awready,
   cpu_axi_d_awaddr,
@@ -136,7 +137,8 @@ input wire reset;
 input wire [63 : 0] cpu_rdtime;
 input wire cpu_int_timer;
 input wire cpu_int_soft;
-input wire cpu_int_ext;
+input wire cpu_int_m_ext;
+input wire cpi_int_s_ext;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_D AWVALID" *)
 (* X_INTERFACE_MODE = "master" *)
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXI_D, PROTOCOL AXI4, DATA_WIDTH 32, FREQ_HZ 100000000, ID_WIDTH 1, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 256, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, NUM_READ_THREADS 1, NU\
@@ -259,7 +261,8 @@ input wire [31 : 0] cpu_axi_io_rsp_din;
     .cpu_rdtime(cpu_rdtime),
     .cpu_int_timer(cpu_int_timer),
     .cpu_int_soft(cpu_int_soft),
-    .cpu_int_ext(cpu_int_ext),
+    .cpu_int_m_ext(cpu_int_m_ext),
+    .cpi_int_s_ext(cpi_int_s_ext),
     .cpu_axi_d_awvalid(cpu_axi_d_awvalid),
     .cpu_axi_d_awready(cpu_axi_d_awready),
     .cpu_axi_d_awaddr(cpu_axi_d_awaddr),

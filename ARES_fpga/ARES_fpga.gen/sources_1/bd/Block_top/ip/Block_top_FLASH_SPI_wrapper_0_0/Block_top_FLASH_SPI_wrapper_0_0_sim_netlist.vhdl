@@ -2,11 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Jul 27 16:30:13 2026
+-- Date        : Wed Jul 29 23:02:50 2026
 -- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
--- Command     : write_vhdl -force -mode funcsim {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry
---               AMIX_RISCV/Alchitry
---               AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_FLASH_SPI_wrapper_0_0/Block_top_FLASH_SPI_wrapper_0_0_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_FLASH_SPI_wrapper_0_0/Block_top_FLASH_SPI_wrapper_0_0_sim_netlist.vhdl
 -- Design      : Block_top_FLASH_SPI_wrapper_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

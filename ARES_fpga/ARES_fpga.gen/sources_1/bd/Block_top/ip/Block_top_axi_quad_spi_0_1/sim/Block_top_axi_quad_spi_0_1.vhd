@@ -242,7 +242,7 @@ ARCHITECTURE Block_top_axi_quad_spi_0_1_arch OF Block_top_axi_quad_spi_0_1 IS
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF ext_spi_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 spi_clk CLK";
   ATTRIBUTE X_INTERFACE_MODE OF ext_spi_clk: SIGNAL IS "slave spi_clk";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF ext_spi_clk: SIGNAL IS "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ext_spi_clk: SIGNAL IS "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF io0_i: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 IO0_I";
   ATTRIBUTE X_INTERFACE_MODE OF io0_i: SIGNAL IS "master SPI_0";
   ATTRIBUTE X_INTERFACE_PARAMETER OF io0_i: SIGNAL IS "XIL_INTERFACENAME SPI_0, BOARD.ASSOCIATED_PARAM QSPI_BOARD_INTERFACE";
@@ -289,7 +289,7 @@ ARCHITECTURE Block_top_axi_quad_spi_0_1_arch OF Block_top_axi_quad_spi_0_1 IS
 BEGIN
   U0 : axi_quad_spi
     GENERIC MAP (
-      Async_Clk => 1,
+      Async_Clk => 0,
       C_FAMILY => "artix7",
       C_SELECT_XPM => 0,
       C_SUB_FAMILY => "artix7",
@@ -301,7 +301,7 @@ BEGIN
       C_BYTE_LEVEL_INTERRUPT_EN => 0,
       C_UC_FAMILY => 0,
       C_FIFO_DEPTH => 16,
-      C_SCK_RATIO => 2,
+      C_SCK_RATIO => 4,
       C_DUAL_QUAD_MODE => 0,
       C_NUM_SS_BITS => 4,
       C_NUM_TRANSFER_BITS => 8,

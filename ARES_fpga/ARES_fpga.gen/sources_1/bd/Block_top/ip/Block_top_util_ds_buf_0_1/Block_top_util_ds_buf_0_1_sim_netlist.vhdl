@@ -2,11 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Jul 27 19:00:35 2026
+-- Date        : Wed Jul 29 17:25:19 2026
 -- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
--- Command     : write_vhdl -force -mode funcsim {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry
---               AMIX_RISCV/Alchitry
---               AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_0_1/Block_top_util_ds_buf_0_1_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim -rename_top Block_top_util_ds_buf_0_1 -prefix
+--               Block_top_util_ds_buf_0_1_ Block_top_util_ds_buf_0_1_sim_netlist.vhdl
 -- Design      : Block_top_util_ds_buf_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -185,8 +184,6 @@ entity Block_top_util_ds_buf_0_1_util_ds_buf is
   attribute C_SIM_DEVICE of Block_top_util_ds_buf_0_1_util_ds_buf : entity is "VERSAL_AI_CORE_ES1";
   attribute C_SIZE : integer;
   attribute C_SIZE of Block_top_util_ds_buf_0_1_util_ds_buf : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Block_top_util_ds_buf_0_1_util_ds_buf : entity is "util_ds_buf";
 end Block_top_util_ds_buf_0_1_util_ds_buf;
 
 architecture STRUCTURE of Block_top_util_ds_buf_0_1_util_ds_buf is

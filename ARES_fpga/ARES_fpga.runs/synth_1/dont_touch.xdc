@@ -33,12 +33,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_s
 # IP: bd/Block_top/ip/Block_top_FLASH_SPI_wrapper_0_0/Block_top_FLASH_SPI_wrapper_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_FLASH_SPI_wrapper_0_0 || ORIG_REF_NAME==Block_top_FLASH_SPI_wrapper_0_0} -quiet] -quiet
 
-# IP: bd/Block_top/ip/Block_top_axi_uart16550_0_0/Block_top_axi_uart16550_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_uart16550_0_0 || ORIG_REF_NAME==Block_top_axi_uart16550_0_0} -quiet] -quiet
-
-# IP: bd/Block_top/ip/Block_top_xlconstant_0_0/Block_top_xlconstant_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_xlconstant_0_0 || ORIG_REF_NAME==Block_top_xlconstant_0_0} -quiet] -quiet
-
 # IP: bd/Block_top/ip/Block_top_smartconnect_0_1/Block_top_smartconnect_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_smartconnect_0_1 || ORIG_REF_NAME==Block_top_smartconnect_0_1} -quiet] -quiet
 
@@ -48,9 +42,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_u
 # IP: bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_quad_spi_0_1 || ORIG_REF_NAME==Block_top_axi_quad_spi_0_1} -quiet] -quiet
 
-# IP: bd/Block_top/ip/Block_top_clk_wiz_1_0/Block_top_clk_wiz_1_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_clk_wiz_1_0 || ORIG_REF_NAME==Block_top_clk_wiz_1_0} -quiet] -quiet
-
 # IP: bd/Block_top/ip/Block_top_util_ds_buf_0_1/Block_top_util_ds_buf_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_util_ds_buf_0_1 || ORIG_REF_NAME==Block_top_util_ds_buf_0_1} -quiet] -quiet
 
@@ -59,5 +50,14 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_u
 
 # IP: bd/Block_top/ip/Block_top_util_ds_buf_2_0/Block_top_util_ds_buf_2_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_util_ds_buf_2_0 || ORIG_REF_NAME==Block_top_util_ds_buf_2_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_uartlite_0_0/Block_top_axi_uartlite_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_uartlite_0_0 || ORIG_REF_NAME==Block_top_axi_uartlite_0_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_c_counter_binary_0_0/Block_top_c_counter_binary_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_c_counter_binary_0_0 || ORIG_REF_NAME==Block_top_c_counter_binary_0_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_timer_0_0/Block_top_axi_timer_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_timer_0_0 || ORIG_REF_NAME==Block_top_axi_timer_0_0} -quiet] -quiet
 
 # XDC: /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc

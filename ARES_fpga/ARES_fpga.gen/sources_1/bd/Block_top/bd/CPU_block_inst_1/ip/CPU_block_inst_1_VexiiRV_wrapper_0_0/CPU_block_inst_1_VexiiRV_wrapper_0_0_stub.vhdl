@@ -2,11 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Jul 27 16:30:57 2026
+-- Date        : Wed Jul 29 23:03:39 2026
 -- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
--- Command     : write_vhdl -force -mode synth_stub {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry
---               AMIX_RISCV/Alchitry
---               AMIX_RISCV.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_VexiiRV_wrapper_0_0/CPU_block_inst_1_VexiiRV_wrapper_0_0_stub.vhdl}
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/bd/CPU_block_inst_1/ip/CPU_block_inst_1_VexiiRV_wrapper_0_0/CPU_block_inst_1_VexiiRV_wrapper_0_0_stub.vhdl
 -- Design      : CPU_block_inst_1_VexiiRV_wrapper_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tftg256-2
@@ -21,7 +20,8 @@ entity CPU_block_inst_1_VexiiRV_wrapper_0_0 is
     cpu_rdtime : in STD_LOGIC_VECTOR ( 63 downto 0 );
     cpu_int_timer : in STD_LOGIC;
     cpu_int_soft : in STD_LOGIC;
-    cpu_int_ext : in STD_LOGIC;
+    cpu_int_m_ext : in STD_LOGIC;
+    cpi_int_s_ext : in STD_LOGIC;
     cpu_axi_d_awvalid : out STD_LOGIC;
     cpu_axi_d_awready : in STD_LOGIC;
     cpu_axi_d_awaddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -99,7 +99,7 @@ architecture stub of CPU_block_inst_1_VexiiRV_wrapper_0_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "clk,reset,cpu_rdtime[63:0],cpu_int_timer,cpu_int_soft,cpu_int_ext,cpu_axi_d_awvalid,cpu_axi_d_awready,cpu_axi_d_awaddr[31:0],cpu_axi_d_awid[0:0],cpu_axi_d_awlen[7:0],cpu_axi_d_awsize[2:0],cpu_axi_d_awburst[1:0],cpu_axi_d_awcache[3:0],cpu_axi_d_awprot[2:0],cpu_axi_d_wvalid,cpu_axi_d_wready,cpu_axi_d_wdata[31:0],cpu_axi_d_wstrb[3:0],cpu_axi_d_wlast,cpu_axi_d_bvalid,cpu_axi_d_bready,cpu_axi_d_bid[0:0],cpu_axi_d_bresp[1:0],cpu_axi_d_arvalid,cpu_axi_d_arready,cpu_axi_d_araddr[31:0],cpu_axi_d_arid[0:0],cpu_axi_d_arlen[7:0],cpu_axi_d_arsize[2:0],cpu_axi_d_arburst[1:0],cpu_axi_d_arcache[3:0],cpu_axi_d_arprot[2:0],cpu_axi_d_rvalid,cpu_axi_d_rready,cpu_axi_d_rdata[31:0],cpu_axi_d_rid[0:0],cpu_axi_d_rresp[1:0],cpu_axi_d_rlast,cpu_axi_i_ar_valid,cpu_axi_i_ar_ready,cpu_axi_i_ar_addr[31:0],cpu_axi_i_ar_id,cpu_axi_i_ar_len[7:0],cpu_axi_i_ar_size[2:0],cpu_axi_i_ar_burst[1:0],cpu_axi_i_ar_cache[3:0],cpu_axi_i_ar_prot[2:0],cpu_axi_i_r_valid,cpu_axi_i_r_ready,cpu_axi_i_r_data[31:0],cpu_axi_i_r_id,cpu_axi_i_r_resp[1:0],cpu_axi_i_r_last,cpu_axi_io_cmd_valid,cpu_axi_io_cmd_ready,cpu_axi_io_cmd_write,cpu_axi_io_cmd_addr[31:0],cpu_axi_io_cmd_dout[31:0],cpu_axi_io_cmd_size[1:0],cpu_axi_io_cmd_mask[3:0],cpu_axi_io_cmd_io,cpu_axi_io_cmd_fromHart,cpu_axi_io_cmd_uopId[15:0],cpu_axi_io_rsp_valid,cpu_axi_io_rsp_error,cpu_axi_io_rsp_din[31:0]";
+  attribute black_box_pad_pin of stub : architecture is "clk,reset,cpu_rdtime[63:0],cpu_int_timer,cpu_int_soft,cpu_int_m_ext,cpi_int_s_ext,cpu_axi_d_awvalid,cpu_axi_d_awready,cpu_axi_d_awaddr[31:0],cpu_axi_d_awid[0:0],cpu_axi_d_awlen[7:0],cpu_axi_d_awsize[2:0],cpu_axi_d_awburst[1:0],cpu_axi_d_awcache[3:0],cpu_axi_d_awprot[2:0],cpu_axi_d_wvalid,cpu_axi_d_wready,cpu_axi_d_wdata[31:0],cpu_axi_d_wstrb[3:0],cpu_axi_d_wlast,cpu_axi_d_bvalid,cpu_axi_d_bready,cpu_axi_d_bid[0:0],cpu_axi_d_bresp[1:0],cpu_axi_d_arvalid,cpu_axi_d_arready,cpu_axi_d_araddr[31:0],cpu_axi_d_arid[0:0],cpu_axi_d_arlen[7:0],cpu_axi_d_arsize[2:0],cpu_axi_d_arburst[1:0],cpu_axi_d_arcache[3:0],cpu_axi_d_arprot[2:0],cpu_axi_d_rvalid,cpu_axi_d_rready,cpu_axi_d_rdata[31:0],cpu_axi_d_rid[0:0],cpu_axi_d_rresp[1:0],cpu_axi_d_rlast,cpu_axi_i_ar_valid,cpu_axi_i_ar_ready,cpu_axi_i_ar_addr[31:0],cpu_axi_i_ar_id,cpu_axi_i_ar_len[7:0],cpu_axi_i_ar_size[2:0],cpu_axi_i_ar_burst[1:0],cpu_axi_i_ar_cache[3:0],cpu_axi_i_ar_prot[2:0],cpu_axi_i_r_valid,cpu_axi_i_r_ready,cpu_axi_i_r_data[31:0],cpu_axi_i_r_id,cpu_axi_i_r_resp[1:0],cpu_axi_i_r_last,cpu_axi_io_cmd_valid,cpu_axi_io_cmd_ready,cpu_axi_io_cmd_write,cpu_axi_io_cmd_addr[31:0],cpu_axi_io_cmd_dout[31:0],cpu_axi_io_cmd_size[1:0],cpu_axi_io_cmd_mask[3:0],cpu_axi_io_cmd_io,cpu_axi_io_cmd_fromHart,cpu_axi_io_cmd_uopId[15:0],cpu_axi_io_rsp_valid,cpu_axi_io_rsp_error,cpu_axi_io_rsp_din[31:0]";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 CLK CLK";
   attribute X_INTERFACE_MODE : string;

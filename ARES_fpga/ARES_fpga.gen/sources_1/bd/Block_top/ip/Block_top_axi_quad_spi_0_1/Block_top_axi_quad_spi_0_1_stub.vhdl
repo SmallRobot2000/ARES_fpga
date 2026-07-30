@@ -2,11 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Jul 27 19:00:49 2026
+-- Date        : Wed Jul 29 23:49:19 2026
 -- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
--- Command     : write_vhdl -force -mode synth_stub {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry
---               AMIX_RISCV/Alchitry
---               AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_stub.vhdl}
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_stub.vhdl
 -- Design      : Block_top_axi_quad_spi_0_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tftg256-2
@@ -54,7 +53,7 @@ entity Block_top_axi_quad_spi_0_1 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of Block_top_axi_quad_spi_0_1 : entity is "Block_top_axi_quad_spi_0_1,axi_quad_spi,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of Block_top_axi_quad_spi_0_1 : entity is "Block_top_axi_quad_spi_0_1,axi_quad_spi,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_quad_spi,x_ipVersion=3.2,x_ipCoreRevision=35,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,Async_Clk=1,C_FAMILY=artix7,C_SELECT_XPM=0,C_SUB_FAMILY=artix7,C_INSTANCE=axi_quad_spi_inst,C_SPI_MEM_ADDR_BITS=24,C_TYPE_OF_AXI4_INTERFACE=0,C_XIP_MODE=0,C_XIP_PERF_MODE=1,C_BYTE_LEVEL_INTERRUPT_EN=0,C_UC_FAMILY=0,C_FIFO_DEPTH=16,C_SCK_RATIO=2,C_DUAL_QUAD_MODE=0,C_NUM_SS_BITS=4,C_NUM_TRANSFER_BITS=8,C_NEW_SEQ_EN=1,C_SPI_MODE=0,C_USE_STARTUP=0,C_USE_STARTUP_EXT=0,C_SPI_MEMORY=1,C_S_AXI_ADDR_WIDTH=7,C_S_AXI_DATA_WIDTH=32,C_S_AXI4_ADDR_WIDTH=24,C_S_AXI4_DATA_WIDTH=32,C_S_AXI4_ID_WIDTH=4,C_SHARED_STARTUP=0,C_S_AXI4_BASEADDR=0xFFFFFFFF,C_S_AXI4_HIGHADDR=0x00000000,C_LSB_STUP=0}";
+  attribute core_generation_info of Block_top_axi_quad_spi_0_1 : entity is "Block_top_axi_quad_spi_0_1,axi_quad_spi,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_quad_spi,x_ipVersion=3.2,x_ipCoreRevision=35,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,Async_Clk=0,C_FAMILY=artix7,C_SELECT_XPM=0,C_SUB_FAMILY=artix7,C_INSTANCE=axi_quad_spi_inst,C_SPI_MEM_ADDR_BITS=24,C_TYPE_OF_AXI4_INTERFACE=0,C_XIP_MODE=0,C_XIP_PERF_MODE=1,C_BYTE_LEVEL_INTERRUPT_EN=0,C_UC_FAMILY=0,C_FIFO_DEPTH=16,C_SCK_RATIO=4,C_DUAL_QUAD_MODE=0,C_NUM_SS_BITS=4,C_NUM_TRANSFER_BITS=8,C_NEW_SEQ_EN=1,C_SPI_MODE=0,C_USE_STARTUP=0,C_USE_STARTUP_EXT=0,C_SPI_MEMORY=1,C_S_AXI_ADDR_WIDTH=7,C_S_AXI_DATA_WIDTH=32,C_S_AXI4_ADDR_WIDTH=24,C_S_AXI4_DATA_WIDTH=32,C_S_AXI4_ID_WIDTH=4,C_SHARED_STARTUP=0,C_S_AXI4_BASEADDR=0xFFFFFFFF,C_S_AXI4_HIGHADDR=0x00000000,C_LSB_STUP=0}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of Block_top_axi_quad_spi_0_1 : entity is "yes";
 end Block_top_axi_quad_spi_0_1;
@@ -69,7 +68,7 @@ architecture stub of Block_top_axi_quad_spi_0_1 is
   attribute x_interface_mode : string;
   attribute x_interface_mode of ext_spi_clk : signal is "slave spi_clk";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of ext_spi_clk : signal is "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0";
+  attribute x_interface_parameter of ext_spi_clk : signal is "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, INSERT_VIP 0";
   attribute x_interface_info of s_axi_aclk : signal is "xilinx.com:signal:clock:1.0 lite_clk CLK";
   attribute x_interface_mode of s_axi_aclk : signal is "slave lite_clk";
   attribute x_interface_parameter of s_axi_aclk : signal is "XIL_INTERFACENAME lite_clk, ASSOCIATED_BUSIF AXI_LITE, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, INSERT_VIP 0";

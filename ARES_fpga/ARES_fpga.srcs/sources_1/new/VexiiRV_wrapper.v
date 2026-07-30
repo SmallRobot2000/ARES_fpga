@@ -33,8 +33,8 @@ module VexiiRV_wrapper(
     input   [63:0] cpu_rdtime,
     input          cpu_int_timer,
     input          cpu_int_soft,
-    input          cpu_int_ext,
-
+    input          cpu_int_m_ext,
+    input          cpi_int_s_ext,
     //Data BUS
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXI_D, PROTOCOL AXI4, DATA_WIDTH 32, FREQ_HZ 100000000" *)
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_D AWVALID" *)
@@ -276,7 +276,8 @@ VexiiRiscv CPU(
    .PrivilegedPlugin_logic_rdtime(cpu_rdtime),                       //input    wire [63:0]   
    .PrivilegedPlugin_logic_harts_0_int_m_timer(cpu_int_timer),          //input    wire          
    .PrivilegedPlugin_logic_harts_0_int_m_software(cpu_int_soft),       //input    wire          
-   .PrivilegedPlugin_logic_harts_0_int_m_external(cpu_int_ext),       //input    wire          
+   .PrivilegedPlugin_logic_harts_0_int_m_external(cpu_int_m_ext),       //input    wire   
+   .PrivilegedPlugin_logic_harts_0_int_s_external(cpu_int_s_ext),       //input    wire          
    .LsuL1Axi4Plugin_logic_axi_aw_valid(cpu_axi_d_awvalid),                  //output   wire          
    .LsuL1Axi4Plugin_logic_axi_aw_ready(cpu_axi_d_awready),                  //input    wire          
    .LsuL1Axi4Plugin_logic_axi_aw_payload_addr(cpu_axi_d_awaddr),           //output   wire [31:0]   

@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Sat Jul 25 21:22:49 2026
+// Date        : Wed Jul 29 23:02:54 2026
 // Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
-// Command     : write_verilog -force -mode funcsim -rename_top Block_top_clk_wiz_0_0 -prefix
-//               Block_top_clk_wiz_0_0_ Block_top_clk_wiz_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_clk_wiz_0_0/Block_top_clk_wiz_0_0_sim_netlist.v
 // Design      : Block_top_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,33 +17,39 @@
 module Block_top_clk_wiz_0_0
    (clk_100,
     clk_200,
+    clk_6_25,
     clk_in1);
   output clk_100;
   output clk_200;
+  output clk_6_25;
   input clk_in1;
 
   wire clk_100;
   wire clk_200;
+  wire clk_6_25;
   (* IBUF_LOW_PWR *) wire clk_in1;
 
-  Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz inst
+  Block_top_clk_wiz_0_0_clk_wiz inst
        (.clk_100(clk_100),
         .clk_200(clk_200),
+        .clk_6_25(clk_6_25),
         .clk_in1(clk_in1));
 endmodule
 
-module Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz
+module Block_top_clk_wiz_0_0_clk_wiz
    (clk_100,
     clk_200,
+    clk_6_25,
     clk_in1);
   output clk_100;
   output clk_200;
+  output clk_6_25;
   input clk_in1;
 
   wire clk_100;
   wire clk_100_Block_top_clk_wiz_0_0;
   wire clk_200;
-  wire clk_200_Block_top_clk_wiz_0_0;
+  wire clk_6_25;
   wire clk_in1;
   wire clk_in1_Block_top_clk_wiz_0_0;
   wire clkfbout_Block_top_clk_wiz_0_0;
@@ -53,7 +59,6 @@ module Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
@@ -83,26 +88,22 @@ module Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz
        (.I(clk_100_Block_top_clk_wiz_0_0),
         .O(clk_100));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout2_buf
-       (.I(clk_200_Block_top_clk_wiz_0_0),
-        .O(clk_200));
-  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(10.000000),
+    .CLKFBOUT_MULT_F(8.000000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(10.000000),
+    .CLKOUT0_DIVIDE_F(8.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(5),
+    .CLKOUT1_DIVIDE(4),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(1),
+    .CLKOUT2_DIVIDE(128),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
@@ -147,9 +148,9 @@ module Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
         .CLKOUT0(clk_100_Block_top_clk_wiz_0_0),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
-        .CLKOUT1(clk_200_Block_top_clk_wiz_0_0),
+        .CLKOUT1(clk_200),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
-        .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
+        .CLKOUT2(clk_6_25),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
         .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),

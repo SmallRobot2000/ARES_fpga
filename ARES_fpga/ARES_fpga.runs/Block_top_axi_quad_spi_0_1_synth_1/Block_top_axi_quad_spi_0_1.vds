@@ -3,26 +3,25 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Mon Jul 27 18:59:41 2026
-# Process ID         : 226529
-# Current directory  : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_axi_quad_spi_0_1_synth_1
+# Start of session at: Wed Jul 29 23:48:30 2026
+# Process ID         : 609069
+# Current directory  : /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_quad_spi_0_1_synth_1
 # Command line       : vivado -log Block_top_axi_quad_spi_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_axi_quad_spi_0_1.tcl
-# Log file           : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_axi_quad_spi_0_1_synth_1/Block_top_axi_quad_spi_0_1.vds
-# Journal file       : /home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_axi_quad_spi_0_1_synth_1/vivado.jou
+# Log file           : /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_quad_spi_0_1_synth_1/Block_top_axi_quad_spi_0_1.vds
+# Journal file       : /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_quad_spi_0_1_synth_1/vivado.jou
 # Running On         : lovroRadiona
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 5 2600 Six-Core Processor
-# CPU Frequency      : 3642.589 MHz
+# CPU Frequency      : 3716.741 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 33577 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 42167 MB
-# Available Virtual  : 32314 MB
+# Available Virtual  : 24216 MB
 #-----------------------------------------------------------
 source Block_top_axi_quad_spi_0_1.tcl -notrace
-create_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:10 . Memory (MB): peak = 1587.078 ; gain = 107.059 ; free physical = 11199 ; free virtual = 28762
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_IO_converter_1_0'.
@@ -35,12 +34,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 226887
+INFO: [Synth 8-7075] Helper process launched with PID 609213
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2220.039 ; gain = 482.844 ; free physical = 6762 ; free virtual = 24322
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2220.184 ; gain = 482.594 ; free physical = 5548 ; free virtual = 20529
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Block_top_axi_quad_spi_0_1' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/synth/Block_top_axi_quad_spi_0_1.vhd:97]
-	Parameter Async_Clk bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'Block_top_axi_quad_spi_0_1' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/synth/Block_top_axi_quad_spi_0_1.vhd:97]
+	Parameter Async_Clk bound to: 0 - type: integer 
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
 	Parameter C_SUB_FAMILY bound to: artix7 - type: string 
@@ -52,7 +51,7 @@ INFO: [Synth 8-638] synthesizing module 'Block_top_axi_quad_spi_0_1' [/home/lovr
 	Parameter C_BYTE_LEVEL_INTERRUPT_EN bound to: 0 - type: integer 
 	Parameter C_UC_FAMILY bound to: 0 - type: integer 
 	Parameter C_FIFO_DEPTH bound to: 16 - type: integer 
-	Parameter C_SCK_RATIO bound to: 2 - type: integer 
+	Parameter C_SCK_RATIO bound to: 4 - type: integer 
 	Parameter C_DUAL_QUAD_MODE bound to: 0 - type: integer 
 	Parameter C_NUM_SS_BITS bound to: 4 - type: integer 
 	Parameter C_NUM_TRANSFER_BITS bound to: 8 - type: integer 
@@ -70,265 +69,229 @@ INFO: [Synth 8-638] synthesizing module 'Block_top_axi_quad_spi_0_1' [/home/lovr
 	Parameter C_S_AXI4_BASEADDR bound to: 32'b11111111111111111111111111111111 
 	Parameter C_S_AXI4_HIGHADDR bound to: 32'b00000000000000000000000000000000 
 	Parameter C_LSB_STUP bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'axi_quad_spi' declared at '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35743' bound to instance 'U0' of component 'axi_quad_spi' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/synth/Block_top_axi_quad_spi_0_1.vhd:297]
-INFO: [Synth 8-638] synthesizing module 'axi_quad_spi' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35983]
-INFO: [Synth 8-638] synthesizing module 'axi_quad_spi_top' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34245]
+INFO: [Synth 8-3491] module 'axi_quad_spi' declared at '/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35743' bound to instance 'U0' of component 'axi_quad_spi' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/synth/Block_top_axi_quad_spi_0_1.vhd:297]
+INFO: [Synth 8-638] synthesizing module 'axi_quad_spi' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35983]
+INFO: [Synth 8-638] synthesizing module 'axi_quad_spi_top' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34245]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'IO0_I_REG' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34714]
+INFO: [Synth 8-113] binding component instance 'IO0_I_REG' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34714]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'IO1_I_REG' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34725]
+INFO: [Synth 8-113] binding component instance 'IO1_I_REG' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34725]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'IO2_I_REG' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34736]
+INFO: [Synth 8-113] binding component instance 'IO2_I_REG' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34736]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'IO3_I_REG' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34748]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
-INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
-INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized0' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized0' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized1' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized1' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized2' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized2' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized3' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized3' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized4' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized4' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized5' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized5' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized6' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized6' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized7' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized7' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized8' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized8' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized9' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized9' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized10' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized10' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized11' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized11' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized12' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized12' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized13' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized13' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized14' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized14' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized15' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized15' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized16' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized16' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized17' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized17' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized18' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized18' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized19' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized19' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized20' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized20' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized21' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized21' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized22' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized22' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized23' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized23' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized24' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized24' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized25' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized25' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'address_decoder' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
-INFO: [Synth 8-226] default block is never used [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
-INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
-INFO: [Synth 8-638] synthesizing module 'qspi_core_interface' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18622]
-INFO: [Synth 8-638] synthesizing module 'reset_sync_module' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2268]
+INFO: [Synth 8-113] binding component instance 'IO3_I_REG' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34748]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized0' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized1' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized1' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized2' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized2' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized3' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized3' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized4' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized4' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized5' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized5' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized6' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized6' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized7' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized7' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized8' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized8' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized9' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized9' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized10' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized10' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized11' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized11' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized12' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized12' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized13' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized13' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized14' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized14' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized15' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized15' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized16' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized16' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized17' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized17' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized18' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized18' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized19' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized19' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized20' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized20' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized21' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized21' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized22' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized22' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized23' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized23' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized24' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized24' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized25' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif_v3_0_4_pselect_f__parameterized25' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'qspi_core_interface' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18622]
+INFO: [Synth 8-638] synthesizing module 'reset_sync_module' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2268]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'RESET_SYNC_AX2S_1' to cell 'FDR' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2297]
+INFO: [Synth 8-113] binding component instance 'RESET_SYNC_AX2S_1' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2297]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'RESET_SYNC_AX2S_2' to cell 'FDR' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2305]
-INFO: [Synth 8-256] done synthesizing module 'reset_sync_module' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2268]
-INFO: [Synth 8-638] synthesizing module 'cross_clk_sync_fifo_1' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:14709]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'CMD_ERR_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15699]
-INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
-INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPISEL_D1_REG_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15715]
+INFO: [Synth 8-113] binding component instance 'RESET_SYNC_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2305]
+INFO: [Synth 8-256] done synthesizing module 'reset_sync_module' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2268]
+INFO: [Synth 8-638] synthesizing module 'cross_clk_sync_fifo_1' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:14709]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CMD_ERR_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:14992]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CMD_ERR_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15000]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPISEL_PULSE_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15744]
+INFO: [Synth 8-113] binding component instance 'SPISEL_D1_REG_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15011]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPISEL_PULSE_S2AX_2' to cell 'FDR' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15752]
+INFO: [Synth 8-113] binding component instance 'SPISEL_D1_REG_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15019]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPISEL_PULSE_S2AX_3' to cell 'FDR' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15760]
+INFO: [Synth 8-113] binding component instance 'SPISEL_PULSE_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15045]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPISEL_PULSE_S2AX_4' to cell 'FDR' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15768]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'MST_N_SLV_MODE_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15781]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SLV_MODF_STRB_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15809]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'MODF_STROBE_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15849]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'RX_FIFO_EMPTY_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15876]
-INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single__parameterized2' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
-INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single__parameterized2' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'TX_FIFO_EMPTY_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15892]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'TX_EMPT_4_SPISR_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15907]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'TX_FIFO_FULL_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15923]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPIXFER_DONE_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15939]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'RX_FIFO_FULL_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15953]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SYNC_SPIXFER_DONE_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15982]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'DTR_UNDERRUN_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16009]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_0_LOOP_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16024]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_1_SPE_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16039]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_2_MST_N_SLV_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16055]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_3_CPOL_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16070]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_4_CPHA_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16085]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_5_TXFIFO_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16100]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_6_RXFIFO_RST_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16115]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_7_SS_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16130]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_8_TR_INHIBIT_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16145]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_9_LSB_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16160]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SR_3_MODF_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16175]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPISSR_AX2S_1_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16195]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPISSR_AX2S_1_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16195]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPISSR_AX2S_1_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16195]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPISSR_AX2S_1_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16195]
-	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'DRR_OVERRUN_S2AX_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16227]
-	Parameter DEST_SYNC_FF bound to: 2 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'RX_FIFO_RST_AX2S_1' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16268]
-INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single__parameterized4' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
-INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single__parameterized4' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+INFO: [Synth 8-113] binding component instance 'SPISEL_PULSE_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15053]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISEL_PULSE_S2AX_3' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15061]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'RX_FIFO_RST_AX2S_1_CDC_1' to cell 'FDR' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16283]
+INFO: [Synth 8-113] binding component instance 'MST_N_SLV_MODE_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15074]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'RX_FIFO_RST_AX2S_2' to cell 'FDR' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16291]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_BITS_7_8_AX2S_1_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16312]
-	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
-	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
-	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'SPICR_BITS_7_8_AX2S_1_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:16312]
-INFO: [Synth 8-256] done synthesizing module 'cross_clk_sync_fifo_1' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:14709]
+INFO: [Synth 8-113] binding component instance 'MST_N_SLV_MODE_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15082]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SLV_MODF_STRB_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15107]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SLV_MODF_STRB_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15115]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SLV_MODF_STRB_S2AX_3' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15123]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'MODF_STROBE_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15148]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'MODF_STROBE_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15156]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'MODF_STROBE_S2AX_3' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15164]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RX_FIFO_EMPTY_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15177]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RX_FIFO_EMPTY_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15185]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'TX_FIFO_EMPTY_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15197]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'TX_FIFO_EMPTY_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15205]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'TX_EMPT_4_SPISR_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15217]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'TX_EMPT_4_SPISR_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15225]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'TX_FIFO_FULL_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15236]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'TX_FIFO_FULL_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15244]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPIXFER_DONE_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15255]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPIXFER_DONE_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15263]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RX_FIFO_RST_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15288]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RX_FIFO_RST_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15296]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RX_FIFO_FULL_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15310]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RX_FIFO_FULL_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15318]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SYNC_SPIXFER_DONE_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15341]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SYNC_SPIXFER_DONE_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15349]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SYNC_SPIXFER_DONE_S2AX_3' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15357]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'DTR_UNDERRUN_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15367]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'DTR_UNDERRUN_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15375]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_0_LOOP_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15385]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_0_LOOP_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15393]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_1_SPE_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15404]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_1_SPE_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15412]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_2_MST_N_SLV_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15423]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_2_MST_N_SLV_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15431]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_3_CPOL_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15442]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_3_CPOL_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15450]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_4_CPHA_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15461]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_4_CPHA_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15469]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_5_TXFIFO_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15480]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_5_TXFIFO_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15488]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_6_RXFIFO_RST_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15499]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_6_RXFIFO_RST_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15507]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPICR_7_SS_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15518]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPICR_7_SS_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15526]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPICR_8_TR_INHIBIT_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15537]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPICR_8_TR_INHIBIT_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_9_LSB_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15556]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_9_LSB_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_BITS_7_8_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15580]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_BITS_7_8_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15588]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_BITS_7_8_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15580]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SPICR_BITS_7_8_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15588]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SR_3_MODF_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15601]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'SR_3_MODF_AX2S_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15609]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISSR_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15626]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISSR_SYNC_AXI_2_SPI_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15634]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISSR_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15626]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISSR_SYNC_AXI_2_SPI_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15634]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISSR_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15626]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISSR_SYNC_AXI_2_SPI_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15634]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISSR_AX2S_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15626]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'SPISSR_SYNC_AXI_2_SPI_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15634]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'DRR_OVERRUN_S2AX_1_CDC' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15659]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'DRR_OVERRUN_S2AX_2' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15667]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'DRR_OVERRUN_S2AX_3' to cell 'FDR' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:15675]
+INFO: [Synth 8-256] done synthesizing module 'cross_clk_sync_fifo_1' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:14709]
 	Parameter FIFO_MEMORY_TYPE bound to: auto - type: string 
 	Parameter FIFO_WRITE_DEPTH bound to: 16 - type: integer 
 	Parameter RELATED_CLOCKS bound to: 0 - type: integer 
@@ -346,7 +309,7 @@ INFO: [Synth 8-256] done synthesizing module 'cross_clk_sync_fifo_1' (0#1) [/hom
 	Parameter DOUT_RESET_VALUE bound to: 0 - type: string 
 	Parameter ECC_MODE bound to: no_ecc - type: string 
 	Parameter WAKEUP_TIME bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_fifo_async' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173' bound to instance 'RX_FIFO_II' of component 'xpm_fifo_async' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:20389]
+INFO: [Synth 8-3491] module 'xpm_fifo_async' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173' bound to instance 'RX_FIFO_II' of component 'xpm_fifo_async' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:20389]
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_async' [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_base' [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn' [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1879]
@@ -387,14 +350,16 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_async' (0#1) [/opt/Vivad
 	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
 	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
 	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'RX_FIFO_EMPTY_SYNC_AXI_2_SPI_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:20441]
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'RX_FIFO_EMPTY_SYNC_AXI_2_SPI_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:20441]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
 	Parameter DEST_SYNC_FF bound to: 2 - type: integer 
 	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
 	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
 	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:20505]
-INFO: [Synth 8-638] synthesizing module 'counter_f' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:642]
-INFO: [Synth 8-256] done synthesizing module 'counter_f' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:642]
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC' of component 'xpm_cdc_single' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:20505]
+INFO: [Synth 8-638] synthesizing module 'counter_f' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:642]
+INFO: [Synth 8-256] done synthesizing module 'counter_f' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:642]
 	Parameter FIFO_MEMORY_TYPE bound to: auto - type: string 
 	Parameter FIFO_WRITE_DEPTH bound to: 16 - type: integer 
 	Parameter RELATED_CLOCKS bound to: 0 - type: integer 
@@ -412,7 +377,7 @@ INFO: [Synth 8-256] done synthesizing module 'counter_f' (0#1) [/home/lovro/Docu
 	Parameter DOUT_RESET_VALUE bound to: 0 - type: string 
 	Parameter ECC_MODE bound to: no_ecc - type: string 
 	Parameter WAKEUP_TIME bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xpm_fifo_async' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173' bound to instance 'TX_FIFO_II' of component 'xpm_fifo_async' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:20704]
+INFO: [Synth 8-3491] module 'xpm_fifo_async' declared at '/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173' bound to instance 'TX_FIFO_II' of component 'xpm_fifo_async' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:20704]
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_async__parameterized1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_base__parameterized0' [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
 INFO: [Synth 8-226] default block is never used [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1220]
@@ -420,59 +385,56 @@ INFO: [Synth 8-226] default block is never used [/opt/Vivado/2025.2/data/ip/xpm/
 INFO: [Synth 8-226] default block is never used [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1309]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base__parameterized0' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_async__parameterized1' (0#1) [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
-INFO: [Synth 8-638] synthesizing module 'qspi_fifo_ifmodule' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13256]
-INFO: [Synth 8-256] done synthesizing module 'qspi_fifo_ifmodule' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13256]
-INFO: [Synth 8-638] synthesizing module 'qspi_occupancy_reg' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:3461]
-INFO: [Synth 8-256] done synthesizing module 'qspi_occupancy_reg' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:3461]
-INFO: [Synth 8-638] synthesizing module 'qspi_mode_0_module' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:8592]
+INFO: [Synth 8-638] synthesizing module 'qspi_fifo_ifmodule' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13256]
+INFO: [Synth 8-256] done synthesizing module 'qspi_fifo_ifmodule' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13256]
+INFO: [Synth 8-638] synthesizing module 'qspi_occupancy_reg' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:3461]
+INFO: [Synth 8-256] done synthesizing module 'qspi_occupancy_reg' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:3461]
+INFO: [Synth 8-638] synthesizing module 'qspi_mode_0_module' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:8592]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'MST_TRANS_INHIBIT_D1_I' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9161]
+INFO: [Synth 8-113] binding component instance 'MST_TRANS_INHIBIT_D1_I' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9161]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_II' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9189]
+INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_II' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9189]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_III' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9201]
+INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_III' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9201]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_IV' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9213]
+INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_IV' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9213]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_V' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9237]
+INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_V' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9237]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'SPISEL_REG' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9316]
+INFO: [Synth 8-113] binding component instance 'SPISEL_REG' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9316]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'SCK_I_REG' to cell 'FD' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9399]
+INFO: [Synth 8-113] binding component instance 'SCK_I_REG' to cell 'FD' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9399]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'SCK_O_NE_4_FDRE_INST' to cell 'FDRE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:10496]
-INFO: [Synth 8-256] done synthesizing module 'qspi_mode_0_module' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:8592]
-INFO: [Synth 8-638] synthesizing module 'qspi_cntrl_reg' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13602]
-INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_I' to cell 'FDRE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13810]
-INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_I' to cell 'FDRE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13810]
-INFO: [Synth 8-256] done synthesizing module 'qspi_cntrl_reg' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13602]
-INFO: [Synth 8-638] synthesizing module 'qspi_status_slave_sel_reg' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2494]
-INFO: [Synth 8-256] done synthesizing module 'qspi_status_slave_sel_reg' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2494]
-INFO: [Synth 8-638] synthesizing module 'soft_reset' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:838]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
-INFO: [Synth 8-113] binding component instance 'FF_WRACK' to cell 'FDRSE' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:992]
-INFO: [Synth 8-256] done synthesizing module 'soft_reset' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:838]
-INFO: [Synth 8-638] synthesizing module 'interrupt_control' [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd:257]
-INFO: [Synth 8-256] done synthesizing module 'interrupt_control' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd:257]
-INFO: [Synth 8-256] done synthesizing module 'qspi_core_interface' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18622]
-INFO: [Synth 8-256] done synthesizing module 'axi_quad_spi_top' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34245]
-INFO: [Synth 8-256] done synthesizing module 'axi_quad_spi' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35983]
-INFO: [Synth 8-256] done synthesizing module 'Block_top_axi_quad_spi_0_1' (0#1) [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/synth/Block_top_axi_quad_spi_0_1.vhd:97]
+INFO: [Synth 8-113] binding component instance 'SCK_O_EQ_4_FDRE_INST' to cell 'FDRE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:10644]
+INFO: [Synth 8-256] done synthesizing module 'qspi_mode_0_module' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:8592]
+INFO: [Synth 8-638] synthesizing module 'qspi_cntrl_reg' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13602]
+INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_I' to cell 'FDRE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13810]
+INFO: [Synth 8-113] binding component instance 'SPI_TRISTATE_CONTROL_I' to cell 'FDRE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13810]
+INFO: [Synth 8-256] done synthesizing module 'qspi_cntrl_reg' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:13602]
+INFO: [Synth 8-638] synthesizing module 'qspi_status_slave_sel_reg' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2494]
+INFO: [Synth 8-256] done synthesizing module 'qspi_status_slave_sel_reg' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:2494]
+INFO: [Synth 8-638] synthesizing module 'soft_reset' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:838]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:969]
+INFO: [Common 17-14] Message 'Synth 8-113' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-256] done synthesizing module 'soft_reset' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:838]
+INFO: [Synth 8-638] synthesizing module 'interrupt_control' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd:257]
+INFO: [Synth 8-256] done synthesizing module 'interrupt_control' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd:257]
+INFO: [Synth 8-256] done synthesizing module 'qspi_core_interface' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18622]
+INFO: [Synth 8-256] done synthesizing module 'axi_quad_spi_top' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34245]
+INFO: [Synth 8-256] done synthesizing module 'axi_quad_spi' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35983]
+INFO: [Synth 8-256] done synthesizing module 'Block_top_axi_quad_spi_0_1' (0#1) [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/synth/Block_top_axi_quad_spi_0_1.vhd:97]
 WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_doutb_pipe.enb_pipe_reg[0] was removed.  [/opt/Vivado/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:3087]
 WARNING: [Synth 8-6014] Unused sequential element dest_out_bin_ff_reg was removed.  [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:417]
 WARNING: [Synth 8-6014] Unused sequential element dest_out_bin_ff_reg was removed.  [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:417]
@@ -483,48 +445,43 @@ WARNING: [Synth 8-6014] Unused sequential element gen_fwft.empty_fwft_fb_reg was
 WARNING: [Synth 8-6014] Unused sequential element gdvld.data_valid_std_reg was removed.  [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:550]
 WARNING: [Synth 8-6014] Unused sequential element gen_pf_ic_rc.gae_ic_std.ram_aempty_i_reg was removed.  [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:771]
 WARNING: [Synth 8-6014] Unused sequential element gen_fwft.empty_fwft_fb_reg was removed.  [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1404]
-INFO: [Synth 8-6014] Unused sequential element SR_5_Tx_Empty_d1_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9132]
-INFO: [Synth 8-6014] Unused sequential element spisel_once_1_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9381]
-INFO: [Synth 8-6014] Unused sequential element sck_i_d1_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9417]
-INFO: [Synth 8-6014] Unused sequential element transfer_start_d2_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9524]
-INFO: [Synth 8-6014] Unused sequential element transfer_start_d3_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9525]
-INFO: [Synth 8-6014] Unused sequential element RX_DATA_SCK_RATIO_2_GEN1.Ratio_Count_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9711]
-INFO: [Synth 8-6014] Unused sequential element RX_DATA_SCK_RATIO_2_GEN1.Count_trigger_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9731]
-INFO: [Synth 8-6014] Unused sequential element RX_DATA_SCK_RATIO_2_GEN1.Count_trigger_d1_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9747]
-INFO: [Synth 8-6014] Unused sequential element SS_Asserted_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:10760]
-INFO: [Synth 8-6014] Unused sequential element SS_Asserted_1dly_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:10761]
-INFO: [Synth 8-6014] Unused sequential element MODF_strobe_int_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:10790]
-INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.Bus2IP_WrCE_d1_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19227]
-INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.Bus2IP_WrCE_d2_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19228]
-INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.Bus2IP_WrCE_d3_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19229]
-INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_d1_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19328]
-INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_1_reg was removed.  [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19330]
-INFO: [Synth 8-3848] Net cfgclk in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18599]
-INFO: [Synth 8-3848] Net cfgmclk in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18600]
-INFO: [Synth 8-3848] Net eos in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18601]
-INFO: [Synth 8-3848] Net preq in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18602]
-INFO: [Synth 8-3848] Net di in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18603]
-INFO: [Synth 8-3848] Net s_axi4_awready in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34136]
-INFO: [Synth 8-3848] Net s_axi4_wready in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34144]
-INFO: [Synth 8-3848] Net s_axi4_bid in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34148]
-INFO: [Synth 8-3848] Net s_axi4_bresp in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34149]
-INFO: [Synth 8-3848] Net s_axi4_bvalid in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34150]
-INFO: [Synth 8-3848] Net s_axi4_arready in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34164]
-INFO: [Synth 8-3848] Net s_axi4_rid in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34168]
-INFO: [Synth 8-3848] Net s_axi4_rdata in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34169]
-INFO: [Synth 8-3848] Net s_axi4_rresp in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34170]
-INFO: [Synth 8-3848] Net s_axi4_rlast in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34171]
-INFO: [Synth 8-3848] Net s_axi4_rvalid in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34172]
-INFO: [Synth 8-3848] Net io0_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35926]
-INFO: [Synth 8-3848] Net io0_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35927]
-INFO: [Synth 8-3848] Net io1_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35930]
-INFO: [Synth 8-3848] Net io1_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35931]
-INFO: [Synth 8-3848] Net io2_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35936]
-INFO: [Synth 8-3848] Net io2_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35937]
-INFO: [Synth 8-3848] Net io3_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35940]
-INFO: [Synth 8-3848] Net io3_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35941]
-INFO: [Synth 8-3848] Net ss_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35956]
-INFO: [Synth 8-3848] Net ss_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35957]
+INFO: [Synth 8-6014] Unused sequential element transfer_start_d2_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9524]
+INFO: [Synth 8-6014] Unused sequential element transfer_start_d3_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9525]
+INFO: [Synth 8-6014] Unused sequential element SPIXfer_done_int_pulse_d3_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:9582]
+INFO: [Synth 8-6014] Unused sequential element SS_Asserted_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:10760]
+INFO: [Synth 8-6014] Unused sequential element SS_Asserted_1dly_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:10761]
+INFO: [Synth 8-6014] Unused sequential element MODF_strobe_int_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:10790]
+INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.Bus2IP_WrCE_d1_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19227]
+INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.Bus2IP_WrCE_d2_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19228]
+INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.Bus2IP_WrCE_d3_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19229]
+INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_d1_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19328]
+INFO: [Synth 8-6014] Unused sequential element LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_1_reg was removed.  [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:19330]
+INFO: [Synth 8-3848] Net cfgclk in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18599]
+INFO: [Synth 8-3848] Net cfgmclk in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18600]
+INFO: [Synth 8-3848] Net eos in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18601]
+INFO: [Synth 8-3848] Net preq in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18602]
+INFO: [Synth 8-3848] Net di in module/entity qspi_core_interface does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:18603]
+INFO: [Synth 8-3848] Net s_axi4_awready in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34136]
+INFO: [Synth 8-3848] Net s_axi4_wready in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34144]
+INFO: [Synth 8-3848] Net s_axi4_bid in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34148]
+INFO: [Synth 8-3848] Net s_axi4_bresp in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34149]
+INFO: [Synth 8-3848] Net s_axi4_bvalid in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34150]
+INFO: [Synth 8-3848] Net s_axi4_arready in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34164]
+INFO: [Synth 8-3848] Net s_axi4_rid in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34168]
+INFO: [Synth 8-3848] Net s_axi4_rdata in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34169]
+INFO: [Synth 8-3848] Net s_axi4_rresp in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34170]
+INFO: [Synth 8-3848] Net s_axi4_rlast in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34171]
+INFO: [Synth 8-3848] Net s_axi4_rvalid in module/entity axi_quad_spi_top does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:34172]
+INFO: [Synth 8-3848] Net io0_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35926]
+INFO: [Synth 8-3848] Net io0_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35927]
+INFO: [Synth 8-3848] Net io1_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35930]
+INFO: [Synth 8-3848] Net io1_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35931]
+INFO: [Synth 8-3848] Net io2_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35936]
+INFO: [Synth 8-3848] Net io2_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35937]
+INFO: [Synth 8-3848] Net io3_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35940]
+INFO: [Synth 8-3848] Net io3_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35941]
+INFO: [Synth 8-3848] Net ss_1_o in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35956]
+INFO: [Synth 8-3848] Net ss_1_t in module/entity axi_quad_spi does not have driver. [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9bdf/hdl/axi_quad_spi_v3_2_rfs.vhd:35957]
 INFO: [Synth 8-7129] Port bus2ip_data[1] in module interrupt_control is either unconnected or has no load
 INFO: [Synth 8-7129] Port bus2ip_data[2] in module interrupt_control is either unconnected or has no load
 INFO: [Synth 8-7129] Port bus2ip_data[3] in module interrupt_control is either unconnected or has no load
@@ -627,104 +584,104 @@ INFO: [Synth 8-7129] Port Bus2IP_SPISSR_Data[18] in module qspi_status_slave_sel
 INFO: [Synth 8-7129] Port Bus2IP_SPISSR_Data[19] in module qspi_status_slave_sel_reg is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2340.977 ; gain = 603.781 ; free physical = 6266 ; free virtual = 23829
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2342.121 ; gain = 604.531 ; free physical = 5400 ; free virtual = 20385
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2352.852 ; gain = 615.656 ; free physical = 6254 ; free virtual = 23817
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2353.996 ; gain = 616.406 ; free physical = 5392 ; free virtual = 20377
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2352.852 ; gain = 615.656 ; free physical = 6254 ; free virtual = 23817
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2353.996 ; gain = 616.406 ; free physical = 5392 ; free virtual = 20377
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2358.789 ; gain = 0.000 ; free physical = 6238 ; free virtual = 23801
-INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2356.965 ; gain = 0.000 ; free physical = 5376 ; free virtual = 20361
+INFO: [Netlist 29-17] Analyzing 101 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_ooc.xdc] for cell 'U0'
-Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_board.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_board.xdc] for cell 'U0'
-Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1.xdc] for cell 'U0'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_axi_quad_spi_0_1_propImpl.xdc].
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_board.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_board.xdc] for cell 'U0'
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_axi_quad_spi_0_1_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_axi_quad_spi_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_axi_quad_spi_0_1_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_axi_quad_spi_0_1_synth_1/dont_touch.xdc]
-Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_clocks.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_clocks.xdc] for cell 'U0'
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_quad_spi_0_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_quad_spi_0_1_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/Block_top_axi_quad_spi_0_1_clocks.xdc] for cell 'U0'
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same. 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
+ 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same. 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
+ 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same. 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
+ 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same. 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
+ 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same. 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
+ 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same. 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
+ 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same. 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
+ 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
+WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same. 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_dc_inst 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
+ 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_axi_quad_spi_0_1_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_axi_quad_spi_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.CMD_ERR_S2AX_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_EMPTY_SYNC_AXI_2_SPI_CDC' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
 WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.CMD_ERR_S2AX_1 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_EMPTY_SYNC_AXI_2_SPI_CDC 
   This will add unnecessary latency to the design. Please check the design for the following: 
  1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
  2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
  [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.DTR_UNDERRUN_S2AX_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
 WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.DTR_UNDERRUN_S2AX_1 
-  This will add unnecessary latency to the design. Please check the design for the following: 
- 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
- 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPISEL_D1_REG_S2AX_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPISEL_D1_REG_S2AX_1 
-  This will add unnecessary latency to the design. Please check the design for the following: 
- 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
- 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPIXFER_DONE_S2AX_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPIXFER_DONE_S2AX_1 
-  This will add unnecessary latency to the design. Please check the design for the following: 
- 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
- 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.TX_EMPT_4_SPISR_S2AX_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.TX_EMPT_4_SPISR_S2AX_1 
-  This will add unnecessary latency to the design. Please check the design for the following: 
- 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
- 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.TX_FIFO_EMPTY_S2AX_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.TX_FIFO_EMPTY_S2AX_1 
-  This will add unnecessary latency to the design. Please check the design for the following: 
- 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
- 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_EMPTY_AX2S_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_EMPTY_AX2S_1 
-  This will add unnecessary latency to the design. Please check the design for the following: 
- 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
- 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPICR_0_LOOP_AX2S_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPICR_0_LOOP_AX2S_1 
-  This will add unnecessary latency to the design. Please check the design for the following: 
- 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
- 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPICR_1_SPE_AX2S_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.SPICR_1_SPE_AX2S_1 
-  This will add unnecessary latency to the design. Please check the design for the following: 
- 1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
- 2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-INFO: [Vivado 12-3272] Current instance is the top level cell 'U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.TX_FIFO_FULL_AX2S_1' of design 'preSynthElab_1' [/opt/Vivado/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl:5]
-WARNING: [XPM_CDC_SINGLE: TCL-1000] The source and destination clocks are the same. 
-     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.TX_FIFO_FULL_AX2S_1 
+     Instance: U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC 
   This will add unnecessary latency to the design. Please check the design for the following: 
  1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
  2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
@@ -733,33 +690,33 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_axi_quad_spi_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/opt/Vivado/2025.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_axi_quad_spi_0_1_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_axi_quad_spi_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-INFO: [Project 1-1714] 48 XPM XDC files have been applied to the design.
+INFO: [Project 1-1714] 16 XPM XDC files have been applied to the design.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2456.590 ; gain = 0.000 ; free physical = 6265 ; free virtual = 23829
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2452.766 ; gain = 0.000 ; free physical = 5322 ; free virtual = 20308
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 36 instances were transformed.
+  A total of 101 instances were transformed.
   FD => FDRE: 11 instances
-  FDR => FDRE: 8 instances
+  FDR => FDRE: 73 instances
   FDRSE => FDRSE (FDRE, LUT4, VCC): 17 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2456.625 ; gain = 0.000 ; free physical = 6265 ; free virtual = 23828
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2452.801 ; gain = 0.000 ; free physical = 5322 ; free virtual = 20307
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2456.625 ; gain = 719.430 ; free physical = 6268 ; free virtual = 23839
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2452.801 ; gain = 715.211 ; free physical = 6773 ; free virtual = 21764
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2464.594 ; gain = 727.398 ; free physical = 6268 ; free virtual = 23839
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2460.770 ; gain = 723.180 ; free physical = 6772 ; free virtual = 21763
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2464.594 ; gain = 727.398 ; free physical = 6268 ; free virtual = 23839
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2460.770 ; gain = 723.180 ; free physical = 6772 ; free virtual = 21763
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_wrst_state_reg' in module 'xpm_fifo_rst'
@@ -826,7 +783,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_r
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps_reg' using encoding 'sequential' in module 'qspi_mode_0_module'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2464.594 ; gain = 727.398 ; free physical = 6291 ; free virtual = 23864
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2460.770 ; gain = 723.180 ; free physical = 6765 ; free virtual = 21757
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -841,29 +798,29 @@ Detailed RTL Component Info :
 	   3 Input    4 Bit       Adders := 2     
 	   2 Input    4 Bit       Adders := 2     
 	   4 Input    2 Bit       Adders := 2     
+	   2 Input    1 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      5 Bit         XORs := 4     
 	   2 Input      4 Bit         XORs := 4     
-	   2 Input      1 Bit         XORs := 57    
+	   2 Input      1 Bit         XORs := 58    
 +---Registers : 
 	               32 Bit    Registers := 2     
 	               14 Bit    Registers := 1     
-	                8 Bit    Registers := 8     
+	                8 Bit    Registers := 9     
 	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 33    
-	                4 Bit    Registers := 43    
-	                3 Bit    Registers := 19    
-	                2 Bit    Registers := 14    
-	                1 Bit    Registers := 192   
+	                4 Bit    Registers := 31    
+	                2 Bit    Registers := 13    
+	                1 Bit    Registers := 193   
 +---RAMs : 
 	              128 Bit	(16 X 8 bit)          RAMs := 2     
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 3     
-	   2 Input    8 Bit        Muxes := 10    
+	   2 Input    8 Bit        Muxes := 9     
 	   2 Input    7 Bit        Muxes := 1     
 	   6 Input    5 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 18    
+	   2 Input    5 Bit        Muxes := 19    
 	   3 Input    5 Bit        Muxes := 2     
 	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 7     
@@ -872,7 +829,7 @@ Detailed RTL Component Info :
 	   4 Input    2 Bit        Muxes := 15    
 	   5 Input    2 Bit        Muxes := 2     
 	  11 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 98    
+	   2 Input    1 Bit        Muxes := 107   
 	   4 Input    1 Bit        Muxes := 8     
 	   6 Input    1 Bit        Muxes := 4     
 	   5 Input    1 Bit        Muxes := 6     
@@ -892,13 +849,29 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.CMD_ERR_S2AX_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.CMD_ERR_S2AX_2) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.MST_N_SLV_MODE_S2AX_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.MST_N_SLV_MODE_S2AX_2) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.RX_FIFO_EMPTY_AX2S_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.RX_FIFO_EMPTY_AX2S_2) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.TX_FIFO_EMPTY_S2AX_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.TX_FIFO_EMPTY_S2AX_2) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.TX_FIFO_FULL_AX2S_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.TX_FIFO_FULL_AX2S_2) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.SPIXFER_DONE_S2AX_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.SPIXFER_DONE_S2AX_2) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.RX_FIFO_FULL_S2AX_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.RX_FIFO_FULL_S2AX_2) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.SPICR_5_TXFIFO_AX2S_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.SPICR_5_TXFIFO_AX2S_2) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.SPICR_6_RXFIFO_RST_AX2S_1_CDC) is unused and will be removed from module axi_quad_spi.
+INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_FDR.SPICR_6_RXFIFO_RST_AX2S_2) is unused and will be removed from module axi_quad_spi.
 INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_0_GEN.SPI_MODULE_I/MST_TRANS_INHIBIT_D1_I) is unused and will be removed from module axi_quad_spi.
-INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_0_GEN.SPI_MODULE_I/SCK_I_REG) is unused and will be removed from module axi_quad_spi.
-INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO0_I_REG) is unused and will be removed from module axi_quad_spi.
 INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO2_I_REG) is unused and will be removed from module axi_quad_spi.
 INFO: [Synth 8-3332] Sequential element (NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO3_I_REG) is unused and will be removed from module axi_quad_spi.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2464.594 ; gain = 727.398 ; free physical = 5983 ; free virtual = 23556
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2460.770 ; gain = 723.180 ; free physical = 6814 ; free virtual = 21796
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -920,13 +893,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 2502.594 ; gain = 765.398 ; free physical = 5857 ; free virtual = 23429
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2505.770 ; gain = 768.180 ; free physical = 6779 ; free virtual = 21762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2537.648 ; gain = 800.453 ; free physical = 7337 ; free virtual = 24908
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2546.824 ; gain = 809.234 ; free physical = 6757 ; free virtual = 21739
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -947,7 +920,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 2538.656 ; gain = 801.461 ; free physical = 7306 ; free virtual = 24878
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2546.824 ; gain = 809.234 ; free physical = 6756 ; free virtual = 21739
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -965,37 +938,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 2702.469 ; gain = 965.273 ; free physical = 9282 ; free virtual = 26859
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2704.637 ; gain = 967.047 ; free physical = 6615 ; free virtual = 21598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 2702.469 ; gain = 965.273 ; free physical = 9282 ; free virtual = 26859
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2704.637 ; gain = 967.047 ; free physical = 6615 ; free virtual = 21598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2702.469 ; gain = 965.273 ; free physical = 9282 ; free virtual = 26859
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2704.637 ; gain = 967.047 ; free physical = 6615 ; free virtual = 21598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2702.469 ; gain = 965.273 ; free physical = 9282 ; free virtual = 26859
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2704.637 ; gain = 967.047 ; free physical = 6615 ; free virtual = 21598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2702.469 ; gain = 965.273 ; free physical = 9282 ; free virtual = 26859
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2704.637 ; gain = 967.047 ; free physical = 6615 ; free virtual = 21598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2702.469 ; gain = 965.273 ; free physical = 9282 ; free virtual = 26859
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2704.637 ; gain = 967.047 ; free physical = 6615 ; free virtual = 21598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1011,51 +984,51 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |LUT1     |    16|
-|2     |LUT2     |   111|
-|3     |LUT3     |    71|
-|4     |LUT4     |    80|
-|5     |LUT5     |   120|
-|6     |LUT6     |   133|
+|1     |LUT1     |    14|
+|2     |LUT2     |   110|
+|3     |LUT3     |    76|
+|4     |LUT4     |    78|
+|5     |LUT5     |   131|
+|6     |LUT6     |   132|
 |7     |RAM32M   |     2|
 |8     |RAM32X1D |     4|
-|9     |FD       |     6|
-|10    |FDR      |     8|
-|11    |FDRE     |   676|
-|12    |FDSE     |    38|
+|9     |FD       |     8|
+|10    |FDR      |    55|
+|11    |FDRE     |   576|
+|12    |FDSE     |    40|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2702.469 ; gain = 965.273 ; free physical = 9280 ; free virtual = 26858
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2704.637 ; gain = 967.047 ; free physical = 6615 ; free virtual = 21598
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2702.469 ; gain = 861.500 ; free physical = 9276 ; free virtual = 26853
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2702.477 ; gain = 965.273 ; free physical = 9276 ; free virtual = 26853
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2704.637 ; gain = 868.242 ; free physical = 6615 ; free virtual = 21598
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2704.645 ; gain = 967.047 ; free physical = 6615 ; free virtual = 21598
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2702.477 ; gain = 0.000 ; free physical = 9276 ; free virtual = 26853
-INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2704.645 ; gain = 0.000 ; free physical = 6615 ; free virtual = 21598
+INFO: [Netlist 29-17] Analyzing 69 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2758.496 ; gain = 0.000 ; free physical = 9302 ; free virtual = 26903
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2760.664 ; gain = 0.000 ; free physical = 6715 ; free virtual = 21698
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 20 instances were transformed.
-  FD => FDRE: 6 instances
-  FDR => FDRE: 8 instances
+  A total of 69 instances were transformed.
+  FD => FDRE: 8 instances
+  FDR => FDRE: 55 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
 
-Synth Design complete | Checksum: 291c3641
+Synth Design complete | Checksum: 4527008c
 INFO: [Common 17-83] Releasing license: Synthesis
-413 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
+450 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:00:53 . Memory (MB): peak = 2758.531 ; gain = 1171.453 ; free physical = 9286 ; free virtual = 26885
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1740.944; main = 1659.053; forked = 223.302
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3532.859; main = 2758.500; forked = 994.199
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2782.508 ; gain = 0.000 ; free physical = 9333 ; free virtual = 26932
-INFO: [Common 17-1381] The checkpoint '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_axi_quad_spi_0_1_synth_1/Block_top_axi_quad_spi_0_1.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Block_top_axi_quad_spi_0_1, cache-ID = e3ba80aa5a646d67
-INFO: [Coretcl 2-1174] Renamed 112 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2782.508 ; gain = 0.000 ; free physical = 10145 ; free virtual = 27747
-INFO: [Common 17-1381] The checkpoint '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/Alchitry AMIX_RISCV/Alchitry AMIX_RISCV.runs/Block_top_axi_quad_spi_0_1_synth_1/Block_top_axi_quad_spi_0_1.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:40 . Memory (MB): peak = 2760.699 ; gain = 1150.414 ; free physical = 6721 ; free virtual = 21704
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1905.910; main = 1837.964; forked = 281.103
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3519.996; main = 2760.668; forked = 994.199
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.676 ; gain = 0.000 ; free physical = 6721 ; free virtual = 21703
+INFO: [Common 17-1381] The checkpoint '/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_quad_spi_0_1_synth_1/Block_top_axi_quad_spi_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Block_top_axi_quad_spi_0_1, cache-ID = fe3cffe308093106
+INFO: [Coretcl 2-1174] Renamed 80 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2784.676 ; gain = 0.000 ; free physical = 6705 ; free virtual = 21690
+INFO: [Common 17-1381] The checkpoint '/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_quad_spi_0_1_synth_1/Block_top_axi_quad_spi_0_1.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Block_top_axi_quad_spi_0_1_utilization_synth.rpt -pb Block_top_axi_quad_spi_0_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 27 19:00:50 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 29 23:49:19 2026...

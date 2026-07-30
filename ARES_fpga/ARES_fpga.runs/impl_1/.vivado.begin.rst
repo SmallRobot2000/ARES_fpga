@@ -1,10 +1,80 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="331000" HostCore="12" HostMemory="32790912">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="535801" HostCore="12" HostMemory="32790912">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="338480" HostCore="12" HostMemory="32790912">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="537553" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="540323" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="546910" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="561006" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="564459" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="566703" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="572321" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="575809" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="579534" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="585703" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="591007" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="596480" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="598693" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="603757" HostCore="12" HostMemory="32790912">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroRadiona" Pid="611028" HostCore="12" HostMemory="32790912">
     </Process>
 </ProcessHandle>
