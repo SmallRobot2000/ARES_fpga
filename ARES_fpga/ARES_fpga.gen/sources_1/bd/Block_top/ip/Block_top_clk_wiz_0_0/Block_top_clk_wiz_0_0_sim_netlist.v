@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Jul 29 23:02:54 2026
+// Date        : Wed Jul 29 23:02:53 2026
 // Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_clk_wiz_0_0/Block_top_clk_wiz_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top Block_top_clk_wiz_0_0 -prefix
+//               Block_top_clk_wiz_0_0_ Block_top_clk_wiz_0_0_sim_netlist.v
 // Design      : Block_top_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -29,14 +29,14 @@ module Block_top_clk_wiz_0_0
   wire clk_6_25;
   (* IBUF_LOW_PWR *) wire clk_in1;
 
-  Block_top_clk_wiz_0_0_clk_wiz inst
+  Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz inst
        (.clk_100(clk_100),
         .clk_200(clk_200),
         .clk_6_25(clk_6_25),
         .clk_in1(clk_in1));
 endmodule
 
-module Block_top_clk_wiz_0_0_clk_wiz
+module Block_top_clk_wiz_0_0_Block_top_clk_wiz_0_0_clk_wiz
    (clk_100,
     clk_200,
     clk_6_25,

@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Jul 29 23:01:53 2026
-# Process ID         : 588693
+# Start of session at: Mon Aug  3 14:12:49 2026
+# Process ID         : 49416
 # Current directory  : /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_FLASH_SPI_wrapper_0_0_synth_1
 # Command line       : vivado -log Block_top_FLASH_SPI_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_FLASH_SPI_wrapper_0_0.tcl
 # Log file           : /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_FLASH_SPI_wrapper_0_0_synth_1/Block_top_FLASH_SPI_wrapper_0_0.vds
@@ -13,16 +13,16 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 5 2600 Six-Core Processor
-# CPU Frequency      : 3617.535 MHz
+# CPU Frequency      : 3643.343 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 33577 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 42167 MB
-# Available Virtual  : 25056 MB
+# Available Virtual  : 34368 MB
 #-----------------------------------------------------------
 source Block_top_FLASH_SPI_wrapper_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 1584.074 ; gain = 104.059 ; free physical = 6488 ; free virtual = 21458
+create_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:08 . Memory (MB): peak = 1610.609 ; gain = 64.059 ; free physical = 15916 ; free virtual = 31088
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_IO_converter_1_0'.
@@ -35,9 +35,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 589186
+INFO: [Synth 8-7075] Helper process launched with PID 49706
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2219.723 ; gain = 482.562 ; free physical = 1542 ; free virtual = 16515
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2219.758 ; gain = 480.875 ; free physical = 12469 ; free virtual = 27641
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Block_top_FLASH_SPI_wrapper_0_0' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_FLASH_SPI_wrapper_0_0/synth/Block_top_FLASH_SPI_wrapper_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'FLASH_SPI_wrapper' [/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/FLASH_SPI_wrapper.v:23]
@@ -59,45 +59,45 @@ INFO: [Synth 8-7129] Port s_axi_arprot[2] in module FLASH_SPI_wrapper is either 
 INFO: [Synth 8-7129] Port s_axi_arprot[1] in module FLASH_SPI_wrapper is either unconnected or has no load
 INFO: [Synth 8-7129] Port s_axi_arprot[0] in module FLASH_SPI_wrapper is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2312.660 ; gain = 575.500 ; free physical = 940 ; free virtual = 15917
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2312.727 ; gain = 573.844 ; free physical = 12082 ; free virtual = 27255
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2321.566 ; gain = 584.406 ; free physical = 925 ; free virtual = 15901
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2321.633 ; gain = 582.750 ; free physical = 12074 ; free virtual = 27247
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2321.566 ; gain = 584.406 ; free physical = 925 ; free virtual = 15901
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2321.633 ; gain = 582.750 ; free physical = 12074 ; free virtual = 27247
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2321.566 ; gain = 0.000 ; free physical = 914 ; free virtual = 15889
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2321.633 ; gain = 0.000 ; free physical = 12066 ; free virtual = 27239
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2438.305 ; gain = 0.000 ; free physical = 801 ; free virtual = 15777
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2439.371 ; gain = 0.000 ; free physical = 11994 ; free virtual = 27167
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2438.340 ; gain = 0.000 ; free physical = 797 ; free virtual = 15773
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2439.406 ; gain = 0.000 ; free physical = 11994 ; free virtual = 27167
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2438.340 ; gain = 701.180 ; free physical = 735 ; free virtual = 15718
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2439.406 ; gain = 700.523 ; free physical = 11998 ; free virtual = 27175
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2446.309 ; gain = 709.148 ; free physical = 732 ; free virtual = 15715
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2447.375 ; gain = 708.492 ; free physical = 11998 ; free virtual = 27175
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2446.309 ; gain = 709.148 ; free physical = 732 ; free virtual = 15715
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2447.375 ; gain = 708.492 ; free physical = 11998 ; free virtual = 27175
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'axi_state_reg' in module 'FLASH_SPI'
 ---------------------------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'axi_state_reg' in module 'F
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'axi_state_reg' using encoding 'one-hot' in module 'FLASH_SPI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2446.309 ; gain = 709.148 ; free physical = 730 ; free virtual = 15714
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2447.375 ; gain = 708.492 ; free physical = 12006 ; free virtual = 27184
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -173,20 +173,20 @@ INFO: [Synth 8-7129] Port s_axi_arprot[0] in module Block_top_FLASH_SPI_wrapper_
 INFO: [Synth 8-7129] Port s_axi_rready in module Block_top_FLASH_SPI_wrapper_0_0 is either unconnected or has no load
 INFO: [Synth 8-3332] Sequential element (inst/flash_inst/FSM_onehot_axi_state_reg[0]) is unused and will be removed from module Block_top_FLASH_SPI_wrapper_0_0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2446.309 ; gain = 709.148 ; free physical = 696 ; free virtual = 15676
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2447.375 ; gain = 708.492 ; free physical = 11975 ; free virtual = 27154
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2446.309 ; gain = 709.148 ; free physical = 696 ; free virtual = 15676
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2447.375 ; gain = 708.492 ; free physical = 11975 ; free virtual = 27154
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2446.309 ; gain = 709.148 ; free physical = 696 ; free virtual = 15676
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2447.375 ; gain = 708.492 ; free physical = 11967 ; free virtual = 27147
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -204,37 +204,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2530.121 ; gain = 792.961 ; free physical = 277 ; free virtual = 15260
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2530.188 ; gain = 791.305 ; free physical = 11909 ; free virtual = 27090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2530.121 ; gain = 792.961 ; free physical = 277 ; free virtual = 15260
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2530.188 ; gain = 791.305 ; free physical = 11909 ; free virtual = 27090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2530.121 ; gain = 792.961 ; free physical = 277 ; free virtual = 15260
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2530.188 ; gain = 791.305 ; free physical = 11909 ; free virtual = 27090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2530.121 ; gain = 792.961 ; free physical = 277 ; free virtual = 15260
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2530.188 ; gain = 791.305 ; free physical = 11909 ; free virtual = 27090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2530.121 ; gain = 792.961 ; free physical = 277 ; free virtual = 15260
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2530.188 ; gain = 791.305 ; free physical = 11909 ; free virtual = 27090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2530.121 ; gain = 792.961 ; free physical = 277 ; free virtual = 15260
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2530.188 ; gain = 791.305 ; free physical = 11909 ; free virtual = 27090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -260,16 +260,16 @@ Report Cell Usage:
 |8     |FDSE |     1|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2530.121 ; gain = 792.961 ; free physical = 277 ; free virtual = 15260
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2530.188 ; gain = 791.305 ; free physical = 11909 ; free virtual = 27090
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2530.121 ; gain = 676.188 ; free physical = 277 ; free virtual = 15260
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2530.129 ; gain = 792.961 ; free physical = 271 ; free virtual = 15254
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2530.188 ; gain = 673.531 ; free physical = 11909 ; free virtual = 27090
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2530.195 ; gain = 791.305 ; free physical = 11909 ; free virtual = 27090
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2545.965 ; gain = 0.000 ; free physical = 257 ; free virtual = 15239
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2546.031 ; gain = 0.000 ; free physical = 11879 ; free virtual = 27061
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2696.617 ; gain = 0.000 ; free physical = 2017 ; free virtual = 16749
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2696.684 ; gain = 0.000 ; free physical = 11874 ; free virtual = 27054
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -277,11 +277,11 @@ Synth Design complete | Checksum: 8110abed
 INFO: [Common 17-83] Releasing license: Synthesis
 53 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 2696.652 ; gain = 1112.578 ; free physical = 3497 ; free virtual = 18209
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1633.025; main = 1575.811; forked = 198.630
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3500.512; main = 2696.621; forked = 994.199
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:34 . Memory (MB): peak = 2696.719 ; gain = 1086.109 ; free physical = 13212 ; free virtual = 28392
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1599.465; main = 1599.465; forked = 205.546
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3441.578; main = 2696.688; forked = 994.199
 INFO: [Coretcl 2-1174] Renamed 2 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2720.629 ; gain = 0.000 ; free physical = 3486 ; free virtual = 18198
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2720.695 ; gain = 0.000 ; free physical = 13212 ; free virtual = 28391
 INFO: [Common 17-1381] The checkpoint '/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_FLASH_SPI_wrapper_0_0_synth_1/Block_top_FLASH_SPI_wrapper_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Block_top_FLASH_SPI_wrapper_0_0_utilization_synth.rpt -pb Block_top_FLASH_SPI_wrapper_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jul 29 23:02:50 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  3 14:13:36 2026...

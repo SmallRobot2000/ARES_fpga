@@ -7,7 +7,7 @@
    "Color Coded_TopLeft":"-336,2",
    "Default View_Layers":"/clk_wiz_0_clk_100:true|/clk_wiz_0_clk_200:true|/clk_in1_0_1:true|/reset:true|/rst_n_in:true|/mig_axi_wrapper_0_ui_clk:true|",
    "Default View_ScaleFactor":"0.699672",
-   "Default View_TopLeft":"179,-968",
+   "Default View_TopLeft":"230,20",
    "Display-PortTypeClock":"true",
    "Display-PortTypeOthers":"true",
    "Display-PortTypeReset":"true",

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Thu Jul 30 00:01:50 2026
+| Date             : Mon Aug  3 14:25:03 2026
 | Host             : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file Block_top_wrapper_power_routed.rpt -pb Block_top_wrapper_power_summary_routed.pb -rpx Block_top_wrapper_power_routed.rpx
 | Design           : Block_top_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.990        |
+| Total On-Chip Power (W)  | 0.977        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.914        |
+| Dynamic (W)              | 0.901        |
 | Device Static (W)        | 0.076        |
 | Effective TJA (C/W)      | 4.9          |
-| Max Ambient (C)          | 80.2         |
-| Junction Temperature (C) | 29.8         |
+| Max Ambient (C)          | 80.3         |
+| Junction Temperature (C) | 29.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,24 +53,24 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.074 |       24 |       --- |             --- |
-| Slice Logic              |     0.039 |    40448 |       --- |             --- |
-|   LUT as Logic           |     0.034 |    14899 |     20800 |           71.63 |
-|   Register               |     0.002 |    16863 |     41600 |           40.54 |
+| Slice Logic              |     0.033 |    41186 |       --- |             --- |
+|   LUT as Logic           |     0.030 |    15234 |     20800 |           73.24 |
+|   Register               |     0.002 |    17100 |     41600 |           41.11 |
 |   LUT as Distributed RAM |     0.001 |     1436 |      9600 |           14.96 |
-|   CARRY4                 |    <0.001 |      469 |      8150 |            5.75 |
+|   CARRY4                 |    <0.001 |      493 |      8150 |            6.05 |
 |   LUT as Shift Register  |    <0.001 |      341 |      9600 |            3.55 |
 |   F7/F8 Muxes            |    <0.001 |       30 |     32600 |            0.09 |
 |   Others                 |    <0.001 |     1062 |       --- |             --- |
-| Signals                  |     0.059 |    29616 |       --- |             --- |
-| Block RAM                |     0.047 |       11 |        50 |           22.00 |
+| Signals                  |     0.053 |    30124 |       --- |             --- |
+| Block RAM                |     0.049 |       11 |        50 |           22.00 |
 | MMCM                     |     0.191 |        2 |         5 |           40.00 |
 | PLL                      |     0.091 |        1 |         5 |           20.00 |
-| DSPs                     |     0.004 |        4 |        90 |            4.44 |
-| I/O                      |     0.271 |       64 |       170 |           37.65 |
+| DSPs                     |    <0.001 |        4 |        90 |            4.44 |
+| I/O                      |     0.272 |       64 |       170 |           37.65 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
 | Static Power             |     0.076 |          |           |                 |
-| Total                    |     0.990 |          |           |                 |
+| Total                    |     0.977 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,7 +80,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.275 |       0.263 |      0.012 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.261 |       0.249 |      0.012 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.281 |       0.268 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -170,22 +170,22 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| Block_top_wrapper       |     0.914 |
-|   Block_top_i           |     0.910 |
-|     CPU_block_0         |     0.110 |
-|       VexiiRV_wrapper_0 |     0.109 |
+| Block_top_wrapper       |     0.901 |
+|   Block_top_i           |     0.897 |
+|     CPU_block_0         |     0.098 |
+|       VexiiRV_wrapper_0 |     0.097 |
 |     axi_quad_spi_0      |     0.007 |
 |       U0                |     0.007 |
 |     axi_timer_0         |     0.003 |
 |       U0                |     0.003 |
 |     clk_wiz_0           |     0.097 |
 |       inst              |     0.097 |
-|     mig_axi_wrapper_0   |     0.643 |
-|       inst              |     0.643 |
+|     mig_axi_wrapper_0   |     0.644 |
+|       inst              |     0.644 |
 |     smartconnect_io     |     0.004 |
 |       inst              |     0.004 |
-|     smartconnect_mem    |     0.045 |
-|       inst              |     0.045 |
+|     smartconnect_mem    |     0.043 |
+|       inst              |     0.043 |
 +-------------------------+-----------+
 
 

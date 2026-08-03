@@ -32,13 +32,13 @@ preplace netloc VexiiRV_wrapper_0_cpu_axi_io_cmd_uopId 1 1 1 N 220
 preplace netloc VexiiRV_wrapper_0_cpu_axi_io_cmd_valid 1 1 1 N 60
 preplace netloc VexiiRV_wrapper_0_cpu_axi_io_cmd_wite 1 1 1 N 80
 preplace netloc clk_0_1 1 0 2 250 -40 710
+preplace netloc cpi_int_s_ext_0_1 1 0 1 NJ 140
+preplace netloc cpu_int_m_ext_0_1 1 0 1 -70J 110n
 preplace netloc cpu_int_soft_0_1 1 0 1 -70 80n
 preplace netloc cpu_int_timer_0_1 1 0 1 -60 50n
 preplace netloc cpu_rdtime_0_1 1 0 1 -50 20n
 preplace netloc reset_1 1 0 1 240 -190n
 preplace netloc util_vector_logic_0_Res 1 1 1 720 -190n
-preplace netloc cpu_int_m_ext_0_1 1 0 1 -70J 110n
-preplace netloc cpi_int_s_ext_0_1 1 0 1 NJ 140
 preplace netloc CPU_IO_converter_0_M00_AXI 1 2 1 N 80
 preplace netloc VexiiRV_wrapper_0_M_AXI_D 1 1 2 740J -40 1170J
 preplace netloc VexiiRV_wrapper_0_M_AXI_I 1 1 2 730J -190 NJ

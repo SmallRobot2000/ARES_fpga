@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Jul 29 23:53:04 2026
+| Date         : Mon Aug  3 14:17:21 2026
 | Host         : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_incremental_reuse -file Block_top_wrapper_incremental_reuse_pre_placed.rpt
 | Design       : Block_top_wrapper
@@ -45,11 +45,12 @@ Table of Contents
 +-------+----------------------+----------------------------+--------------------+--------+
 |  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) |  Total |
 +-------+----------------------+----------------------------+--------------------+--------+
-| Cells |                99.55 |                      99.38 |               0.48 |  39619 |
-| Nets  |                99.29 |                      97.68 |               0.00 |  28607 |
-| Pins  |                    - |                      98.59 |                  - | 165563 |
+| Cells |                96.14 |                      96.21 |               0.47 |  40357 |
+| Nets  |                97.12 |                      86.58 |               0.00 |  29144 |
+| Pins  |                    - |                      91.42 |                  - | 168669 |
 | Ports |               100.00 |                     100.00 |             100.00 |     64 |
 +-------+----------------------+----------------------------+--------------------+--------+
+* Reused % can exceed matched % when unmatched cells take their placement directly from other cells that have been matched
 
 
 3. Reference Checkpoint Information
@@ -65,8 +66,8 @@ Table of Contents
 +--------------------------------+----------------------------+
 | Vivado Version                 |                     2025.2 |
 | DCP State                      |                 POST_ROUTE |
-| Recorded WNS                   |                      0.567 |
-| Recorded WHS                   |                      0.036 |
+| Recorded WNS                   |                      0.575 |
+| Recorded WHS                   |                      0.014 |
 | Reference Speed File Version   | PRODUCTION 1.23 2018-06-13 |
 | Incremental Speed File Version | PRODUCTION 1.23 2018-06-13 |
 +--------------------------------+----------------------------+
@@ -84,9 +85,9 @@ Table of Contents
 | synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | read_checkpoint |             |             |     < 1 min |     < 1 min |       00:01 |       00:01 |
-| place_design    |      -1.127 |             |     < 1 min |             |       00:02 |             |
-| phys_opt_design |      -1.127 |             |     < 1 min |             |     < 1 min |             |
-| route_design    |      -1.103 |             |       00:01 |             |       00:02 |             |
+| place_design    |      -0.160 |             |       00:01 |             |       00:03 |             |
+| phys_opt_design |       0.217 |             |     < 1 min |             |     < 1 min |             |
+| route_design    |       0.580 |             |       00:02 |             |       00:04 |             |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
@@ -133,12 +134,12 @@ read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /hom
 +------------------------------------------------------+------+
 |                         Type                         |   %  |
 +------------------------------------------------------+------+
-| Non-Reused Cells                                     | 0.61 |
-|   New                                                | 0.24 |
-|   Discarded illegal placement due to netlist changes | 0.36 |
-|   Discarded to improve timing                        | 0.01 |
-| Partially reused nets                                | 0.44 |
-| Non-Reused nets                                      | 1.87 |
+| Non-Reused Cells                                     | 3.78 |
+|   New                                                | 3.47 |
+|   Discarded illegal placement due to netlist changes | 0.26 |
+|   Discarded to improve timing                        | 0.04 |
+| Partially reused nets                                | 5.45 |
+| Non-Reused nets                                      | 7.96 |
 | Non-Reused Ports                                     | 0.00 |
 +------------------------------------------------------+------+
 
