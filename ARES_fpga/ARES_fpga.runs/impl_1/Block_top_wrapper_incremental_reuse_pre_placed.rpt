@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Mon Aug  3 14:17:21 2026
-| Host         : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
+| Date         : Thu Aug  6 22:31:02 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_incremental_reuse -file Block_top_wrapper_incremental_reuse_pre_placed.rpt
 | Design       : Block_top_wrapper
 | Device       : xc7a35t
@@ -45,9 +45,9 @@ Table of Contents
 +-------+----------------------+----------------------------+--------------------+--------+
 |  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) |  Total |
 +-------+----------------------+----------------------------+--------------------+--------+
-| Cells |                96.14 |                      96.21 |               0.47 |  40357 |
-| Nets  |                97.12 |                      86.58 |               0.00 |  29144 |
-| Pins  |                    - |                      91.42 |                  - | 168669 |
+| Cells |                95.78 |                      95.90 |               0.46 |  41413 |
+| Nets  |                96.74 |                      85.16 |               0.00 |  29952 |
+| Pins  |                    - |                      90.27 |                  - | 172637 |
 | Ports |               100.00 |                     100.00 |             100.00 |     64 |
 +-------+----------------------+----------------------------+--------------------+--------+
 * Reused % can exceed matched % when unmatched cells take their placement directly from other cells that have been matched
@@ -56,9 +56,9 @@ Table of Contents
 3. Reference Checkpoint Information
 -----------------------------------
 
-+----------------+--------------------------------------------------------------------------------------------------------------+
-| DCP Location:  | /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp |
-+----------------+--------------------------------------------------------------------------------------------------------------+
++----------------+---------------------------------------------------------------------------------------------------------+
+| DCP Location:  | /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp |
++----------------+---------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------+----------------------------+
@@ -66,7 +66,7 @@ Table of Contents
 +--------------------------------+----------------------------+
 | Vivado Version                 |                     2025.2 |
 | DCP State                      |                 POST_ROUTE |
-| Recorded WNS                   |                      0.575 |
+| Recorded WNS                   |                      0.978 |
 | Recorded WHS                   |                      0.014 |
 | Reference Speed File Version   | PRODUCTION 1.23 2018-06-13 |
 | Incremental Speed File Version | PRODUCTION 1.23 2018-06-13 |
@@ -84,10 +84,10 @@ Table of Contents
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 | synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
-| read_checkpoint |             |             |     < 1 min |     < 1 min |       00:01 |       00:01 |
-| place_design    |      -0.160 |             |       00:01 |             |       00:03 |             |
-| phys_opt_design |       0.217 |             |     < 1 min |             |     < 1 min |             |
-| route_design    |       0.580 |             |       00:02 |             |       00:04 |             |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |       0.498 |             |     < 1 min |             |       00:01 |             |
+| phys_opt_design |       0.498 |             |     < 1 min |             |     < 1 min |             |
+| route_design    |       0.978 |             |       00:01 |             |       00:01 |             |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
@@ -117,7 +117,7 @@ Table of Contents
 --------------
 synth_design -directive areaoptimized_medium -control_set_opt 1 -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -top  Block_top_wrapper -part  xc7a35tftg256-2 
 opt_design
-read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp
+read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp
 place_design
 phys_opt_design
 route_design
@@ -126,7 +126,7 @@ route_design
 ----------------
 synth_design -directive areaoptimized_medium -control_set_opt 1 -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -top  Block_top_wrapper -part  xc7a35tftg256-2 
 opt_design
-read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp
+read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp
 
 7. Non Reuse Information
 ------------------------
@@ -134,12 +134,12 @@ read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /hom
 +------------------------------------------------------+------+
 |                         Type                         |   %  |
 +------------------------------------------------------+------+
-| Non-Reused Cells                                     | 3.78 |
-|   New                                                | 3.47 |
-|   Discarded illegal placement due to netlist changes | 0.26 |
-|   Discarded to improve timing                        | 0.04 |
-| Partially reused nets                                | 5.45 |
-| Non-Reused nets                                      | 7.96 |
+| Non-Reused Cells                                     | 4.09 |
+|   New                                                | 3.81 |
+|   Discarded illegal placement due to netlist changes | 0.20 |
+|   Discarded to improve timing                        | 0.07 |
+| Partially reused nets                                | 6.25 |
+| Non-Reused nets                                      | 8.57 |
 | Non-Reused Ports                                     | 0.00 |
 +------------------------------------------------------+------+
 

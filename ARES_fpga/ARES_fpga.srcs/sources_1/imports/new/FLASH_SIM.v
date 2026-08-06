@@ -89,7 +89,7 @@ module FLASH_SIM( SCLK,
     /*----------------------------------------------------------------------*/
     /* Define Initial Memory File Name					    */
     /*----------------------------------------------------------------------*/
-    parameter   Init_File	= "/home/lovro/Documents/RISC-V-testcode/test.hex"; // initial flash data
+    parameter   Init_File	= "/home/lovro/ARES/ARES_testcode/test.hex"; // initial flash data
 
     /*----------------------------------------------------------------------*/
     /* AC Charicters Parameter						    */

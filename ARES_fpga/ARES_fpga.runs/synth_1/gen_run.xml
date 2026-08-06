@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-2" LaunchTime="1785759165" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Block_top_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-2" LaunchTime="1786048098" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Block_top_wrapper.dcp">
   <File Type="VDS-TIMING-PB" Name="Block_top_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="Block_top_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="Block_top_wrapper.dcp"/>
@@ -47,7 +47,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/CPU_block/CPU_block.bd">
+    <File Path="$PSRCDIR/sources_1/new/BUFGMUX_wrapper.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -55,7 +55,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/BUFGMUX_wrapper.v">
+    <File Path="$PSRCDIR/sources_1/new/CPU_IO_converter.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -86,23 +86,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/CPU_IO_converter.v">
+    <File Path="$PSRCDIR/sources_1/imports/generated/VexiiSoc.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ARES_VexiiRiscv/generated/VexiiSoc.v"/>
+        <Attr Name="ImportTime" Val="1786048039"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/VexiiRiscv/VexiiRiscv.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../VexiiRiscv/VexiiRiscv.v"/>
-        <Attr Name="ImportTime" Val="1785759040"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/VexiiRV_wrapper.v">
+    <File Path="$PSRCDIR/sources_1/new/VexiiSocWrapper.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -190,9 +183,7 @@
     </Step>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_FLASH_SPI_wrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="CPU_block_inst_1_CPU_IO_converter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Block_top_VexiiSocWrapper_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_mig_axi_wrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="CPU_block_inst_1_VexiiRV_wrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="CPU_block_inst_1"/>
   <BlockFileSet Type="BlockSrcs" Name="mig_7series_0"/>
 </GenRun>

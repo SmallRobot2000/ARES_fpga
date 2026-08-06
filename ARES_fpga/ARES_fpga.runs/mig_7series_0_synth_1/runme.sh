@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/mig_7series_0_synth_1'
+HD_PWD='/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/mig_7series_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

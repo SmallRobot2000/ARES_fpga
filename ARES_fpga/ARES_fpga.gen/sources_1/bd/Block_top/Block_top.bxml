@@ -2,11 +2,11 @@
 <Root MajorVersion="0" MinorVersion="43">
   <CompositeFile CompositeFileTopName="Block_top" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1785759152"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1785759152"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1785759152"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1785759152"/>
-    <Generation Name="INSTANTIATION_TEMPLATE" State="GENERATED" Timestamp="1785759152"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1786048094"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1786048094"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1786048094"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1786048094"/>
+    <Generation Name="INSTANTIATION_TEMPLATE" State="GENERATED" Timestamp="1786048094"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth/Block_top.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
@@ -69,25 +69,5 @@
         <ProcessingOrder Val="NORMAL"/>
       </File>
     </FileCollection>
-    <BlockContainerCollection>
-      <BlockContainer InstPath="/CPU_block_0" IsPR="false" State="Generated">
-        <ActiveVariantSynth FileName="bd/CPU_block_inst_1/CPU_block_inst_1.bd"/>
-        <ActiveVariantSim FileName="bd/CPU_block_inst_1/CPU_block_inst_1.bd"/>
-        <VariantsCollection>
-          <BDFile BDFilePath="bd/CPU_block_inst_1/CPU_block_inst_1.bd" BDFileset="CPU_block_inst_1" BDSourceFile="../../../../ARES_fpga.srcs/sources_1/bd/CPU_block/CPU_block.bd" BDSourceFileset="sources_1" BDVariantType="ALL"/>
-        </VariantsCollection>
-      </BlockContainer>
-    </BlockContainerCollection>
-    <ReferenceCollection>
-      <ModuleReference TargetName="CPU_block" Type="Block Design" SubInstancePath="Block_topCPU_block_1">
-        <TopFile Name="../../../../ARES_fpga.srcs/sources_1/bd/CPU_block/CPU_block.bd"/>
-        <FileCollection>
-          <File Name="../../../../ARES_fpga.srcs/sources_1/new/CPU_IO_converter.v"/>
-          <File Name="../../../../ARES_fpga.srcs/sources_1/imports/VexiiRiscv/VexiiRiscv.v"/>
-          <File Name="../../../../ARES_fpga.srcs/sources_1/new/VexiiRV_wrapper.v"/>
-          <File Name="../../../../ARES_fpga.srcs/sources_1/bd/CPU_block/CPU_block.bd"/>
-        </FileCollection>
-      </ModuleReference>
-    </ReferenceCollection>
   </CompositeFile>
 </Root>

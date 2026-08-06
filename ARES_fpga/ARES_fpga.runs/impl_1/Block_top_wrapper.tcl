@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/impl_1/Block_top_wrapper.tcl"
+  variable script "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/impl_1/Block_top_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,7 +97,10 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -105,7 +108,8 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param bd.open.in_stealth_mode 3
+  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-12958-lovroLinuxM/incrSyn
+  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 3
   set_param general.usePosixSpawnForFork 1
@@ -116,30 +120,30 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.cache/wt [current_project]
-  set_property parent.project_path /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.xpr [current_project]
+  set_property webtalk.parent_dir /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.cache/wt [current_project]
+  set_property parent.project_path /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.xpr [current_project]
   set_property ip_repo_paths {
-  {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0}
-  {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_IO_converter_1_0}
-  {/home/lovro/Documents/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0}
+  {/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0}
+  {/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_IO_converter_1_0}
+  {/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0}
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.cache/ip [current_project]
+  set_property ip_output_repo /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/Block_top_wrapper.dcp
+  add_files -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/Block_top_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/bd/Block_top/Block_top.bd
-  read_ip -quiet /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci
+  add_files /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/bd/Block_top/Block_top.bd
+  read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc
-  read_xdc /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc
-  read_xdc /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/SPI_pins.xdc
-  read_xdc /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/UART_pins.xdc
+  read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc
+  read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc
+  read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/SPI_pins.xdc
+  read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/UART_pins.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
@@ -205,7 +209,7 @@ set rc [catch {
 OPTRACE "read constraints: place_design" START { }
 OPTRACE "read constraints: place_design" END { }
 OPTRACE "read incremental checkpoint" START { }
-  read_checkpoint -auto_incremental  -incremental /home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp
+  read_checkpoint -auto_incremental  -incremental /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp
   catch { report_incremental_reuse -file Block_top_wrapper_incremental_reuse_pre_placed.rpt }
 OPTRACE "read incremental checkpoint" END { }
   if { [llength [get_debug_cores -quiet] ] > 0 }  { 

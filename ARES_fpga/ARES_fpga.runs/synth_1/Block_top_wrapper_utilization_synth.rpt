@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Mon Aug  3 14:15:21 2026
-| Host         : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
+| Date         : Thu Aug  6 22:29:53 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file Block_top_wrapper_utilization_synth.rpt -pb Block_top_wrapper_utilization_synth.pb
 | Design       : Block_top_wrapper
 | Device       : xc7a35tftg256-2
@@ -159,28 +159,24 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 8. Black Boxes
 --------------
 
-+----------------------------------------+------+
-|                Ref Name                | Used |
-+----------------------------------------+------+
-| CPU_block_inst_1_util_vector_logic_0_0 |    1 |
-| CPU_block_inst_1_VexiiRV_wrapper_0_0   |    1 |
-| CPU_block_inst_1_CPU_IO_converter_0_0  |    1 |
-| Block_top_util_vector_logic_0_1        |    1 |
-| Block_top_util_vector_logic_0_0        |    1 |
-| Block_top_util_ds_buf_2_0              |    1 |
-| Block_top_util_ds_buf_0_2              |    1 |
-| Block_top_util_ds_buf_0_1              |    1 |
-| Block_top_util_ds_buf_0_0              |    1 |
-| Block_top_smartconnect_0_1             |    1 |
-| Block_top_smartconnect_0_0             |    1 |
-| Block_top_mig_axi_wrapper_0_0          |    1 |
-| Block_top_clk_wiz_0_0                  |    1 |
-| Block_top_c_counter_binary_0_0         |    1 |
-| Block_top_axi_uartlite_0_0             |    1 |
-| Block_top_axi_timer_0_0                |    1 |
-| Block_top_axi_quad_spi_0_1             |    1 |
-| Block_top_FLASH_SPI_wrapper_0_0        |    1 |
-+----------------------------------------+------+
++---------------------------------+------+
+|             Ref Name            | Used |
++---------------------------------+------+
+| Block_top_util_vector_logic_0_1 |    1 |
+| Block_top_util_vector_logic_0_0 |    1 |
+| Block_top_util_ds_buf_2_0       |    1 |
+| Block_top_util_ds_buf_0_2       |    1 |
+| Block_top_util_ds_buf_0_1       |    1 |
+| Block_top_util_ds_buf_0_0       |    1 |
+| Block_top_smartconnect_0_1      |    1 |
+| Block_top_smartconnect_0_0      |    1 |
+| Block_top_mig_axi_wrapper_0_0   |    1 |
+| Block_top_clk_wiz_0_0           |    1 |
+| Block_top_axi_uartlite_0_0      |    1 |
+| Block_top_axi_quad_spi_0_1      |    1 |
+| Block_top_VexiiSocWrapper_0_1   |    1 |
+| Block_top_FLASH_SPI_wrapper_0_0 |    1 |
++---------------------------------+------+
 
 
 9. Instantiated Netlists

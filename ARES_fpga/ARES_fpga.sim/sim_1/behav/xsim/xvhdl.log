@@ -1,0 +1,18 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_797d_psr_aclk_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'bd_797d_psr_aclk_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_1/sim/bd_b9bc_psr_aclk_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'bd_b9bc_psr_aclk_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_util_ds_buf_0_0/util_ds_buf.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'util_ds_buf'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_util_ds_buf_0_0/sim/Block_top_util_ds_buf_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Block_top_util_ds_buf_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_axi_quad_spi_0_1/sim/Block_top_axi_quad_spi_0_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Block_top_axi_quad_spi_0_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_util_ds_buf_0_1/sim/Block_top_util_ds_buf_0_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Block_top_util_ds_buf_0_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_util_ds_buf_0_2/sim/Block_top_util_ds_buf_0_2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Block_top_util_ds_buf_0_2'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_util_ds_buf_2_0/sim/Block_top_util_ds_buf_2_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Block_top_util_ds_buf_2_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.ip_user_files/bd/Block_top/ip/Block_top_axi_uartlite_0_0/sim/Block_top_axi_uartlite_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Block_top_axi_uartlite_0_0'

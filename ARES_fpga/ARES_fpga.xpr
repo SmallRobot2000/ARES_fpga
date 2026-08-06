@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="71" Path="/home/lovro/Documents/ARES_fpga/ARES_fpga/ARES_fpga.xpr">
+<Project Product="Vivado" Version="7" Minor="71" Path="/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="82c32ed9c18d4b2d881ff930bebdc248"/>
@@ -61,19 +61,19 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="72"/>
+    <Option Name="WTXSimLaunchSim" Val="78"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="37"/>
-    <Option Name="WTModelSimExportSim" Val="37"/>
-    <Option Name="WTQuestaExportSim" Val="37"/>
+    <Option Name="WTXSimExportSim" Val="39"/>
+    <Option Name="WTModelSimExportSim" Val="39"/>
+    <Option Name="WTQuestaExportSim" Val="39"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="37"/>
-    <Option Name="WTRivieraExportSim" Val="37"/>
+    <Option Name="WTVcsExportSim" Val="39"/>
+    <Option Name="WTRivieraExportSim" Val="39"/>
     <Option Name="WTActivehdlExportSim" Val="0"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
@@ -128,7 +128,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/bd/CPU_block/CPU_block.bd">
+      <File Path="$PSRCDIR/sources_1/new/BUFGMUX_wrapper.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -136,7 +136,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/BUFGMUX_wrapper.v">
+      <File Path="$PSRCDIR/sources_1/new/CPU_IO_converter.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -167,23 +167,16 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/CPU_IO_converter.v">
+      <File Path="$PSRCDIR/sources_1/imports/generated/VexiiSoc.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../ARES_VexiiRiscv/generated/VexiiSoc.v"/>
+          <Attr Name="ImportTime" Val="1786048039"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/VexiiRiscv/VexiiRiscv.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../VexiiRiscv/VexiiRiscv.v"/>
-          <Attr Name="ImportTime" Val="1785759040"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/VexiiRV_wrapper.v">
+      <File Path="$PSRCDIR/sources_1/new/VexiiSocWrapper.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -198,6 +191,9 @@
         </FileInfo>
         <CompFileExtendedInfo CompFileName="Block_top.bd" FileRelPathName="ip/Block_top_FLASH_SPI_wrapper_0_0/Block_top_FLASH_SPI_wrapper_0_0.xci">
           <Proxy FileSetName="Block_top_FLASH_SPI_wrapper_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Block_top.bd" FileRelPathName="ip/Block_top_VexiiSocWrapper_0_1/Block_top_VexiiSocWrapper_0_1.xci">
+          <Proxy FileSetName="Block_top_VexiiSocWrapper_0_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Block_top.bd" FileRelPathName="ip/Block_top_mig_axi_wrapper_0_0/Block_top_mig_axi_wrapper_0_0.xci">
           <Proxy FileSetName="Block_top_mig_axi_wrapper_0_0"/>
@@ -376,48 +372,21 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="CPU_block_inst_1" Type="BlockSrcs" RelSrcDir="$PGENDIR/sources_1/bd/Block_top/bd/CPU_block_inst_1" RelGenDir="$PGENDIR/sources_1/bd/Block_top/bd/CPU_block_inst_1">
-      <File Path="$PGENDIR/sources_1/bd/Block_top/bd/CPU_block_inst_1/CPU_block_inst_1.bd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PGENDIR/sources_1/bd/Block_top/bd/CPU_block_inst_1/CPU_block_inst_1.bd"/>
-          <Attr Name="ImportTime" Val="1785241127"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-        <CompFileExtendedInfo CompFileName="CPU_block_inst_1.bd" FileRelPathName="ip/CPU_block_inst_1_CPU_IO_converter_0_0/CPU_block_inst_1_CPU_IO_converter_0_0.xci">
-          <Proxy FileSetName="CPU_block_inst_1_CPU_IO_converter_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="CPU_block_inst_1.bd" FileRelPathName="ip/CPU_block_inst_1_VexiiRV_wrapper_0_0/CPU_block_inst_1_VexiiRV_wrapper_0_0.xci">
-          <Proxy FileSetName="CPU_block_inst_1_VexiiRV_wrapper_0_0"/>
-        </CompFileExtendedInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="CPU_block_inst_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="CPU_block_inst_1_VexiiRV_wrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CPU_block_inst_1_VexiiRV_wrapper_0_0" RelGenDir="$PGENDIR/CPU_block_inst_1_VexiiRV_wrapper_0_0">
-      <Config>
-        <Option Name="TopModule" Val="CPU_block_inst_1_VexiiRV_wrapper_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="Block_top_mig_axi_wrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_mig_axi_wrapper_0_0" RelGenDir="$PGENDIR/Block_top_mig_axi_wrapper_0_0">
       <Config>
         <Option Name="TopModule" Val="Block_top_mig_axi_wrapper_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="CPU_block_inst_1_CPU_IO_converter_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CPU_block_inst_1_CPU_IO_converter_0_0" RelGenDir="$PGENDIR/CPU_block_inst_1_CPU_IO_converter_0_0">
-      <Config>
-        <Option Name="TopModule" Val="CPU_block_inst_1_CPU_IO_converter_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="Block_top_FLASH_SPI_wrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_FLASH_SPI_wrapper_0_0" RelGenDir="$PGENDIR/Block_top_FLASH_SPI_wrapper_0_0">
       <Config>
         <Option Name="TopModule" Val="Block_top_FLASH_SPI_wrapper_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="Block_top_VexiiSocWrapper_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_VexiiSocWrapper_0_1" RelGenDir="$PGENDIR/Block_top_VexiiSocWrapper_0_1">
+      <Config>
+        <Option Name="TopModule" Val="Block_top_VexiiSocWrapper_0_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -494,18 +463,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="CPU_block_inst_1_VexiiRV_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="CPU_block_inst_1_VexiiRV_wrapper_0_0" Part="xc7a35tftg256-2" ConstrsSet="CPU_block_inst_1_VexiiRV_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/CPU_block_inst_1_VexiiRV_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/CPU_block_inst_1_VexiiRV_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/CPU_block_inst_1_VexiiRV_wrapper_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="Block_top_mig_axi_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="Block_top_mig_axi_wrapper_0_0" Part="xc7a35tftg256-2" ConstrsSet="Block_top_mig_axi_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_mig_axi_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_mig_axi_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_mig_axi_wrapper_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
@@ -518,7 +475,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="CPU_block_inst_1_CPU_IO_converter_0_0_synth_1" Type="Ft3:Synth" SrcSet="CPU_block_inst_1_CPU_IO_converter_0_0" Part="xc7a35tftg256-2" ConstrsSet="CPU_block_inst_1_CPU_IO_converter_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/CPU_block_inst_1_CPU_IO_converter_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/CPU_block_inst_1_CPU_IO_converter_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/CPU_block_inst_1_CPU_IO_converter_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="Block_top_FLASH_SPI_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="Block_top_FLASH_SPI_wrapper_0_0" Part="xc7a35tftg256-2" ConstrsSet="Block_top_FLASH_SPI_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_FLASH_SPI_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -530,7 +487,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Block_top_FLASH_SPI_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="Block_top_FLASH_SPI_wrapper_0_0" Part="xc7a35tftg256-2" ConstrsSet="Block_top_FLASH_SPI_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_FLASH_SPI_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="Block_top_VexiiSocWrapper_0_1_synth_1" Type="Ft3:Synth" SrcSet="Block_top_VexiiSocWrapper_0_1" Part="xc7a35tftg256-2" ConstrsSet="Block_top_VexiiSocWrapper_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_VexiiSocWrapper_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_VexiiSocWrapper_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_VexiiSocWrapper_0_1_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -594,25 +551,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="CPU_block_inst_1_VexiiRV_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-2" ConstrsSet="CPU_block_inst_1_VexiiRV_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="CPU_block_inst_1_VexiiRV_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/CPU_block_inst_1_VexiiRV_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/CPU_block_inst_1_VexiiRV_wrapper_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="Block_top_mig_axi_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-2" ConstrsSet="Block_top_mig_axi_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_mig_axi_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_mig_axi_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_mig_axi_wrapper_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
@@ -632,7 +570,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="CPU_block_inst_1_CPU_IO_converter_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-2" ConstrsSet="CPU_block_inst_1_CPU_IO_converter_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="CPU_block_inst_1_CPU_IO_converter_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/CPU_block_inst_1_CPU_IO_converter_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/CPU_block_inst_1_CPU_IO_converter_0_0_impl_1" ParallelReportGen="true">
+    <Run Id="Block_top_FLASH_SPI_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-2" ConstrsSet="Block_top_FLASH_SPI_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_FLASH_SPI_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
@@ -651,7 +589,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Block_top_FLASH_SPI_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-2" ConstrsSet="Block_top_FLASH_SPI_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_FLASH_SPI_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_impl_1" ParallelReportGen="true">
+    <Run Id="Block_top_VexiiSocWrapper_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-2" ConstrsSet="Block_top_VexiiSocWrapper_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_VexiiSocWrapper_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_VexiiSocWrapper_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_VexiiSocWrapper_0_1_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
