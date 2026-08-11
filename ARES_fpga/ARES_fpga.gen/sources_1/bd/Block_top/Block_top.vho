@@ -80,7 +80,12 @@ COMPONENT Block_top
     spi_controller_mosi : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     spi_controller_miso : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     spi_controller_sck : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    spi_controller_ss : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+    spi_controller_ss : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    vga_r : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    vga_g : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    h_sync : OUT STD_LOGIC;
+    v_sync : OUT STD_LOGIC;
+    vga_b : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -118,7 +123,12 @@ your_instance_name : Block_top
     spi_controller_mosi => spi_controller_mosi,
     spi_controller_miso => spi_controller_miso,
     spi_controller_sck => spi_controller_sck,
-    spi_controller_ss => spi_controller_ss
+    spi_controller_ss => spi_controller_ss,
+    vga_r => vga_r,
+    vga_g => vga_g,
+    h_sync => h_sync,
+    v_sync => v_sync,
+    vga_b => vga_b
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

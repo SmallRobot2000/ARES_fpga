@@ -1,40 +1,15 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="24051" HostCore="12" HostMemory="16253180">
+    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="669074" HostCore="12" HostMemory="32743684">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="27318" HostCore="12" HostMemory="16253180">
+    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="677844" HostCore="12" HostMemory="32743684">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="88189" HostCore="12" HostMemory="16253180">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="91642" HostCore="12" HostMemory="16253180">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="109472" HostCore="12" HostMemory="16253180">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="118713" HostCore="12" HostMemory="16253180">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="123177" HostCore="12" HostMemory="16253180">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="188717" HostCore="12" HostMemory="16253180">
+    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="773538" HostCore="12" HostMemory="32743684">
     </Process>
 </ProcessHandle>

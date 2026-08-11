@@ -99,8 +99,6 @@ OPTRACE "impl_1" END { }
 
 set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -108,8 +106,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-12958-lovroLinuxM/incrSyn
-  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 3
   set_param general.usePosixSpawnForFork 1
@@ -138,12 +134,17 @@ OPTRACE "add files" START { }
   set_param project.isImplRun true
   add_files /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/bd/Block_top/Block_top.bd
   read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci
+  read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_fin_line/blk_mem_fin_line.xci
+  read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_tile_map/blk_mem_tile_map.xci
+  read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_tile_data/blk_mem_tile_data.xci
+  read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_buf_line/blk_mem_buf_line.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc
   read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc
   read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/SPI_pins.xdc
   read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/UART_pins.xdc
+  read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/VGA_pins.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
@@ -178,7 +179,7 @@ set rc [catch {
 OPTRACE "read constraints: opt_design" START { }
 OPTRACE "read constraints: opt_design" END { }
 OPTRACE "opt_design" START { }
-  opt_design 
+  opt_design -directive ExploreWithRemap
 OPTRACE "opt_design" END { }
 OPTRACE "read constraints: opt_design_post" START { }
 OPTRACE "read constraints: opt_design_post" END { }
@@ -243,34 +244,6 @@ if {$rc} {
 }
 
 OPTRACE "Phase: Place Design" END { }
-OPTRACE "Phase: Physical Opt Design" START { ROLLUP_AUTO }
-start_step phys_opt_design
-set ACTIVE_STEP phys_opt_design
-set rc [catch {
-  create_msg_db phys_opt_design.pb
-OPTRACE "read constraints: phys_opt_design" START { }
-OPTRACE "read constraints: phys_opt_design" END { }
-OPTRACE "phys_opt_design" START { }
-  phys_opt_design 
-OPTRACE "phys_opt_design" END { }
-OPTRACE "read constraints: phys_opt_design_post" START { }
-OPTRACE "read constraints: phys_opt_design_post" END { }
-OPTRACE "phys_opt_design report" START { REPORT }
-OPTRACE "phys_opt_design report" END { }
-OPTRACE "Post-Place Phys Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force Block_top_wrapper_physopt.dcp
-OPTRACE "Post-Place Phys Opt Design: write_checkpoint" END { }
-  close_msg_db -file phys_opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed phys_opt_design
-  return -code error $RESULT
-} else {
-  end_step phys_opt_design
-  unset ACTIVE_STEP 
-}
-
-OPTRACE "Phase: Physical Opt Design" END { }
 OPTRACE "Phase: Route Design" START { ROLLUP_AUTO }
 start_step route_design
 set ACTIVE_STEP route_design

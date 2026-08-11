@@ -2,12 +2,27 @@
 <Root MajorVersion="0" MinorVersion="43">
   <CompositeFile CompositeFileTopName="Block_top" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1786048094"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1786048094"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1786048094"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1786048094"/>
-    <Generation Name="INSTANTIATION_TEMPLATE" State="GENERATED" Timestamp="1786048094"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1786477895"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1786477895"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1786477895"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1786477895"/>
+    <Generation Name="INSTANTIATION_TEMPLATE" State="GENERATED" Timestamp="1786477895"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
+      <File Name="Block_top.vho" Type="VhdlTemplate">
+        <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <ProcessingOrder Val="NORMAL"/>
+      </File>
+      <File Name="Block_top.veo" Type="VTemplate">
+        <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <ProcessingOrder Val="NORMAL"/>
+      </File>
+      <File Name="Block_top_sv.sveo" Type="SystemVerilogTemplate">
+        <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <ProcessingOrder Val="NORMAL"/>
+      </File>
       <File Name="synth/Block_top.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -51,21 +66,6 @@
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
-        <ProcessingOrder Val="NORMAL"/>
-      </File>
-      <File Name="Block_top.vho" Type="VhdlTemplate">
-        <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <ProcessingOrder Val="NORMAL"/>
-      </File>
-      <File Name="Block_top.veo" Type="VTemplate">
-        <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <ProcessingOrder Val="NORMAL"/>
-      </File>
-      <File Name="Block_top_sv.sveo" Type="SystemVerilogTemplate">
-        <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
     </FileCollection>

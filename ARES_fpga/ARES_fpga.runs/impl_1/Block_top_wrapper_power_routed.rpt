@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Thu Aug  6 22:33:14 2026
+| Date             : Tue Aug 11 21:56:26 2026
 | Host             : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file Block_top_wrapper_power_routed.rpt -pb Block_top_wrapper_power_summary_routed.pb -rpx Block_top_wrapper_power_routed.rpx
 | Design           : Block_top_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.962        |
+| Total On-Chip Power (W)  | 0.988        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.886        |
-| Device Static (W)        | 0.076        |
+| Dynamic (W)              | 0.911        |
+| Device Static (W)        | 0.077        |
 | Effective TJA (C/W)      | 4.9          |
-| Max Ambient (C)          | 80.3         |
-| Junction Temperature (C) | 29.7         |
+| Max Ambient (C)          | 80.2         |
+| Junction Temperature (C) | 29.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,25 +52,25 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.077 |       24 |       --- |             --- |
-| Slice Logic              |     0.032 |    42063 |       --- |             --- |
-|   LUT as Logic           |     0.028 |    15867 |     20800 |           76.28 |
-|   Register               |     0.002 |    17609 |     41600 |           42.33 |
-|   LUT as Distributed RAM |     0.001 |     1362 |      9600 |           14.19 |
-|   CARRY4                 |    <0.001 |      478 |      8150 |            5.87 |
-|   LUT as Shift Register  |    <0.001 |      345 |      9600 |            3.59 |
-|   F7/F8 Muxes            |    <0.001 |       40 |     32600 |            0.12 |
-|   Others                 |    <0.001 |      883 |       --- |             --- |
-| Signals                  |     0.043 |    31259 |       --- |             --- |
-| Block RAM                |     0.042 |       11 |        50 |           22.00 |
+| Clocks                   |     0.078 |       24 |       --- |             --- |
+| Slice Logic              |     0.034 |    43613 |       --- |             --- |
+|   LUT as Logic           |     0.030 |    16462 |     20800 |           79.14 |
+|   Register               |     0.002 |    18198 |     41600 |           43.75 |
+|   LUT as Distributed RAM |     0.001 |     1360 |      9600 |           14.17 |
+|   CARRY4                 |    <0.001 |      476 |      8150 |            5.84 |
+|   LUT as Shift Register  |    <0.001 |      340 |      9600 |            3.54 |
+|   F7/F8 Muxes            |    <0.001 |       50 |     32600 |            0.15 |
+|   Others                 |    <0.001 |     1021 |       --- |             --- |
+| Signals                  |     0.046 |    32882 |       --- |             --- |
+| Block RAM                |     0.057 |       35 |        50 |           70.00 |
 | MMCM                     |     0.191 |        2 |         5 |           40.00 |
 | PLL                      |     0.091 |        1 |         5 |           20.00 |
 | DSPs                     |    <0.001 |        4 |        90 |            4.44 |
-| I/O                      |     0.271 |       64 |       170 |           37.65 |
+| I/O                      |     0.275 |       78 |       170 |           45.88 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
-| Static Power             |     0.076 |          |           |                 |
-| Total                    |     0.962 |          |           |                 |
+| Static Power             |     0.077 |          |           |                 |
+| Total                    |     0.988 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,16 +80,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.247 |       0.236 |      0.012 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.267 |       0.254 |      0.012 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.281 |       0.268 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.119 |       0.118 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.003 |       0.002 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.022 |       0.002 |      0.020 |       NA    | Unspecified | NA         |
@@ -167,23 +167,29 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-----------------------+-----------+
-| Name                  | Power (W) |
-+-----------------------+-----------+
-| Block_top_wrapper     |     0.886 |
-|   Block_top_i         |     0.882 |
-|     VexiiSocWrapper_0 |     0.098 |
-|       inst            |     0.098 |
-|     axi_quad_spi_0    |     0.005 |
-|       U0              |     0.005 |
-|     clk_wiz_0         |     0.097 |
-|       inst            |     0.097 |
-|     mig_axi_wrapper_0 |     0.642 |
-|       inst            |     0.642 |
-|     smartconnect_io   |     0.003 |
-|       inst            |     0.003 |
-|     smartconnect_mem  |     0.035 |
-|       inst            |     0.035 |
-+-----------------------+-----------+
++-------------------------------+-----------+
+| Name                          | Power (W) |
++-------------------------------+-----------+
+| Block_top_wrapper             |     0.911 |
+|   Block_top_i                 |     0.903 |
+|     VDP_0                     |     0.027 |
+|       inst                    |     0.027 |
+|     VexiiSocWrapper_0         |     0.087 |
+|       inst                    |     0.087 |
+|     axi_bram_ctrl_vdp_t0_data |     0.002 |
+|       U0                      |     0.002 |
+|     axi_bram_ctrl_vdp_t0_map  |     0.001 |
+|       U0                      |     0.001 |
+|     axi_quad_spi_0            |     0.005 |
+|       U0                      |     0.005 |
+|     clk_wiz_0                 |     0.097 |
+|       inst                    |     0.097 |
+|     mig_axi_wrapper_0         |     0.642 |
+|       inst                    |     0.642 |
+|     smartconnect_io           |     0.004 |
+|       inst                    |     0.004 |
+|     smartconnect_mem          |     0.036 |
+|       inst                    |     0.036 |
++-------------------------------+-----------+
 
 

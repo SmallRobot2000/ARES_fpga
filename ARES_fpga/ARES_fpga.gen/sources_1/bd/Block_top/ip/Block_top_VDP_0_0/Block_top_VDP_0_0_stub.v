@@ -1,0 +1,44 @@
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+// --------------------------------------------------------------------------------
+// Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+// Date        : Tue Aug 11 21:52:52 2026
+// Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+// Command     : write_verilog -force -mode synth_stub
+//               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VDP_0_0/Block_top_VDP_0_0_stub.v
+// Design      : Block_top_VDP_0_0
+// Purpose     : Stub declaration of top-level module interface
+// Device      : xc7a35tftg256-2
+// --------------------------------------------------------------------------------
+
+// This empty module with port declaration file causes synthesis tools to infer a black box for IP.
+// The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
+// Please paste the declaration into a Verilog source file or add the file as an additional source.
+(* CHECK_LICENSE_TYPE = "Block_top_VDP_0_0,VDP,{}" *) (* CORE_GENERATION_INFO = "Block_top_VDP_0_0,VDP,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=VDP,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,VGA_H_ACTIVE=640,VGA_V_ACTIVE=480,VGA_H_SYNC=96,VGA_V_SYNC=2,VGA_H_FRONT_PORCH=16,VGA_V_FRONT_PORCH=11,VGA_H_BACK_PORCH=48,VGA_V_BACK_PORCH=31,VGA_H_TOTAL=800,VGA_V_TOTAL=524}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
+(* IP_DEFINITION_SOURCE = "module_ref" *) (* X_CORE_INFO = "VDP,Vivado 2025.2" *) 
+module Block_top_VDP_0_0(map_cpu_addr, map_cpu_din, map_cpu_dout, 
+  map_cpu_en, map_cpu_wen, map_cpu_clk, data_cpu_addr, data_cpu_din, data_cpu_dout, 
+  data_cpu_en, data_cpu_wen, data_cpu_clk, s_axi_aclk, s_axi_aresetn, h_sync, v_sync, vga_r, vga_g, 
+  vga_b)
+/* synthesis syn_black_box black_box_pad_pin="map_cpu_addr[12:0],map_cpu_din[31:0],map_cpu_dout[31:0],map_cpu_en,map_cpu_wen[3:0],map_cpu_clk,data_cpu_addr[13:0],data_cpu_din[31:0],data_cpu_dout[31:0],data_cpu_en,data_cpu_wen[3:0],data_cpu_clk,s_axi_aresetn,h_sync,v_sync,vga_r[3:0],vga_g[3:0],vga_b[3:0]" */
+/* synthesis syn_force_seq_prim="s_axi_aclk" */;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM ADDR" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) input [12:0]map_cpu_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM DIN" *) input [31:0]map_cpu_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM DOUT" *) output [31:0]map_cpu_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM EN" *) input map_cpu_en;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM WE" *) input [3:0]map_cpu_wen;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM CLK" *) input map_cpu_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM ADDR" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) input [13:0]data_cpu_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM DIN" *) input [31:0]data_cpu_din;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM DOUT" *) output [31:0]data_cpu_dout;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM EN" *) input data_cpu_en;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM WE" *) input [3:0]data_cpu_wen;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM CLK" *) input data_cpu_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_aclk, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, INSERT_VIP 0" *) input s_axi_aclk /* synthesis syn_isclock = 1 */;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 s_axi_aresetn RST" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
+  output h_sync;
+  output v_sync;
+  output [3:0]vga_r;
+  output [3:0]vga_g;
+  output [3:0]vga_b;
+endmodule

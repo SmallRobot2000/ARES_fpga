@@ -9,6 +9,8 @@
 
 # XDC: new/UART_pins.xdc
 
+# XDC: new/VGA_pins.xdc
+
 # Block Designs: bd/Block_top/Block_top.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top || ORIG_REF_NAME==Block_top} -quiet] -quiet
 
@@ -56,5 +58,29 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_a
 
 # IP: bd/Block_top/ip/Block_top_VexiiSocWrapper_0_1/Block_top_VexiiSocWrapper_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_VexiiSocWrapper_0_1 || ORIG_REF_NAME==Block_top_VexiiSocWrapper_0_1} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_xlconcat_0_0/Block_top_xlconcat_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_xlconcat_0_0 || ORIG_REF_NAME==Block_top_xlconcat_0_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_VDP_0_0/Block_top_VDP_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_VDP_0_0 || ORIG_REF_NAME==Block_top_VDP_0_0} -quiet] -quiet
+
+# IP: ip/blk_mem_tile_data/blk_mem_tile_data.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_tile_data || ORIG_REF_NAME==blk_mem_tile_data} -quiet] -quiet
+
+# IP: ip/blk_mem_tile_map/blk_mem_tile_map.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_tile_map || ORIG_REF_NAME==blk_mem_tile_map} -quiet] -quiet
+
+# IP: ip/blk_mem_buf_line/blk_mem_buf_line.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_buf_line || ORIG_REF_NAME==blk_mem_buf_line} -quiet] -quiet
+
+# IP: ip/blk_mem_fin_line/blk_mem_fin_line.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_fin_line || ORIG_REF_NAME==blk_mem_fin_line} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_0_0/Block_top_axi_bram_ctrl_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_0_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_0_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_map_0/Block_top_axi_bram_ctrl_map_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_map_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_map_0} -quiet] -quiet
 
 # XDC: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc

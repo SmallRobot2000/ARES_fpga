@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Thu Aug  6 22:28:09 2026
+//Date        : Tue Aug 11 21:51:31 2026
 //Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target Block_top_wrapper.bd
 //Design      : Block_top_wrapper
@@ -27,6 +27,7 @@ module Block_top_wrapper
     ddr3_ras_n,
     ddr3_reset_n,
     ddr3_we_n,
+    h_sync,
     rst_n,
     spi_controller_miso,
     spi_controller_mosi,
@@ -38,7 +39,11 @@ module Block_top_wrapper
     spi_sck,
     test_tx,
     uart_rx,
-    uart_tx);
+    uart_tx,
+    v_sync,
+    vga_b,
+    vga_g,
+    vga_r);
   input clk;
   output [13:0]ddr3_addr;
   output [2:0]ddr3_ba;
@@ -55,6 +60,7 @@ module Block_top_wrapper
   output ddr3_ras_n;
   output ddr3_reset_n;
   output ddr3_we_n;
+  output h_sync;
   input rst_n;
   inout [0:0]spi_controller_miso;
   inout [0:0]spi_controller_mosi;
@@ -67,6 +73,10 @@ module Block_top_wrapper
   output test_tx;
   input uart_rx;
   output uart_tx;
+  output v_sync;
+  output [3:0]vga_b;
+  output [3:0]vga_g;
+  output [3:0]vga_r;
 
   wire clk;
   wire [13:0]ddr3_addr;
@@ -84,6 +94,7 @@ module Block_top_wrapper
   wire ddr3_ras_n;
   wire ddr3_reset_n;
   wire ddr3_we_n;
+  wire h_sync;
   wire rst_n;
   wire [0:0]spi_controller_miso;
   wire [0:0]spi_controller_mosi;
@@ -96,6 +107,10 @@ module Block_top_wrapper
   wire test_tx;
   wire uart_rx;
   wire uart_tx;
+  wire v_sync;
+  wire [3:0]vga_b;
+  wire [3:0]vga_g;
+  wire [3:0]vga_r;
 
   Block_top Block_top_i
        (.clk(clk),
@@ -114,6 +129,7 @@ module Block_top_wrapper
         .ddr3_ras_n(ddr3_ras_n),
         .ddr3_reset_n(ddr3_reset_n),
         .ddr3_we_n(ddr3_we_n),
+        .h_sync(h_sync),
         .rst_n(rst_n),
         .spi_controller_miso(spi_controller_miso),
         .spi_controller_mosi(spi_controller_mosi),
@@ -125,5 +141,9 @@ module Block_top_wrapper
         .spi_sck(spi_sck),
         .test_tx(test_tx),
         .uart_rx(uart_rx),
-        .uart_tx(uart_tx));
+        .uart_tx(uart_tx),
+        .v_sync(v_sync),
+        .vga_b(vga_b),
+        .vga_g(vga_g),
+        .vga_r(vga_r));
 endmodule

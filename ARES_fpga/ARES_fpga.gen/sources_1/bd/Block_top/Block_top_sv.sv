@@ -108,7 +108,17 @@ module Block_top_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   inout wire [0:0] spi_controller_sck,
   (* X_INTERFACE_IGNORE = "true" *)
-  inout wire [3:0] spi_controller_ss
+  inout wire [3:0] spi_controller_ss,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [3:0] vga_r,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [3:0] vga_g,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire h_sync,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire v_sync,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [3:0] vga_b
 );
 
   Block_top inst (
@@ -139,7 +149,12 @@ module Block_top_sv (
     .spi_controller_mosi(spi_controller_mosi),
     .spi_controller_miso(spi_controller_miso),
     .spi_controller_sck(spi_controller_sck),
-    .spi_controller_ss(spi_controller_ss)
+    .spi_controller_ss(spi_controller_ss),
+    .vga_r(vga_r),
+    .vga_g(vga_g),
+    .h_sync(h_sync),
+    .v_sync(v_sync),
+    .vga_b(vga_b)
   );
 
 endmodule

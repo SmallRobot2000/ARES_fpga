@@ -93,7 +93,12 @@ Block_top_sv your_instance_name (
   .spi_controller_mosi(spi_controller_mosi), // inout wire [0:0] spi_controller_mosi
   .spi_controller_miso(spi_controller_miso), // inout wire [0:0] spi_controller_miso
   .spi_controller_sck(spi_controller_sck), // inout wire [0:0] spi_controller_sck
-  .spi_controller_ss(spi_controller_ss) // inout wire [3:0] spi_controller_ss
+  .spi_controller_ss(spi_controller_ss), // inout wire [3:0] spi_controller_ss
+  .vga_r(vga_r), // output wire [3:0] vga_r
+  .vga_g(vga_g), // output wire [3:0] vga_g
+  .h_sync(h_sync), // output wire h_sync
+  .v_sync(v_sync), // output wire v_sync
+  .vga_b(vga_b) // output wire [3:0] vga_b
 );
 // INST_TAG_END ------  End cut for WRAPPER INSTANTIATION Template  ------
 
