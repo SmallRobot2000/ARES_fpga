@@ -65,6 +65,15 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_x
 # IP: bd/Block_top/ip/Block_top_VDP_0_0/Block_top_VDP_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_VDP_0_0 || ORIG_REF_NAME==Block_top_VDP_0_0} -quiet] -quiet
 
+# IP: ip/blk_mem_gen_spr_att/blk_mem_gen_spr_att.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_att || ORIG_REF_NAME==blk_mem_gen_spr_att} -quiet] -quiet
+
+# IP: ip/blk_mem_gen_spr_data/blk_mem_gen_spr_data.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_data || ORIG_REF_NAME==blk_mem_gen_spr_data} -quiet] -quiet
+
+# IP: ip/blk_mem_gen_spr_line/blk_mem_gen_spr_line.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_line || ORIG_REF_NAME==blk_mem_gen_spr_line} -quiet] -quiet
+
 # IP: ip/blk_mem_tile_data/blk_mem_tile_data.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_tile_data || ORIG_REF_NAME==blk_mem_tile_data} -quiet] -quiet
 
@@ -82,5 +91,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_a
 
 # IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_map_0/Block_top_axi_bram_ctrl_map_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_map_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_map_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_data_0/Block_top_axi_bram_ctrl_vdp_t0_data_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_data_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_data_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_s0_att_0/Block_top_axi_bram_ctrl_vdp_s0_att_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_att_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_att_0} -quiet] -quiet
 
 # XDC: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc

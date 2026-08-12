@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Aug 11 21:53:51 2026
+| Date         : Wed Aug 12 21:44:34 2026
 | Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file Block_top_wrapper_utilization_synth.rpt -pb Block_top_wrapper_utilization_synth.pb
 | Design       : Block_top_wrapper
@@ -159,27 +159,29 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 8. Black Boxes
 --------------
 
-+---------------------------------+------+
-|             Ref Name            | Used |
-+---------------------------------+------+
-| Block_top_util_vector_logic_0_1 |    1 |
-| Block_top_util_vector_logic_0_0 |    1 |
-| Block_top_util_ds_buf_2_0       |    1 |
-| Block_top_util_ds_buf_0_2       |    1 |
-| Block_top_util_ds_buf_0_1       |    1 |
-| Block_top_util_ds_buf_0_0       |    1 |
-| Block_top_smartconnect_0_1      |    1 |
-| Block_top_smartconnect_0_0      |    1 |
-| Block_top_mig_axi_wrapper_0_0   |    1 |
-| Block_top_clk_wiz_0_0           |    1 |
-| Block_top_axi_uartlite_0_0      |    1 |
-| Block_top_axi_quad_spi_0_1      |    1 |
-| Block_top_axi_bram_ctrl_map_0   |    1 |
-| Block_top_axi_bram_ctrl_0_0     |    1 |
-| Block_top_VexiiSocWrapper_0_1   |    1 |
-| Block_top_VDP_0_0               |    1 |
-| Block_top_FLASH_SPI_wrapper_0_0 |    1 |
-+---------------------------------+------+
++---------------------------------------+------+
+|                Ref Name               | Used |
++---------------------------------------+------+
+| Block_top_util_vector_logic_0_1       |    1 |
+| Block_top_util_vector_logic_0_0       |    1 |
+| Block_top_util_ds_buf_2_0             |    1 |
+| Block_top_util_ds_buf_0_2             |    1 |
+| Block_top_util_ds_buf_0_1             |    1 |
+| Block_top_util_ds_buf_0_0             |    1 |
+| Block_top_smartconnect_0_1            |    1 |
+| Block_top_smartconnect_0_0            |    1 |
+| Block_top_mig_axi_wrapper_0_0         |    1 |
+| Block_top_clk_wiz_0_0                 |    1 |
+| Block_top_axi_uartlite_0_0            |    1 |
+| Block_top_axi_quad_spi_0_1            |    1 |
+| Block_top_axi_bram_ctrl_vdp_t0_data_0 |    1 |
+| Block_top_axi_bram_ctrl_vdp_s0_att_0  |    1 |
+| Block_top_axi_bram_ctrl_map_0         |    1 |
+| Block_top_axi_bram_ctrl_0_0           |    1 |
+| Block_top_VexiiSocWrapper_0_1         |    1 |
+| Block_top_VDP_0_0                     |    1 |
+| Block_top_FLASH_SPI_wrapper_0_0       |    1 |
++---------------------------------------+------+
 
 
 9. Instantiated Netlists

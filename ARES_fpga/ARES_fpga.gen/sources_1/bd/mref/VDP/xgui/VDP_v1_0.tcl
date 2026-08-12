@@ -3,6 +3,9 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  ipgui::add_param $IPINST -name "NUM_GEN" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "S0_GEN_NUM" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "T0_GEN_NUM" -parent ${Page_0}
   ipgui::add_param $IPINST -name "VGA_H_ACTIVE" -parent ${Page_0}
   ipgui::add_param $IPINST -name "VGA_H_BACK_PORCH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "VGA_H_FRONT_PORCH" -parent ${Page_0}
@@ -15,6 +18,33 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "VGA_V_TOTAL" -parent ${Page_0}
 
 
+}
+
+proc update_PARAM_VALUE.NUM_GEN { PARAM_VALUE.NUM_GEN } {
+	# Procedure called to update NUM_GEN when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.NUM_GEN { PARAM_VALUE.NUM_GEN } {
+	# Procedure called to validate NUM_GEN
+	return true
+}
+
+proc update_PARAM_VALUE.S0_GEN_NUM { PARAM_VALUE.S0_GEN_NUM } {
+	# Procedure called to update S0_GEN_NUM when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.S0_GEN_NUM { PARAM_VALUE.S0_GEN_NUM } {
+	# Procedure called to validate S0_GEN_NUM
+	return true
+}
+
+proc update_PARAM_VALUE.T0_GEN_NUM { PARAM_VALUE.T0_GEN_NUM } {
+	# Procedure called to update T0_GEN_NUM when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.T0_GEN_NUM { PARAM_VALUE.T0_GEN_NUM } {
+	# Procedure called to validate T0_GEN_NUM
+	return true
 }
 
 proc update_PARAM_VALUE.VGA_H_ACTIVE { PARAM_VALUE.VGA_H_ACTIVE } {
@@ -156,5 +186,20 @@ proc update_MODELPARAM_VALUE.VGA_H_TOTAL { MODELPARAM_VALUE.VGA_H_TOTAL PARAM_VA
 proc update_MODELPARAM_VALUE.VGA_V_TOTAL { MODELPARAM_VALUE.VGA_V_TOTAL PARAM_VALUE.VGA_V_TOTAL } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.VGA_V_TOTAL}] ${MODELPARAM_VALUE.VGA_V_TOTAL}
+}
+
+proc update_MODELPARAM_VALUE.NUM_GEN { MODELPARAM_VALUE.NUM_GEN PARAM_VALUE.NUM_GEN } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.NUM_GEN}] ${MODELPARAM_VALUE.NUM_GEN}
+}
+
+proc update_MODELPARAM_VALUE.T0_GEN_NUM { MODELPARAM_VALUE.T0_GEN_NUM PARAM_VALUE.T0_GEN_NUM } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.T0_GEN_NUM}] ${MODELPARAM_VALUE.T0_GEN_NUM}
+}
+
+proc update_MODELPARAM_VALUE.S0_GEN_NUM { MODELPARAM_VALUE.S0_GEN_NUM PARAM_VALUE.S0_GEN_NUM } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.S0_GEN_NUM}] ${MODELPARAM_VALUE.S0_GEN_NUM}
 }
 

@@ -1,5 +1,8 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../../../../../../opt/Vivado/2025.2/data/rsb/busdef" --include "../../../../ARES_fpga.gen/sources_1/bd/Block_top/ipshared/a415" --include "../../../../ARES_fpga.gen/sources_1/bd/Block_top/ipshared/f0b6/hdl/verilog" --include "../../../../ARES_fpga.gen/sources_1/bd/Block_top/ipshared/00fe/hdl/verilog" --include "../../../../ARES_fpga.gen/sources_1/bd/Block_top/ipshared/ec67/hdl" --include "../../../../ARES_fpga.srcs/sim_1/imports/Documents/tmp/mig_7series_0_ex/mig_7series_0_ex.gen/sources_1/ip/mig_7series_0/mig_7series_0/example_design/sim" --include "/opt/Vivado/2025.2/data/xilinx_vip/include" \
+"../../../../ARES_fpga.gen/sources_1/ip/blk_mem_gen_spr_att/sim/blk_mem_gen_spr_att.v" \
+"../../../../ARES_fpga.gen/sources_1/ip/blk_mem_gen_spr_data/sim/blk_mem_gen_spr_data.v" \
+"../../../../ARES_fpga.gen/sources_1/ip/blk_mem_gen_spr_line/sim/blk_mem_gen_spr_line.v" \
 "../../../../ARES_fpga.gen/sources_1/ip/blk_mem_tile_data/sim/blk_mem_tile_data.v" \
 "../../../../ARES_fpga.gen/sources_1/ip/blk_mem_tile_map/sim/blk_mem_tile_map.v" \
 "../../../../ARES_fpga.gen/sources_1/ip/blk_mem_buf_line/sim/blk_mem_buf_line.v" \

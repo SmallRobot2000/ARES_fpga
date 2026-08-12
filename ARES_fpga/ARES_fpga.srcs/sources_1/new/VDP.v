@@ -35,55 +35,104 @@ module VDP#(
     parameter VGA_V_BACK_PORCH = 31,
     //Total (Max 2048x2048)
     parameter VGA_H_TOTAL = VGA_H_BACK_PORCH + VGA_H_ACTIVE + VGA_H_FRONT_PORCH + VGA_H_SYNC,
-    parameter VGA_V_TOTAL = VGA_V_BACK_PORCH + VGA_V_ACTIVE + VGA_V_FRONT_PORCH + VGA_V_SYNC
+    parameter VGA_V_TOTAL = VGA_V_BACK_PORCH + VGA_V_ACTIVE + VGA_V_FRONT_PORCH + VGA_V_SYNC,
+
+    parameter NUM_GEN = 2,
+    parameter T0_GEN_NUM = 0,
+    parameter S0_GEN_NUM = 1
 )(
 
     // ============================================================
-    // TILE MAP CPU BRAM interface
+    // TILE 0 MAP CPU BRAM interface
     // ============================================================
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM ADDR" *)
-    input  wire [12:0] map_cpu_addr,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM ADDR" *)
+    input  wire [14:0] t0_map_cpu_addr,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM DIN" *)
-    input  wire [31:0] map_cpu_din,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM DIN" *)
+    input  wire [31:0] t0_map_cpu_din,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM DOUT" *)
-    output wire [31:0] map_cpu_dout,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM DOUT" *)
+    output wire [31:0] t0_map_cpu_dout,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM EN" *)
-    input  wire        map_cpu_en,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM EN" *)
+    input  wire        t0_map_cpu_en,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM WE" *)
-    input  wire [3:0]  map_cpu_wen,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM WE" *)
+    input  wire [3:0]  t0_map_cpu_wen,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 MAP_CPU_BRAM CLK" *)
-    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE" *)
-    input  wire        map_cpu_clk,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T0_MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE" *)
+    input  wire        t0_map_cpu_clk,
 
     // ============================================================
-    // TILE DATA CPU BRAM interface
+    // TILE 0 DATA CPU BRAM interface
     // ============================================================
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM ADDR" *)
-    input  wire [13:0] data_cpu_addr,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM ADDR" *)
+    input  wire [15:0] t0_data_cpu_addr,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM DIN" *)
-    input  wire [31:0] data_cpu_din,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM DIN" *)
+    input  wire [31:0] t0_data_cpu_din,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM DOUT" *)
-    output wire [31:0] data_cpu_dout,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM DOUT" *)
+    output wire [31:0] t0_data_cpu_dout,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM EN" *)
-    input  wire        data_cpu_en,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM EN" *)
+    input  wire        t0_data_cpu_en,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM WE" *)
-    input  wire [3:0]  data_cpu_wen,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM WE" *)
+    input  wire [3:0]  t0_data_cpu_wen,
 
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 DATA_CPU_BRAM CLK" *)
-    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE" *)
-    input  wire        data_cpu_clk,
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T0_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE" *)
+    input  wire        t0_data_cpu_clk,
 
+    // ============================================================
+    // SPRITE 0 ATTRIBUTE CPU BRAM interface
+    // ============================================================
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_ATT_CPU_BRAM ADDR" *)
+    input       [8:0]   s0_att_cpu_addr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_ATT_CPU_BRAM DIN" *)
+    input       [31:0]  s0_att_cpu_din,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_ATT_CPU_BRAM DOUT" *)
+    output      [31:0]  s0_att_cpu_dout,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_ATT_CPU_BRAM EN" *)
+    input               s0_att_cpu_en,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_ATT_CPU_BRAM WE" *)
+    input       [3:0]   s0_att_cpu_wen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_ATT_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S0_ATT_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 512, READ_WRITE_MODE READ_WRITE" *)
+    input               s0_att_cpu_clk,
+
+    // ============================================================
+    // SPRITE 0 DATA CPU BRAM interface
+    // ============================================================
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_DATA_CPU_BRAM ADDR" *)
+    input       [14:0]  s0_data_cpu_addr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_DATA_CPU_BRAM DIN" *)
+    input       [31:0]  s0_data_cpu_din,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_DATA_CPU_BRAM DOUT" *)
+    output      [31:0]  s0_data_cpu_dout,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_DATA_CPU_BRAM EN" *)
+    input               s0_data_cpu_en,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_DATA_CPU_BRAM WE" *)
+    input       [3:0]   s0_data_cpu_wen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_DATA_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S0_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE" *)
+    input               s0_data_cpu_clk,
     // ============================================================
     // 100 MHz clock
     // ============================================================
@@ -211,21 +260,57 @@ VDP_tile_gen  #(
 
     //CPU side
 
-    .map_cpu_addr(map_cpu_addr),
-    .map_cpu_din(map_cpu_din),
-    .map_cpu_dout(map_cpu_dout),
-    .map_cpu_en(map_cpu_en),
-    .map_cpu_wen(map_cpu_wen),
-    .map_cpu_clk(map_cpu_clk),
+    .map_cpu_addr(t0_map_cpu_addr),
+    .map_cpu_din(t0_map_cpu_din),
+    .map_cpu_dout(t0_map_cpu_dout),
+    .map_cpu_en(t0_map_cpu_en),
+    .map_cpu_wen(t0_map_cpu_wen),
+    .map_cpu_clk(t0_map_cpu_clk),
 
-    .data_cpu_addr(data_cpu_addr),
-    .data_cpu_din(data_cpu_din),
-    .data_cpu_dout(data_cpu_dout),
-    .data_cpu_en(data_cpu_en),
-    .data_cpu_wen(data_cpu_wen),
-    .data_cpu_clk(data_cpu_clk)
+    .data_cpu_addr(t0_data_cpu_addr),
+    .data_cpu_din(t0_data_cpu_din),
+    .data_cpu_dout(t0_data_cpu_dout),
+    .data_cpu_en(t0_data_cpu_en),
+    .data_cpu_wen(t0_data_cpu_wen),
+    .data_cpu_clk(t0_data_cpu_clk)
 );
-    
+    wire [15:0] s0_dout;
+    wire [9:0]  s0_addr  = gen_fin_pixel; //Not registerd becaus of timing
+    wire s0_done;
+
+VDP_sprite_gen #(
+    .SCREEN_WIDTH(VGA_H_ACTIVE),
+    .SCREEN_HEIGHT(VGA_V_ACTIVE),
+
+    .MAX_SPR_LINE(32) //Maximum of 32 sprites per line
+) S0_gen (
+    .clk_100(clk_100),
+
+    .start(gen_line_start),
+    .gen_line(gen_line),
+
+    .buf_dout(s0_dout),
+    .buf_addr_out(s0_addr),
+
+    .line_done(s0_done),
+
+    //CPU side
+    .att_cpu_addr(s0_att_cpu_addr),
+    .att_cpu_din(s0_att_cpu_din),
+    .att_cpu_dout(s0_att_cpu_dout),
+    .att_cpu_en(s0_att_cpu_en),
+    .att_cpu_wen(s0_att_cpu_wen),
+    .att_cpu_clk(s0_att_cpu_clk),
+
+    .data_cpu_addr(s0_data_cpu_addr),
+    .data_cpu_din(s0_data_cpu_din),
+    .data_cpu_dout(s0_data_cpu_dout),
+    .data_cpu_en(s0_data_cpu_en),
+    .data_cpu_wen(s0_data_cpu_wen),
+    .data_cpu_clk(s0_data_cpu_clk)
+);
+
+    reg [NUM_GEN-1:0] gen_done;
     localparam STATE_WAIT = 12'h001;
     localparam STATE_START = 12'h002;
     localparam STATE_C0 = 12'h004;
@@ -240,21 +325,33 @@ VDP_tile_gen  #(
     wire [9:0] gen_line;
     */
     always @(posedge clk_100) begin
+        if(s0_done)
+            gen_done[S0_GEN_NUM] <= 1'b1;
+        
+        if(t0_done)
+            gen_done[T0_GEN_NUM] <= 1'b1;
+
         case(gen_fin_state)
             STATE_WAIT: begin
                 gen_fin_buf_en <= 1'b0;
                 gen_fin_pixel <= 10'b0;
+                gen_done <= 'b0;
                 if(gen_line_start)
                     gen_fin_state <= STATE_START;    
             end
             STATE_START: begin
-                if(t0_done)
+                if(&gen_done) //if every gen is done
                     gen_fin_state <= STATE_C0;
             end
             STATE_C0: begin
                 gen_fin_buf_en <= 1'b1;
                 gen_fin_pixel <= gen_fin_pixel + 1;
-                gen_fin_data <= t0_dout[11:0];
+
+                if(s0_dout[15:12] == 4'h0) begin //S0 transperent
+                    gen_fin_data <= t0_dout[11:0];
+                end else begin
+                    gen_fin_data <= s0_dout[11:0];
+                end
 
                 if(gen_fin_pixel == VGA_H_ACTIVE)
                     gen_fin_state <= STATE_WAIT;
@@ -293,14 +390,14 @@ module VDP_tile_gen #(
     output reg          line_done = 1'b0,
 
     //CPU side
-    input       [12:0]  map_cpu_addr,
+    input       [14:0]  map_cpu_addr,
     input       [31:0]  map_cpu_din,
     output      [31:0]  map_cpu_dout,
     input               map_cpu_en,
     input       [3:0]   map_cpu_wen,
     input               map_cpu_clk,
 
-    input       [13:0]  data_cpu_addr,
+    input       [15:0]  data_cpu_addr,
     input       [31:0]  data_cpu_din,
     output      [31:0]  data_cpu_dout,
     input               data_cpu_en,
@@ -386,7 +483,7 @@ blk_mem_tile_map Tile_MAP_mem
     .douta(map_a_dout),
     .wea(2'b0),
 
-    .addrb(map_cpu_addr),
+    .addrb(map_cpu_addr[14:2]),
     .clkb(map_cpu_clk),
     .doutb(map_cpu_dout),
     .dinb(map_cpu_din),
@@ -413,7 +510,7 @@ blk_mem_tile_data Tile_DATA_mem
     .douta(data_r_data),
     .wea(8'b0),
 
-    .addrb(data_cpu_addr),
+    .addrb(data_cpu_addr[15:2]),
     .clkb(data_cpu_clk),
     .doutb(data_cpu_dout),
     .dinb(data_cpu_din),
@@ -510,3 +607,346 @@ working with
     end
 
 endmodule
+
+
+
+
+
+
+/*
+    Genereates output from 64 attribute entryes of 16x16 sprites and data
+*/
+module VDP_sprite_gen #(
+    parameter SCREEN_WIDTH = 640,
+    parameter SCREEN_HEIGHT = 480,
+
+    parameter SPRITE_WIDTH = 16, //(Normal)
+    parameter SPRITE_HEIGHT = 16,
+    parameter SPRITEL_WIDTH = 32, //(Large)
+    parameter SPRITEL_HEIGHT = 32,
+    parameter MAX_SPR_LINE = 32 //Maximum of 32 sprites per line
+)(
+    input  wire         clk_100,
+
+    input  wire         start,
+    input  wire [9:0]   gen_line,
+
+    output wire [15:0]  buf_dout,
+    input  wire [9:0]   buf_addr_out,
+    
+
+    output reg          line_done = 1'b0,
+
+    //CPU side
+    input       [8:0]   att_cpu_addr,
+    input       [31:0]  att_cpu_din,
+    output      [31:0]  att_cpu_dout,
+    input               att_cpu_en,
+    input       [3:0]   att_cpu_wen,
+    input               att_cpu_clk,
+
+    input       [14:0]  data_cpu_addr,
+    input       [31:0]  data_cpu_din,
+    output      [31:0]  data_cpu_dout,
+    input               data_cpu_en,
+    input       [3:0]   data_cpu_wen,
+    input               data_cpu_clk
+);
+
+    reg [15:0] palette [0:3][0:255];
+    //Init palette
+
+    integer i;
+
+initial begin
+    // Default everything to opaque black
+    for (i = 0; i < 256; i = i + 1)
+        palette[0][i] = 16'hF000;
+
+    // Basic colors
+    palette[0][0]  = 16'h0000; // transparent black
+    palette[0][1]  = 16'hF000; // black
+    palette[0][2]  = 16'hFFFF; // white
+    palette[0][3]  = 16'hFF00; // red
+    palette[0][4]  = 16'hF0F0; // green
+    palette[0][5]  = 16'hF00F; // blue
+    palette[0][6]  = 16'hFFF0; // yellow
+    palette[0][7]  = 16'hFF0F; // magenta
+    palette[0][8]  = 16'hF0FF; // cyan
+
+    // Some intermediate colors
+    palette[0][9]  = 16'hF800; // dark red
+    palette[0][10] = 16'hF080; // dark green
+    palette[0][11] = 16'hF008; // dark blue
+
+    palette[0][12] = 16'hF880; // olive/brown
+    palette[0][13] = 16'hF808; // purple
+    palette[0][14] = 16'hF088; // teal
+    palette[0][15] = 16'hF888; // gray
+end
+    wire [7:0] spr_line_vdp_addr;
+    wire [7:0] spr_line_vdp_we;
+    wire [63:0] spr_line_vdp_din;
+blk_mem_gen_spr_line spr_line
+(
+    .addra(spr_line_vdp_addr),
+    .dina(spr_line_vdp_din),
+    .wea(spr_line_vdp_we),
+    .clka(clk_100),
+
+
+    .doutb(buf_dout),
+    .web(2'b0),
+
+    .clkb(clk_100),
+    .addrb(buf_addr_out)
+
+);
+    //VDP side
+    wire [127:0]    spr_data_vdp_dout;
+    wire [10:0]     spr_data_vdp_addr;
+blk_mem_gen_spr_data spr_data
+(   
+    .clka(clk_100),
+    .addra(spr_data_vdp_addr),
+    .douta(spr_data_vdp_dout),
+    .dina(),
+    .wea(16'b0),
+
+
+    .clkb(data_cpu_clk),
+    .addrb(data_cpu_addr[14:2]),
+    .doutb(data_cpu_dout),
+    .dinb(data_cpu_din),
+    .web(data_cpu_wen),
+    .enb(data_cpu_en)
+);
+
+    //VDP side
+    wire [63:0]    spr_att_vdp_dout;
+    wire [5:0]     spr_att_vdp_addr;
+blk_mem_gen_spr_att spr_att
+(
+    .clka(clk_100),
+    .addra(spr_att_vdp_addr),
+    .douta(spr_att_vdp_dout),
+    .dina(),
+    .wea(8'b0),
+
+    .clkb(att_cpu_clk),
+    .addrb(att_cpu_addr[8:2]),
+    .doutb(att_cpu_dout),
+    .dinb(att_cpu_din),
+    .web(att_cpu_wen),
+    .enb(att_cpu_en)
+);
+
+/*
+    XX - Not used / undefined
+
+        |15|14|13|12|11|10| 9| 8| 7| 6| 5| 4| 3| 2| 1| 0|
+        |                 |             x_pos           |
+
+        |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|
+        |                 |             y_pos           |
+
+        |47|46|45|44|43|42|41|40|39|38|37|36|35|34|33|32|
+        |XX|                     offset      XX XX XX XX|
+
+        |63|62|61|60|59|58|57|56|55|54|53|52|51|50|49|48|
+        |AC|                       |SCALE|SZ|V |H | PAL |
+
+
+*/
+//Transform raw data from att to useful bits
+    wire [9:0]  x_pos       = spr_att_vdp_dout[9:0];
+    wire [9:0]  y_pos       = spr_att_vdp_dout[25:16];
+    wire [10:0] offset      = spr_att_vdp_dout[46:36];
+    wire [1:0]  scale       = spr_att_vdp_dout[54:53];
+    wire        size        = spr_att_vdp_dout[52];
+    wire        v_flip      = spr_att_vdp_dout[51];
+    wire        h_flip      = spr_att_vdp_dout[50];
+    wire        pall_num    = spr_att_vdp_dout[49:48];
+    wire        active      = spr_att_vdp_dout[63];
+//Att positin (counter/addr)
+    reg [5:0]   att_pos = 6'b0;
+//Data position addr
+    reg [10:0]  data_pos = 11'b0;
+//Current sprite row:
+    wire [5:0] sprite_row = gen_line - y_pos;
+//Current sprite width
+    wire [5:0] sprite_width = size ? 6'd32 : 6'd16;
+//Save the correct data for curent row (data size is for 32x32 sprite)
+    reg  [63:0] row_data[1:0];
+    assign      spr_data_vdp_addr = data_pos;
+    assign      spr_att_vdp_addr  = att_pos;
+//Line buffer position [one address is 4 pixels]
+    reg  [7:0]  line_pos;
+    reg  [7:0]  line_pos_reg;
+    reg  [1:0]  line_off;   //Offset from perfect alignment
+    reg  [63:0] line_data;
+    reg  [7:0]  line_we;
+
+    assign      spr_line_vdp_addr = line_pos_reg;
+    assign      spr_line_vdp_din = line_data;
+    assign      spr_line_vdp_we = line_we;
+//Row buffer
+    reg  [15:0]row_buf[0:31];
+
+    localparam STATE_WAIT = 12'h001;
+    localparam STATE_START = 12'h002;
+    localparam STATE_C0 = 12'h004;
+    localparam STATE_C1 = 12'h008;
+    localparam STATE_C2 = 12'h010;
+    localparam STATE_C3 = 12'h020;
+    localparam STATE_C4 = 12'h040;
+    localparam STATE_C5 = 12'h080;
+    localparam STATE_C6 = 12'h100;
+    localparam STATE_NEXT = 12'h200;
+    localparam STATE_CLEAR = 12'h400;
+    reg [11:0]state = STATE_WAIT;
+
+   
+    reg [3:0] line_word;   // which 64-bit word of this sprite write
+    integer src_pixel;
+
+    reg [7:0] spr_cnt;
+    reg [7:0] clear_pos = 0;   // needs 0..159
+    always @(posedge clk_100) begin
+        case(state)
+            STATE_WAIT: begin
+                line_we <= 8'b0;
+                line_done <= 1'b0;
+                att_pos <= 6'b0;
+                spr_cnt <= 'b0;
+                clear_pos <= 8'b0;
+            if(start)
+                state <= STATE_CLEAR;
+            end
+
+            STATE_CLEAR: begin
+                // Write four transparent/black pixels
+                line_pos  <= clear_pos;
+                line_data <= 64'b0;
+                line_we   <= 8'hFF;
+
+                line_pos_reg <= line_pos;
+                if (clear_pos == (SCREEN_WIDTH / 4) - 1) begin
+                    state <= STATE_START;
+                end
+                else begin
+                    clear_pos <= clear_pos + 1'b1;
+                end
+            end
+            STATE_START: begin
+                //Because on 1st addr is valid will make it so its always
+                //all att bits are valid here
+                line_we <= 8'b0;
+                
+                if((y_pos <= gen_line) && ((y_pos + (size ? SPRITEL_HEIGHT-1 : SPRITE_HEIGHT-1)) >= gen_line) && active) begin //Chek if a active sprite is on this line
+                    data_pos <= offset +
+                                (size
+                                    ? ((v_flip ? (SPRITEL_HEIGHT - 1 - sprite_row)
+                                               : sprite_row) << 1)
+                                    :  (v_flip ? (SPRITE_HEIGHT - 1 - sprite_row)
+                                               : sprite_row));
+                    state <= STATE_C0;
+                end else begin
+                    att_pos <= att_pos + 1;
+                    state <= STATE_NEXT; //Skip this sprite entry we change because we need to wait 1 cycle
+                end
+            end
+
+            STATE_C0: begin
+                //Do some computing and wait for data to be ready
+                line_pos = x_pos[9:2]; //Round to 4 pixels
+                line_off = x_pos[1:0]; //Offset inside the 4 pixels
+                line_word <= 0;
+                state <= STATE_C1;
+            end
+            STATE_C1: begin
+                //spr_data_vdp_dout valid first 16 pixels [128 bits] 8bpp
+
+                //Genereate row_buffer(16 pixels)
+                for (i = 0; i < 16; i = i + 1) begin
+                    if(h_flip)
+                        row_buf[(size ? 31 : 15)-i] <= palette[pall_num][spr_data_vdp_dout[i*8 +: 8]];
+                    else
+                        row_buf[i] <= palette[pall_num][spr_data_vdp_dout[i*8 +: 8]];
+                end
+
+                //Depending on size of the sprite calculate if we done reading data or not
+                if(size) begin
+                    data_pos <= data_pos + 1;
+                    state <= STATE_C2;
+                end else begin
+                    state <= STATE_C4;
+                end
+            end
+            STATE_C2: begin
+                //wait another row
+                state <= STATE_C3;
+            end
+            STATE_C3: begin
+                //read another row
+                for (i = 0; i < 16; i = i + 1) begin
+                    if(h_flip)
+                        row_buf[15-i] <= palette[pall_num][spr_data_vdp_dout[i*8 +: 8]];
+                    else
+                        row_buf[i+16] <= palette[pall_num][spr_data_vdp_dout[i*8 +: 8]];
+                end
+                state <= STATE_C4;
+            end
+            STATE_C4: begin
+                //whole row_buf is valid, need to fill line buffer
+                line_data <= 64'b0;
+                line_we <= 8'b0;
+                //Pipline
+                line_pos_reg <= line_pos;
+                 for (i = 0; i < 4; i = i + 1) begin
+
+                    // Which sprite pixel corresponds to this
+                    // pixel lane of the current 64-bit word?
+                    src_pixel = (line_word * 4) + i - line_off;
+
+                    if ((src_pixel >= 0) &&
+                        (src_pixel < sprite_width) &&
+                        (row_buf[src_pixel][15:12] != 4'h0)) begin
+                        
+                        line_data[i*16 +: 16] <= row_buf[src_pixel];
+
+                        line_we[i*2 +: 2] <= 2'b11;
+                    end
+                end
+
+                // Is this the last 64-bit word touched by sprite?
+                if (((line_word + 1) * 4) >= (sprite_width + line_off)) begin
+                
+                    // Finished complete 16/32 pixel sprite row
+                    state <= STATE_C5;
+
+                end else begin
+                
+                    line_word <= line_word + 1'b1;
+                    line_pos  <= line_pos + 1'b1;
+                end
+            end
+            STATE_C5: begin
+                line_we <= 8'b0;
+                att_pos <= att_pos + 1;
+                spr_cnt <= spr_cnt + 1;
+                state <= STATE_NEXT;
+            end
+            STATE_NEXT: begin
+                if(att_pos == 6'b0 || spr_cnt == MAX_SPR_LINE) begin //Rolled over so we must be done or we did maximum number of sprites on this line
+                    line_done <= 1'b1;
+                    state <= STATE_WAIT;
+                end else    
+                    state <= STATE_START; //Else do next one
+            end
+        endcase 
+    end
+
+endmodule
+
+

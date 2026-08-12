@@ -6,8 +6,8 @@
    "Color Coded_ScaleFactor":"0.541219",
    "Color Coded_TopLeft":"-336,2",
    "Default View_Layers":"/clk_wiz_0_clk_100:true|/clk_wiz_0_clk_200:true|/clk_in1_0_1:true|/reset:true|/rst_n_in:true|/mig_axi_wrapper_0_ui_clk:true|",
-   "Default View_ScaleFactor":"1.18626",
-   "Default View_TopLeft":"1662,-1636",
+   "Default View_ScaleFactor":"0.717936",
+   "Default View_TopLeft":"677,-584",
    "Display-PortTypeClock":"true",
    "Display-PortTypeOthers":"true",
    "Display-PortTypeReset":"true",
@@ -73,8 +73,10 @@ preplace inst axi_uartlite_0 -pg 1 -lvl 8 -x 3140 -y -390 -defaultsOSRD
 preplace inst VexiiSocWrapper_0 -pg 1 -lvl 2 -x 860 -y 230 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 1 -x 470 -y 100 -defaultsOSRD
 preplace inst VDP_0 -pg 1 -lvl 7 -x 2670 -y -1480 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_t0_map -pg 1 -lvl 5 -x 1990 -y -1570 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_t0_data -pg 1 -lvl 5 -x 1990 -y -1370 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_t0_map -pg 1 -lvl 5 -x 1990 -y -1610 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_t0_data -pg 1 -lvl 5 -x 1990 -y -1470 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_s0_att -pg 1 -lvl 5 -x 1990 -y -1330 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_s0_data -pg 1 -lvl 5 -x 1990 -y -1190 -defaultsOSRD
 preplace netloc FLASH_SPI_wrapper_0_spi_ce_n 1 8 1 N 30
 preplace netloc FLASH_SPI_wrapper_0_spi_mosi 1 8 1 3300 -200n
 preplace netloc FLASH_SPI_wrapper_0_spi_sck 1 8 1 3410 -170n
@@ -85,59 +87,63 @@ preplace netloc Net3 1 8 1 3410 -1110n
 preplace netloc Net4 1 8 1 N -970
 preplace netloc Net5 1 8 1 N -840
 preplace netloc Net6 1 8 1 N -720
-preplace netloc VDP_0_h_sync 1 7 2 2820 -1540 N
-preplace netloc VDP_0_v_sync 1 7 2 2820 -1510 N
+preplace netloc VDP_0_h_sync 1 7 2 2830 -1540 N
+preplace netloc VDP_0_v_sync 1 7 2 2830 -1510 N
 preplace netloc VDP_0_vga_b 1 7 2 N -1440 3400
 preplace netloc VDP_0_vga_g 1 7 2 N -1460 3400
 preplace netloc VDP_0_vga_r 1 7 2 N -1480 N
-preplace netloc axi_quad_spi_0_io0_o 1 7 1 2850 -1090n
-preplace netloc axi_quad_spi_0_io0_t 1 7 1 2820 -1110n
-preplace netloc axi_quad_spi_0_io1_o 1 7 1 2890 -970n
-preplace netloc axi_quad_spi_0_io1_t 1 7 1 2880 -990n
-preplace netloc axi_quad_spi_0_ip2intc_irpt 1 0 8 360 480 NJ 480 NJ 480 NJ 480 NJ 480 N 480 NJ 480 2820
-preplace netloc axi_quad_spi_0_sck_o 1 7 1 2910 -850n
-preplace netloc axi_quad_spi_0_sck_t 1 7 1 2890 -860n
-preplace netloc axi_quad_spi_0_ss_o 1 7 1 2870 -790n
-preplace netloc axi_quad_spi_0_ss_t 1 7 1 2860 -770n
+preplace netloc axi_quad_spi_0_io0_o 1 7 1 2860 -1090n
+preplace netloc axi_quad_spi_0_io0_t 1 7 1 2830 -1110n
+preplace netloc axi_quad_spi_0_io1_o 1 7 1 2900 -970n
+preplace netloc axi_quad_spi_0_io1_t 1 7 1 2890 -990n
+preplace netloc axi_quad_spi_0_ip2intc_irpt 1 0 8 360 480 NJ 480 NJ 480 NJ 480 NJ 480 N 480 NJ 480 2830
+preplace netloc axi_quad_spi_0_sck_o 1 7 1 2920 -850n
+preplace netloc axi_quad_spi_0_sck_t 1 7 1 2900 -860n
+preplace netloc axi_quad_spi_0_ss_o 1 7 1 2880 -790n
+preplace netloc axi_quad_spi_0_ss_t 1 7 1 2870 -770n
 preplace netloc axi_uart16550_0_sout 1 8 1 3410 -380n
-preplace netloc axi_uartlite_0_interrupt 1 0 9 370 470 NJ 470 NJ 470 NJ 470 NJ 470 N 470 NJ 470 2830J 760 3280
+preplace netloc axi_uartlite_0_interrupt 1 0 9 370 470 NJ 470 NJ 470 NJ 470 NJ 470 N 470 NJ 470 2840J 760 3280
 preplace netloc clk_in1_0_1 1 0 6 NJ 590 N 590 N 590 N 590 N 590 2120
 preplace netloc clk_wiz_0_clk_100 1 6 1 2460 560n
 preplace netloc clk_wiz_0_clk_200 1 6 1 2450 580n
-preplace netloc mig_axi_wrapper_0_ddr3_addr 1 7 2 2860J 740 3320
-preplace netloc mig_axi_wrapper_0_ddr3_ba 1 7 2 2880J 750 3330
+preplace netloc mig_axi_wrapper_0_ddr3_addr 1 7 2 2870J 740 3320
+preplace netloc mig_axi_wrapper_0_ddr3_ba 1 7 2 2890J 750 3330
 preplace netloc mig_axi_wrapper_0_ddr3_cas_n 1 7 2 NJ 810 3350
 preplace netloc mig_axi_wrapper_0_ddr3_ck_n 1 7 2 NJ 890 3390
 preplace netloc mig_axi_wrapper_0_ddr3_ck_p 1 7 2 NJ 870 3380
 preplace netloc mig_axi_wrapper_0_ddr3_cke 1 7 2 NJ 910 3400
 preplace netloc mig_axi_wrapper_0_ddr3_cs_n 1 7 2 NJ 930 3410
 preplace netloc mig_axi_wrapper_0_ddr3_dm 1 7 2 NJ 950 3430
-preplace netloc mig_axi_wrapper_0_ddr3_odt 1 7 2 2910J 940 3420
+preplace netloc mig_axi_wrapper_0_ddr3_odt 1 7 2 2920J 940 3420
 preplace netloc mig_axi_wrapper_0_ddr3_ras_n 1 7 2 NJ 790 3340
 preplace netloc mig_axi_wrapper_0_ddr3_reset_n 1 7 2 NJ 850 3370
 preplace netloc mig_axi_wrapper_0_ddr3_we_n 1 7 2 NJ 830 3360
-preplace netloc mig_axi_wrapper_0_ui_clk 1 1 7 650 -310 1140 -310 1540 -470 1850 -690 N -690 2480J -690 2840
-preplace netloc reset 1 7 1 2890 40n
-preplace netloc reset_n 1 1 7 660 -300 1150 -300 1550 -310 1860 -310 N -310 2510 -370 N
+preplace netloc mig_axi_wrapper_0_ui_clk 1 1 7 650 -290 1140 -290 1540 -470 1850 -690 N -690 2470J -690 2850
+preplace netloc reset 1 7 1 2900 40n
+preplace netloc reset_n 1 1 7 660 -280 1150 -280 1550 -290 1860 -290 N -290 2500 -370 N
 preplace netloc rst_in 1 6 1 2440J 700n
 preplace netloc rst_n_in 1 0 6 NJ 700 N 700 N 700 N 700 N 700 N
 preplace netloc spi_miso_0_1 1 7 2 3000J -80 3290
 preplace netloc uart_rx_1 1 8 1 N -400
-preplace netloc util_ds_buf_0_IOBUF_IO_O 1 7 2 2830 -660 3400
-preplace netloc util_ds_buf_1_IOBUF_IO_O 1 7 2 2900J -650 3300
-preplace netloc util_ds_buf_2_IOBUF_IO_O 1 7 2 2880J -640 3290
-preplace netloc util_ds_buf_3_IOBUF_IO_O 1 7 2 2850J -630 3280
+preplace netloc util_ds_buf_0_IOBUF_IO_O 1 7 2 2840 -660 3400
+preplace netloc util_ds_buf_1_IOBUF_IO_O 1 7 2 2910J -650 3300
+preplace netloc util_ds_buf_2_IOBUF_IO_O 1 7 2 2890J -640 3290
+preplace netloc util_ds_buf_3_IOBUF_IO_O 1 7 2 2860J -630 3280
 preplace netloc xlconcat_0_dout 1 1 1 570 100n
 preplace netloc VexiiSocWrapper_0_mBus 1 2 2 1080 140 NJ
 preplace netloc VexiiSocWrapper_0_pBus 1 2 1 1060 -420n
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 5 2 NJ -1610 2470
+preplace netloc axi_bram_ctrl_vdp_s0_data_BRAM_PORTA 1 5 2 2140 -1470 NJ
+preplace netloc axi_bram_ctrl_vdp_t0_data1_BRAM_PORTA 1 5 2 2130 -1490 NJ
+preplace netloc axi_bram_ctrl_vdp_t0_data_BRAM_PORTA 1 5 2 2120 -1510 N
 preplace netloc smartconnect_0_M00_AXI 1 4 4 1830 -20 N -20 N -20 N
-preplace netloc smartconnect_0_M01_AXI 1 4 3 NJ 170 N 170 2520
-preplace netloc smartconnect_io_M00_AXI 1 3 5 N -430 NJ -430 N -430 NJ -430 2910
-preplace netloc smartconnect_io_M01_AXI 1 3 4 1440 -910 N -910 N -910 NJ
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 5 2 NJ -1570 2470
-preplace netloc axi_bram_ctrl_vdp_t0_data_BRAM_PORTA 1 5 2 2120 -1490 NJ
-preplace netloc smartconnect_io_M02_AXI 1 3 2 1430 -1590 NJ
-preplace netloc smartconnect_io_M03_AXI 1 3 2 1450 -1390 NJ
+preplace netloc smartconnect_0_M01_AXI 1 4 3 NJ 170 N 170 2510
+preplace netloc smartconnect_io_M00_AXI 1 3 5 N -450 NJ -450 N -450 NJ -450 2920
+preplace netloc smartconnect_io_M01_AXI 1 3 4 1450 -910 N -910 N -910 NJ
+preplace netloc smartconnect_io_M02_AXI 1 3 2 1430 -1630 NJ
+preplace netloc smartconnect_io_M03_AXI 1 3 2 1440 -1490 NJ
+preplace netloc smartconnect_io_M04_AXI 1 3 2 1460 -1350 NJ
+preplace netloc smartconnect_io_M05_AXI 1 3 2 1470 -1210 NJ
 levelinfo -pg 1 -110 470 860 1290 1690 1990 2290 2670 3140 3450
 pagesize -pg 1 -db -bbox -sgen -390 -2090 4440 1620
 "

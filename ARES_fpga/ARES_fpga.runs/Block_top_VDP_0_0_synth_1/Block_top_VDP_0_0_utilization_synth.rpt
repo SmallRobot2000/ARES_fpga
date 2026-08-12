@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Aug 11 21:52:52 2026
+| Date         : Wed Aug 12 21:44:05 2026
 | Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file Block_top_VDP_0_0_utilization_synth.rpt -pb Block_top_VDP_0_0_utilization_synth.pb
 | Design       : Block_top_VDP_0_0
@@ -31,15 +31,15 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  129 |     0 |          0 |     20800 |  0.62 |
-|   LUT as Logic          |  129 |     0 |          0 |     20800 |  0.62 |
+| Slice LUTs*             |  998 |     0 |          0 |     20800 |  4.80 |
+|   LUT as Logic          |  998 |     0 |          0 |     20800 |  4.80 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |  124 |     0 |          0 |     41600 |  0.30 |
-|   Register as Flip Flop |  124 |     0 |          0 |     41600 |  0.30 |
+| Slice Registers         |  479 |     0 |          0 |     41600 |  1.15 |
+|   Register as Flip Flop |  479 |     0 |          0 |     41600 |  1.15 |
 |   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
-| F7 Muxes                |    8 |     0 |          0 |     16300 |  0.05 |
-| F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
-| Unique Control Sets     |   12 |       |          0 |      8150 |  0.15 |
+| F7 Muxes                |   83 |     0 |          0 |     16300 |  0.51 |
+| F8 Muxes                |    2 |     0 |          0 |      8150 |  0.02 |
+| Unique Control Sets     |   25 |       |          0 |      8150 |  0.31 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -61,8 +61,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 124   |          Yes |       Reset |            - |
+| 4     |          Yes |         Set |            - |
+| 475   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,29 +151,34 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  124 |        Flop & Latch |
-| LUT6     |   66 |                 LUT |
-| LUT5     |   30 |                 LUT |
-| LUT4     |   25 |                 LUT |
-| LUT2     |   13 |                 LUT |
-| LUT3     |   12 |                 LUT |
-| LUT1     |   11 |                 LUT |
-| MUXF7    |    8 |               MuxFx |
-| CARRY4   |    2 |          CarryLogic |
+| LUT6     |  578 |                 LUT |
+| FDRE     |  475 |        Flop & Latch |
+| LUT5     |  220 |                 LUT |
+| LUT4     |  169 |                 LUT |
+| LUT3     |  106 |                 LUT |
+| LUT2     |   88 |                 LUT |
+| MUXF7    |   83 |               MuxFx |
+| CARRY4   |   31 |          CarryLogic |
+| LUT1     |   17 |                 LUT |
+| FDSE     |    4 |        Flop & Latch |
+| MUXF8    |    2 |               MuxFx |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+-------------------------------------+------+
-|               Ref Name              | Used |
-+-------------------------------------+------+
-| Block_top_VDP_0_0_blk_mem_tile_map  |    1 |
-| Block_top_VDP_0_0_blk_mem_tile_data |    1 |
-| Block_top_VDP_0_0_blk_mem_fin_line  |    1 |
-| Block_top_VDP_0_0_blk_mem_buf_line  |    1 |
-+-------------------------------------+------+
++----------------------------------------+------+
+|                Ref Name                | Used |
++----------------------------------------+------+
+| Block_top_VDP_0_0_blk_mem_tile_map     |    1 |
+| Block_top_VDP_0_0_blk_mem_tile_data    |    1 |
+| Block_top_VDP_0_0_blk_mem_gen_spr_line |    1 |
+| Block_top_VDP_0_0_blk_mem_gen_spr_data |    1 |
+| Block_top_VDP_0_0_blk_mem_gen_spr_att  |    1 |
+| Block_top_VDP_0_0_blk_mem_fin_line     |    1 |
+| Block_top_VDP_0_0_blk_mem_buf_line     |    1 |
++----------------------------------------+------+
 
 
 9. Instantiated Netlists

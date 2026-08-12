@@ -4,6 +4,15 @@
 # IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/bd/Block_top/ip/Block_top_VDP_0_0/Block_top_VDP_0_0.xci
 # IP: The module: 'Block_top_VDP_0_0' is the root of the design. Do not add the DONT_TOUCH constraint.
 
+# IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_att/blk_mem_gen_spr_att.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_att || ORIG_REF_NAME==blk_mem_gen_spr_att} -quiet] -quiet
+
+# IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_data/blk_mem_gen_spr_data.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_data || ORIG_REF_NAME==blk_mem_gen_spr_data} -quiet] -quiet
+
+# IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_line/blk_mem_gen_spr_line.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_line || ORIG_REF_NAME==blk_mem_gen_spr_line} -quiet] -quiet
+
 # IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_tile_data/blk_mem_tile_data.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_tile_data || ORIG_REF_NAME==blk_mem_tile_data} -quiet] -quiet
 
@@ -22,6 +31,15 @@ set_property KEEP_HIERARCHY SOFT [get_cells inst -quiet] -quiet
 
 # IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/bd/Block_top/ip/Block_top_VDP_0_0/Block_top_VDP_0_0.xci
 # IP: The module: 'Block_top_VDP_0_0' is the root of the design. Do not add the DONT_TOUCH constraint.
+
+# IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_att/blk_mem_gen_spr_att.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_att || ORIG_REF_NAME==blk_mem_gen_spr_att} -quiet] -quiet
+
+# IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_data/blk_mem_gen_spr_data.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_data || ORIG_REF_NAME==blk_mem_gen_spr_data} -quiet] -quiet
+
+# IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_line/blk_mem_gen_spr_line.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_line || ORIG_REF_NAME==blk_mem_gen_spr_line} -quiet] -quiet
 
 # IP: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_tile_data/blk_mem_tile_data.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_tile_data || ORIG_REF_NAME==blk_mem_tile_data} -quiet] -quiet

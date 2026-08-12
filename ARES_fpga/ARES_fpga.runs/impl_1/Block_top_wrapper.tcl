@@ -97,7 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -106,7 +105,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
+  set_param bd.open.in_stealth_mode 2
   set_param chipscope.maxJobs 3
   set_param general.usePosixSpawnForFork 1
   set_param runs.launchOptions { -jobs 10  }
@@ -138,6 +137,9 @@ OPTRACE "add files" START { }
   read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_tile_map/blk_mem_tile_map.xci
   read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_tile_data/blk_mem_tile_data.xci
   read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_buf_line/blk_mem_buf_line.xci
+  read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_att/blk_mem_gen_spr_att.xci
+  read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_data/blk_mem_gen_spr_data.xci
+  read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_line/blk_mem_gen_spr_line.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc

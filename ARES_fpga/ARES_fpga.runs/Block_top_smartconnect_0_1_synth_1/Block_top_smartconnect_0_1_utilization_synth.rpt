@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Aug 11 21:52:47 2026
+| Date         : Wed Aug 12 21:43:20 2026
 | Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file Block_top_smartconnect_0_1_utilization_synth.rpt -pb Block_top_smartconnect_0_1_utilization_synth.pb
 | Design       : Block_top_smartconnect_0_1
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  526 |     0 |          0 |     20800 |  2.53 |
-|   LUT as Logic             |  525 |     0 |          0 |     20800 |  2.52 |
+| Slice LUTs*                |  779 |     0 |          0 |     20800 |  3.75 |
+|   LUT as Logic             |  778 |     0 |          0 |     20800 |  3.74 |
 |   LUT as Memory            |    1 |     0 |          0 |      9600 |  0.01 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
 |     LUT as Shift Register  |    1 |     0 |            |           |       |
-| Slice Registers            |  651 |     0 |          0 |     41600 |  1.56 |
-|   Register as Flip Flop    |  651 |     0 |          0 |     41600 |  1.56 |
+| Slice Registers            |  789 |     0 |          0 |     41600 |  1.90 |
+|   Register as Flip Flop    |  789 |     0 |          0 |     41600 |  1.90 |
 |   Register as Latch        |    0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                   |    0 |     0 |          0 |     16300 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |      8150 |  0.00 |
-| Unique Control Sets        |  116 |       |          0 |      8150 |  1.42 |
+| Unique Control Sets        |  149 |       |          0 |      8150 |  1.83 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -62,9 +62,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 201   |          Yes |           - |        Reset |
-| 43    |          Yes |         Set |            - |
-| 407   |          Yes |       Reset |            - |
+| 267   |          Yes |           - |        Reset |
+| 57    |          Yes |         Set |            - |
+| 465   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -153,15 +153,15 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  407 |        Flop & Latch |
-| FDCE     |  201 |        Flop & Latch |
-| LUT1     |  180 |                 LUT |
-| LUT6     |  135 |                 LUT |
-| LUT3     |  132 |                 LUT |
-| LUT2     |  101 |                 LUT |
-| LUT5     |   60 |                 LUT |
-| FDSE     |   43 |        Flop & Latch |
-| LUT4     |   28 |                 LUT |
+| FDRE     |  465 |        Flop & Latch |
+| FDCE     |  267 |        Flop & Latch |
+| LUT1     |  237 |                 LUT |
+| LUT6     |  186 |                 LUT |
+| LUT3     |  164 |                 LUT |
+| LUT5     |  155 |                 LUT |
+| LUT2     |  127 |                 LUT |
+| FDSE     |   57 |        Flop & Latch |
+| LUT4     |   38 |                 LUT |
 | SRL16E   |    1 |  Distributed Memory |
 +----------+------+---------------------+
 

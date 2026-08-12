@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,207,992.400 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,208,164.601 ns"></ZoomEndTime>
-      <Cursor1Time time="1,208,065.000 ns"></Cursor1Time>
+      <ZoomStartTime time="1,130.805000 us"></ZoomStartTime>
+      <ZoomEndTime time="1,218.105001 us"></ZoomEndTime>
+      <Cursor1Time time="1,136.605000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="130"></NameColumnWidth>
+      <NameColumnWidth column_width="118"></NameColumnWidth>
       <ValueColumnWidth column_width="61"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
+   <WVObjectSize size="39" />
    <wvobject type="logic" fp_name="/tb_VDP/clk_100">
       <obj_property name="ElementShortName">clk_100</obj_property>
       <obj_property name="ObjectShortName">clk_100</obj_property>
@@ -51,10 +51,6 @@
    <wvobject type="logic" fp_name="/tb_VDP/dut/T0_gen/clk_100">
       <obj_property name="ElementShortName">clk_100</obj_property>
       <obj_property name="ObjectShortName">clk_100</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_VDP/dut/T0_gen/start">
-      <obj_property name="ElementShortName">start</obj_property>
-      <obj_property name="ObjectShortName">start</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_VDP/dut/T0_gen/gen_line">
       <obj_property name="ElementShortName">gen_line[9:0]</obj_property>
@@ -159,5 +155,25 @@
    <wvobject type="logic" fp_name="/tb_VDP/dut/gen_fin_buf_en">
       <obj_property name="ElementShortName">gen_fin_buf_en</obj_property>
       <obj_property name="ObjectShortName">gen_fin_buf_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_VDP/dut/T0_gen/start">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/gen_done">
+      <obj_property name="ElementShortName">gen_done[1:0]</obj_property>
+      <obj_property name="ObjectShortName">gen_done[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/gen_fin_state">
+      <obj_property name="ElementShortName">gen_fin_state[11:0]</obj_property>
+      <obj_property name="ObjectShortName">gen_fin_state[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/s0_dout">
+      <obj_property name="ElementShortName">s0_dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s0_dout[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/S0_gen/state">
+      <obj_property name="ElementShortName">state[11:0]</obj_property>
+      <obj_property name="ObjectShortName">state[11:0]</obj_property>
    </wvobject>
 </wave_config>

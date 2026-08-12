@@ -56,10 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "Block_top_VDP_0_0_synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 3
+set_param bd.open.in_stealth_mode 2
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
@@ -86,6 +84,15 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v
+read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_att/blk_mem_gen_spr_att.xci
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/blk_mem_gen_spr_att/blk_mem_gen_spr_att_ooc.xdc]
+
+read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_data/blk_mem_gen_spr_data.xci
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/blk_mem_gen_spr_data/blk_mem_gen_spr_data_ooc.xdc]
+
+read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_gen_spr_line/blk_mem_gen_spr_line.xci
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/blk_mem_gen_spr_line/blk_mem_gen_spr_line_ooc.xdc]
+
 read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_tile_data/blk_mem_tile_data.xci
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/blk_mem_tile_data/blk_mem_tile_data_ooc.xdc]
 

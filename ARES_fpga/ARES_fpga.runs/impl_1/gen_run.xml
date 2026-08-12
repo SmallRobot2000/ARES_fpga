@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tftg256-2" LaunchTime="1786477897" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp">
+<GenRun Id="impl_1" LaunchPart="xc7a35tftg256-2" LaunchTime="1786563736" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="Block_top_wrapper_postroute_physopted.rqs"/>
@@ -293,9 +293,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Area_ExploreWithRemap" Flow="Vivado Implementation 2025">
-      <Desc>Adds the remap optimization to reduce logic</Desc>
-    </StratHandle>
+    <StratHandle Name="Area_ExploreWithRemap" Flow="Vivado Implementation 2025"/>
     <Step Id="init_design"/>
     <Step Id="opt_design">
       <Option Id="Directive">6</Option>
@@ -308,12 +306,15 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="Block_top_axi_bram_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_spr_line"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_smartconnect_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Block_top_axi_bram_ctrl_vdp_t0_data_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_VDP_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_spr_att"/>
+  <BlockFileSet Type="BlockSrcs" Name="Block_top_axi_bram_ctrl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_buf_line"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_VexiiSocWrapper_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="Block_top_smartconnect_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_spr_data"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_tile_data"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_mig_axi_wrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_axi_bram_ctrl_map_0"/>
