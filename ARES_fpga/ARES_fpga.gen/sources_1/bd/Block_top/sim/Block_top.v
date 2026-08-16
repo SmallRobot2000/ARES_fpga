@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Wed Aug 12 21:42:08 2026
+//Date        : Fri Aug 14 21:36:08 2026
 //Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target Block_top.bd
 //Design      : Block_top
@@ -39,8 +39,8 @@ module Block_top
     spi_mosi,
     spi_sck,
     test_tx,
-    uart_rx,
-    uart_tx,
+    usb_rx,
+    usb_tx,
     v_sync,
     vga_b,
     vga_g,
@@ -72,8 +72,8 @@ module Block_top
   output spi_mosi;
   output spi_sck;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.TEST_TX DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.TEST_TX, LAYERED_METADATA undef" *) output test_tx;
-  input uart_rx;
-  output uart_tx;
+  input usb_rx;
+  output usb_tx;
   output v_sync;
   output [3:0]vga_b;
   output [3:0]vga_g;
@@ -193,39 +193,6 @@ module Block_top
   wire smartconnect_0_M00_AXI_RREADY;
   wire [1:0]smartconnect_0_M00_AXI_RRESP;
   wire smartconnect_0_M00_AXI_RVALID;
-  wire [27:0]smartconnect_0_M01_AXI_ARADDR;
-  wire [1:0]smartconnect_0_M01_AXI_ARBURST;
-  wire [3:0]smartconnect_0_M01_AXI_ARCACHE;
-  wire [7:0]smartconnect_0_M01_AXI_ARLEN;
-  wire [0:0]smartconnect_0_M01_AXI_ARLOCK;
-  wire [2:0]smartconnect_0_M01_AXI_ARPROT;
-  wire [3:0]smartconnect_0_M01_AXI_ARQOS;
-  wire smartconnect_0_M01_AXI_ARREADY;
-  wire [2:0]smartconnect_0_M01_AXI_ARSIZE;
-  wire smartconnect_0_M01_AXI_ARVALID;
-  wire [27:0]smartconnect_0_M01_AXI_AWADDR;
-  wire [1:0]smartconnect_0_M01_AXI_AWBURST;
-  wire [3:0]smartconnect_0_M01_AXI_AWCACHE;
-  wire [7:0]smartconnect_0_M01_AXI_AWLEN;
-  wire [0:0]smartconnect_0_M01_AXI_AWLOCK;
-  wire [2:0]smartconnect_0_M01_AXI_AWPROT;
-  wire [3:0]smartconnect_0_M01_AXI_AWQOS;
-  wire smartconnect_0_M01_AXI_AWREADY;
-  wire [2:0]smartconnect_0_M01_AXI_AWSIZE;
-  wire smartconnect_0_M01_AXI_AWVALID;
-  wire smartconnect_0_M01_AXI_BREADY;
-  wire [1:0]smartconnect_0_M01_AXI_BRESP;
-  wire smartconnect_0_M01_AXI_BVALID;
-  wire [127:0]smartconnect_0_M01_AXI_RDATA;
-  wire smartconnect_0_M01_AXI_RLAST;
-  wire smartconnect_0_M01_AXI_RREADY;
-  wire [1:0]smartconnect_0_M01_AXI_RRESP;
-  wire smartconnect_0_M01_AXI_RVALID;
-  wire [127:0]smartconnect_0_M01_AXI_WDATA;
-  wire smartconnect_0_M01_AXI_WLAST;
-  wire smartconnect_0_M01_AXI_WREADY;
-  wire [15:0]smartconnect_0_M01_AXI_WSTRB;
-  wire smartconnect_0_M01_AXI_WVALID;
   wire [3:0]smartconnect_io_M00_AXI_ARADDR;
   wire smartconnect_io_M00_AXI_ARREADY;
   wire smartconnect_io_M00_AXI_ARVALID;
@@ -372,6 +339,39 @@ module Block_top
   wire smartconnect_io_M05_AXI_WREADY;
   wire [3:0]smartconnect_io_M05_AXI_WSTRB;
   wire smartconnect_io_M05_AXI_WVALID;
+  wire [27:0]smartconnect_mem_M01_AXI_ARADDR;
+  wire [1:0]smartconnect_mem_M01_AXI_ARBURST;
+  wire [3:0]smartconnect_mem_M01_AXI_ARCACHE;
+  wire [7:0]smartconnect_mem_M01_AXI_ARLEN;
+  wire [0:0]smartconnect_mem_M01_AXI_ARLOCK;
+  wire [2:0]smartconnect_mem_M01_AXI_ARPROT;
+  wire [3:0]smartconnect_mem_M01_AXI_ARQOS;
+  wire smartconnect_mem_M01_AXI_ARREADY;
+  wire [2:0]smartconnect_mem_M01_AXI_ARSIZE;
+  wire smartconnect_mem_M01_AXI_ARVALID;
+  wire [27:0]smartconnect_mem_M01_AXI_AWADDR;
+  wire [1:0]smartconnect_mem_M01_AXI_AWBURST;
+  wire [3:0]smartconnect_mem_M01_AXI_AWCACHE;
+  wire [7:0]smartconnect_mem_M01_AXI_AWLEN;
+  wire [0:0]smartconnect_mem_M01_AXI_AWLOCK;
+  wire [2:0]smartconnect_mem_M01_AXI_AWPROT;
+  wire [3:0]smartconnect_mem_M01_AXI_AWQOS;
+  wire smartconnect_mem_M01_AXI_AWREADY;
+  wire [2:0]smartconnect_mem_M01_AXI_AWSIZE;
+  wire smartconnect_mem_M01_AXI_AWVALID;
+  wire smartconnect_mem_M01_AXI_BREADY;
+  wire [1:0]smartconnect_mem_M01_AXI_BRESP;
+  wire smartconnect_mem_M01_AXI_BVALID;
+  wire [127:0]smartconnect_mem_M01_AXI_RDATA;
+  wire smartconnect_mem_M01_AXI_RLAST;
+  wire smartconnect_mem_M01_AXI_RREADY;
+  wire [1:0]smartconnect_mem_M01_AXI_RRESP;
+  wire smartconnect_mem_M01_AXI_RVALID;
+  wire [127:0]smartconnect_mem_M01_AXI_WDATA;
+  wire smartconnect_mem_M01_AXI_WLAST;
+  wire smartconnect_mem_M01_AXI_WREADY;
+  wire [15:0]smartconnect_mem_M01_AXI_WSTRB;
+  wire smartconnect_mem_M01_AXI_WVALID;
   wire [0:0]spi_controller_miso;
   wire [0:0]spi_controller_mosi;
   wire [0:0]spi_controller_sck;
@@ -381,7 +381,7 @@ module Block_top
   wire spi_mosi;
   wire spi_sck;
   wire test_tx;
-  wire uart_rx;
+  wire usb_rx;
   wire [0:0]util_ds_buf_0_IOBUF_IO_O;
   wire [0:0]util_ds_buf_1_IOBUF_IO_O;
   wire [0:0]util_ds_buf_2_IOBUF_IO_O;
@@ -392,7 +392,7 @@ module Block_top
   wire [3:0]vga_r;
   wire [31:0]xlconcat_0_dout;
 
-  assign uart_tx = test_tx;
+  assign usb_tx = test_tx;
   Block_top_FLASH_SPI_wrapper_0_0 FLASH_SPI_wrapper_0
        (.reset(reset),
         .s_axi_araddr(smartconnect_0_M00_AXI_ARADDR),
@@ -676,7 +676,7 @@ module Block_top
         .ss_t(axi_quad_spi_0_ss_t));
   Block_top_axi_uartlite_0_0 axi_uartlite_0
        (.interrupt(axi_uartlite_0_interrupt),
-        .rx(uart_rx),
+        .rx(usb_rx),
         .s_axi_aclk(mig_axi_wrapper_0_ui_clk),
         .s_axi_araddr(smartconnect_io_M00_AXI_ARADDR),
         .s_axi_aresetn(reset_n),
@@ -719,41 +719,41 @@ module Block_top
         .ddr3_ras_n(ddr3_ras_n),
         .ddr3_reset_n(ddr3_reset_n),
         .ddr3_we_n(ddr3_we_n),
-        .s_axi_araddr(smartconnect_0_M01_AXI_ARADDR),
-        .s_axi_arburst(smartconnect_0_M01_AXI_ARBURST),
-        .s_axi_arcache(smartconnect_0_M01_AXI_ARCACHE),
+        .s_axi_araddr(smartconnect_mem_M01_AXI_ARADDR),
+        .s_axi_arburst(smartconnect_mem_M01_AXI_ARBURST),
+        .s_axi_arcache(smartconnect_mem_M01_AXI_ARCACHE),
         .s_axi_arid(1'b0),
-        .s_axi_arlen(smartconnect_0_M01_AXI_ARLEN),
-        .s_axi_arlock(smartconnect_0_M01_AXI_ARLOCK),
-        .s_axi_arprot(smartconnect_0_M01_AXI_ARPROT),
-        .s_axi_arqos(smartconnect_0_M01_AXI_ARQOS),
-        .s_axi_arready(smartconnect_0_M01_AXI_ARREADY),
-        .s_axi_arsize(smartconnect_0_M01_AXI_ARSIZE),
-        .s_axi_arvalid(smartconnect_0_M01_AXI_ARVALID),
-        .s_axi_awaddr(smartconnect_0_M01_AXI_AWADDR),
-        .s_axi_awburst(smartconnect_0_M01_AXI_AWBURST),
-        .s_axi_awcache(smartconnect_0_M01_AXI_AWCACHE),
+        .s_axi_arlen(smartconnect_mem_M01_AXI_ARLEN),
+        .s_axi_arlock(smartconnect_mem_M01_AXI_ARLOCK),
+        .s_axi_arprot(smartconnect_mem_M01_AXI_ARPROT),
+        .s_axi_arqos(smartconnect_mem_M01_AXI_ARQOS),
+        .s_axi_arready(smartconnect_mem_M01_AXI_ARREADY),
+        .s_axi_arsize(smartconnect_mem_M01_AXI_ARSIZE),
+        .s_axi_arvalid(smartconnect_mem_M01_AXI_ARVALID),
+        .s_axi_awaddr(smartconnect_mem_M01_AXI_AWADDR),
+        .s_axi_awburst(smartconnect_mem_M01_AXI_AWBURST),
+        .s_axi_awcache(smartconnect_mem_M01_AXI_AWCACHE),
         .s_axi_awid(1'b0),
-        .s_axi_awlen(smartconnect_0_M01_AXI_AWLEN),
-        .s_axi_awlock(smartconnect_0_M01_AXI_AWLOCK),
-        .s_axi_awprot(smartconnect_0_M01_AXI_AWPROT),
-        .s_axi_awqos(smartconnect_0_M01_AXI_AWQOS),
-        .s_axi_awready(smartconnect_0_M01_AXI_AWREADY),
-        .s_axi_awsize(smartconnect_0_M01_AXI_AWSIZE),
-        .s_axi_awvalid(smartconnect_0_M01_AXI_AWVALID),
-        .s_axi_bready(smartconnect_0_M01_AXI_BREADY),
-        .s_axi_bresp(smartconnect_0_M01_AXI_BRESP),
-        .s_axi_bvalid(smartconnect_0_M01_AXI_BVALID),
-        .s_axi_rdata(smartconnect_0_M01_AXI_RDATA),
-        .s_axi_rlast(smartconnect_0_M01_AXI_RLAST),
-        .s_axi_rready(smartconnect_0_M01_AXI_RREADY),
-        .s_axi_rresp(smartconnect_0_M01_AXI_RRESP),
-        .s_axi_rvalid(smartconnect_0_M01_AXI_RVALID),
-        .s_axi_wdata(smartconnect_0_M01_AXI_WDATA),
-        .s_axi_wlast(smartconnect_0_M01_AXI_WLAST),
-        .s_axi_wready(smartconnect_0_M01_AXI_WREADY),
-        .s_axi_wstrb(smartconnect_0_M01_AXI_WSTRB),
-        .s_axi_wvalid(smartconnect_0_M01_AXI_WVALID),
+        .s_axi_awlen(smartconnect_mem_M01_AXI_AWLEN),
+        .s_axi_awlock(smartconnect_mem_M01_AXI_AWLOCK),
+        .s_axi_awprot(smartconnect_mem_M01_AXI_AWPROT),
+        .s_axi_awqos(smartconnect_mem_M01_AXI_AWQOS),
+        .s_axi_awready(smartconnect_mem_M01_AXI_AWREADY),
+        .s_axi_awsize(smartconnect_mem_M01_AXI_AWSIZE),
+        .s_axi_awvalid(smartconnect_mem_M01_AXI_AWVALID),
+        .s_axi_bready(smartconnect_mem_M01_AXI_BREADY),
+        .s_axi_bresp(smartconnect_mem_M01_AXI_BRESP),
+        .s_axi_bvalid(smartconnect_mem_M01_AXI_BVALID),
+        .s_axi_rdata(smartconnect_mem_M01_AXI_RDATA),
+        .s_axi_rlast(smartconnect_mem_M01_AXI_RLAST),
+        .s_axi_rready(smartconnect_mem_M01_AXI_RREADY),
+        .s_axi_rresp(smartconnect_mem_M01_AXI_RRESP),
+        .s_axi_rvalid(smartconnect_mem_M01_AXI_RVALID),
+        .s_axi_wdata(smartconnect_mem_M01_AXI_WDATA),
+        .s_axi_wlast(smartconnect_mem_M01_AXI_WLAST),
+        .s_axi_wready(smartconnect_mem_M01_AXI_WREADY),
+        .s_axi_wstrb(smartconnect_mem_M01_AXI_WSTRB),
+        .s_axi_wvalid(smartconnect_mem_M01_AXI_WVALID),
         .sys_clk_i(clk_wiz_0_clk_100),
         .sys_rst(rst_in),
         .ui_clk(mig_axi_wrapper_0_ui_clk),
@@ -935,39 +935,39 @@ module Block_top
         .M00_AXI_rready(smartconnect_0_M00_AXI_RREADY),
         .M00_AXI_rresp(smartconnect_0_M00_AXI_RRESP),
         .M00_AXI_rvalid(smartconnect_0_M00_AXI_RVALID),
-        .M01_AXI_araddr(smartconnect_0_M01_AXI_ARADDR),
-        .M01_AXI_arburst(smartconnect_0_M01_AXI_ARBURST),
-        .M01_AXI_arcache(smartconnect_0_M01_AXI_ARCACHE),
-        .M01_AXI_arlen(smartconnect_0_M01_AXI_ARLEN),
-        .M01_AXI_arlock(smartconnect_0_M01_AXI_ARLOCK),
-        .M01_AXI_arprot(smartconnect_0_M01_AXI_ARPROT),
-        .M01_AXI_arqos(smartconnect_0_M01_AXI_ARQOS),
-        .M01_AXI_arready(smartconnect_0_M01_AXI_ARREADY),
-        .M01_AXI_arsize(smartconnect_0_M01_AXI_ARSIZE),
-        .M01_AXI_arvalid(smartconnect_0_M01_AXI_ARVALID),
-        .M01_AXI_awaddr(smartconnect_0_M01_AXI_AWADDR),
-        .M01_AXI_awburst(smartconnect_0_M01_AXI_AWBURST),
-        .M01_AXI_awcache(smartconnect_0_M01_AXI_AWCACHE),
-        .M01_AXI_awlen(smartconnect_0_M01_AXI_AWLEN),
-        .M01_AXI_awlock(smartconnect_0_M01_AXI_AWLOCK),
-        .M01_AXI_awprot(smartconnect_0_M01_AXI_AWPROT),
-        .M01_AXI_awqos(smartconnect_0_M01_AXI_AWQOS),
-        .M01_AXI_awready(smartconnect_0_M01_AXI_AWREADY),
-        .M01_AXI_awsize(smartconnect_0_M01_AXI_AWSIZE),
-        .M01_AXI_awvalid(smartconnect_0_M01_AXI_AWVALID),
-        .M01_AXI_bready(smartconnect_0_M01_AXI_BREADY),
-        .M01_AXI_bresp(smartconnect_0_M01_AXI_BRESP),
-        .M01_AXI_bvalid(smartconnect_0_M01_AXI_BVALID),
-        .M01_AXI_rdata(smartconnect_0_M01_AXI_RDATA),
-        .M01_AXI_rlast(smartconnect_0_M01_AXI_RLAST),
-        .M01_AXI_rready(smartconnect_0_M01_AXI_RREADY),
-        .M01_AXI_rresp(smartconnect_0_M01_AXI_RRESP),
-        .M01_AXI_rvalid(smartconnect_0_M01_AXI_RVALID),
-        .M01_AXI_wdata(smartconnect_0_M01_AXI_WDATA),
-        .M01_AXI_wlast(smartconnect_0_M01_AXI_WLAST),
-        .M01_AXI_wready(smartconnect_0_M01_AXI_WREADY),
-        .M01_AXI_wstrb(smartconnect_0_M01_AXI_WSTRB),
-        .M01_AXI_wvalid(smartconnect_0_M01_AXI_WVALID),
+        .M01_AXI_araddr(smartconnect_mem_M01_AXI_ARADDR),
+        .M01_AXI_arburst(smartconnect_mem_M01_AXI_ARBURST),
+        .M01_AXI_arcache(smartconnect_mem_M01_AXI_ARCACHE),
+        .M01_AXI_arlen(smartconnect_mem_M01_AXI_ARLEN),
+        .M01_AXI_arlock(smartconnect_mem_M01_AXI_ARLOCK),
+        .M01_AXI_arprot(smartconnect_mem_M01_AXI_ARPROT),
+        .M01_AXI_arqos(smartconnect_mem_M01_AXI_ARQOS),
+        .M01_AXI_arready(smartconnect_mem_M01_AXI_ARREADY),
+        .M01_AXI_arsize(smartconnect_mem_M01_AXI_ARSIZE),
+        .M01_AXI_arvalid(smartconnect_mem_M01_AXI_ARVALID),
+        .M01_AXI_awaddr(smartconnect_mem_M01_AXI_AWADDR),
+        .M01_AXI_awburst(smartconnect_mem_M01_AXI_AWBURST),
+        .M01_AXI_awcache(smartconnect_mem_M01_AXI_AWCACHE),
+        .M01_AXI_awlen(smartconnect_mem_M01_AXI_AWLEN),
+        .M01_AXI_awlock(smartconnect_mem_M01_AXI_AWLOCK),
+        .M01_AXI_awprot(smartconnect_mem_M01_AXI_AWPROT),
+        .M01_AXI_awqos(smartconnect_mem_M01_AXI_AWQOS),
+        .M01_AXI_awready(smartconnect_mem_M01_AXI_AWREADY),
+        .M01_AXI_awsize(smartconnect_mem_M01_AXI_AWSIZE),
+        .M01_AXI_awvalid(smartconnect_mem_M01_AXI_AWVALID),
+        .M01_AXI_bready(smartconnect_mem_M01_AXI_BREADY),
+        .M01_AXI_bresp(smartconnect_mem_M01_AXI_BRESP),
+        .M01_AXI_bvalid(smartconnect_mem_M01_AXI_BVALID),
+        .M01_AXI_rdata(smartconnect_mem_M01_AXI_RDATA),
+        .M01_AXI_rlast(smartconnect_mem_M01_AXI_RLAST),
+        .M01_AXI_rready(smartconnect_mem_M01_AXI_RREADY),
+        .M01_AXI_rresp(smartconnect_mem_M01_AXI_RRESP),
+        .M01_AXI_rvalid(smartconnect_mem_M01_AXI_RVALID),
+        .M01_AXI_wdata(smartconnect_mem_M01_AXI_WDATA),
+        .M01_AXI_wlast(smartconnect_mem_M01_AXI_WLAST),
+        .M01_AXI_wready(smartconnect_mem_M01_AXI_WREADY),
+        .M01_AXI_wstrb(smartconnect_mem_M01_AXI_WSTRB),
+        .M01_AXI_wvalid(smartconnect_mem_M01_AXI_WVALID),
         .S00_AXI_araddr(VexiiSocWrapper_0_mBus_ARADDR),
         .S00_AXI_arburst(VexiiSocWrapper_0_mBus_ARBURST),
         .S00_AXI_arcache({1'b0,1'b0,1'b1,1'b1}),

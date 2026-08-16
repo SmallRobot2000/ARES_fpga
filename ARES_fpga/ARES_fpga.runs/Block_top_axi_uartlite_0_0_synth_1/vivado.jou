@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Fri Aug 14 21:36:21 2026
+# Process ID         : 14513
+# Current directory  : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_uartlite_0_0_synth_1
+# Command line       : vivado -log Block_top_axi_uartlite_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_axi_uartlite_0_0.tcl
+# Log file           : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_uartlite_0_0_synth_1/Block_top_axi_uartlite_0_0.vds
+# Journal file       : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_uartlite_0_0_synth_1/vivado.jou
+# Running On         : lovroLinuxM
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 5 5600 6-Core Processor
+# CPU Frequency      : 4096.121 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 33529 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 37824 MB
+# Available Virtual  : 31021 MB
+#-----------------------------------------------------------
+source Block_top_axi_uartlite_0_0.tcl -notrace

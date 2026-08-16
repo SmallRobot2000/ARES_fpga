@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "bd_797d_s00tr_0",
-    "cell_name": "s00_transaction_regulator",
+    "cell_name": "s00_entry_pipeline/s00_transaction_regulator",
     "component_reference": "xilinx.com:ip:sc_transaction_regulator:1.0",
     "ip_revision": "12",
     "gen_directory": ".",
@@ -57,8 +57,8 @@
         "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
-        "PACKAGE": [ { "value": "ftg256", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7a100t", "resolve_type": "generated", "usage": "all" } ],
+        "PACKAGE": [ { "value": "fgg484", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED", "resolve_type": "generated", "usage": "all" } ],
@@ -366,5 +366,5 @@
       }
     }
   },
-  "checksum": "0edeb73a"
+  "checksum": "1de4e46e"
 }

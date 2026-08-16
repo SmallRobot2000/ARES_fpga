@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Aug 12 21:44:06 2026
-# Process ID         : 1054954
+# Start of session at: Fri Aug 14 21:38:41 2026
+# Process ID         : 20252
 # Current directory  : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1
 # Command line       : vivado -log Block_top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_wrapper.tcl
 # Log file           : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/Block_top_wrapper.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 5 5600 6-Core Processor
-# CPU Frequency      : 3293.114 MHz
+# CPU Frequency      : 3425.279 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 33529 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 37824 MB
-# Available Virtual  : 25671 MB
+# Available Virtual  : 32137 MB
 #-----------------------------------------------------------
 source Block_top_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -40,61 +40,61 @@ Block_top_xlconcat_0_0
 Command: read_checkpoint -auto_incremental -incremental /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/synth_1/Block_top_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/synth_1/Block_top_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top Block_top_wrapper -part xc7a35tftg256-2 -directive AreaOptimized_high -control_set_opt_threshold 1
+Command: synth_design -top Block_top_wrapper -part xc7a100tfgg484-2 -directive AreaOptimized_high -control_set_opt_threshold 1
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Device 21-403] Loading part xc7a35tftg256-2
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tfgg484-2
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1055041
+INFO: [Synth 8-7075] Helper process launched with PID 20334
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2261.168 ; gain = 359.426 ; free physical = 9387 ; free virtual = 23197
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2274.512 ; gain = 376.199 ; free physical = 19210 ; free virtual = 29285
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Block_top_wrapper' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/hdl/Block_top_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'Block_top' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:13]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_FLASH_SPI_wrapper_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_FLASH_SPI_wrapper_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_FLASH_SPI_wrapper_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_FLASH_SPI_wrapper_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_VDP_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_VDP_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_VDP_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_VDP_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_VexiiSocWrapper_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_VexiiSocWrapper_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_VexiiSocWrapper_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_VexiiSocWrapper_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_bram_ctrl_vdp_t0_data_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_vdp_t0_data_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_bram_ctrl_vdp_t0_data_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_vdp_t0_data_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_FLASH_SPI_wrapper_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_FLASH_SPI_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_FLASH_SPI_wrapper_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_FLASH_SPI_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_VDP_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_VDP_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_VDP_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_VDP_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_VexiiSocWrapper_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_VexiiSocWrapper_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_VexiiSocWrapper_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_VexiiSocWrapper_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_bram_ctrl_vdp_t0_data_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_vdp_t0_data_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_bram_ctrl_vdp_t0_data_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_vdp_t0_data_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'bram_rst_a' of module 'Block_top_axi_bram_ctrl_vdp_t0_data_0' is unconnected for instance 'axi_bram_ctrl_vdp_s0_att' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:495]
 WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_vdp_s0_att' of module 'Block_top_axi_bram_ctrl_vdp_t0_data_0' has 28 connections declared, but only 27 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:495]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_bram_ctrl_vdp_s0_att_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_vdp_s0_att_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_bram_ctrl_vdp_s0_att_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_vdp_s0_att_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_bram_ctrl_vdp_s0_att_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_vdp_s0_att_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_bram_ctrl_vdp_s0_att_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_vdp_s0_att_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'bram_rst_a' of module 'Block_top_axi_bram_ctrl_vdp_s0_att_0' is unconnected for instance 'axi_bram_ctrl_vdp_s0_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:523]
 WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_vdp_s0_data' of module 'Block_top_axi_bram_ctrl_vdp_s0_att_0' has 40 connections declared, but only 39 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:523]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_bram_ctrl_map_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_map_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_bram_ctrl_map_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_map_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_bram_ctrl_map_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_map_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_bram_ctrl_map_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_map_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'bram_rst_a' of module 'Block_top_axi_bram_ctrl_map_0' is unconnected for instance 'axi_bram_ctrl_vdp_t0_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:563]
 WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_vdp_t0_data' of module 'Block_top_axi_bram_ctrl_map_0' has 40 connections declared, but only 39 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:563]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_bram_ctrl_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_bram_ctrl_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_bram_ctrl_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_bram_ctrl_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_bram_ctrl_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'bram_rst_a' of module 'Block_top_axi_bram_ctrl_0_0' is unconnected for instance 'axi_bram_ctrl_vdp_t0_map' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:603]
 WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_vdp_t0_map' of module 'Block_top_axi_bram_ctrl_0_0' has 40 connections declared, but only 39 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:603]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_quad_spi_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_quad_spi_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_quad_spi_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_quad_spi_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_uartlite_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_uartlite_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_clk_wiz_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_clk_wiz_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_clk_wiz_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_quad_spi_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_quad_spi_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_quad_spi_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_quad_spi_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_uartlite_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_uartlite_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_clk_wiz_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_clk_wiz_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_clk_wiz_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'clk_6_25' of module 'Block_top_clk_wiz_0_0' is unconnected for instance 'clk_wiz_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:700]
 WARNING: [Synth 8-7023] instance 'clk_wiz_0' of module 'Block_top_clk_wiz_0_0' has 4 connections declared, but only 3 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:700]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_mig_axi_wrapper_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_mig_axi_wrapper_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_mig_axi_wrapper_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_mig_axi_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_mig_axi_wrapper_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_mig_axi_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_mig_axi_wrapper_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_mig_axi_wrapper_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mmcm_locked' of module 'Block_top_mig_axi_wrapper_0_0' is unconnected for instance 'mig_axi_wrapper_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:704]
 WARNING: [Synth 8-7071] port 's_axi_bid' of module 'Block_top_mig_axi_wrapper_0_0' is unconnected for instance 'mig_axi_wrapper_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:704]
 WARNING: [Synth 8-7071] port 's_axi_rid' of module 'Block_top_mig_axi_wrapper_0_0' is unconnected for instance 'mig_axi_wrapper_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:704]
 WARNING: [Synth 8-7071] port 'init_calib_complete' of module 'Block_top_mig_axi_wrapper_0_0' is unconnected for instance 'mig_axi_wrapper_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:704]
 WARNING: [Synth 8-7071] port 'device_temp' of module 'Block_top_mig_axi_wrapper_0_0' is unconnected for instance 'mig_axi_wrapper_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:704]
 WARNING: [Synth 8-7023] instance 'mig_axi_wrapper_0' of module 'Block_top_mig_axi_wrapper_0_0' has 61 connections declared, but only 56 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:704]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_smartconnect_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_smartconnect_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_smartconnect_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_smartconnect_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_smartconnect_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_smartconnect_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_smartconnect_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_smartconnect_0_1_stub.v:6]
 WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'Block_top_smartconnect_0_1' is unconnected for instance 'smartconnect_io' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:761]
 WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'Block_top_smartconnect_0_1' is unconnected for instance 'smartconnect_io' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:761]
 WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'Block_top_smartconnect_0_1' is unconnected for instance 'smartconnect_io' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:761]
@@ -106,20 +106,20 @@ WARNING: [Synth 8-7071] port 'M03_AXI_arqos' of module 'Block_top_smartconnect_0
 WARNING: [Synth 8-7071] port 'M05_AXI_awqos' of module 'Block_top_smartconnect_0_1' is unconnected for instance 'smartconnect_io' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:761]
 WARNING: [Synth 8-7071] port 'M05_AXI_arqos' of module 'Block_top_smartconnect_0_1' is unconnected for instance 'smartconnect_io' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:761]
 WARNING: [Synth 8-7023] instance 'smartconnect_io' of module 'Block_top_smartconnect_0_1' has 177 connections declared, but only 167 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/synth/Block_top.v:761]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_smartconnect_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_smartconnect_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_smartconnect_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_smartconnect_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_util_ds_buf_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_ds_buf_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_ds_buf_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_ds_buf_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_util_ds_buf_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_ds_buf_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_ds_buf_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_ds_buf_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_util_ds_buf_0_2' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_ds_buf_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_ds_buf_0_2' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_ds_buf_0_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_util_ds_buf_2_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_ds_buf_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_ds_buf_2_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_ds_buf_2_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_util_vector_logic_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_vector_logic_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_vector_logic_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_vector_logic_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Block_top_util_vector_logic_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_vector_logic_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_vector_logic_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-1054954-lovroLinuxM/realtime/Block_top_util_vector_logic_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_smartconnect_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_smartconnect_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_smartconnect_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_smartconnect_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_util_ds_buf_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_ds_buf_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_ds_buf_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_ds_buf_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_util_ds_buf_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_ds_buf_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_ds_buf_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_ds_buf_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_util_ds_buf_0_2' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_ds_buf_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_ds_buf_0_2' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_ds_buf_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_util_ds_buf_2_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_ds_buf_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_ds_buf_2_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_ds_buf_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_util_vector_logic_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_vector_logic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_vector_logic_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_vector_logic_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Block_top_util_vector_logic_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_vector_logic_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_util_vector_logic_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/.Xil/Vivado-20252-lovroLinuxM/realtime/Block_top_util_vector_logic_0_1_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'Block_top_xlconcat_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_xlconcat_0_0/synth/Block_top_xlconcat_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_7_xlconcat' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9c1a/hdl/xlconcat_v2_1_vl_rfs.v:59]
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_7_xlconcat' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ipshared/9c1a/hdl/xlconcat_v2_1_vl_rfs.v:59]
@@ -223,18 +223,18 @@ WARNING: [Synth 8-7129] Port In125[0] in module xlconcat_v2_1_7_xlconcat is eith
 WARNING: [Synth 8-7129] Port In126[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
 WARNING: [Synth 8-7129] Port In127[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2366.105 ; gain = 464.363 ; free physical = 9269 ; free virtual = 23079
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2379.480 ; gain = 481.168 ; free physical = 19150 ; free virtual = 29225
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2366.105 ; gain = 464.363 ; free physical = 9269 ; free virtual = 23079
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2379.480 ; gain = 481.168 ; free physical = 19149 ; free virtual = 29225
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2366.105 ; gain = 464.363 ; free physical = 9269 ; free virtual = 23079
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2379.480 ; gain = 481.168 ; free physical = 19149 ; free virtual = 29225
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2366.105 ; gain = 0.000 ; free physical = 9269 ; free virtual = 23079
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2379.480 ; gain = 0.000 ; free physical = 19149 ; free virtual = 29225
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -277,19 +277,6 @@ Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/b
 Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_data_0/Block_top_axi_bram_ctrl_vdp_t0_data_0/Block_top_axi_bram_ctrl_vdp_t0_data_0_in_context.xdc] for cell 'Block_top_i/axi_bram_ctrl_vdp_s0_att'
 Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_s0_att_0/Block_top_axi_bram_ctrl_vdp_s0_att_0/Block_top_axi_bram_ctrl_0_0_in_context.xdc] for cell 'Block_top_i/axi_bram_ctrl_vdp_s0_data'
 Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_s0_att_0/Block_top_axi_bram_ctrl_vdp_s0_att_0/Block_top_axi_bram_ctrl_0_0_in_context.xdc] for cell 'Block_top_i/axi_bram_ctrl_vdp_s0_data'
-Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc]
-WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_IN_PHY}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc:343]
-WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */DQSFOUND} -of [get_cells -hier -filter {REF_NAME == PHASER_IN_PHY}]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc:343]
-WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc:345]
-WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */OSERDESRST} -of [get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc:345]
-WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc:346]
-WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */OSERDESRST} -of [get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc:346]
-WARNING: [Vivado 12-508] No pins matched 'get_pins -hier -include_replicated_objects -filter {NAME =~ *temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[*]/D}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc:349]
-WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -hier -filter {NAME =~ */u_iodelay_ctrl/sys_rst_i}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc:352]
-Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Block_top_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/DDR_MIG_pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_wrapper_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc]
 CRITICAL WARNING: [Constraints 18-1056] Clock 'clk_0' completely overrides clock 'clk'.
 New: create_clock -period 10.000 -name clk_0 -waveform {0.000 5.000} [get_ports clk], [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:12]
@@ -311,62 +298,6 @@ WARNING: [Vivado 12-584] No ports matched 'led[6]'. [/home/lovro/ARES/ARES_fpga/
 WARNING: [Vivado 12-584] No ports matched 'led[6]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:37]
 WARNING: [Vivado 12-584] No ports matched 'led[7]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:39]
 WARNING: [Vivado 12-584] No ports matched 'led[7]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:40]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:46]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:47]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:48]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:49]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:50]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:51]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:52]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:53]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:54]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:55]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:56]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:57]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:58]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:59]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:60]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:61]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:62]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:63]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:64]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:65]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:66]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:67]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:68]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:69]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:70]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:71]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:72]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:73]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:74]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:75]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:76]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:77]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:78]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:79]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:80]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:81]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:82]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:83]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:84]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:85]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:86]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:87]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:88]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:89]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:90]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:91]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:92]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot set load on pre-synthesized design.  Please open a synthesized design (or synthesize the current design) and rerun this command. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:93]
-WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:94]
-WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:95]
-WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:96]
-WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:97]
-WARNING: [Vivado 12-584] No ports matched 'led[4]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:98]
-WARNING: [Vivado 12-584] No ports matched 'led[5]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:99]
-WARNING: [Vivado 12-584] No ports matched 'led[6]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:100]
-WARNING: [Vivado 12-584] No ports matched 'led[7]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc:101]
 Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Block_top_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/BASE_pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_wrapper_propImpl.xdc].
@@ -383,36 +314,49 @@ Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/
 Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/VGA_pins.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/VGA_pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_IN_PHY}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc:343]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */DQSFOUND} -of [get_cells -hier -filter {REF_NAME == PHASER_IN_PHY}]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc:343]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc:345]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */OSERDESRST} -of [get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc:345]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc:346]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */OSERDESRST} -of [get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}]'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc:346]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -hier -include_replicated_objects -filter {NAME =~ *temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[*]/D}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc:349]
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -hier -filter {NAME =~ */u_iodelay_ctrl/sys_rst_i}'. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc:352]
+Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Block_top_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Block_top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Block_top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2412.062 ; gain = 0.000 ; free physical = 9284 ; free virtual = 23094
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2419.500 ; gain = 0.000 ; free physical = 19151 ; free virtual = 29228
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2412.098 ; gain = 0.000 ; free physical = 9284 ; free virtual = 23094
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2419.535 ; gain = 0.000 ; free physical = 19151 ; free virtual = 29228
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Block_top_i/axi_quad_spi_0' at clock pin 'ext_spi_clk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2412.098 ; gain = 510.355 ; free physical = 9286 ; free virtual = 23097
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2419.535 ; gain = 521.223 ; free physical = 19140 ; free virtual = 29217
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a35tftg256-2
+Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2420.066 ; gain = 518.324 ; free physical = 9286 ; free virtual = 23097
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2427.504 ; gain = 529.191 ; free physical = 19140 ; free virtual = 29217
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2420.066 ; gain = 518.324 ; free physical = 9286 ; free virtual = 23096
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2427.504 ; gain = 529.191 ; free physical = 19140 ; free virtual = 29217
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2420.066 ; gain = 518.324 ; free physical = 9286 ; free virtual = 23098
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2427.504 ; gain = 529.191 ; free physical = 19138 ; free virtual = 29216
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -425,8 +369,8 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
@@ -434,25 +378,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2420.066 ; gain = 518.324 ; free physical = 9288 ; free virtual = 23105
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2427.504 ; gain = 529.191 ; free physical = 19137 ; free virtual = 29219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2519.066 ; gain = 617.324 ; free physical = 9203 ; free virtual = 23004
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2530.504 ; gain = 632.191 ; free physical = 19034 ; free virtual = 29117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2519.066 ; gain = 617.324 ; free physical = 9203 ; free virtual = 23004
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2530.504 ; gain = 632.191 ; free physical = 19034 ; free virtual = 29117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2530.074 ; gain = 628.332 ; free physical = 9187 ; free virtual = 22989
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2541.512 ; gain = 643.199 ; free physical = 19026 ; free virtual = 29109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -470,37 +414,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2715.887 ; gain = 814.145 ; free physical = 9048 ; free virtual = 22849
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2727.324 ; gain = 829.012 ; free physical = 18871 ; free virtual = 28954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2715.887 ; gain = 814.145 ; free physical = 9048 ; free virtual = 22849
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2727.324 ; gain = 829.012 ; free physical = 18871 ; free virtual = 28954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2715.887 ; gain = 814.145 ; free physical = 9048 ; free virtual = 22849
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2727.324 ; gain = 829.012 ; free physical = 18871 ; free virtual = 28954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2715.887 ; gain = 814.145 ; free physical = 9048 ; free virtual = 22849
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2727.324 ; gain = 829.012 ; free physical = 18871 ; free virtual = 28954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2715.887 ; gain = 814.145 ; free physical = 9048 ; free virtual = 22849
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2727.324 ; gain = 829.012 ; free physical = 18871 ; free virtual = 28954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2715.887 ; gain = 814.145 ; free physical = 9048 ; free virtual = 22849
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2727.324 ; gain = 829.012 ; free physical = 18871 ; free virtual = 28954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -554,28 +498,28 @@ Report Cell Usage:
 |21    |OBUF                                |    19|
 +------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2715.887 ; gain = 814.145 ; free physical = 9048 ; free virtual = 22849
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2727.324 ; gain = 829.012 ; free physical = 18871 ; free virtual = 28954
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2715.887 ; gain = 768.152 ; free physical = 9043 ; free virtual = 22846
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2715.895 ; gain = 814.145 ; free physical = 9043 ; free virtual = 22846
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2727.324 ; gain = 788.957 ; free physical = 18871 ; free virtual = 28954
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2727.332 ; gain = 829.012 ; free physical = 18871 ; free virtual = 28954
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2715.895 ; gain = 0.000 ; free physical = 9177 ; free virtual = 22979
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2727.332 ; gain = 0.000 ; free physical = 18962 ; free virtual = 29045
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2715.895 ; gain = 0.000 ; free physical = 9182 ; free virtual = 22984
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2727.332 ; gain = 0.000 ; free physical = 18963 ; free virtual = 29046
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 1066a8da
+Synth Design complete | Checksum: 19907d56
 INFO: [Common 17-83] Releasing license: Synthesis
-72 Infos, 161 Warnings, 49 Critical Warnings and 0 Errors encountered.
+72 Infos, 153 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 2715.922 ; gain = 1100.254 ; free physical = 9185 ; free virtual = 22988
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1839.931; main = 1839.931; forked = 278.260
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3414.289; main = 2715.891; forked = 994.219
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 2727.359 ; gain = 1112.152 ; free physical = 18963 ; free virtual = 29046
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1857.192; main = 1857.192; forked = 279.356
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3421.727; main = 2727.328; forked = 994.219
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2739.898 ; gain = 0.000 ; free physical = 9185 ; free virtual = 22988
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2751.336 ; gain = 0.000 ; free physical = 18971 ; free virtual = 29054
 INFO: [Common 17-1381] The checkpoint '/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/Block_top_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Block_top_wrapper_utilization_synth.rpt -pb Block_top_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 12 21:44:34 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 14 21:39:10 2026...

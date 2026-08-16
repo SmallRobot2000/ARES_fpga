@@ -343,7 +343,7 @@ module mig_7series_0_mig #
    parameter CK_BYTE_MAP
      = 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00,
    parameter ADDR_MAP
-     = 192'h000_000_003_014_001_019_006_002_007_005_008_009_013_000_004_015,
+     = 192'h000_000_003_000_004_009_015_006_014_007_019_005_002_013_001_008,
    parameter BANK_MAP   = 36'h010_011_018,
    parameter CAS_MAP    = 12'h01B,
    parameter CKE_ODT_BYTE_MAP = 8'h00,
@@ -355,8 +355,8 @@ module mig_7series_0_mig #
    parameter WE_MAP     = 12'h017,
    parameter DQS_BYTE_MAP
      = 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_03_02,
-   parameter DATA0_MAP  = 96'h027_022_025_020_023_026_024_029,
-   parameter DATA1_MAP  = 96'h036_033_037_032_035_039_034_031,
+   parameter DATA0_MAP  = 96'h020_022_026_027_023_024_025_029,
+   parameter DATA1_MAP  = 96'h032_036_035_037_031_033_034_039,
    parameter DATA2_MAP  = 96'h000_000_000_000_000_000_000_000,
    parameter DATA3_MAP  = 96'h000_000_000_000_000_000_000_000,
    parameter DATA4_MAP  = 96'h000_000_000_000_000_000_000_000,
@@ -475,7 +475,7 @@ module mig_7series_0_mig #
                                      // 1/2, 1/4 and 1/8 of fabrick clock.
                                      // Valid for DDR2/DDR3 AXI interfaces
                                      // based on GUI selection
-   parameter C_S_AXI_ID_WIDTH              = 1,
+   parameter C_S_AXI_ID_WIDTH              = 4,
                                              // Width of all master and slave ID signals.
                                              // # = >= 1.
    parameter C_S_AXI_MEM_SIZE              = "268435456",

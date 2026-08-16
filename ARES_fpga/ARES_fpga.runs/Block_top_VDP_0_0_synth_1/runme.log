@@ -7,11 +7,12 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Wed Aug 12 21:42:54 2026
+  **** Start of session at: Fri Aug 14 21:36:21 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source Block_top_VDP_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1612.672 ; gain = 64.059 ; free physical = 15868 ; free virtual = 25816
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
@@ -20,16 +21,16 @@ If this directory should no longer be in your list of user repositories, go to t
 WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Vivado/2025.2/data/ip'.
-Command: synth_design -top Block_top_VDP_0_0 -part xc7a35tftg256-2 -incremental_mode off -mode out_of_context
+Command: synth_design -top Block_top_VDP_0_0 -part xc7a100tfgg484-2 -incremental_mode off -mode out_of_context
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Device 21-403] Loading part xc7a35tftg256-2
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tfgg484-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1054348
+INFO: [Synth 8-7075] Helper process launched with PID 15546
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2197.480 ; gain = 480.594 ; free physical = 7336 ; free virtual = 21118
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2210.539 ; gain = 480.594 ; free physical = 7581 ; free virtual = 17535
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'VGA_clk', assumed default net type 'wire' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:158]
 INFO: [Synth 8-11241] undeclared symbol 'gen_line_start', assumed default net type 'wire' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:205]
@@ -49,22 +50,22 @@ INFO: [Synth 8-6157] synthesizing module 'VDP' [/home/lovro/ARES/ARES_fpga/ARES_
 	Parameter NUM_GEN bound to: 2 - type: integer 
 	Parameter T0_GEN_NUM bound to: 0 - type: integer 
 	Parameter S0_GEN_NUM bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_fin_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_fin_line_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_fin_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_fin_line_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_fin_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_fin_line_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_fin_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_fin_line_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'VDP_tile_gen' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:370]
 	Parameter SCREEN_WIDTH bound to: 640 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 480 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_buf_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_buf_line_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_buf_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_buf_line_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_buf_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_buf_line_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_buf_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_buf_line_stub.v:6]
 WARNING: [Synth 8-7071] port 'douta' of module 'blk_mem_buf_line' is unconnected for instance 'line_buf' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:444]
 WARNING: [Synth 8-7071] port 'dinb' of module 'blk_mem_buf_line' is unconnected for instance 'line_buf' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:444]
 WARNING: [Synth 8-7023] instance 'line_buf' of module 'blk_mem_buf_line' has 11 connections declared, but only 9 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:444]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_tile_map' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_tile_map_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_tile_map' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_tile_map_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_tile_map' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_tile_map_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_tile_map' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_tile_map_stub.v:6]
 WARNING: [Synth 8-7071] port 'dina' of module 'blk_mem_tile_map' is unconnected for instance 'Tile_MAP_mem' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:479]
 WARNING: [Synth 8-7023] instance 'Tile_MAP_mem' of module 'blk_mem_tile_map' has 11 connections declared, but only 10 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:479]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_tile_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_tile_data_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_tile_data' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_tile_data_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_tile_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_tile_data_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_tile_data' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_tile_data_stub.v:6]
 WARNING: [Synth 8-7071] port 'dina' of module 'blk_mem_tile_data' is unconnected for instance 'Tile_DATA_mem' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:506]
 WARNING: [Synth 8-7023] instance 'Tile_DATA_mem' of module 'blk_mem_tile_data' has 11 connections declared, but only 10 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:506]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:556]
@@ -73,20 +74,19 @@ INFO: [Synth 8-6157] synthesizing module 'VDP_sprite_gen' [/home/lovro/ARES/ARES
 	Parameter SCREEN_WIDTH bound to: 640 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 480 - type: integer 
 	Parameter MAX_SPR_LINE bound to: 32 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_gen_spr_line_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_gen_spr_line_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_gen_spr_line_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_gen_spr_line_stub.v:6]
 WARNING: [Synth 8-7071] port 'douta' of module 'blk_mem_gen_spr_line' is unconnected for instance 'spr_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:690]
-WARNING: [Synth 8-7071] port 'dinb' of module 'blk_mem_gen_spr_line' is unconnected for instance 'spr_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:690]
-WARNING: [Synth 8-7023] instance 'spr_line' of module 'blk_mem_gen_spr_line' has 10 connections declared, but only 8 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:690]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_gen_spr_data_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_data' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_gen_spr_data_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_att' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_gen_spr_att_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_att' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-1054290-lovroLinuxM/realtime/blk_mem_gen_spr_att_stub.v:6]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:816]
+WARNING: [Synth 8-7023] instance 'spr_line' of module 'blk_mem_gen_spr_line' has 10 connections declared, but only 9 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:690]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_gen_spr_data_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_data' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_gen_spr_data_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_att' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_gen_spr_att_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_att' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/.Xil/Vivado-14511-lovroLinuxM/realtime/blk_mem_gen_spr_att_stub.v:6]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:817]
 INFO: [Synth 8-6155] done synthesizing module 'VDP_sprite_gen' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:619]
 INFO: [Synth 8-6155] done synthesizing module 'VDP' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Block_top_VDP_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VDP_0_0/synth/Block_top_VDP_0_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element src_pixel_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:910]
+WARNING: [Synth 8-6014] Unused sequential element src_pixel_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:911]
 WARNING: [Synth 8-3848] Net palette[1][0] in module/entity VDP_sprite_gen does not have driver. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:656]
 WARNING: [Synth 8-3848] Net palette[1][1] in module/entity VDP_sprite_gen does not have driver. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:656]
 WARNING: [Synth 8-3848] Net palette[1][2] in module/entity VDP_sprite_gen does not have driver. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.v:656]
@@ -197,18 +197,18 @@ INFO: [Synth 8-7129] Port map_cpu_addr[0] in module VDP_tile_gen is either uncon
 INFO: [Synth 8-7129] Port data_cpu_addr[1] in module VDP_tile_gen is either unconnected or has no load
 INFO: [Synth 8-7129] Port data_cpu_addr[0] in module VDP_tile_gen is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2331.418 ; gain = 614.531 ; free physical = 7210 ; free virtual = 20993
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2346.477 ; gain = 616.531 ; free physical = 6426 ; free virtual = 16401
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2331.418 ; gain = 614.531 ; free physical = 7210 ; free virtual = 20993
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2355.383 ; gain = 625.438 ; free physical = 6406 ; free virtual = 16381
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2331.418 ; gain = 614.531 ; free physical = 7210 ; free virtual = 20993
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2355.383 ; gain = 625.438 ; free physical = 6406 ; free virtual = 16381
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2331.418 ; gain = 0.000 ; free physical = 7211 ; free virtual = 20995
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2355.383 ; gain = 0.000 ; free physical = 6373 ; free virtual = 16348
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -233,27 +233,27 @@ Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_
 Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2413.883 ; gain = 0.000 ; free physical = 7217 ; free virtual = 21001
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2451.121 ; gain = 0.000 ; free physical = 6192 ; free virtual = 16177
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2413.918 ; gain = 0.000 ; free physical = 7233 ; free virtual = 21017
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2451.156 ; gain = 0.000 ; free physical = 6189 ; free virtual = 16179
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2413.918 ; gain = 697.031 ; free physical = 7340 ; free virtual = 21125
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2451.156 ; gain = 721.211 ; free physical = 5941 ; free virtual = 15937
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a35tftg256-2
+Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2421.887 ; gain = 705.000 ; free physical = 7340 ; free virtual = 21125
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2459.125 ; gain = 729.180 ; free physical = 5941 ; free virtual = 15937
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2421.887 ; gain = 705.000 ; free physical = 7340 ; free virtual = 21125
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2459.125 ; gain = 729.180 ; free physical = 5941 ; free virtual = 15937
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'VDP_tile_gen'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'VDP_sprite_gen'
@@ -296,7 +296,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'gen_fin_state_reg' using encoding 'one-hot' in module 'VDP'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2421.887 ; gain = 705.000 ; free physical = 7343 ; free virtual = 21130
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2459.125 ; gain = 729.180 ; free physical = 5825 ; free virtual = 15822
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -361,8 +361,8 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
@@ -374,25 +374,25 @@ INFO: [Synth 8-7129] Port s0_att_cpu_addr[0] in module VDP is either unconnected
 INFO: [Synth 8-7129] Port s0_data_cpu_addr[1] in module VDP is either unconnected or has no load
 INFO: [Synth 8-7129] Port s0_data_cpu_addr[0] in module VDP is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8783 ; free virtual = 22586
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:18 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 11612 ; free virtual = 21635
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8784 ; free virtual = 22586
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:13 ; elapsed = 00:01:21 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 12672 ; free virtual = 22743
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8761 ; free virtual = 22572
+Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:35 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13322 ; free virtual = 23349
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8761 ; free virtual = 22572
+Finished Technology Mapping : Time (s): cpu = 00:01:27 ; elapsed = 00:01:36 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13332 ; free virtual = 23359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -409,139 +409,139 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[15]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[14]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[13]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[12]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[11]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[10]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[9]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[8]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[7]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[6]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[5]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[4]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[3]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[2]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[1]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_line  has unconnected pin dinb[0]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[127]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[126]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[125]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[124]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[123]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[122]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[121]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[120]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[119]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[118]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[117]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[116]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[115]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[114]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[113]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[112]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[111]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[110]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[109]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[108]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[107]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[106]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[105]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[104]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[103]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[102]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[101]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[100]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[99]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[98]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[97]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[96]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[95]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[94]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[93]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[92]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[91]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[90]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[89]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[88]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[87]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[86]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[85]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[84]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[83]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[82]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[81]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[80]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[79]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[78]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[77]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[76]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[75]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[74]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[73]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[72]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[71]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[70]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[69]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[68]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[67]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[66]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[65]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[64]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[63]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[62]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[61]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[60]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[59]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[58]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[57]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[56]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[55]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[54]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[53]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[52]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[51]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[50]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[49]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[48]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[47]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[46]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[45]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_data  has unconnected pin dina[44]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[63]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[62]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[61]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[60]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[59]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[58]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[57]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[56]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[55]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[54]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[53]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[52]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[51]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[50]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[49]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[48]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[47]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[46]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[45]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[44]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[43]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[42]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[41]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[40]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[39]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[38]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[37]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[36]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[35]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[34]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[33]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[32]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[29]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[28]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \S0_gen/spr_att  has unconnected pin dina[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/line_buf  has unconnected pin dinb[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_MAP_mem  has unconnected pin dina[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_DATA_mem  has unconnected pin dina[63]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_DATA_mem  has unconnected pin dina[62]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_DATA_mem  has unconnected pin dina[61]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \T0_gen/Tile_DATA_mem  has unconnected pin dina[60]
 INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8756 ; free virtual = 22567
+Finished IO Insertion : Time (s): cpu = 00:01:30 ; elapsed = 00:01:39 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13373 ; free virtual = 23394
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8756 ; free virtual = 22567
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:30 ; elapsed = 00:01:39 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13373 ; free virtual = 23394
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8757 ; free virtual = 22567
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:30 ; elapsed = 00:01:39 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13365 ; free virtual = 23386
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8757 ; free virtual = 22567
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:30 ; elapsed = 00:01:39 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13365 ; free virtual = 23386
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8757 ; free virtual = 22567
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:30 ; elapsed = 00:01:39 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13365 ; free virtual = 23386
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8757 ; free virtual = 22567
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:30 ; elapsed = 00:01:39 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13365 ; free virtual = 23386
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -584,32 +584,32 @@ Report Cell Usage:
 |18    |FDSE                 |     4|
 +------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2963.957 ; gain = 1247.070 ; free physical = 8757 ; free virtual = 22567
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:30 ; elapsed = 00:01:39 . Memory (MB): peak = 2978.953 ; gain = 1249.008 ; free physical = 13365 ; free virtual = 23386
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 304 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 2963.957 ; gain = 1164.570 ; free physical = 8757 ; free virtual = 22567
-Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2963.965 ; gain = 1247.070 ; free physical = 8757 ; free virtual = 22567
+Synthesis finished with 0 errors, 160 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:27 ; elapsed = 00:01:36 . Memory (MB): peak = 2978.953 ; gain = 1153.234 ; free physical = 13365 ; free virtual = 23385
+Synthesis Optimization Complete : Time (s): cpu = 00:01:30 ; elapsed = 00:01:39 . Memory (MB): peak = 2978.961 ; gain = 1249.008 ; free physical = 13365 ; free virtual = 23385
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2963.965 ; gain = 0.000 ; free physical = 8924 ; free virtual = 22734
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2978.961 ; gain = 0.000 ; free physical = 13535 ; free virtual = 23556
 INFO: [Netlist 29-17] Analyzing 116 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'Block_top_VDP_0_0' is not ideal for floorplanning, since the cellview 'VDP_sprite_gen' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3019.984 ; gain = 0.000 ; free physical = 8924 ; free virtual = 22735
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3034.980 ; gain = 0.000 ; free physical = 13536 ; free virtual = 23556
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: c38aeaf6
+Synth Design complete | Checksum: 2dcd91d3
 INFO: [Common 17-83] Releasing license: Synthesis
-64 Infos, 115 Warnings, 100 Critical Warnings and 0 Errors encountered.
+64 Infos, 114 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:07 . Memory (MB): peak = 3020.020 ; gain = 1406.438 ; free physical = 8924 ; free virtual = 22734
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2343.733; main = 2119.597; forked = 278.218
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3958.180; main = 3019.988; forked = 994.219
+synth_design: Time (s): cpu = 00:01:38 ; elapsed = 00:01:44 . Memory (MB): peak = 3035.016 ; gain = 1422.344 ; free physical = 13535 ; free virtual = 23556
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2090.481; main = 1901.151; forked = 204.900
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3973.172; main = 3034.984; forked = 994.215
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Coretcl 2-1174] Renamed 10 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3043.996 ; gain = 0.000 ; free physical = 8924 ; free virtual = 22734
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3058.992 ; gain = 0.000 ; free physical = 13535 ; free virtual = 23556
 INFO: [Common 17-1381] The checkpoint '/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_0_0_synth_1/Block_top_VDP_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Block_top_VDP_0_0_utilization_synth.rpt -pb Block_top_VDP_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 12 21:44:05 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 14 21:38:18 2026...

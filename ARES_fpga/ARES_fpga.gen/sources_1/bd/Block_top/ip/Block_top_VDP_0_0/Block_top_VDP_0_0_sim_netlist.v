@@ -2,14 +2,14 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Aug 12 21:44:05 2026
+// Date        : Fri Aug 14 21:38:18 2026
 // Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VDP_0_0/Block_top_VDP_0_0_sim_netlist.v
 // Design      : Block_top_VDP_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a35tftg256-2
+// Device      : xc7a100tfgg484-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -3213,8 +3213,6 @@ module Block_top_VDP_0_0_VDP_sprite_gen
   wire [3:0]\NLW_line_data_reg[47]_i_8_O_UNCONNECTED ;
   wire [63:0]NLW_spr_att_dina_UNCONNECTED;
   wire [62:53]NLW_spr_att_douta_UNCONNECTED;
-  wire [127:0]NLW_spr_data_dina_UNCONNECTED;
-  wire [15:0]NLW_spr_line_dinb_UNCONNECTED;
   wire [63:0]NLW_spr_line_douta_UNCONNECTED;
 
   (* SOFT_HLUTNM = "soft_lutpair119" *) 
@@ -15602,7 +15600,7 @@ module Block_top_VDP_0_0_VDP_sprite_gen
         .addrb(s0_data_cpu_addr),
         .clka(s_axi_aclk),
         .clkb(s0_data_cpu_clk),
-        .dina(NLW_spr_data_dina_UNCONNECTED[127:0]),
+        .dina({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .dinb(s0_data_cpu_din),
         .douta({spr_data_vdp_dout[127:88],spr_data_vdp_dout__0[87:80],spr_data_vdp_dout[79:56],spr_data_vdp_dout__0[55:40],spr_data_vdp_dout[39:0]}),
         .doutb(s0_data_cpu_dout),
@@ -15618,7 +15616,7 @@ module Block_top_VDP_0_0_VDP_sprite_gen
         .clka(s_axi_aclk),
         .clkb(s_axi_aclk),
         .dina({\line_data_reg_n_0_[63] ,\line_data_reg_n_0_[62] ,\line_data_reg_n_0_[62] ,\line_data_reg_n_0_[62] ,\line_data_reg_n_0_[59] ,\line_data_reg_n_0_[58] ,\line_data_reg_n_0_[58] ,\line_data_reg_n_0_[58] ,\line_data_reg_n_0_[55] ,\line_data_reg_n_0_[54] ,\line_data_reg_n_0_[54] ,\line_data_reg_n_0_[54] ,\line_data_reg_n_0_[51] ,\line_data_reg_n_0_[50] ,\line_data_reg_n_0_[50] ,\line_data_reg_n_0_[50] ,\line_data_reg_n_0_[47] ,\line_data_reg_n_0_[46] ,\line_data_reg_n_0_[46] ,\line_data_reg_n_0_[46] ,\line_data_reg_n_0_[43] ,\line_data_reg_n_0_[42] ,\line_data_reg_n_0_[42] ,\line_data_reg_n_0_[42] ,\line_data_reg_n_0_[39] ,\line_data_reg_n_0_[38] ,\line_data_reg_n_0_[38] ,\line_data_reg_n_0_[38] ,\line_data_reg_n_0_[35] ,\line_data_reg_n_0_[34] ,\line_data_reg_n_0_[34] ,\line_data_reg_n_0_[34] ,\line_data_reg_n_0_[31] ,\line_data_reg_n_0_[30] ,\line_data_reg_n_0_[30] ,\line_data_reg_n_0_[30] ,\line_data_reg_n_0_[27] ,\line_data_reg_n_0_[26] ,\line_data_reg_n_0_[26] ,\line_data_reg_n_0_[26] ,\line_data_reg_n_0_[23] ,\line_data_reg_n_0_[22] ,\line_data_reg_n_0_[22] ,\line_data_reg_n_0_[22] ,\line_data_reg_n_0_[19] ,\line_data_reg_n_0_[18] ,\line_data_reg_n_0_[18] ,\line_data_reg_n_0_[18] ,\line_data_reg_n_0_[15] ,\line_data_reg_n_0_[14] ,\line_data_reg_n_0_[14] ,\line_data_reg_n_0_[14] ,\line_data_reg_n_0_[11] ,\line_data_reg_n_0_[10] ,\line_data_reg_n_0_[10] ,\line_data_reg_n_0_[10] ,\line_data_reg_n_0_[7] ,\line_data_reg_n_0_[6] ,\line_data_reg_n_0_[6] ,\line_data_reg_n_0_[6] ,\line_data_reg_n_0_[3] ,\line_data_reg_n_0_[2] ,\line_data_reg_n_0_[2] ,\line_data_reg_n_0_[2] }),
-        .dinb(NLW_spr_line_dinb_UNCONNECTED[15:0]),
+        .dinb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .douta(NLW_spr_line_douta_UNCONNECTED[63:0]),
         .doutb(s0_dout),
         .wea({\line_we_reg_n_0_[7] ,\line_we_reg_n_0_[7] ,\line_we_reg_n_0_[5] ,\line_we_reg_n_0_[5] ,\line_we_reg_n_0_[3] ,\line_we_reg_n_0_[3] ,\line_we_reg_n_0_[1] ,\line_we_reg_n_0_[1] }),

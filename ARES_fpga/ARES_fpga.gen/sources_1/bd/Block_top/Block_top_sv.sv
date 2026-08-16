@@ -96,9 +96,9 @@ module Block_top_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   output wire spi_flash_ce_n,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire uart_rx,
+  input wire usb_rx,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire uart_tx,
+  output wire usb_tx,
   (* X_INTERFACE_IGNORE = "true" *)
   output wire test_tx,
   (* X_INTERFACE_IGNORE = "true" *)
@@ -143,8 +143,8 @@ module Block_top_sv (
     .spi_mosi(spi_mosi),
     .spi_sck(spi_sck),
     .spi_flash_ce_n(spi_flash_ce_n),
-    .uart_rx(uart_rx),
-    .uart_tx(uart_tx),
+    .usb_rx(usb_rx),
+    .usb_tx(usb_tx),
     .test_tx(test_tx),
     .spi_controller_mosi(spi_controller_mosi),
     .spi_controller_miso(spi_controller_miso),

@@ -2,14 +2,14 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Jul 29 17:25:19 2026
-// Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
-// Command     : write_verilog -force -mode funcsim -rename_top Block_top_util_ds_buf_0_1 -prefix
-//               Block_top_util_ds_buf_0_1_ Block_top_util_ds_buf_0_1_sim_netlist.v
+// Date        : Fri Aug 14 21:37:04 2026
+// Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+// Command     : write_verilog -force -mode funcsim
+//               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_0_1/Block_top_util_ds_buf_0_1_sim_netlist.v
 // Design      : Block_top_util_ds_buf_0_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a35tftg256-2
+// Device      : xc7a100tfgg484-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -253,6 +253,7 @@ endmodule
 (* C_BUFGCE_DIV = "1" *) (* C_BUFG_GT_SYNC = "0" *) (* C_BUF_TYPE = "IOBUF" *) 
 (* C_DIVBY2 = "0" *) (* C_MODE = "PERFORMANCE" *) (* C_OBUFDS_GTE5_ADV = "2'b00" *) 
 (* C_REFCLK_ICNTL_TX = "5'b00000" *) (* C_SIM_DEVICE = "VERSAL_AI_CORE_ES1" *) (* C_SIZE = "1" *) 
+(* ORIG_REF_NAME = "util_ds_buf" *) 
 module Block_top_util_ds_buf_0_1_util_ds_buf
    (IBUF_DS_P,
     IBUF_DS_N,

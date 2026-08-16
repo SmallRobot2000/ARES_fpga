@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Aug  5 13:30:33 2026
-# Process ID         : 76190
+# Start of session at: Thu Aug 13 15:15:17 2026
+# Process ID         : 35559
 # Current directory  : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/mig_7series_0_synth_1
 # Command line       : vivado -log mig_7series_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mig_7series_0.tcl
 # Log file           : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/mig_7series_0_synth_1/mig_7series_0.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 5 5600 6-Core Processor
-# CPU Frequency      : 3279.068 MHz
+# CPU Frequency      : 3715.160 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
-# Host memory        : 16643 MB
+# Host memory        : 33529 MB
 # Swap memory        : 4294 MB
-# Total Virtual      : 20938 MB
-# Available Virtual  : 9957 MB
+# Total Virtual      : 37824 MB
+# Available Virtual  : 28215 MB
 #-----------------------------------------------------------
 source mig_7series_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -30,16 +30,16 @@ If this directory should no longer be in your list of user repositories, go to t
 WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Vivado/2025.2/data/ip'.
-Command: synth_design -top mig_7series_0 -part xc7a35tftg256-2 -incremental_mode off -mode out_of_context
+Command: synth_design -top mig_7series_0 -part xc7a100tfgg484-2 -incremental_mode off -mode out_of_context
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Device 21-403] Loading part xc7a35tftg256-2
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tfgg484-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 76235
+INFO: [Synth 8-7075] Helper process launched with PID 35757
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2210.188 ; gain = 483.273 ; free physical = 3003 ; free virtual = 8170
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2224.156 ; gain = 483.273 ; free physical = 11762 ; free virtual = 21697
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-10515] begin/end is required for generate-for in this mode of Verilog [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:253]
 INFO: [Synth 8-11241] undeclared symbol 'dbg_sel_po_incdec', assumed default net type 'wire' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:1222]
@@ -256,7 +256,7 @@ INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_memc_ui_top_axi' [/ho
 	Parameter PHY_1_BITLANES bound to: 48'b000000000000000000000000000000000000000000000000 
 	Parameter PHY_2_BITLANES bound to: 48'b000000000000000000000000000000000000000000000000 
 	Parameter CK_BYTE_MAP bound to: 144'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter ADDR_MAP bound to: 192'b000000000000000000000000000000000011000000010100000000000001000000011001000000000110000000000010000000000111000000000101000000001000000000001001000000010011000000000000000000000100000000010101 
+	Parameter ADDR_MAP bound to: 192'b000000000000000000000000000000000011000000000000000000000100000000001001000000010101000000000110000000010100000000000111000000011001000000000101000000000010000000010011000000000001000000001000 
 	Parameter BANK_MAP bound to: 36'b000000010000000000010001000000011000 
 	Parameter CAS_MAP bound to: 12'b000000011011 
 	Parameter CKE_ODT_BYTE_MAP bound to: 8'b00000000 
@@ -268,8 +268,8 @@ INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_memc_ui_top_axi' [/ho
 	Parameter RAS_MAP bound to: 12'b000000010110 
 	Parameter WE_MAP bound to: 12'b000000010111 
 	Parameter DQS_BYTE_MAP bound to: 144'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001100000010 
-	Parameter DATA0_MAP bound to: 96'b000000100111000000100010000000100101000000100000000000100011000000100110000000100100000000101001 
-	Parameter DATA1_MAP bound to: 96'b000000110110000000110011000000110111000000110010000000110101000000111001000000110100000000110001 
+	Parameter DATA0_MAP bound to: 96'b000000100000000000100010000000100110000000100111000000100011000000100100000000100101000000101001 
+	Parameter DATA1_MAP bound to: 96'b000000110010000000110110000000110101000000110111000000110001000000110011000000110100000000111001 
 	Parameter DATA2_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter DATA3_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter DATA4_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
@@ -305,7 +305,7 @@ INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_memc_ui_top_axi' [/ho
 	Parameter PI_VAL_ADJ bound to: OFF - type: string 
 	Parameter SKIP_CALIB bound to: FALSE - type: string 
 	Parameter TAPSPERKCLK bound to: 112 - type: integer 
-	Parameter C_S_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXI_ID_WIDTH bound to: 4 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 28 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 128 - type: integer 
 	Parameter C_S_AXI_SUPPORTS_NARROW_BURST bound to: 1 - type: integer 
@@ -811,18 +811,18 @@ WARNING: [Synth 8-7129] Port app_raw_not_ecc[5] in module mig_7series_v4_2_ui_wr
 WARNING: [Synth 8-7129] Port app_raw_not_ecc[4] in module mig_7series_v4_2_ui_wr_data is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2537.266 ; gain = 810.352 ; free physical = 2709 ; free virtual = 7891
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2551.234 ; gain = 810.352 ; free physical = 10796 ; free virtual = 20744
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2537.266 ; gain = 810.352 ; free physical = 2713 ; free virtual = 7887
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2551.234 ; gain = 810.352 ; free physical = 10852 ; free virtual = 20798
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2537.266 ; gain = 810.352 ; free physical = 2713 ; free virtual = 7887
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2551.234 ; gain = 810.352 ; free physical = 10852 ; free virtual = 20798
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2537.266 ; gain = 0.000 ; free physical = 2715 ; free virtual = 7889
+Netlist sorting complete. Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.23 . Memory (MB): peak = 2551.234 ; gain = 0.000 ; free physical = 10888 ; free virtual = 20833
 INFO: [Netlist 29-17] Analyzing 324 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -838,7 +838,7 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/mig_7series_
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2607.098 ; gain = 0.000 ; free physical = 2726 ; free virtual = 7903
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2628.066 ; gain = 0.000 ; free physical = 10889 ; free virtual = 20836
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 71 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
@@ -847,23 +847,23 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 28 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2607.133 ; gain = 0.000 ; free physical = 2729 ; free virtual = 7907
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2628.102 ; gain = 0.000 ; free physical = 10881 ; free virtual = 20828
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2607.133 ; gain = 880.219 ; free physical = 2793 ; free virtual = 7969
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2628.102 ; gain = 887.219 ; free physical = 12440 ; free virtual = 22391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a35tftg256-2
+Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2615.102 ; gain = 888.188 ; free physical = 2793 ; free virtual = 7968
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2636.070 ; gain = 895.188 ; free physical = 12439 ; free virtual = 22391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2615.102 ; gain = 888.188 ; free physical = 2790 ; free virtual = 7965
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2636.070 ; gain = 895.188 ; free physical = 12466 ; free virtual = 22417
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'xadc_supplied_temperature.tempmon_state_reg' in module 'mig_7series_v4_2_tempmon'
 INFO: [Synth 8-802] inferred FSM for state register 'wl_state_r_reg' in module 'mig_7series_v4_2_ddr_phy_wrlvl'
@@ -1087,7 +1087,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'tempmon_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'mig_7series_v4_2_axi_mc_r_channel'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 2615.102 ; gain = 888.188 ; free physical = 2828 ; free virtual = 8013
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 2636.070 ; gain = 895.188 ; free physical = 12001 ; free virtual = 21958
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1128,11 +1128,11 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 19    
 +---Registers : 
 	              144 Bit    Registers := 1     
-	              132 Bit    Registers := 2     
+	              135 Bit    Registers := 2     
 	              128 Bit    Registers := 5     
 	               88 Bit    Registers := 1     
 	               80 Bit    Registers := 3     
-	               59 Bit    Registers := 2     
+	               62 Bit    Registers := 2     
 	               56 Bit    Registers := 1     
 	               32 Bit    Registers := 3     
 	               30 Bit    Registers := 1     
@@ -1146,15 +1146,15 @@ Detailed RTL Component Info :
 	               10 Bit    Registers := 4     
 	                9 Bit    Registers := 12    
 	                8 Bit    Registers := 30    
-	                7 Bit    Registers := 2     
+	                7 Bit    Registers := 4     
 	                6 Bit    Registers := 103   
 	                5 Bit    Registers := 44    
-	                4 Bit    Registers := 95    
+	                4 Bit    Registers := 99    
 	                3 Bit    Registers := 52    
 	                2 Bit    Registers := 77    
-	                1 Bit    Registers := 1934  
+	                1 Bit    Registers := 1928  
 +---Muxes : 
-	   2 Input  132 Bit        Muxes := 1     
+	   2 Input  135 Bit        Muxes := 1     
 	   2 Input  128 Bit        Muxes := 11    
 	   4 Input  128 Bit        Muxes := 1     
 	   2 Input  127 Bit        Muxes := 1     
@@ -1186,7 +1186,7 @@ Detailed RTL Component Info :
 	   5 Input    8 Bit        Muxes := 2     
 	   2 Input    8 Bit        Muxes := 50    
 	   8 Input    8 Bit        Muxes := 2     
-	   2 Input    7 Bit        Muxes := 67    
+	   2 Input    7 Bit        Muxes := 68    
 	   3 Input    7 Bit        Muxes := 2     
 	   4 Input    7 Bit        Muxes := 1     
 	   5 Input    7 Bit        Muxes := 2     
@@ -1208,7 +1208,7 @@ Detailed RTL Component Info :
 	   4 Input    5 Bit        Muxes := 3     
 	   5 Input    5 Bit        Muxes := 1     
 	   3 Input    5 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 70    
+	   2 Input    4 Bit        Muxes := 72    
 	  32 Input    4 Bit        Muxes := 1     
 	   8 Input    4 Bit        Muxes := 5     
 	   9 Input    4 Bit        Muxes := 1     
@@ -1227,7 +1227,7 @@ Detailed RTL Component Info :
 	   5 Input    2 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 3     
 	   9 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 659   
+	   2 Input    1 Bit        Muxes := 657   
 	   3 Input    1 Bit        Muxes := 20    
 	   8 Input    1 Bit        Muxes := 4     
 	   4 Input    1 Bit        Muxes := 333   
@@ -1245,8 +1245,8 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
@@ -1270,7 +1270,7 @@ WARNING: [Synth 8-3332] Sequential element (USE_UPSIZER.upsizer_d2/USE_READ.read
 WARNING: [Synth 8-3332] Sequential element (USE_UPSIZER.upsizer_d2/USE_READ.read_addr_inst/USE_BURSTS.cmd_queue/USE_FF_OUT.USE_FPGA_OUTPUT_PIPELINE.DATA_GEN[20].FDRE_inst) is unused and will be removed from module mig_7series_v4_2_axi_mc.
 WARNING: [Synth 8-3332] Sequential element (USE_UPSIZER.upsizer_d2/USE_READ.read_addr_inst/USE_BURSTS.cmd_queue/USE_FF_OUT.USE_FPGA_OUTPUT_PIPELINE.DATA_GEN[35].FDRE_inst) is unused and will be removed from module mig_7series_v4_2_axi_mc.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:56 ; elapsed = 00:01:58 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2425 ; free virtual = 7620
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:09 ; elapsed = 00:02:11 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15169 ; free virtual = 25141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1306,13 +1306,13 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at line 352 of /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:352]
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:00 ; elapsed = 00:02:02 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2417 ; free virtual = 7619
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:12 ; elapsed = 00:02:14 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15167 ; free virtual = 25138
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:00 ; elapsed = 00:02:02 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2417 ; free virtual = 7619
+Finished Timing Optimization : Time (s): cpu = 00:02:13 ; elapsed = 00:02:15 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15168 ; free virtual = 25139
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1337,7 +1337,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:03 ; elapsed = 00:02:06 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2412 ; free virtual = 7619
+Finished Technology Mapping : Time (s): cpu = 00:02:17 ; elapsed = 00:02:19 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15172 ; free virtual = 25143
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1355,37 +1355,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:07 ; elapsed = 00:02:09 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2414 ; free virtual = 7621
+Finished IO Insertion : Time (s): cpu = 00:02:20 ; elapsed = 00:02:22 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15165 ; free virtual = 25134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:07 ; elapsed = 00:02:09 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2414 ; free virtual = 7621
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:20 ; elapsed = 00:02:22 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15165 ; free virtual = 25134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:07 ; elapsed = 00:02:10 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2415 ; free virtual = 7622
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:21 ; elapsed = 00:02:23 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15165 ; free virtual = 25134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:07 ; elapsed = 00:02:10 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2415 ; free virtual = 7622
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:21 ; elapsed = 00:02:23 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15165 ; free virtual = 25134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2416 ; free virtual = 7623
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:21 ; elapsed = 00:02:23 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15165 ; free virtual = 25134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2416 ; free virtual = 7623
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:21 ; elapsed = 00:02:23 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15165 ; free virtual = 25134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1415,9 +1415,9 @@ Dynamic Shift Register Report:
 +------------+----------------+--------+------------+--------+---------+--------+--------+--------+
 |Module Name | RTL Name       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
 +------------+----------------+--------+------------+--------+---------+--------+--------+--------+
-|dsrl        | memory_reg[7]  | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
+|dsrl        | memory_reg[7]  | 4      | 4          | 4      | 0       | 0      | 0      | 0      | 
 |dsrl__1     | memory_reg[31] | 129    | 129        | 0      | 129     | 0      | 0      | 0      | 
-|dsrl__2     | memory_reg[29] | 4      | 4          | 0      | 4       | 0      | 0      | 0      | 
+|dsrl__2     | memory_reg[29] | 7      | 7          | 0      | 7       | 0      | 0      | 0      | 
 +------------+----------------+--------+------------+--------+---------+--------+--------+--------+
 
 ---------------------------------------------------------------------------------
@@ -1449,10 +1449,10 @@ Report Cell Usage:
 |10    |ISERDESE2                      |    16|
 |11    |LUT1                           |   386|
 |12    |LUT2                           |   537|
-|13    |LUT3                           |  1251|
-|14    |LUT4                           |  1130|
-|15    |LUT5                           |  1633|
-|16    |LUT6                           |  2014|
+|13    |LUT3                           |  1263|
+|14    |LUT4                           |  1135|
+|15    |LUT5                           |  1635|
+|16    |LUT6                           |  2008|
 |18    |MMCME2_ADV                     |     1|
 |19    |MUXCY                          |   131|
 |20    |MUXF7                          |    28|
@@ -1467,13 +1467,13 @@ Report Cell Usage:
 |33    |PLLE2_ADV                      |     1|
 |34    |RAM32M                         |    88|
 |35    |RAM32X1D                       |     2|
-|36    |SRL16E                         |    17|
-|37    |SRLC32E                        |   194|
+|36    |SRL16E                         |    20|
+|37    |SRLC32E                        |   197|
 |38    |XADC                           |     1|
 |39    |XORCY                          |    58|
 |40    |FDCE                           |     2|
 |41    |FDPE                           |    75|
-|42    |FDRE                           |  5228|
+|42    |FDRE                           |  5264|
 |43    |FDSE                           |   179|
 |44    |IOBUF                          |    16|
 |45    |IOBUFDS_DIFF_OUT_INTERMDISABLE |     2|
@@ -1482,18 +1482,18 @@ Report Cell Usage:
 |48    |OBUFT                          |     2|
 +------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 3041.031 ; gain = 1314.117 ; free physical = 2416 ; free virtual = 7623
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:21 ; elapsed = 00:02:23 . Memory (MB): peak = 3055.992 ; gain = 1315.109 ; free physical = 15165 ; free virtual = 25134
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:03 ; elapsed = 00:02:06 . Memory (MB): peak = 3041.031 ; gain = 1244.250 ; free physical = 2416 ; free virtual = 7624
-Synthesis Optimization Complete : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 3041.039 ; gain = 1314.117 ; free physical = 2416 ; free virtual = 7624
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:16 ; elapsed = 00:02:19 . Memory (MB): peak = 3055.992 ; gain = 1238.242 ; free physical = 15165 ; free virtual = 25134
+Synthesis Optimization Complete : Time (s): cpu = 00:02:21 ; elapsed = 00:02:23 . Memory (MB): peak = 3056.000 ; gain = 1315.109 ; free physical = 15165 ; free virtual = 25134
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3041.039 ; gain = 0.000 ; free physical = 2584 ; free virtual = 7791
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 3056.000 ; gain = 0.000 ; free physical = 15339 ; free virtual = 25309
 INFO: [Netlist 29-17] Analyzing 521 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 16 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3097.059 ; gain = 0.000 ; free physical = 2584 ; free virtual = 7793
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3112.020 ; gain = 0.000 ; free physical = 15340 ; free virtual = 25309
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 174 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 41 instances
@@ -1504,15 +1504,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 88 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
 
-Synth Design complete | Checksum: 8cec687e
+Synth Design complete | Checksum: e12f55bc
 INFO: [Common 17-83] Releasing license: Synthesis
 259 Infos, 320 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:14 ; elapsed = 00:02:15 . Memory (MB): peak = 3097.094 ; gain = 1483.516 ; free physical = 2584 ; free virtual = 7793
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2428.114; main = 2209.379; forked = 283.404
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4035.254; main = 3097.062; forked = 994.219
+synth_design: Time (s): cpu = 00:02:28 ; elapsed = 00:02:28 . Memory (MB): peak = 3112.055 ; gain = 1498.477 ; free physical = 15340 ; free virtual = 25309
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2443.723; main = 2221.638; forked = 282.309
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4050.211; main = 3112.023; forked = 994.215
 INFO: [Coretcl 2-1174] Renamed 179 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3121.070 ; gain = 0.000 ; free physical = 2583 ; free virtual = 7794
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3136.031 ; gain = 0.000 ; free physical = 15339 ; free virtual = 25310
 INFO: [Common 17-1381] The checkpoint '/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/mig_7series_0_synth_1/mig_7series_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file mig_7series_0_utilization_synth.rpt -pb mig_7series_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Aug  5 13:32:54 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 13 15:17:53 2026...

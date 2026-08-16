@@ -60,7 +60,7 @@ module blk_mem_buf_line_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire [0:0] wea,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [3:0] addra,
+  input wire [9:0] addra,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire [15:0] dina,
   (* X_INTERFACE_IGNORE = "true" *)
@@ -70,7 +70,7 @@ module blk_mem_buf_line_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire [0:0] web,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [3:0] addrb,
+  input wire [9:0] addrb,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire [15:0] dinb,
   (* X_INTERFACE_IGNORE = "true" *)

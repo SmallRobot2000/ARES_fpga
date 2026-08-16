@@ -56,17 +56,25 @@ module blk_mem_tile_map_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire clka,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [0:0] wea,
+  input wire [1:0] wea,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [15:0] addra,
+  input wire [13:0] addra,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [7:0] dina,
+  input wire [15:0] dina,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [15:0] douta,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire clkb,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [15:0] addrb,
+  input wire enb,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [7:0] doutb
+  input wire [3:0] web,
+  (* X_INTERFACE_IGNORE = "true" *)
+  input wire [12:0] addrb,
+  (* X_INTERFACE_IGNORE = "true" *)
+  input wire [31:0] dinb,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [31:0] doutb
 );
 
   blk_mem_tile_map inst (
@@ -74,8 +82,12 @@ module blk_mem_tile_map_sv (
     .wea(wea),
     .addra(addra),
     .dina(dina),
+    .douta(douta),
     .clkb(clkb),
+    .enb(enb),
+    .web(web),
     .addrb(addrb),
+    .dinb(dinb),
     .doutb(doutb)
   );
 

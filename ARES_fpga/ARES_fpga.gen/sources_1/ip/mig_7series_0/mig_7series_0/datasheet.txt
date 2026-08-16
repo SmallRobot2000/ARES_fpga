@@ -1,7 +1,7 @@
 
 
 Vivado Project Options:
-   Target Device                   : xc7a35t-ftg256
+   Target Device                   : xc7a100t-fgg484
    Speed Grade                     : -2
    HDL                             : verilog
    Synthesis Tool                  : VIVADO
@@ -47,7 +47,7 @@ AXI Parameters :
    Data Width                    : 128
    Arbitration Scheme            : RD_PRI_REG
    Narrow Burst Support          : 1
-   ID Width                      : 1
+   ID Width                      : 4
 
 Memory Options:
    Burst Length (MR0[1:0])          : 8 - Fixed
@@ -64,8 +64,8 @@ Bank Selections:
 	Bank: 15
 		Byte Group T0:	DQ[8-15]
 		Byte Group T1:	DQ[0-7]
-		Byte Group T2:	Address/Ctrl-0
-		Byte Group T3:	Address/Ctrl-1
+		Byte Group T2:	Address/Ctrl-1
+		Byte Group T3:	Address/Ctrl-0
 
 System_Control: 
 	SignalName: sys_rst

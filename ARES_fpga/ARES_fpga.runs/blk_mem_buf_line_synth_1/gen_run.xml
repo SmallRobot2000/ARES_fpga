@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="blk_mem_buf_line_synth_1" LaunchPart="xc7a35tftg256-2" LaunchTime="1786477896">
+<GenRun Id="blk_mem_buf_line_synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1786626374">
   <File Type="RDS-DCP" Name="blk_mem_buf_line.dcp"/>
   <File Type="RDS-RDS" Name="blk_mem_buf_line.vds"/>
   <File Type="RDS-UTIL" Name="blk_mem_buf_line_utilization_synth.rpt"/>
@@ -40,6 +40,7 @@
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
         <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_2"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>

@@ -1,11 +1,11 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Wed Aug 12 21:51:20 2026
+| Date             : Fri Aug 14 21:42:16 2026
 | Host             : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file Block_top_wrapper_power_routed.rpt -pb Block_top_wrapper_power_summary_routed.pb -rpx Block_top_wrapper_power_routed.rpx
 | Design           : Block_top_wrapper
-| Device           : xc7a35tftg256-2
+| Device           : xc7a100tfgg484-2
 | Design State     : routed
 | Grade            : commercial
 | Process          : typical
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.044        |
+| Total On-Chip Power (W)  | 1.165        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.966        |
-| Device Static (W)        | 0.078        |
-| Effective TJA (C/W)      | 4.9          |
-| Max Ambient (C)          | 79.9         |
-| Junction Temperature (C) | 30.1         |
+| Dynamic (W)              | 1.057        |
+| Device Static (W)        | 0.107        |
+| Effective TJA (C/W)      | 2.7          |
+| Max Ambient (C)          | 81.9         |
+| Junction Temperature (C) | 28.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,25 +52,25 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.080 |       24 |       --- |             --- |
-| Slice Logic              |     0.043 |    46143 |       --- |             --- |
-|   LUT as Logic           |     0.039 |    17794 |     20800 |           85.55 |
-|   Register               |     0.003 |    18861 |     41600 |           45.34 |
-|   LUT as Distributed RAM |     0.001 |     1360 |      9600 |           14.17 |
-|   CARRY4                 |    <0.001 |      505 |      8150 |            6.20 |
-|   LUT as Shift Register  |    <0.001 |      340 |      9600 |            3.54 |
-|   F7/F8 Muxes            |    <0.001 |      128 |     32600 |            0.39 |
-|   Others                 |    <0.001 |     1122 |       --- |             --- |
-| Signals                  |     0.063 |    35003 |       --- |             --- |
-| Block RAM                |     0.081 |       47 |        50 |           94.00 |
-| MMCM                     |     0.191 |        2 |         5 |           40.00 |
-| PLL                      |     0.091 |        1 |         5 |           20.00 |
-| DSPs                     |     0.002 |        4 |        90 |            4.44 |
-| I/O                      |     0.276 |       78 |       170 |           45.88 |
+| Clocks                   |     0.098 |       24 |       --- |             --- |
+| Slice Logic              |     0.063 |    52585 |       --- |             --- |
+|   LUT as Logic           |     0.055 |    20806 |     63400 |           32.82 |
+|   Register               |     0.004 |    21180 |    126800 |           16.70 |
+|   LUT as Distributed RAM |     0.002 |     1362 |     19000 |            7.17 |
+|   CARRY4                 |     0.002 |      717 |     15850 |            4.52 |
+|   LUT as Shift Register  |    <0.001 |      358 |     19000 |            1.88 |
+|   F7/F8 Muxes            |    <0.001 |      140 |     63400 |            0.22 |
+|   Others                 |    <0.001 |     1128 |       --- |             --- |
+| Signals                  |     0.089 |    40404 |       --- |             --- |
+| Block RAM                |     0.103 |     54.5 |       135 |           40.37 |
+| MMCM                     |     0.191 |        2 |         6 |           33.33 |
+| PLL                      |     0.091 |        1 |         6 |           16.67 |
+| DSPs                     |     0.009 |        9 |       240 |            3.75 |
+| I/O                      |     0.275 |       78 |       285 |           27.37 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
-| Static Power             |     0.078 |          |           |                 |
-| Total                    |     1.044 |          |           |                 |
+| Static Power             |     0.107 |          |           |                 |
+| Total                    |     1.165 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,16 +80,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.320 |       0.307 |      0.013 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.281 |       0.268 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.416 |       0.398 |      0.018 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.286 |       0.268 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco135   |       1.350 |     0.119 |       0.118 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.122 |       0.118 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.007 |       0.005 |      0.001 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.008 |       0.006 |      0.002 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.022 |       0.002 |      0.020 |       NA    | Unspecified | NA         |
@@ -120,7 +120,7 @@ Table of Contents
 
 +-----------------------+--------------------------+
 | Ambient Temp (C)      | 25.0                     |
-| ThetaJA (C/W)         | 4.9                      |
+| ThetaJA (C/W)         | 2.7                      |
 | Airflow (LFM)         | 250                      |
 | Heat Sink             | medium (Medium Profile)  |
 | ThetaSA (C/W)         | 4.6                      |
@@ -170,28 +170,28 @@ Table of Contents
 +-------------------------------+-----------+
 | Name                          | Power (W) |
 +-------------------------------+-----------+
-| Block_top_wrapper             |     0.966 |
-|   Block_top_i                 |     0.958 |
-|     VDP_0                     |     0.059 |
-|       inst                    |     0.059 |
-|     VexiiSocWrapper_0         |     0.100 |
-|       inst                    |     0.100 |
-|     axi_bram_ctrl_vdp_s0_data |     0.002 |
-|       U0                      |     0.002 |
+| Block_top_wrapper             |     1.057 |
+|   Block_top_i                 |     1.049 |
+|     VDP_0                     |     0.054 |
+|       inst                    |     0.054 |
+|     VexiiSocWrapper_0         |     0.192 |
+|       inst                    |     0.192 |
+|     axi_bram_ctrl_vdp_s0_data |     0.001 |
+|       U0                      |     0.001 |
 |     axi_bram_ctrl_vdp_t0_data |     0.002 |
 |       U0                      |     0.002 |
-|     axi_bram_ctrl_vdp_t0_map  |     0.002 |
-|       U0                      |     0.002 |
+|     axi_bram_ctrl_vdp_t0_map  |     0.001 |
+|       U0                      |     0.001 |
 |     axi_quad_spi_0            |     0.005 |
 |       U0                      |     0.005 |
 |     clk_wiz_0                 |     0.097 |
 |       inst                    |     0.097 |
-|     mig_axi_wrapper_0         |     0.643 |
-|       inst                    |     0.643 |
+|     mig_axi_wrapper_0         |     0.645 |
+|       inst                    |     0.645 |
 |     smartconnect_io           |     0.007 |
 |       inst                    |     0.007 |
-|     smartconnect_mem          |     0.040 |
-|       inst                    |     0.040 |
+|     smartconnect_mem          |     0.043 |
+|       inst                    |     0.043 |
 +-------------------------------+-----------+
 
 

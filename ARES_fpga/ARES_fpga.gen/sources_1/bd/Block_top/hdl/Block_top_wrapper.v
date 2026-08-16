@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Wed Aug 12 21:42:08 2026
+//Date        : Fri Aug 14 21:36:08 2026
 //Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target Block_top_wrapper.bd
 //Design      : Block_top_wrapper
@@ -38,8 +38,8 @@ module Block_top_wrapper
     spi_mosi,
     spi_sck,
     test_tx,
-    uart_rx,
-    uart_tx,
+    usb_rx,
+    usb_tx,
     v_sync,
     vga_b,
     vga_g,
@@ -71,8 +71,8 @@ module Block_top_wrapper
   output spi_mosi;
   output spi_sck;
   output test_tx;
-  input uart_rx;
-  output uart_tx;
+  input usb_rx;
+  output usb_tx;
   output v_sync;
   output [3:0]vga_b;
   output [3:0]vga_g;
@@ -105,8 +105,8 @@ module Block_top_wrapper
   wire spi_mosi;
   wire spi_sck;
   wire test_tx;
-  wire uart_rx;
-  wire uart_tx;
+  wire usb_rx;
+  wire usb_tx;
   wire v_sync;
   wire [3:0]vga_b;
   wire [3:0]vga_g;
@@ -140,8 +140,8 @@ module Block_top_wrapper
         .spi_mosi(spi_mosi),
         .spi_sck(spi_sck),
         .test_tx(test_tx),
-        .uart_rx(uart_rx),
-        .uart_tx(uart_tx),
+        .usb_rx(usb_rx),
+        .usb_tx(usb_tx),
         .v_sync(v_sync),
         .vga_b(vga_b),
         .vga_g(vga_g),

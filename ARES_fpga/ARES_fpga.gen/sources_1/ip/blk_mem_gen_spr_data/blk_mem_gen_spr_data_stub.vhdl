@@ -2,13 +2,13 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Wed Aug 12 21:42:52 2026
+-- Date        : Thu Aug 13 15:07:17 2026
 -- Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/ip/blk_mem_gen_spr_data/blk_mem_gen_spr_data_stub.vhdl
 -- Design      : blk_mem_gen_spr_data
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a35tftg256-2
+-- Device      : xc7a100tfgg484-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

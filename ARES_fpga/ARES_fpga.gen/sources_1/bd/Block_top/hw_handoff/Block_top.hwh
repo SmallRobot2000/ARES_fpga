@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Aug 12 21:42:12 2026" VIVADOVERSION="2025.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Aug 14 21:36:13 2026" VIVADOVERSION="2025.2">
 
-  <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="Block_top" PACKAGE="ftg256" SPEEDGRADE="-2"/>
+  <SYSTEMINFO ARCH="artix7" DEVICE="7a100t" NAME="Block_top" PACKAGE="fgg484" SPEEDGRADE="-2"/>
 
   <EXTERNALPORTS>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
@@ -139,12 +139,12 @@
         <CONNECTION INSTANCE="axi_uartlite_0" PORT="tx"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="uart_rx" SIGIS="undef" SIGNAME="External_Ports_uart_rx">
+    <PORT DIR="I" NAME="usb_rx" SIGIS="undef" SIGNAME="External_Ports_usb_rx">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_uartlite_0" PORT="rx"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="uart_tx" SIGIS="undef" SIGNAME="axi_uartlite_0_tx">
+    <PORT DIR="O" NAME="usb_tx" SIGIS="undef" SIGNAME="axi_uartlite_0_tx">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_uartlite_0" PORT="tx"/>
       </CONNECTIONS>
@@ -937,7 +937,7 @@
         <MEMRANGE ADDRESSBLOCK="Mem0" BASENAME="C_S_AXI_BASEADDR" BASEVALUE="0x10028000" HIGHNAME="C_S_AXI_HIGHADDR" HIGHVALUE="0x1002FFFF" INSTANCE="axi_bram_ctrl_vdp_s0_data" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="pBus" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI"/>
         <MEMRANGE ADDRESSBLOCK="Mem0" BASENAME="C_S_AXI_BASEADDR" BASEVALUE="0x10030000" HIGHNAME="C_S_AXI_HIGHADDR" HIGHVALUE="0x100301FF" INSTANCE="axi_bram_ctrl_vdp_s0_att" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="pBus" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI"/>
         <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x800FFFFF" INSTANCE="FLASH_SPI_wrapper_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="mBus" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x90000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x9EFFFFFF" INSTANCE="mig_axi_wrapper_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="mBus" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x90000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x9F7FFFFF" INSTANCE="mig_axi_wrapper_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="mBus" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi"/>
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="axi_uartlite_0"/>
@@ -1149,7 +1149,7 @@
           <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
@@ -2486,9 +2486,9 @@
             <CONNECTION INSTANCE="xlconcat_0" PORT="In1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="rx" SIGIS="undef" SIGNAME="External_Ports_uart_rx">
+        <PORT DIR="I" NAME="rx" SIGIS="undef" SIGNAME="External_Ports_usb_rx">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="uart_rx"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="usb_rx"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="mig_axi_wrapper_0_ui_clk">
@@ -2588,7 +2588,7 @@
         </PORT>
         <PORT DIR="O" NAME="tx" SIGIS="undef" SIGNAME="axi_uartlite_0_tx">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="uart_tx"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="usb_tx"/>
             <CONNECTION INSTANCE="External_Ports" PORT="test_tx"/>
           </CONNECTIONS>
         </PORT>
@@ -3262,7 +3262,7 @@
         <PARAMETER NAME="Component_Name" VALUE="Block_top_mig_axi_wrapper_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_BASEADDR" VALUE="0x90000000"/>
-        <PARAMETER NAME="C_HIGHADDR" VALUE="0x9EFFFFFF"/>
+        <PARAMETER NAME="C_HIGHADDR" VALUE="0x9F7FFFFF"/>
       </PARAMETERS>
       <PORTS>
         <PORT DIR="I" NAME="aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_1_Res">
@@ -3530,17 +3530,17 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="ui_clk" SIGIS="clk" SIGNAME="mig_axi_wrapper_0_ui_clk">
           <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
+            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="smartconnect_mem" PORT="aclk"/>
             <CONNECTION INSTANCE="smartconnect_io" PORT="aclk"/>
             <CONNECTION INSTANCE="FLASH_SPI_wrapper_0" PORT="s_axi_clk"/>
-            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
             <CONNECTION INSTANCE="VexiiSocWrapper_0" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="VDP_0" PORT="s_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
@@ -4785,7 +4785,7 @@
           <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
@@ -5622,12 +5622,12 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_rst_n">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_rst_n">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="rst_n"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Res" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_axi_wrapper_0" PORT="sys_rst"/>
           </CONNECTIONS>
@@ -5645,23 +5645,23 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="undef" SIGNAME="mig_axi_wrapper_0_ui_clk_sync_rst">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="mig_axi_wrapper_0_ui_clk_sync_rst">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_axi_wrapper_0" PORT="ui_clk_sync_rst"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Res" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_mem" PORT="aresetn"/>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="aresetn"/>
             <CONNECTION INSTANCE="mig_axi_wrapper_0" PORT="aresetn"/>
-            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="VexiiSocWrapper_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_uartlite_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="smartconnect_mem" PORT="aresetn"/>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="aresetn"/>
+            <CONNECTION INSTANCE="VexiiSocWrapper_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="VDP_0" PORT="s_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>

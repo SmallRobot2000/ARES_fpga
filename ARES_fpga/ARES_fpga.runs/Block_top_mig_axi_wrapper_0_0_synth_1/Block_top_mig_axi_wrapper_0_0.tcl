@@ -56,13 +56,11 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "Block_top_mig_axi_wrapper_0_0_synth_1" START { ROLLUP_AUTO }
-set_param bd.open.in_stealth_mode 2
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 set_param ips.modRefOverrideMrefDirPath /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/mref
-create_project -in_memory -part xc7a35tftg256-2
+create_project -in_memory -part xc7a100tfgg484-2
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -106,7 +104,7 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top Block_top_mig_axi_wrapper_0_0 -part xc7a35tftg256-2 -incremental_mode off -mode out_of_context
+synth_design -top Block_top_mig_axi_wrapper_0_0 -part xc7a100tfgg484-2 -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

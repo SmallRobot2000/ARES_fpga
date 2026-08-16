@@ -138,7 +138,7 @@
         "IN125_WIDTH": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "IN126_WIDTH": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "IN127_WIDTH": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "dout_width": [ { "value": "32", "value_permission": "bd", "resolve_type": "user", "format": "long", "usage": "all" } ]
+        "dout_width": [ { "value": "32", "value_src": "user", "value_permission": "bd", "resolve_type": "user", "format": "long", "usage": "all" } ]
       },
       "model_parameters": {
         "IN0_WIDTH": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -276,8 +276,8 @@
         "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
-        "PACKAGE": [ { "value": "ftg256", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7a100t", "resolve_type": "generated", "usage": "all" } ],
+        "PACKAGE": [ { "value": "fgg484", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED", "resolve_type": "generated", "usage": "all" } ],
@@ -334,5 +334,5 @@
       }
     }
   },
-  "checksum": "954b4aa0"
+  "checksum": "4676e16c"
 }

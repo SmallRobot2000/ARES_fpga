@@ -2,14 +2,14 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Wed Aug 12 21:44:05 2026
+-- Date        : Fri Aug 14 21:38:18 2026
 -- Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VDP_0_0/Block_top_VDP_0_0_sim_netlist.vhdl
 -- Design      : Block_top_VDP_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a35tftg256-2
+-- Device      : xc7a100tfgg484-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -1469,8 +1469,6 @@ architecture STRUCTURE of Block_top_VDP_0_0_VDP_sprite_gen is
   signal \NLW_line_data_reg[47]_i_8_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_spr_att_dina_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal NLW_spr_att_douta_UNCONNECTED : STD_LOGIC_VECTOR ( 62 downto 53 );
-  signal NLW_spr_data_dina_UNCONNECTED : STD_LOGIC_VECTOR ( 127 downto 0 );
-  signal NLW_spr_line_dinb_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_spr_line_douta_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 0 );
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \FSM_onehot_state[0]_i_1\ : label is "soft_lutpair119";
@@ -18146,7 +18144,7 @@ spr_data: component Block_top_VDP_0_0_blk_mem_gen_spr_data
       addrb(12 downto 0) => s0_data_cpu_addr(12 downto 0),
       clka => s_axi_aclk,
       clkb => s0_data_cpu_clk,
-      dina(127 downto 0) => NLW_spr_data_dina_UNCONNECTED(127 downto 0),
+      dina(127 downto 0) => B"00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
       dinb(31 downto 0) => s0_data_cpu_din(31 downto 0),
       douta(127 downto 88) => spr_data_vdp_dout(127 downto 88),
       douta(87 downto 80) => \spr_data_vdp_dout__0\(87 downto 80),
@@ -18235,7 +18233,7 @@ spr_line: component Block_top_VDP_0_0_blk_mem_gen_spr_line
       dina(2) => \line_data_reg_n_0_[2]\,
       dina(1) => \line_data_reg_n_0_[2]\,
       dina(0) => \line_data_reg_n_0_[2]\,
-      dinb(15 downto 0) => NLW_spr_line_dinb_UNCONNECTED(15 downto 0),
+      dinb(15 downto 0) => B"0000000000000000",
       douta(63 downto 0) => NLW_spr_line_douta_UNCONNECTED(63 downto 0),
       doutb(15 downto 0) => s0_dout(15 downto 0),
       wea(7) => \line_we_reg_n_0_[7]\,

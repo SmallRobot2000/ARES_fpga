@@ -1,9 +1,9 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9CB8CC7C9581966C",
+      "boundary_crc": "0x9CB8CC7C3889EEDE",
       "design_src": "SBD",
-      "device": "xc7a35tftg256-2",
+      "device": "xc7a100tfgg484-2",
       "name": "bd_b9bc",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "scoped": "true",
@@ -865,7 +865,8 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "256"
+            "value": "1",
+            "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -899,7 +900,8 @@
             "value_src": "default"
           },
           "SUPPORTS_NARROW_BURST": {
-            "value": "0"
+            "value": "0",
+            "value_src": "default"
           },
           "WUSER_BITS_PER_BYTE": {
             "value": "0"

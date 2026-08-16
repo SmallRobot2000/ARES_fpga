@@ -2,14 +2,14 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Wed Jul 29 17:25:19 2026
--- Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
+-- Date        : Fri Aug 14 21:37:04 2026
+-- Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top Block_top_util_ds_buf_0_2 -prefix
 --               Block_top_util_ds_buf_0_2_ Block_top_util_ds_buf_0_1_sim_netlist.vhdl
 -- Design      : Block_top_util_ds_buf_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a35tftg256-2
+-- Device      : xc7a100tfgg484-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

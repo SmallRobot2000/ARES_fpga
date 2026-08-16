@@ -2,14 +2,14 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Tue Aug 11 17:30:09 2026
+// Date        : Fri Aug 14 21:37:12 2026
 // Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_mig_axi_wrapper_0_0/Block_top_mig_axi_wrapper_0_0_sim_netlist.v
 // Design      : Block_top_mig_axi_wrapper_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a35tftg256-2
+// Device      : xc7a100tfgg484-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -362,7 +362,7 @@ module Block_top_mig_axi_wrapper_0_0_mig_7series_0
   output app_sr_active;
   output app_ref_ack;
   output app_zq_ack;
-  input [0:0]s_axi_awid;
+  input [3:0]s_axi_awid;
   input [27:0]s_axi_awaddr;
   input [7:0]s_axi_awlen;
   input [2:0]s_axi_awsize;
@@ -379,10 +379,10 @@ module Block_top_mig_axi_wrapper_0_0_mig_7series_0
   input s_axi_wvalid;
   output s_axi_wready;
   input s_axi_bready;
-  output [0:0]s_axi_bid;
+  output [3:0]s_axi_bid;
   output [1:0]s_axi_bresp;
   output s_axi_bvalid;
-  input [0:0]s_axi_arid;
+  input [3:0]s_axi_arid;
   input [27:0]s_axi_araddr;
   input [7:0]s_axi_arlen;
   input [2:0]s_axi_arsize;
@@ -394,7 +394,7 @@ module Block_top_mig_axi_wrapper_0_0_mig_7series_0
   input s_axi_arvalid;
   output s_axi_arready;
   input s_axi_rready;
-  output [0:0]s_axi_rid;
+  output [3:0]s_axi_rid;
   output [127:0]s_axi_rdata;
   output [1:0]s_axi_rresp;
   output s_axi_rlast;
@@ -595,6 +595,8 @@ module Block_top_mig_axi_wrapper_0_0_mig_axi_wrapper
   wire NLW_mig_inst_app_ref_ack_UNCONNECTED;
   wire NLW_mig_inst_app_sr_active_UNCONNECTED;
   wire NLW_mig_inst_app_zq_ack_UNCONNECTED;
+  wire [3:1]NLW_mig_inst_s_axi_bid_UNCONNECTED;
+  wire [3:1]NLW_mig_inst_s_axi_rid_UNCONNECTED;
 
   Block_top_mig_axi_wrapper_0_0_mig_7series_0 mig_inst
        (.app_ref_ack(NLW_mig_inst_app_ref_ack_UNCONNECTED),
@@ -626,7 +628,7 @@ module Block_top_mig_axi_wrapper_0_0_mig_axi_wrapper
         .s_axi_araddr(s_axi_araddr),
         .s_axi_arburst(s_axi_arburst),
         .s_axi_arcache(s_axi_arcache),
-        .s_axi_arid(s_axi_arid),
+        .s_axi_arid({1'b0,1'b0,1'b0,s_axi_arid}),
         .s_axi_arlen(s_axi_arlen),
         .s_axi_arlock(s_axi_arlock),
         .s_axi_arprot(s_axi_arprot),
@@ -637,7 +639,7 @@ module Block_top_mig_axi_wrapper_0_0_mig_axi_wrapper
         .s_axi_awaddr(s_axi_awaddr),
         .s_axi_awburst(s_axi_awburst),
         .s_axi_awcache(s_axi_awcache),
-        .s_axi_awid(s_axi_awid),
+        .s_axi_awid({1'b0,1'b0,1'b0,s_axi_awid}),
         .s_axi_awlen(s_axi_awlen),
         .s_axi_awlock(s_axi_awlock),
         .s_axi_awprot(s_axi_awprot),
@@ -645,12 +647,12 @@ module Block_top_mig_axi_wrapper_0_0_mig_axi_wrapper
         .s_axi_awready(s_axi_awready),
         .s_axi_awsize(s_axi_awsize),
         .s_axi_awvalid(s_axi_awvalid),
-        .s_axi_bid(s_axi_bid),
+        .s_axi_bid({NLW_mig_inst_s_axi_bid_UNCONNECTED[3:1],s_axi_bid}),
         .s_axi_bready(s_axi_bready),
         .s_axi_bresp(s_axi_bresp),
         .s_axi_bvalid(s_axi_bvalid),
         .s_axi_rdata(s_axi_rdata),
-        .s_axi_rid(s_axi_rid),
+        .s_axi_rid({NLW_mig_inst_s_axi_rid_UNCONNECTED[3:1],s_axi_rid}),
         .s_axi_rlast(s_axi_rlast),
         .s_axi_rready(s_axi_rready),
         .s_axi_rresp(s_axi_rresp),

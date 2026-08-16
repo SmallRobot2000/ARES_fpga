@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "bd_797d_s00sic_0",
-    "cell_name": "s00_si_converter",
+    "cell_name": "s00_entry_pipeline/s00_si_converter",
     "component_reference": "xilinx.com:ip:sc_si_converter:1.0",
     "ip_revision": "16",
     "gen_directory": ".",
@@ -20,7 +20,7 @@
         "MEP_IDENTIFIER_WIDTH": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "SUPPORTS_NARROW": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "HAS_BURST": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "NUM_SEG": [ { "value": "5", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "NUM_SEG": [ { "value": "6", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "ADDR_WIDTH": [ { "value": "32", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "ID_WIDTH": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "RDATA_WIDTH": [ { "value": "32", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -53,9 +53,9 @@
         "SEP004_RDATA_WIDTH": [ { "value": "128", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "SEP004_WDATA_WIDTH": [ { "value": "128", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "SEP004_PROTOCOL": [ { "value": "AXI4", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
-        "SEP005_RDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "SEP005_WDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "SEP005_PROTOCOL": [ { "value": "AXI4", "resolve_type": "user", "usage": "all" } ],
+        "SEP005_RDATA_WIDTH": [ { "value": "128", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "SEP005_WDATA_WIDTH": [ { "value": "128", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "SEP005_PROTOCOL": [ { "value": "AXI4", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "SEP006_RDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "SEP006_WDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "SEP006_PROTOCOL": [ { "value": "AXI4", "resolve_type": "user", "usage": "all" } ],
@@ -1333,10 +1333,10 @@
         "C_MEP_IDENTIFIER_WIDTH": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_SUPPORTS_NARROW": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_BURST": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_NUM_SEG": [ { "value": "5", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_SEP_WDATA_WIDTH_ARRAY": [ { "value": "0x0000008000000080000000800000008000000020", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
-        "C_SEP_RDATA_WIDTH_ARRAY": [ { "value": "0x0000008000000080000000800000008000000020", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
-        "C_SEP_PROTOCOL_ARRAY": [ { "value": "0x0000000000000000000000000000000000000002", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_NUM_SEG": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_SEP_WDATA_WIDTH_ARRAY": [ { "value": "0x000000800000008000000080000000800000008000000020", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_SEP_RDATA_WIDTH_ARRAY": [ { "value": "0x000000800000008000000080000000800000008000000020", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_SEP_PROTOCOL_ARRAY": [ { "value": "0x000000000000000000000000000000000000000000000002", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_NUM_MSC": [ { "value": "2", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_MSC_WDATA_WIDTH_ARRAY": [ { "value": "0x0000008000000020", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_MSC_RDATA_WIDTH_ARRAY": [ { "value": "0x0000008000000020", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
@@ -1359,8 +1359,8 @@
         "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
-        "PACKAGE": [ { "value": "ftg256", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7a100t", "resolve_type": "generated", "usage": "all" } ],
+        "PACKAGE": [ { "value": "fgg484", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED", "resolve_type": "generated", "usage": "all" } ],
@@ -1660,5 +1660,5 @@
       }
     }
   },
-  "checksum": "350e5f41"
+  "checksum": "1ca75684"
 }

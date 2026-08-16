@@ -2,14 +2,14 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Tue Aug 11 17:30:09 2026
+-- Date        : Fri Aug 14 21:37:12 2026
 -- Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_mig_axi_wrapper_0_0/Block_top_mig_axi_wrapper_0_0_sim_netlist.vhdl
 -- Design      : Block_top_mig_axi_wrapper_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a35tftg256-2
+-- Device      : xc7a100tfgg484-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -113,7 +113,7 @@ architecture STRUCTURE of Block_top_mig_axi_wrapper_0_0_mig_axi_wrapper is
     app_sr_active : out STD_LOGIC;
     app_ref_ack : out STD_LOGIC;
     app_zq_ack : out STD_LOGIC;
-    s_axi_awid : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s_axi_awid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 27 downto 0 );
     s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -130,10 +130,10 @@ architecture STRUCTURE of Block_top_mig_axi_wrapper_0_0_mig_axi_wrapper is
     s_axi_wvalid : in STD_LOGIC;
     s_axi_wready : out STD_LOGIC;
     s_axi_bready : in STD_LOGIC;
-    s_axi_bid : out STD_LOGIC_VECTOR ( 0 to 0 );
+    s_axi_bid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_bvalid : out STD_LOGIC;
-    s_axi_arid : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s_axi_arid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_araddr : in STD_LOGIC_VECTOR ( 27 downto 0 );
     s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -145,7 +145,7 @@ architecture STRUCTURE of Block_top_mig_axi_wrapper_0_0_mig_axi_wrapper is
     s_axi_arvalid : in STD_LOGIC;
     s_axi_arready : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    s_axi_rid : out STD_LOGIC_VECTOR ( 0 to 0 );
+    s_axi_rid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_rdata : out STD_LOGIC_VECTOR ( 127 downto 0 );
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rlast : out STD_LOGIC;
@@ -158,6 +158,8 @@ architecture STRUCTURE of Block_top_mig_axi_wrapper_0_0_mig_axi_wrapper is
   signal NLW_mig_inst_app_ref_ack_UNCONNECTED : STD_LOGIC;
   signal NLW_mig_inst_app_sr_active_UNCONNECTED : STD_LOGIC;
   signal NLW_mig_inst_app_zq_ack_UNCONNECTED : STD_LOGIC;
+  signal NLW_mig_inst_s_axi_bid_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 1 );
+  signal NLW_mig_inst_s_axi_rid_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 1 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of ui_clk : signal is "xilinx.com:signal:clock:1.0 ui_clk CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -196,6 +198,7 @@ mig_inst: component Block_top_mig_axi_wrapper_0_0_mig_7series_0
       s_axi_araddr(27 downto 0) => s_axi_araddr(27 downto 0),
       s_axi_arburst(1 downto 0) => s_axi_arburst(1 downto 0),
       s_axi_arcache(3 downto 0) => s_axi_arcache(3 downto 0),
+      s_axi_arid(3 downto 1) => B"000",
       s_axi_arid(0) => s_axi_arid(0),
       s_axi_arlen(7 downto 0) => s_axi_arlen(7 downto 0),
       s_axi_arlock(0) => s_axi_arlock(0),
@@ -207,6 +210,7 @@ mig_inst: component Block_top_mig_axi_wrapper_0_0_mig_7series_0
       s_axi_awaddr(27 downto 0) => s_axi_awaddr(27 downto 0),
       s_axi_awburst(1 downto 0) => s_axi_awburst(1 downto 0),
       s_axi_awcache(3 downto 0) => s_axi_awcache(3 downto 0),
+      s_axi_awid(3 downto 1) => B"000",
       s_axi_awid(0) => s_axi_awid(0),
       s_axi_awlen(7 downto 0) => s_axi_awlen(7 downto 0),
       s_axi_awlock(0) => s_axi_awlock(0),
@@ -215,11 +219,13 @@ mig_inst: component Block_top_mig_axi_wrapper_0_0_mig_7series_0
       s_axi_awready => s_axi_awready,
       s_axi_awsize(2 downto 0) => s_axi_awsize(2 downto 0),
       s_axi_awvalid => s_axi_awvalid,
+      s_axi_bid(3 downto 1) => NLW_mig_inst_s_axi_bid_UNCONNECTED(3 downto 1),
       s_axi_bid(0) => s_axi_bid(0),
       s_axi_bready => s_axi_bready,
       s_axi_bresp(1 downto 0) => s_axi_bresp(1 downto 0),
       s_axi_bvalid => s_axi_bvalid,
       s_axi_rdata(127 downto 0) => s_axi_rdata(127 downto 0),
+      s_axi_rid(3 downto 1) => NLW_mig_inst_s_axi_rid_UNCONNECTED(3 downto 1),
       s_axi_rid(0) => s_axi_rid(0),
       s_axi_rlast => s_axi_rlast,
       s_axi_rready => s_axi_rready,

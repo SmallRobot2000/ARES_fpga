@@ -323,7 +323,7 @@
             "V10": {
                 "VT": "AC",
                 "BA": "0x90000000",
-                "HA": "0x9EFFFFFF",
+                "HA": "0x9F7FFFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MA": "mBus",

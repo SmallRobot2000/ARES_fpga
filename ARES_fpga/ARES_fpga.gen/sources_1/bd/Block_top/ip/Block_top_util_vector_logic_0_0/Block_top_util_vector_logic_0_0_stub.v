@@ -2,13 +2,13 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Jul 29 17:25:10 2026
-// Host        : lovroRadiona running 64-bit Ubuntu 24.04.4 LTS
+// Date        : Fri Aug 14 21:37:42 2026
+// Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top Block_top_util_vector_logic_0_0 -prefix
 //               Block_top_util_vector_logic_0_0_ Block_top_util_vector_logic_0_1_stub.v
 // Design      : Block_top_util_vector_logic_0_1
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7a35tftg256-2
+// Device      : xc7a100tfgg484-2
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.

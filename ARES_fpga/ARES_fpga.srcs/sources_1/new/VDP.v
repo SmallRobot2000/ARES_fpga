@@ -133,6 +133,30 @@ module VDP#(
     (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_DATA_CPU_BRAM CLK" *)
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S0_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE" *)
     input               s0_data_cpu_clk,
+
+
+    // ============================================================
+    // AXI register interface
+    // ============================================================
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 R0_MAP_CPU_BRAM ADDR" *)
+    input  wire [7:0] r0_map_cpu_addr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 R0_MAP_CPU_BRAM DIN" *)
+    input  wire [31:0] r0_map_cpu_din,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 R0_MAP_CPU_BRAM DOUT" *)
+    output wire [31:0] r0_map_cpu_dout,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 R0_MAP_CPU_BRAM EN" *)
+    input  wire        r0_map_cpu_en,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 R0_MAP_CPU_BRAM WE" *)
+    input  wire [3:0]  r0_map_cpu_wen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 R0_MAP_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME R0_MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 256, READ_WRITE_MODE READ_WRITE" *)
+    input  wire        r0_map_cpu_clk,
+
     // ============================================================
     // 100 MHz clock
     // ============================================================
@@ -696,6 +720,7 @@ blk_mem_gen_spr_line spr_line
 
 
     .doutb(buf_dout),
+    .dinb(16'b0),
     .web(2'b0),
 
     .clkb(clk_100),
@@ -710,7 +735,7 @@ blk_mem_gen_spr_data spr_data
     .clka(clk_100),
     .addra(spr_data_vdp_addr),
     .douta(spr_data_vdp_dout),
-    .dina(),
+    .dina(128'b0),
     .wea(16'b0),
 
 

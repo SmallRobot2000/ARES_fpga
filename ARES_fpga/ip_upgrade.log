@@ -1,0 +1,516 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:25 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_tile_map'
+
+1. Summary
+----------
+
+SUCCESS in the update of blk_mem_tile_map (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:25 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_tile_data'
+
+1. Summary
+----------
+
+SUCCESS in the update of blk_mem_tile_data (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:24 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_gen_spr_line'
+
+1. Summary
+----------
+
+SUCCESS in the update of blk_mem_gen_spr_line (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:24 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_gen_spr_data'
+
+1. Summary
+----------
+
+SUCCESS in the update of blk_mem_gen_spr_data (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:23 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_gen_spr_att'
+
+1. Summary
+----------
+
+SUCCESS in the update of blk_mem_gen_spr_att (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:23 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_fin_line'
+
+1. Summary
+----------
+
+SUCCESS in the update of blk_mem_fin_line (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:23 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_buf_line'
+
+1. Summary
+----------
+
+SUCCESS in the update of blk_mem_buf_line (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:21 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_xlconcat_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_xlconcat_0_0 (xilinx.com:ip:xlconcat:2.1 (Rev. 7)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:21 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_util_vector_logic_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_util_vector_logic_0_1 (xilinx.com:ip:util_vector_logic:2.0 (Rev. 5)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:21 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_util_vector_logic_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_util_vector_logic_0_0 (xilinx.com:ip:util_vector_logic:2.0 (Rev. 5)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:21 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_util_ds_buf_2_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_util_ds_buf_2_0 (xilinx.com:ip:util_ds_buf:2.2 (Rev. 9)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:21 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_util_ds_buf_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_util_ds_buf_0_2 (xilinx.com:ip:util_ds_buf:2.2 (Rev. 9)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:20 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_util_ds_buf_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_util_ds_buf_0_1 (xilinx.com:ip:util_ds_buf:2.2 (Rev. 9)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:20 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_util_ds_buf_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_util_ds_buf_0_0 (xilinx.com:ip:util_ds_buf:2.2 (Rev. 9)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:20 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_smartconnect_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_smartconnect_0_1 (xilinx.com:ip:smartconnect:1.0 (Rev. 28)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection and Interface Information
+---------------------------------------
+
+Connection and Interface information can not be compared for deferred elaboration IPs.
+Block_top_smartconnect_0_1 may have connection or interface changes.
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:20 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_smartconnect_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_smartconnect_0_0 (xilinx.com:ip:smartconnect:1.0 (Rev. 28)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection and Interface Information
+---------------------------------------
+
+Connection and Interface information can not be compared for deferred elaboration IPs.
+Block_top_smartconnect_0_0 may have connection or interface changes.
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:20 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_clk_wiz_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_clk_wiz_0_0 (xilinx.com:ip:clk_wiz:6.0 (Rev. 17)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:20 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_axi_uartlite_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_axi_uartlite_0_0 (xilinx.com:ip:axi_uartlite:2.0 (Rev. 39)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:20 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_axi_quad_spi_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_axi_quad_spi_0_1 (xilinx.com:ip:axi_quad_spi:3.2 (Rev. 35)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:20 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_axi_bram_ctrl_vdp_t0_data_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_axi_bram_ctrl_vdp_t0_data_0 (xilinx.com:ip:axi_bram_ctrl:4.1 (Rev. 13)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+WARNING: upgrade cannot remove parameter C_SELECT_XPM : there is no parameter called C_SELECT_XPM in axi_bram_ctrl_v4_1
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:19 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_axi_bram_ctrl_vdp_s0_att_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_axi_bram_ctrl_vdp_s0_att_0 (xilinx.com:ip:axi_bram_ctrl:4.1 (Rev. 13)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+WARNING: upgrade cannot remove parameter C_SELECT_XPM : there is no parameter called C_SELECT_XPM in axi_bram_ctrl_v4_1
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:19 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_axi_bram_ctrl_map_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_axi_bram_ctrl_map_0 (xilinx.com:ip:axi_bram_ctrl:4.1 (Rev. 13)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+WARNING: upgrade cannot remove parameter C_SELECT_XPM : there is no parameter called C_SELECT_XPM in axi_bram_ctrl_v4_1
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 15:04:19 2026
+| Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg484-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Block_top_axi_bram_ctrl_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of Block_top_axi_bram_ctrl_0_0 (xilinx.com:ip:axi_bram_ctrl:4.1 (Rev. 13)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+WARNING: upgrade cannot remove parameter C_SELECT_XPM : there is no parameter called C_SELECT_XPM in axi_bram_ctrl_v4_1
+

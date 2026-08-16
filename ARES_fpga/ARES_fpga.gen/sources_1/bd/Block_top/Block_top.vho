@@ -74,8 +74,8 @@ COMPONENT Block_top
     spi_mosi : OUT STD_LOGIC;
     spi_sck : OUT STD_LOGIC;
     spi_flash_ce_n : OUT STD_LOGIC;
-    uart_rx : IN STD_LOGIC;
-    uart_tx : OUT STD_LOGIC;
+    usb_rx : IN STD_LOGIC;
+    usb_tx : OUT STD_LOGIC;
     test_tx : OUT STD_LOGIC;
     spi_controller_mosi : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     spi_controller_miso : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
@@ -117,8 +117,8 @@ your_instance_name : Block_top
     spi_mosi => spi_mosi,
     spi_sck => spi_sck,
     spi_flash_ce_n => spi_flash_ce_n,
-    uart_rx => uart_rx,
-    uart_tx => uart_tx,
+    usb_rx => usb_rx,
+    usb_tx => usb_tx,
     test_tx => test_tx,
     spi_controller_mosi => spi_controller_mosi,
     spi_controller_miso => spi_controller_miso,

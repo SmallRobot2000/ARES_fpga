@@ -56,15 +56,11 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "Block_top_axi_bram_ctrl_map_0_synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 3
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a35tftg256-2
+create_project -in_memory -part xc7a100tfgg484-2
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -109,7 +105,7 @@ if { $cacheID == "" } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top Block_top_axi_bram_ctrl_map_0 -part xc7a35tftg256-2 -incremental_mode off -mode out_of_context
+synth_design -top Block_top_axi_bram_ctrl_map_0 -part xc7a100tfgg484-2 -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 OPTRACE "Write IP Cache" START { }
 

@@ -87,8 +87,8 @@ Block_top_sv your_instance_name (
   .spi_mosi(spi_mosi), // output wire spi_mosi
   .spi_sck(spi_sck), // output wire spi_sck
   .spi_flash_ce_n(spi_flash_ce_n), // output wire spi_flash_ce_n
-  .uart_rx(uart_rx), // input wire uart_rx
-  .uart_tx(uart_tx), // output wire uart_tx
+  .usb_rx(usb_rx), // input wire usb_rx
+  .usb_tx(usb_tx), // output wire usb_tx
   .test_tx(test_tx), // output wire test_tx
   .spi_controller_mosi(spi_controller_mosi), // inout wire [0:0] spi_controller_mosi
   .spi_controller_miso(spi_controller_miso), // inout wire [0:0] spi_controller_miso
