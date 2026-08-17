@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Fri Aug 14 21:37:10 2026
+// Date        : Fri Aug 14 21:37:09 2026
 // Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_uartlite_0_0/Block_top_axi_uartlite_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top Block_top_axi_uartlite_0_0 -prefix
+//               Block_top_axi_uartlite_0_0_ Block_top_axi_uartlite_0_0_sim_netlist.v
 // Design      : Block_top_axi_uartlite_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -152,7 +152,6 @@ module Block_top_axi_uartlite_0_0
         .tx(tx));
 endmodule
 
-(* ORIG_REF_NAME = "address_decoder" *) 
 module Block_top_axi_uartlite_0_0_address_decoder
    (\GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg[1]_0 ,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]_0 ,
@@ -582,7 +581,6 @@ module Block_top_axi_uartlite_0_0_address_decoder
         .O(s_axi_aresetn_0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module Block_top_axi_uartlite_0_0_axi_lite_ipif
    (\GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg ,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg ,
@@ -739,8 +737,7 @@ endmodule
 
 (* C_BAUDRATE = "115200" *) (* C_DATA_BITS = "8" *) (* C_FAMILY = "artix7" *) 
 (* C_ODD_PARITY = "0" *) (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) (* C_S_AXI_ADDR_WIDTH = "4" *) 
-(* C_S_AXI_DATA_WIDTH = "32" *) (* C_USE_PARITY = "0" *) (* ORIG_REF_NAME = "axi_uartlite" *) 
-(* downgradeipidentifiedwarnings = "yes" *) 
+(* C_S_AXI_DATA_WIDTH = "32" *) (* C_USE_PARITY = "0" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module Block_top_axi_uartlite_0_0_axi_uartlite
    (s_axi_aclk,
     s_axi_aresetn,
@@ -928,7 +925,6 @@ module Block_top_axi_uartlite_0_0_axi_uartlite
         .tx_Buffer_Full(tx_Buffer_Full));
 endmodule
 
-(* ORIG_REF_NAME = "baudrate" *) 
 module Block_top_axi_uartlite_0_0_baudrate
    (en_16x_Baud,
     SR,
@@ -1068,7 +1064,6 @@ module Block_top_axi_uartlite_0_0_baudrate
         .R(SR));
 endmodule
 
-(* ORIG_REF_NAME = "pselect_f" *) 
 module Block_top_axi_uartlite_0_0_pselect_f
    (ce_expnd_i_3,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0] ,
@@ -1110,7 +1105,6 @@ module Block_top_axi_uartlite_0_0_pselect_f__parameterized1
         .O(ce_expnd_i_1));
 endmodule
 
-(* ORIG_REF_NAME = "slave_attachment" *) 
 module Block_top_axi_uartlite_0_0_slave_attachment
    (\GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg[1] ,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0] ,
@@ -1524,7 +1518,6 @@ module Block_top_axi_uartlite_0_0_slave_attachment
         .R(rst));
 endmodule
 
-(* ORIG_REF_NAME = "srl_fifo" *) 
 module Block_top_axi_uartlite_0_0_srl_fifo
    (tx_Buffer_Full,
     Q,
@@ -2191,7 +2184,6 @@ module Block_top_axi_uartlite_0_0_srl_fifo_0
         .O(s_axi_aresetn_0));
 endmodule
 
-(* ORIG_REF_NAME = "uartlite_core" *) 
 module Block_top_axi_uartlite_0_0_uartlite_core
    (rx_Buffer_Full,
     tx_Buffer_Full,
@@ -2385,7 +2377,6 @@ module Block_top_axi_uartlite_0_0_uartlite_core
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "uartlite_rx" *) 
 module Block_top_axi_uartlite_0_0_uartlite_rx
    (FIFO_Full_reg,
     SR,
@@ -2958,7 +2949,6 @@ module Block_top_axi_uartlite_0_0_uartlite_rx
         .R(SR));
 endmodule
 
-(* ORIG_REF_NAME = "uartlite_tx" *) 
 module Block_top_axi_uartlite_0_0_uartlite_tx
    (tx_Buffer_Full,
     tx,
@@ -3212,9 +3202,9 @@ module Block_top_axi_uartlite_0_0_uartlite_tx
         .R(SR));
 endmodule
 
-(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
-(* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) (* xpm_cdc = "SINGLE" *) 
+(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* SIM_ASSERT_CHK = "0" *) 
+(* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) 
+(* keep_hierarchy = "soft" *) (* xpm_cdc = "SINGLE" *) 
 module Block_top_axi_uartlite_0_0_xpm_cdc_single
    (src_clk,
     src_in,

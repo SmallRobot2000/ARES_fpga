@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Fri Aug 14 21:37:51 2026
+// Date        : Fri Aug 14 21:37:50 2026
 // Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_data_0/Block_top_axi_bram_ctrl_vdp_t0_data_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top Block_top_axi_bram_ctrl_vdp_t0_data_0 -prefix
+//               Block_top_axi_bram_ctrl_vdp_t0_data_0_ Block_top_axi_bram_ctrl_vdp_t0_data_0_sim_netlist.v
 // Design      : Block_top_axi_bram_ctrl_vdp_t0_data_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -227,7 +227,7 @@ endmodule
 (* C_READ_LATENCY = "1" *) (* C_SINGLE_PORT_BRAM = "1" *) (* C_S_AXI_ADDR_WIDTH = "11" *) 
 (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
 (* C_S_AXI_ID_WIDTH = "1" *) (* C_S_AXI_PROTOCOL = "AXI4LITE" *) (* C_S_AXI_SUPPORTS_NARROW_BURST = "0" *) 
-(* ORIG_REF_NAME = "axi_bram_ctrl" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module Block_top_axi_bram_ctrl_vdp_t0_data_0_axi_bram_ctrl
    (s_axi_aclk,
     s_axi_aresetn,
@@ -520,7 +520,6 @@ module Block_top_axi_bram_ctrl_vdp_t0_data_0_axi_bram_ctrl
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_bram_ctrl_top" *) 
 module Block_top_axi_bram_ctrl_vdp_t0_data_0_axi_bram_ctrl_top
    (s_axi_aresetn_0,
     bram_en_a,
@@ -599,7 +598,6 @@ module Block_top_axi_bram_ctrl_vdp_t0_data_0_axi_bram_ctrl_top
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_lite" *) 
 module Block_top_axi_bram_ctrl_vdp_t0_data_0_axi_lite
    (s_axi_aresetn_0,
     bram_en_a,

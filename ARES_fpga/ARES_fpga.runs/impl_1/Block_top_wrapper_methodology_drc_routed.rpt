@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Fri Aug 14 21:42:07 2026
+| Date         : Mon Aug 17 15:56:38 2026
 | Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_methodology -file Block_top_wrapper_methodology_drc_routed.rpt -pb Block_top_wrapper_methodology_drc_routed.pb -rpx Block_top_wrapper_methodology_drc_routed.rpx
 | Design       : Block_top_wrapper
@@ -40,112 +40,112 @@ Table of Contents
 -----------------
 TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[0]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[10]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[1]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[2]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[3]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[4]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[5]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#8 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[6]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#9 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[7]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#10 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[8]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#11 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/h_cnt_reg[9]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/h_cnt_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#12 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[0]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#13 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[10]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#14 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[1]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#15 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[2]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#16 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[3]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#17 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[4]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#18 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[5]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[6]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[7]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[8]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
-The clock pin Block_top_i/VDP_0/inst/v_cnt_reg[9]/C is not reached by a timing clock
+The clock pin Block_top_i/VDP_wrapper_0/inst/dut/v_cnt_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 LUTAR-1#1 Warning
@@ -176,62 +176,62 @@ Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X39Y126 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X36Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X44Y130 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X37Y129 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X45Y125 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X42Y130 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#4 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X43Y124 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X36Y130 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#5 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X42Y125 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X43Y131 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#6 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X45Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X35Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#7 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X42Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X40Y129 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#8 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X43Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X44Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#9 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X47Y126 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X39Y129 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#10 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X44Y126 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X37Y131 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#11 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X46Y125 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X41Y129 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#12 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X44Y124 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
+The FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X40Y132 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell Block_top_i/mig_axi_wrapper_0/inst/mig_inst/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-18#1 Warning

@@ -62,8 +62,20 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_V
 # IP: bd/Block_top/ip/Block_top_xlconcat_0_0/Block_top_xlconcat_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_xlconcat_0_0 || ORIG_REF_NAME==Block_top_xlconcat_0_0} -quiet] -quiet
 
-# IP: bd/Block_top/ip/Block_top_VDP_0_0/Block_top_VDP_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_VDP_0_0 || ORIG_REF_NAME==Block_top_VDP_0_0} -quiet] -quiet
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_0_0/Block_top_axi_bram_ctrl_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_0_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_0_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_map_0/Block_top_axi_bram_ctrl_map_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_map_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_map_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_data_0/Block_top_axi_bram_ctrl_vdp_t0_data_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_data_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_data_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_s0_att_0/Block_top_axi_bram_ctrl_vdp_s0_att_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_att_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_att_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_VDP_wrapper_0_0/Block_top_VDP_wrapper_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_VDP_wrapper_0_0 || ORIG_REF_NAME==Block_top_VDP_wrapper_0_0} -quiet] -quiet
 
 # IP: ip/blk_mem_gen_spr_att/blk_mem_gen_spr_att.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_att || ORIG_REF_NAME==blk_mem_gen_spr_att} -quiet] -quiet
@@ -86,16 +98,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_buf
 # IP: ip/blk_mem_fin_line/blk_mem_fin_line.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_fin_line || ORIG_REF_NAME==blk_mem_fin_line} -quiet] -quiet
 
-# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_0_0/Block_top_axi_bram_ctrl_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_0_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_0_0} -quiet] -quiet
-
-# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_map_0/Block_top_axi_bram_ctrl_map_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_map_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_map_0} -quiet] -quiet
-
-# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_data_0/Block_top_axi_bram_ctrl_vdp_t0_data_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_data_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_data_0} -quiet] -quiet
-
-# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_s0_att_0/Block_top_axi_bram_ctrl_vdp_s0_att_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_att_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_att_0} -quiet] -quiet
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_s0_data_0/Block_top_axi_bram_ctrl_vdp_s0_data_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_data_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_data_0} -quiet] -quiet
 
 # XDC: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc

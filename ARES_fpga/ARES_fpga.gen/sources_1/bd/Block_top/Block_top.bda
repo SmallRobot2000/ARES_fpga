@@ -304,6 +304,24 @@
             },
             "V9": {
                 "VT": "AC",
+                "BA": "0x10032000",
+                "HA": "0x10033FFF",
+                "BP": "C_S_AXI_BASEADDR",
+                "HP": "C_S_AXI_HIGHADDR",
+                "MA": "pBus",
+                "MX": "/VexiiSocWrapper_0",
+                "MI": "pBus",
+                "MS": "SEG_axi_bram_ctrl_vdp_s0_data1_Mem0",
+                "MV": "xilinx.com:module_ref:VexiiSocWrapper:1.0",
+                "SX": "/axi_bram_ctrl_vdp_r0_map",
+                "SI": "S_AXI",
+                "SS": "Mem0",
+                "SV": "xilinx.com:ip:axi_bram_ctrl:4.1",
+                "TM": "both",
+                "TU": "memory"
+            },
+            "V10": {
+                "VT": "AC",
                 "BA": "0x80000000",
                 "HA": "0x800FFFFF",
                 "BP": "C_BASEADDR",
@@ -320,7 +338,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V10": {
+            "V11": {
                 "VT": "AC",
                 "BA": "0x90000000",
                 "HA": "0x9F7FFFFF",
@@ -385,6 +403,11 @@
             },
             {
                 "src": "V10",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V11",
                 "trg": "V2",
                 "EH": "2"
             }

@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Fri Aug 14 21:37:09 2026
+-- Date        : Fri Aug 14 21:37:08 2026
 -- Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_2_0/Block_top_util_ds_buf_2_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top Block_top_util_ds_buf_2_0 -prefix
+--               Block_top_util_ds_buf_2_0_ Block_top_util_ds_buf_2_0_stub.vhdl
 -- Design      : Block_top_util_ds_buf_2_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tfgg484-2

@@ -77,7 +77,7 @@ Block_top_axi_bram_ctrl_0_0_sc::Block_top_axi_bram_ctrl_0_0_sc(const sc_core::sc
     model_param_props.addLong("C_FAULT_INJECT", "0");
     model_param_props.addLong("C_ECC_ONOFF_RESET_VALUE", "0");
     model_param_props.addString("C_BRAM_INST_MODE", "EXTERNAL");
-    model_param_props.addString("C_S_AXI_PROTOCOL", "AXI4");
+    model_param_props.addString("C_S_AXI_PROTOCOL", "AXI4LITE");
     model_param_props.addString("C_FAMILY", "artix7");
     model_param_props.addString("COMPONENT_NAME", "Block_top_axi_bram_ctrl_0_0");
 

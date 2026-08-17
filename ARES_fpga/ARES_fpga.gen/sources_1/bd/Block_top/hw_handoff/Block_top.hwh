@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Aug 14 21:36:13 2026" VIVADOVERSION="2025.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Aug 17 15:51:09 2026" VIVADOVERSION="2025.2">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a100t" NAME="Block_top" PACKAGE="fgg484" SPEEDGRADE="-2"/>
 
@@ -84,9 +84,9 @@
         <CONNECTION INSTANCE="mig_axi_wrapper_0" PORT="ddr3_we_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="h_sync" SIGIS="undef" SIGNAME="VDP_0_h_sync">
+    <PORT DIR="O" NAME="h_sync" SIGIS="undef" SIGNAME="VDP_wrapper_0_h_sync">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="VDP_0" PORT="h_sync"/>
+        <CONNECTION INSTANCE="VDP_wrapper_0" PORT="h_sync"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n">
@@ -149,24 +149,24 @@
         <CONNECTION INSTANCE="axi_uartlite_0" PORT="tx"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="v_sync" SIGIS="undef" SIGNAME="VDP_0_v_sync">
+    <PORT DIR="O" NAME="v_sync" SIGIS="undef" SIGNAME="VDP_wrapper_0_v_sync">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="VDP_0" PORT="v_sync"/>
+        <CONNECTION INSTANCE="VDP_wrapper_0" PORT="v_sync"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="vga_b" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_vga_b">
+    <PORT DIR="O" LEFT="3" NAME="vga_b" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_vga_b">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="VDP_0" PORT="vga_b"/>
+        <CONNECTION INSTANCE="VDP_wrapper_0" PORT="vga_b"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="vga_g" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_vga_g">
+    <PORT DIR="O" LEFT="3" NAME="vga_g" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_vga_g">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="VDP_0" PORT="vga_g"/>
+        <CONNECTION INSTANCE="VDP_wrapper_0" PORT="vga_g"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="vga_r" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_vga_r">
+    <PORT DIR="O" LEFT="3" NAME="vga_r" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_vga_r">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="VDP_0" PORT="vga_r"/>
+        <CONNECTION INSTANCE="VDP_wrapper_0" PORT="vga_r"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -303,87 +303,104 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/VDP_0" HWVERSION="1.0" INSTANCE="VDP_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="VDP" VLNV="xilinx.com:module_ref:VDP:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/VDP_wrapper_0" HWVERSION="1.0" INSTANCE="VDP_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="VDP_wrapper" VLNV="xilinx.com:module_ref:VDP_wrapper:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="NUM_GEN" VALUE="2"/>
-        <PARAMETER NAME="S0_GEN_NUM" VALUE="1"/>
-        <PARAMETER NAME="T0_GEN_NUM" VALUE="0"/>
-        <PARAMETER NAME="VGA_H_ACTIVE" VALUE="640"/>
-        <PARAMETER NAME="VGA_H_BACK_PORCH" VALUE="48"/>
-        <PARAMETER NAME="VGA_H_FRONT_PORCH" VALUE="16"/>
-        <PARAMETER NAME="VGA_H_SYNC" VALUE="96"/>
-        <PARAMETER NAME="VGA_H_TOTAL" VALUE="800"/>
-        <PARAMETER NAME="VGA_V_ACTIVE" VALUE="480"/>
-        <PARAMETER NAME="VGA_V_BACK_PORCH" VALUE="31"/>
-        <PARAMETER NAME="VGA_V_FRONT_PORCH" VALUE="11"/>
-        <PARAMETER NAME="VGA_V_SYNC" VALUE="2"/>
-        <PARAMETER NAME="VGA_V_TOTAL" VALUE="524"/>
-        <PARAMETER NAME="Component_Name" VALUE="Block_top_VDP_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="Block_top_VDP_wrapper_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" NAME="h_sync" SIGIS="undef" SIGNAME="VDP_0_h_sync">
+        <PORT DIR="O" NAME="h_sync" SIGIS="undef" SIGNAME="VDP_wrapper_0_h_sync">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="h_sync"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s0_att_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_addr">
+        <PORT DIR="I" LEFT="12" NAME="r0_map_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="bram_addr_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="r0_map_cpu_clk" SIGIS="clk" SIGNAME="VDP_wrapper_0_r0_map_cpu_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="bram_clk_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="r0_map_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="bram_wrdata_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="r0_map_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="bram_rddata_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="r0_map_cpu_en" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="bram_en_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="r0_map_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="bram_we_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="s0_att_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_addr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="bram_addr_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s0_att_cpu_clk" SIGIS="clk" SIGNAME="VDP_0_s0_att_cpu_clk">
+        <PORT DIR="I" NAME="s0_att_cpu_clk" SIGIS="clk" SIGNAME="VDP_wrapper_0_s0_att_cpu_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="bram_clk_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s0_att_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_din">
+        <PORT DIR="I" LEFT="31" NAME="s0_att_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_din">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="bram_wrdata_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s0_att_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_dout">
+        <PORT DIR="O" LEFT="31" NAME="s0_att_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="bram_rddata_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s0_att_cpu_en" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_en">
+        <PORT DIR="I" NAME="s0_att_cpu_en" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_en">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="bram_en_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s0_att_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_wen">
+        <PORT DIR="I" LEFT="3" NAME="s0_att_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_wen">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_att" PORT="bram_we_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="14" NAME="s0_data_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_addr">
+        <PORT DIR="I" LEFT="14" NAME="s0_data_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_addr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="bram_addr_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s0_data_cpu_clk" SIGIS="clk" SIGNAME="VDP_0_s0_data_cpu_clk">
+        <PORT DIR="I" NAME="s0_data_cpu_clk" SIGIS="clk" SIGNAME="VDP_wrapper_0_s0_data_cpu_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="bram_clk_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s0_data_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_din">
+        <PORT DIR="I" LEFT="31" NAME="s0_data_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_din">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="bram_wrdata_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s0_data_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_dout">
+        <PORT DIR="O" LEFT="31" NAME="s0_data_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="bram_rddata_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s0_data_cpu_en" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_en">
+        <PORT DIR="I" NAME="s0_data_cpu_en" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_en">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="bram_en_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s0_data_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_wen">
+        <PORT DIR="I" LEFT="3" NAME="s0_data_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_wen">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="bram_we_a"/>
           </CONNECTIONS>
@@ -398,82 +415,82 @@
             <CONNECTION INSTANCE="util_vector_logic_1" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="t0_data_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_addr">
+        <PORT DIR="I" LEFT="15" NAME="t0_data_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_addr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="bram_addr_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="t0_data_cpu_clk" SIGIS="clk" SIGNAME="VDP_0_t0_data_cpu_clk">
+        <PORT DIR="I" NAME="t0_data_cpu_clk" SIGIS="clk" SIGNAME="VDP_wrapper_0_t0_data_cpu_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="bram_clk_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="t0_data_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_din">
+        <PORT DIR="I" LEFT="31" NAME="t0_data_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_din">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="bram_wrdata_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="t0_data_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_dout">
+        <PORT DIR="O" LEFT="31" NAME="t0_data_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="bram_rddata_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="t0_data_cpu_en" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_en">
+        <PORT DIR="I" NAME="t0_data_cpu_en" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_en">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="bram_en_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="t0_data_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_wen">
+        <PORT DIR="I" LEFT="3" NAME="t0_data_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_wen">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="bram_we_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="14" NAME="t0_map_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_addr">
+        <PORT DIR="I" LEFT="14" NAME="t0_map_cpu_addr" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_addr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="bram_addr_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="t0_map_cpu_clk" SIGIS="clk" SIGNAME="VDP_0_t0_map_cpu_clk">
+        <PORT DIR="I" NAME="t0_map_cpu_clk" SIGIS="clk" SIGNAME="VDP_wrapper_0_t0_map_cpu_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="bram_clk_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="t0_map_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_din">
+        <PORT DIR="I" LEFT="31" NAME="t0_map_cpu_din" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_din">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="bram_wrdata_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="t0_map_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_dout">
+        <PORT DIR="O" LEFT="31" NAME="t0_map_cpu_dout" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="bram_rddata_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="t0_map_cpu_en" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_en">
+        <PORT DIR="I" NAME="t0_map_cpu_en" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_en">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="bram_en_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="t0_map_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_wen">
+        <PORT DIR="I" LEFT="3" NAME="t0_map_cpu_wen" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_wen">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="bram_we_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="v_sync" SIGIS="undef" SIGNAME="VDP_0_v_sync">
+        <PORT DIR="O" NAME="v_sync" SIGIS="undef" SIGNAME="VDP_wrapper_0_v_sync">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="v_sync"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="vga_b" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_vga_b">
+        <PORT DIR="O" LEFT="3" NAME="vga_b" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_vga_b">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="vga_b"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="vga_g" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_vga_g">
+        <PORT DIR="O" LEFT="3" NAME="vga_g" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_vga_g">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="vga_g"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="vga_r" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_vga_r">
+        <PORT DIR="O" LEFT="3" NAME="vga_r" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_vga_r">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="vga_r"/>
           </CONNECTIONS>
@@ -542,6 +559,22 @@
             <PORTMAP LOGICAL="DOUT" PHYSICAL="s0_data_cpu_dout"/>
             <PORTMAP LOGICAL="EN" PHYSICAL="s0_data_cpu_en"/>
             <PORTMAP LOGICAL="WE" PHYSICAL="s0_data_cpu_wen"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="axi_bram_ctrl_vdp_r0_map_BRAM_PORTA" NAME="R0_MAP_CPU_BRAM" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="2"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="r0_map_cpu_addr"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="r0_map_cpu_clk"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="r0_map_cpu_din"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="r0_map_cpu_dout"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="r0_map_cpu_en"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="r0_map_cpu_wen"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -936,6 +969,7 @@
         <MEMRANGE ADDRESSBLOCK="Mem0" BASENAME="C_S_AXI_BASEADDR" BASEVALUE="0x10020000" HIGHNAME="C_S_AXI_HIGHADDR" HIGHVALUE="0x10027FFF" INSTANCE="axi_bram_ctrl_vdp_t0_map" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="pBus" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI"/>
         <MEMRANGE ADDRESSBLOCK="Mem0" BASENAME="C_S_AXI_BASEADDR" BASEVALUE="0x10028000" HIGHNAME="C_S_AXI_HIGHADDR" HIGHVALUE="0x1002FFFF" INSTANCE="axi_bram_ctrl_vdp_s0_data" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="pBus" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI"/>
         <MEMRANGE ADDRESSBLOCK="Mem0" BASENAME="C_S_AXI_BASEADDR" BASEVALUE="0x10030000" HIGHNAME="C_S_AXI_HIGHADDR" HIGHVALUE="0x100301FF" INSTANCE="axi_bram_ctrl_vdp_s0_att" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="pBus" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="Mem0" BASENAME="C_S_AXI_BASEADDR" BASEVALUE="0x10032000" HIGHNAME="C_S_AXI_HIGHADDR" HIGHVALUE="0x10033FFF" INSTANCE="axi_bram_ctrl_vdp_r0_map" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="pBus" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI"/>
         <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x800FFFFF" INSTANCE="FLASH_SPI_wrapper_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="mBus" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
         <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x90000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x9F7FFFFF" INSTANCE="mig_axi_wrapper_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="mBus" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi"/>
       </MEMORYMAP>
@@ -946,9 +980,262 @@
         <PERIPHERAL INSTANCE="axi_bram_ctrl_vdp_t0_map"/>
         <PERIPHERAL INSTANCE="axi_bram_ctrl_vdp_s0_data"/>
         <PERIPHERAL INSTANCE="axi_bram_ctrl_vdp_s0_att"/>
+        <PERIPHERAL INSTANCE="axi_bram_ctrl_vdp_r0_map"/>
         <PERIPHERAL INSTANCE="FLASH_SPI_wrapper_0"/>
         <PERIPHERAL INSTANCE="mig_axi_wrapper_0"/>
       </PERIPHERALS>
+    </MODULE>
+    <MODULE COREREVISION="13" FULLNAME="/axi_bram_ctrl_vdp_r0_map" HWVERSION="4.1" INSTANCE="axi_bram_ctrl_vdp_r0_map" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY_CNTLR" MODTYPE="axi_bram_ctrl" VLNV="xilinx.com:ip:axi_bram_ctrl:4.1">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_bram_ctrl;v=v4_1;d=pg078-axi-bram-ctrl.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_BRAM_ADDR_WIDTH" VALUE="11"/>
+        <PARAMETER NAME="C_BRAM_INST_MODE" VALUE="EXTERNAL"/>
+        <PARAMETER NAME="C_ECC" VALUE="0"/>
+        <PARAMETER NAME="C_ECC_ONOFF_RESET_VALUE" VALUE="0"/>
+        <PARAMETER NAME="C_ECC_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_FAMILY" VALUE="artix7"/>
+        <PARAMETER NAME="C_FAULT_INJECT" VALUE="0"/>
+        <PARAMETER NAME="C_MEMORY_DEPTH" VALUE="2048"/>
+        <PARAMETER NAME="C_RD_CMD_OPTIMIZATION" VALUE="0"/>
+        <PARAMETER NAME="C_READ_LATENCY" VALUE="2"/>
+        <PARAMETER NAME="C_SINGLE_PORT_BRAM" VALUE="1"/>
+        <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="13"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_ADDR_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_DATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_S_AXI_ID_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_S_AXI_PROTOCOL" VALUE="AXI4LITE"/>
+        <PARAMETER NAME="C_S_AXI_SUPPORTS_NARROW_BURST" VALUE="0"/>
+        <PARAMETER NAME="BMG_INSTANCE" VALUE="EXTERNAL"/>
+        <PARAMETER NAME="Component_Name" VALUE="Block_top_axi_bram_ctrl_vdp_s0_data_0"/>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="ECC_ONOFF_RESET_VALUE" VALUE="0"/>
+        <PARAMETER NAME="ECC_TYPE" VALUE="0"/>
+        <PARAMETER NAME="FAULT_INJECT" VALUE="0"/>
+        <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="MEM_DEPTH" VALUE="2048"/>
+        <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+        <PARAMETER NAME="RD_CMD_OPTIMIZATION" VALUE="0"/>
+        <PARAMETER NAME="READ_LATENCY" VALUE="2"/>
+        <PARAMETER NAME="SINGLE_PORT_BRAM" VALUE="1"/>
+        <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+        <PARAMETER NAME="USE_ECC" VALUE="0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+        <PARAMETER NAME="EDK_SPECIAL" VALUE="BRAM_CTRL"/>
+        <PARAMETER NAME="C_S_AXI_BASEADDR" VALUE="0x10032000"/>
+        <PARAMETER NAME="C_S_AXI_HIGHADDR" VALUE="0x10033FFF"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="12" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="r0_map_cpu_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_wrapper_0_r0_map_cpu_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="r0_map_cpu_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="r0_map_cpu_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="r0_map_cpu_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="r0_map_cpu_wen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_r0_map_cpu_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="r0_map_cpu_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="mig_axi_wrapper_0_ui_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mig_axi_wrapper_0" PORT="ui_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="12" NAME="s_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="s_axi_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_arprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_arready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_arvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="12" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="s_axi_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_awprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_awvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_bready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="s_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_bvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_rready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="s_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_rvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_wvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="smartconnect_io" PORT="M06_AXI_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="smartconnect_io_M06_AXI" DATAWIDTH="32" NAME="S_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="13"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="Block_top_mig_axi_wrapper_0_0_ui_clk"/>
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="1"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="s_axi_araddr"/>
+            <PORTMAP LOGICAL="ARPROT" PHYSICAL="s_axi_arprot"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="s_axi_arready"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="s_axi_arvalid"/>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="s_axi_awaddr"/>
+            <PORTMAP LOGICAL="AWPROT" PHYSICAL="s_axi_awprot"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="s_axi_awready"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="s_axi_awvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="s_axi_bready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="s_axi_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="s_axi_bvalid"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_rdata"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_rready"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_rvalid"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="s_axi_wdata"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_wready"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_wvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="axi_bram_ctrl_vdp_r0_map_BRAM_PORTA" NAME="BRAM_PORTA" TYPE="INITIATOR" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="2"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="bram_addr_a"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="bram_clk_a"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="bram_wrdata_a"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="bram_rddata_a"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="bram_en_a"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="bram_we_a"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
     </MODULE>
     <MODULE COREREVISION="13" FULLNAME="/axi_bram_ctrl_vdp_s0_att" HWVERSION="4.1" INSTANCE="axi_bram_ctrl_vdp_s0_att" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY_CNTLR" MODTYPE="axi_bram_ctrl" VLNV="xilinx.com:ip:axi_bram_ctrl:4.1">
       <DOCUMENTS>
@@ -993,34 +1280,34 @@
         <PARAMETER NAME="C_S_AXI_HIGHADDR" VALUE="0x100301FF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="10" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_addr">
+        <PORT DIR="O" LEFT="10" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_addr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_att_cpu_addr"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_att_cpu_addr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_0_s0_att_cpu_clk">
+        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_wrapper_0_s0_att_cpu_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_att_cpu_clk"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_att_cpu_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_en">
+        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_en">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_att_cpu_en"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_att_cpu_en"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_dout">
+        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_att_cpu_dout"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_att_cpu_dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_wen">
+        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_wen">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_att_cpu_wen"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_att_cpu_wen"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_att_cpu_din">
+        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_att_cpu_din">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_att_cpu_din"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_att_cpu_din"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="mig_axi_wrapper_0_ui_clk">
@@ -1223,7 +1510,7 @@
         <PARAMETER NAME="C_S_AXI_CTRL_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_AXI_ID_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_S_AXI_PROTOCOL" VALUE="AXI4"/>
+        <PARAMETER NAME="C_S_AXI_PROTOCOL" VALUE="AXI4LITE"/>
         <PARAMETER NAME="C_S_AXI_SUPPORTS_NARROW_BURST" VALUE="0"/>
         <PARAMETER NAME="BMG_INSTANCE" VALUE="EXTERNAL"/>
         <PARAMETER NAME="Component_Name" VALUE="Block_top_axi_bram_ctrl_vdp_s0_att_0"/>
@@ -1233,7 +1520,7 @@
         <PARAMETER NAME="FAULT_INJECT" VALUE="0"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
         <PARAMETER NAME="MEM_DEPTH" VALUE="8192"/>
-        <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+        <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
         <PARAMETER NAME="RD_CMD_OPTIMIZATION" VALUE="0"/>
         <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
         <PARAMETER NAME="SINGLE_PORT_BRAM" VALUE="1"/>
@@ -1245,34 +1532,34 @@
         <PARAMETER NAME="C_S_AXI_HIGHADDR" VALUE="0x1002FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="14" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_addr">
+        <PORT DIR="O" LEFT="14" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_addr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_data_cpu_addr"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_data_cpu_addr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_0_s0_data_cpu_clk">
+        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_wrapper_0_s0_data_cpu_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_data_cpu_clk"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_data_cpu_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_en">
+        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_en">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_data_cpu_en"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_data_cpu_en"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_dout">
+        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_data_cpu_dout"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_data_cpu_dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_wen">
+        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_wen">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_data_cpu_wen"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_data_cpu_wen"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_s0_data_cpu_din">
+        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_s0_data_cpu_din">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="s0_data_cpu_din"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s0_data_cpu_din"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="mig_axi_wrapper_0_ui_clk">
@@ -1285,29 +1572,9 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axi_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_arburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_arcache"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_1_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_1" PORT="Res"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="s_axi_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_arlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_arlock" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_arlock"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="2" NAME="s_axi_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arprot">
@@ -1320,11 +1587,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s_axi_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_arsize"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_arvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_arvalid"/>
@@ -1335,26 +1597,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axi_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_awburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_awcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="s_axi_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_awlock" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_awlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="2" NAME="s_axi_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_awprot"/>
@@ -1363,11 +1605,6 @@
         <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s_axi_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_awsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axi_awvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awvalid">
@@ -1395,11 +1632,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_rlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_rlast"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_rready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_rready"/>
@@ -1418,11 +1650,6 @@
         <PORT DIR="I" LEFT="31" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_wlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M05_AXI_wlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_wready">
@@ -1451,9 +1678,9 @@
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
-          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
-          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
-          <PARAMETER NAME="HAS_LOCK" VALUE="1"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
           <PARAMETER NAME="HAS_PROT" VALUE="1"/>
           <PARAMETER NAME="HAS_QOS" VALUE="0"/>
           <PARAMETER NAME="HAS_REGION" VALUE="0"/>
@@ -1461,13 +1688,13 @@
           <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
           <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
@@ -1476,33 +1703,21 @@
           <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="s_axi_araddr"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="s_axi_arburst"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="s_axi_arcache"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="s_axi_arlen"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="s_axi_arlock"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="s_axi_arprot"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="s_axi_arready"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="s_axi_arsize"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="s_axi_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="s_axi_awaddr"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="s_axi_awburst"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="s_axi_awcache"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="s_axi_awlen"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="s_axi_awlock"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="s_axi_awprot"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="s_axi_awready"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="s_axi_awsize"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="s_axi_awvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="s_axi_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="s_axi_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="s_axi_bvalid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_rdata"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="s_axi_rlast"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_rready"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_rvalid"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="s_axi_wdata"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="s_axi_wlast"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_wready"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_wstrb"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_wvalid"/>
@@ -1547,7 +1762,7 @@
         <PARAMETER NAME="C_S_AXI_CTRL_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_AXI_ID_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_S_AXI_PROTOCOL" VALUE="AXI4"/>
+        <PARAMETER NAME="C_S_AXI_PROTOCOL" VALUE="AXI4LITE"/>
         <PARAMETER NAME="C_S_AXI_SUPPORTS_NARROW_BURST" VALUE="0"/>
         <PARAMETER NAME="BMG_INSTANCE" VALUE="EXTERNAL"/>
         <PARAMETER NAME="Component_Name" VALUE="Block_top_axi_bram_ctrl_map_0"/>
@@ -1557,7 +1772,7 @@
         <PARAMETER NAME="FAULT_INJECT" VALUE="0"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
         <PARAMETER NAME="MEM_DEPTH" VALUE="16384"/>
-        <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+        <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
         <PARAMETER NAME="RD_CMD_OPTIMIZATION" VALUE="0"/>
         <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
         <PARAMETER NAME="SINGLE_PORT_BRAM" VALUE="1"/>
@@ -1569,34 +1784,34 @@
         <PARAMETER NAME="C_S_AXI_HIGHADDR" VALUE="0x1001FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="15" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_addr">
+        <PORT DIR="O" LEFT="15" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_addr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_data_cpu_addr"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_data_cpu_addr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_0_t0_data_cpu_clk">
+        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_wrapper_0_t0_data_cpu_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_data_cpu_clk"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_data_cpu_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_en">
+        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_en">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_data_cpu_en"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_data_cpu_en"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_dout">
+        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_data_cpu_dout"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_data_cpu_dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_wen">
+        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_wen">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_data_cpu_wen"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_data_cpu_wen"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_data_cpu_din">
+        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_data_cpu_din">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_data_cpu_din"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_data_cpu_din"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="mig_axi_wrapper_0_ui_clk">
@@ -1609,29 +1824,9 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axi_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_arburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_arcache"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_1_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_1" PORT="Res"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="s_axi_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_arlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_arlock" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_arlock"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="2" NAME="s_axi_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arprot">
@@ -1644,11 +1839,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s_axi_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_arsize"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_arvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_arvalid"/>
@@ -1659,26 +1849,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axi_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_awburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_awcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="s_axi_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_awlock" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_awlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="2" NAME="s_axi_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_awprot"/>
@@ -1687,11 +1857,6 @@
         <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s_axi_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_awsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axi_awvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awvalid">
@@ -1719,11 +1884,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_rlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_rlast"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_rready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_rready"/>
@@ -1742,11 +1902,6 @@
         <PORT DIR="I" LEFT="31" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_wlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M03_AXI_wlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_wready">
@@ -1775,9 +1930,9 @@
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
-          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
-          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
-          <PARAMETER NAME="HAS_LOCK" VALUE="1"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
           <PARAMETER NAME="HAS_PROT" VALUE="1"/>
           <PARAMETER NAME="HAS_QOS" VALUE="0"/>
           <PARAMETER NAME="HAS_REGION" VALUE="0"/>
@@ -1785,13 +1940,13 @@
           <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
           <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
@@ -1800,33 +1955,21 @@
           <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="s_axi_araddr"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="s_axi_arburst"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="s_axi_arcache"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="s_axi_arlen"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="s_axi_arlock"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="s_axi_arprot"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="s_axi_arready"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="s_axi_arsize"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="s_axi_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="s_axi_awaddr"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="s_axi_awburst"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="s_axi_awcache"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="s_axi_awlen"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="s_axi_awlock"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="s_axi_awprot"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="s_axi_awready"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="s_axi_awsize"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="s_axi_awvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="s_axi_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="s_axi_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="s_axi_bvalid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_rdata"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="s_axi_rlast"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_rready"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_rvalid"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="s_axi_wdata"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="s_axi_wlast"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_wready"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_wstrb"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_wvalid"/>
@@ -1871,7 +2014,7 @@
         <PARAMETER NAME="C_S_AXI_CTRL_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_AXI_ID_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_S_AXI_PROTOCOL" VALUE="AXI4"/>
+        <PARAMETER NAME="C_S_AXI_PROTOCOL" VALUE="AXI4LITE"/>
         <PARAMETER NAME="C_S_AXI_SUPPORTS_NARROW_BURST" VALUE="0"/>
         <PARAMETER NAME="BMG_INSTANCE" VALUE="EXTERNAL"/>
         <PARAMETER NAME="Component_Name" VALUE="Block_top_axi_bram_ctrl_0_0"/>
@@ -1881,7 +2024,7 @@
         <PARAMETER NAME="FAULT_INJECT" VALUE="0"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
         <PARAMETER NAME="MEM_DEPTH" VALUE="8192"/>
-        <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+        <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
         <PARAMETER NAME="RD_CMD_OPTIMIZATION" VALUE="0"/>
         <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
         <PARAMETER NAME="SINGLE_PORT_BRAM" VALUE="1"/>
@@ -1893,34 +2036,34 @@
         <PARAMETER NAME="C_S_AXI_HIGHADDR" VALUE="0x10027FFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="14" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_addr">
+        <PORT DIR="O" LEFT="14" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_addr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_map_cpu_addr"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_map_cpu_addr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_0_t0_map_cpu_clk">
+        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="VDP_wrapper_0_t0_map_cpu_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_map_cpu_clk"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_map_cpu_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_en">
+        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_en">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_map_cpu_en"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_map_cpu_en"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_dout">
+        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_map_cpu_dout"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_map_cpu_dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_wen">
+        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_wen">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_map_cpu_wen"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_map_cpu_wen"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_0_t0_map_cpu_din">
+        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="VDP_wrapper_0_t0_map_cpu_din">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="VDP_0" PORT="t0_map_cpu_din"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="t0_map_cpu_din"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="mig_axi_wrapper_0_ui_clk">
@@ -1933,29 +2076,9 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axi_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_arburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_arcache"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_1_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_1" PORT="Res"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="s_axi_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_arlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_arlock" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_arlock"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="2" NAME="s_axi_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arprot">
@@ -1968,11 +2091,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s_axi_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_arsize"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_arvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_arvalid"/>
@@ -1983,26 +2101,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axi_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_awburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_awcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="s_axi_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_awlock" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_awlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="2" NAME="s_axi_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_awprot"/>
@@ -2011,11 +2109,6 @@
         <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s_axi_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_awsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axi_awvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awvalid">
@@ -2043,11 +2136,6 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_rlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_rlast"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="s_axi_rready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_rready"/>
@@ -2066,11 +2154,6 @@
         <PORT DIR="I" LEFT="31" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_wlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="smartconnect_io" PORT="M02_AXI_wlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_wready">
@@ -2099,9 +2182,9 @@
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
-          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
-          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
-          <PARAMETER NAME="HAS_LOCK" VALUE="1"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
           <PARAMETER NAME="HAS_PROT" VALUE="1"/>
           <PARAMETER NAME="HAS_QOS" VALUE="0"/>
           <PARAMETER NAME="HAS_REGION" VALUE="0"/>
@@ -2109,13 +2192,13 @@
           <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
           <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
@@ -2124,33 +2207,21 @@
           <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="s_axi_araddr"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="s_axi_arburst"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="s_axi_arcache"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="s_axi_arlen"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="s_axi_arlock"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="s_axi_arprot"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="s_axi_arready"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="s_axi_arsize"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="s_axi_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="s_axi_awaddr"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="s_axi_awburst"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="s_axi_awcache"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="s_axi_awlen"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="s_axi_awlock"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="s_axi_awprot"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="s_axi_awready"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="s_axi_awsize"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="s_axi_awvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="s_axi_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="s_axi_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="s_axi_bvalid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_rdata"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="s_axi_rlast"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_rready"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_rvalid"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="s_axi_wdata"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="s_axi_wlast"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_wready"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_wstrb"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_wvalid"/>
@@ -3541,7 +3612,8 @@
             <CONNECTION INSTANCE="smartconnect_io" PORT="aclk"/>
             <CONNECTION INSTANCE="FLASH_SPI_wrapper_0" PORT="s_axi_clk"/>
             <CONNECTION INSTANCE="VexiiSocWrapper_0" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="VDP_0" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ui_clk_sync_rst" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="mig_axi_wrapper_0_ui_clk_sync_rst">
@@ -3633,7 +3705,7 @@
         <PARAMETER NAME="Component_Name" VALUE="Block_top_smartconnect_0_1"/>
         <PARAMETER NAME="HAS_ARESETN" VALUE="1"/>
         <PARAMETER NAME="NUM_CLKS" VALUE="1"/>
-        <PARAMETER NAME="NUM_MI" VALUE="6"/>
+        <PARAMETER NAME="NUM_MI" VALUE="7"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
         <PARAMETER NAME="STRATEGY" VALUE="AUTOMATIC"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
@@ -3814,26 +3886,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M02_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_arburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_arcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="M02_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_arlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_arlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_arlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="2" NAME="M02_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_arprot"/>
@@ -3842,11 +3894,6 @@
         <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M02_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_arsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_arvalid">
@@ -3859,26 +3906,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M02_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_awburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_awcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="M02_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_awlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_awlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="2" NAME="M02_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_awprot"/>
@@ -3887,11 +3914,6 @@
         <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M02_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_awsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_awvalid">
@@ -3919,11 +3941,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_rlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_rlast"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_rready"/>
@@ -3942,11 +3959,6 @@
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_wlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_wlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_map_s_axi_wready">
@@ -3969,26 +3981,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M03_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_arburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M03_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_arcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="M03_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_arlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_arlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_arlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="2" NAME="M03_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_arprot"/>
@@ -3997,11 +3989,6 @@
         <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M03_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_arsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_arvalid">
@@ -4014,26 +4001,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M03_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_awburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M03_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_awcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="M03_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_awlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_awlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="2" NAME="M03_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_awprot"/>
@@ -4042,11 +4009,6 @@
         <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M03_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_awsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_awvalid">
@@ -4074,11 +4036,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_rlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_rlast"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_rready"/>
@@ -4097,11 +4054,6 @@
         <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_wlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_data" PORT="s_axi_wlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_t0_data_s_axi_wready">
@@ -4219,26 +4171,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M05_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_arburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M05_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_arcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="M05_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_arlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M05_AXI_arlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_arlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="2" NAME="M05_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_arprot"/>
@@ -4247,11 +4179,6 @@
         <PORT DIR="I" NAME="M05_AXI_arready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M05_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_arsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M05_AXI_arvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_arvalid">
@@ -4264,26 +4191,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M05_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_awburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M05_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_awcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="M05_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M05_AXI_awlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_awlock"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="2" NAME="M05_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_awprot"/>
@@ -4292,11 +4199,6 @@
         <PORT DIR="I" NAME="M05_AXI_awready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M05_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_awsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M05_AXI_awvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_awvalid">
@@ -4324,11 +4226,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_rlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_rlast"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" NAME="M05_AXI_rready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_rready"/>
@@ -4349,11 +4246,6 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_wlast" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_wlast"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="M05_AXI_wready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_wready"/>
@@ -4367,6 +4259,101 @@
         <PORT DIR="O" NAME="M05_AXI_wvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_s0_data_s_axi_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_s0_data" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="12" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M06_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_arprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="12" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M06_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_awprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="axi_bram_ctrl_vdp_r0_map_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="S00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="VexiiSocWrapper_0_pBus_araddr">
@@ -4643,23 +4630,23 @@
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
-          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
-          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
-          <PARAMETER NAME="HAS_LOCK" VALUE="1"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
           <PARAMETER NAME="HAS_PROT" VALUE="1"/>
-          <PARAMETER NAME="HAS_QOS" VALUE="1"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
           <PARAMETER NAME="HAS_REGION" VALUE="0"/>
           <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
           <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
@@ -4668,33 +4655,21 @@
           <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M02_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M02_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M02_AXI_arcache"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M02_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M02_AXI_arlock"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M02_AXI_arprot"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M02_AXI_arready"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M02_AXI_arsize"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M02_AXI_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M02_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M02_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M02_AXI_awcache"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M02_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M02_AXI_awlock"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M02_AXI_awprot"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M02_AXI_awready"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M02_AXI_awsize"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M02_AXI_awvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M02_AXI_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M02_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M02_AXI_bvalid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M02_AXI_rdata"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M02_AXI_rlast"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M02_AXI_rready"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M02_AXI_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M02_AXI_rvalid"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M02_AXI_wdata"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M02_AXI_wlast"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M02_AXI_wready"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M02_AXI_wstrb"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M02_AXI_wvalid"/>
@@ -4709,23 +4684,23 @@
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
-          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
-          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
-          <PARAMETER NAME="HAS_LOCK" VALUE="1"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
           <PARAMETER NAME="HAS_PROT" VALUE="1"/>
-          <PARAMETER NAME="HAS_QOS" VALUE="1"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
           <PARAMETER NAME="HAS_REGION" VALUE="0"/>
           <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
           <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
@@ -4734,33 +4709,21 @@
           <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M03_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M03_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M03_AXI_arcache"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M03_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M03_AXI_arlock"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M03_AXI_arprot"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M03_AXI_arready"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M03_AXI_arsize"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M03_AXI_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M03_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M03_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M03_AXI_awcache"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M03_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M03_AXI_awlock"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M03_AXI_awprot"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M03_AXI_awready"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M03_AXI_awsize"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M03_AXI_awvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M03_AXI_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M03_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M03_AXI_bvalid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M03_AXI_rdata"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M03_AXI_rlast"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M03_AXI_rready"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M03_AXI_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M03_AXI_rvalid"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M03_AXI_wdata"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M03_AXI_wlast"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M03_AXI_wready"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M03_AXI_wstrb"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M03_AXI_wvalid"/>
@@ -4829,23 +4792,23 @@
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
-          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
-          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
-          <PARAMETER NAME="HAS_LOCK" VALUE="1"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
           <PARAMETER NAME="HAS_PROT" VALUE="1"/>
-          <PARAMETER NAME="HAS_QOS" VALUE="1"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
           <PARAMETER NAME="HAS_REGION" VALUE="0"/>
           <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
           <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
@@ -4854,36 +4817,78 @@
           <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M05_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M05_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M05_AXI_arcache"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M05_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M05_AXI_arlock"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M05_AXI_arprot"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M05_AXI_arready"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M05_AXI_arsize"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M05_AXI_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M05_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M05_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M05_AXI_awcache"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M05_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M05_AXI_awlock"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M05_AXI_awprot"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M05_AXI_awready"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M05_AXI_awsize"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M05_AXI_awvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M05_AXI_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M05_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M05_AXI_bvalid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M05_AXI_rdata"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M05_AXI_rlast"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M05_AXI_rready"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M05_AXI_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M05_AXI_rvalid"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M05_AXI_wdata"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M05_AXI_wlast"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M05_AXI_wready"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M05_AXI_wstrb"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M05_AXI_wvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="smartconnect_io_M06_AXI" DATAWIDTH="32" NAME="M06_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="13"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="Block_top_mig_axi_wrapper_0_0_ui_clk"/>
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="1"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="M06_AXI_araddr"/>
+            <PORTMAP LOGICAL="ARPROT" PHYSICAL="M06_AXI_arprot"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="M06_AXI_arready"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="M06_AXI_arvalid"/>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="M06_AXI_awaddr"/>
+            <PORTMAP LOGICAL="AWPROT" PHYSICAL="M06_AXI_awprot"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="M06_AXI_awready"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="M06_AXI_awvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="M06_AXI_bready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="M06_AXI_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="M06_AXI_bvalid"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="M06_AXI_rdata"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="M06_AXI_rready"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="M06_AXI_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="M06_AXI_rvalid"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="M06_AXI_wdata"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="M06_AXI_wready"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="M06_AXI_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="M06_AXI_wvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -5622,12 +5627,12 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_rst_n">
+        <PORT DIR="I" LEFT="0" NAME="Op1" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_rst_n">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="rst_n"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+        <PORT DIR="O" LEFT="0" NAME="Res" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_axi_wrapper_0" PORT="sys_rst"/>
           </CONNECTIONS>
@@ -5645,12 +5650,12 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="mig_axi_wrapper_0_ui_clk_sync_rst">
+        <PORT DIR="I" LEFT="0" NAME="Op1" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="undef" SIGNAME="mig_axi_wrapper_0_ui_clk_sync_rst">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_axi_wrapper_0" PORT="ui_clk_sync_rst"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
+        <PORT DIR="O" LEFT="0" NAME="Res" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_axi_wrapper_0" PORT="aresetn"/>
             <CONNECTION INSTANCE="axi_bram_ctrl_vdp_t0_map" PORT="s_axi_aresetn"/>
@@ -5662,7 +5667,8 @@
             <CONNECTION INSTANCE="smartconnect_mem" PORT="aresetn"/>
             <CONNECTION INSTANCE="smartconnect_io" PORT="aresetn"/>
             <CONNECTION INSTANCE="VexiiSocWrapper_0" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="VDP_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_vdp_r0_map" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="VDP_wrapper_0" PORT="s_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
