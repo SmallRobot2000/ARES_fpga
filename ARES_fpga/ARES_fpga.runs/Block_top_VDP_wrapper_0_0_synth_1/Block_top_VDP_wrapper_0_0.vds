@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Mon Aug 17 21:11:46 2026
-# Process ID         : 123501
+# Start of session at: Mon Aug 17 23:31:18 2026
+# Process ID         : 35567
 # Current directory  : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1
 # Command line       : vivado -log Block_top_VDP_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_VDP_wrapper_0_0.tcl
 # Log file           : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/Block_top_VDP_wrapper_0_0.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 5 5600 6-Core Processor
-# CPU Frequency      : 3300.530 MHz
+# CPU Frequency      : 4018.355 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 33529 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 37824 MB
-# Available Virtual  : 25916 MB
+# Available Virtual  : 31210 MB
 #-----------------------------------------------------------
 source Block_top_VDP_wrapper_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -37,9 +37,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tfgg484-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 123611
+INFO: [Synth 8-7075] Helper process launched with PID 35981
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2211.035 ; gain = 482.188 ; free physical = 5366 ; free virtual = 22114
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2210.707 ; gain = 481.188 ; free physical = 13090 ; free virtual = 23126
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Block_top_VDP_wrapper_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VDP_wrapper_0_0/synth/Block_top_VDP_wrapper_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'VDP_wrapper' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP_wrapper.v:23]
@@ -52,9 +52,12 @@ INFO: [Synth 8-6157] synthesizing module 'VDP' [/home/lovro/ARES/ARES_fpga/ARES_
 	Parameter VGA_V_FRONT_PORCH bound to: 11 - type: integer 
 	Parameter VGA_H_BACK_PORCH bound to: 48 - type: integer 
 	Parameter VGA_V_BACK_PORCH bound to: 31 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_fin_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_fin_line_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_fin_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_fin_line_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'REG_MEMORY' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:1175]
+	Parameter NUM_GEN bound to: 2 - type: integer 
+	Parameter T0_GEN_NUM bound to: 0 - type: integer 
+	Parameter S0_GEN_NUM bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_fin_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_fin_line_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_fin_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_fin_line_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'REG_MEMORY' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:1174]
 	Parameter REG_CTRL_0 bound to: 8'b00000000 
 	Parameter REG_STAT_0 bound to: 8'b00000001 
 	Parameter REG_LINE bound to: 8'b00000010 
@@ -62,42 +65,42 @@ INFO: [Synth 8-6157] synthesizing module 'REG_MEMORY' [/home/lovro/ARES/ARES_fpg
 	Parameter REG_T0_Y_OFF bound to: 8'b00000101 
 	Parameter REG_T1_X_OFF bound to: 8'b00001000 
 	Parameter REG_T1_Y_OFF bound to: 8'b00001001 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:1268]
-INFO: [Synth 8-6155] done synthesizing module 'REG_MEMORY' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:1175]
-INFO: [Synth 8-6157] synthesizing module 'VDP_tile_gen' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:612]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:1267]
+INFO: [Synth 8-6155] done synthesizing module 'REG_MEMORY' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:1174]
+INFO: [Synth 8-6157] synthesizing module 'VDP_tile_gen' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:611]
 	Parameter SCREEN_WIDTH bound to: 640 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 480 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_buf_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_buf_line_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_buf_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_buf_line_stub.v:6]
-WARNING: [Synth 8-7071] port 'douta' of module 'blk_mem_buf_line' is unconnected for instance 'line_buf' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:656]
-WARNING: [Synth 8-7071] port 'dinb' of module 'blk_mem_buf_line' is unconnected for instance 'line_buf' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:656]
-WARNING: [Synth 8-7023] instance 'line_buf' of module 'blk_mem_buf_line' has 11 connections declared, but only 9 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:656]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_tile_map' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_tile_map_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_tile_map' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_tile_map_stub.v:6]
-WARNING: [Synth 8-7071] port 'dina' of module 'blk_mem_tile_map' is unconnected for instance 'Tile_MAP_mem' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:676]
-WARNING: [Synth 8-7023] instance 'Tile_MAP_mem' of module 'blk_mem_tile_map' has 11 connections declared, but only 10 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:676]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_tile_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_tile_data_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_tile_data' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_tile_data_stub.v:6]
-WARNING: [Synth 8-7071] port 'dina' of module 'blk_mem_tile_data' is unconnected for instance 'Tile_DATA_mem' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:694]
-WARNING: [Synth 8-7023] instance 'Tile_DATA_mem' of module 'blk_mem_tile_data' has 11 connections declared, but only 10 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:694]
-INFO: [Synth 8-6155] done synthesizing module 'VDP_tile_gen' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:612]
-INFO: [Synth 8-6157] synthesizing module 'VDP_sprite_gen' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:794]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_buf_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_buf_line_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_buf_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_buf_line_stub.v:6]
+WARNING: [Synth 8-7071] port 'douta' of module 'blk_mem_buf_line' is unconnected for instance 'line_buf' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:655]
+WARNING: [Synth 8-7071] port 'dinb' of module 'blk_mem_buf_line' is unconnected for instance 'line_buf' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:655]
+WARNING: [Synth 8-7023] instance 'line_buf' of module 'blk_mem_buf_line' has 11 connections declared, but only 9 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:655]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_tile_map' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_tile_map_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_tile_map' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_tile_map_stub.v:6]
+WARNING: [Synth 8-7071] port 'dina' of module 'blk_mem_tile_map' is unconnected for instance 'Tile_MAP_mem' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:675]
+WARNING: [Synth 8-7023] instance 'Tile_MAP_mem' of module 'blk_mem_tile_map' has 11 connections declared, but only 10 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:675]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_tile_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_tile_data_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_tile_data' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_tile_data_stub.v:6]
+WARNING: [Synth 8-7071] port 'dina' of module 'blk_mem_tile_data' is unconnected for instance 'Tile_DATA_mem' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:693]
+WARNING: [Synth 8-7023] instance 'Tile_DATA_mem' of module 'blk_mem_tile_data' has 11 connections declared, but only 10 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:693]
+INFO: [Synth 8-6155] done synthesizing module 'VDP_tile_gen' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:611]
+INFO: [Synth 8-6157] synthesizing module 'VDP_sprite_gen' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:793]
 	Parameter SCREEN_WIDTH bound to: 640 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 480 - type: integer 
 	Parameter MAX_SPR_LINE bound to: 32 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_gen_spr_line_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_gen_spr_line_stub.v:6]
-WARNING: [Synth 8-7071] port 'douta' of module 'blk_mem_gen_spr_line' is unconnected for instance 'spr_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:844]
-WARNING: [Synth 8-7023] instance 'spr_line' of module 'blk_mem_gen_spr_line' has 10 connections declared, but only 9 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:844]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_gen_spr_data_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_data' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_gen_spr_data_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_att' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_gen_spr_att_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_att' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-123501-lovroLinuxM/realtime/blk_mem_gen_spr_att_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'VDP_sprite_gen' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:794]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_gen_spr_line_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_line' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_gen_spr_line_stub.v:6]
+WARNING: [Synth 8-7071] port 'douta' of module 'blk_mem_gen_spr_line' is unconnected for instance 'spr_line' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:843]
+WARNING: [Synth 8-7023] instance 'spr_line' of module 'blk_mem_gen_spr_line' has 10 connections declared, but only 9 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:843]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_data' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_gen_spr_data_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_data' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_gen_spr_data_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_spr_att' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_gen_spr_att_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_spr_att' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/.Xil/Vivado-35567-lovroLinuxM/realtime/blk_mem_gen_spr_att_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'VDP_sprite_gen' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:793]
 INFO: [Synth 8-6155] done synthesizing module 'VDP' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:32]
 INFO: [Synth 8-6155] done synthesizing module 'VDP_wrapper' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP_wrapper.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Block_top_VDP_wrapper_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VDP_wrapper_0_0/synth/Block_top_VDP_wrapper_0_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element src_pixel_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:1127]
+WARNING: [Synth 8-6014] Unused sequential element src_pixel_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:1126]
 INFO: [Synth 8-7129] Port att_cpu_addr[1] in module VDP_sprite_gen is either unconnected or has no load
 INFO: [Synth 8-7129] Port att_cpu_addr[0] in module VDP_sprite_gen is either unconnected or has no load
 INFO: [Synth 8-7129] Port data_cpu_addr[1] in module VDP_sprite_gen is either unconnected or has no load
@@ -109,18 +112,18 @@ INFO: [Synth 8-7129] Port data_cpu_addr[0] in module VDP_tile_gen is either unco
 INFO: [Synth 8-7129] Port r0_map_cpu_addr[1] in module REG_MEMORY is either unconnected or has no load
 INFO: [Synth 8-7129] Port r0_map_cpu_addr[0] in module REG_MEMORY is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2360.973 ; gain = 632.125 ; free physical = 5069 ; free virtual = 21820
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2361.645 ; gain = 632.125 ; free physical = 12636 ; free virtual = 22675
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2369.879 ; gain = 641.031 ; free physical = 5067 ; free virtual = 21818
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2370.551 ; gain = 641.031 ; free physical = 12620 ; free virtual = 22659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2369.879 ; gain = 641.031 ; free physical = 5067 ; free virtual = 21818
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2370.551 ; gain = 641.031 ; free physical = 12620 ; free virtual = 22659
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2369.879 ; gain = 0.000 ; free physical = 5066 ; free virtual = 21817
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2370.551 ; gain = 0.000 ; free physical = 12628 ; free virtual = 22666
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -151,27 +154,27 @@ Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_
 Finished Parsing XDC File [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2471.617 ; gain = 0.000 ; free physical = 5047 ; free virtual = 21798
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2474.289 ; gain = 0.000 ; free physical = 12523 ; free virtual = 22561
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2471.652 ; gain = 0.000 ; free physical = 5047 ; free virtual = 21798
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2474.324 ; gain = 0.000 ; free physical = 12523 ; free virtual = 22561
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2471.652 ; gain = 742.805 ; free physical = 4943 ; free virtual = 21700
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2474.324 ; gain = 744.805 ; free physical = 12122 ; free virtual = 22174
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2479.621 ; gain = 750.773 ; free physical = 4943 ; free virtual = 21700
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2482.293 ; gain = 752.773 ; free physical = 12122 ; free virtual = 22174
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2479.621 ; gain = 750.773 ; free physical = 4942 ; free virtual = 21699
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2482.293 ; gain = 752.773 ; free physical = 12122 ; free virtual = 22174
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'VDP_tile_gen__xdcDup__1'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'VDP_tile_gen'
@@ -230,7 +233,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'gen_fin_state_reg' using encoding 'one-hot' in module 'VDP'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2479.621 ; gain = 750.773 ; free physical = 4943 ; free virtual = 21701
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2482.293 ; gain = 752.773 ; free physical = 12119 ; free virtual = 22172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -261,8 +264,8 @@ Detailed RTL Component Info :
 	                7 Bit    Registers := 4     
 	                6 Bit    Registers := 2     
 	                4 Bit    Registers := 4     
-	                3 Bit    Registers := 3     
-	                2 Bit    Registers := 3     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 4     
 	                1 Bit    Registers := 5     
 +---RAMs : 
 	              16K Bit	(1024 X 16 bit)          RAMs := 1     
@@ -296,7 +299,7 @@ Detailed RTL Component Info :
 	   2 Input    3 Bit        Muxes := 2     
 	   8 Input    3 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 7     
 	   6 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
 	   4 Input    1 Bit        Muxes := 3     
@@ -373,7 +376,7 @@ WARNING: [Synth 8-3332] Sequential element (FSM_onehot_gen_fin_state_reg[5]) is 
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_gen_fin_state_reg[4]) is unused and will be removed from module VDP.
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_gen_fin_state_reg[3]) is unused and will be removed from module VDP.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2479.621 ; gain = 750.773 ; free physical = 4900 ; free virtual = 21672
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2482.293 ; gain = 752.773 ; free physical = 12031 ; free virtual = 22084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -398,13 +401,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2517.621 ; gain = 788.773 ; free physical = 4857 ; free virtual = 21629
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2518.293 ; gain = 788.773 ; free physical = 13371 ; free virtual = 23427
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2596.246 ; gain = 867.398 ; free physical = 4756 ; free virtual = 21565
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2595.918 ; gain = 866.398 ; free physical = 14714 ; free virtual = 24805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -428,7 +431,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2596.246 ; gain = 867.398 ; free physical = 4753 ; free virtual = 21529
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2595.918 ; gain = 866.398 ; free physical = 14688 ; free virtual = 24746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -547,37 +550,37 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \dut/T1_gen/line_buf  has uncon
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \dut/T1_gen/line_buf  has unconnected pin dinb[12]
 INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2724.027 ; gain = 995.180 ; free physical = 4680 ; free virtual = 21462
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2724.699 ; gain = 995.180 ; free physical = 14536 ; free virtual = 24611
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2724.027 ; gain = 995.180 ; free physical = 4680 ; free virtual = 21462
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2724.699 ; gain = 995.180 ; free physical = 14536 ; free virtual = 24611
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2724.027 ; gain = 995.180 ; free physical = 4680 ; free virtual = 21462
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2724.699 ; gain = 995.180 ; free physical = 14529 ; free virtual = 24603
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2724.027 ; gain = 995.180 ; free physical = 4680 ; free virtual = 21462
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2724.699 ; gain = 995.180 ; free physical = 14529 ; free virtual = 24603
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2724.027 ; gain = 995.180 ; free physical = 4680 ; free virtual = 21462
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2724.699 ; gain = 995.180 ; free physical = 14529 ; free virtual = 24603
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2724.027 ; gain = 995.180 ; free physical = 4680 ; free virtual = 21462
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2724.699 ; gain = 995.180 ; free physical = 14529 ; free virtual = 24603
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -610,47 +613,47 @@ Report Cell Usage:
 |11    |CARRY4               |    65|
 |12    |LUT1                 |    19|
 |13    |LUT2                 |   264|
-|14    |LUT3                 |   130|
-|15    |LUT4                 |   199|
-|16    |LUT5                 |   214|
-|17    |LUT6                 |   423|
+|14    |LUT3                 |   128|
+|15    |LUT4                 |   202|
+|16    |LUT5                 |   216|
+|17    |LUT6                 |   420|
 |18    |MUXF7                |    80|
 |19    |MUXF8                |    16|
 |20    |RAM128X1D            |   192|
 |21    |RAM256X1S            |    32|
 |22    |RAM32M               |    12|
-|23    |FDRE                 |   706|
+|23    |FDRE                 |   705|
 |24    |FDSE                 |     4|
 +------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2724.027 ; gain = 995.180 ; free physical = 4680 ; free virtual = 21462
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2724.699 ; gain = 995.180 ; free physical = 14529 ; free virtual = 24603
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 192 critical warnings and 41 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2724.027 ; gain = 893.406 ; free physical = 4685 ; free virtual = 21467
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2724.035 ; gain = 995.180 ; free physical = 4685 ; free virtual = 21467
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2724.699 ; gain = 891.406 ; free physical = 14521 ; free virtual = 24595
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2724.707 ; gain = 995.180 ; free physical = 14521 ; free virtual = 24595
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2724.035 ; gain = 0.000 ; free physical = 4843 ; free virtual = 21625
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2724.707 ; gain = 0.000 ; free physical = 14697 ; free virtual = 24771
 INFO: [Netlist 29-17] Analyzing 397 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2780.055 ; gain = 0.000 ; free physical = 4857 ; free virtual = 21636
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2780.727 ; gain = 0.000 ; free physical = 14707 ; free virtual = 24781
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 236 instances were transformed.
   RAM128X1D => RAM128X1D (MUXF7(x2), RAMD64E(x4)): 192 instances
   RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 32 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 12 instances
 
-Synth Design complete | Checksum: 6d338549
+Synth Design complete | Checksum: 7e40d05e
 INFO: [Common 17-83] Releasing license: Synthesis
 75 Infos, 54 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:28 . Memory (MB): peak = 2780.090 ; gain = 1166.516 ; free physical = 4857 ; free virtual = 21636
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1843.080; main = 1731.975; forked = 234.851
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3590.453; main = 2780.059; forked = 994.203
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 2780.762 ; gain = 1215.234 ; free physical = 14707 ; free virtual = 24781
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1730.386; main = 1687.308; forked = 210.330
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3562.105; main = 2780.730; forked = 994.199
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Coretcl 2-1174] Renamed 13 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2804.066 ; gain = 0.000 ; free physical = 4863 ; free virtual = 21642
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2804.738 ; gain = 0.000 ; free physical = 14707 ; free virtual = 24781
 INFO: [Common 17-1381] The checkpoint '/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VDP_wrapper_0_0_synth_1/Block_top_VDP_wrapper_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Block_top_VDP_wrapper_0_0_utilization_synth.rpt -pb Block_top_VDP_wrapper_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Aug 17 21:12:19 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 17 23:31:55 2026...

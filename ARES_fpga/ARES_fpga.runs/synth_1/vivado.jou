@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Mon Aug 17 21:13:20 2026
-# Process ID         : 124317
+# Start of session at: Mon Aug 17 23:32:57 2026
+# Process ID         : 37293
 # Current directory  : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1
 # Command line       : vivado -log Block_top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_wrapper.tcl
 # Log file           : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/synth_1/Block_top_wrapper.vds
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 5 5600 6-Core Processor
-# CPU Frequency      : 3053.742 MHz
+# CPU Frequency      : 3055.570 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 33529 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 37824 MB
-# Available Virtual  : 26054 MB
+# Available Virtual  : 31549 MB
 #-----------------------------------------------------------
 source Block_top_wrapper.tcl -notrace

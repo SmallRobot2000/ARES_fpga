@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Aug 17 21:12:19 2026
+-- Date        : Mon Aug 17 23:31:55 2026
 -- Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VDP_wrapper_0_0/Block_top_VDP_wrapper_0_0_sim_netlist.vhdl
@@ -658,15 +658,15 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_REG_MEMORY is
   signal \^v_cnt_reg[8]\ : STD_LOGIC;
   signal \vga_r[3]_INST_0_i_5_n_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \ctrl_reg[1]_i_1\ : label is "soft_lutpair153";
-  attribute SOFT_HLUTNM of \ctrl_reg[2]_i_1\ : label is "soft_lutpair153";
-  attribute SOFT_HLUTNM of \data_out[1]_i_10\ : label is "soft_lutpair136";
-  attribute SOFT_HLUTNM of \data_out[1]_i_11\ : label is "soft_lutpair133";
-  attribute SOFT_HLUTNM of \data_out[31]_i_5\ : label is "soft_lutpair135";
-  attribute SOFT_HLUTNM of \data_out[31]_i_6\ : label is "soft_lutpair134";
-  attribute SOFT_HLUTNM of \data_out[4]_i_7\ : label is "soft_lutpair134";
-  attribute SOFT_HLUTNM of \data_out[7]_i_9\ : label is "soft_lutpair135";
-  attribute SOFT_HLUTNM of \data_out[8]_i_8\ : label is "soft_lutpair133";
+  attribute SOFT_HLUTNM of \ctrl_reg[1]_i_1\ : label is "soft_lutpair152";
+  attribute SOFT_HLUTNM of \ctrl_reg[2]_i_1\ : label is "soft_lutpair152";
+  attribute SOFT_HLUTNM of \data_out[1]_i_10\ : label is "soft_lutpair132";
+  attribute SOFT_HLUTNM of \data_out[1]_i_11\ : label is "soft_lutpair135";
+  attribute SOFT_HLUTNM of \data_out[31]_i_5\ : label is "soft_lutpair134";
+  attribute SOFT_HLUTNM of \data_out[31]_i_6\ : label is "soft_lutpair133";
+  attribute SOFT_HLUTNM of \data_out[4]_i_7\ : label is "soft_lutpair133";
+  attribute SOFT_HLUTNM of \data_out[7]_i_9\ : label is "soft_lutpair134";
+  attribute SOFT_HLUTNM of \data_out[8]_i_8\ : label is "soft_lutpair132";
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of palette_s0_mem_reg_0_127_0_0 : label is "{SYNTH-5 {cell *THIS*}}";
   attribute RTL_RAM_BITS : integer;
@@ -2885,45 +2885,45 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_REG_MEMORY is
   attribute ram_offset of reg_space_mem_reg_0_255_9_9 : label is 0;
   attribute ram_slice_begin of reg_space_mem_reg_0_255_9_9 : label is 9;
   attribute ram_slice_end of reg_space_mem_reg_0_255_9_9 : label is 9;
-  attribute SOFT_HLUTNM of \t0_palette_data[0]_i_1\ : label is "soft_lutpair145";
-  attribute SOFT_HLUTNM of \t0_palette_data[10]_i_1\ : label is "soft_lutpair150";
-  attribute SOFT_HLUTNM of \t0_palette_data[11]_i_1\ : label is "soft_lutpair150";
-  attribute SOFT_HLUTNM of \t0_palette_data[12]_i_1\ : label is "soft_lutpair151";
-  attribute SOFT_HLUTNM of \t0_palette_data[13]_i_1\ : label is "soft_lutpair151";
-  attribute SOFT_HLUTNM of \t0_palette_data[14]_i_1\ : label is "soft_lutpair152";
-  attribute SOFT_HLUTNM of \t0_palette_data[15]_i_1\ : label is "soft_lutpair152";
-  attribute SOFT_HLUTNM of \t0_palette_data[1]_i_1\ : label is "soft_lutpair145";
-  attribute SOFT_HLUTNM of \t0_palette_data[2]_i_1\ : label is "soft_lutpair146";
-  attribute SOFT_HLUTNM of \t0_palette_data[3]_i_1\ : label is "soft_lutpair146";
-  attribute SOFT_HLUTNM of \t0_palette_data[4]_i_1\ : label is "soft_lutpair147";
-  attribute SOFT_HLUTNM of \t0_palette_data[5]_i_1\ : label is "soft_lutpair147";
-  attribute SOFT_HLUTNM of \t0_palette_data[6]_i_1\ : label is "soft_lutpair148";
-  attribute SOFT_HLUTNM of \t0_palette_data[7]_i_1\ : label is "soft_lutpair148";
-  attribute SOFT_HLUTNM of \t0_palette_data[8]_i_1\ : label is "soft_lutpair149";
-  attribute SOFT_HLUTNM of \t0_palette_data[9]_i_1\ : label is "soft_lutpair149";
-  attribute SOFT_HLUTNM of \t1_palette_data[0]_i_1\ : label is "soft_lutpair137";
-  attribute SOFT_HLUTNM of \t1_palette_data[10]_i_1\ : label is "soft_lutpair142";
-  attribute SOFT_HLUTNM of \t1_palette_data[11]_i_1\ : label is "soft_lutpair142";
-  attribute SOFT_HLUTNM of \t1_palette_data[12]_i_1\ : label is "soft_lutpair143";
-  attribute SOFT_HLUTNM of \t1_palette_data[13]_i_1\ : label is "soft_lutpair143";
-  attribute SOFT_HLUTNM of \t1_palette_data[14]_i_1\ : label is "soft_lutpair144";
-  attribute SOFT_HLUTNM of \t1_palette_data[15]_i_1\ : label is "soft_lutpair144";
-  attribute SOFT_HLUTNM of \t1_palette_data[1]_i_1\ : label is "soft_lutpair137";
-  attribute SOFT_HLUTNM of \t1_palette_data[2]_i_1\ : label is "soft_lutpair138";
-  attribute SOFT_HLUTNM of \t1_palette_data[3]_i_1\ : label is "soft_lutpair138";
-  attribute SOFT_HLUTNM of \t1_palette_data[4]_i_1\ : label is "soft_lutpair139";
-  attribute SOFT_HLUTNM of \t1_palette_data[5]_i_1\ : label is "soft_lutpair139";
-  attribute SOFT_HLUTNM of \t1_palette_data[6]_i_1\ : label is "soft_lutpair140";
-  attribute SOFT_HLUTNM of \t1_palette_data[7]_i_1\ : label is "soft_lutpair140";
-  attribute SOFT_HLUTNM of \t1_palette_data[8]_i_1\ : label is "soft_lutpair141";
-  attribute SOFT_HLUTNM of \t1_palette_data[9]_i_1\ : label is "soft_lutpair141";
-  attribute SOFT_HLUTNM of \t1_x_off_reg[8]_i_1\ : label is "soft_lutpair155";
-  attribute SOFT_HLUTNM of \t1_x_off_reg[9]_i_1\ : label is "soft_lutpair154";
-  attribute SOFT_HLUTNM of \t1_y_off_reg[8]_i_1\ : label is "soft_lutpair155";
-  attribute SOFT_HLUTNM of \t1_y_off_reg[9]_i_1\ : label is "soft_lutpair154";
-  attribute SOFT_HLUTNM of \v_cnt[4]_i_1\ : label is "soft_lutpair132";
-  attribute SOFT_HLUTNM of \vga_r[3]_INST_0_i_1\ : label is "soft_lutpair132";
-  attribute SOFT_HLUTNM of \vga_r[3]_INST_0_i_2\ : label is "soft_lutpair136";
+  attribute SOFT_HLUTNM of \t0_palette_data[0]_i_1\ : label is "soft_lutpair144";
+  attribute SOFT_HLUTNM of \t0_palette_data[10]_i_1\ : label is "soft_lutpair149";
+  attribute SOFT_HLUTNM of \t0_palette_data[11]_i_1\ : label is "soft_lutpair149";
+  attribute SOFT_HLUTNM of \t0_palette_data[12]_i_1\ : label is "soft_lutpair150";
+  attribute SOFT_HLUTNM of \t0_palette_data[13]_i_1\ : label is "soft_lutpair150";
+  attribute SOFT_HLUTNM of \t0_palette_data[14]_i_1\ : label is "soft_lutpair151";
+  attribute SOFT_HLUTNM of \t0_palette_data[15]_i_1\ : label is "soft_lutpair151";
+  attribute SOFT_HLUTNM of \t0_palette_data[1]_i_1\ : label is "soft_lutpair144";
+  attribute SOFT_HLUTNM of \t0_palette_data[2]_i_1\ : label is "soft_lutpair145";
+  attribute SOFT_HLUTNM of \t0_palette_data[3]_i_1\ : label is "soft_lutpair145";
+  attribute SOFT_HLUTNM of \t0_palette_data[4]_i_1\ : label is "soft_lutpair146";
+  attribute SOFT_HLUTNM of \t0_palette_data[5]_i_1\ : label is "soft_lutpair146";
+  attribute SOFT_HLUTNM of \t0_palette_data[6]_i_1\ : label is "soft_lutpair147";
+  attribute SOFT_HLUTNM of \t0_palette_data[7]_i_1\ : label is "soft_lutpair147";
+  attribute SOFT_HLUTNM of \t0_palette_data[8]_i_1\ : label is "soft_lutpair148";
+  attribute SOFT_HLUTNM of \t0_palette_data[9]_i_1\ : label is "soft_lutpair148";
+  attribute SOFT_HLUTNM of \t1_palette_data[0]_i_1\ : label is "soft_lutpair136";
+  attribute SOFT_HLUTNM of \t1_palette_data[10]_i_1\ : label is "soft_lutpair141";
+  attribute SOFT_HLUTNM of \t1_palette_data[11]_i_1\ : label is "soft_lutpair141";
+  attribute SOFT_HLUTNM of \t1_palette_data[12]_i_1\ : label is "soft_lutpair142";
+  attribute SOFT_HLUTNM of \t1_palette_data[13]_i_1\ : label is "soft_lutpair142";
+  attribute SOFT_HLUTNM of \t1_palette_data[14]_i_1\ : label is "soft_lutpair143";
+  attribute SOFT_HLUTNM of \t1_palette_data[15]_i_1\ : label is "soft_lutpair143";
+  attribute SOFT_HLUTNM of \t1_palette_data[1]_i_1\ : label is "soft_lutpair136";
+  attribute SOFT_HLUTNM of \t1_palette_data[2]_i_1\ : label is "soft_lutpair137";
+  attribute SOFT_HLUTNM of \t1_palette_data[3]_i_1\ : label is "soft_lutpair137";
+  attribute SOFT_HLUTNM of \t1_palette_data[4]_i_1\ : label is "soft_lutpair138";
+  attribute SOFT_HLUTNM of \t1_palette_data[5]_i_1\ : label is "soft_lutpair138";
+  attribute SOFT_HLUTNM of \t1_palette_data[6]_i_1\ : label is "soft_lutpair139";
+  attribute SOFT_HLUTNM of \t1_palette_data[7]_i_1\ : label is "soft_lutpair139";
+  attribute SOFT_HLUTNM of \t1_palette_data[8]_i_1\ : label is "soft_lutpair140";
+  attribute SOFT_HLUTNM of \t1_palette_data[9]_i_1\ : label is "soft_lutpair140";
+  attribute SOFT_HLUTNM of \t1_x_off_reg[8]_i_1\ : label is "soft_lutpair154";
+  attribute SOFT_HLUTNM of \t1_x_off_reg[9]_i_1\ : label is "soft_lutpair153";
+  attribute SOFT_HLUTNM of \t1_y_off_reg[8]_i_1\ : label is "soft_lutpair154";
+  attribute SOFT_HLUTNM of \t1_y_off_reg[9]_i_1\ : label is "soft_lutpair153";
+  attribute SOFT_HLUTNM of \v_cnt[4]_i_1\ : label is "soft_lutpair131";
+  attribute SOFT_HLUTNM of \vga_r[3]_INST_0_i_1\ : label is "soft_lutpair131";
+  attribute SOFT_HLUTNM of \vga_r[3]_INST_0_i_2\ : label is "soft_lutpair135";
 begin
   D(0) <= \^d\(0);
   ctrl_reg(2 downto 0) <= \^ctrl_reg\(2 downto 0);
@@ -3625,11 +3625,11 @@ begin
     );
 \data_out[1]_i_10\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8"
+      INIT => X"7"
     )
         port map (
-      I0 => Q(7),
-      I1 => Q(8),
+      I0 => Q(6),
+      I1 => Q(5),
       O => \data_out[1]_i_10_n_0\
     );
 \data_out[1]_i_11\: unisim.vcomponents.LUT2
@@ -3637,8 +3637,8 @@ begin
       INIT => X"7"
     )
         port map (
-      I0 => Q(6),
-      I1 => Q(5),
+      I0 => Q(7),
+      I1 => Q(8),
       O => \data_out[1]_i_11_n_0\
     );
 \data_out[1]_i_2\: unisim.vcomponents.LUT6
@@ -3718,7 +3718,7 @@ begin
     );
 \data_out[1]_i_9\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFFF2F2F0FF"
+      INIT => X"FFFFFFFFF1F1F0FF"
     )
         port map (
       I0 => \data_out[1]_i_10_n_0\,
@@ -10455,6 +10455,7 @@ entity Block_top_VDP_wrapper_0_0_VDP_sprite_gen is
     s0_data_cpu_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
     s0_palette_addr : out STD_LOGIC_VECTOR ( 9 downto 0 );
     s0_att_cpu_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s0_done : out STD_LOGIC;
     \v_cnt_reg[6]\ : out STD_LOGIC;
     \v_cnt_reg[7]\ : out STD_LOGIC;
     \v_cnt_reg[2]\ : out STD_LOGIC;
@@ -10462,7 +10463,6 @@ entity Block_top_VDP_wrapper_0_0_VDP_sprite_gen is
     \v_cnt_reg[9]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     DPRA : out STD_LOGIC_VECTOR ( 6 downto 0 );
     \pal_issue_reg[5]_0\ : out STD_LOGIC_VECTOR ( 6 downto 0 );
-    \gen_done_reg[2]\ : out STD_LOGIC;
     \h_cnt_reg[5]\ : out STD_LOGIC;
     gen_fin_data1 : out STD_LOGIC;
     s_axi_aclk : in STD_LOGIC;
@@ -10478,8 +10478,6 @@ entity Block_top_VDP_wrapper_0_0_VDP_sprite_gen is
     s0_att_cpu_addr : in STD_LOGIC_VECTOR ( 6 downto 0 );
     s0_att_cpu_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \map_r_addr[13]_i_3\ : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    gen_done : in STD_LOGIC_VECTOR ( 0 to 0 );
-    gen_done0 : in STD_LOGIC;
     \FSM_onehot_state[6]_i_3_0\ : in STD_LOGIC_VECTOR ( 10 downto 0 );
     ctrl_reg : in STD_LOGIC_VECTOR ( 0 to 0 );
     s0_palette_data : in STD_LOGIC_VECTOR ( 15 downto 0 )
@@ -11784,7 +11782,7 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP_sprite_gen is
   signal \row_index_reg_n_0_[7][5]\ : STD_LOGIC;
   signal \row_index_reg_n_0_[7][6]\ : STD_LOGIC;
   signal \row_index_reg_n_0_[7][7]\ : STD_LOGIC;
-  signal s0_done : STD_LOGIC;
+  signal \^s0_done\ : STD_LOGIC;
   signal s0_dout : STD_LOGIC_VECTOR ( 15 downto 12 );
   signal \s0_palette_data[15]_i_11_n_0\ : STD_LOGIC;
   signal \s0_palette_data[15]_i_12_n_0\ : STD_LOGIC;
@@ -12335,6 +12333,7 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP_sprite_gen is
 begin
   gen_line_start <= \^gen_line_start\;
   \h_cnt_reg[5]\ <= \^h_cnt_reg[5]\;
+  s0_done <= \^s0_done\;
   \v_cnt_reg[2]\ <= \^v_cnt_reg[2]\;
   \v_cnt_reg[6]\ <= \^v_cnt_reg[6]\;
   \v_cnt_reg[7]\ <= \^v_cnt_reg[7]\;
@@ -14126,16 +14125,6 @@ begin
       D => data_pos0_in(9),
       Q => \data_pos_reg_n_0_[9]\,
       R => '0'
-    );
-\gen_done[2]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"0E"
-    )
-        port map (
-      I0 => gen_done(0),
-      I1 => s0_done,
-      I2 => gen_done0,
-      O => \gen_done_reg[2]\
     );
 \gen_fin_data[11]_i_3\: unisim.vcomponents.LUT5
     generic map(
@@ -16958,7 +16947,7 @@ begin
       I1 => line_done_i_2_n_0,
       I2 => state(9),
       I3 => \FSM_onehot_state[1]_i_2_n_0\,
-      I4 => s0_done,
+      I4 => \^s0_done\,
       O => \line_done_i_1__1_n_0\
     );
 line_done_i_2: unisim.vcomponents.LUT6
@@ -16993,7 +16982,7 @@ line_done_reg: unisim.vcomponents.FDRE
       C => s_axi_aclk,
       CE => '1',
       D => \line_done_i_1__1_n_0\,
-      Q => s0_done,
+      Q => \^s0_done\,
       R => '0'
     );
 \line_off[0]_i_1\: unisim.vcomponents.LUT3
@@ -26065,7 +26054,8 @@ entity Block_top_VDP_wrapper_0_0_VDP_tile_gen is
     t1_data_cpu_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
     t1_palette_addr : out STD_LOGIC_VECTOR ( 7 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    gen_done : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \gen_done__0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s0_done : in STD_LOGIC;
     gen_done0 : in STD_LOGIC;
     \map_r_addr_reg[13]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \map_r_addr_reg[11]_0\ : in STD_LOGIC;
@@ -26292,11 +26282,9 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP_tile_gen is
   attribute CHECK_LICENSE_TYPE of Tile_MAP_mem : label is "blk_mem_tile_map,blk_mem_gen_v8_4_12,{}";
   attribute downgradeipidentifiedwarnings of Tile_MAP_mem : label is "yes";
   attribute x_core_info of Tile_MAP_mem : label is "blk_mem_gen_v8_4_12,Vivado 2025.2";
-  attribute SOFT_HLUTNM of \gen_done[1]_i_1\ : label is "soft_lutpair131";
   attribute CHECK_LICENSE_TYPE of line_buf : label is "blk_mem_buf_line,blk_mem_gen_v8_4_12,{}";
   attribute downgradeipidentifiedwarnings of line_buf : label is "yes";
   attribute x_core_info of line_buf : label is "blk_mem_gen_v8_4_12,Vivado 2025.2";
-  attribute SOFT_HLUTNM of \line_done_i_1__0\ : label is "soft_lutpair131";
   attribute SOFT_HLUTNM of \map_x[4]_i_2__0\ : label is "soft_lutpair128";
   attribute SOFT_HLUTNM of \map_x[6]_i_2__0\ : label is "soft_lutpair128";
   attribute SOFT_HLUTNM of \pixel_addr[1]_i_1__0\ : label is "soft_lutpair130";
@@ -26661,14 +26649,15 @@ Tile_MAP_mem: component blk_mem_tile_map_HD236
       Q => \data_r_addr_reg_n_0_[9]\,
       R => '0'
     );
-\gen_done[1]_i_1\: unisim.vcomponents.LUT3
+\gen_done[1]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"0E"
+      INIT => X"00FE"
     )
         port map (
-      I0 => gen_done(0),
+      I0 => \gen_done__0\(0),
       I1 => t1_done,
-      I2 => gen_done0,
+      I2 => s0_done,
+      I3 => gen_done0,
       O => \gen_done_reg[1]\
     );
 \gen_fin_data[0]_i_1\: unisim.vcomponents.LUT6
@@ -28029,7 +28018,7 @@ entity \Block_top_VDP_wrapper_0_0_VDP_tile_gen__xdcDup__1\ is
     t0_data_cpu_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
     t0_palette_addr : out STD_LOGIC_VECTOR ( 7 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    gen_done : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \gen_done__0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     gen_done0 : in STD_LOGIC;
     \map_r_addr_reg[11]_0\ : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC;
@@ -28626,7 +28615,7 @@ Tile_MAP_mem: component Block_top_VDP_wrapper_0_0_blk_mem_tile_map
       INIT => X"0E"
     )
         port map (
-      I0 => gen_done(0),
+      I0 => \gen_done__0\(0),
       I1 => t0_done,
       I2 => gen_done0,
       O => \gen_done_reg[0]\
@@ -29870,6 +29859,7 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   signal \FSM_onehot_gen_fin_state[2]_i_2_n_0\ : STD_LOGIC;
   signal \FSM_onehot_gen_fin_state[2]_i_3_n_0\ : STD_LOGIC;
   signal \FSM_onehot_gen_fin_state[2]_i_4_n_0\ : STD_LOGIC;
+  signal \FSM_onehot_gen_fin_state[2]_i_5_n_0\ : STD_LOGIC;
   signal S0_gen_n_100 : STD_LOGIC;
   signal S0_gen_n_101 : STD_LOGIC;
   signal S0_gen_n_102 : STD_LOGIC;
@@ -29878,10 +29868,9 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   signal S0_gen_n_105 : STD_LOGIC;
   signal S0_gen_n_106 : STD_LOGIC;
   signal S0_gen_n_107 : STD_LOGIC;
-  signal S0_gen_n_86 : STD_LOGIC;
   signal S0_gen_n_87 : STD_LOGIC;
   signal S0_gen_n_88 : STD_LOGIC;
-  signal S0_gen_n_92 : STD_LOGIC;
+  signal S0_gen_n_89 : STD_LOGIC;
   signal S0_gen_n_93 : STD_LOGIC;
   signal S0_gen_n_94 : STD_LOGIC;
   signal S0_gen_n_95 : STD_LOGIC;
@@ -29904,8 +29893,6 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   signal T1_gen_n_8 : STD_LOGIC;
   signal T1_gen_n_9 : STD_LOGIC;
   signal VGA_clk : STD_LOGIC;
-  signal \VGA_clk_cnt[0]_i_1_n_0\ : STD_LOGIC;
-  signal \VGA_clk_cnt[1]_i_1_n_0\ : STD_LOGIC;
   signal \VGA_clk_cnt_reg_n_0_[0]\ : STD_LOGIC;
   signal ctrl_reg : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal draw_pixel_addr : STD_LOGIC_VECTOR ( 10 downto 3 );
@@ -29922,8 +29909,8 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   signal fin_line_buf_i_7_n_0 : STD_LOGIC;
   signal fin_line_buf_i_8_n_0 : STD_LOGIC;
   signal fin_line_buf_i_9_n_0 : STD_LOGIC;
-  signal gen_done : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal gen_done0 : STD_LOGIC;
+  signal \gen_done__0\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal gen_fin_buf_en_i_1_n_0 : STD_LOGIC;
   signal gen_fin_buf_en_reg_n_0 : STD_LOGIC;
   signal gen_fin_data : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -29940,6 +29927,7 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   signal \gen_fin_data_reg_n_0_[7]\ : STD_LOGIC;
   signal \gen_fin_data_reg_n_0_[8]\ : STD_LOGIC;
   signal \gen_fin_data_reg_n_0_[9]\ : STD_LOGIC;
+  signal \gen_fin_pixel[2]_i_1_n_0\ : STD_LOGIC;
   signal \gen_fin_pixel[9]_i_2_n_0\ : STD_LOGIC;
   signal gen_fin_pixel_reg : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal \gen_fin_pixel_reg1__0\ : STD_LOGIC_VECTOR ( 9 downto 0 );
@@ -29964,7 +29952,8 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   signal h_cnt_reg : STD_LOGIC_VECTOR ( 10 downto 3 );
   signal \h_cnt_reg__0\ : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal line_reg : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal p_0_in : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal p_0_in : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal \p_0_in__0\ : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal reg_mem_n_0 : STD_LOGIC;
   signal reg_mem_n_1 : STD_LOGIC;
   signal reg_mem_n_10 : STD_LOGIC;
@@ -29976,6 +29965,7 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   signal reg_mem_n_22 : STD_LOGIC;
   signal reg_mem_n_23 : STD_LOGIC;
   signal reg_mem_n_9 : STD_LOGIC;
+  signal s0_done : STD_LOGIC;
   signal s0_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal s0_palette_addr : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal s0_palette_data : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -30009,11 +29999,14 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   signal vga_rgb : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal NLW_fin_line_buf_doutb_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal NLW_fin_line_buf_i_1_CO_UNCONNECTED : STD_LOGIC_VECTOR ( 3 to 3 );
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \FSM_onehot_gen_fin_state[0]_i_1\ : label is "soft_lutpair155";
+  attribute SOFT_HLUTNM of \FSM_onehot_gen_fin_state[2]_i_1\ : label is "soft_lutpair155";
+  attribute SOFT_HLUTNM of \FSM_onehot_gen_fin_state[2]_i_3\ : label is "soft_lutpair162";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_onehot_gen_fin_state_reg[0]\ : label is "STATE_WAIT:000000000001,STATE_START:000000000010,STATE_C0:000000000100,";
   attribute FSM_ENCODED_STATES of \FSM_onehot_gen_fin_state_reg[1]\ : label is "STATE_WAIT:000000000001,STATE_START:000000000010,STATE_C0:000000000100,";
   attribute FSM_ENCODED_STATES of \FSM_onehot_gen_fin_state_reg[2]\ : label is "STATE_WAIT:000000000001,STATE_START:000000000010,STATE_C0:000000000100,";
-  attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \VGA_clk_cnt[0]_i_1\ : label is "soft_lutpair168";
   attribute SOFT_HLUTNM of \VGA_clk_cnt[1]_i_1\ : label is "soft_lutpair168";
   attribute CHECK_LICENSE_TYPE : string;
@@ -30029,17 +30022,16 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   attribute SOFT_HLUTNM of \gen_fin_pixel[2]_i_1\ : label is "soft_lutpair164";
   attribute SOFT_HLUTNM of \gen_fin_pixel[3]_i_1\ : label is "soft_lutpair157";
   attribute SOFT_HLUTNM of \gen_fin_pixel[4]_i_1\ : label is "soft_lutpair157";
-  attribute SOFT_HLUTNM of \gen_fin_pixel[6]_i_1\ : label is "soft_lutpair163";
-  attribute SOFT_HLUTNM of \gen_fin_pixel[7]_i_1\ : label is "soft_lutpair163";
+  attribute SOFT_HLUTNM of \gen_fin_pixel[6]_i_1\ : label is "soft_lutpair162";
   attribute SOFT_HLUTNM of \gen_fin_pixel[8]_i_1\ : label is "soft_lutpair156";
   attribute SOFT_HLUTNM of \gen_fin_pixel[9]_i_1\ : label is "soft_lutpair156";
   attribute SOFT_HLUTNM of \h_cnt[1]_i_1\ : label is "soft_lutpair166";
   attribute SOFT_HLUTNM of \h_cnt[2]_i_1\ : label is "soft_lutpair166";
-  attribute SOFT_HLUTNM of \h_cnt[3]_i_1\ : label is "soft_lutpair162";
+  attribute SOFT_HLUTNM of \h_cnt[3]_i_1\ : label is "soft_lutpair163";
   attribute SOFT_HLUTNM of \h_cnt[4]_i_1\ : label is "soft_lutpair158";
   attribute SOFT_HLUTNM of \h_cnt[6]_i_1\ : label is "soft_lutpair159";
   attribute SOFT_HLUTNM of \h_cnt[7]_i_1\ : label is "soft_lutpair159";
-  attribute SOFT_HLUTNM of \h_cnt[8]_i_2\ : label is "soft_lutpair162";
+  attribute SOFT_HLUTNM of \h_cnt[8]_i_2\ : label is "soft_lutpair163";
   attribute SOFT_HLUTNM of \v_cnt[10]_i_5\ : label is "soft_lutpair158";
   attribute SOFT_HLUTNM of \v_cnt[10]_i_7\ : label is "soft_lutpair167";
   attribute SOFT_HLUTNM of \v_cnt[10]_i_8\ : label is "soft_lutpair165";
@@ -30050,80 +30042,87 @@ architecture STRUCTURE of Block_top_VDP_wrapper_0_0_VDP is
   attribute SOFT_HLUTNM of \v_cnt[7]_i_1\ : label is "soft_lutpair161";
   attribute SOFT_HLUTNM of \v_cnt[8]_i_1\ : label is "soft_lutpair161";
 begin
-\FSM_onehot_gen_fin_state[0]_i_1\: unisim.vcomponents.LUT6
+\FSM_onehot_gen_fin_state[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"F0F0F0FFF5C0F5CF"
+      INIT => X"FA10FA1A"
     )
         port map (
-      I0 => gen_line_start,
-      I1 => \FSM_onehot_gen_fin_state[2]_i_2_n_0\,
-      I2 => gen_fin_data(0),
-      I3 => gen_done0,
+      I0 => \FSM_onehot_gen_fin_state[2]_i_2_n_0\,
+      I1 => gen_line_start,
+      I2 => gen_done0,
+      I3 => gen_fin_data(0),
       I4 => gen_fin_state(1),
-      I5 => \FSM_onehot_gen_fin_state[2]_i_3_n_0\,
       O => \FSM_onehot_gen_fin_state[0]_i_1_n_0\
     );
-\FSM_onehot_gen_fin_state[1]_i_1\: unisim.vcomponents.LUT6
+\FSM_onehot_gen_fin_state[1]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FF00FF00FF3FEA00"
+      INIT => X"F5E0"
     )
         port map (
-      I0 => gen_line_start,
-      I1 => \FSM_onehot_gen_fin_state[2]_i_2_n_0\,
-      I2 => gen_fin_data(0),
-      I3 => gen_done0,
-      I4 => gen_fin_state(1),
-      I5 => \FSM_onehot_gen_fin_state[2]_i_3_n_0\,
+      I0 => \FSM_onehot_gen_fin_state[2]_i_2_n_0\,
+      I1 => gen_line_start,
+      I2 => gen_done0,
+      I3 => gen_fin_state(1),
       O => \FSM_onehot_gen_fin_state[1]_i_1_n_0\
     );
-\FSM_onehot_gen_fin_state[2]_i_1\: unisim.vcomponents.LUT6
+\FSM_onehot_gen_fin_state[2]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFF0000FAF01030"
+      INIT => X"FF15EA00"
     )
         port map (
-      I0 => gen_line_start,
-      I1 => \FSM_onehot_gen_fin_state[2]_i_2_n_0\,
-      I2 => gen_fin_data(0),
-      I3 => gen_done0,
-      I4 => gen_fin_state(1),
-      I5 => \FSM_onehot_gen_fin_state[2]_i_3_n_0\,
+      I0 => \FSM_onehot_gen_fin_state[2]_i_2_n_0\,
+      I1 => gen_line_start,
+      I2 => gen_done0,
+      I3 => gen_fin_state(1),
+      I4 => gen_fin_data(0),
       O => \FSM_onehot_gen_fin_state[2]_i_1_n_0\
     );
-\FSM_onehot_gen_fin_state[2]_i_2\: unisim.vcomponents.LUT5
+\FSM_onehot_gen_fin_state[2]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00000004"
+      INIT => X"00000001FFFFFFFF"
     )
         port map (
-      I0 => gen_fin_pixel_reg(3),
-      I1 => gen_fin_pixel_reg(7),
-      I2 => gen_fin_pixel_reg(4),
-      I3 => gen_fin_pixel_reg(5),
+      I0 => gen_fin_pixel_reg(2),
+      I1 => gen_fin_pixel_reg(5),
+      I2 => gen_fin_pixel_reg(1),
+      I3 => \FSM_onehot_gen_fin_state[2]_i_3_n_0\,
       I4 => \FSM_onehot_gen_fin_state[2]_i_4_n_0\,
+      I5 => \FSM_onehot_gen_fin_state[2]_i_5_n_0\,
       O => \FSM_onehot_gen_fin_state[2]_i_2_n_0\
     );
 \FSM_onehot_gen_fin_state[2]_i_3\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8000"
+      INIT => X"FFFD"
     )
         port map (
-      I0 => gen_done(0),
-      I1 => gen_done(1),
-      I2 => gen_done(2),
-      I3 => gen_fin_state(1),
+      I0 => gen_fin_data(0),
+      I1 => gen_fin_pixel_reg(8),
+      I2 => gen_fin_pixel_reg(6),
+      I3 => gen_fin_pixel_reg(0),
       O => \FSM_onehot_gen_fin_state[2]_i_3_n_0\
     );
-\FSM_onehot_gen_fin_state[2]_i_4\: unisim.vcomponents.LUT6
+\FSM_onehot_gen_fin_state[2]_i_4\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FFFFFFFEFFFFFFFF"
+      INIT => X"FFDF"
     )
         port map (
-      I0 => gen_fin_pixel_reg(1),
-      I1 => gen_fin_pixel_reg(0),
-      I2 => gen_fin_pixel_reg(2),
-      I3 => gen_fin_pixel_reg(8),
-      I4 => gen_fin_pixel_reg(6),
-      I5 => gen_fin_pixel_reg(9),
+      I0 => gen_fin_pixel_reg(7),
+      I1 => gen_fin_pixel_reg(4),
+      I2 => gen_fin_pixel_reg(9),
+      I3 => gen_fin_pixel_reg(3),
       O => \FSM_onehot_gen_fin_state[2]_i_4_n_0\
+    );
+\FSM_onehot_gen_fin_state[2]_i_5\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7F7F7F70"
+    )
+        port map (
+      I0 => \gen_done__0\(1),
+      I1 => \gen_done__0\(0),
+      I2 => gen_fin_state(1),
+      I3 => gen_fin_data(0),
+      I4 => gen_done0,
+      O => \FSM_onehot_gen_fin_state[2]_i_5_n_0\
     );
 \FSM_onehot_gen_fin_state_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -30160,32 +30159,29 @@ begin
     );
 S0_gen: entity work.Block_top_VDP_wrapper_0_0_VDP_sprite_gen
      port map (
-      DPRA(6) => S0_gen_n_92,
-      DPRA(5) => S0_gen_n_93,
-      DPRA(4) => S0_gen_n_94,
-      DPRA(3) => S0_gen_n_95,
-      DPRA(2) => S0_gen_n_96,
-      DPRA(1) => S0_gen_n_97,
-      DPRA(0) => S0_gen_n_98,
+      DPRA(6) => S0_gen_n_93,
+      DPRA(5) => S0_gen_n_94,
+      DPRA(4) => S0_gen_n_95,
+      DPRA(3) => S0_gen_n_96,
+      DPRA(2) => S0_gen_n_97,
+      DPRA(1) => S0_gen_n_98,
+      DPRA(0) => S0_gen_n_99,
       \FSM_onehot_state[6]_i_3_0\(10 downto 3) => h_cnt_reg(10 downto 3),
       \FSM_onehot_state[6]_i_3_0\(2 downto 0) => \h_cnt_reg__0\(2 downto 0),
       Q(9 downto 0) => gen_fin_pixel_reg(9 downto 0),
       ctrl_reg(0) => ctrl_reg(2),
       doutb(11 downto 0) => s0_dout(11 downto 0),
-      gen_done(0) => gen_done(2),
-      gen_done0 => gen_done0,
-      \gen_done_reg[2]\ => S0_gen_n_106,
       gen_fin_data1 => gen_fin_data1,
       gen_line_start => gen_line_start,
       \h_cnt_reg[5]\ => S0_gen_n_107,
       \map_r_addr[13]_i_3\(9 downto 0) => sel0(9 downto 0),
-      \pal_issue_reg[5]_0\(6) => S0_gen_n_99,
-      \pal_issue_reg[5]_0\(5) => S0_gen_n_100,
-      \pal_issue_reg[5]_0\(4) => S0_gen_n_101,
-      \pal_issue_reg[5]_0\(3) => S0_gen_n_102,
-      \pal_issue_reg[5]_0\(2) => S0_gen_n_103,
-      \pal_issue_reg[5]_0\(1) => S0_gen_n_104,
-      \pal_issue_reg[5]_0\(0) => S0_gen_n_105,
+      \pal_issue_reg[5]_0\(6) => S0_gen_n_100,
+      \pal_issue_reg[5]_0\(5) => S0_gen_n_101,
+      \pal_issue_reg[5]_0\(4) => S0_gen_n_102,
+      \pal_issue_reg[5]_0\(3) => S0_gen_n_103,
+      \pal_issue_reg[5]_0\(2) => S0_gen_n_104,
+      \pal_issue_reg[5]_0\(1) => S0_gen_n_105,
+      \pal_issue_reg[5]_0\(0) => S0_gen_n_106,
       s0_att_cpu_addr(6 downto 0) => s0_att_cpu_addr(6 downto 0),
       s0_att_cpu_clk => s0_att_cpu_clk,
       s0_att_cpu_din(31 downto 0) => s0_att_cpu_din(31 downto 0),
@@ -30198,12 +30194,13 @@ S0_gen: entity work.Block_top_VDP_wrapper_0_0_VDP_sprite_gen
       s0_data_cpu_dout(31 downto 0) => s0_data_cpu_dout(31 downto 0),
       s0_data_cpu_en => s0_data_cpu_en,
       s0_data_cpu_wen(3 downto 0) => s0_data_cpu_wen(3 downto 0),
+      s0_done => s0_done,
       s0_palette_addr(9 downto 0) => s0_palette_addr(9 downto 0),
       s0_palette_data(15 downto 0) => s0_palette_data(15 downto 0),
       s_axi_aclk => s_axi_aclk,
-      \v_cnt_reg[2]\ => S0_gen_n_88,
-      \v_cnt_reg[6]\ => S0_gen_n_86,
-      \v_cnt_reg[7]\ => S0_gen_n_87,
+      \v_cnt_reg[2]\ => S0_gen_n_89,
+      \v_cnt_reg[6]\ => S0_gen_n_87,
+      \v_cnt_reg[7]\ => S0_gen_n_88,
       \v_cnt_reg[9]\(1 downto 0) => gen_line(9 downto 8)
     );
 T0_gen: entity work.\Block_top_VDP_wrapper_0_0_VDP_tile_gen__xdcDup__1\
@@ -30211,14 +30208,14 @@ T0_gen: entity work.\Block_top_VDP_wrapper_0_0_VDP_tile_gen__xdcDup__1\
       Q(4 downto 0) => sel0(4 downto 0),
       S(0) => reg_mem_n_20,
       buf_dout(11 downto 0) => t0_dout(11 downto 0),
-      gen_done(0) => gen_done(0),
       gen_done0 => gen_done0,
+      \gen_done__0\(0) => \gen_done__0\(0),
       \gen_done_reg[0]\ => T0_gen_n_0,
       \gen_fin_data_reg[11]\(9 downto 0) => gen_fin_pixel_reg(9 downto 0),
       gen_line(3 downto 2) => gen_line(9 downto 8),
       gen_line(1 downto 0) => gen_line(6 downto 5),
       gen_line_start => gen_line_start,
-      \map_r_addr_reg[11]_0\ => S0_gen_n_87,
+      \map_r_addr_reg[11]_0\ => S0_gen_n_88,
       \map_r_addr_reg[11]_1\(2) => reg_mem_n_0,
       \map_r_addr_reg[11]_1\(1) => reg_mem_n_1,
       \map_r_addr_reg[11]_1\(0) => reg_mem_n_2,
@@ -30261,17 +30258,18 @@ T1_gen: entity work.Block_top_VDP_wrapper_0_0_VDP_tile_gen
       buf_dout(11 downto 0) => t0_dout(11 downto 0),
       ctrl_reg(1 downto 0) => ctrl_reg(1 downto 0),
       doutb(11 downto 0) => s0_dout(11 downto 0),
-      gen_done(0) => gen_done(1),
       gen_done0 => gen_done0,
+      \gen_done__0\(0) => \gen_done__0\(1),
       \gen_done_reg[1]\ => T1_gen_n_0,
       gen_fin_data1 => gen_fin_data1,
       \gen_fin_data_reg[11]\(9 downto 0) => gen_fin_pixel_reg(9 downto 0),
       gen_line_start => gen_line_start,
-      \map_r_addr_reg[11]_0\ => S0_gen_n_87,
+      \map_r_addr_reg[11]_0\ => S0_gen_n_88,
       \map_r_addr_reg[11]_1\(2) => reg_mem_n_9,
       \map_r_addr_reg[11]_1\(1) => reg_mem_n_10,
       \map_r_addr_reg[11]_1\(0) => reg_mem_n_11,
       \map_r_addr_reg[13]_0\(1 downto 0) => gen_line(9 downto 8),
+      s0_done => s0_done,
       s_axi_aclk => s_axi_aclk,
       t1_data_cpu_addr(13 downto 0) => t1_data_cpu_addr(13 downto 0),
       t1_data_cpu_clk => t1_data_cpu_clk,
@@ -30299,7 +30297,7 @@ T1_gen: entity work.Block_top_VDP_wrapper_0_0_VDP_tile_gen
     )
         port map (
       I0 => \VGA_clk_cnt_reg_n_0_[0]\,
-      O => \VGA_clk_cnt[0]_i_1_n_0\
+      O => p_0_in(0)
     );
 \VGA_clk_cnt[1]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -30308,7 +30306,7 @@ T1_gen: entity work.Block_top_VDP_wrapper_0_0_VDP_tile_gen
         port map (
       I0 => \VGA_clk_cnt_reg_n_0_[0]\,
       I1 => VGA_clk,
-      O => \VGA_clk_cnt[1]_i_1_n_0\
+      O => p_0_in(1)
     );
 \VGA_clk_cnt_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -30317,7 +30315,7 @@ T1_gen: entity work.Block_top_VDP_wrapper_0_0_VDP_tile_gen
         port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \VGA_clk_cnt[0]_i_1_n_0\,
+      D => p_0_in(0),
       Q => \VGA_clk_cnt_reg_n_0_[0]\,
       R => '0'
     );
@@ -30328,7 +30326,7 @@ T1_gen: entity work.Block_top_VDP_wrapper_0_0_VDP_tile_gen
         port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \VGA_clk_cnt[1]_i_1_n_0\,
+      D => p_0_in(1),
       Q => VGA_clk,
       R => '0'
     );
@@ -30455,7 +30453,7 @@ fin_line_buf_i_9: unisim.vcomponents.LUT1
       C => s_axi_aclk,
       CE => '1',
       D => T0_gen_n_0,
-      Q => gen_done(0),
+      Q => \gen_done__0\(0),
       R => '0'
     );
 \gen_done_reg[1]\: unisim.vcomponents.FDRE
@@ -30463,15 +30461,7 @@ fin_line_buf_i_9: unisim.vcomponents.LUT1
       C => s_axi_aclk,
       CE => '1',
       D => T1_gen_n_0,
-      Q => gen_done(1),
-      R => '0'
-    );
-\gen_done_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => s_axi_aclk,
-      CE => '1',
-      D => S0_gen_n_106,
-      Q => gen_done(2),
+      Q => \gen_done__0\(1),
       R => '0'
     );
 gen_fin_buf_en_i_1: unisim.vcomponents.LUT3
@@ -30633,7 +30623,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => gen_fin_pixel_reg(0),
-      O => p_0_in(0)
+      O => \p_0_in__0\(0)
     );
 \gen_fin_pixel[1]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -30642,7 +30632,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       I0 => gen_fin_pixel_reg(0),
       I1 => gen_fin_pixel_reg(1),
-      O => p_0_in(1)
+      O => \p_0_in__0\(1)
     );
 \gen_fin_pixel[2]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -30650,9 +30640,9 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => gen_fin_pixel_reg(2),
-      I1 => gen_fin_pixel_reg(0),
-      I2 => gen_fin_pixel_reg(1),
-      O => p_0_in(2)
+      I1 => gen_fin_pixel_reg(1),
+      I2 => gen_fin_pixel_reg(0),
+      O => \gen_fin_pixel[2]_i_1_n_0\
     );
 \gen_fin_pixel[3]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -30663,7 +30653,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
       I1 => gen_fin_pixel_reg(1),
       I2 => gen_fin_pixel_reg(0),
       I3 => gen_fin_pixel_reg(2),
-      O => p_0_in(3)
+      O => \p_0_in__0\(3)
     );
 \gen_fin_pixel[4]_i_1\: unisim.vcomponents.LUT5
     generic map(
@@ -30675,7 +30665,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
       I2 => gen_fin_pixel_reg(0),
       I3 => gen_fin_pixel_reg(1),
       I4 => gen_fin_pixel_reg(3),
-      O => p_0_in(4)
+      O => \p_0_in__0\(4)
     );
 \gen_fin_pixel[5]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -30688,7 +30678,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
       I3 => gen_fin_pixel_reg(2),
       I4 => gen_fin_pixel_reg(4),
       I5 => gen_fin_pixel_reg(5),
-      O => p_0_in(5)
+      O => \p_0_in__0\(5)
     );
 \gen_fin_pixel[6]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -30697,7 +30687,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       I0 => gen_fin_pixel_reg(6),
       I1 => \gen_fin_pixel[9]_i_2_n_0\,
-      O => p_0_in(6)
+      O => \p_0_in__0\(6)
     );
 \gen_fin_pixel[7]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -30707,7 +30697,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
       I0 => gen_fin_pixel_reg(7),
       I1 => \gen_fin_pixel[9]_i_2_n_0\,
       I2 => gen_fin_pixel_reg(6),
-      O => p_0_in(7)
+      O => \p_0_in__0\(7)
     );
 \gen_fin_pixel[8]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -30718,7 +30708,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
       I1 => gen_fin_pixel_reg(6),
       I2 => \gen_fin_pixel[9]_i_2_n_0\,
       I3 => gen_fin_pixel_reg(7),
-      O => p_0_in(8)
+      O => \p_0_in__0\(8)
     );
 \gen_fin_pixel[9]_i_1\: unisim.vcomponents.LUT5
     generic map(
@@ -30730,7 +30720,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
       I2 => \gen_fin_pixel[9]_i_2_n_0\,
       I3 => gen_fin_pixel_reg(6),
       I4 => gen_fin_pixel_reg(8),
-      O => p_0_in(9)
+      O => \p_0_in__0\(9)
     );
 \gen_fin_pixel[9]_i_2\: unisim.vcomponents.LUT6
     generic map(
@@ -30862,7 +30852,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(0),
+      D => \p_0_in__0\(0),
       Q => gen_fin_pixel_reg(0),
       R => gen_done0
     );
@@ -30873,7 +30863,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(1),
+      D => \p_0_in__0\(1),
       Q => gen_fin_pixel_reg(1),
       R => gen_done0
     );
@@ -30884,7 +30874,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(2),
+      D => \gen_fin_pixel[2]_i_1_n_0\,
       Q => gen_fin_pixel_reg(2),
       R => gen_done0
     );
@@ -30895,7 +30885,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(3),
+      D => \p_0_in__0\(3),
       Q => gen_fin_pixel_reg(3),
       R => gen_done0
     );
@@ -30906,7 +30896,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(4),
+      D => \p_0_in__0\(4),
       Q => gen_fin_pixel_reg(4),
       R => gen_done0
     );
@@ -30917,7 +30907,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(5),
+      D => \p_0_in__0\(5),
       Q => gen_fin_pixel_reg(5),
       R => gen_done0
     );
@@ -30928,7 +30918,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(6),
+      D => \p_0_in__0\(6),
       Q => gen_fin_pixel_reg(6),
       R => gen_done0
     );
@@ -30939,7 +30929,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(7),
+      D => \p_0_in__0\(7),
       Q => gen_fin_pixel_reg(7),
       R => gen_done0
     );
@@ -30950,7 +30940,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(8),
+      D => \p_0_in__0\(8),
       Q => gen_fin_pixel_reg(8),
       R => gen_done0
     );
@@ -30961,7 +30951,7 @@ gen_fin_buf_en_reg: unisim.vcomponents.FDRE
         port map (
       C => s_axi_aclk,
       CE => gen_fin_data(0),
-      D => p_0_in(9),
+      D => \p_0_in__0\(9),
       Q => gen_fin_pixel_reg(9),
       R => gen_done0
     );
@@ -31369,28 +31359,28 @@ h_sync_INST_0: unisim.vcomponents.LUT6
 reg_mem: entity work.Block_top_VDP_wrapper_0_0_REG_MEMORY
      port map (
       D(0) => reg_mem_n_18,
-      DPRA(6) => S0_gen_n_92,
-      DPRA(5) => S0_gen_n_93,
-      DPRA(4) => S0_gen_n_94,
-      DPRA(3) => S0_gen_n_95,
-      DPRA(2) => S0_gen_n_96,
-      DPRA(1) => S0_gen_n_97,
-      DPRA(0) => S0_gen_n_98,
+      DPRA(6) => S0_gen_n_93,
+      DPRA(5) => S0_gen_n_94,
+      DPRA(4) => S0_gen_n_95,
+      DPRA(3) => S0_gen_n_96,
+      DPRA(2) => S0_gen_n_97,
+      DPRA(1) => S0_gen_n_98,
+      DPRA(0) => S0_gen_n_99,
       Q(10 downto 0) => sel0(10 downto 0),
       S(0) => reg_mem_n_19,
       ctrl_reg(2 downto 0) => ctrl_reg(2 downto 0),
-      \data_out[15]_i_6_0\(6) => S0_gen_n_99,
-      \data_out[15]_i_6_0\(5) => S0_gen_n_100,
-      \data_out[15]_i_6_0\(4) => S0_gen_n_101,
-      \data_out[15]_i_6_0\(3) => S0_gen_n_102,
-      \data_out[15]_i_6_0\(2) => S0_gen_n_103,
-      \data_out[15]_i_6_0\(1) => S0_gen_n_104,
-      \data_out[15]_i_6_0\(0) => S0_gen_n_105,
-      \data_out[8]_i_7_0\ => S0_gen_n_88,
+      \data_out[15]_i_6_0\(6) => S0_gen_n_100,
+      \data_out[15]_i_6_0\(5) => S0_gen_n_101,
+      \data_out[15]_i_6_0\(4) => S0_gen_n_102,
+      \data_out[15]_i_6_0\(3) => S0_gen_n_103,
+      \data_out[15]_i_6_0\(2) => S0_gen_n_104,
+      \data_out[15]_i_6_0\(1) => S0_gen_n_105,
+      \data_out[15]_i_6_0\(0) => S0_gen_n_106,
+      \data_out[8]_i_7_0\ => S0_gen_n_89,
       \data_out[9]_i_4_0\(1 downto 0) => gen_line(9 downto 8),
       \h_cnt_reg[6]\(0) => stat_reg(0),
-      \map_r_addr_reg[11]\ => S0_gen_n_86,
-      \map_r_addr_reg[11]_0\ => S0_gen_n_87,
+      \map_r_addr_reg[11]\ => S0_gen_n_87,
+      \map_r_addr_reg[11]_0\ => S0_gen_n_88,
       r0_map_cpu_addr(10 downto 0) => r0_map_cpu_addr(10 downto 0),
       r0_map_cpu_clk => r0_map_cpu_clk,
       r0_map_cpu_din(31 downto 0) => r0_map_cpu_din(31 downto 0),
@@ -31446,14 +31436,14 @@ reg_mem: entity work.Block_top_VDP_wrapper_0_0_REG_MEMORY
     );
 \v_cnt[10]_i_3\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"AAAA6AAA"
+      INIT => X"9AAAAAAA"
     )
         port map (
       I0 => sel0(10),
-      I1 => sel0(9),
+      I1 => \v_cnt[10]_i_7_n_0\,
       I2 => sel0(8),
       I3 => sel0(7),
-      I4 => \v_cnt[10]_i_7_n_0\,
+      I4 => sel0(9),
       O => \v_cnt[10]_i_3_n_0\
     );
 \v_cnt[10]_i_5\: unisim.vcomponents.LUT5
@@ -31573,22 +31563,22 @@ reg_mem: entity work.Block_top_VDP_wrapper_0_0_REG_MEMORY
     )
         port map (
       I0 => sel0(8),
-      I1 => reg_mem_n_23,
+      I1 => sel0(5),
       I2 => sel0(6),
-      I3 => sel0(5),
+      I3 => reg_mem_n_23,
       I4 => sel0(7),
       O => \v_cnt[8]_i_1_n_0\
     );
 \v_cnt[9]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"44441444"
+      INIT => X"45551000"
     )
         port map (
       I0 => \v_cnt[10]_i_6_n_0\,
-      I1 => sel0(9),
+      I1 => \v_cnt[10]_i_7_n_0\,
       I2 => sel0(8),
       I3 => sel0(7),
-      I4 => \v_cnt[10]_i_7_n_0\,
+      I4 => sel0(9),
       O => \v_cnt[9]_i_1_n_0\
     );
 \v_cnt_reg[0]\: unisim.vcomponents.FDRE
@@ -31899,11 +31889,11 @@ v_sync_INST_0_i_1: unisim.vcomponents.LUT5
     )
         port map (
       I0 => sel0(9),
-      I1 => sel0(5),
-      I2 => sel0(6),
-      I3 => reg_mem_n_23,
-      I4 => sel0(7),
-      I5 => sel0(8),
+      I1 => sel0(7),
+      I2 => sel0(8),
+      I3 => sel0(5),
+      I4 => sel0(6),
+      I5 => reg_mem_n_23,
       O => \vga_r[3]_INST_0_i_3_n_0\
     );
 end STRUCTURE;

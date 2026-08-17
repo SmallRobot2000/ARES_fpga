@@ -375,7 +375,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -507,7 +507,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -639,7 +639,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -771,7 +771,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -903,7 +903,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -1035,7 +1035,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -1167,7 +1167,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -1299,7 +1299,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -1431,7 +1431,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -5034,10 +5034,10 @@
                 "value": "0"
               },
               "SEG007_SEP_ROUTE": {
-                "value": "0b0000000000000000000000000000000000000000000000000000000000000111"
+                "value": "0b0000000000000000000000000000000000000000000000000000000000001000"
               },
               "SEG007_SIZE": {
-                "value": "15"
+                "value": "16"
               },
               "SEG007_SUPPORTS_READ": {
                 "value": "1"
@@ -5055,10 +5055,10 @@
                 "value": "0"
               },
               "SEG008_SEP_ROUTE": {
-                "value": "0b0000000000000000000000000000000000000000000000000000000000001000"
+                "value": "0b0000000000000000000000000000000000000000000000000000000000000111"
               },
               "SEG008_SIZE": {
-                "value": "16"
+                "value": "15"
               },
               "SEG008_SUPPORTS_READ": {
                 "value": "1"

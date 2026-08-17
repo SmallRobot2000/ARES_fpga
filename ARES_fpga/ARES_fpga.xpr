@@ -223,6 +223,9 @@
         <CompFileExtendedInfo CompFileName="Block_top.bd" FileRelPathName="ip/Block_top_mig_axi_wrapper_0_0/Block_top_mig_axi_wrapper_0_0.xci">
           <Proxy FileSetName="Block_top_mig_axi_wrapper_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Block_top.bd" FileRelPathName="ip/Block_top_smartconnect_0_1/Block_top_smartconnect_0_1.xci">
+          <Proxy FileSetName="Block_top_smartconnect_0_1"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/Block_top/hdl/Block_top_wrapper.v">
         <FileInfo>
@@ -480,21 +483,27 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="Block_top_VDP_wrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_VDP_wrapper_0_0" RelGenDir="$PGENDIR/Block_top_VDP_wrapper_0_0">
-      <Config>
-        <Option Name="TopModule" Val="Block_top_VDP_wrapper_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="Block_top_VexiiSocWrapper_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_VexiiSocWrapper_0_1" RelGenDir="$PGENDIR/Block_top_VexiiSocWrapper_0_1">
       <Config>
         <Option Name="TopModule" Val="Block_top_VexiiSocWrapper_0_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="Block_top_VDP_wrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_VDP_wrapper_0_0" RelGenDir="$PGENDIR/Block_top_VDP_wrapper_0_0">
+      <Config>
+        <Option Name="TopModule" Val="Block_top_VDP_wrapper_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="Block_top_FLASH_SPI_wrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_FLASH_SPI_wrapper_0_0" RelGenDir="$PGENDIR/Block_top_FLASH_SPI_wrapper_0_0">
       <Config>
         <Option Name="TopModule" Val="Block_top_FLASH_SPI_wrapper_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="Block_top_smartconnect_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_smartconnect_0_1" RelGenDir="$PGENDIR/Block_top_smartconnect_0_1">
+      <Config>
+        <Option Name="TopModule" Val="Block_top_smartconnect_0_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -657,18 +666,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Block_top_VDP_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="Block_top_VDP_wrapper_0_0" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_VDP_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_VDP_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_VDP_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_VDP_wrapper_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="Block_top_VexiiSocWrapper_0_1_synth_1" Type="Ft3:Synth" SrcSet="Block_top_VexiiSocWrapper_0_1" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_VexiiSocWrapper_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_VexiiSocWrapper_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_VexiiSocWrapper_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_VexiiSocWrapper_0_1_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
@@ -681,7 +678,31 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
+    <Run Id="Block_top_VDP_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="Block_top_VDP_wrapper_0_0" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_VDP_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_VDP_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_VDP_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_VDP_wrapper_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
     <Run Id="Block_top_FLASH_SPI_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="Block_top_FLASH_SPI_wrapper_0_0" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_FLASH_SPI_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_FLASH_SPI_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="Block_top_smartconnect_0_1_synth_1" Type="Ft3:Synth" SrcSet="Block_top_smartconnect_0_1" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_smartconnect_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_smartconnect_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_smartconnect_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_smartconnect_0_1_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -861,25 +882,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Block_top_VDP_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_VDP_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_VDP_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_VDP_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_VDP_wrapper_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="Block_top_VexiiSocWrapper_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_VexiiSocWrapper_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_VexiiSocWrapper_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_VexiiSocWrapper_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_VexiiSocWrapper_0_1_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
@@ -899,7 +901,45 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
+    <Run Id="Block_top_VDP_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_VDP_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_VDP_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_VDP_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_VDP_wrapper_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
     <Run Id="Block_top_FLASH_SPI_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_FLASH_SPI_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_FLASH_SPI_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_FLASH_SPI_wrapper_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="Block_top_smartconnect_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_smartconnect_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_smartconnect_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_smartconnect_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_smartconnect_0_1_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>

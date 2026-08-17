@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Mon Aug 17 21:12:19 2026
+// Date        : Mon Aug 17 23:31:54 2026
 // Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VDP_wrapper_0_0/Block_top_VDP_wrapper_0_0_sim_netlist.v
@@ -922,7 +922,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(\ctrl_reg[2]_i_2_n_0 ),
         .I2(ctrl_reg[0]),
         .O(\ctrl_reg[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ctrl_reg[1]_i_1 
@@ -930,7 +930,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(\ctrl_reg[2]_i_2_n_0 ),
         .I2(ctrl_reg[1]),
         .O(\ctrl_reg[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ctrl_reg[2]_i_1 
@@ -1438,19 +1438,19 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I4(r0_map_cpu_addr[8]),
         .I5(r0_map_cpu_addr[9]),
         .O(p_1_out[1]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h7)) 
     \data_out[1]_i_10 
-       (.I0(Q[7]),
-        .I1(Q[8]),
+       (.I0(Q[6]),
+        .I1(Q[5]),
         .O(\data_out[1]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \data_out[1]_i_11 
-       (.I0(Q[6]),
-        .I1(Q[5]),
+       (.I0(Q[7]),
+        .I1(Q[8]),
         .O(\data_out[1]_i_11_n_0 ));
   LUT6 #(
     .INIT(64'h00000000AAAAEEFA)) 
@@ -1510,7 +1510,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I5(palette_s0_mem_reg_768_895_1_1_n_1),
         .O(\data_out[1]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFF2F2F0FF)) 
+    .INIT(64'hFFFFFFFFF1F1F0FF)) 
     \data_out[1]_i_9 
        (.I0(\data_out[1]_i_10_n_0 ),
         .I1(\data_out[1]_i_11_n_0 ),
@@ -1713,7 +1713,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I3(r0_map_cpu_wen[2]),
         .I4(r0_map_cpu_wen[3]),
         .O(p_0_in));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT5 #(
     .INIT(32'h00000020)) 
     \data_out[31]_i_5 
@@ -1723,7 +1723,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I3(Q[9]),
         .I4(\data_out[31]_i_8_n_0 ),
         .O(\data_out[31]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT3 #(
     .INIT(8'hEB)) 
     \data_out[31]_i_6 
@@ -1865,7 +1865,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I4(r0_map_cpu_addr[7]),
         .I5(palette_s0_mem_reg_768_895_4_4_n_1),
         .O(\data_out[4]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT5 #(
     .INIT(32'hAAAAAC0A)) 
     \data_out[4]_i_7 
@@ -2062,7 +2062,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I4(Q[3]),
         .I5(Q[0]),
         .O(\data_out[7]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \data_out[7]_i_9 
@@ -2129,7 +2129,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I4(r0_map_cpu_addr[1]),
         .I5(\data_out[31]_i_8_n_0 ),
         .O(data2[8]));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT5 #(
     .INIT(32'h00000001)) 
     \data_out[8]_i_8 
@@ -7778,7 +7778,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(\s0_palette_data[9]_i_3_n_0 ),
         .O(s0_palette_data0[9]),
         .S(s0_palette_addr[9]));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[0]_i_1 
@@ -7786,7 +7786,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_0_0_n_0),
         .O(t0_palette_data0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[10]_i_1 
@@ -7794,7 +7794,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_10_10_n_0),
         .O(t0_palette_data0[10]));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[11]_i_1 
@@ -7802,7 +7802,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_11_11_n_0),
         .O(t0_palette_data0[11]));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[12]_i_1 
@@ -7810,7 +7810,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_12_12_n_0),
         .O(t0_palette_data0[12]));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[13]_i_1 
@@ -7818,7 +7818,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_13_13_n_0),
         .O(t0_palette_data0[13]));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[14]_i_1 
@@ -7826,7 +7826,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_14_14_n_0),
         .O(t0_palette_data0[14]));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[15]_i_1 
@@ -7834,7 +7834,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_15_15_n_0),
         .O(t0_palette_data0[15]));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[1]_i_1 
@@ -7842,7 +7842,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_1_1_n_0),
         .O(t0_palette_data0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[2]_i_1 
@@ -7850,7 +7850,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_2_2_n_0),
         .O(t0_palette_data0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[3]_i_1 
@@ -7858,7 +7858,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_3_3_n_0),
         .O(t0_palette_data0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[4]_i_1 
@@ -7866,7 +7866,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_4_4_n_0),
         .O(t0_palette_data0[4]));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[5]_i_1 
@@ -7874,7 +7874,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_5_5_n_0),
         .O(t0_palette_data0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[6]_i_1 
@@ -7882,7 +7882,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_6_6_n_0),
         .O(t0_palette_data0[6]));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[7]_i_1 
@@ -7890,7 +7890,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_7_7_n_0),
         .O(t0_palette_data0[7]));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[8]_i_1 
@@ -7898,7 +7898,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t0_palette_addr[7]),
         .I2(palette_t0_mem_reg_0_127_8_8_n_0),
         .O(t0_palette_data0[8]));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t0_palette_data[9]_i_1 
@@ -8278,7 +8278,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .D(\t0_y_off_reg[9]_i_1_n_0 ),
         .Q(\t0_y_off_reg_reg[9]_0 [5]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[0]_i_1 
@@ -8286,7 +8286,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_0_0_n_0),
         .O(t1_palette_data0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[10]_i_1 
@@ -8294,7 +8294,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_10_10_n_0),
         .O(t1_palette_data0[10]));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[11]_i_1 
@@ -8302,7 +8302,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_11_11_n_0),
         .O(t1_palette_data0[11]));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[12]_i_1 
@@ -8310,7 +8310,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_12_12_n_0),
         .O(t1_palette_data0[12]));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[13]_i_1 
@@ -8318,7 +8318,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_13_13_n_0),
         .O(t1_palette_data0[13]));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[14]_i_1 
@@ -8326,7 +8326,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_14_14_n_0),
         .O(t1_palette_data0[14]));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[15]_i_1 
@@ -8334,7 +8334,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_15_15_n_0),
         .O(t1_palette_data0[15]));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[1]_i_1 
@@ -8342,7 +8342,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_1_1_n_0),
         .O(t1_palette_data0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[2]_i_1 
@@ -8350,7 +8350,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_2_2_n_0),
         .O(t1_palette_data0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[3]_i_1 
@@ -8358,7 +8358,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_3_3_n_0),
         .O(t1_palette_data0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[4]_i_1 
@@ -8366,7 +8366,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_4_4_n_0),
         .O(t1_palette_data0[4]));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[5]_i_1 
@@ -8374,7 +8374,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_5_5_n_0),
         .O(t1_palette_data0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[6]_i_1 
@@ -8382,7 +8382,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_6_6_n_0),
         .O(t1_palette_data0[6]));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[7]_i_1 
@@ -8390,7 +8390,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_7_7_n_0),
         .O(t1_palette_data0[7]));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[8]_i_1 
@@ -8398,7 +8398,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(t1_palette_addr[7]),
         .I2(palette_t1_mem_reg_0_127_8_8_n_0),
         .O(t1_palette_data0[8]));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_palette_data[9]_i_1 
@@ -8544,7 +8544,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I4(r0_map_cpu_addr[0]),
         .I5(\t0_x_off_reg[7]_i_2_n_0 ),
         .O(\t1_x_off_reg[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_x_off_reg[8]_i_1 
@@ -8552,7 +8552,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(\t1_x_off_reg[9]_i_2_n_0 ),
         .I2(t1_x_off_reg[8]),
         .O(\t1_x_off_reg[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+  (* SOFT_HLUTNM = "soft_lutpair153" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_x_off_reg[9]_i_1 
@@ -8660,7 +8660,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I4(r0_map_cpu_wen[0]),
         .I5(\t0_x_off_reg[7]_i_2_n_0 ),
         .O(\t1_y_off_reg[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_y_off_reg[8]_i_1 
@@ -8668,7 +8668,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I1(\t1_y_off_reg[9]_i_2_n_0 ),
         .I2(\t1_y_off_reg_reg[9]_0 [4]),
         .O(\t1_y_off_reg[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+  (* SOFT_HLUTNM = "soft_lutpair153" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \t1_y_off_reg[9]_i_1 
@@ -8766,7 +8766,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .D(\t1_y_off_reg[9]_i_1_n_0 ),
         .Q(\t1_y_off_reg_reg[9]_0 [5]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \v_cnt[4]_i_1 
@@ -8776,7 +8776,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I3(Q[1]),
         .I4(Q[3]),
         .O(D));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \vga_r[3]_INST_0_i_1 
@@ -8786,7 +8786,7 @@ module Block_top_VDP_wrapper_0_0_REG_MEMORY
         .I3(Q[1]),
         .I4(Q[3]),
         .O(\v_cnt_reg[4] ));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \vga_r[3]_INST_0_i_2 
@@ -8920,6 +8920,7 @@ module Block_top_VDP_wrapper_0_0_VDP
   wire \FSM_onehot_gen_fin_state[2]_i_2_n_0 ;
   wire \FSM_onehot_gen_fin_state[2]_i_3_n_0 ;
   wire \FSM_onehot_gen_fin_state[2]_i_4_n_0 ;
+  wire \FSM_onehot_gen_fin_state[2]_i_5_n_0 ;
   wire S0_gen_n_100;
   wire S0_gen_n_101;
   wire S0_gen_n_102;
@@ -8928,10 +8929,9 @@ module Block_top_VDP_wrapper_0_0_VDP
   wire S0_gen_n_105;
   wire S0_gen_n_106;
   wire S0_gen_n_107;
-  wire S0_gen_n_86;
   wire S0_gen_n_87;
   wire S0_gen_n_88;
-  wire S0_gen_n_92;
+  wire S0_gen_n_89;
   wire S0_gen_n_93;
   wire S0_gen_n_94;
   wire S0_gen_n_95;
@@ -8954,8 +8954,6 @@ module Block_top_VDP_wrapper_0_0_VDP
   wire T1_gen_n_8;
   wire T1_gen_n_9;
   wire VGA_clk;
-  wire \VGA_clk_cnt[0]_i_1_n_0 ;
-  wire \VGA_clk_cnt[1]_i_1_n_0 ;
   wire \VGA_clk_cnt_reg_n_0_[0] ;
   wire [2:0]ctrl_reg;
   wire [10:3]draw_pixel_addr;
@@ -8972,8 +8970,8 @@ module Block_top_VDP_wrapper_0_0_VDP
   wire fin_line_buf_i_7_n_0;
   wire fin_line_buf_i_8_n_0;
   wire fin_line_buf_i_9_n_0;
-  wire [2:0]gen_done;
   wire gen_done0;
+  wire [1:0]gen_done__0;
   wire gen_fin_buf_en_i_1_n_0;
   wire gen_fin_buf_en_reg_n_0;
   wire [0:0]gen_fin_data;
@@ -8990,6 +8988,7 @@ module Block_top_VDP_wrapper_0_0_VDP
   wire \gen_fin_data_reg_n_0_[7] ;
   wire \gen_fin_data_reg_n_0_[8] ;
   wire \gen_fin_data_reg_n_0_[9] ;
+  wire \gen_fin_pixel[2]_i_1_n_0 ;
   wire \gen_fin_pixel[9]_i_2_n_0 ;
   wire [9:0]gen_fin_pixel_reg;
   wire [9:0]gen_fin_pixel_reg1__0;
@@ -9015,7 +9014,8 @@ module Block_top_VDP_wrapper_0_0_VDP
   wire [2:0]h_cnt_reg__0;
   wire h_sync;
   wire [1:0]line_reg;
-  wire [9:0]p_0_in;
+  wire [1:0]p_0_in;
+  wire [9:0]p_0_in__0;
   wire [10:0]r0_map_cpu_addr;
   wire r0_map_cpu_clk;
   wire [31:0]r0_map_cpu_din;
@@ -9045,6 +9045,7 @@ module Block_top_VDP_wrapper_0_0_VDP
   wire [31:0]s0_data_cpu_dout;
   wire s0_data_cpu_en;
   wire [3:0]s0_data_cpu_wen;
+  wire s0_done;
   wire [11:0]s0_dout;
   wire [9:0]s0_palette_addr;
   wire [15:0]s0_palette_data;
@@ -9109,63 +9110,70 @@ module Block_top_VDP_wrapper_0_0_VDP
   wire [11:0]NLW_fin_line_buf_doutb_UNCONNECTED;
   wire [3:3]NLW_fin_line_buf_i_1_CO_UNCONNECTED;
 
-  LUT6 #(
-    .INIT(64'hF0F0F0FFF5C0F5CF)) 
-    \FSM_onehot_gen_fin_state[0]_i_1 
-       (.I0(gen_line_start),
-        .I1(\FSM_onehot_gen_fin_state[2]_i_2_n_0 ),
-        .I2(gen_fin_data),
-        .I3(gen_done0),
-        .I4(gen_fin_state),
-        .I5(\FSM_onehot_gen_fin_state[2]_i_3_n_0 ),
-        .O(\FSM_onehot_gen_fin_state[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF00FF00FF3FEA00)) 
-    \FSM_onehot_gen_fin_state[1]_i_1 
-       (.I0(gen_line_start),
-        .I1(\FSM_onehot_gen_fin_state[2]_i_2_n_0 ),
-        .I2(gen_fin_data),
-        .I3(gen_done0),
-        .I4(gen_fin_state),
-        .I5(\FSM_onehot_gen_fin_state[2]_i_3_n_0 ),
-        .O(\FSM_onehot_gen_fin_state[1]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFF0000FAF01030)) 
-    \FSM_onehot_gen_fin_state[2]_i_1 
-       (.I0(gen_line_start),
-        .I1(\FSM_onehot_gen_fin_state[2]_i_2_n_0 ),
-        .I2(gen_fin_data),
-        .I3(gen_done0),
-        .I4(gen_fin_state),
-        .I5(\FSM_onehot_gen_fin_state[2]_i_3_n_0 ),
-        .O(\FSM_onehot_gen_fin_state[2]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair155" *) 
   LUT5 #(
-    .INIT(32'h00000004)) 
-    \FSM_onehot_gen_fin_state[2]_i_2 
-       (.I0(gen_fin_pixel_reg[3]),
-        .I1(gen_fin_pixel_reg[7]),
-        .I2(gen_fin_pixel_reg[4]),
-        .I3(gen_fin_pixel_reg[5]),
-        .I4(\FSM_onehot_gen_fin_state[2]_i_4_n_0 ),
-        .O(\FSM_onehot_gen_fin_state[2]_i_2_n_0 ));
+    .INIT(32'hFA10FA1A)) 
+    \FSM_onehot_gen_fin_state[0]_i_1 
+       (.I0(\FSM_onehot_gen_fin_state[2]_i_2_n_0 ),
+        .I1(gen_line_start),
+        .I2(gen_done0),
+        .I3(gen_fin_data),
+        .I4(gen_fin_state),
+        .O(\FSM_onehot_gen_fin_state[0]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h8000)) 
-    \FSM_onehot_gen_fin_state[2]_i_3 
-       (.I0(gen_done[0]),
-        .I1(gen_done[1]),
-        .I2(gen_done[2]),
+    .INIT(16'hF5E0)) 
+    \FSM_onehot_gen_fin_state[1]_i_1 
+       (.I0(\FSM_onehot_gen_fin_state[2]_i_2_n_0 ),
+        .I1(gen_line_start),
+        .I2(gen_done0),
         .I3(gen_fin_state),
-        .O(\FSM_onehot_gen_fin_state[2]_i_3_n_0 ));
+        .O(\FSM_onehot_gen_fin_state[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  LUT5 #(
+    .INIT(32'hFF15EA00)) 
+    \FSM_onehot_gen_fin_state[2]_i_1 
+       (.I0(\FSM_onehot_gen_fin_state[2]_i_2_n_0 ),
+        .I1(gen_line_start),
+        .I2(gen_done0),
+        .I3(gen_fin_state),
+        .I4(gen_fin_data),
+        .O(\FSM_onehot_gen_fin_state[2]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFEFFFFFFFF)) 
+    .INIT(64'h00000001FFFFFFFF)) 
+    \FSM_onehot_gen_fin_state[2]_i_2 
+       (.I0(gen_fin_pixel_reg[2]),
+        .I1(gen_fin_pixel_reg[5]),
+        .I2(gen_fin_pixel_reg[1]),
+        .I3(\FSM_onehot_gen_fin_state[2]_i_3_n_0 ),
+        .I4(\FSM_onehot_gen_fin_state[2]_i_4_n_0 ),
+        .I5(\FSM_onehot_gen_fin_state[2]_i_5_n_0 ),
+        .O(\FSM_onehot_gen_fin_state[2]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair162" *) 
+  LUT4 #(
+    .INIT(16'hFFFD)) 
+    \FSM_onehot_gen_fin_state[2]_i_3 
+       (.I0(gen_fin_data),
+        .I1(gen_fin_pixel_reg[8]),
+        .I2(gen_fin_pixel_reg[6]),
+        .I3(gen_fin_pixel_reg[0]),
+        .O(\FSM_onehot_gen_fin_state[2]_i_3_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFDF)) 
     \FSM_onehot_gen_fin_state[2]_i_4 
-       (.I0(gen_fin_pixel_reg[1]),
-        .I1(gen_fin_pixel_reg[0]),
-        .I2(gen_fin_pixel_reg[2]),
-        .I3(gen_fin_pixel_reg[8]),
-        .I4(gen_fin_pixel_reg[6]),
-        .I5(gen_fin_pixel_reg[9]),
+       (.I0(gen_fin_pixel_reg[7]),
+        .I1(gen_fin_pixel_reg[4]),
+        .I2(gen_fin_pixel_reg[9]),
+        .I3(gen_fin_pixel_reg[3]),
         .O(\FSM_onehot_gen_fin_state[2]_i_4_n_0 ));
+  LUT5 #(
+    .INIT(32'h7F7F7F70)) 
+    \FSM_onehot_gen_fin_state[2]_i_5 
+       (.I0(gen_done__0[1]),
+        .I1(gen_done__0[0]),
+        .I2(gen_fin_state),
+        .I3(gen_fin_data),
+        .I4(gen_done0),
+        .O(\FSM_onehot_gen_fin_state[2]_i_5_n_0 ));
   (* FSM_ENCODED_STATES = "STATE_WAIT:000000000001,STATE_START:000000000010,STATE_C0:000000000100," *) 
   FDRE #(
     .INIT(1'b1)) 
@@ -9194,19 +9202,16 @@ module Block_top_VDP_wrapper_0_0_VDP
         .Q(gen_fin_data),
         .R(1'b0));
   Block_top_VDP_wrapper_0_0_VDP_sprite_gen S0_gen
-       (.DPRA({S0_gen_n_92,S0_gen_n_93,S0_gen_n_94,S0_gen_n_95,S0_gen_n_96,S0_gen_n_97,S0_gen_n_98}),
+       (.DPRA({S0_gen_n_93,S0_gen_n_94,S0_gen_n_95,S0_gen_n_96,S0_gen_n_97,S0_gen_n_98,S0_gen_n_99}),
         .\FSM_onehot_state[6]_i_3_0 ({h_cnt_reg,h_cnt_reg__0}),
         .Q(gen_fin_pixel_reg),
         .ctrl_reg(ctrl_reg[2]),
         .doutb(s0_dout),
-        .gen_done(gen_done[2]),
-        .gen_done0(gen_done0),
-        .\gen_done_reg[2] (S0_gen_n_106),
         .gen_fin_data1(gen_fin_data1),
         .gen_line_start(gen_line_start),
         .\h_cnt_reg[5] (S0_gen_n_107),
         .\map_r_addr[13]_i_3 (sel0[9:0]),
-        .\pal_issue_reg[5]_0 ({S0_gen_n_99,S0_gen_n_100,S0_gen_n_101,S0_gen_n_102,S0_gen_n_103,S0_gen_n_104,S0_gen_n_105}),
+        .\pal_issue_reg[5]_0 ({S0_gen_n_100,S0_gen_n_101,S0_gen_n_102,S0_gen_n_103,S0_gen_n_104,S0_gen_n_105,S0_gen_n_106}),
         .s0_att_cpu_addr(s0_att_cpu_addr),
         .s0_att_cpu_clk(s0_att_cpu_clk),
         .s0_att_cpu_din(s0_att_cpu_din),
@@ -9219,24 +9224,25 @@ module Block_top_VDP_wrapper_0_0_VDP
         .s0_data_cpu_dout(s0_data_cpu_dout),
         .s0_data_cpu_en(s0_data_cpu_en),
         .s0_data_cpu_wen(s0_data_cpu_wen),
+        .s0_done(s0_done),
         .s0_palette_addr(s0_palette_addr),
         .s0_palette_data(s0_palette_data),
         .s_axi_aclk(s_axi_aclk),
-        .\v_cnt_reg[2] (S0_gen_n_88),
-        .\v_cnt_reg[6] (S0_gen_n_86),
-        .\v_cnt_reg[7] (S0_gen_n_87),
+        .\v_cnt_reg[2] (S0_gen_n_89),
+        .\v_cnt_reg[6] (S0_gen_n_87),
+        .\v_cnt_reg[7] (S0_gen_n_88),
         .\v_cnt_reg[9] (gen_line[9:8]));
   Block_top_VDP_wrapper_0_0_VDP_tile_gen__xdcDup__1 T0_gen
        (.Q(sel0[4:0]),
         .S(reg_mem_n_20),
         .buf_dout(t0_dout),
-        .gen_done(gen_done[0]),
         .gen_done0(gen_done0),
+        .gen_done__0(gen_done__0[0]),
         .\gen_done_reg[0] (T0_gen_n_0),
         .\gen_fin_data_reg[11] (gen_fin_pixel_reg),
         .gen_line({gen_line[9:8],gen_line[6:5]}),
         .gen_line_start(gen_line_start),
-        .\map_r_addr_reg[11]_0 (S0_gen_n_87),
+        .\map_r_addr_reg[11]_0 (S0_gen_n_88),
         .\map_r_addr_reg[11]_1 ({reg_mem_n_0,reg_mem_n_1,reg_mem_n_2}),
         .s_axi_aclk(s_axi_aclk),
         .t0_data_cpu_addr(t0_data_cpu_addr),
@@ -9262,15 +9268,16 @@ module Block_top_VDP_wrapper_0_0_VDP
         .buf_dout(t0_dout),
         .ctrl_reg(ctrl_reg[1:0]),
         .doutb(s0_dout),
-        .gen_done(gen_done[1]),
         .gen_done0(gen_done0),
+        .gen_done__0(gen_done__0[1]),
         .\gen_done_reg[1] (T1_gen_n_0),
         .gen_fin_data1(gen_fin_data1),
         .\gen_fin_data_reg[11] (gen_fin_pixel_reg),
         .gen_line_start(gen_line_start),
-        .\map_r_addr_reg[11]_0 (S0_gen_n_87),
+        .\map_r_addr_reg[11]_0 (S0_gen_n_88),
         .\map_r_addr_reg[11]_1 ({reg_mem_n_9,reg_mem_n_10,reg_mem_n_11}),
         .\map_r_addr_reg[13]_0 (gen_line[9:8]),
+        .s0_done(s0_done),
         .s_axi_aclk(s_axi_aclk),
         .t1_data_cpu_addr(t1_data_cpu_addr),
         .t1_data_cpu_clk(t1_data_cpu_clk),
@@ -9294,20 +9301,20 @@ module Block_top_VDP_wrapper_0_0_VDP
     .INIT(2'h1)) 
     \VGA_clk_cnt[0]_i_1 
        (.I0(\VGA_clk_cnt_reg_n_0_[0] ),
-        .O(\VGA_clk_cnt[0]_i_1_n_0 ));
+        .O(p_0_in[0]));
   (* SOFT_HLUTNM = "soft_lutpair168" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \VGA_clk_cnt[1]_i_1 
        (.I0(\VGA_clk_cnt_reg_n_0_[0] ),
         .I1(VGA_clk),
-        .O(\VGA_clk_cnt[1]_i_1_n_0 ));
+        .O(p_0_in[1]));
   FDRE #(
     .INIT(1'b0)) 
     \VGA_clk_cnt_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\VGA_clk_cnt[0]_i_1_n_0 ),
+        .D(p_0_in[0]),
         .Q(\VGA_clk_cnt_reg_n_0_[0] ),
         .R(1'b0));
   FDRE #(
@@ -9315,7 +9322,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \VGA_clk_cnt_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\VGA_clk_cnt[1]_i_1_n_0 ),
+        .D(p_0_in[1]),
         .Q(VGA_clk),
         .R(1'b0));
   (* CHECK_LICENSE_TYPE = "blk_mem_fin_line,blk_mem_gen_v8_4_12,{}" *) 
@@ -9389,19 +9396,13 @@ module Block_top_VDP_wrapper_0_0_VDP
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(T0_gen_n_0),
-        .Q(gen_done[0]),
+        .Q(gen_done__0[0]),
         .R(1'b0));
   FDRE \gen_done_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(T1_gen_n_0),
-        .Q(gen_done[1]),
-        .R(1'b0));
-  FDRE \gen_done_reg[2] 
-       (.C(s_axi_aclk),
-        .CE(1'b1),
-        .D(S0_gen_n_106),
-        .Q(gen_done[2]),
+        .Q(gen_done__0[1]),
         .R(1'b0));
   LUT3 #(
     .INIT(8'hBA)) 
@@ -9518,22 +9519,22 @@ module Block_top_VDP_wrapper_0_0_VDP
     .INIT(2'h1)) 
     \gen_fin_pixel[0]_i_1 
        (.I0(gen_fin_pixel_reg[0]),
-        .O(p_0_in[0]));
+        .O(p_0_in__0[0]));
   (* SOFT_HLUTNM = "soft_lutpair164" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \gen_fin_pixel[1]_i_1 
        (.I0(gen_fin_pixel_reg[0]),
         .I1(gen_fin_pixel_reg[1]),
-        .O(p_0_in[1]));
+        .O(p_0_in__0[1]));
   (* SOFT_HLUTNM = "soft_lutpair164" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \gen_fin_pixel[2]_i_1 
        (.I0(gen_fin_pixel_reg[2]),
-        .I1(gen_fin_pixel_reg[0]),
-        .I2(gen_fin_pixel_reg[1]),
-        .O(p_0_in[2]));
+        .I1(gen_fin_pixel_reg[1]),
+        .I2(gen_fin_pixel_reg[0]),
+        .O(\gen_fin_pixel[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair157" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
@@ -9542,7 +9543,7 @@ module Block_top_VDP_wrapper_0_0_VDP
         .I1(gen_fin_pixel_reg[1]),
         .I2(gen_fin_pixel_reg[0]),
         .I3(gen_fin_pixel_reg[2]),
-        .O(p_0_in[3]));
+        .O(p_0_in__0[3]));
   (* SOFT_HLUTNM = "soft_lutpair157" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
@@ -9552,7 +9553,7 @@ module Block_top_VDP_wrapper_0_0_VDP
         .I2(gen_fin_pixel_reg[0]),
         .I3(gen_fin_pixel_reg[1]),
         .I4(gen_fin_pixel_reg[3]),
-        .O(p_0_in[4]));
+        .O(p_0_in__0[4]));
   LUT6 #(
     .INIT(64'h7FFFFFFF80000000)) 
     \gen_fin_pixel[5]_i_1 
@@ -9562,22 +9563,21 @@ module Block_top_VDP_wrapper_0_0_VDP
         .I3(gen_fin_pixel_reg[2]),
         .I4(gen_fin_pixel_reg[4]),
         .I5(gen_fin_pixel_reg[5]),
-        .O(p_0_in[5]));
-  (* SOFT_HLUTNM = "soft_lutpair163" *) 
+        .O(p_0_in__0[5]));
+  (* SOFT_HLUTNM = "soft_lutpair162" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \gen_fin_pixel[6]_i_1 
        (.I0(gen_fin_pixel_reg[6]),
         .I1(\gen_fin_pixel[9]_i_2_n_0 ),
-        .O(p_0_in[6]));
-  (* SOFT_HLUTNM = "soft_lutpair163" *) 
+        .O(p_0_in__0[6]));
   LUT3 #(
     .INIT(8'h6A)) 
     \gen_fin_pixel[7]_i_1 
        (.I0(gen_fin_pixel_reg[7]),
         .I1(\gen_fin_pixel[9]_i_2_n_0 ),
         .I2(gen_fin_pixel_reg[6]),
-        .O(p_0_in[7]));
+        .O(p_0_in__0[7]));
   (* SOFT_HLUTNM = "soft_lutpair156" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
@@ -9586,7 +9586,7 @@ module Block_top_VDP_wrapper_0_0_VDP
         .I1(gen_fin_pixel_reg[6]),
         .I2(\gen_fin_pixel[9]_i_2_n_0 ),
         .I3(gen_fin_pixel_reg[7]),
-        .O(p_0_in[8]));
+        .O(p_0_in__0[8]));
   (* SOFT_HLUTNM = "soft_lutpair156" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
@@ -9596,7 +9596,7 @@ module Block_top_VDP_wrapper_0_0_VDP
         .I2(\gen_fin_pixel[9]_i_2_n_0 ),
         .I3(gen_fin_pixel_reg[6]),
         .I4(gen_fin_pixel_reg[8]),
-        .O(p_0_in[9]));
+        .O(p_0_in__0[9]));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
     \gen_fin_pixel[9]_i_2 
@@ -9692,7 +9692,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[0] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[0]),
+        .D(p_0_in__0[0]),
         .Q(gen_fin_pixel_reg[0]),
         .R(gen_done0));
   FDRE #(
@@ -9700,7 +9700,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[1] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[1]),
+        .D(p_0_in__0[1]),
         .Q(gen_fin_pixel_reg[1]),
         .R(gen_done0));
   FDRE #(
@@ -9708,7 +9708,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[2] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[2]),
+        .D(\gen_fin_pixel[2]_i_1_n_0 ),
         .Q(gen_fin_pixel_reg[2]),
         .R(gen_done0));
   FDRE #(
@@ -9716,7 +9716,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[3] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[3]),
+        .D(p_0_in__0[3]),
         .Q(gen_fin_pixel_reg[3]),
         .R(gen_done0));
   FDRE #(
@@ -9724,7 +9724,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[4] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[4]),
+        .D(p_0_in__0[4]),
         .Q(gen_fin_pixel_reg[4]),
         .R(gen_done0));
   FDRE #(
@@ -9732,7 +9732,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[5] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[5]),
+        .D(p_0_in__0[5]),
         .Q(gen_fin_pixel_reg[5]),
         .R(gen_done0));
   FDRE #(
@@ -9740,7 +9740,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[6] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[6]),
+        .D(p_0_in__0[6]),
         .Q(gen_fin_pixel_reg[6]),
         .R(gen_done0));
   FDRE #(
@@ -9748,7 +9748,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[7] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[7]),
+        .D(p_0_in__0[7]),
         .Q(gen_fin_pixel_reg[7]),
         .R(gen_done0));
   FDRE #(
@@ -9756,7 +9756,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[8] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[8]),
+        .D(p_0_in__0[8]),
         .Q(gen_fin_pixel_reg[8]),
         .R(gen_done0));
   FDRE #(
@@ -9764,7 +9764,7 @@ module Block_top_VDP_wrapper_0_0_VDP
     \gen_fin_pixel_reg[9] 
        (.C(s_axi_aclk),
         .CE(gen_fin_data),
-        .D(p_0_in[9]),
+        .D(p_0_in__0[9]),
         .Q(gen_fin_pixel_reg[9]),
         .R(gen_done0));
   FDRE #(
@@ -9893,7 +9893,7 @@ module Block_top_VDP_wrapper_0_0_VDP
         .I1(h_cnt_reg__0[0]),
         .I2(h_cnt_reg__0[1]),
         .O(\h_cnt[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair162" *) 
+  (* SOFT_HLUTNM = "soft_lutpair163" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \h_cnt[3]_i_1 
@@ -9951,7 +9951,7 @@ module Block_top_VDP_wrapper_0_0_VDP
         .I4(h_cnt_reg[6]),
         .I5(h_cnt_reg[7]),
         .O(\h_cnt[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair162" *) 
+  (* SOFT_HLUTNM = "soft_lutpair163" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \h_cnt[8]_i_2 
@@ -10069,16 +10069,16 @@ module Block_top_VDP_wrapper_0_0_VDP
         .O(h_sync));
   Block_top_VDP_wrapper_0_0_REG_MEMORY reg_mem
        (.D(reg_mem_n_18),
-        .DPRA({S0_gen_n_92,S0_gen_n_93,S0_gen_n_94,S0_gen_n_95,S0_gen_n_96,S0_gen_n_97,S0_gen_n_98}),
+        .DPRA({S0_gen_n_93,S0_gen_n_94,S0_gen_n_95,S0_gen_n_96,S0_gen_n_97,S0_gen_n_98,S0_gen_n_99}),
         .Q(sel0),
         .S(reg_mem_n_19),
         .ctrl_reg(ctrl_reg),
-        .\data_out[15]_i_6_0 ({S0_gen_n_99,S0_gen_n_100,S0_gen_n_101,S0_gen_n_102,S0_gen_n_103,S0_gen_n_104,S0_gen_n_105}),
-        .\data_out[8]_i_7_0 (S0_gen_n_88),
+        .\data_out[15]_i_6_0 ({S0_gen_n_100,S0_gen_n_101,S0_gen_n_102,S0_gen_n_103,S0_gen_n_104,S0_gen_n_105,S0_gen_n_106}),
+        .\data_out[8]_i_7_0 (S0_gen_n_89),
         .\data_out[9]_i_4_0 (gen_line[9:8]),
         .\h_cnt_reg[6] (stat_reg),
-        .\map_r_addr_reg[11] (S0_gen_n_86),
-        .\map_r_addr_reg[11]_0 (S0_gen_n_87),
+        .\map_r_addr_reg[11] (S0_gen_n_87),
+        .\map_r_addr_reg[11]_0 (S0_gen_n_88),
         .r0_map_cpu_addr(r0_map_cpu_addr),
         .r0_map_cpu_clk(r0_map_cpu_clk),
         .r0_map_cpu_din(r0_map_cpu_din),
@@ -10118,13 +10118,13 @@ module Block_top_VDP_wrapper_0_0_VDP
         .I5(\v_cnt[10]_i_6_n_0 ),
         .O(\v_cnt[10]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hAAAA6AAA)) 
+    .INIT(32'h9AAAAAAA)) 
     \v_cnt[10]_i_3 
        (.I0(sel0[10]),
-        .I1(sel0[9]),
+        .I1(\v_cnt[10]_i_7_n_0 ),
         .I2(sel0[8]),
         .I3(sel0[7]),
-        .I4(\v_cnt[10]_i_7_n_0 ),
+        .I4(sel0[9]),
         .O(\v_cnt[10]_i_3_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair158" *) 
   LUT5 #(
@@ -10220,19 +10220,19 @@ module Block_top_VDP_wrapper_0_0_VDP
     .INIT(32'h6AAAAAAA)) 
     \v_cnt[8]_i_1 
        (.I0(sel0[8]),
-        .I1(reg_mem_n_23),
+        .I1(sel0[5]),
         .I2(sel0[6]),
-        .I3(sel0[5]),
+        .I3(reg_mem_n_23),
         .I4(sel0[7]),
         .O(\v_cnt[8]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'h44441444)) 
+    .INIT(32'h45551000)) 
     \v_cnt[9]_i_1 
        (.I0(\v_cnt[10]_i_6_n_0 ),
-        .I1(sel0[9]),
+        .I1(\v_cnt[10]_i_7_n_0 ),
         .I2(sel0[8]),
         .I3(sel0[7]),
-        .I4(\v_cnt[10]_i_7_n_0 ),
+        .I4(sel0[9]),
         .O(\v_cnt[9]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -10465,11 +10465,11 @@ module Block_top_VDP_wrapper_0_0_VDP
     .INIT(64'hEAAAAAAAAAAAAAAA)) 
     \vga_r[3]_INST_0_i_3 
        (.I0(sel0[9]),
-        .I1(sel0[5]),
-        .I2(sel0[6]),
-        .I3(reg_mem_n_23),
-        .I4(sel0[7]),
-        .I5(sel0[8]),
+        .I1(sel0[7]),
+        .I2(sel0[8]),
+        .I3(sel0[5]),
+        .I4(sel0[6]),
+        .I5(reg_mem_n_23),
         .O(\vga_r[3]_INST_0_i_3_n_0 ));
 endmodule
 
@@ -10479,6 +10479,7 @@ module Block_top_VDP_wrapper_0_0_VDP_sprite_gen
     s0_data_cpu_dout,
     s0_palette_addr,
     s0_att_cpu_dout,
+    s0_done,
     \v_cnt_reg[6] ,
     \v_cnt_reg[7] ,
     \v_cnt_reg[2] ,
@@ -10486,7 +10487,6 @@ module Block_top_VDP_wrapper_0_0_VDP_sprite_gen
     \v_cnt_reg[9] ,
     DPRA,
     \pal_issue_reg[5]_0 ,
-    \gen_done_reg[2] ,
     \h_cnt_reg[5] ,
     gen_fin_data1,
     s_axi_aclk,
@@ -10502,8 +10502,6 @@ module Block_top_VDP_wrapper_0_0_VDP_sprite_gen
     s0_att_cpu_addr,
     s0_att_cpu_din,
     \map_r_addr[13]_i_3 ,
-    gen_done,
-    gen_done0,
     \FSM_onehot_state[6]_i_3_0 ,
     ctrl_reg,
     s0_palette_data);
@@ -10511,6 +10509,7 @@ module Block_top_VDP_wrapper_0_0_VDP_sprite_gen
   output [31:0]s0_data_cpu_dout;
   output [9:0]s0_palette_addr;
   output [31:0]s0_att_cpu_dout;
+  output s0_done;
   output \v_cnt_reg[6] ;
   output \v_cnt_reg[7] ;
   output \v_cnt_reg[2] ;
@@ -10518,7 +10517,6 @@ module Block_top_VDP_wrapper_0_0_VDP_sprite_gen
   output [1:0]\v_cnt_reg[9] ;
   output [6:0]DPRA;
   output [6:0]\pal_issue_reg[5]_0 ;
-  output \gen_done_reg[2] ;
   output \h_cnt_reg[5] ;
   output gen_fin_data1;
   input s_axi_aclk;
@@ -10534,8 +10532,6 @@ module Block_top_VDP_wrapper_0_0_VDP_sprite_gen
   input [6:0]s0_att_cpu_addr;
   input [31:0]s0_att_cpu_din;
   input [9:0]\map_r_addr[13]_i_3 ;
-  input [0:0]gen_done;
-  input gen_done0;
   input [10:0]\FSM_onehot_state[6]_i_3_0 ;
   input [0:0]ctrl_reg;
   input [15:0]s0_palette_data;
@@ -10675,9 +10671,6 @@ module Block_top_VDP_wrapper_0_0_VDP_sprite_gen
   wire \data_pos_reg_n_0_[8] ;
   wire \data_pos_reg_n_0_[9] ;
   wire [11:0]doutb;
-  wire [0:0]gen_done;
-  wire gen_done0;
-  wire \gen_done_reg[2] ;
   wire gen_fin_data1;
   wire [2:1]gen_line;
   wire gen_line_start;
@@ -13219,13 +13212,6 @@ module Block_top_VDP_wrapper_0_0_VDP_sprite_gen
         .D(data_pos0_in[9]),
         .Q(\data_pos_reg_n_0_[9] ),
         .R(1'b0));
-  LUT3 #(
-    .INIT(8'h0E)) 
-    \gen_done[2]_i_1 
-       (.I0(gen_done),
-        .I1(s0_done),
-        .I2(gen_done0),
-        .O(\gen_done_reg[2] ));
   LUT5 #(
     .INIT(32'hAAAAAAA8)) 
     \gen_fin_data[11]_i_3 
@@ -21931,7 +21917,8 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen
     t1_data_cpu_dout,
     t1_palette_addr,
     Q,
-    gen_done,
+    gen_done__0,
+    s0_done,
     gen_done0,
     \map_r_addr_reg[13]_0 ,
     \map_r_addr_reg[11]_0 ,
@@ -21964,7 +21951,8 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen
   output [31:0]t1_data_cpu_dout;
   output [7:0]t1_palette_addr;
   input [6:0]Q;
-  input [0:0]gen_done;
+  input [0:0]gen_done__0;
+  input s0_done;
   input gen_done0;
   input [1:0]\map_r_addr_reg[13]_0 ;
   input \map_r_addr_reg[11]_0 ;
@@ -22017,8 +22005,8 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen
   wire \data_r_addr_reg_n_0_[9] ;
   wire [63:0]data_r_data;
   wire [11:0]doutb;
-  wire [0:0]gen_done;
   wire gen_done0;
+  wire [0:0]gen_done__0;
   wire \gen_done_reg[1] ;
   wire gen_fin_data1;
   wire gen_fin_data11_out;
@@ -22118,6 +22106,7 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen
   wire \pixel_addr_reg_n_0_[7] ;
   wire \pixel_addr_reg_n_0_[8] ;
   wire \pixel_addr_reg_n_0_[9] ;
+  wire s0_done;
   wire s_axi_aclk;
   wire [5:2]state;
   wire [5:0]state__0;
@@ -22414,13 +22403,13 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen
         .D(map_a_dout[6]),
         .Q(\data_r_addr_reg_n_0_[9] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
-  LUT3 #(
-    .INIT(8'h0E)) 
+  LUT4 #(
+    .INIT(16'h00FE)) 
     \gen_done[1]_i_1 
-       (.I0(gen_done),
+       (.I0(gen_done__0),
         .I1(t1_done),
-        .I2(gen_done0),
+        .I2(s0_done),
+        .I3(gen_done0),
         .O(\gen_done_reg[1] ));
   LUT6 #(
     .INIT(64'hB8BBB888B888B888)) 
@@ -22566,7 +22555,6 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen
         .ena(\FSM_onehot_state_reg_n_0_[6] ),
         .wea(1'b1),
         .web(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT3 #(
     .INIT(8'h0E)) 
     line_done_i_1__0
@@ -23416,7 +23404,7 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen__xdcDup__1
     t0_data_cpu_dout,
     t0_palette_addr,
     Q,
-    gen_done,
+    gen_done__0,
     gen_done0,
     \map_r_addr_reg[11]_0 ,
     s_axi_aclk,
@@ -23444,7 +23432,7 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen__xdcDup__1
   output [31:0]t0_data_cpu_dout;
   output [7:0]t0_palette_addr;
   input [4:0]Q;
-  input [0:0]gen_done;
+  input [0:0]gen_done__0;
   input gen_done0;
   input \map_r_addr_reg[11]_0 ;
   input s_axi_aclk;
@@ -23490,8 +23478,8 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen__xdcDup__1
   wire \data_r_addr_reg_n_0_[8] ;
   wire \data_r_addr_reg_n_0_[9] ;
   wire [63:0]data_r_data;
-  wire [0:0]gen_done;
   wire gen_done0;
+  wire [0:0]gen_done__0;
   wire \gen_done_reg[0] ;
   wire [9:0]\gen_fin_data_reg[11] ;
   wire [3:0]gen_line;
@@ -23891,7 +23879,7 @@ module Block_top_VDP_wrapper_0_0_VDP_tile_gen__xdcDup__1
   LUT3 #(
     .INIT(8'h0E)) 
     \gen_done[0]_i_1 
-       (.I0(gen_done),
+       (.I0(gen_done__0),
         .I1(t0_done),
         .I2(gen_done0),
         .O(\gen_done_reg[0] ));

@@ -69,7 +69,6 @@ module VDP#(
     parameter BIT_CTRL_S0_EN    = 2
 )(
 
-
     // ============================================================
     // TILE 0 MAP CPU BRAM interface
     // ============================================================
@@ -186,6 +185,7 @@ module VDP#(
     (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_ATT_CPU_BRAM CLK" *)
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S0_ATT_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 512, READ_WRITE_MODE READ_WRITE" *)
     input               s0_att_cpu_clk,
+
 
     // ============================================================
     // SPRITE 0 DATA CPU BRAM interface
@@ -568,7 +568,7 @@ VDP_sprite_gen #(
 
         if(t1_done)
             gen_done[T1_GEN_NUM] <= 1'b1;
-        
+
         case(gen_fin_state)
             STATE_WAIT: begin
                 gen_fin_buf_en <= 1'b0;
@@ -584,8 +584,7 @@ VDP_sprite_gen #(
             STATE_C0: begin
                 gen_fin_buf_en <= 1'b1;
                 gen_fin_pixel <= gen_fin_pixel + 1;
-
-                if(t1_en && t1_dout[15:12] != 4'h0) begin
+                if (t1_en && (t1_dout[15:12] != 4'h0)) begin
                     gen_fin_data <= t1_dout[11:0];
                 end else if(s0_en && (s0_dout[15:12] != 4'h0)) begin
                     gen_fin_data <= s0_dout[11:0];

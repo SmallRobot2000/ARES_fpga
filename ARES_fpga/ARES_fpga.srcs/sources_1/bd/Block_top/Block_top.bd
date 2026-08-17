@@ -2893,14 +2893,14 @@
       },
       "axi_bram_ctrl_vdp_t1_data_BRAM_PORTA": {
         "interface_ports": [
-          "axi_bram_ctrl_vdp_t1_data/BRAM_PORTA",
-          "VDP_wrapper_0/T1_DATA_CPU_BRAM"
+          "VDP_wrapper_0/T1_DATA_CPU_BRAM",
+          "axi_bram_ctrl_vdp_t1_data/BRAM_PORTA"
         ]
       },
       "axi_bram_ctrl_vdp_t1_map_BRAM_PORTA": {
         "interface_ports": [
-          "axi_bram_ctrl_vdp_t1_map/BRAM_PORTA",
-          "VDP_wrapper_0/T1_MAP_CPU_BRAM"
+          "VDP_wrapper_0/T1_MAP_CPU_BRAM",
+          "axi_bram_ctrl_vdp_t1_map/BRAM_PORTA"
         ]
       },
       "smartconnect_0_M00_AXI": {
@@ -3233,9 +3233,9 @@
           "FLASH_SPI_wrapper_0/s_axi_clk",
           "VexiiSocWrapper_0/s_axi_aclk",
           "axi_bram_ctrl_vdp_r0_map/s_axi_aclk",
+          "VDP_wrapper_0/s_axi_aclk",
           "axi_bram_ctrl_vdp_t1_map/s_axi_aclk",
-          "axi_bram_ctrl_vdp_t1_data/s_axi_aclk",
-          "VDP_wrapper_0/s_axi_aclk"
+          "axi_bram_ctrl_vdp_t1_data/s_axi_aclk"
         ]
       },
       "reset": {
@@ -3259,9 +3259,9 @@
           "smartconnect_io/aresetn",
           "VexiiSocWrapper_0/s_axi_aresetn",
           "axi_bram_ctrl_vdp_r0_map/s_axi_aresetn",
-          "axi_bram_ctrl_vdp_t1_data/s_axi_aresetn",
+          "VDP_wrapper_0/s_axi_aresetn",
           "axi_bram_ctrl_vdp_t1_map/s_axi_aresetn",
-          "VDP_wrapper_0/s_axi_aresetn"
+          "axi_bram_ctrl_vdp_t1_data/s_axi_aresetn"
         ]
       },
       "rst_in": {
@@ -3365,12 +3365,12 @@
               },
               "SEG_axi_bram_ctrl_vdp_t1_data_Mem0": {
                 "address_block": "/axi_bram_ctrl_vdp_t1_data/S_AXI/Mem0",
-                "offset": "0x10050000",
+                "offset": "0x10040000",
                 "range": "64K"
               },
               "SEG_axi_bram_ctrl_vdp_t1_map_Mem0": {
                 "address_block": "/axi_bram_ctrl_vdp_t1_map/S_AXI/Mem0",
-                "offset": "0x10040000",
+                "offset": "0x10050000",
                 "range": "32K"
               },
               "SEG_axi_quad_spi_0_Reg": {

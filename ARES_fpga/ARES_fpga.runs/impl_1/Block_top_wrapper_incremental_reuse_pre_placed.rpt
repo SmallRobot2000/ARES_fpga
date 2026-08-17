@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Mon Aug 17 21:15:36 2026
+| Date         : Mon Aug 17 23:35:06 2026
 | Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_incremental_reuse -file Block_top_wrapper_incremental_reuse_pre_placed.rpt
 | Design       : Block_top_wrapper
@@ -45,9 +45,9 @@ Table of Contents
 +-------+----------------------+----------------------------+--------------------+--------+
 |  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) |  Total |
 +-------+----------------------+----------------------------+--------------------+--------+
-| Cells |                99.98 |                      99.97 |               0.38 |  53602 |
-| Nets  |                99.97 |                      99.83 |               0.00 |  39628 |
-| Pins  |                    - |                      99.93 |                  - | 232744 |
+| Cells |                96.42 |                      96.33 |               0.38 |  53601 |
+| Nets  |                95.54 |                      92.18 |               0.00 |  39598 |
+| Pins  |                    - |                      89.87 |                  - | 232638 |
 | Ports |               100.00 |                     100.00 |             100.00 |     78 |
 +-------+----------------------+----------------------------+--------------------+--------+
 
@@ -65,7 +65,7 @@ Table of Contents
 +--------------------------------+----------------------------+
 | Vivado Version                 |                     2025.2 |
 | DCP State                      |                 POST_ROUTE |
-| Recorded WNS                   |                      0.240 |
+| Recorded WNS                   |                      0.372 |
 | Recorded WHS                   |                      0.015 |
 | Reference Speed File Version   | PRODUCTION 1.23 2018-06-13 |
 | Incremental Speed File Version | PRODUCTION 1.23 2018-06-13 |
@@ -85,7 +85,7 @@ Table of Contents
 | opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | place_design    |       0.377 |             |     < 1 min |             |       00:01 |             |
-| route_design    |       0.241 |             |       00:01 |             |       00:02 |             |
+| route_design    |       0.377 |             |       00:01 |             |       00:02 |             |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
@@ -131,11 +131,12 @@ read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /hom
 +------------------------------------------------------+------+
 |                         Type                         |   %  |
 +------------------------------------------------------+------+
-| Non-Reused Cells                                     | 0.02 |
-|   New                                                | 0.01 |
-|   Discarded illegal placement due to netlist changes | 0.01 |
-| Partially reused nets                                | 0.09 |
-| Non-Reused nets                                      | 0.06 |
+| Non-Reused Cells                                     | 3.66 |
+|   New                                                | 3.41 |
+|   Discarded illegal placement due to netlist changes | 0.07 |
+|   Discarded to improve timing                        | 0.18 |
+| Partially reused nets                                | 1.18 |
+| Non-Reused nets                                      | 6.62 |
 | Non-Reused Ports                                     | 0.00 |
 +------------------------------------------------------+------+
 
