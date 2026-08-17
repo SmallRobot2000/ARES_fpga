@@ -56,7 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "Block_top_VexiiSocWrapper_0_1_synth_1" START { ROLLUP_AUTO }
-set_param bd.open.in_stealth_mode 2
+set_param bd.open.in_stealth_mode 1
 set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 3
 set_param general.usePosixSpawnForFork 1

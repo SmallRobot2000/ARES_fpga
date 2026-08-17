@@ -322,6 +322,42 @@
             },
             "V10": {
                 "VT": "AC",
+                "BA": "0x10040000",
+                "HA": "0x10047FFF",
+                "BP": "C_S_AXI_BASEADDR",
+                "HP": "C_S_AXI_HIGHADDR",
+                "MA": "pBus",
+                "MX": "/VexiiSocWrapper_0",
+                "MI": "pBus",
+                "MS": "SEG_axi_bram_ctrl_vdp_t1_map_Mem0",
+                "MV": "xilinx.com:module_ref:VexiiSocWrapper:1.0",
+                "SX": "/axi_bram_ctrl_vdp_t1_map",
+                "SI": "S_AXI",
+                "SS": "Mem0",
+                "SV": "xilinx.com:ip:axi_bram_ctrl:4.1",
+                "TM": "both",
+                "TU": "memory"
+            },
+            "V11": {
+                "VT": "AC",
+                "BA": "0x10050000",
+                "HA": "0x1005FFFF",
+                "BP": "C_S_AXI_BASEADDR",
+                "HP": "C_S_AXI_HIGHADDR",
+                "MA": "pBus",
+                "MX": "/VexiiSocWrapper_0",
+                "MI": "pBus",
+                "MS": "SEG_axi_bram_ctrl_vdp_t1_data_Mem0",
+                "MV": "xilinx.com:module_ref:VexiiSocWrapper:1.0",
+                "SX": "/axi_bram_ctrl_vdp_t1_data",
+                "SI": "S_AXI",
+                "SS": "Mem0",
+                "SV": "xilinx.com:ip:axi_bram_ctrl:4.1",
+                "TM": "both",
+                "TU": "memory"
+            },
+            "V12": {
+                "VT": "AC",
                 "BA": "0x80000000",
                 "HA": "0x800FFFFF",
                 "BP": "C_BASEADDR",
@@ -338,7 +374,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V11": {
+            "V13": {
                 "VT": "AC",
                 "BA": "0x90000000",
                 "HA": "0x9F7FFFFF",
@@ -408,6 +444,16 @@
             },
             {
                 "src": "V11",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V12",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V13",
                 "trg": "V2",
                 "EH": "2"
             }

@@ -46,9 +46,10 @@ module VDP#(
     parameter VGA_H_TOTAL = VGA_H_BACK_PORCH + VGA_H_ACTIVE + VGA_H_FRONT_PORCH + VGA_H_SYNC,
     parameter VGA_V_TOTAL = VGA_V_BACK_PORCH + VGA_V_ACTIVE + VGA_V_FRONT_PORCH + VGA_V_SYNC,
 
-    parameter NUM_GEN = 2,
+    parameter NUM_GEN = 3,
     parameter T0_GEN_NUM = 0,
-    parameter S0_GEN_NUM = 1,
+    parameter T1_GEN_NUM = 1,
+    parameter S0_GEN_NUM = 2,
 
     parameter REG_CTRL_0     = 8'h00,
     parameter REG_STAT_0     = 8'h01,
@@ -67,6 +68,7 @@ module VDP#(
     parameter BIT_CTRL_T1_EN    = 1,
     parameter BIT_CTRL_S0_EN    = 2
 )(
+
 
     // ============================================================
     // TILE 0 MAP CPU BRAM interface
@@ -113,6 +115,54 @@ module VDP#(
     (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM CLK" *)
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T0_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE" *)
     input  wire        t0_data_cpu_clk,
+
+
+    // ============================================================
+    // TILE 1 MAP CPU BRAM interface
+    // ============================================================
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM ADDR" *)
+    input  wire [14:0] t1_map_cpu_addr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM DIN" *)
+    input  wire [31:0] t1_map_cpu_din,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM DOUT" *)
+    output wire [31:0] t1_map_cpu_dout,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM EN" *)
+    input  wire        t1_map_cpu_en,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM WE" *)
+    input  wire [3:0]  t1_map_cpu_wen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T1_MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE" *)
+    input  wire        t1_map_cpu_clk,
+
+    // ============================================================
+    // TILE 1 DATA CPU BRAM interface
+    // ============================================================
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM ADDR" *)
+    input  wire [15:0] t1_data_cpu_addr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM DIN" *)
+    input  wire [31:0] t1_data_cpu_din,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM DOUT" *)
+    output wire [31:0] t1_data_cpu_dout,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM EN" *)
+    input  wire        t1_data_cpu_en,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM WE" *)
+    input  wire [3:0]  t1_data_cpu_wen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T1_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE" *)
+    input  wire        t1_data_cpu_clk,
+
 
     // ============================================================
     // SPRITE 0 ATTRIBUTE CPU BRAM interface
@@ -137,52 +187,6 @@ module VDP#(
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S0_ATT_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 512, READ_WRITE_MODE READ_WRITE" *)
     input               s0_att_cpu_clk,
 
-
-    // ============================================================
-    // TILE 0 MAP CPU BRAM interface
-    // ============================================================
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM ADDR" *)
-    input  wire [14:0] t0_map_cpu_addr,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM DIN" *)
-    input  wire [31:0] t0_map_cpu_din,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM DOUT" *)
-    output wire [31:0] t0_map_cpu_dout,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM EN" *)
-    input  wire        t0_map_cpu_en,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM WE" *)
-    input  wire [3:0]  t0_map_cpu_wen,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_MAP_CPU_BRAM CLK" *)
-    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T0_MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE" *)
-    input  wire        t0_map_cpu_clk,
-
-    // ============================================================
-    // TILE 0 DATA CPU BRAM interface
-    // ============================================================
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM ADDR" *)
-    input  wire [15:0] t0_data_cpu_addr,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM DIN" *)
-    input  wire [31:0] t0_data_cpu_din,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM DOUT" *)
-    output wire [31:0] t0_data_cpu_dout,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM EN" *)
-    input  wire        t0_data_cpu_en,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM WE" *)
-    input  wire [3:0]  t0_data_cpu_wen,
-
-    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM CLK" *)
-    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T0_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE" *)
-    input  wire        t0_data_cpu_clk,
     // ============================================================
     // SPRITE 0 DATA CPU BRAM interface
     // ============================================================
@@ -368,7 +372,6 @@ module VDP#(
     // T1 is not instantiated yet. Keep its palette read port idle.
     wire [7:0]  t1_palette_addr;
     wire [15:0] t1_palette_data;
-    assign t1_palette_addr = 8'b0;
 
     wire [9:0]  s0_palette_addr;
     wire [15:0] s0_palette_data;
@@ -457,6 +460,50 @@ VDP_tile_gen #(
     .palette_data(t0_palette_data)
 );
 
+
+    // ============================================================
+    // Tile generator 1
+    // ============================================================
+
+    wire [15:0] t1_dout;
+    wire [9:0]  t1_addr = gen_fin_pixel;
+    wire        t1_done;
+
+VDP_tile_gen #(
+    .SCREEN_WIDTH(VGA_H_ACTIVE),
+    .SCREEN_HEIGHT(VGA_V_ACTIVE)
+) T1_gen (
+    .clk_100(clk_100),
+
+    .start(gen_line_start),
+    .gen_line(gen_line),
+
+    .x_off(t1_x_off_reg[9:0]),
+    .y_off(t1_y_off_reg[9:0]),
+
+    .buf_dout(t1_dout),
+    .buf_addr_out(t1_addr),
+
+    .line_done(t1_done),
+
+    .map_cpu_addr(t1_map_cpu_addr),
+    .map_cpu_din(t1_map_cpu_din),
+    .map_cpu_dout(t1_map_cpu_dout),
+    .map_cpu_en(t1_map_cpu_en),
+    .map_cpu_wen(t1_map_cpu_wen),
+    .map_cpu_clk(t1_map_cpu_clk),
+
+    .data_cpu_addr(t1_data_cpu_addr),
+    .data_cpu_din(t1_data_cpu_din),
+    .data_cpu_dout(t1_data_cpu_dout),
+    .data_cpu_en(t1_data_cpu_en),
+    .data_cpu_wen(t1_data_cpu_wen),
+    .data_cpu_clk(t1_data_cpu_clk),
+
+    .palette_addr(t1_palette_addr),
+    .palette_data(t1_palette_data)
+);
+
     // ============================================================
     // Sprite generator 0
     // ============================================================
@@ -519,6 +566,9 @@ VDP_sprite_gen #(
         if(t0_done)
             gen_done[T0_GEN_NUM] <= 1'b1;
 
+        if(t1_done)
+            gen_done[T1_GEN_NUM] <= 1'b1;
+        
         case(gen_fin_state)
             STATE_WAIT: begin
                 gen_fin_buf_en <= 1'b0;
@@ -535,7 +585,9 @@ VDP_sprite_gen #(
                 gen_fin_buf_en <= 1'b1;
                 gen_fin_pixel <= gen_fin_pixel + 1;
 
-                if(s0_en && (s0_dout[15:12] != 4'h0)) begin
+                if(t1_en && t1_dout[15:12] != 4'h0) begin
+                    gen_fin_data <= t1_dout[11:0];
+                end else if(s0_en && (s0_dout[15:12] != 4'h0)) begin
                     gen_fin_data <= s0_dout[11:0];
                 end else if(t0_en) begin
                     gen_fin_data <= t0_dout[11:0];

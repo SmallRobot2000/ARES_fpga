@@ -68,6 +68,18 @@ module Block_top_VDP_wrapper_0_0 (
   t0_data_cpu_en,
   t0_data_cpu_wen,
   t0_data_cpu_clk,
+  t1_map_cpu_addr,
+  t1_map_cpu_din,
+  t1_map_cpu_dout,
+  t1_map_cpu_en,
+  t1_map_cpu_wen,
+  t1_map_cpu_clk,
+  t1_data_cpu_addr,
+  t1_data_cpu_din,
+  t1_data_cpu_dout,
+  t1_data_cpu_en,
+  t1_data_cpu_wen,
+  t1_data_cpu_clk,
   s0_att_cpu_addr,
   s0_att_cpu_din,
   s0_att_cpu_dout,
@@ -123,6 +135,34 @@ input wire t0_data_cpu_en;
 input wire [3 : 0] t0_data_cpu_wen;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T0_DATA_CPU_BRAM CLK" *)
 input wire t0_data_cpu_clk;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM ADDR" *)
+(* X_INTERFACE_MODE = "slave" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T1_MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *)
+input wire [14 : 0] t1_map_cpu_addr;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM DIN" *)
+input wire [31 : 0] t1_map_cpu_din;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM DOUT" *)
+output wire [31 : 0] t1_map_cpu_dout;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM EN" *)
+input wire t1_map_cpu_en;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM WE" *)
+input wire [3 : 0] t1_map_cpu_wen;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM CLK" *)
+input wire t1_map_cpu_clk;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM ADDR" *)
+(* X_INTERFACE_MODE = "slave" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T1_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *)
+input wire [15 : 0] t1_data_cpu_addr;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM DIN" *)
+input wire [31 : 0] t1_data_cpu_din;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM DOUT" *)
+output wire [31 : 0] t1_data_cpu_dout;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM EN" *)
+input wire t1_data_cpu_en;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM WE" *)
+input wire [3 : 0] t1_data_cpu_wen;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM CLK" *)
+input wire t1_data_cpu_clk;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 S0_ATT_CPU_BRAM ADDR" *)
 (* X_INTERFACE_MODE = "slave" *)
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S0_ATT_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 512, READ_WRITE_MODE READ_WRITE, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *)
@@ -192,6 +232,18 @@ output wire [3 : 0] vga_b;
     .t0_data_cpu_en(t0_data_cpu_en),
     .t0_data_cpu_wen(t0_data_cpu_wen),
     .t0_data_cpu_clk(t0_data_cpu_clk),
+    .t1_map_cpu_addr(t1_map_cpu_addr),
+    .t1_map_cpu_din(t1_map_cpu_din),
+    .t1_map_cpu_dout(t1_map_cpu_dout),
+    .t1_map_cpu_en(t1_map_cpu_en),
+    .t1_map_cpu_wen(t1_map_cpu_wen),
+    .t1_map_cpu_clk(t1_map_cpu_clk),
+    .t1_data_cpu_addr(t1_data_cpu_addr),
+    .t1_data_cpu_din(t1_data_cpu_din),
+    .t1_data_cpu_dout(t1_data_cpu_dout),
+    .t1_data_cpu_en(t1_data_cpu_en),
+    .t1_data_cpu_wen(t1_data_cpu_wen),
+    .t1_data_cpu_clk(t1_data_cpu_clk),
     .s0_att_cpu_addr(s0_att_cpu_addr),
     .s0_att_cpu_din(s0_att_cpu_din),
     .s0_att_cpu_dout(s0_att_cpu_dout),

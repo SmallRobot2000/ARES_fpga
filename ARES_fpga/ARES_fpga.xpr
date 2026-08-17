@@ -61,7 +61,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="171"/>
+    <Option Name="WTXSimLaunchSim" Val="174"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -219,9 +219,6 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Block_top.bd" FileRelPathName="ip/Block_top_VexiiSocWrapper_0_1/Block_top_VexiiSocWrapper_0_1.xci">
           <Proxy FileSetName="Block_top_VexiiSocWrapper_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Block_top.bd" FileRelPathName="ip/Block_top_axi_bram_ctrl_vdp_s0_data_0/Block_top_axi_bram_ctrl_vdp_s0_data_0.xci">
-          <Proxy FileSetName="Block_top_axi_bram_ctrl_vdp_s0_data_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Block_top.bd" FileRelPathName="ip/Block_top_mig_axi_wrapper_0_0/Block_top_mig_axi_wrapper_0_0.xci">
           <Proxy FileSetName="Block_top_mig_axi_wrapper_0_0"/>
@@ -507,12 +504,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="Block_top_axi_bram_ctrl_vdp_s0_data_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Block_top_axi_bram_ctrl_vdp_s0_data_0" RelGenDir="$PGENDIR/Block_top_axi_bram_ctrl_vdp_s0_data_0">
-      <Config>
-        <Option Name="TopModule" Val="Block_top_axi_bram_ctrl_vdp_s0_data_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -703,18 +694,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="Block_top_mig_axi_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="Block_top_mig_axi_wrapper_0_0" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_mig_axi_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_mig_axi_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_mig_axi_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_mig_axi_wrapper_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="Block_top_axi_bram_ctrl_vdp_s0_data_0_synth_1" Type="Ft3:Synth" SrcSet="Block_top_axi_bram_ctrl_vdp_s0_data_0" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_axi_bram_ctrl_vdp_s0_data_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Block_top_axi_bram_ctrl_vdp_s0_data_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_axi_bram_ctrl_vdp_s0_data_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_axi_bram_ctrl_vdp_s0_data_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -940,25 +919,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="Block_top_mig_axi_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_mig_axi_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_mig_axi_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_mig_axi_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_mig_axi_wrapper_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="Block_top_axi_bram_ctrl_vdp_s0_data_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-2" ConstrsSet="Block_top_axi_bram_ctrl_vdp_s0_data_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Block_top_axi_bram_ctrl_vdp_s0_data_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Block_top_axi_bram_ctrl_vdp_s0_data_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Block_top_axi_bram_ctrl_vdp_s0_data_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>

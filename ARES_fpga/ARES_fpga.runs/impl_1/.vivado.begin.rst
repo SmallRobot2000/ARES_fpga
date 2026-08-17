@@ -8,3 +8,18 @@
     <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="37067" HostCore="12" HostMemory="32743680">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="94634" HostCore="12" HostMemory="32743680">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="113640" HostCore="12" HostMemory="32743680">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="lovro" Host="lovroLinuxM" Pid="124598" HostCore="12" HostMemory="32743680">
+    </Process>
+</ProcessHandle>

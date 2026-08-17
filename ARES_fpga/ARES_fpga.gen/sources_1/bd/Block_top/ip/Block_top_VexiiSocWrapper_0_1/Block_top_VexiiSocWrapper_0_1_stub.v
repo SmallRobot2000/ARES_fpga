@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Mon Aug 17 15:52:53 2026
+// Date        : Mon Aug 17 21:13:18 2026
 // Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VexiiSocWrapper_0_1/Block_top_VexiiSocWrapper_0_1_stub.v

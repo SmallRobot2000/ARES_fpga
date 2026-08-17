@@ -101,4 +101,10 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_fin
 # IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_s0_data_0/Block_top_axi_bram_ctrl_vdp_s0_data_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_data_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_s0_data_0} -quiet] -quiet
 
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_data_1/Block_top_axi_bram_ctrl_vdp_t0_data_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_data_1 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_data_1} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_map_0/Block_top_axi_bram_ctrl_vdp_t0_map_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_map_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_map_0} -quiet] -quiet
+
 # XDC: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc

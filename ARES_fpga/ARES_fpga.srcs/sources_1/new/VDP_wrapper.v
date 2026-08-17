@@ -68,6 +68,55 @@ module VDP_wrapper(
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T0_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE" *)
     input  wire        t0_data_cpu_clk,
 
+
+    // ============================================================
+    // TILE 1 MAP CPU BRAM interface
+    // ============================================================
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM ADDR" *)
+    input  wire [14:0] t1_map_cpu_addr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM DIN" *)
+    input  wire [31:0] t1_map_cpu_din,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM DOUT" *)
+    output wire [31:0] t1_map_cpu_dout,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM EN" *)
+    input  wire        t1_map_cpu_en,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM WE" *)
+    input  wire [3:0]  t1_map_cpu_wen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_MAP_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T1_MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 32768, READ_WRITE_MODE READ_WRITE" *)
+    input  wire        t1_map_cpu_clk,
+
+    // ============================================================
+    // TILE 1 DATA CPU BRAM interface
+    // ============================================================
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM ADDR" *)
+    input  wire [15:0] t1_data_cpu_addr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM DIN" *)
+    input  wire [31:0] t1_data_cpu_din,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM DOUT" *)
+    output wire [31:0] t1_data_cpu_dout,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM EN" *)
+    input  wire        t1_data_cpu_en,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM WE" *)
+    input  wire [3:0]  t1_data_cpu_wen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 T1_DATA_CPU_BRAM CLK" *)
+    (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME T1_DATA_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 65536, READ_WRITE_MODE READ_WRITE" *)
+    input  wire        t1_data_cpu_clk,
+
+
+
     // ============================================================
     // SPRITE 0 ATTRIBUTE CPU BRAM interface
     // ============================================================
@@ -169,11 +218,11 @@ VDP #(
         .VGA_V_FRONT_PORCH(11),
 
         .VGA_H_BACK_PORCH(48),
-        .VGA_V_BACK_PORCH(31),
+        .VGA_V_BACK_PORCH(31)
 
-        .NUM_GEN(2),
-        .T0_GEN_NUM(0),
-        .S0_GEN_NUM(1)
+        //.NUM_GEN(2),
+        //.T0_GEN_NUM(0),
+        //.S0_GEN_NUM(1)
 
 
     ) dut (
@@ -200,6 +249,29 @@ VDP #(
         .t0_data_cpu_en(t0_data_cpu_en),
         .t0_data_cpu_wen(t0_data_cpu_wen),
         .t0_data_cpu_clk(t0_data_cpu_clk),
+
+        // --------------------------------------------------------
+        // TILE 1 MAP
+        // --------------------------------------------------------
+
+        .t1_map_cpu_addr(t1_map_cpu_addr),
+        .t1_map_cpu_din(t1_map_cpu_din),
+        .t1_map_cpu_dout(t1_map_cpu_dout),
+        .t1_map_cpu_en(t1_map_cpu_en),
+        .t1_map_cpu_wen(t1_map_cpu_wen),
+        .t1_map_cpu_clk(t1_map_cpu_clk),
+
+
+        // --------------------------------------------------------
+        // TILE 1 DATA
+        // --------------------------------------------------------
+
+        .t1_data_cpu_addr(t1_data_cpu_addr),
+        .t1_data_cpu_din(t1_data_cpu_din),
+        .t1_data_cpu_dout(t1_data_cpu_dout),
+        .t1_data_cpu_en(t1_data_cpu_en),
+        .t1_data_cpu_wen(t1_data_cpu_wen),
+        .t1_data_cpu_clk(t1_data_cpu_clk),
 
 
         // --------------------------------------------------------
