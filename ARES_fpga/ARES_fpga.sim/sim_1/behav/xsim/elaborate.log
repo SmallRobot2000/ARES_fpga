@@ -6,9 +6,10 @@ Using 8 slave threads.
 WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:558]
-WARNING: [VRFC 10-5021] port 'dina' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:578]
-WARNING: [VRFC 10-5021] port 'dina' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:596]
+WARNING: [VRFC 10-5021] port 't1_map_cpu_addr' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/tb_VDP.sv:141]
+WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:734]
+WARNING: [VRFC 10-5021] port 'dina' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:754]
+WARNING: [VRFC 10-5021] port 'dina' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:772]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -54,7 +55,15 @@ Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_mem_module(C...
 Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12(C_FAMILY="ar...
 Compiling module xil_defaultlib.blk_mem_gen_spr_att
 Compiling module xil_defaultlib.VDP_sprite_gen
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_output_stage...
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_output_stage...
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_softecc_outp...
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12_mem_module(C...
+Compiling module blk_mem_gen_v8_4_12.blk_mem_gen_v8_4_12(C_FAMILY="ar...
+Compiling module xil_defaultlib.blk_mem_gen_bit_line
+Compiling module xil_defaultlib.VDP_bitmap_gen
 Compiling module xil_defaultlib.VDP_default
+Compiling module xil_defaultlib.axi_ddr3_read_sim_default
 Compiling module xil_defaultlib.tb_VDP
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_VDP_behav

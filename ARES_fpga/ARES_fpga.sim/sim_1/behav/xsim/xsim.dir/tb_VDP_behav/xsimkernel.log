@@ -1,4 +1,4 @@
-Running: xsim.dir/tb_VDP_behav/xsimk -simmode gui -wdb tb_VDP_behav.wdb -simrunnum 0 -socket 52761
+Running: xsim.dir/tb_VDP_behav/xsimk -simmode gui -wdb tb_VDP_behav.wdb -simrunnum 0 -socket 46743
 Design successfully loaded
-Design Loading Memory Usage: 201464 KB (Peak: 201464 KB)
-Design Loading CPU Usage: 810 ms
+Design Loading Memory Usage: 202596 KB (Peak: 202596 KB)
+Design Loading CPU Usage: 1040 ms

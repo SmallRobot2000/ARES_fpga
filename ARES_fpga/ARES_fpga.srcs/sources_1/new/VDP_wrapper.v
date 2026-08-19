@@ -198,7 +198,25 @@ module VDP_wrapper(
 
     output wire [3:0]   vga_r,
     output wire [3:0]   vga_g,
-    output wire [3:0]   vga_b
+    output wire [3:0]   vga_b,
+
+
+    // ============================================================
+    //  AXI RAM interface  Read only
+    // ============================================================
+
+    output wire          ram0_arvalid,
+    input  wire          ram0_arready,
+    output wire [31:0]   ram0_araddr,
+    output wire [7:0]    ram0_arlen,
+    output wire [2:0]    ram0_arsize,
+    output wire [1:0]    ram0_arburst,
+
+    input  wire          ram0_rvalid,
+    output wire          ram0_rready,
+    input  wire [127:0]  ram0_rdata,
+    input  wire [1:0]    ram0_rresp,
+    input  wire          ram0_rlast
     
 
 );
@@ -216,11 +234,7 @@ VDP #(
         .VGA_V_FRONT_PORCH(11),
 
         .VGA_H_BACK_PORCH(48),
-        .VGA_V_BACK_PORCH(31),
-
-        .NUM_GEN(2),
-        .T0_GEN_NUM(0),
-        .S0_GEN_NUM(1)
+        .VGA_V_BACK_PORCH(31)
 
 
     ) dut (
@@ -306,6 +320,25 @@ VDP #(
         .r0_map_cpu_en   (r0_map_cpu_en),
         .r0_map_cpu_wen  (r0_map_cpu_wen),
         .r0_map_cpu_clk  (r0_map_cpu_clk),
+
+
+        // --------------------------------------------------------
+        // RAM AXI  Read only
+        // --------------------------------------------------------
+
+
+        .ram0_arvalid(ram0_arvalid),
+        .ram0_arready(ram0_arready),
+        .ram0_araddr(ram0_araddr),
+        .ram0_arlen(ram0_arlen),
+        .ram0_arsize(ram0_arsize),
+        .ram0_arburst(ram0_arburst),
+
+        .ram0_rvalid(ram0_rvalid),
+        .ram0_rready(ram0_rready),
+        .ram0_rdata(ram0_rdata),
+        .ram0_rresp(ram0_rresp),
+        .ram0_rlast(ram0_rlast),
 
         // --------------------------------------------------------
         // Common VDP

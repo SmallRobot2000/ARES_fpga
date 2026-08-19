@@ -115,6 +115,25 @@ module tb_VDP;
     logic        r0_map_cpu_en  = 1'b0;
     logic [3:0]  r0_map_cpu_wen = 4'b0000;
 
+
+    // ============================================================
+    // AXI DDR RAM interface
+    // ============================================================
+
+    wire          ram0_arvalid;
+    wire          ram0_arready;
+    wire [31:0]   ram0_araddr;
+    wire [7:0]    ram0_arlen;
+    wire [2:0]    ram0_arsize;
+    wire [1:0]    ram0_arburst;
+
+    wire          ram0_rvalid;
+    wire          ram0_rready;
+    wire [127:0]  ram0_rdata;
+    wire [1:0]    ram0_rresp;
+    wire          ram0_rlast;
+
+
     // ============================================================
     // DUT
     // ============================================================
@@ -130,11 +149,7 @@ module tb_VDP;
         .VGA_V_FRONT_PORCH(11),
 
         .VGA_H_BACK_PORCH(48),
-        .VGA_V_BACK_PORCH(31),
-
-        .NUM_GEN(2),
-        .T0_GEN_NUM(0),
-        .S0_GEN_NUM(1)
+        .VGA_V_BACK_PORCH(31)
 
 
     ) dut (
@@ -197,6 +212,25 @@ module tb_VDP;
         .r0_map_cpu_wen  (r0_map_cpu_wen),
         .r0_map_cpu_clk  (clk_100),
 
+
+        // --------------------------------------------------------
+        // AXI RAM read-only
+        // --------------------------------------------------------
+
+        .ram0_arvalid (ram0_arvalid),
+        .ram0_arready (ram0_arready),
+        .ram0_araddr  (ram0_araddr),
+        .ram0_arlen   (ram0_arlen),
+        .ram0_arsize  (ram0_arsize),
+        .ram0_arburst (ram0_arburst),
+
+        .ram0_rvalid  (ram0_rvalid),
+        .ram0_rready  (ram0_rready),
+        .ram0_rdata   (ram0_rdata),
+        .ram0_rresp   (ram0_rresp),
+        .ram0_rlast   (ram0_rlast),
+
+
         // --------------------------------------------------------
         // Common VDP
         // --------------------------------------------------------
@@ -212,6 +246,33 @@ module tb_VDP;
         .vga_b(vga_b)
     );
 
+
+axi_ddr3_read_sim #(
+    .BASE_ADDR(32'h0000_0000),
+    .MEM_BYTES(8 * 1024 * 1024),
+
+    .INITIAL_LATENCY_CYCLES(40), // 400 ns @ 100 MHz
+    .GAP_EVERY_BEATS(64),
+    .GAP_LATENCY_CYCLES(30)      // 300 ns @ 100 MHz
+) ddr3_sim (
+
+    .aclk(clk_100),
+    .aresetn(resetn),
+
+    .arvalid(ram0_arvalid),
+    .arready(ram0_arready),
+    .araddr(ram0_araddr),
+    .arlen(ram0_arlen),
+    .arsize(ram0_arsize),
+    .arburst(ram0_arburst),
+
+    .rvalid(ram0_rvalid),
+    .rready(ram0_rready),
+    .rdata(ram0_rdata),
+    .rresp(ram0_rresp),
+    .rlast(ram0_rlast)
+);
+
     // ============================================================
     // REG_MEM address map
     // ============================================================
@@ -219,6 +280,7 @@ module tb_VDP;
     localparam logic [12:0] REG_CTRL_0_ADDR = 13'h0000;
     localparam logic [12:0] REG_STAT_0_ADDR = 13'h0004;
     localparam logic [12:0] REG_LINE_ADDR   = 13'h0008;
+    localparam logic [12:0] REG_B0_X_OFF    = 13'h0030;
 
     localparam logic [12:0] PAL_T0_BASE = 13'h0100;
     localparam logic [12:0] PAL_T1_BASE = 13'h0200;
@@ -230,7 +292,8 @@ module tb_VDP;
     localparam int BIT_CTRL_T0_EN = 0;
     localparam int BIT_CTRL_T1_EN = 1;
     localparam int BIT_CTRL_S0_EN = 2;
-
+    localparam int BIT_CTRL_B0_EN = 3;
+    localparam int BIT_CTRL_B0_LINUX_CMP = 4;
 
     // ============================================================
     // Initialization data
@@ -1154,11 +1217,43 @@ end
         ctrl[BIT_CTRL_T0_EN] = 1'b1;
         ctrl[BIT_CTRL_T1_EN] = 1'b0;
         ctrl[BIT_CTRL_S0_EN] = 1'b1;
+        ctrl[BIT_CTRL_B0_EN] = 1'b1;
+        ctrl[BIT_CTRL_B0_LINUX_CMP] = 1'b1;
 
         write_reg_mem(
             REG_CTRL_0_ADDR,
             ctrl
         );
+
+
+        write_reg_mem(
+            REG_B0_X_OFF,
+            32'h0
+        );
+
+        //init bitmap
+
+        //ddr3_sim.write_byte(32'h00000000, 16'hF0FF);
+        ddr3_sim.write_byte(32'h00000000, 8'hFF);
+        ddr3_sim.write_byte(32'h00000001, 8'hF0);
+        
+        //ddr3_sim.write_byte(32'h00000006, 16'hFF0F);
+        ddr3_sim.write_byte(32'h00000006, 8'h0F);
+        ddr3_sim.write_byte(32'h00000007, 8'hFF);
+        //ddr3_sim.write_byte(32'h00000506, 16'hFFFF);
+        ddr3_sim.write_byte(32'h00000504, 8'hFF);
+        ddr3_sim.write_byte(32'h00000505, 8'hFF);
+
+        ddr3_sim.write_byte(32'h000004FE, 8'h0F);
+        ddr3_sim.write_byte(32'h000004FF, 8'hF0);
+
+        ddr3_sim.write_byte(32'h00000800, 8'hF0);
+        ddr3_sim.write_byte(32'h00000801, 8'hF0);
+
+        ddr3_sim.write_byte(32'h000EFCFE, 8'h00);
+        ddr3_sim.write_byte(32'h000EFCFF, 8'hFF);
+
+
         // --------------------------------------------------------
         // Let final BRAM writes settle
         // --------------------------------------------------------

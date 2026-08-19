@@ -46,10 +46,11 @@ module VDP#(
     parameter VGA_H_TOTAL = VGA_H_BACK_PORCH + VGA_H_ACTIVE + VGA_H_FRONT_PORCH + VGA_H_SYNC,
     parameter VGA_V_TOTAL = VGA_V_BACK_PORCH + VGA_V_ACTIVE + VGA_V_FRONT_PORCH + VGA_V_SYNC,
 
-    parameter NUM_GEN = 3,
+    parameter NUM_GEN = 4,
     parameter T0_GEN_NUM = 0,
     parameter T1_GEN_NUM = 1,
     parameter S0_GEN_NUM = 2,
+    parameter B0_GEN_NUM = 3,
 
     parameter REG_CTRL_0     = 8'h00,
     parameter REG_STAT_0     = 8'h01,
@@ -61,12 +62,17 @@ module VDP#(
     parameter REG_T1_X_OFF     = 8'h08,
     parameter REG_T1_Y_OFF     = 8'h09,
 
+    parameter REG_B0_X_OFF   = 8'h0C,
+    parameter REG_B0_Y_OFF   = 8'h0D,
+
     parameter BIT_STAT_H_BLANK  = 0,
     parameter BIT_STAT_V_BLANK  = 1,
 
     parameter BIT_CTRL_T0_EN    = 0,
     parameter BIT_CTRL_T1_EN    = 1,
-    parameter BIT_CTRL_S0_EN    = 2
+    parameter BIT_CTRL_S0_EN    = 2,
+    parameter BIT_CTRL_B0_EN    = 3,
+    parameter BIT_CTRL_B0_LINUX_CMP = 4
 )(
 
     // ============================================================
@@ -234,6 +240,23 @@ module VDP#(
     input  wire        r0_map_cpu_clk,
 
     // ============================================================
+    //  AXI RAM interface  Read only
+    // ============================================================
+
+    output wire          ram0_arvalid,
+    input  wire          ram0_arready,
+    output wire [31:0]   ram0_araddr,
+    output wire [7:0]    ram0_arlen,
+    output wire [2:0]    ram0_arsize,
+    output wire [1:0]    ram0_arburst,
+
+    input  wire          ram0_rvalid,
+    output wire          ram0_rready,
+    input  wire [127:0]  ram0_rdata,
+    input  wire [1:0]    ram0_rresp,
+    input  wire          ram0_rlast,
+
+    // ============================================================
     // 100 MHz clock
     // ============================================================
     input wire s_axi_aclk,
@@ -361,11 +384,14 @@ module VDP#(
     wire [31:0] t0_y_off_reg;
     wire [31:0] t1_x_off_reg;
     wire [31:0] t1_y_off_reg;
+    wire [31:0] b0_x_off_reg;
+    wire [31:0] b0_y_off_reg;
 
     wire t0_en = ctrl_reg[BIT_CTRL_T0_EN];
     wire t1_en = ctrl_reg[BIT_CTRL_T1_EN];
     wire s0_en = ctrl_reg[BIT_CTRL_S0_EN];
-
+    wire b0_en = ctrl_reg[BIT_CTRL_B0_EN];
+    wire b0_linux_comp = ctrl_reg[BIT_CTRL_B0_LINUX_CMP];
     wire [7:0]  t0_palette_addr;
     wire [15:0] t0_palette_data;
 
@@ -387,7 +413,9 @@ REG_MEMORY #(
     .REG_T0_X_OFF(REG_T0_X_OFF),
     .REG_T0_Y_OFF(REG_T0_Y_OFF),
     .REG_T1_X_OFF(REG_T1_X_OFF),
-    .REG_T1_Y_OFF(REG_T1_Y_OFF)
+    .REG_T1_Y_OFF(REG_T1_Y_OFF),
+    .REG_B0_X_OFF(REG_B0_X_OFF),
+    .REG_B0_Y_OFF(REG_B0_Y_OFF)
 ) reg_mem (
     .r0_map_cpu_addr(r0_map_cpu_addr),
     .r0_map_cpu_din(r0_map_cpu_din),
@@ -412,6 +440,8 @@ REG_MEMORY #(
     .t0_y_off_reg(t0_y_off_reg),
     .t1_x_off_reg(t1_x_off_reg),
     .t1_y_off_reg(t1_y_off_reg),
+    .b0_x_off_reg(b0_x_off_reg),
+    .b0_y_off_reg(b0_y_off_reg),
 
     .line_reg(line_reg),
     .stat_reg(stat_reg)
@@ -545,6 +575,50 @@ VDP_sprite_gen #(
     .palette_data(s0_palette_data)
 );
 
+    wire [15:0] b0_dout;
+    wire [9:0]  b0_addr = gen_fin_pixel;
+    wire        b0_done;
+
+VDP_bitmap_gen #(
+    .SCREEN_WIDTH(VGA_H_ACTIVE),
+    .SCREEN_HEIGHT(VGA_V_ACTIVE)
+
+
+) B0_gen (
+
+    .clk_100(clk_100),
+
+    .start(gen_line_start),
+    .gen_line(gen_line),
+
+    .x_off(b0_x_off_reg[9:0]),
+    .y_off(b0_y_off_reg[9:0]),
+    .linux_comp(b0_linux_comp),
+
+    .buf_dout(b0_dout),
+    .buf_addr_out(b0_addr),
+
+    .line_done(b0_done),
+
+
+    // ============================================================
+    //  AXI RAM interface Read only
+    // ============================================================
+
+    .ram_arvalid(ram0_arvalid),
+    .ram_arready(ram0_arready),
+    .ram_araddr(ram0_araddr),
+    .ram_arlen(ram0_arlen),
+    .ram_arsize(ram0_arsize),
+    .ram_arburst(ram0_arburst),
+
+    .ram_rvalid(ram0_rvalid),
+    .ram_rready(ram0_rready),
+    .ram_rdata(ram0_rdata),
+    .ram_rresp(ram0_rresp),
+    .ram_rlast(ram0_rlast)
+);
+
     reg [NUM_GEN-1:0] gen_done;
     localparam STATE_WAIT = 12'h001;
     localparam STATE_START = 12'h002;
@@ -569,6 +643,9 @@ VDP_sprite_gen #(
         if(t1_done)
             gen_done[T1_GEN_NUM] <= 1'b1;
 
+        if(b0_done)
+            gen_done[B0_GEN_NUM] <= 1'b1;
+
         case(gen_fin_state)
             STATE_WAIT: begin
                 gen_fin_buf_en <= 1'b0;
@@ -584,7 +661,9 @@ VDP_sprite_gen #(
             STATE_C0: begin
                 gen_fin_buf_en <= 1'b1;
                 gen_fin_pixel <= gen_fin_pixel + 1;
-                if (t1_en && (t1_dout[15:12] != 4'h0)) begin
+                if (b0_en && (b0_dout[15:12] != 4'h0)) begin
+                    gen_fin_data <= b0_dout[11:0];
+                end else if (t1_en && (t1_dout[15:12] != 4'h0)) begin
                     gen_fin_data <= t1_dout[11:0];
                 end else if(s0_en && (s0_dout[15:12] != 4'h0)) begin
                     gen_fin_data <= s0_dout[11:0];
@@ -1190,7 +1269,11 @@ module REG_MEMORY #(
     parameter REG_T0_X_OFF   = 8'h04,
     parameter REG_T0_Y_OFF   = 8'h05,
     parameter REG_T1_X_OFF   = 8'h08,
-    parameter REG_T1_Y_OFF   = 8'h09
+    parameter REG_T1_Y_OFF   = 8'h09,
+    parameter REG_B0_X_OFF   = 8'h0C,
+    parameter REG_B0_Y_OFF   = 8'h0D
+    
+    
 )(
     // CPU BRAM-style register interface. r0_map_cpu_addr is byte addressed.
     input  wire [12:0] r0_map_cpu_addr,
@@ -1219,6 +1302,8 @@ module REG_MEMORY #(
     output reg  [31:0] t0_y_off_reg,
     output reg  [31:0] t1_x_off_reg,
     output reg  [31:0] t1_y_off_reg,
+    output reg  [31:0] b0_x_off_reg,
+    output reg  [31:0] b0_y_off_reg,
 
     input  wire [31:0] line_reg,
     input  wire [31:0] stat_reg
@@ -1299,6 +1384,20 @@ module REG_MEMORY #(
                         if(w_en[2]) t1_y_off_reg[23:16] <= data_in[23:16];
                         if(w_en[3]) t1_y_off_reg[31:24] <= data_in[31:24];
                     end
+
+                    REG_B0_X_OFF: begin
+                        if(w_en[0]) b0_x_off_reg[7:0]   <= data_in[7:0];
+                        if(w_en[1]) b0_x_off_reg[15:8]  <= data_in[15:8];
+                        if(w_en[2]) b0_x_off_reg[23:16] <= data_in[23:16];
+                        if(w_en[3]) b0_x_off_reg[31:24] <= data_in[31:24];
+                    end
+
+                    REG_B0_Y_OFF: begin
+                        if(w_en[0]) b0_y_off_reg[7:0]   <= data_in[7:0];
+                        if(w_en[1]) b0_y_off_reg[15:8]  <= data_in[15:8];
+                        if(w_en[2]) b0_y_off_reg[23:16] <= data_in[23:16];
+                        if(w_en[3]) b0_y_off_reg[31:24] <= data_in[31:24];
+                    end
                 endcase
 
             end else if((address >= PAL_T0_ADDR) &&
@@ -1367,6 +1466,8 @@ module REG_MEMORY #(
         t0_y_off_reg = 32'b0;
         t1_x_off_reg = 32'b0;
         t1_y_off_reg = 32'b0;
+        b0_x_off_reg = 32'b0;
+        b0_y_off_reg = 32'b0;
         data_out = 32'b0;
         t0_palette_data = 16'hF000;
         t1_palette_data = 16'hF000;
@@ -1442,6 +1543,252 @@ module REG_MEMORY #(
         palette_s0_mem[13] = 16'hF808;
         palette_s0_mem[14] = 16'hF088;
         palette_s0_mem[15] = 16'hF888;
+    end
+
+endmodule
+
+
+module VDP_bitmap_gen #(
+    parameter SCREEN_WIDTH = 640,
+    parameter SCREEN_HEIGHT = 480,
+
+    parameter BITMAP_COL_PIX = 1024,
+    parameter BITMAP_ROW_PIX = 1024
+
+
+)(
+
+    input  wire         clk_100,
+
+    input  wire         start,
+    input  wire [9:0]   gen_line,
+
+    input  wire [9:0]   x_off,
+    input  wire [9:0]   y_off,
+    input  wire         linux_comp,
+
+    output wire [15:0]  buf_dout,
+    input  wire [9:0]   buf_addr_out,
+
+    output reg          line_done = 1'b0,
+
+
+    // ============================================================
+    //  AXI RAM interface Read only
+    // ============================================================
+
+    output reg          ram_arvalid = 0,
+    input  wire         ram_arready,
+    output reg  [31:0]  ram_araddr,
+    output reg  [7:0]   ram_arlen,
+    output wire [2:0]   ram_arsize,
+    output wire [1:0]   ram_arburst,
+
+    input  wire         ram_rvalid,
+    output reg          ram_rready = 0,
+    input  wire [127:0] ram_rdata,
+    input  wire [1:0]   ram_rresp,
+    input  wire         ram_rlast
+);
+
+    assign  ram_arburst = 2'b01;
+    assign  ram_arsize  = 3'b100;
+
+
+    
+    wire [31:0] ram_addr_linux;
+    assign ram_addr_linux = (gen_line * SCREEN_WIDTH) * 2; //No X or Y offset support, and no larger than screen size buffer!
+    wire [31:0] ram_addr_normal;
+    assign ram_addr_normal = (((gen_line + y_off) * BITMAP_COL_PIX) + x_off) * 2;
+    
+    wire [31:0] ram_addr;
+    assign ram_addr = linux_comp    ? ram_addr_linux
+                                    : ram_addr_normal;
+    
+
+
+    
+    reg [127:0]  buf_din;
+    reg [6:0]   buf_addr_in;
+    wire [15:0]   buf_wen;
+
+    wire [31:0]buf_out_data;
+    wire [8:0]buf_out_addr;
+
+    //32 bit to 16 bit read interface conversion
+    reg buf_out_half = 1'b0;
+
+    always @(posedge clk_100) begin
+        buf_out_half <= buf_addr_out[0];
+    end
+    
+    assign buf_out_addr = buf_addr_out[9:1];
+    assign buf_dout = buf_out_half == 1'b0 ? buf_out_data[15:0] : buf_out_data[31:16];
+
+blk_mem_gen_bit_line line_buf
+(
+    .addra(buf_addr_in),
+    .clka(clk_100),
+    .dina(buf_din),
+    .wea(buf_wen),
+
+    .addrb(buf_out_addr),
+    .clkb(clk_100),
+    .dinb(32'b0),
+    .doutb(buf_out_data),
+    .web(4'b0)
+
+);
+    reg [7:0] pix_wen;
+
+    genvar i;
+    generate
+        for (i = 0; i < 16; i = i + 1) begin : GEN_BUF_WEN
+            assign buf_wen[i] = pix_wen[i/2];
+        end
+    endgenerate
+
+    integer n;
+    integer pixels_to_write;
+    localparam STATE_WAIT  = 12'h001;
+    localparam STATE_START = 12'h002;
+    localparam STATE_C0    = 12'h004;
+    localparam STATE_C1    = 12'h008;
+    localparam STATE_C2    = 12'h010;
+    localparam STATE_C3    = 12'h020;
+    localparam STATE_C4    = 12'h040;
+    localparam STATE_C5    = 12'h080;
+
+    reg [11:0] state = STATE_WAIT;
+
+    reg [3:0] in_pixel;
+    reg [3:0] clr_pixel; //first clear pixel in buf_din
+    reg [127:0] data_buf;
+    reg [7:0] len;
+
+    always @(posedge clk_100) begin
+        case(state)
+            STATE_WAIT: begin
+                line_done <= 1'b0;
+                ram_arvalid <= 1'b0;
+                ram_rready <= 1'b0;
+                buf_addr_in <= 7'b0;
+                ram_arlen <= 8'b0;
+                in_pixel <= 4'b0;
+                clr_pixel <= 4'd0;
+                if(start)
+                    state <= STATE_START;
+            end
+
+            STATE_START: begin
+                ram_araddr <= {ram_addr[31:4], 4'b0000}; //Round down to nerest 16 bytes
+                ram_arlen <= ram_addr[3:0] == 4'b0 ? 8'd79 : 8'd80;
+                buf_addr_in <= 7'b0;
+                ram_arvalid <= 1'b1;
+                state <= STATE_C0;
+            end
+
+            STATE_C0: begin
+                //Start transfer
+                if(ram_arvalid && ram_arready) begin
+                    ram_arvalid <= 1'b0;
+
+                    len <= ram_arlen + 1;
+                    in_pixel <= ram_addr[3:1];
+
+                    state <= STATE_C1;
+                end
+                    
+            end
+
+            STATE_C1: begin
+                if(len == 0) begin
+                    state <= STATE_C5;
+                end else begin
+                    len <= len - 1;
+
+                    ram_arvalid <= 1'b0;
+                    ram_rready <= 1'b1;
+
+                    state <= STATE_C2;
+                end
+            end
+
+            STATE_C2: begin
+                if(ram_rvalid && ram_rready) begin
+                    ram_rready <= 1'b0;
+                    data_buf <= ram_rdata;
+                    state <= STATE_C3;
+                end
+            end
+
+            STATE_C3: begin
+
+                buf_din <= 128'b0;
+                pix_wen <= 8'b0;
+
+            //Num of avail pix      num clr pix
+                if((8 - in_pixel) < (8 - clr_pixel))
+                    pixels_to_write = 8 - in_pixel;
+                else
+                    pixels_to_write = 8 - clr_pixel;
+
+                //n is from 0 to num pixels to write -1
+                //Then for bouth buffers from their offset to min of bouth sizes we write and also for wen
+                for(n = 0; n < 8; n = n + 1) begin
+                    if(n < pixels_to_write) begin
+                        buf_din[(clr_pixel + n) * 16 +: 16] <= data_buf[(in_pixel + n) * 16 +: 16];
+                        pix_wen[clr_pixel + n] <= 1'b1;
+                    end
+                end
+                //Increment each offset by how much we have written
+                in_pixel <= in_pixel + pixels_to_write;
+                clr_pixel <= clr_pixel + pixels_to_write;
+
+                state <= STATE_C4;
+               
+            end
+            
+            STATE_C4: begin
+                //Chek if each offset rolled over so increment address and get new data for each
+                pix_wen <= 8'b0; //Stop writing
+
+                if((clr_pixel == 8) && (in_pixel == 8)) begin
+
+                    clr_pixel <= 4'b0;
+                    in_pixel <= 4'b0;
+
+                    buf_addr_in <= buf_addr_in + 1;
+                    state <= STATE_C1; //Get new AXI data and increment destination address
+
+                end else if(in_pixel == 8) begin
+
+                    in_pixel <= 4'b0;
+                    state <= STATE_C1; //Get new AXI data and continue with same destination address
+
+                end else if(clr_pixel == 8) begin
+
+                    clr_pixel <= 4'b0;
+                    buf_addr_in <= buf_addr_in + 1;
+                    state <= STATE_C3; //Resume with same AXI data and increment destination address
+                end
+
+                if(in_pixel == 8) begin
+                    in_pixel <= 4'b0;
+                    state <= STATE_C1;
+                end
+
+            end
+
+            STATE_C5: begin
+                //We done
+                ram_rready <= 1'b0;
+                ram_arvalid <= 1'b0;
+                line_done <= 1'b1;
+                state <= STATE_WAIT;
+            end
+        endcase
+
     end
 
 endmodule

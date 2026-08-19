@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,130.805000 us"></ZoomStartTime>
-      <ZoomEndTime time="1,218.105001 us"></ZoomEndTime>
-      <Cursor1Time time="1,136.605000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="105.926 ns"></ZoomEndTime>
+      <Cursor1Time time="16,545,155.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="118"></NameColumnWidth>
-      <ValueColumnWidth column_width="61"></ValueColumnWidth>
+      <NameColumnWidth column_width="155"></NameColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="39" />
+   <WVObjectSize size="60" />
    <wvobject type="logic" fp_name="/tb_VDP/clk_100">
       <obj_property name="ElementShortName">clk_100</obj_property>
       <obj_property name="ObjectShortName">clk_100</obj_property>
@@ -76,14 +76,6 @@
       <obj_property name="ElementShortName">line_done</obj_property>
       <obj_property name="ObjectShortName">line_done</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_VDP/dut/T0_gen/palette">
-      <obj_property name="ElementShortName">palette[255:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">palette[255:0][15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_VDP/dut/T0_gen/i">
-      <obj_property name="ElementShortName">i[31:0]</obj_property>
-      <obj_property name="ObjectShortName">i[31:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/tb_VDP/dut/T0_gen/pixel_addr">
       <obj_property name="ElementShortName">pixel_addr[9:0]</obj_property>
       <obj_property name="ObjectShortName">pixel_addr[9:0]</obj_property>
@@ -91,10 +83,6 @@
    <wvobject type="logic" fp_name="/tb_VDP/dut/T0_gen/pixel_wen">
       <obj_property name="ElementShortName">pixel_wen</obj_property>
       <obj_property name="ObjectShortName">pixel_wen</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_VDP/dut/T0_gen/pixel_data_comb">
-      <obj_property name="ElementShortName">pixel_data_comb[15:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_data_comb[15:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_VDP/dut/T0_gen/map_r_addr">
       <obj_property name="ElementShortName">map_r_addr[13:0]</obj_property>
@@ -161,8 +149,8 @@
       <obj_property name="ObjectShortName">start</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_VDP/dut/gen_done">
-      <obj_property name="ElementShortName">gen_done[1:0]</obj_property>
-      <obj_property name="ObjectShortName">gen_done[1:0]</obj_property>
+      <obj_property name="ElementShortName">gen_done[3:0]</obj_property>
+      <obj_property name="ObjectShortName">gen_done[3:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_VDP/dut/gen_fin_state">
       <obj_property name="ElementShortName">gen_fin_state[11:0]</obj_property>
@@ -175,5 +163,101 @@
    <wvobject type="array" fp_name="/tb_VDP/dut/S0_gen/state">
       <obj_property name="ElementShortName">state[11:0]</obj_property>
       <obj_property name="ObjectShortName">state[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_VDP/ram0_arvalid">
+      <obj_property name="ElementShortName">ram0_arvalid</obj_property>
+      <obj_property name="ObjectShortName">ram0_arvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_VDP/ram0_arready">
+      <obj_property name="ElementShortName">ram0_arready</obj_property>
+      <obj_property name="ObjectShortName">ram0_arready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/ram0_araddr">
+      <obj_property name="ElementShortName">ram0_araddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ram0_araddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/ram0_arlen">
+      <obj_property name="ElementShortName">ram0_arlen[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ram0_arlen[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/ram0_arsize">
+      <obj_property name="ElementShortName">ram0_arsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ram0_arsize[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/ram0_arburst">
+      <obj_property name="ElementShortName">ram0_arburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ram0_arburst[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_VDP/ram0_rvalid">
+      <obj_property name="ElementShortName">ram0_rvalid</obj_property>
+      <obj_property name="ObjectShortName">ram0_rvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_VDP/ram0_rready">
+      <obj_property name="ElementShortName">ram0_rready</obj_property>
+      <obj_property name="ObjectShortName">ram0_rready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/ram0_rdata">
+      <obj_property name="ElementShortName">ram0_rdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">ram0_rdata[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/ram0_rresp">
+      <obj_property name="ElementShortName">ram0_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ram0_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_VDP/ram0_rlast">
+      <obj_property name="ElementShortName">ram0_rlast</obj_property>
+      <obj_property name="ObjectShortName">ram0_rlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_VDP/dut/b0_done">
+      <obj_property name="ElementShortName">b0_done</obj_property>
+      <obj_property name="ObjectShortName">b0_done</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/state">
+      <obj_property name="ElementShortName">state[11:0]</obj_property>
+      <obj_property name="ObjectShortName">state[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/buf_din">
+      <obj_property name="ElementShortName">buf_din[127:0]</obj_property>
+      <obj_property name="ObjectShortName">buf_din[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/buf_addr_in">
+      <obj_property name="ElementShortName">buf_addr_in[6:0]</obj_property>
+      <obj_property name="ObjectShortName">buf_addr_in[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/buf_wen">
+      <obj_property name="ElementShortName">buf_wen[15:0]</obj_property>
+      <obj_property name="ObjectShortName">buf_wen[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/pix_wen">
+      <obj_property name="ElementShortName">pix_wen[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pix_wen[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/n">
+      <obj_property name="ElementShortName">n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">n[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/pixels_to_write">
+      <obj_property name="ElementShortName">pixels_to_write[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pixels_to_write[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/in_pixel">
+      <obj_property name="ElementShortName">in_pixel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">in_pixel[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/clr_pixel">
+      <obj_property name="ElementShortName">clr_pixel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">clr_pixel[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/B0_gen/data_buf">
+      <obj_property name="ElementShortName">data_buf[127:0]</obj_property>
+      <obj_property name="ObjectShortName">data_buf[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/b0_dout">
+      <obj_property name="ElementShortName">b0_dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">b0_dout[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_VDP/dut/b0_addr">
+      <obj_property name="ElementShortName">b0_addr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">b0_addr[9:0]</obj_property>
    </wvobject>
 </wave_config>
