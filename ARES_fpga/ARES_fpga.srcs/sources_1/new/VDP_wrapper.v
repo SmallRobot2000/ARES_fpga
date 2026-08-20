@@ -184,10 +184,6 @@ module VDP_wrapper(
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME R0_MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 8192, READ_WRITE_MODE READ_WRITE" *)
     input  wire        r0_map_cpu_clk,
 
-    // ============================================================
-    // 100 MHz clock
-    // ============================================================
-    input wire s_axi_aclk,
 
   
     input wire s_axi_aresetn,
@@ -202,27 +198,58 @@ module VDP_wrapper(
 
 
     // ============================================================
-    //  AXI RAM interface  Read only
+    // AXI4 RAM0 - Read Only Master
     // ============================================================
 
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARVALID" *)
+    (* X_INTERFACE_PARAMETER =
+       "XIL_INTERFACENAME ram0, PROTOCOL AXI4, DATA_WIDTH 128, ADDR_WIDTH 32, READ_WRITE_MODE READ_ONLY, HAS_BURST 1" *)
     output wire          ram0_arvalid,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARREADY" *)
     input  wire          ram0_arready,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARADDR" *)
     output wire [31:0]   ram0_araddr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARLEN" *)
     output wire [7:0]    ram0_arlen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARSIZE" *)
     output wire [2:0]    ram0_arsize,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARBURST" *)
     output wire [1:0]    ram0_arburst,
 
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RVALID" *)
     input  wire          ram0_rvalid,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RREADY" *)
     output wire          ram0_rready,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RDATA" *)
     input  wire [127:0]  ram0_rdata,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RRESP" *)
     input  wire [1:0]    ram0_rresp,
-    input  wire          ram0_rlast
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RLAST" *)
+    input  wire          ram0_rlast,
+
+    // ============================================================
+    // 100 MHz clock
+    // ============================================================
+
+    (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *)
+    (* X_INTERFACE_PARAMETER =
+       "XIL_INTERFACENAME s_axi_aclk, ASSOCIATED_BUSIF ram0, FREQ_HZ 100000000" *)
+    input wire s_axi_aclk
     
 
 );
 
-
-
+    wire [31:0] vdp_ram0_araddr;
+    assign ram0_araddr = vdp_ram0_araddr + 32'h9F800000; //Translate 0x0000_0000 to top 8MB of RAM address space
 VDP #(
         .VGA_H_ACTIVE(640),
         .VGA_V_ACTIVE(480),
@@ -329,7 +356,7 @@ VDP #(
 
         .ram0_arvalid(ram0_arvalid),
         .ram0_arready(ram0_arready),
-        .ram0_araddr(ram0_araddr),
+        .ram0_araddr(vdp_ram0_araddr),
         .ram0_arlen(ram0_arlen),
         .ram0_arsize(ram0_arsize),
         .ram0_arburst(ram0_arburst),

@@ -55,6 +55,7 @@ module VDP#(
     parameter REG_CTRL_0     = 8'h00,
     parameter REG_STAT_0     = 8'h01,
     parameter REG_LINE       = 8'h02,
+    parameter REG_BCK_GND    = 8'h03,
 
     parameter REG_T0_X_OFF     = 8'h04,
     parameter REG_T0_Y_OFF     = 8'h05,
@@ -64,6 +65,8 @@ module VDP#(
 
     parameter REG_B0_X_OFF   = 8'h0C,
     parameter REG_B0_Y_OFF   = 8'h0D,
+
+    
 
     parameter BIT_STAT_H_BLANK  = 0,
     parameter BIT_STAT_V_BLANK  = 1,
@@ -239,26 +242,53 @@ module VDP#(
     (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME R0_MAP_CPU_BRAM, MASTER_TYPE BRAM_CTRL, MEM_SIZE 8192, READ_WRITE_MODE READ_WRITE" *)
     input  wire        r0_map_cpu_clk,
 
+
     // ============================================================
-    //  AXI RAM interface  Read only
+    // AXI4 RAM0 - Read Only Master
     // ============================================================
 
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARVALID" *)
+    (* X_INTERFACE_PARAMETER =
+       "XIL_INTERFACENAME ram0, PROTOCOL AXI4, DATA_WIDTH 128, ADDR_WIDTH 32, READ_WRITE_MODE READ_ONLY, HAS_BURST 1" *)
     output wire          ram0_arvalid,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARREADY" *)
     input  wire          ram0_arready,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARADDR" *)
     output wire [31:0]   ram0_araddr,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARLEN" *)
     output wire [7:0]    ram0_arlen,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARSIZE" *)
     output wire [2:0]    ram0_arsize,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 ARBURST" *)
     output wire [1:0]    ram0_arburst,
 
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RVALID" *)
     input  wire          ram0_rvalid,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RREADY" *)
     output wire          ram0_rready,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RDATA" *)
     input  wire [127:0]  ram0_rdata,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RRESP" *)
     input  wire [1:0]    ram0_rresp,
+
+    (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 ram0 RLAST" *)
     input  wire          ram0_rlast,
 
     // ============================================================
     // 100 MHz clock
     // ============================================================
+
+    (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *)
+    (* X_INTERFACE_PARAMETER =
+       "XIL_INTERFACENAME s_axi_aclk, ASSOCIATED_BUSIF ram0, FREQ_HZ 100000000" *)
     input wire s_axi_aclk,
 
   
@@ -380,6 +410,7 @@ module VDP#(
     // ============================================================
 
     wire [31:0] ctrl_reg;
+    wire [31:0] bck_gnd_reg;
     wire [31:0] t0_x_off_reg;
     wire [31:0] t0_y_off_reg;
     wire [31:0] t1_x_off_reg;
@@ -410,6 +441,7 @@ REG_MEMORY #(
     .REG_CTRL_0(REG_CTRL_0),
     .REG_STAT_0(REG_STAT_0),
     .REG_LINE(REG_LINE),
+    .REG_BCK_GND(REG_BCK_GND),
     .REG_T0_X_OFF(REG_T0_X_OFF),
     .REG_T0_Y_OFF(REG_T0_Y_OFF),
     .REG_T1_X_OFF(REG_T1_X_OFF),
@@ -436,6 +468,7 @@ REG_MEMORY #(
     .s0_palette_data(s0_palette_data),
 
     .ctrl_reg(ctrl_reg),
+    .bck_gnd_reg(bck_gnd_reg),
     .t0_x_off_reg(t0_x_off_reg),
     .t0_y_off_reg(t0_y_off_reg),
     .t1_x_off_reg(t1_x_off_reg),
@@ -661,16 +694,17 @@ VDP_bitmap_gen #(
             STATE_C0: begin
                 gen_fin_buf_en <= 1'b1;
                 gen_fin_pixel <= gen_fin_pixel + 1;
-                if (b0_en && (b0_dout[15:12] != 4'h0)) begin
-                    gen_fin_data <= b0_dout[11:0];
-                end else if (t1_en && (t1_dout[15:12] != 4'h0)) begin
+                
+                if (t1_en && (t1_dout[15:12] != 4'h0)) begin
                     gen_fin_data <= t1_dout[11:0];
                 end else if(s0_en && (s0_dout[15:12] != 4'h0)) begin
                     gen_fin_data <= s0_dout[11:0];
-                end else if(t0_en) begin
+                end else if(t0_en && (t0_dout[15:12] != 4'h0)) begin
                     gen_fin_data <= t0_dout[11:0];
+                end else if (b0_en && (b0_dout[15:12] != 4'h0)) begin
+                    gen_fin_data <= b0_dout[11:0];
                 end else begin
-                    gen_fin_data <= 12'b0;
+                    gen_fin_data <= bck_gnd_reg[11:0];
                 end
 
                 if(gen_fin_pixel == VGA_H_ACTIVE)
@@ -1266,6 +1300,7 @@ module REG_MEMORY #(
     parameter REG_CTRL_0     = 8'h00,
     parameter REG_STAT_0     = 8'h01,
     parameter REG_LINE       = 8'h02,
+    parameter REG_BCK_GND    = 8'h03,
     parameter REG_T0_X_OFF   = 8'h04,
     parameter REG_T0_Y_OFF   = 8'h05,
     parameter REG_T1_X_OFF   = 8'h08,
@@ -1298,6 +1333,7 @@ module REG_MEMORY #(
 
     // Live registers used concurrently by the VDP.
     output reg  [31:0] ctrl_reg,
+    output reg  [31:0] bck_gnd_reg,
     output reg  [31:0] t0_x_off_reg,
     output reg  [31:0] t0_y_off_reg,
     output reg  [31:0] t1_x_off_reg,
@@ -1357,6 +1393,13 @@ module REG_MEMORY #(
                         if(w_en[3]) ctrl_reg[31:24] <= data_in[31:24];
                     end
 
+                    REG_BCK_GND: begin
+                        if(w_en[0]) bck_gnd_reg[7:0]   <= data_in[7:0];
+                        if(w_en[1]) bck_gnd_reg[15:8]  <= data_in[15:8];
+                        if(w_en[2]) bck_gnd_reg[23:16] <= data_in[23:16];
+                        if(w_en[3]) bck_gnd_reg[31:24] <= data_in[31:24];
+                    end
+                
                     REG_T0_X_OFF: begin
                         if(w_en[0]) t0_x_off_reg[7:0]   <= data_in[7:0];
                         if(w_en[1]) t0_x_off_reg[15:8]  <= data_in[15:8];
@@ -1462,6 +1505,7 @@ module REG_MEMORY #(
     // ------------------------------------------------------------
     initial begin
         ctrl_reg = 32'b0;
+        bck_gnd_reg = 32'b0;
         t0_x_off_reg = 32'b0;
         t0_y_off_reg = 32'b0;
         t1_x_off_reg = 32'b0;
@@ -1737,7 +1781,22 @@ blk_mem_gen_bit_line line_buf
                 //Then for bouth buffers from their offset to min of bouth sizes we write and also for wen
                 for(n = 0; n < 8; n = n + 1) begin
                     if(n < pixels_to_write) begin
-                        buf_din[(clr_pixel + n) * 16 +: 16] <= data_buf[(in_pixel + n) * 16 +: 16];
+                        if(linux_comp) begin
+                            // RGB565:
+                            // R = [15:11]
+                            // G = [10:5]
+                            // B = [4:0]
+
+                            buf_din[(clr_pixel + n) * 16 +: 16] <= {
+                                4'hF,
+                                data_buf[((in_pixel + n) * 16) + 12 +: 4], // R: [15:12]
+                                data_buf[((in_pixel + n) * 16) +  7 +: 4], // G: [10:7]
+                                data_buf[((in_pixel + n) * 16) +  1 +: 4]  /* B: [4:1]  */
+                            };
+                        end else begin
+                            buf_din[(clr_pixel + n) * 16 +: 16] <= data_buf[(in_pixel + n) * 16 +: 16];
+                        end
+                        
                         pix_wen[clr_pixel + n] <= 1'b1;
                     end
                 end

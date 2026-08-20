@@ -7,7 +7,7 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Mon Aug 17 23:31:18 2026
+  **** Start of session at: Thu Aug 20 17:22:38 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -27,195 +27,195 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tfgg484-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 35892
+INFO: [Synth 8-7075] Helper process launched with PID 576762
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2208.773 ; gain = 480.188 ; free physical = 13106 ; free virtual = 23142
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2208.758 ; gain = 482.875 ; free physical = 1906 ; free virtual = 21638
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Block_top_VexiiSocWrapper_0_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VexiiSocWrapper_0_1/synth/Block_top_VexiiSocWrapper_0_1.v:53]
 INFO: [Synth 8-6157] synthesizing module 'VexiiSocWrapper' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VexiiSocWrapper.v:1]
 INFO: [Synth 8-6157] synthesizing module 'VexiiSoc' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:7]
-INFO: [Synth 8-6157] synthesizing module 'VexiiRiscv' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11725]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43768]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43768]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43732]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43732]
-INFO: [Synth 8-6157] synthesizing module 'DivRadix' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43564]
-INFO: [Synth 8-6155] done synthesizing module 'DivRadix' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43564]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_2' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43521]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_2' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43521]
-INFO: [Synth 8-6157] synthesizing module 'FpuSqrt' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43423]
-INFO: [Synth 8-6155] done synthesizing module 'FpuSqrt' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43423]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_3' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43204]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_3' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43204]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_4' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43167]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_4' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43167]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_5' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43142]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_5' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43142]
-INFO: [Synth 8-6157] synthesizing module 'RegFileMem' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43056]
-INFO: [Synth 8-6155] done synthesizing module 'RegFileMem' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43056]
-INFO: [Synth 8-6157] synthesizing module 'RegFileMem_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42947]
-INFO: [Synth 8-6155] done synthesizing module 'RegFileMem_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42947]
-INFO: [Synth 8-6155] done synthesizing module 'VexiiRiscv' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11725]
-INFO: [Synth 8-6157] synthesizing module 'BufferCC' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11701]
-INFO: [Synth 8-6155] done synthesizing module 'BufferCC' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11701]
-INFO: [Synth 8-6157] synthesizing module 'BufferCC_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11677]
-INFO: [Synth 8-6155] done synthesizing module 'BufferCC_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11677]
-INFO: [Synth 8-6157] synthesizing module 'Arbiter' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11327]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_6' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42763]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_6' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42763]
-INFO: [Synth 8-6155] done synthesizing module 'Arbiter' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11327]
-INFO: [Synth 8-6157] synthesizing module 'Arbiter_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10971]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_7' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42579]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_7' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42579]
-INFO: [Synth 8-6155] done synthesizing module 'Arbiter_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10971]
-INFO: [Synth 8-6157] synthesizing module 'AxiLite4Bridge' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10477]
-INFO: [Synth 8-6157] synthesizing module 'StreamFork' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42438]
-INFO: [Synth 8-6155] done synthesizing module 'StreamFork' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42438]
-INFO: [Synth 8-6155] done synthesizing module 'AxiLite4Bridge' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10477]
-INFO: [Synth 8-6157] synthesizing module 'WidthAdapter' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10208]
-INFO: [Synth 8-6155] done synthesizing module 'WidthAdapter' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10208]
-INFO: [Synth 8-6157] synthesizing module 'Axi4Bridge' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:9537]
-INFO: [Synth 8-6157] synthesizing module 'ContextAsyncBufferFull' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42390]
-INFO: [Synth 8-6155] done synthesizing module 'ContextAsyncBufferFull' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42390]
-INFO: [Synth 8-6157] synthesizing module 'StreamFork_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42251]
-INFO: [Synth 8-6155] done synthesizing module 'StreamFork_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42251]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_9' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42167]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_9' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42167]
-INFO: [Synth 8-6155] done synthesizing module 'Axi4Bridge' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:9537]
-INFO: [Synth 8-6157] synthesizing module 'WidthAdapter_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:9283]
-INFO: [Synth 8-6157] synthesizing module 'ContextAsyncBufferFull_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42119]
-INFO: [Synth 8-6155] done synthesizing module 'ContextAsyncBufferFull_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42119]
-INFO: [Synth 8-6155] done synthesizing module 'WidthAdapter_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:9283]
-INFO: [Synth 8-6157] synthesizing module 'Decoder' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8762]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_10' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41868]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_10' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41868]
-INFO: [Synth 8-6155] done synthesizing module 'Decoder' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8762]
-INFO: [Synth 8-6157] synthesizing module 'Decoder_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8391]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_11' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41695]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_11' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41695]
-INFO: [Synth 8-6155] done synthesizing module 'Decoder_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8391]
-INFO: [Synth 8-6157] synthesizing module 'TilelinkClint' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8026]
-INFO: [Synth 8-6155] done synthesizing module 'TilelinkClint' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8026]
-INFO: [Synth 8-6157] synthesizing module 'TilelinkPlic' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:5435]
-INFO: [Synth 8-6155] done synthesizing module 'TilelinkPlic' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:5435]
+INFO: [Synth 8-6157] synthesizing module 'VexiiRiscv' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11747]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43910]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43910]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43874]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43874]
+INFO: [Synth 8-6157] synthesizing module 'DivRadix' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43706]
+INFO: [Synth 8-6155] done synthesizing module 'DivRadix' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43706]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_2' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43663]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_2' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43663]
+INFO: [Synth 8-6157] synthesizing module 'FpuSqrt' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43565]
+INFO: [Synth 8-6155] done synthesizing module 'FpuSqrt' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43565]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_3' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43346]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_3' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43346]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_4' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43309]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_4' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43309]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_5' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43284]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_5' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43284]
+INFO: [Synth 8-6157] synthesizing module 'RegFileMem' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43198]
+INFO: [Synth 8-6155] done synthesizing module 'RegFileMem' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43198]
+INFO: [Synth 8-6157] synthesizing module 'RegFileMem_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43089]
+INFO: [Synth 8-6155] done synthesizing module 'RegFileMem_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43089]
+INFO: [Synth 8-6155] done synthesizing module 'VexiiRiscv' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11747]
+INFO: [Synth 8-6157] synthesizing module 'BufferCC' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11723]
+INFO: [Synth 8-6155] done synthesizing module 'BufferCC' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11723]
+INFO: [Synth 8-6157] synthesizing module 'BufferCC_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11699]
+INFO: [Synth 8-6155] done synthesizing module 'BufferCC_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11699]
+INFO: [Synth 8-6157] synthesizing module 'Arbiter' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11349]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_6' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42905]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_6' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42905]
+INFO: [Synth 8-6155] done synthesizing module 'Arbiter' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:11349]
+INFO: [Synth 8-6157] synthesizing module 'Arbiter_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10993]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_7' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42721]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_7' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42721]
+INFO: [Synth 8-6155] done synthesizing module 'Arbiter_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10993]
+INFO: [Synth 8-6157] synthesizing module 'AxiLite4Bridge' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10499]
+INFO: [Synth 8-6157] synthesizing module 'StreamFork' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42580]
+INFO: [Synth 8-6155] done synthesizing module 'StreamFork' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42580]
+INFO: [Synth 8-6155] done synthesizing module 'AxiLite4Bridge' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10499]
+INFO: [Synth 8-6157] synthesizing module 'WidthAdapter' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10230]
+INFO: [Synth 8-6155] done synthesizing module 'WidthAdapter' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:10230]
+INFO: [Synth 8-6157] synthesizing module 'Axi4Bridge' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:9559]
+INFO: [Synth 8-6157] synthesizing module 'ContextAsyncBufferFull' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42532]
+INFO: [Synth 8-6155] done synthesizing module 'ContextAsyncBufferFull' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42532]
+INFO: [Synth 8-6157] synthesizing module 'StreamFork_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42393]
+INFO: [Synth 8-6155] done synthesizing module 'StreamFork_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42393]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_9' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42309]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_9' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42309]
+INFO: [Synth 8-6155] done synthesizing module 'Axi4Bridge' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:9559]
+INFO: [Synth 8-6157] synthesizing module 'WidthAdapter_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:9303]
+INFO: [Synth 8-6157] synthesizing module 'ContextAsyncBufferFull_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42261]
+INFO: [Synth 8-6155] done synthesizing module 'ContextAsyncBufferFull_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42261]
+INFO: [Synth 8-6155] done synthesizing module 'WidthAdapter_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:9303]
+INFO: [Synth 8-6157] synthesizing module 'Decoder' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8782]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_10' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42010]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_10' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:42010]
+INFO: [Synth 8-6155] done synthesizing module 'Decoder' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8782]
+INFO: [Synth 8-6157] synthesizing module 'Decoder_1' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8411]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_11' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41837]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_11' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41837]
+INFO: [Synth 8-6155] done synthesizing module 'Decoder_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8411]
+INFO: [Synth 8-6157] synthesizing module 'TilelinkClint' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8046]
+INFO: [Synth 8-6155] done synthesizing module 'TilelinkClint' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:8046]
+INFO: [Synth 8-6157] synthesizing module 'TilelinkPlic' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:5455]
+INFO: [Synth 8-6155] done synthesizing module 'TilelinkPlic' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:5455]
 INFO: [Synth 8-6157] synthesizing module 'WidthAdapter_2' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:5131]
 INFO: [Synth 8-6155] done synthesizing module 'WidthAdapter_2' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:5131]
 INFO: [Synth 8-6157] synthesizing module 'Decoder_2' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:4729]
-INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_12' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41515]
-INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_12' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41515]
+INFO: [Synth 8-6157] synthesizing module 'StreamArbiter_12' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41657]
+INFO: [Synth 8-6155] done synthesizing module 'StreamArbiter_12' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:41657]
 INFO: [Synth 8-6155] done synthesizing module 'Decoder_2' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:4729]
 INFO: [Synth 8-6155] done synthesizing module 'VexiiSoc' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:7]
 WARNING: [Synth 8-7071] port 'debug' of module 'VexiiSoc' is unconnected for instance 'Soc' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VexiiSocWrapper.v:64]
 WARNING: [Synth 8-7023] instance 'Soc' of module 'VexiiSoc' has 53 connections declared, but only 52 given [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VexiiSocWrapper.v:64]
 INFO: [Synth 8-6155] done synthesizing module 'VexiiSocWrapper' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VexiiSocWrapper.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'Block_top_VexiiSocWrapper_0_1' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_VexiiSocWrapper_0_1/synth/Block_top_VexiiSocWrapper_0_1.v:53]
-WARNING: [Synth 8-6014] Unused sequential element wasBusy_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43664]
-WARNING: [Synth 8-3936] Found unconnected internal register '_zz_shifter_reg' and it is trimmed from '57' to '56' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43632]
-WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_refill_pushCounter_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38708]
-WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_ctrl_firstCycle_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38714]
-WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_ctrl_onEvents_waiting_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:26965]
-WARNING: [Synth 8-6014] Unused sequential element decode_ctrls_0_up_LANE_SEL_0_regNext_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27107]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_1_valid_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27920]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_valid_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27922]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_valid_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27924]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_valid_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38776]
-WARNING: [Synth 8-6014] Unused sequential element AlignerPlugin_logic_feeder_harts_0_dopId_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28800]
-WARNING: [Synth 8-6014] Unused sequential element AlignerPlugin_logic_buffer_last_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28810]
-WARNING: [Synth 8-6014] Unused sequential element decode_ctrls_1_up_LANE_SEL_0_regNext_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:29757]
-WARNING: [Synth 8-6014] Unused sequential element decode_ctrls_1_up_LANE_SEL_0_regNext_1_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:30977]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl0_down_LANE_SEL_lane0_regNext_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:30982]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_down_LANE_SEL_lane0_regNext_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:30985]
-WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_refill_pushCounter_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38816]
-WARNING: [Synth 8-6014] Unused sequential element LsuPlugin_logic_onCtrl_commitProbeToken_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:32289]
-WARNING: [Synth 8-6014] Unused sequential element TrapPlugin_logic_harts_0_trap_fsm_trapEnterDebug_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38854]
-WARNING: [Synth 8-6014] Unused sequential element PcPlugin_logic_harts_0_self_id_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38862]
-WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_executeFreezedCounter_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37271]
-WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_dispatchHazardsCounter_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37286]
-WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_candidatesCountCounters_0_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37302]
-WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_candidatesCountCounters_1_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37318]
-WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_dispatchFeedCounters_0_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37334]
-WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_dispatchFeedCounters_1_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37350]
-WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_refill_slots_0_isIo_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20784]
-WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_refill_slots_1_isIo_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20784]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_1_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40104]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_inserter_rs1_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20882]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_inserter_rs1_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40116]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_inserter_rs2_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20883]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_inserter_rs2_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40121]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40130]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_inserter_rs1_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20885]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_inserter_rs1_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40145]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_inserter_rs2_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20886]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_inserter_rs2_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40150]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40159]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_inserter_rs1_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40170]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_inserter_rs1_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40171]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_inserter_rs2_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40175]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_inserter_rs2_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40176]
-WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27901]
-WARNING: [Synth 8-6014] Unused sequential element AlignerPlugin_logic_buffer_hm_Fetch_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:30999]
-WARNING: [Synth 8-6014] Unused sequential element FpuPackerPlugin_logic_pip_node_1_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40223]
-WARNING: [Synth 8-6014] Unused sequential element FpuPackerPlugin_logic_pip_node_2_s0_VALUE_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40232]
-WARNING: [Synth 8-6014] Unused sequential element FpuPackerPlugin_logic_pip_node_2_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:29422]
-WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_writeback_slots_0_readRspDone_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40320]
-WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_writeback_slots_1_readRspDone_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40333]
-WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_writeback_read_slotReadLast_payload_last_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40349]
-WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_writeback_write_bufferRead_rData_last_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:31523]
-WARNING: [Synth 8-6014] Unused sequential element LsuPlugin_logic_onCtrl_lrsc_address_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:32097]
-WARNING: [Synth 8-6014] Unused sequential element TrapPlugin_logic_harts_0_interrupt_privilegeTriggers_0_result_priority_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:32528]
-WARNING: [Synth 8-6014] Unused sequential element TrapPlugin_logic_harts_0_interrupt_privilegeTriggers_1_result_priority_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:32583]
-WARNING: [Synth 8-6014] Unused sequential element TrapPlugin_logic_harts_0_trap_pending_state_tval2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40431]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21857]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_1_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21858]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21859]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_3_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21860]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_4_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21861]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_5_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21862]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_6_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21863]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_7_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21864]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_8_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21865]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_9_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21866]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_10_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21867]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_11_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21868]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_12_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21869]
-WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_13_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21870]
-WARNING: [Synth 8-6014] Unused sequential element CsrAccessPlugin_logic_fsm_interface_onWriteBits_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37047]
-WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_1_up_Fetch_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37389]
-WARNING: [Synth 8-6014] Unused sequential element _zz_FetchL1Plugin_logic_onAddress0_translationPort_logic_read_0_forceGuest_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37390]
-WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_Fetch_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37408]
-WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_FetchL1Plugin_logic_WAYS_TAGS_0_loaded_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37418]
-WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_FetchL1Plugin_logic_WAYS_TAGS_0_address_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37420]
-WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_FetchL1Plugin_logic_WAYS_TAGS_1_loaded_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37421]
-WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_FetchL1Plugin_logic_WAYS_TAGS_1_address_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37423]
-WARNING: [Synth 8-6014] Unused sequential element _zz_fetch_logic_ctrls_2_down_FetchL1Plugin_logic_onAddress1_translationPort_keys_TRANSLATED_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:35424]
-WARNING: [Synth 8-6014] Unused sequential element decode_ctrls_1_up_Decode_DOP_ID_0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37479]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_0_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37590]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_1_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37591]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_2_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37592]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_3_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37593]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_4_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37594]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_5_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37595]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_6_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37596]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_LsuPlugin_logic_LSU_PREFETCH_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37639]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_0_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37689]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_1_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37690]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_2_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37691]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_3_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37692]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_4_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37693]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_5_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37694]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_AguPlugin_LOAD_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37709]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_AguPlugin_ATOMIC_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37712]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_AguPlugin_CLEAN_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37714]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_AguPlugin_INVALIDATE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37715]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_LsuPlugin_logic_LSU_PREFETCH_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37717]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_early0_SrcPlugin_ADD_SUB_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37727]
-WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_FpuUnpack_RS2_RS_lane0_sign_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37755]
+WARNING: [Synth 8-6014] Unused sequential element wasBusy_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43806]
+WARNING: [Synth 8-3936] Found unconnected internal register '_zz_shifter_reg' and it is trimmed from '57' to '56' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:43774]
+WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_refill_pushCounter_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38850]
+WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_ctrl_firstCycle_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38856]
+WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_ctrl_onEvents_waiting_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27102]
+WARNING: [Synth 8-6014] Unused sequential element decode_ctrls_0_up_LANE_SEL_0_regNext_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27244]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_1_valid_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28057]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_valid_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28059]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_valid_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28061]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_valid_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38918]
+WARNING: [Synth 8-6014] Unused sequential element AlignerPlugin_logic_feeder_harts_0_dopId_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28937]
+WARNING: [Synth 8-6014] Unused sequential element AlignerPlugin_logic_buffer_last_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28947]
+WARNING: [Synth 8-6014] Unused sequential element decode_ctrls_1_up_LANE_SEL_0_regNext_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:29894]
+WARNING: [Synth 8-6014] Unused sequential element decode_ctrls_1_up_LANE_SEL_0_regNext_1_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:31114]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl0_down_LANE_SEL_lane0_regNext_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:31119]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_down_LANE_SEL_lane0_regNext_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:31122]
+WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_refill_pushCounter_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38958]
+WARNING: [Synth 8-6014] Unused sequential element LsuPlugin_logic_onCtrl_commitProbeToken_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:32431]
+WARNING: [Synth 8-6014] Unused sequential element TrapPlugin_logic_harts_0_trap_fsm_trapEnterDebug_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38996]
+WARNING: [Synth 8-6014] Unused sequential element PcPlugin_logic_harts_0_self_id_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:39004]
+WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_executeFreezedCounter_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37413]
+WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_dispatchHazardsCounter_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37428]
+WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_candidatesCountCounters_0_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37444]
+WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_candidatesCountCounters_1_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37460]
+WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_dispatchFeedCounters_0_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37476]
+WARNING: [Synth 8-6014] Unused sequential element _zz_WhiteboxerPlugin_logic_perf_dispatchFeedCounters_1_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37492]
+WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_refill_slots_0_isIo_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20842]
+WARNING: [Synth 8-6014] Unused sequential element FetchL1Plugin_logic_refill_slots_1_isIo_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20842]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_1_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40246]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_inserter_rs1_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20940]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_inserter_rs1_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40258]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_inserter_rs2_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20941]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_inserter_rs2_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40263]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_2_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40272]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_inserter_rs1_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20943]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_inserter_rs1_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40287]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_inserter_rs2_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:20944]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_inserter_rs2_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40292]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_3_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40301]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_inserter_rs1_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40312]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_inserter_rs1_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40313]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_inserter_rs2_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40317]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_inserter_rs2_mantissa_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40318]
+WARNING: [Synth 8-6014] Unused sequential element FpuAddSharedPlugin_logic_pip_node_4_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28038]
+WARNING: [Synth 8-6014] Unused sequential element AlignerPlugin_logic_buffer_hm_Fetch_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:31136]
+WARNING: [Synth 8-6014] Unused sequential element FpuPackerPlugin_logic_pip_node_1_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40365]
+WARNING: [Synth 8-6014] Unused sequential element FpuPackerPlugin_logic_pip_node_2_s0_VALUE_exponent_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40374]
+WARNING: [Synth 8-6014] Unused sequential element FpuPackerPlugin_logic_pip_node_2_Decode_UOP_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:29559]
+WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_writeback_slots_0_readRspDone_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40462]
+WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_writeback_slots_1_readRspDone_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40475]
+WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_writeback_read_slotReadLast_payload_last_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40491]
+WARNING: [Synth 8-6014] Unused sequential element LsuL1Plugin_logic_writeback_write_bufferRead_rData_last_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:31664]
+WARNING: [Synth 8-6014] Unused sequential element LsuPlugin_logic_onCtrl_lrsc_address_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:32239]
+WARNING: [Synth 8-6014] Unused sequential element TrapPlugin_logic_harts_0_interrupt_privilegeTriggers_0_result_priority_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:32670]
+WARNING: [Synth 8-6014] Unused sequential element TrapPlugin_logic_harts_0_interrupt_privilegeTriggers_1_result_priority_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:32725]
+WARNING: [Synth 8-6014] Unused sequential element TrapPlugin_logic_harts_0_trap_pending_state_tval2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40573]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21916]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_1_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21917]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_2_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21918]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_3_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21919]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_4_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21920]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_5_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21921]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_6_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21922]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_7_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21923]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_8_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21924]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_9_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21925]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_10_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21926]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_11_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21927]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_12_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21928]
+WARNING: [Synth 8-6014] Unused sequential element _zz_PerformanceCounterPlugin_logic_events_sums_13_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21929]
+WARNING: [Synth 8-6014] Unused sequential element CsrAccessPlugin_logic_fsm_interface_onWriteBits_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37189]
+WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_1_up_Fetch_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37531]
+WARNING: [Synth 8-6014] Unused sequential element _zz_FetchL1Plugin_logic_onAddress0_translationPort_logic_read_0_forceGuest_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37532]
+WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_Fetch_ID_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37550]
+WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_FetchL1Plugin_logic_WAYS_TAGS_0_loaded_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37560]
+WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_FetchL1Plugin_logic_WAYS_TAGS_0_address_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37562]
+WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_FetchL1Plugin_logic_WAYS_TAGS_1_loaded_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37563]
+WARNING: [Synth 8-6014] Unused sequential element fetch_logic_ctrls_2_up_FetchL1Plugin_logic_WAYS_TAGS_1_address_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37565]
+WARNING: [Synth 8-6014] Unused sequential element _zz_fetch_logic_ctrls_2_down_FetchL1Plugin_logic_onAddress1_translationPort_keys_TRANSLATED_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:35566]
+WARNING: [Synth 8-6014] Unused sequential element decode_ctrls_1_up_Decode_DOP_ID_0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37621]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_0_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37732]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_1_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37733]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_2_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37734]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_3_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37735]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_4_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37736]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_5_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37737]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_lane0_logic_completions_onCtrl_6_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37738]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl2_up_LsuPlugin_logic_LSU_PREFETCH_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37781]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_0_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37831]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_1_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37832]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_2_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37833]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_3_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37834]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_4_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37835]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_lane0_logic_completions_onCtrl_5_ENABLE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37836]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_AguPlugin_LOAD_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37851]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_AguPlugin_ATOMIC_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37854]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_AguPlugin_CLEAN_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37856]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_AguPlugin_INVALIDATE_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37857]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_LsuPlugin_logic_LSU_PREFETCH_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37859]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_early0_SrcPlugin_ADD_SUB_lane0_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37869]
+WARNING: [Synth 8-6014] Unused sequential element execute_ctrl3_up_FpuUnpack_RS2_RS_lane0_sign_reg was removed.  [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37897]
 INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-WARNING: [Synth 8-3936] Found unconnected internal register '_zz_FpuPackerPlugin_logic_s1_subnormal_manShifter_reg' and it is trimmed from '55' to '54' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21011]
-WARNING: [Synth 8-3936] Found unconnected internal register '_zz_execute_ctrl4_down_early0_MulPlugin_logic_steps_1_adders_0_lane0_1_reg' and it is trimmed from '111' to '106' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28319]
-WARNING: [Synth 8-3936] Found unconnected internal register '_zz_execute_ctrl4_down_early0_MulPlugin_logic_steps_1_adders_0_lane0_reg' and it is trimmed from '111' to '106' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28313]
-WARNING: [Synth 8-3936] Found unconnected internal register '_zz_LsuL1Plugin_logic_writeback_read_address_reg' and it is trimmed from '32' to '12' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:23057]
-WARNING: [Synth 8-3936] Found unconnected internal register 'CsrAccessPlugin_logic_fsm_interface_csrId_reg' and it is trimmed from '12' to '8' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:36280]
+WARNING: [Synth 8-3936] Found unconnected internal register '_zz_FpuPackerPlugin_logic_s1_subnormal_manShifter_reg' and it is trimmed from '55' to '54' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:21069]
+WARNING: [Synth 8-3936] Found unconnected internal register '_zz_execute_ctrl4_down_early0_MulPlugin_logic_steps_1_adders_0_lane0_1_reg' and it is trimmed from '111' to '106' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28456]
+WARNING: [Synth 8-3936] Found unconnected internal register '_zz_execute_ctrl4_down_early0_MulPlugin_logic_steps_1_adders_0_lane0_reg' and it is trimmed from '111' to '106' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:28450]
+WARNING: [Synth 8-3936] Found unconnected internal register '_zz_LsuL1Plugin_logic_writeback_read_address_reg' and it is trimmed from '32' to '12' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:23180]
+WARNING: [Synth 8-3936] Found unconnected internal register 'CsrAccessPlugin_logic_fsm_interface_csrId_reg' and it is trimmed from '12' to '8' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:36422]
 INFO: [Synth 8-7129] Port io_bus_a_payload_param[2] in module TilelinkPlic is either unconnected or has no load
 INFO: [Synth 8-7129] Port io_bus_a_payload_param[1] in module TilelinkPlic is either unconnected or has no load
 INFO: [Synth 8-7129] Port io_bus_a_payload_param[0] in module TilelinkPlic is either unconnected or has no load
@@ -303,49 +303,49 @@ INFO: [Synth 8-7129] Port LsuTileLinkPlugin_logic_bridge_down_d_payload_size[0] 
 INFO: [Synth 8-7129] Port LsuTileLinkPlugin_logic_bridge_down_d_payload_corrupt in module VexiiRiscv is either unconnected or has no load
 INFO: [Synth 8-7129] Port peripheral_externalInterrupts_port[0] in module VexiiSoc is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2514.891 ; gain = 786.305 ; free physical = 12099 ; free virtual = 22156
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2516.875 ; gain = 790.992 ; free physical = 1690 ; free virtual = 21424
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2514.891 ; gain = 786.305 ; free physical = 12104 ; free virtual = 22157
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2516.875 ; gain = 790.992 ; free physical = 1683 ; free virtual = 21414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2514.891 ; gain = 786.305 ; free physical = 12104 ; free virtual = 22157
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2516.875 ; gain = 790.992 ; free physical = 1683 ; free virtual = 21414
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.35 . Memory (MB): peak = 2514.891 ; gain = 0.000 ; free physical = 12078 ; free virtual = 22130
+Netlist sorting complete. Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.35 . Memory (MB): peak = 2516.875 ; gain = 0.000 ; free physical = 1703 ; free virtual = 21435
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2606.723 ; gain = 0.000 ; free physical = 12027 ; free virtual = 22080
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2613.707 ; gain = 0.000 ; free physical = 1736 ; free virtual = 21467
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2606.758 ; gain = 0.000 ; free physical = 12016 ; free virtual = 22071
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2613.742 ; gain = 0.000 ; free physical = 1735 ; free virtual = 21467
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2606.758 ; gain = 878.172 ; free physical = 14781 ; free virtual = 24836
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2613.742 ; gain = 887.859 ; free physical = 1823 ; free virtual = 21559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2614.727 ; gain = 886.141 ; free physical = 14781 ; free virtual = 24836
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2621.711 ; gain = 895.828 ; free physical = 1823 ; free virtual = 21559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2614.727 ; gain = 886.141 ; free physical = 14778 ; free virtual = 24832
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2621.711 ; gain = 895.828 ; free physical = 1823 ; free virtual = 21559
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3936] Found unconnected internal register 'FpuAddSharedPlugin_logic_pip_node_4_adder_math_xyMantissa_reg' and it is trimmed from '108' to '107' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27839]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FpuAddSharedPlugin_logic_pip_node_2_adder_shifter_shifter_reg' and it is trimmed from '108' to '1' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40136]
-WARNING: [Synth 8-3936] Found unconnected internal register 'MmuPlugin_logic_accessBus_rsp_toStream_rData_data_reg' and it is trimmed from '32' to '30' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:34903]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FpuAddSharedPlugin_logic_pip_node_4_adder_math_xyMantissa_reg' and it is trimmed from '108' to '107' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:27976]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FpuAddSharedPlugin_logic_pip_node_2_adder_shifter_shifter_reg' and it is trimmed from '108' to '1' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:40278]
+WARNING: [Synth 8-3936] Found unconnected internal register 'MmuPlugin_logic_accessBus_rsp_toStream_rData_data_reg' and it is trimmed from '32' to '30' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:35045]
 INFO: [Synth 8-802] inferred FSM for state register 'TranslatedDBusAccessPlugin_logic_access_fsm_0_stateReg_reg' in module 'VexiiRiscv'
 INFO: [Synth 8-802] inferred FSM for state register 'LsuPlugin_logic_flusher_stateReg_reg' in module 'VexiiRiscv'
 INFO: [Synth 8-802] inferred FSM for state register 'MmuPlugin_logic_refill_stateReg_reg' in module 'VexiiRiscv'
@@ -377,7 +377,7 @@ LsuPlugin_logic_flusher_COMPLETION |                              100 |         
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'LsuPlugin_logic_flusher_stateReg_reg' using encoding 'one-hot' in module 'VexiiRiscv'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2614.727 ; gain = 886.141 ; free physical = 16271 ; free virtual = 26403
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2621.711 ; gain = 895.828 ; free physical = 1864 ; free virtual = 21608
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -395,12 +395,12 @@ Detailed RTL Component Info :
 	   2 Input   33 Bit       Adders := 1     
 	   2 Input   32 Bit       Adders := 9     
 	   3 Input   32 Bit       Adders := 2     
-	   2 Input   13 Bit       Adders := 4     
 	   3 Input   13 Bit       Adders := 7     
-	   3 Input   12 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 4     
 	   2 Input   12 Bit       Adders := 1     
-	   2 Input   11 Bit       Adders := 6     
+	   3 Input   12 Bit       Adders := 1     
 	   3 Input   11 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 6     
 	   2 Input    8 Bit       Adders := 2     
 	   2 Input    7 Bit       Adders := 4     
 	   2 Input    6 Bit       Adders := 7     
@@ -409,56 +409,59 @@ Detailed RTL Component Info :
 	   2 Input    5 Bit       Adders := 2     
 	   2 Input    4 Bit       Adders := 22    
 	   3 Input    4 Bit       Adders := 6     
-	   2 Input    3 Bit       Adders := 11    
-	   2 Input    2 Bit       Adders := 9     
-	   2 Input    1 Bit       Adders := 19    
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 26    
+	   2 Input    1 Bit       Adders := 11    
 	   3 Input    1 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 2     
 	   2 Input     20 Bit         XORs := 16    
 	   2 Input      3 Bit         XORs := 1     
-	   2 Input      1 Bit         XORs := 15    
+	   2 Input      2 Bit         XORs := 9     
+	   2 Input      1 Bit         XORs := 12    
 	   3 Input      1 Bit         XORs := 1     
 +---Registers : 
+	              128 Bit    Registers := 4     
 	              107 Bit    Registers := 2     
 	              106 Bit    Registers := 2     
 	              105 Bit    Registers := 1     
-	               64 Bit    Registers := 31    
+	               64 Bit    Registers := 27    
 	               57 Bit    Registers := 1     
 	               56 Bit    Registers := 4     
 	               54 Bit    Registers := 5     
 	               53 Bit    Registers := 1     
 	               52 Bit    Registers := 13    
 	               47 Bit    Registers := 1     
-	               32 Bit    Registers := 99    
+	               32 Bit    Registers := 105   
 	               30 Bit    Registers := 1     
 	               22 Bit    Registers := 4     
 	               21 Bit    Registers := 8     
 	               20 Bit    Registers := 14    
-	               16 Bit    Registers := 11    
+	               16 Bit    Registers := 13    
 	               13 Bit    Registers := 10    
 	               12 Bit    Registers := 9     
 	               11 Bit    Registers := 2     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 32    
+	                8 Bit    Registers := 46    
 	                7 Bit    Registers := 6     
 	                6 Bit    Registers := 12    
 	                5 Bit    Registers := 26    
 	                4 Bit    Registers := 39    
-	                3 Bit    Registers := 100   
-	                2 Bit    Registers := 126   
-	                1 Bit    Registers := 1028  
+	                3 Bit    Registers := 90    
+	                2 Bit    Registers := 140   
+	                1 Bit    Registers := 1024  
 +---RAMs : 
 	              32K Bit	(1024 X 32 bit)          RAMs := 2     
-	               4K Bit	(512 X 8 bit)          RAMs := 16    
 	               2K Bit	(32 X 64 bit)          RAMs := 1     
+	               2K Bit	(256 X 8 bit)          RAMs := 32    
 	             1024 Bit	(32 X 32 bit)          RAMs := 1     
 	               1K Bit	(64 X 22 bit)          RAMs := 4     
-	             1024 Bit	(16 X 64 bit)          RAMs := 1     
+	             1024 Bit	(8 X 128 bit)          RAMs := 1     
 	              512 Bit	(16 X 32 bit)          RAMs := 1     
 	              192 Bit	(64 X 3 bit)          RAMs := 1     
 	               64 Bit	(64 X 1 bit)          RAMs := 1     
 +---Muxes : 
+	   2 Input  128 Bit        Muxes := 6     
 	   2 Input  122 Bit        Muxes := 2     
 	   2 Input  108 Bit        Muxes := 8     
 	   2 Input  107 Bit        Muxes := 1     
@@ -466,7 +469,7 @@ Detailed RTL Component Info :
 	   2 Input   74 Bit        Muxes := 6     
 	   2 Input   71 Bit        Muxes := 6     
 	   2 Input   68 Bit        Muxes := 2     
-	   2 Input   64 Bit        Muxes := 47    
+	   2 Input   64 Bit        Muxes := 43    
 	   4 Input   64 Bit        Muxes := 1     
 	   2 Input   57 Bit        Muxes := 1     
 	   4 Input   56 Bit        Muxes := 1     
@@ -477,67 +480,67 @@ Detailed RTL Component Info :
 	   2 Input   52 Bit        Muxes := 9     
 	   3 Input   52 Bit        Muxes := 1     
 	   4 Input   42 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 109   
-	   3 Input   32 Bit        Muxes := 1     
-	   4 Input   32 Bit        Muxes := 4     
-	  10 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 105   
 	   5 Input   32 Bit        Muxes := 1     
+	   3 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 8     
 	  16 Input   32 Bit        Muxes := 1     
+	  10 Input   32 Bit        Muxes := 1     
 	   2 Input   31 Bit        Muxes := 1     
 	   2 Input   30 Bit        Muxes := 1     
 	   2 Input   26 Bit        Muxes := 3     
 	  10 Input   22 Bit        Muxes := 1     
 	   2 Input   20 Bit        Muxes := 16    
-	   2 Input   16 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 5     
+	   3 Input   16 Bit        Muxes := 1     
 	   2 Input   13 Bit        Muxes := 4     
 	   2 Input   12 Bit        Muxes := 10    
 	  10 Input   12 Bit        Muxes := 1     
 	   2 Input   11 Bit        Muxes := 4     
 	   2 Input   10 Bit        Muxes := 9     
-	   2 Input    9 Bit        Muxes := 3     
-	   4 Input    8 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 16    
+	   2 Input    8 Bit        Muxes := 17    
 	   7 Input    8 Bit        Muxes := 2     
-	   3 Input    8 Bit        Muxes := 1     
-	   3 Input    7 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 2     
 	   2 Input    7 Bit        Muxes := 2     
+	   3 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 8     
 	   5 Input    6 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 30    
 	   4 Input    5 Bit        Muxes := 2     
-	  10 Input    5 Bit        Muxes := 2     
 	  16 Input    5 Bit        Muxes := 3     
 	   3 Input    5 Bit        Muxes := 2     
+	  10 Input    5 Bit        Muxes := 2     
 	   5 Input    5 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 49    
+	   2 Input    4 Bit        Muxes := 46    
 	  11 Input    4 Bit        Muxes := 1     
-	  15 Input    4 Bit        Muxes := 1     
 	   3 Input    4 Bit        Muxes := 7     
 	  16 Input    4 Bit        Muxes := 2     
+	  15 Input    4 Bit        Muxes := 1     
 	   7 Input    4 Bit        Muxes := 19    
-	   2 Input    3 Bit        Muxes := 68    
-	   8 Input    3 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 62    
+	   7 Input    3 Bit        Muxes := 1     
 	   3 Input    3 Bit        Muxes := 2     
-	  10 Input    3 Bit        Muxes := 2     
-	   7 Input    3 Bit        Muxes := 6     
+	   8 Input    3 Bit        Muxes := 1     
 	  16 Input    3 Bit        Muxes := 1     
+	  10 Input    3 Bit        Muxes := 2     
 	   5 Input    3 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 182   
-	   6 Input    2 Bit        Muxes := 2     
-	   4 Input    2 Bit        Muxes := 4     
-	   3 Input    2 Bit        Muxes := 5     
-	  12 Input    2 Bit        Muxes := 1     
-	  10 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 192   
 	   5 Input    2 Bit        Muxes := 3     
-	   7 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 689   
-	  16 Input    1 Bit        Muxes := 20    
-	  10 Input    1 Bit        Muxes := 19    
-	   3 Input    1 Bit        Muxes := 30    
-	   5 Input    1 Bit        Muxes := 9     
+	   4 Input    2 Bit        Muxes := 4     
+	  12 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 5     
+	  10 Input    2 Bit        Muxes := 1     
+	   6 Input    2 Bit        Muxes := 2     
+	   7 Input    2 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 709   
 	   4 Input    1 Bit        Muxes := 32    
-	   6 Input    1 Bit        Muxes := 2     
+	  10 Input    1 Bit        Muxes := 19    
+	   5 Input    1 Bit        Muxes := 9     
+	   3 Input    1 Bit        Muxes := 30    
+	  16 Input    1 Bit        Muxes := 20    
 	   7 Input    1 Bit        Muxes := 12    
+	   6 Input    1 Bit        Muxes := 2     
 	  13 Input    1 Bit        Muxes := 1     
 	  32 Input    1 Bit        Muxes := 124   
 ---------------------------------------------------------------------------------
@@ -556,8 +559,8 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3936] Found unconnected internal register 'execute_ctrl4_up_early0_MulPlugin_logic_steps_0_adders_2_lane0_reg' and it is trimmed from '6' to '1' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37955]
-WARNING: [Synth 8-3936] Found unconnected internal register 'execute_ctrl4_up_early0_MulPlugin_logic_steps_0_adders_1_lane0_reg' and it is trimmed from '47' to '45' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:37954]
+WARNING: [Synth 8-3936] Found unconnected internal register 'execute_ctrl4_up_early0_MulPlugin_logic_steps_0_adders_1_lane0_reg' and it is trimmed from '47' to '45' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38096]
+WARNING: [Synth 8-3936] Found unconnected internal register 'execute_ctrl4_up_early0_MulPlugin_logic_steps_0_adders_2_lane0_reg' and it is trimmed from '6' to '1' bits. [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/imports/generated/VexiiSoc.v:38097]
 DSP Report: Generating DSP execute_ctrl3_up_early0_MulPlugin_logic_mul_VALUES_8_lane0_reg, operation Mode is: (A*B)'.
 DSP Report: register execute_ctrl3_up_early0_MulPlugin_logic_mul_VALUES_8_lane0_reg is absorbed into DSP execute_ctrl3_up_early0_MulPlugin_logic_mul_VALUES_8_lane0_reg.
 DSP Report: operator execute_ctrl2_down_early0_MulPlugin_logic_mul_VALUES_8_lane0 is absorbed into DSP execute_ctrl3_up_early0_MulPlugin_logic_mul_VALUES_8_lane0_reg.
@@ -607,16 +610,16 @@ INFO: [Synth 8-7129] Port mBus_rid[4] in module Block_top_VexiiSocWrapper_0_1 is
 INFO: [Synth 8-7129] Port mBus_rid[3] in module Block_top_VexiiSocWrapper_0_1 is either unconnected or has no load
 INFO: [Synth 8-7129] Port peripheral_externalInterrupts_port[0] in module Block_top_VexiiSocWrapper_0_1 is either unconnected or has no load
 INFO: [Synth 8-3971] The signal "Block_top_VexiiSocWrapper_0_1/integer_RegFilePlugin_logic_regfile_fpga/asMem_ram_reg" was recognized as a true dual port RAM template.
-INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_512) with no load. RAM width may be reduced from 40 to 16 
-INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_515) with no load. RAM width may be reduced from 40 to 16 
-INFO: [Synth 8-12589] Found 14 bits of RAM  (vexiis_0_logic_corei_0/i_519) with no load. RAM width may be reduced from 20 to 6 
-INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_520) with no load. RAM width may be reduced from 40 to 16 
-INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_522) with no load. RAM width may be reduced from 40 to 16 
-INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_523) with no load. RAM width may be reduced from 40 to 16 
-INFO: [Synth 8-12589] Found 14 bits of RAM  (vexiis_0_logic_corei_0/i_525) with no load. RAM width may be reduced from 20 to 6 
+INFO: [Synth 8-12589] Found 14 bits of RAM  (vexiis_0_logic_corei_0/i_211) with no load. RAM width may be reduced from 20 to 6 
+INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_213) with no load. RAM width may be reduced from 40 to 16 
+INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_214) with no load. RAM width may be reduced from 40 to 16 
+INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_215) with no load. RAM width may be reduced from 40 to 16 
+INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_441) with no load. RAM width may be reduced from 40 to 16 
+INFO: [Synth 8-12589] Found 14 bits of RAM  (vexiis_0_logic_corei_0/i_442) with no load. RAM width may be reduced from 20 to 6 
+INFO: [Synth 8-12589] Found 24 bits of RAM  (vexiis_0_logic_corei_0/i_443) with no load. RAM width may be reduced from 40 to 16 
 INFO: [Synth 8-3971] The signal "Block_top_VexiiSocWrapper_0_1/float_RegFilePlugin_logic_regfile_fpga/asMem_ram_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:15 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18338 ; free virtual = 28436
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1750 ; free virtual = 21490
 ---------------------------------------------------------------------------------
  Sort Area is VexiiRiscv__GB2 execute_ctrl3_up_early0_MulPlugin_logic_mul_VALUES_0_lane0_reg_0 : 0 0 : 2215 2215 : Used 1 time 0
  Sort Area is VexiiRiscv__GB2 execute_ctrl3_up_early0_MulPlugin_logic_mul_VALUES_12_lane0_reg_9 : 0 0 : 2215 2215 : Used 1 time 0
@@ -635,29 +638,45 @@ Block RAM: Preliminary Mapping Report (see note below)
 +------------------------------+----------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 |Module Name                   | RTL Object                                   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
 +------------------------------+----------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_ways_1_mem_reg             | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
 |Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_banks_0_mem_reg          | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
 |Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_banks_1_mem_reg          | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
 |Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_ways_1_mem_reg           | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_ways_0_mem_reg           | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
 |Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_ways_0_mem_reg             | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol7_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol6_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol5_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol4_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol3_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol2_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol1_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol0_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol7_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol6_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol5_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol4_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol3_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol2_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol1_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol0_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_writeback_victimBuffer_reg | 16 x 64(READ_FIRST)    | W |   | 16 x 64(WRITE_FIRST)   |   | R | Port A and B     | 0      | 1      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_ways_1_mem_reg             | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_ways_0_mem_reg           | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_writeback_victimBuffer_reg | 8 x 128(READ_FIRST)    | W |   | 8 x 128(WRITE_FIRST)   |   | R | Port A and B     | 0      | 2      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol15_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol14_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol13_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol12_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol11_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol10_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol9_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol8_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol7_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol6_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol5_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol4_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol3_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol2_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol1_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol0_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol15_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol14_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol13_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol12_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol11_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol10_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol9_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol8_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol7_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol6_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol5_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol4_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol3_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol2_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol1_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol0_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
 +------------------------------+----------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
@@ -666,16 +685,16 @@ Distributed RAM: Preliminary Mapping Report (see note below)
 +-------------------------------+--------------------------------------------------------------+----------------+----------------------+--------------+
 |Module Name                    | RTL Object                                                   | Inference      | Size (Depth x Width) | Primitives   | 
 +-------------------------------+--------------------------------------------------------------+----------------+----------------------+--------------+
-|Block_top_VexiiSocWrapper_0_1  | CsrRamPlugin_logic_mem_reg                                   | Implied        | 16 x 32              | RAM32M x 6   | 
-|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_0_ways_0_reg | User Attribute | 32 x 40              | RAM32M x 14  | 
-|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_0_ways_1_reg | User Attribute | 32 x 40              | RAM32M x 14  | 
-|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_1_ways_0_reg | User Attribute | 32 x 20              | RAM32M x 8   | 
+|Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_1_ways_0_reg     | User Attribute | 32 x 20              | RAM32M x 8   | 
 |Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_0_ways_0_reg     | User Attribute | 32 x 40              | RAM32M x 14  | 
 |Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_0_ways_1_reg     | User Attribute | 32 x 40              | RAM32M x 14  | 
 |Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_0_ways_2_reg     | User Attribute | 32 x 40              | RAM32M x 14  | 
-|Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_1_ways_0_reg     | User Attribute | 32 x 20              | RAM32M x 8   | 
 |Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_plru_mem_reg                             | Implied        | 64 x 1               | RAM64M x 1   | 
+|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_0_ways_0_reg | User Attribute | 32 x 40              | RAM32M x 14  | 
+|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_1_ways_0_reg | User Attribute | 32 x 20              | RAM32M x 8   | 
+|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_0_ways_1_reg | User Attribute | 32 x 40              | RAM32M x 14  | 
 |Block_top_VexiiSocWrapper_0_1  | LsuL1Plugin_logic_shared_mem_reg                             | Implied        | 64 x 3               | RAM64M x 1   | 
+|Block_top_VexiiSocWrapper_0_1  | CsrRamPlugin_logic_mem_reg                                   | Implied        | 16 x 32              | RAM32M x 6   | 
 |Soci_3/mem_toAxi4_logic_bridge | a_ctx/contexts_reg                                           | User Attribute | 8 x 3                | RAM32M x 1   | 
 +-------------------------------+--------------------------------------------------------------+----------------+----------------------+--------------+
 
@@ -705,7 +724,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:16 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18335 ; free virtual = 28433
+Finished Timing Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1746 ; free virtual = 21491
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -715,29 +734,45 @@ Block RAM: Final Mapping Report
 +------------------------------+----------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 |Module Name                   | RTL Object                                   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
 +------------------------------+----------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_ways_1_mem_reg             | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
 |Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_banks_0_mem_reg          | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
 |Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_banks_1_mem_reg          | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
 |Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_ways_1_mem_reg           | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_ways_0_mem_reg           | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
 |Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_ways_0_mem_reg             | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol7_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol6_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol5_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol4_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol3_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol2_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol1_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol0_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol7_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol6_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol5_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol4_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol3_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol2_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol1_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol0_reg    | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_writeback_victimBuffer_reg | 16 x 64(READ_FIRST)    | W |   | 16 x 64(WRITE_FIRST)   |   | R | Port A and B     | 0      | 1      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_ways_1_mem_reg             | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | FetchL1Plugin_logic_ways_0_mem_reg           | 64 x 22(READ_FIRST)    | W |   | 64 x 22(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_writeback_victimBuffer_reg | 8 x 128(READ_FIRST)    | W |   | 8 x 128(WRITE_FIRST)   |   | R | Port A and B     | 0      | 2      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol15_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol14_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol13_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol12_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol11_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol10_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol9_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol8_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol7_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol6_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol5_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol4_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol3_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol2_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol1_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_0_mem_symbol0_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol15_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol14_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol13_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol12_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol11_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol10_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol9_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol8_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol7_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol6_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol5_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol4_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol3_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol2_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol1_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Block_top_VexiiSocWrapper_0_1 | LsuL1Plugin_logic_banks_1_mem_symbol0_reg    | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
 +------------------------------+----------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 
@@ -745,16 +780,16 @@ Distributed RAM: Final Mapping Report
 +-------------------------------+--------------------------------------------------------------+----------------+----------------------+--------------+
 |Module Name                    | RTL Object                                                   | Inference      | Size (Depth x Width) | Primitives   | 
 +-------------------------------+--------------------------------------------------------------+----------------+----------------------+--------------+
-|Block_top_VexiiSocWrapper_0_1  | CsrRamPlugin_logic_mem_reg                                   | Implied        | 16 x 32              | RAM32M x 6   | 
-|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_0_ways_0_reg | User Attribute | 32 x 40              | RAM32M x 14  | 
-|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_0_ways_1_reg | User Attribute | 32 x 40              | RAM32M x 14  | 
-|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_1_ways_0_reg | User Attribute | 32 x 20              | RAM32M x 8   | 
+|Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_1_ways_0_reg     | User Attribute | 32 x 20              | RAM32M x 8   | 
 |Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_0_ways_0_reg     | User Attribute | 32 x 40              | RAM32M x 14  | 
 |Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_0_ways_1_reg     | User Attribute | 32 x 40              | RAM32M x 14  | 
 |Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_0_ways_2_reg     | User Attribute | 32 x 40              | RAM32M x 14  | 
-|Block_top_VexiiSocWrapper_0_1  | LsuPlugin_logic_translationStorage_logic_sl_1_ways_0_reg     | User Attribute | 32 x 20              | RAM32M x 8   | 
 |Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_plru_mem_reg                             | Implied        | 64 x 1               | RAM64M x 1   | 
+|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_0_ways_0_reg | User Attribute | 32 x 40              | RAM32M x 14  | 
+|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_1_ways_0_reg | User Attribute | 32 x 20              | RAM32M x 8   | 
+|Block_top_VexiiSocWrapper_0_1  | FetchL1Plugin_logic_translationStorage_logic_sl_0_ways_1_reg | User Attribute | 32 x 40              | RAM32M x 14  | 
 |Block_top_VexiiSocWrapper_0_1  | LsuL1Plugin_logic_shared_mem_reg                             | Implied        | 64 x 3               | RAM64M x 1   | 
+|Block_top_VexiiSocWrapper_0_1  | CsrRamPlugin_logic_mem_reg                                   | Implied        | 16 x 32              | RAM32M x 6   | 
 |Soci_3/mem_toAxi4_logic_bridge | a_ctx/contexts_reg                                           | User Attribute | 8 x 3                | RAM32M x 1   | 
 +-------------------------------+--------------------------------------------------------------+----------------+----------------------+--------------+
 
@@ -766,15 +801,25 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/integer_RegFilePlugin_logic_regfile_fpga/asMem_ram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/integer_RegFilePlugin_logic_regfile_fpga/asMem_ram_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_ways_1_mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/FetchL1Plugin_logic_banks_0_mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/FetchL1Plugin_logic_banks_1_mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/FetchL1Plugin_logic_ways_1_mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/FetchL1Plugin_logic_ways_0_mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_ways_0_mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_ways_1_mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/FetchL1Plugin_logic_ways_0_mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_writeback_victimBuffer_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_writeback_victimBuffer_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/float_RegFilePlugin_logic_regfile_fpga/asMem_ram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/float_RegFilePlugin_logic_regfile_fpga/asMem_ram_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/float_RegFilePlugin_logic_regfile_fpga/asMem_ram_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol15_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol14_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol13_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol12_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol11_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol10_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol9_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol8_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol7_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol6_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol5_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
@@ -783,6 +828,14 @@ INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/Ls
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol1_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_0_mem_symbol0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol15_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol14_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol13_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol12_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol11_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol10_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol9_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol8_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol7_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol6_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol5_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
@@ -791,9 +844,8 @@ INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/Ls
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol1_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_banks_1_mem_symbol0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance inst/Soc/vexiis_0_logic_core/LsuL1Plugin_logic_writeback_victimBuffer_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18330 ; free virtual = 28428
+Finished Technology Mapping : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1738 ; free virtual = 21482
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -811,37 +863,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18344 ; free virtual = 28440
+Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1741 ; free virtual = 21485
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18344 ; free virtual = 28440
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1741 ; free virtual = 21485
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18344 ; free virtual = 28439
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:22 ; elapsed = 00:01:27 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1741 ; free virtual = 21481
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18344 ; free virtual = 28439
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:22 ; elapsed = 00:01:27 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1741 ; free virtual = 21481
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18344 ; free virtual = 28439
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:22 ; elapsed = 00:01:27 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1741 ; free virtual = 21481
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18344 ; free virtual = 28439
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:22 ; elapsed = 00:01:27 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1741 ; free virtual = 21481
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -854,34 +906,34 @@ Static Shift Register Report:
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_FMA_lane0_reg                            | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_SEL_lane0_reg                            | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_GROUP_OH_reg[1]           | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_SIGN_lane0_reg                | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_FORCE_ZERO_lane0_reg          | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_FORCE_OVERFLOW_lane0_reg      | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_FORCE_NAN_lane0_reg           | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl4_up_FpuCsrPlugin_DIRTY_lane0_reg                          | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl11_up_lane0_float_WriteBackPlugin_SEL_lane0_reg            | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_RDN_reg                   | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_adder_shifter_xySign_reg           | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_ROUNDMODE_reg[2]          | 4      | 3     | NO           | NO                 | YES               | 3      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_FORMAT_reg[0]             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl4_up_MulPlugin_HIGH_lane0_reg                              | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_adder_shifter_xyExponent_reg[12]   | 3      | 13    | NO           | NO                 | YES               | 13     | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl4_up_lane0_IntFormatPlugin_logic_WIDTH_ID_lane0_reg[1]     | 3      | 2     | NO           | NO                 | YES               | 2      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl4_up_lane0_IntFormatPlugin_logic_SIGNED_lane0_reg          | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl7_up_COMPLETION_AT_7_lane0_reg                             | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl8_up_COMPLETION_AT_8_lane0_reg                             | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl11_up_COMPLETION_AT_11_lane0_reg                           | 9      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_BYPASSED_AT_5_lane0_reg                               | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_rs1_quiet_reg             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuUnpack_RS2_RS_lane0_quiet_reg                      | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_INFINITY_NAN_lane0_reg        | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_FLAGS_NV_reg              | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl11_up_COMMIT_lane0_reg                                     | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_FLAGS_NV_reg              | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_INFINITY_NAN_lane0_reg        | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuUnpack_RS2_RS_lane0_quiet_reg                      | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_rs2_quiet_reg             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl11_up_lane0_float_WriteBackPlugin_logic_DATA_lane0_reg[63] | 3      | 64    | NO           | NO                 | YES               | 64     | 0       | 
-|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_adder_shifter_xyExponent_reg[12]   | 3      | 13    | NO           | NO                 | YES               | 13     | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_FORMAT_reg[0]             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_ROUNDMODE_reg[2]          | 4      | 3     | NO           | NO                 | YES               | 3      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_SIGN_lane0_reg                | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_adder_shifter_xySign_reg           | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_RDN_reg                   | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuUnpack_RS3_RS_lane0_mantissa_reg[51]               | 3      | 52    | NO           | NO                 | YES               | 52     | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuUnpack_RS3_RS_lane0_exponent_reg[10]               | 3      | 11    | NO           | NO                 | YES               | 11     | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_SUB2_lane0_reg                           | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_FORCE_NAN_lane0_reg           | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_FORCE_OVERFLOW_lane0_reg      | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_logic_calc_FORCE_ZERO_lane0_reg          | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/FpuAddSharedPlugin_logic_pip_node_4_inserter_rs1_quiet_reg             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl4_up_MulPlugin_HIGH_lane0_reg                              | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |Block_top_VexiiSocWrapper_0_1 | inst/Soc/vexiis_0_logic_core/execute_ctrl5_up_FpuMulPlugin_SUB1_lane0_reg                           | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 +------------------------------+-----------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
@@ -920,39 +972,39 @@ Report Cell Usage:
 +------+---------+------+
 |1     |CARRY4   |   511|
 |2     |DSP48E1  |     9|
-|3     |LUT1     |   174|
-|4     |LUT2     |   904|
-|5     |LUT3     |  2619|
-|6     |LUT4     |  2573|
-|7     |LUT5     |  2138|
-|8     |LUT6     |  4476|
-|9     |MUXF7    |    18|
-|10    |MUXF8    |     5|
+|3     |LUT1     |   148|
+|4     |LUT2     |   922|
+|5     |LUT3     |  2685|
+|6     |LUT4     |  2369|
+|7     |LUT5     |  2419|
+|8     |LUT6     |  4702|
+|9     |MUXF7    |    19|
+|10    |MUXF8    |     1|
 |11    |RAM32M   |    62|
 |12    |RAM32X1D |     8|
 |13    |RAM64M   |     1|
 |14    |RAM64X1D |     1|
-|15    |RAMB18E1 |    22|
-|16    |RAMB36E1 |     6|
+|15    |RAMB18E1 |    38|
+|16    |RAMB36E1 |     7|
 |17    |SRL16E   |   172|
-|18    |FDCE     |   898|
+|18    |FDCE     |   896|
 |19    |FDPE     |   148|
-|20    |FDRE     |  7660|
+|20    |FDRE     |  8041|
 |21    |FDSE     |    75|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 2695.727 ; gain = 967.141 ; free physical = 18344 ; free virtual = 28439
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:22 ; elapsed = 00:01:27 . Memory (MB): peak = 2710.742 ; gain = 984.859 ; free physical = 1741 ; free virtual = 21481
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:13 ; elapsed = 00:01:19 . Memory (MB): peak = 2695.727 ; gain = 875.273 ; free physical = 18344 ; free virtual = 28439
-Synthesis Optimization Complete : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 2695.734 ; gain = 967.141 ; free physical = 18344 ; free virtual = 28439
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:17 ; elapsed = 00:01:23 . Memory (MB): peak = 2710.742 ; gain = 887.992 ; free physical = 1741 ; free virtual = 21481
+Synthesis Optimization Complete : Time (s): cpu = 00:01:22 ; elapsed = 00:01:27 . Memory (MB): peak = 2710.750 ; gain = 984.859 ; free physical = 1741 ; free virtual = 21481
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2695.734 ; gain = 0.000 ; free physical = 18516 ; free virtual = 28611
-INFO: [Netlist 29-17] Analyzing 643 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2710.750 ; gain = 0.000 ; free physical = 1883 ; free virtual = 21623
+INFO: [Netlist 29-17] Analyzing 657 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2822.566 ; gain = 0.000 ; free physical = 18463 ; free virtual = 28558
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2827.582 ; gain = 0.000 ; free physical = 1849 ; free virtual = 21588
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 72 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 62 instances
@@ -960,15 +1012,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM64M => RAM64M (RAMD64E(x4)): 1 instance 
   RAM64X1D => RAM64X1D (RAMD64E(x2)): 1 instance 
 
-Synth Design complete | Checksum: a9a1d135
+Synth Design complete | Checksum: 3572e813
 INFO: [Common 17-83] Releasing license: Synthesis
-247 Infos, 120 Warnings, 0 Critical Warnings and 0 Errors encountered.
+264 Infos, 120 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:29 . Memory (MB): peak = 2822.602 ; gain = 1254.070 ; free physical = 18463 ; free virtual = 28559
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2077.659; main = 1903.264; forked = 280.497
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3689.930; main = 2822.570; forked = 994.199
+synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 2827.617 ; gain = 1214.039 ; free physical = 1849 ; free virtual = 21588
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2094.167; main = 1913.638; forked = 280.036
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3704.949; main = 2827.586; forked = 994.203
 INFO: [Coretcl 2-1174] Renamed 34 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2846.578 ; gain = 0.000 ; free physical = 18457 ; free virtual = 28554
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2851.594 ; gain = 0.000 ; free physical = 1847 ; free virtual = 21588
 INFO: [Common 17-1381] The checkpoint '/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_VexiiSocWrapper_0_1_synth_1/Block_top_VexiiSocWrapper_0_1.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Block_top_VexiiSocWrapper_0_1_utilization_synth.rpt -pb Block_top_VexiiSocWrapper_0_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Aug 17 23:32:55 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 20 17:24:17 2026...

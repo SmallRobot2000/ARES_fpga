@@ -77,6 +77,9 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_a
 # IP: bd/Block_top/ip/Block_top_VDP_wrapper_0_0/Block_top_VDP_wrapper_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_VDP_wrapper_0_0 || ORIG_REF_NAME==Block_top_VDP_wrapper_0_0} -quiet] -quiet
 
+# IP: ip/blk_mem_gen_bit_line/blk_mem_gen_bit_line.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_bit_line || ORIG_REF_NAME==blk_mem_gen_bit_line} -quiet] -quiet
+
 # IP: ip/blk_mem_gen_spr_att/blk_mem_gen_spr_att.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_spr_att || ORIG_REF_NAME==blk_mem_gen_spr_att} -quiet] -quiet
 
@@ -106,5 +109,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_a
 
 # IP: bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_map_0/Block_top_axi_bram_ctrl_vdp_t0_map_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_map_0 || ORIG_REF_NAME==Block_top_axi_bram_ctrl_vdp_t0_map_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_smartconnect_0_2/Block_top_smartconnect_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_smartconnect_0_2 || ORIG_REF_NAME==Block_top_smartconnect_0_2} -quiet] -quiet
 
 # XDC: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc

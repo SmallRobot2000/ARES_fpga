@@ -6,8 +6,8 @@
    "Color Coded_ScaleFactor":"0.541219",
    "Color Coded_TopLeft":"-336,2",
    "Default View_Layers":"/clk_wiz_0_clk_100:true|/clk_wiz_0_clk_200:true|/clk_in1_0_1:true|/reset:true|/rst_n_in:true|/mig_axi_wrapper_0_ui_clk:true|",
-   "Default View_ScaleFactor":"1.27923",
-   "Default View_TopLeft":"2747,-1682",
+   "Default View_ScaleFactor":"1.16629",
+   "Default View_TopLeft":"657,-64",
    "Display-PortTypeClock":"true",
    "Display-PortTypeOthers":"true",
    "Display-PortTypeReset":"true",
@@ -24,137 +24,140 @@
    "Reduced Jogs_TopLeft":"-82,-72",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
-preplace port port-id_ddr3_ras_n -pg 1 -lvl 9 -x 3870 -y 470 -defaultsOSRD
-preplace port port-id_ddr3_cas_n -pg 1 -lvl 9 -x 3870 -y 500 -defaultsOSRD
-preplace port port-id_ddr3_reset_n -pg 1 -lvl 9 -x 3870 -y 560 -defaultsOSRD
-preplace port port-id_ddr3_we_n -pg 1 -lvl 9 -x 3870 -y 530 -defaultsOSRD
+preplace port port-id_ddr3_ras_n -pg 1 -lvl 10 -x 4090 -y 470 -defaultsOSRD
+preplace port port-id_ddr3_cas_n -pg 1 -lvl 10 -x 4090 -y 500 -defaultsOSRD
+preplace port port-id_ddr3_reset_n -pg 1 -lvl 10 -x 4090 -y 560 -defaultsOSRD
+preplace port port-id_ddr3_we_n -pg 1 -lvl 10 -x 4090 -y 530 -defaultsOSRD
 preplace port port-id_rst_n -pg 1 -lvl 0 -x -110 -y 700 -defaultsOSRD
 preplace port port-id_clk -pg 1 -lvl 0 -x -110 -y 590 -defaultsOSRD
-preplace port port-id_spi_miso -pg 1 -lvl 9 -x 3870 -y -230 -defaultsOSRD -right
-preplace port port-id_spi_mosi -pg 1 -lvl 9 -x 3870 -y -200 -defaultsOSRD
-preplace port port-id_spi_sck -pg 1 -lvl 9 -x 3870 -y -170 -defaultsOSRD
-preplace port port-id_spi_flash_ce_n -pg 1 -lvl 9 -x 3870 -y 30 -defaultsOSRD
-preplace port port-id_usb_rx -pg 1 -lvl 9 -x 3870 -y -400 -defaultsOSRD -right
-preplace port port-id_usb_tx -pg 1 -lvl 9 -x 3870 -y -370 -defaultsOSRD
-preplace port port-id_test_tx -pg 1 -lvl 9 -x 3870 -y -340 -defaultsOSRD
-preplace port port-id_h_sync -pg 1 -lvl 9 -x 3870 -y -1540 -defaultsOSRD
-preplace port port-id_v_sync -pg 1 -lvl 9 -x 3870 -y -1510 -defaultsOSRD
-preplace portBus ddr3_dq -pg 1 -lvl 9 -x 3870 -y 320 -defaultsOSRD
-preplace portBus ddr3_dqs_n -pg 1 -lvl 9 -x 3870 -y 350 -defaultsOSRD
-preplace portBus ddr3_dqs_p -pg 1 -lvl 9 -x 3870 -y 380 -defaultsOSRD
-preplace portBus ddr3_addr -pg 1 -lvl 9 -x 3870 -y 410 -defaultsOSRD
-preplace portBus ddr3_ba -pg 1 -lvl 9 -x 3870 -y 440 -defaultsOSRD
-preplace portBus ddr3_ck_p -pg 1 -lvl 9 -x 3870 -y 590 -defaultsOSRD
-preplace portBus ddr3_ck_n -pg 1 -lvl 9 -x 3870 -y 620 -defaultsOSRD
-preplace portBus ddr3_cs_n -pg 1 -lvl 9 -x 3870 -y 680 -defaultsOSRD
-preplace portBus ddr3_odt -pg 1 -lvl 9 -x 3870 -y 710 -defaultsOSRD
-preplace portBus ddr3_dm -pg 1 -lvl 9 -x 3870 -y 740 -defaultsOSRD
-preplace portBus ddr3_cke -pg 1 -lvl 9 -x 3870 -y 650 -defaultsOSRD
-preplace portBus spi_controller_mosi -pg 1 -lvl 9 -x 3870 -y -1110 -defaultsOSRD
-preplace portBus spi_controller_miso -pg 1 -lvl 9 -x 3870 -y -970 -defaultsOSRD
-preplace portBus spi_controller_sck -pg 1 -lvl 9 -x 3870 -y -840 -defaultsOSRD
-preplace portBus spi_controller_ss -pg 1 -lvl 9 -x 3870 -y -720 -defaultsOSRD
-preplace portBus vga_r -pg 1 -lvl 9 -x 3870 -y -1480 -defaultsOSRD
-preplace portBus vga_g -pg 1 -lvl 9 -x 3870 -y -1450 -defaultsOSRD
-preplace portBus vga_b -pg 1 -lvl 9 -x 3870 -y -1420 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 6 -x 2680 -y 580 -defaultsOSRD
-preplace inst util_vector_logic_0 -pg 1 -lvl 6 -x 2680 -y 700 -defaultsOSRD
-preplace inst mig_axi_wrapper_0 -pg 1 -lvl 7 -x 3070 -y 880 -defaultsOSRD
-preplace inst util_vector_logic_1 -pg 1 -lvl 7 -x 3070 -y 1170 -defaultsOSRD -orient R180
+preplace port port-id_spi_miso -pg 1 -lvl 10 -x 4090 -y -230 -defaultsOSRD -right
+preplace port port-id_spi_mosi -pg 1 -lvl 10 -x 4090 -y -200 -defaultsOSRD
+preplace port port-id_spi_sck -pg 1 -lvl 10 -x 4090 -y -170 -defaultsOSRD
+preplace port port-id_spi_flash_ce_n -pg 1 -lvl 10 -x 4090 -y 30 -defaultsOSRD
+preplace port port-id_usb_rx -pg 1 -lvl 10 -x 4090 -y -400 -defaultsOSRD -right
+preplace port port-id_usb_tx -pg 1 -lvl 10 -x 4090 -y -370 -defaultsOSRD
+preplace port port-id_test_tx -pg 1 -lvl 10 -x 4090 -y -340 -defaultsOSRD
+preplace port port-id_h_sync -pg 1 -lvl 10 -x 4090 -y -1540 -defaultsOSRD
+preplace port port-id_v_sync -pg 1 -lvl 10 -x 4090 -y -1510 -defaultsOSRD
+preplace portBus ddr3_dq -pg 1 -lvl 10 -x 4090 -y 320 -defaultsOSRD
+preplace portBus ddr3_dqs_n -pg 1 -lvl 10 -x 4090 -y 350 -defaultsOSRD
+preplace portBus ddr3_dqs_p -pg 1 -lvl 10 -x 4090 -y 380 -defaultsOSRD
+preplace portBus ddr3_addr -pg 1 -lvl 10 -x 4090 -y 410 -defaultsOSRD
+preplace portBus ddr3_ba -pg 1 -lvl 10 -x 4090 -y 440 -defaultsOSRD
+preplace portBus ddr3_ck_p -pg 1 -lvl 10 -x 4090 -y 590 -defaultsOSRD
+preplace portBus ddr3_ck_n -pg 1 -lvl 10 -x 4090 -y 620 -defaultsOSRD
+preplace portBus ddr3_cs_n -pg 1 -lvl 10 -x 4090 -y 680 -defaultsOSRD
+preplace portBus ddr3_odt -pg 1 -lvl 10 -x 4090 -y 710 -defaultsOSRD
+preplace portBus ddr3_dm -pg 1 -lvl 10 -x 4090 -y 740 -defaultsOSRD
+preplace portBus ddr3_cke -pg 1 -lvl 10 -x 4090 -y 650 -defaultsOSRD
+preplace portBus spi_controller_mosi -pg 1 -lvl 10 -x 4090 -y -1110 -defaultsOSRD
+preplace portBus spi_controller_miso -pg 1 -lvl 10 -x 4090 -y -970 -defaultsOSRD
+preplace portBus spi_controller_sck -pg 1 -lvl 10 -x 4090 -y -840 -defaultsOSRD
+preplace portBus spi_controller_ss -pg 1 -lvl 10 -x 4090 -y -720 -defaultsOSRD
+preplace portBus vga_r -pg 1 -lvl 10 -x 4090 -y -1480 -defaultsOSRD
+preplace portBus vga_g -pg 1 -lvl 10 -x 4090 -y -1450 -defaultsOSRD
+preplace portBus vga_b -pg 1 -lvl 10 -x 4090 -y -1420 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 7 -x 2970 -y 580 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 7 -x 2970 -y 700 -defaultsOSRD
+preplace inst mig_axi_wrapper_0 -pg 1 -lvl 8 -x 3340 -y 560 -defaultsOSRD
+preplace inst util_vector_logic_1 -pg 1 -lvl 8 -x 3340 -y 880 -defaultsOSRD -orient R180
 preplace inst smartconnect_mem -pg 1 -lvl 4 -x 2060 -y 220 -defaultsOSRD
-preplace inst FLASH_SPI_wrapper_0 -pg 1 -lvl 8 -x 3560 -y 10 -defaultsOSRD
-preplace inst smartconnect_io -pg 1 -lvl 3 -x 1480 -y -400 -defaultsOSRD
-preplace inst util_ds_buf_0 -pg 1 -lvl 8 -x 3560 -y -1100 -defaultsOSRD
-preplace inst axi_quad_spi_0 -pg 1 -lvl 7 -x 3070 -y -880 -defaultsOSRD
-preplace inst util_ds_buf_1 -pg 1 -lvl 8 -x 3560 -y -980 -defaultsOSRD
-preplace inst util_ds_buf_2 -pg 1 -lvl 8 -x 3560 -y -850 -defaultsOSRD
-preplace inst util_ds_buf_3 -pg 1 -lvl 8 -x 3560 -y -730 -defaultsOSRD
-preplace inst axi_uartlite_0 -pg 1 -lvl 8 -x 3560 -y -390 -defaultsOSRD
+preplace inst FLASH_SPI_wrapper_0 -pg 1 -lvl 9 -x 3860 -y 10 -defaultsOSRD
+preplace inst smartconnect_io -pg 1 -lvl 3 -x 1520 -y -370 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 9 -x 3860 -y -1100 -defaultsOSRD
+preplace inst axi_quad_spi_0 -pg 1 -lvl 8 -x 3340 -y -880 -defaultsOSRD
+preplace inst util_ds_buf_1 -pg 1 -lvl 9 -x 3860 -y -980 -defaultsOSRD
+preplace inst util_ds_buf_2 -pg 1 -lvl 9 -x 3860 -y -850 -defaultsOSRD
+preplace inst util_ds_buf_3 -pg 1 -lvl 9 -x 3860 -y -730 -defaultsOSRD
+preplace inst axi_uartlite_0 -pg 1 -lvl 9 -x 3860 -y -390 -defaultsOSRD
 preplace inst VexiiSocWrapper_0 -pg 1 -lvl 2 -x 860 -y 230 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 1 -x 470 -y 100 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_t0_map -pg 1 -lvl 5 -x 2370 -y -1920 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_t0_data -pg 1 -lvl 5 -x 2370 -y -1780 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_s0_att -pg 1 -lvl 5 -x 2370 -y -1340 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_s0_data -pg 1 -lvl 5 -x 2370 -y -1200 -defaultsOSRD
-preplace inst VDP_wrapper_0 -pg 1 -lvl 7 -x 3070 -y -1550 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_r0_map -pg 1 -lvl 5 -x 2370 -y -1060 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_t1_data -pg 1 -lvl 5 -x 2370 -y -1500 -defaultsOSRD
-preplace inst axi_bram_ctrl_vdp_t1_map -pg 1 -lvl 5 -x 2370 -y -1640 -defaultsOSRD
-preplace netloc FLASH_SPI_wrapper_0_spi_ce_n 1 8 1 N 30
-preplace netloc FLASH_SPI_wrapper_0_spi_mosi 1 8 1 3810 -200n
-preplace netloc FLASH_SPI_wrapper_0_spi_sck 1 8 1 3820 -170n
-preplace netloc Net 1 7 2 NJ 690 3700
-preplace netloc Net1 1 7 2 NJ 710 3710
-preplace netloc Net2 1 7 2 NJ 730 3720
-preplace netloc Net3 1 8 1 3820 -1110n
-preplace netloc Net4 1 8 1 N -970
-preplace netloc Net5 1 8 1 N -840
-preplace netloc Net6 1 8 1 N -720
-preplace netloc VDP_wrapper_0_h_sync 1 7 2 NJ -1580 3700
-preplace netloc VDP_wrapper_0_v_sync 1 7 2 3310 -1510 NJ
-preplace netloc VDP_wrapper_0_vga_b 1 7 2 3250 -1420 NJ
-preplace netloc VDP_wrapper_0_vga_g 1 7 2 3260 -1450 NJ
-preplace netloc VDP_wrapper_0_vga_r 1 7 2 3300 -1480 NJ
-preplace netloc axi_quad_spi_0_io0_o 1 7 1 3290 -1090n
-preplace netloc axi_quad_spi_0_io0_t 1 7 1 3280 -1110n
-preplace netloc axi_quad_spi_0_io1_o 1 7 1 3320 -970n
-preplace netloc axi_quad_spi_0_io1_t 1 7 1 3310 -990n
-preplace netloc axi_quad_spi_0_ip2intc_irpt 1 0 8 360 -280 NJ -280 1340J -260 NJ -260 NJ -260 N -260 NJ -260 3230
-preplace netloc axi_quad_spi_0_sck_o 1 7 1 3280 -850n
-preplace netloc axi_quad_spi_0_sck_t 1 7 1 3320 -860n
-preplace netloc axi_quad_spi_0_ss_o 1 7 1 3320 -790n
-preplace netloc axi_quad_spi_0_ss_t 1 7 1 3280 -770n
-preplace netloc axi_uart16550_0_sout 1 8 1 3830 -380n
-preplace netloc axi_uartlite_0_interrupt 1 0 9 370 -270 NJ -270 1060J -250 NJ -250 NJ -250 N -250 NJ -250 NJ -250 3700
-preplace netloc clk_in1_0_1 1 0 6 NJ 590 N 590 N 590 N 590 N 590 2530
-preplace netloc clk_wiz_0_clk_100 1 6 1 2850 560n
-preplace netloc clk_wiz_0_clk_200 1 6 1 2840 580n
-preplace netloc mig_axi_wrapper_0_ddr3_addr 1 7 2 NJ 750 3730
-preplace netloc mig_axi_wrapper_0_ddr3_ba 1 7 2 NJ 770 3740
-preplace netloc mig_axi_wrapper_0_ddr3_cas_n 1 7 2 NJ 810 3760
-preplace netloc mig_axi_wrapper_0_ddr3_ck_n 1 7 2 NJ 890 3800
-preplace netloc mig_axi_wrapper_0_ddr3_ck_p 1 7 2 NJ 870 3790
-preplace netloc mig_axi_wrapper_0_ddr3_cke 1 7 2 NJ 910 3810
-preplace netloc mig_axi_wrapper_0_ddr3_cs_n 1 7 2 NJ 930 3820
-preplace netloc mig_axi_wrapper_0_ddr3_dm 1 7 2 NJ 950 3840
-preplace netloc mig_axi_wrapper_0_ddr3_odt 1 7 2 3300J 940 3830
-preplace netloc mig_axi_wrapper_0_ddr3_ras_n 1 7 2 NJ 790 3750
-preplace netloc mig_axi_wrapper_0_ddr3_reset_n 1 7 2 NJ 850 3780
-preplace netloc mig_axi_wrapper_0_ddr3_we_n 1 7 2 NJ 830 3770
-preplace netloc mig_axi_wrapper_0_ui_clk 1 1 7 660 -400 1320 -550 1910 -980 2230 -980 N -980 2910J -1070 3250
-preplace netloc reset 1 7 1 3320 40n
-preplace netloc reset_n 1 1 7 650 -380 1340 -540 1920 -970 2240 -970 N -970 2900 -370 N
-preplace netloc rst_in 1 6 1 2830J 700n
-preplace netloc rst_n_in 1 0 6 NJ 700 N 700 N 700 N 700 N 700 N
-preplace netloc spi_miso_0_1 1 7 2 3420J -80 3710
-preplace netloc uart_rx_1 1 8 1 N -400
-preplace netloc util_ds_buf_0_IOBUF_IO_O 1 7 2 3230 -1180 3700
-preplace netloc util_ds_buf_1_IOBUF_IO_O 1 7 2 3270J -1170 3720
-preplace netloc util_ds_buf_2_IOBUF_IO_O 1 7 2 3260J -1200 3710
-preplace netloc util_ds_buf_3_IOBUF_IO_O 1 7 2 3300J -1190 3810
+preplace inst axi_bram_ctrl_vdp_t0_map -pg 1 -lvl 5 -x 2350 -y -1920 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_t0_data -pg 1 -lvl 5 -x 2350 -y -1780 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_s0_att -pg 1 -lvl 5 -x 2350 -y -1340 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_s0_data -pg 1 -lvl 5 -x 2350 -y -1200 -defaultsOSRD
+preplace inst VDP_wrapper_0 -pg 1 -lvl 8 -x 3340 -y -1550 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_r0_map -pg 1 -lvl 5 -x 2350 -y -1060 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_t1_data -pg 1 -lvl 5 -x 2350 -y -1500 -defaultsOSRD
+preplace inst axi_bram_ctrl_vdp_t1_map -pg 1 -lvl 5 -x 2350 -y -1640 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 6 -x 2670 -y 440 -defaultsOSRD
+preplace netloc FLASH_SPI_wrapper_0_spi_ce_n 1 9 1 N 30
+preplace netloc FLASH_SPI_wrapper_0_spi_mosi 1 9 1 4050 -200n
+preplace netloc FLASH_SPI_wrapper_0_spi_sck 1 9 1 4060 -170n
+preplace netloc Net 1 8 2 NJ 370 4040
+preplace netloc Net1 1 8 2 NJ 390 4050
+preplace netloc Net2 1 8 2 NJ 410 4060
+preplace netloc Net3 1 9 1 4060 -1110n
+preplace netloc Net4 1 9 1 N -970
+preplace netloc Net5 1 9 1 N -840
+preplace netloc Net6 1 9 1 N -720
+preplace netloc VDP_wrapper_0_h_sync 1 8 2 NJ -1580 4040
+preplace netloc VDP_wrapper_0_v_sync 1 8 2 3550 -1510 NJ
+preplace netloc VDP_wrapper_0_vga_b 1 8 2 3510 -1420 NJ
+preplace netloc VDP_wrapper_0_vga_g 1 8 2 3520 -1450 NJ
+preplace netloc VDP_wrapper_0_vga_r 1 8 2 3540 -1480 NJ
+preplace netloc axi_quad_spi_0_io0_o 1 8 1 3530 -1090n
+preplace netloc axi_quad_spi_0_io0_t 1 8 1 3520 -1110n
+preplace netloc axi_quad_spi_0_io1_o 1 8 1 3560 -970n
+preplace netloc axi_quad_spi_0_io1_t 1 8 1 3550 -990n
+preplace netloc axi_quad_spi_0_ip2intc_irpt 1 0 9 360 -690 NJ -690 NJ -690 NJ -690 N -690 N -690 N -690 NJ -690 3500
+preplace netloc axi_quad_spi_0_sck_o 1 8 1 3500 -850n
+preplace netloc axi_quad_spi_0_sck_t 1 8 1 3560 -860n
+preplace netloc axi_quad_spi_0_ss_o 1 8 1 3540 -790n
+preplace netloc axi_quad_spi_0_ss_t 1 8 1 3520 -770n
+preplace netloc axi_uart16550_0_sout 1 9 1 4060 -380n
+preplace netloc axi_uartlite_0_interrupt 1 0 10 370 -520 NJ -520 NJ -520 NJ -520 N -520 N -520 N -520 NJ -520 NJ -520 4040
+preplace netloc clk_in1_0_1 1 0 7 NJ 590 N 590 N 590 N 590 N 590 N 590 2820
+preplace netloc clk_wiz_0_clk_100 1 7 1 3120 540n
+preplace netloc clk_wiz_0_clk_200 1 7 1 3130 560n
+preplace netloc mig_axi_wrapper_0_ddr3_addr 1 8 2 NJ 430 4070
+preplace netloc mig_axi_wrapper_0_ddr3_ba 1 8 2 NJ 450 4040
+preplace netloc mig_axi_wrapper_0_ddr3_cas_n 1 8 2 NJ 490 4070
+preplace netloc mig_axi_wrapper_0_ddr3_ck_n 1 8 2 NJ 570 4040
+preplace netloc mig_axi_wrapper_0_ddr3_ck_p 1 8 2 NJ 550 4050
+preplace netloc mig_axi_wrapper_0_ddr3_cke 1 8 2 NJ 590 4030
+preplace netloc mig_axi_wrapper_0_ddr3_cs_n 1 8 2 NJ 610 4020
+preplace netloc mig_axi_wrapper_0_ddr3_dm 1 8 2 NJ 630 4010
+preplace netloc mig_axi_wrapper_0_ddr3_odt 1 8 2 NJ 650 4000
+preplace netloc mig_axi_wrapper_0_ddr3_ras_n 1 8 2 NJ 470 N
+preplace netloc mig_axi_wrapper_0_ddr3_reset_n 1 8 2 NJ 530 4060
+preplace netloc mig_axi_wrapper_0_ddr3_we_n 1 8 2 NJ 510 4070
+preplace netloc mig_axi_wrapper_0_ui_clk 1 1 8 660 -370 1360 -510 1880 -510 2210 -510 2520 -510 N -510 3180J -510 3500
+preplace netloc reset 1 8 1 3560 40n
+preplace netloc reset_n 1 1 8 650 150 1380 150 1840 300 2220 300 2490 300 N 300 3170 -370 N
+preplace netloc rst_in 1 7 1 3180J 600n
+preplace netloc rst_n_in 1 0 7 NJ 700 N 700 N 700 N 700 N 700 N 700 N
+preplace netloc spi_miso_0_1 1 8 2 3720J -80 4030
+preplace netloc uart_rx_1 1 9 1 N -400
+preplace netloc util_ds_buf_0_IOBUF_IO_O 1 8 2 3500 -1170 4030
+preplace netloc util_ds_buf_1_IOBUF_IO_O 1 8 2 3510J -1190 4040
+preplace netloc util_ds_buf_2_IOBUF_IO_O 1 8 2 3540J -1180 4050
+preplace netloc util_ds_buf_3_IOBUF_IO_O 1 8 2 3560J -660 4030
 preplace netloc xlconcat_0_dout 1 1 1 570 100n
-preplace netloc VexiiSocWrapper_0_mBus 1 2 2 1340 200 NJ
-preplace netloc VexiiSocWrapper_0_pBus 1 2 1 1330 -420n
-preplace netloc axi_bram_ctrl_vdp_s0_att_BRAM_PORTA 1 5 2 2510 -1550 NJ
-preplace netloc axi_bram_ctrl_vdp_s0_data1_BRAM_PORTA 1 5 2 2530 -1510 NJ
-preplace netloc axi_bram_ctrl_vdp_s0_data_BRAM_PORTA 1 5 2 2520 -1530 NJ
-preplace netloc axi_bram_ctrl_vdp_t0_data_BRAM_PORTA 1 5 2 2500 -1650 2870J
-preplace netloc axi_bram_ctrl_vdp_t0_map_BRAM_PORTA 1 5 2 NJ -1920 2880
-preplace netloc axi_bram_ctrl_vdp_t1_data_BRAM_PORTA 1 5 2 2500 -1570 NJ
-preplace netloc axi_bram_ctrl_vdp_t1_map_BRAM_PORTA 1 5 2 NJ -1640 2830
-preplace netloc smartconnect_0_M00_AXI 1 4 4 2200 -20 N -20 N -20 N
-preplace netloc smartconnect_io_M00_AXI 1 3 5 N -480 NJ -480 N -480 NJ -480 3240
-preplace netloc smartconnect_io_M01_AXI 1 3 4 1670 -910 N -910 N -910 NJ
-preplace netloc smartconnect_io_M02_AXI 1 3 2 1620 -1940 NJ
-preplace netloc smartconnect_io_M03_AXI 1 3 2 1630 -1800 NJ
-preplace netloc smartconnect_io_M04_AXI 1 3 2 1640 -1360 NJ
-preplace netloc smartconnect_io_M05_AXI 1 3 2 1660 -1220 NJ
-preplace netloc smartconnect_io_M06_AXI 1 3 2 1690 -1080 NJ
-preplace netloc smartconnect_io_M07_AXI 1 3 2 1650 -1660 NJ
-preplace netloc smartconnect_io_M08_AXI 1 3 2 1680 -1520 NJ
-preplace netloc smartconnect_mem_M01_AXI 1 4 3 NJ 230 NJ 230 2860
-levelinfo -pg 1 -110 470 860 1480 2060 2370 2680 3070 3560 3870
-pagesize -pg 1 -db -bbox -sgen -390 -2190 4440 1620
+preplace netloc VexiiSocWrapper_0_pBus 1 2 1 1370 -390n
+preplace netloc axi_bram_ctrl_vdp_s0_att_BRAM_PORTA 1 5 3 2490 -1550 N -1550 NJ
+preplace netloc axi_bram_ctrl_vdp_s0_data1_BRAM_PORTA 1 5 3 2510 -1510 N -1510 NJ
+preplace netloc axi_bram_ctrl_vdp_s0_data_BRAM_PORTA 1 5 3 2500 -1530 N -1530 NJ
+preplace netloc axi_bram_ctrl_vdp_t0_data_BRAM_PORTA 1 5 3 N -1780 2820 -1610 NJ
+preplace netloc axi_bram_ctrl_vdp_t0_map_BRAM_PORTA 1 5 3 NJ -1920 N -1920 3150
+preplace netloc axi_bram_ctrl_vdp_t1_data_BRAM_PORTA 1 5 3 2480 -1570 N -1570 NJ
+preplace netloc axi_bram_ctrl_vdp_t1_map_BRAM_PORTA 1 5 3 NJ -1640 2810 -1600 3150
+preplace netloc smartconnect_0_M00_AXI 1 4 5 2200 -20 N -20 N -20 N -20 N
+preplace netloc smartconnect_io_M00_AXI 1 3 6 N -450 N -450 N -450 N -450 NJ -450 3560
+preplace netloc smartconnect_io_M01_AXI 1 3 5 1690 -910 N -910 N -910 N -910 NJ
+preplace netloc smartconnect_io_M02_AXI 1 3 2 1660 -1940 N
+preplace netloc smartconnect_io_M03_AXI 1 3 2 1670 -1800 N
+preplace netloc smartconnect_io_M04_AXI 1 3 2 1680 -1360 N
+preplace netloc smartconnect_io_M05_AXI 1 3 2 1900 -1220 N
+preplace netloc smartconnect_io_M06_AXI 1 3 2 1920 -1080 N
+preplace netloc smartconnect_io_M07_AXI 1 3 2 1890 -1660 N
+preplace netloc smartconnect_io_M08_AXI 1 3 2 1910 -1520 N
+preplace netloc VexiiSocWrapper_0_mBus 1 2 2 1380 200 NJ
+preplace netloc smartconnect_mem_M01_AXI 1 4 2 NJ 230 2510
+preplace netloc VDP_wrapper_0_ram0 1 5 4 2530 -1410 NJ -1410 NJ -1410 3500
+preplace netloc smartconnect_0_M00_AXI1 1 6 2 NJ 440 3120
+levelinfo -pg 1 -110 470 860 1520 2060 2350 2670 2970 3340 3860 4090
+pagesize -pg 1 -db -bbox -sgen -390 -2300 4440 1620
 "
 }
 {

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1787002276" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Block_top_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1787239356" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Block_top_wrapper.dcp">
+  <File Type="VDS-TIMING-PB" Name="Block_top_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Block_top_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="Block_top_wrapper.dcp"/>
-  <File Type="RDS-RDS" Name="Block_top_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="Block_top_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Block_top_wrapper_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="Block_top_wrapper.tcl"/>
+  <File Type="RDS-UTIL" Name="Block_top_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="Block_top_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="Block_top_wrapper.vds"/>
   <File Type="REPORTS-TCL" Name="Block_top_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="Block_top_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/DDR3_MIG/mig_b.prj">
@@ -68,6 +71,22 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/axi_ddr3_read_sim.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/axi_addr_remap.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/mig_axi_wrapper.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -94,7 +113,7 @@
     <File Path="$PSRCDIR/sources_1/imports/generated/VexiiSoc.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../ARES_VexiiRiscv/generated/VexiiSoc.v"/>
-        <Attr Name="ImportTime" Val="1786707103"/>
+        <Attr Name="ImportTime" Val="1787239179"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -208,17 +227,17 @@
       <Option Id="Directive">1</Option>
     </Step>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Block_top_VexiiSocWrapper_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_FLASH_SPI_wrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Block_top_mig_axi_wrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mig_7series_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_tile_map"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_bit_line"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_spr_line"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_buf_line"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_VDP_wrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_spr_data"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_tile_data"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_buf_line"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_fin_line"/>
-  <BlockFileSet Type="BlockSrcs" Name="Block_top_VexiiSocWrapper_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_tile_map"/>
-  <BlockFileSet Type="BlockSrcs" Name="Block_top_mig_axi_wrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mig_7series_0"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_spr_att"/>
-  <BlockFileSet Type="BlockSrcs" Name="Block_top_smartconnect_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_spr_line"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_fin_line"/>
 </GenRun>

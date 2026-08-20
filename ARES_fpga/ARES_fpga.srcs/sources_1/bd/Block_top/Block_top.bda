@@ -377,7 +377,7 @@
             "V13": {
                 "VT": "AC",
                 "BA": "0x90000000",
-                "HA": "0x9F7FFFFF",
+                "HA": "0x9FFFFFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MA": "mBus",
@@ -385,6 +385,24 @@
                 "MI": "mBus",
                 "MS": "SEG_mig_axi_wrapper_0_reg0",
                 "MV": "xilinx.com:module_ref:VexiiSocWrapper:1.0",
+                "SX": "/mig_axi_wrapper_0",
+                "SI": "s_axi",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:mig_axi_wrapper:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V14": {
+                "VT": "AC",
+                "BA": "0x9F800000",
+                "HA": "0x9FFFFFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "ram0",
+                "MX": "/VDP_wrapper_0",
+                "MI": "ram0",
+                "MS": "SEG_mig_axi_wrapper_0_reg0",
+                "MV": "xilinx.com:module_ref:VDP_wrapper:1.0",
                 "SX": "/mig_axi_wrapper_0",
                 "SI": "s_axi",
                 "SS": "reg0",
@@ -454,6 +472,11 @@
             },
             {
                 "src": "V13",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V14",
                 "trg": "V2",
                 "EH": "2"
             }
