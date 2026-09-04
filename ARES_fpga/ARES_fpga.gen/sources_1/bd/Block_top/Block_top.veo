@@ -78,15 +78,24 @@ Block_top your_instance_name (
   .usb_rx(usb_rx), // input wire usb_rx
   .usb_tx(usb_tx), // output wire usb_tx
   .test_tx(test_tx), // output wire test_tx
-  .spi_controller_mosi(spi_controller_mosi), // inout wire [0:0] spi_controller_mosi
-  .spi_controller_miso(spi_controller_miso), // inout wire [0:0] spi_controller_miso
-  .spi_controller_sck(spi_controller_sck), // inout wire [0:0] spi_controller_sck
-  .spi_controller_ss(spi_controller_ss), // inout wire [3:0] spi_controller_ss
+  .spi_controller0_mosi(spi_controller0_mosi), // inout wire [0:0] spi_controller0_mosi
+  .spi_controller0_miso(spi_controller0_miso), // inout wire [0:0] spi_controller0_miso
+  .spi_controller0_sck(spi_controller0_sck), // inout wire [0:0] spi_controller0_sck
   .vga_r(vga_r), // output wire [3:0] vga_r
   .vga_g(vga_g), // output wire [3:0] vga_g
   .h_sync(h_sync), // output wire h_sync
   .v_sync(v_sync), // output wire v_sync
-  .vga_b(vga_b) // output wire [3:0] vga_b
+  .vga_b(vga_b), // output wire [3:0] vga_b
+  .spi_int_n(spi_int_n), // input wire spi_int_n
+  .spi_controller1_miso(spi_controller1_miso), // inout wire [0:0] spi_controller1_miso
+  .spi_controller1_mosi(spi_controller1_mosi), // inout wire [0:0] spi_controller1_mosi
+  .spi_controller1_sck(spi_controller1_sck), // inout wire [0:0] spi_controller1_sck
+  .spi_controller0_ss(spi_controller0_ss), // inout wire [0:0] spi_controller0_ss
+  .spi_controller1_ss(spi_controller1_ss), // inout wire [0:0] spi_controller1_ss
+  .KYBD_COL(KYBD_COL), // input wire [7:0] KYBD_COL
+  .KYBD_ROW(KYBD_ROW), // output wire [3:0] KYBD_ROW
+  .KYBD_LED_CAPS(KYBD_LED_CAPS), // output wire KYBD_LED_CAPS
+  .KYBD_LED_CODE(KYBD_LED_CODE) // output wire KYBD_LED_CODE
 );
 // INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

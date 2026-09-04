@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1787239356" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Block_top_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1788548121" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Block_top_wrapper.dcp">
   <File Type="VDS-TIMING-PB" Name="Block_top_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="Block_top_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="Block_top_wrapper.dcp"/>
@@ -140,6 +140,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/kyb_scan.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/Block_top/Block_top.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -193,6 +200,12 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/constrs_1/new/KYB_pins.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/BASE_pins.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
@@ -205,6 +218,8 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_3"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_4"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>
@@ -213,6 +228,7 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="impl_1"/>
+        <Attr Name="UsedInSteps" Val="impl_1_copy_1"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>
@@ -221,12 +237,15 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2025"/>
+    <StratHandle Name="Flow_AreaOptimized_medium" Flow="Vivado Synthesis 2025">
+      <Desc>Performs general area optimizations including changing the threshold for control set optimizations, forcing ternary adder implementation, lowering multiplier threshold of inference into DSP blocks, moving  shift register into BRAM, applying lower thresholds for use of carry chain in comparators and also area optimized mux optimizations</Desc>
+    </StratHandle>
     <Step Id="synth_design">
       <Option Id="ControlSetOptThreshold">1</Option>
-      <Option Id="Directive">1</Option>
+      <Option Id="Directive">2</Option>
     </Step>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Block_top_axi_keyboard_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_VexiiSocWrapper_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_FLASH_SPI_wrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Block_top_mig_axi_wrapper_0_0"/>

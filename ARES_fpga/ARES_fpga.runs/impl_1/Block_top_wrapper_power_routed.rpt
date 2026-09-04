@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Thu Aug 20 17:29:12 2026
+| Date             : Fri Sep  4 21:00:32 2026
 | Host             : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file Block_top_wrapper_power_routed.rpt -pb Block_top_wrapper_power_summary_routed.pb -rpx Block_top_wrapper_power_routed.rpx
 | Design           : Block_top_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.172        |
+| Total On-Chip Power (W)  | 1.181        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.063        |
-| Device Static (W)        | 0.109        |
+| Dynamic (W)              | 1.071        |
+| Device Static (W)        | 0.110        |
 | Effective TJA (C/W)      | 2.7          |
-| Max Ambient (C)          | 81.9         |
-| Junction Temperature (C) | 28.1         |
+| Max Ambient (C)          | 81.8         |
+| Junction Temperature (C) | 28.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,25 +52,25 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.103 |       24 |       --- |             --- |
-| Slice Logic              |     0.065 |    66136 |       --- |             --- |
-|   LUT as Logic           |     0.056 |    24154 |     63400 |           38.10 |
-|   LUT as Distributed RAM |     0.004 |     3112 |     19000 |           16.38 |
-|   Register               |     0.004 |    26758 |    126800 |           21.10 |
-|   CARRY4                 |     0.001 |      809 |     15850 |            5.10 |
-|   F7/F8 Muxes            |    <0.001 |      710 |     63400 |            1.12 |
+| Clocks                   |     0.106 |       24 |       --- |             --- |
+| Slice Logic              |     0.067 |    68857 |       --- |             --- |
+|   LUT as Logic           |     0.059 |    25124 |     63400 |           39.63 |
+|   Register               |     0.004 |    28106 |    126800 |           22.17 |
+|   LUT as Distributed RAM |     0.003 |     3124 |     19000 |           16.44 |
+|   CARRY4                 |     0.001 |      813 |     15850 |            5.13 |
+|   F7/F8 Muxes            |    <0.001 |      639 |     63400 |            1.01 |
 |   LUT as Shift Register  |    <0.001 |      365 |     19000 |            1.92 |
-|   Others                 |    <0.001 |     1542 |       --- |             --- |
-| Signals                  |     0.092 |    49041 |       --- |             --- |
+|   Others                 |    <0.001 |     1693 |       --- |             --- |
+| Signals                  |     0.095 |    51032 |       --- |             --- |
 | Block RAM                |     0.098 |       92 |       135 |           68.15 |
 | MMCM                     |     0.191 |        2 |         6 |           33.33 |
 | PLL                      |     0.091 |        1 |         6 |           16.67 |
 | DSPs                     |     0.008 |       10 |       240 |            4.17 |
-| I/O                      |     0.275 |       78 |       285 |           27.37 |
+| I/O                      |     0.277 |       94 |       285 |           32.98 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
-| Static Power             |     0.109 |          |           |                 |
-| Total                    |     1.172 |          |           |                 |
+| Static Power             |     0.110 |          |           |                 |
+| Total                    |     1.181 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,9 +80,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.422 |       0.403 |      0.019 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.429 |       0.410 |      0.019 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.287 |       0.268 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -170,13 +170,17 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| Block_top_wrapper     |     1.063 |
-|   Block_top_i         |     1.055 |
-|     VDP_wrapper_0     |     0.098 |
-|       inst            |     0.098 |
-|     VexiiSocWrapper_0 |     0.125 |
-|       inst            |     0.125 |
+| Block_top_wrapper     |     1.071 |
+|   Block_top_i         |     1.063 |
+|     VDP_wrapper_0     |     0.097 |
+|       inst            |     0.097 |
+|     VexiiSocWrapper_0 |     0.124 |
+|       inst            |     0.124 |
+|     axi_keyboard_0    |     0.004 |
+|       inst            |     0.004 |
 |     axi_quad_spi_0    |     0.005 |
+|       U0              |     0.005 |
+|     axi_quad_spi_1    |     0.005 |
 |       U0              |     0.005 |
 |     clk_wiz_0         |     0.097 |
 |       inst            |     0.097 |
@@ -184,10 +188,12 @@ Table of Contents
 |       inst            |     0.639 |
 |     smartconnect_0    |     0.038 |
 |       inst            |     0.038 |
-|     smartconnect_io   |     0.009 |
-|       inst            |     0.009 |
-|     smartconnect_mem  |     0.041 |
-|       inst            |     0.041 |
+|     smartconnect_io   |     0.011 |
+|       inst            |     0.011 |
+|     smartconnect_mem  |     0.040 |
+|       inst            |     0.040 |
+|     util_ds_buf_2     |     0.001 |
+|       U0              |     0.001 |
 +-----------------------+-----------+
 
 

@@ -65,4 +65,5 @@ create_waiver -scope -internal -user "axi_quad_spi" -internal -type CDC -id CDC-
 ## IOB constraints ######
 set_property IOB true [get_cells -hierarchical -filter {NAME =~*IO*_I_REG}]
 
+set_property IOB true [get_cells -hierarchical -filter {NAME =~*SCK_O_NE_4_FDRE_INST}]
 #######################################

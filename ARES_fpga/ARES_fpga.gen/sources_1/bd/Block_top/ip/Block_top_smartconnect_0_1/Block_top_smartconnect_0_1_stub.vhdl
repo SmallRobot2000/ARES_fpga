@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Mon Aug 17 23:32:28 2026
+-- Date        : Thu Sep  3 15:14:03 2026
 -- Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode synth_stub -rename_top Block_top_smartconnect_0_1 -prefix
 --               Block_top_smartconnect_0_1_ Block_top_smartconnect_0_1_stub.vhdl
@@ -206,7 +206,45 @@ entity Block_top_smartconnect_0_1 is
     M08_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M08_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M08_AXI_rvalid : in STD_LOGIC;
-    M08_AXI_rready : out STD_LOGIC
+    M08_AXI_rready : out STD_LOGIC;
+    M09_AXI_awaddr : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    M09_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M09_AXI_awvalid : out STD_LOGIC;
+    M09_AXI_awready : in STD_LOGIC;
+    M09_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M09_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M09_AXI_wvalid : out STD_LOGIC;
+    M09_AXI_wready : in STD_LOGIC;
+    M09_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M09_AXI_bvalid : in STD_LOGIC;
+    M09_AXI_bready : out STD_LOGIC;
+    M09_AXI_araddr : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    M09_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M09_AXI_arvalid : out STD_LOGIC;
+    M09_AXI_arready : in STD_LOGIC;
+    M09_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M09_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M09_AXI_rvalid : in STD_LOGIC;
+    M09_AXI_rready : out STD_LOGIC;
+    M10_AXI_awaddr : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    M10_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M10_AXI_awvalid : out STD_LOGIC;
+    M10_AXI_awready : in STD_LOGIC;
+    M10_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M10_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M10_AXI_wvalid : out STD_LOGIC;
+    M10_AXI_wready : in STD_LOGIC;
+    M10_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M10_AXI_bvalid : in STD_LOGIC;
+    M10_AXI_bready : out STD_LOGIC;
+    M10_AXI_araddr : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    M10_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M10_AXI_arvalid : out STD_LOGIC;
+    M10_AXI_arready : in STD_LOGIC;
+    M10_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M10_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M10_AXI_rvalid : in STD_LOGIC;
+    M10_AXI_rready : out STD_LOGIC
   );
 
   attribute CHECK_LICENSE_TYPE : string;
@@ -221,13 +259,13 @@ architecture stub of Block_top_smartconnect_0_1 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "aclk,aresetn,S00_AXI_awaddr[31:0],S00_AXI_awprot[2:0],S00_AXI_awvalid,S00_AXI_awready,S00_AXI_wdata[31:0],S00_AXI_wstrb[3:0],S00_AXI_wvalid,S00_AXI_wready,S00_AXI_bresp[1:0],S00_AXI_bvalid,S00_AXI_bready,S00_AXI_araddr[31:0],S00_AXI_arprot[2:0],S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rdata[31:0],S00_AXI_rresp[1:0],S00_AXI_rvalid,S00_AXI_rready,M00_AXI_awaddr[3:0],M00_AXI_awprot[2:0],M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata[31:0],M00_AXI_wstrb[3:0],M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp[1:0],M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr[3:0],M00_AXI_arprot[2:0],M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata[31:0],M00_AXI_rresp[1:0],M00_AXI_rvalid,M00_AXI_rready,M01_AXI_awaddr[6:0],M01_AXI_awprot[2:0],M01_AXI_awvalid,M01_AXI_awready,M01_AXI_wdata[31:0],M01_AXI_wstrb[3:0],M01_AXI_wvalid,M01_AXI_wready,M01_AXI_bresp[1:0],M01_AXI_bvalid,M01_AXI_bready,M01_AXI_araddr[6:0],M01_AXI_arprot[2:0],M01_AXI_arvalid,M01_AXI_arready,M01_AXI_rdata[31:0],M01_AXI_rresp[1:0],M01_AXI_rvalid,M01_AXI_rready,M02_AXI_awaddr[14:0],M02_AXI_awprot[2:0],M02_AXI_awvalid,M02_AXI_awready,M02_AXI_wdata[31:0],M02_AXI_wstrb[3:0],M02_AXI_wvalid,M02_AXI_wready,M02_AXI_bresp[1:0],M02_AXI_bvalid,M02_AXI_bready,M02_AXI_araddr[14:0],M02_AXI_arprot[2:0],M02_AXI_arvalid,M02_AXI_arready,M02_AXI_rdata[31:0],M02_AXI_rresp[1:0],M02_AXI_rvalid,M02_AXI_rready,M03_AXI_awaddr[15:0],M03_AXI_awprot[2:0],M03_AXI_awvalid,M03_AXI_awready,M03_AXI_wdata[31:0],M03_AXI_wstrb[3:0],M03_AXI_wvalid,M03_AXI_wready,M03_AXI_bresp[1:0],M03_AXI_bvalid,M03_AXI_bready,M03_AXI_araddr[15:0],M03_AXI_arprot[2:0],M03_AXI_arvalid,M03_AXI_arready,M03_AXI_rdata[31:0],M03_AXI_rresp[1:0],M03_AXI_rvalid,M03_AXI_rready,M04_AXI_awaddr[10:0],M04_AXI_awprot[2:0],M04_AXI_awvalid,M04_AXI_awready,M04_AXI_wdata[31:0],M04_AXI_wstrb[3:0],M04_AXI_wvalid,M04_AXI_wready,M04_AXI_bresp[1:0],M04_AXI_bvalid,M04_AXI_bready,M04_AXI_araddr[10:0],M04_AXI_arprot[2:0],M04_AXI_arvalid,M04_AXI_arready,M04_AXI_rdata[31:0],M04_AXI_rresp[1:0],M04_AXI_rvalid,M04_AXI_rready,M05_AXI_awaddr[14:0],M05_AXI_awprot[2:0],M05_AXI_awvalid,M05_AXI_awready,M05_AXI_wdata[31:0],M05_AXI_wstrb[3:0],M05_AXI_wvalid,M05_AXI_wready,M05_AXI_bresp[1:0],M05_AXI_bvalid,M05_AXI_bready,M05_AXI_araddr[14:0],M05_AXI_arprot[2:0],M05_AXI_arvalid,M05_AXI_arready,M05_AXI_rdata[31:0],M05_AXI_rresp[1:0],M05_AXI_rvalid,M05_AXI_rready,M06_AXI_awaddr[12:0],M06_AXI_awprot[2:0],M06_AXI_awvalid,M06_AXI_awready,M06_AXI_wdata[31:0],M06_AXI_wstrb[3:0],M06_AXI_wvalid,M06_AXI_wready,M06_AXI_bresp[1:0],M06_AXI_bvalid,M06_AXI_bready,M06_AXI_araddr[12:0],M06_AXI_arprot[2:0],M06_AXI_arvalid,M06_AXI_arready,M06_AXI_rdata[31:0],M06_AXI_rresp[1:0],M06_AXI_rvalid,M06_AXI_rready,M07_AXI_awaddr[14:0],M07_AXI_awprot[2:0],M07_AXI_awvalid,M07_AXI_awready,M07_AXI_wdata[31:0],M07_AXI_wstrb[3:0],M07_AXI_wvalid,M07_AXI_wready,M07_AXI_bresp[1:0],M07_AXI_bvalid,M07_AXI_bready,M07_AXI_araddr[14:0],M07_AXI_arprot[2:0],M07_AXI_arvalid,M07_AXI_arready,M07_AXI_rdata[31:0],M07_AXI_rresp[1:0],M07_AXI_rvalid,M07_AXI_rready,M08_AXI_awaddr[15:0],M08_AXI_awprot[2:0],M08_AXI_awvalid,M08_AXI_awready,M08_AXI_wdata[31:0],M08_AXI_wstrb[3:0],M08_AXI_wvalid,M08_AXI_wready,M08_AXI_bresp[1:0],M08_AXI_bvalid,M08_AXI_bready,M08_AXI_araddr[15:0],M08_AXI_arprot[2:0],M08_AXI_arvalid,M08_AXI_arready,M08_AXI_rdata[31:0],M08_AXI_rresp[1:0],M08_AXI_rvalid,M08_AXI_rready";
+  attribute black_box_pad_pin of stub : architecture is "aclk,aresetn,S00_AXI_awaddr[31:0],S00_AXI_awprot[2:0],S00_AXI_awvalid,S00_AXI_awready,S00_AXI_wdata[31:0],S00_AXI_wstrb[3:0],S00_AXI_wvalid,S00_AXI_wready,S00_AXI_bresp[1:0],S00_AXI_bvalid,S00_AXI_bready,S00_AXI_araddr[31:0],S00_AXI_arprot[2:0],S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rdata[31:0],S00_AXI_rresp[1:0],S00_AXI_rvalid,S00_AXI_rready,M00_AXI_awaddr[3:0],M00_AXI_awprot[2:0],M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata[31:0],M00_AXI_wstrb[3:0],M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp[1:0],M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr[3:0],M00_AXI_arprot[2:0],M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata[31:0],M00_AXI_rresp[1:0],M00_AXI_rvalid,M00_AXI_rready,M01_AXI_awaddr[6:0],M01_AXI_awprot[2:0],M01_AXI_awvalid,M01_AXI_awready,M01_AXI_wdata[31:0],M01_AXI_wstrb[3:0],M01_AXI_wvalid,M01_AXI_wready,M01_AXI_bresp[1:0],M01_AXI_bvalid,M01_AXI_bready,M01_AXI_araddr[6:0],M01_AXI_arprot[2:0],M01_AXI_arvalid,M01_AXI_arready,M01_AXI_rdata[31:0],M01_AXI_rresp[1:0],M01_AXI_rvalid,M01_AXI_rready,M02_AXI_awaddr[14:0],M02_AXI_awprot[2:0],M02_AXI_awvalid,M02_AXI_awready,M02_AXI_wdata[31:0],M02_AXI_wstrb[3:0],M02_AXI_wvalid,M02_AXI_wready,M02_AXI_bresp[1:0],M02_AXI_bvalid,M02_AXI_bready,M02_AXI_araddr[14:0],M02_AXI_arprot[2:0],M02_AXI_arvalid,M02_AXI_arready,M02_AXI_rdata[31:0],M02_AXI_rresp[1:0],M02_AXI_rvalid,M02_AXI_rready,M03_AXI_awaddr[15:0],M03_AXI_awprot[2:0],M03_AXI_awvalid,M03_AXI_awready,M03_AXI_wdata[31:0],M03_AXI_wstrb[3:0],M03_AXI_wvalid,M03_AXI_wready,M03_AXI_bresp[1:0],M03_AXI_bvalid,M03_AXI_bready,M03_AXI_araddr[15:0],M03_AXI_arprot[2:0],M03_AXI_arvalid,M03_AXI_arready,M03_AXI_rdata[31:0],M03_AXI_rresp[1:0],M03_AXI_rvalid,M03_AXI_rready,M04_AXI_awaddr[10:0],M04_AXI_awprot[2:0],M04_AXI_awvalid,M04_AXI_awready,M04_AXI_wdata[31:0],M04_AXI_wstrb[3:0],M04_AXI_wvalid,M04_AXI_wready,M04_AXI_bresp[1:0],M04_AXI_bvalid,M04_AXI_bready,M04_AXI_araddr[10:0],M04_AXI_arprot[2:0],M04_AXI_arvalid,M04_AXI_arready,M04_AXI_rdata[31:0],M04_AXI_rresp[1:0],M04_AXI_rvalid,M04_AXI_rready,M05_AXI_awaddr[14:0],M05_AXI_awprot[2:0],M05_AXI_awvalid,M05_AXI_awready,M05_AXI_wdata[31:0],M05_AXI_wstrb[3:0],M05_AXI_wvalid,M05_AXI_wready,M05_AXI_bresp[1:0],M05_AXI_bvalid,M05_AXI_bready,M05_AXI_araddr[14:0],M05_AXI_arprot[2:0],M05_AXI_arvalid,M05_AXI_arready,M05_AXI_rdata[31:0],M05_AXI_rresp[1:0],M05_AXI_rvalid,M05_AXI_rready,M06_AXI_awaddr[12:0],M06_AXI_awprot[2:0],M06_AXI_awvalid,M06_AXI_awready,M06_AXI_wdata[31:0],M06_AXI_wstrb[3:0],M06_AXI_wvalid,M06_AXI_wready,M06_AXI_bresp[1:0],M06_AXI_bvalid,M06_AXI_bready,M06_AXI_araddr[12:0],M06_AXI_arprot[2:0],M06_AXI_arvalid,M06_AXI_arready,M06_AXI_rdata[31:0],M06_AXI_rresp[1:0],M06_AXI_rvalid,M06_AXI_rready,M07_AXI_awaddr[14:0],M07_AXI_awprot[2:0],M07_AXI_awvalid,M07_AXI_awready,M07_AXI_wdata[31:0],M07_AXI_wstrb[3:0],M07_AXI_wvalid,M07_AXI_wready,M07_AXI_bresp[1:0],M07_AXI_bvalid,M07_AXI_bready,M07_AXI_araddr[14:0],M07_AXI_arprot[2:0],M07_AXI_arvalid,M07_AXI_arready,M07_AXI_rdata[31:0],M07_AXI_rresp[1:0],M07_AXI_rvalid,M07_AXI_rready,M08_AXI_awaddr[15:0],M08_AXI_awprot[2:0],M08_AXI_awvalid,M08_AXI_awready,M08_AXI_wdata[31:0],M08_AXI_wstrb[3:0],M08_AXI_wvalid,M08_AXI_wready,M08_AXI_bresp[1:0],M08_AXI_bvalid,M08_AXI_bready,M08_AXI_araddr[15:0],M08_AXI_arprot[2:0],M08_AXI_arvalid,M08_AXI_arready,M08_AXI_rdata[31:0],M08_AXI_rresp[1:0],M08_AXI_rvalid,M08_AXI_rready,M09_AXI_awaddr[6:0],M09_AXI_awprot[2:0],M09_AXI_awvalid,M09_AXI_awready,M09_AXI_wdata[31:0],M09_AXI_wstrb[3:0],M09_AXI_wvalid,M09_AXI_wready,M09_AXI_bresp[1:0],M09_AXI_bvalid,M09_AXI_bready,M09_AXI_araddr[6:0],M09_AXI_arprot[2:0],M09_AXI_arvalid,M09_AXI_arready,M09_AXI_rdata[31:0],M09_AXI_rresp[1:0],M09_AXI_rvalid,M09_AXI_rready,M10_AXI_awaddr[5:0],M10_AXI_awprot[2:0],M10_AXI_awvalid,M10_AXI_awready,M10_AXI_wdata[31:0],M10_AXI_wstrb[3:0],M10_AXI_wvalid,M10_AXI_wready,M10_AXI_bresp[1:0],M10_AXI_bvalid,M10_AXI_bready,M10_AXI_araddr[5:0],M10_AXI_arprot[2:0],M10_AXI_arvalid,M10_AXI_arready,M10_AXI_rdata[31:0],M10_AXI_rresp[1:0],M10_AXI_rvalid,M10_AXI_rready";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of aclk : signal is "xilinx.com:signal:clock:1.0 CLK.aclk CLK";
   attribute X_INTERFACE_MODE : string;
   attribute X_INTERFACE_MODE of aclk : signal is "slave";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME CLK.aclk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, ASSOCIATED_BUSIF M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI:M05_AXI:M06_AXI:M07_AXI:M08_AXI:S00_AXI, INSERT_VIP 0, ASSOCIATED_CLKEN s_sc_aclken";
+  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME CLK.aclk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, ASSOCIATED_BUSIF M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI:M05_AXI:M06_AXI:M07_AXI:M08_AXI:M09_AXI:M10_AXI:S00_AXI, INSERT_VIP 0, ASSOCIATED_CLKEN s_sc_aclken";
   attribute X_INTERFACE_INFO of aresetn : signal is "xilinx.com:signal:reset:1.0 RST.aresetn RST";
   attribute X_INTERFACE_MODE of aresetn : signal is "slave";
   attribute X_INTERFACE_PARAMETER of aresetn : signal is "XIL_INTERFACENAME RST.aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
@@ -441,6 +479,48 @@ architecture stub of Block_top_smartconnect_0_1 is
   attribute X_INTERFACE_INFO of M08_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 M08_AXI RRESP";
   attribute X_INTERFACE_INFO of M08_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 M08_AXI RVALID";
   attribute X_INTERFACE_INFO of M08_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 M08_AXI RREADY";
+  attribute X_INTERFACE_INFO of M09_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 M09_AXI AWADDR";
+  attribute X_INTERFACE_MODE of M09_AXI_awaddr : signal is "master";
+  attribute X_INTERFACE_PARAMETER of M09_AXI_awaddr : signal is "XIL_INTERFACENAME M09_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_INFO of M09_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 M09_AXI AWPROT";
+  attribute X_INTERFACE_INFO of M09_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 M09_AXI AWVALID";
+  attribute X_INTERFACE_INFO of M09_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 M09_AXI AWREADY";
+  attribute X_INTERFACE_INFO of M09_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 M09_AXI WDATA";
+  attribute X_INTERFACE_INFO of M09_AXI_wstrb : signal is "xilinx.com:interface:aximm:1.0 M09_AXI WSTRB";
+  attribute X_INTERFACE_INFO of M09_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 M09_AXI WVALID";
+  attribute X_INTERFACE_INFO of M09_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 M09_AXI WREADY";
+  attribute X_INTERFACE_INFO of M09_AXI_bresp : signal is "xilinx.com:interface:aximm:1.0 M09_AXI BRESP";
+  attribute X_INTERFACE_INFO of M09_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 M09_AXI BVALID";
+  attribute X_INTERFACE_INFO of M09_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 M09_AXI BREADY";
+  attribute X_INTERFACE_INFO of M09_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 M09_AXI ARADDR";
+  attribute X_INTERFACE_INFO of M09_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 M09_AXI ARPROT";
+  attribute X_INTERFACE_INFO of M09_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 M09_AXI ARVALID";
+  attribute X_INTERFACE_INFO of M09_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 M09_AXI ARREADY";
+  attribute X_INTERFACE_INFO of M09_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 M09_AXI RDATA";
+  attribute X_INTERFACE_INFO of M09_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 M09_AXI RRESP";
+  attribute X_INTERFACE_INFO of M09_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 M09_AXI RVALID";
+  attribute X_INTERFACE_INFO of M09_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 M09_AXI RREADY";
+  attribute X_INTERFACE_INFO of M10_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 M10_AXI AWADDR";
+  attribute X_INTERFACE_MODE of M10_AXI_awaddr : signal is "master";
+  attribute X_INTERFACE_PARAMETER of M10_AXI_awaddr : signal is "XIL_INTERFACENAME M10_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 6, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_INFO of M10_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 M10_AXI AWPROT";
+  attribute X_INTERFACE_INFO of M10_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 M10_AXI AWVALID";
+  attribute X_INTERFACE_INFO of M10_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 M10_AXI AWREADY";
+  attribute X_INTERFACE_INFO of M10_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 M10_AXI WDATA";
+  attribute X_INTERFACE_INFO of M10_AXI_wstrb : signal is "xilinx.com:interface:aximm:1.0 M10_AXI WSTRB";
+  attribute X_INTERFACE_INFO of M10_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 M10_AXI WVALID";
+  attribute X_INTERFACE_INFO of M10_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 M10_AXI WREADY";
+  attribute X_INTERFACE_INFO of M10_AXI_bresp : signal is "xilinx.com:interface:aximm:1.0 M10_AXI BRESP";
+  attribute X_INTERFACE_INFO of M10_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 M10_AXI BVALID";
+  attribute X_INTERFACE_INFO of M10_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 M10_AXI BREADY";
+  attribute X_INTERFACE_INFO of M10_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 M10_AXI ARADDR";
+  attribute X_INTERFACE_INFO of M10_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 M10_AXI ARPROT";
+  attribute X_INTERFACE_INFO of M10_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 M10_AXI ARVALID";
+  attribute X_INTERFACE_INFO of M10_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 M10_AXI ARREADY";
+  attribute X_INTERFACE_INFO of M10_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 M10_AXI RDATA";
+  attribute X_INTERFACE_INFO of M10_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 M10_AXI RRESP";
+  attribute X_INTERFACE_INFO of M10_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 M10_AXI RVALID";
+  attribute X_INTERFACE_INFO of M10_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 M10_AXI RREADY";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of stub : architecture is "bd_b9bc,Vivado 2025.2";
 begin

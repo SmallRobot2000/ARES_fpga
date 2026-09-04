@@ -56,7 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
+set_param bd.open.in_stealth_mode 3
 set_param chipscope.maxJobs 3
 set_param general.usePosixSpawnForFork 1
 set_msg_config -id {HDL-1065} -limit 10000
@@ -187,6 +187,18 @@ set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_85/bd_b9bc_m08awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_86/bd_b9bc_m08wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_87/bd_b9bc_m08bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_89/bd_b9bc_m09s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_90/bd_b9bc_m09arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_91/bd_b9bc_m09rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_92/bd_b9bc_m09awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_93/bd_b9bc_m09wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_94/bd_b9bc_m09bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_96/bd_b9bc_m10s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_97/bd_b9bc_m10arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_98/bd_b9bc_m10rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_99/bd_b9bc_m10awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_100/bd_b9bc_m10wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/bd_0/ip/ip_101/bd_b9bc_m10bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_1/smartconnect.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_0_0/Block_top_util_ds_buf_0_0_ooc.xdc]
@@ -211,29 +223,41 @@ set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_s0_data_0/Block_top_axi_bram_ctrl_vdp_s0_data_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_data_1/Block_top_axi_bram_ctrl_vdp_t0_data_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_bram_ctrl_vdp_t0_map_0/Block_top_axi_bram_ctrl_vdp_t0_map_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_10/bd_b8fc_psr_aclk_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_16/bd_b8fc_arsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_22/bd_b8fc_rsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_29/bd_b8fc_awsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_30/bd_b8fc_wsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_31/bd_b8fc_bsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_35/bd_b8fc_s00a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_36/bd_b8fc_sarn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_37/bd_b8fc_srn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_41/bd_b8fc_s01a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_42/bd_b8fc_sarn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_43/bd_b8fc_srn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_44/bd_b8fc_sawn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_45/bd_b8fc_swn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_46/bd_b8fc_sbn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_47/bd_b8fc_m00s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_48/bd_b8fc_m00arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_49/bd_b8fc_m00rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_50/bd_b8fc_m00awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_51/bd_b8fc_m00wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_52/bd_b8fc_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_1/bd_b8fc_psr_aclk_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_2/bd_b8fc_arsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_3/bd_b8fc_rsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_4/bd_b8fc_awsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_5/bd_b8fc_wsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_6/bd_b8fc_bsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_10/bd_b8fc_s00a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_11/bd_b8fc_sarn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_12/bd_b8fc_srn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_16/bd_b8fc_s01a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_17/bd_b8fc_sarn_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_18/bd_b8fc_srn_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_19/bd_b8fc_sawn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_20/bd_b8fc_swn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_21/bd_b8fc_sbn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_22/bd_b8fc_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_23/bd_b8fc_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_24/bd_b8fc_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_25/bd_b8fc_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_26/bd_b8fc_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/bd_0/ip/ip_27/bd_b8fc_m00bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_smartconnect_0_2/smartconnect.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_2/Block_top_axi_quad_spi_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_2/Block_top_axi_quad_spi_0_2.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_2/Block_top_axi_quad_spi_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_quad_spi_0_2/Block_top_axi_quad_spi_0_2_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_0_3/Block_top_util_ds_buf_0_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_0_3/Block_top_util_ds_buf_0_3_board.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_1_0/Block_top_util_ds_buf_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_1_0/Block_top_util_ds_buf_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_2_1/Block_top_util_ds_buf_2_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_2_1/Block_top_util_ds_buf_2_1_board.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_3_0/Block_top_util_ds_buf_3_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_3_0/Block_top_util_ds_buf_3_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc]
 
 read_ip -quiet /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/ip/blk_mem_fin_line/blk_mem_fin_line.xci
@@ -288,6 +312,9 @@ set_property used_in_implementation false [get_files /home/lovro/ARES/ARES_fpga/
 read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc
 set_property used_in_implementation false [get_files /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc]
 
+read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/KYB_pins.xdc
+set_property used_in_implementation false [get_files /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/KYB_pins.xdc]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
@@ -296,7 +323,7 @@ read_checkpoint -auto_incremental -incremental /home/lovro/ARES/ARES_fpga/ARES_f
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top Block_top_wrapper -part xc7a100tfgg484-2 -directive AreaOptimized_high -control_set_opt_threshold 1
+synth_design -top Block_top_wrapper -part xc7a100tfgg484-2 -directive AreaOptimized_medium -control_set_opt_threshold 1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

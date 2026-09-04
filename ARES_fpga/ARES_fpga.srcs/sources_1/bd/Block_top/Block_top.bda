@@ -232,6 +232,42 @@
             },
             "V5": {
                 "VT": "AC",
+                "BA": "0x10002000",
+                "HA": "0x10002FFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "pBus",
+                "MX": "/VexiiSocWrapper_0",
+                "MI": "pBus",
+                "MS": "SEG_axi_quad_spi_1_Reg",
+                "MV": "xilinx.com:module_ref:VexiiSocWrapper:1.0",
+                "SX": "/axi_quad_spi_1",
+                "SI": "AXI_LITE",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_quad_spi:3.2",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V6": {
+                "VT": "AC",
+                "BA": "0x10003000",
+                "HA": "0x10003FFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "pBus",
+                "MX": "/VexiiSocWrapper_0",
+                "MI": "pBus",
+                "MS": "SEG_axi_keyboard_0_reg0",
+                "MV": "xilinx.com:module_ref:VexiiSocWrapper:1.0",
+                "SX": "/axi_keyboard_0",
+                "SI": "s_axi",
+                "SS": "reg0",
+                "SV": "xilinx.com:module_ref:axi_keyboard:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V7": {
+                "VT": "AC",
                 "BA": "0x10010000",
                 "HA": "0x1001FFFF",
                 "BP": "C_S_AXI_BASEADDR",
@@ -248,7 +284,7 @@
                 "TM": "both",
                 "TU": "memory"
             },
-            "V6": {
+            "V8": {
                 "VT": "AC",
                 "BA": "0x10020000",
                 "HA": "0x10027FFF",
@@ -266,7 +302,7 @@
                 "TM": "both",
                 "TU": "memory"
             },
-            "V7": {
+            "V9": {
                 "VT": "AC",
                 "BA": "0x10028000",
                 "HA": "0x1002FFFF",
@@ -284,7 +320,7 @@
                 "TM": "both",
                 "TU": "memory"
             },
-            "V8": {
+            "V10": {
                 "VT": "AC",
                 "BA": "0x10030000",
                 "HA": "0x100301FF",
@@ -302,7 +338,7 @@
                 "TM": "both",
                 "TU": "memory"
             },
-            "V9": {
+            "V11": {
                 "VT": "AC",
                 "BA": "0x10032000",
                 "HA": "0x10033FFF",
@@ -320,7 +356,7 @@
                 "TM": "both",
                 "TU": "memory"
             },
-            "V10": {
+            "V12": {
                 "VT": "AC",
                 "BA": "0x10040000",
                 "HA": "0x1004FFFF",
@@ -338,7 +374,7 @@
                 "TM": "both",
                 "TU": "memory"
             },
-            "V11": {
+            "V13": {
                 "VT": "AC",
                 "BA": "0x10050000",
                 "HA": "0x10057FFF",
@@ -356,7 +392,7 @@
                 "TM": "both",
                 "TU": "memory"
             },
-            "V12": {
+            "V14": {
                 "VT": "AC",
                 "BA": "0x80000000",
                 "HA": "0x800FFFFF",
@@ -374,7 +410,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V13": {
+            "V15": {
                 "VT": "AC",
                 "BA": "0x90000000",
                 "HA": "0x9FFFFFFF",
@@ -392,7 +428,7 @@
                 "TM": "both",
                 "TU": "register"
             },
-            "V14": {
+            "V16": {
                 "VT": "AC",
                 "BA": "0x9F800000",
                 "HA": "0x9FFFFFFF",
@@ -477,6 +513,16 @@
             },
             {
                 "src": "V14",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V15",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V16",
                 "trg": "V2",
                 "EH": "2"
             }

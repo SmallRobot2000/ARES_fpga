@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Thu Aug 20 17:22:25 2026
+//Date        : Fri Sep  4 20:55:10 2026
 //Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target Block_top_wrapper.bd
 //Design      : Block_top_wrapper
@@ -11,7 +11,11 @@
 `timescale 1 ps / 1 ps
 
 module Block_top_wrapper
-   (clk,
+   (KYBD_COL,
+    KYBD_LED_CAPS,
+    KYBD_LED_CODE,
+    KYBD_ROW,
+    clk,
     ddr3_addr,
     ddr3_ba,
     ddr3_cas_n,
@@ -29,11 +33,16 @@ module Block_top_wrapper
     ddr3_we_n,
     h_sync,
     rst_n,
-    spi_controller_miso,
-    spi_controller_mosi,
-    spi_controller_sck,
-    spi_controller_ss,
+    spi_controller0_miso,
+    spi_controller0_mosi,
+    spi_controller0_sck,
+    spi_controller0_ss,
+    spi_controller1_miso,
+    spi_controller1_mosi,
+    spi_controller1_sck,
+    spi_controller1_ss,
     spi_flash_ce_n,
+    spi_int_n,
     spi_miso,
     spi_mosi,
     spi_sck,
@@ -44,6 +53,10 @@ module Block_top_wrapper
     vga_b,
     vga_g,
     vga_r);
+  input [7:0]KYBD_COL;
+  output KYBD_LED_CAPS;
+  output KYBD_LED_CODE;
+  output [3:0]KYBD_ROW;
   input clk;
   output [13:0]ddr3_addr;
   output [2:0]ddr3_ba;
@@ -62,11 +75,16 @@ module Block_top_wrapper
   output ddr3_we_n;
   output h_sync;
   input rst_n;
-  inout [0:0]spi_controller_miso;
-  inout [0:0]spi_controller_mosi;
-  inout [0:0]spi_controller_sck;
-  inout [3:0]spi_controller_ss;
+  inout [0:0]spi_controller0_miso;
+  inout [0:0]spi_controller0_mosi;
+  inout [0:0]spi_controller0_sck;
+  inout [0:0]spi_controller0_ss;
+  inout [0:0]spi_controller1_miso;
+  inout [0:0]spi_controller1_mosi;
+  inout [0:0]spi_controller1_sck;
+  inout [0:0]spi_controller1_ss;
   output spi_flash_ce_n;
+  input spi_int_n;
   input spi_miso;
   output spi_mosi;
   output spi_sck;
@@ -78,6 +96,10 @@ module Block_top_wrapper
   output [3:0]vga_g;
   output [3:0]vga_r;
 
+  wire [7:0]KYBD_COL;
+  wire KYBD_LED_CAPS;
+  wire KYBD_LED_CODE;
+  wire [3:0]KYBD_ROW;
   wire clk;
   wire [13:0]ddr3_addr;
   wire [2:0]ddr3_ba;
@@ -96,11 +118,16 @@ module Block_top_wrapper
   wire ddr3_we_n;
   wire h_sync;
   wire rst_n;
-  wire [0:0]spi_controller_miso;
-  wire [0:0]spi_controller_mosi;
-  wire [0:0]spi_controller_sck;
-  wire [3:0]spi_controller_ss;
+  wire [0:0]spi_controller0_miso;
+  wire [0:0]spi_controller0_mosi;
+  wire [0:0]spi_controller0_sck;
+  wire [0:0]spi_controller0_ss;
+  wire [0:0]spi_controller1_miso;
+  wire [0:0]spi_controller1_mosi;
+  wire [0:0]spi_controller1_sck;
+  wire [0:0]spi_controller1_ss;
   wire spi_flash_ce_n;
+  wire spi_int_n;
   wire spi_miso;
   wire spi_mosi;
   wire spi_sck;
@@ -113,7 +140,11 @@ module Block_top_wrapper
   wire [3:0]vga_r;
 
   Block_top Block_top_i
-       (.clk(clk),
+       (.KYBD_COL(KYBD_COL),
+        .KYBD_LED_CAPS(KYBD_LED_CAPS),
+        .KYBD_LED_CODE(KYBD_LED_CODE),
+        .KYBD_ROW(KYBD_ROW),
+        .clk(clk),
         .ddr3_addr(ddr3_addr),
         .ddr3_ba(ddr3_ba),
         .ddr3_cas_n(ddr3_cas_n),
@@ -131,11 +162,16 @@ module Block_top_wrapper
         .ddr3_we_n(ddr3_we_n),
         .h_sync(h_sync),
         .rst_n(rst_n),
-        .spi_controller_miso(spi_controller_miso),
-        .spi_controller_mosi(spi_controller_mosi),
-        .spi_controller_sck(spi_controller_sck),
-        .spi_controller_ss(spi_controller_ss),
+        .spi_controller0_miso(spi_controller0_miso),
+        .spi_controller0_mosi(spi_controller0_mosi),
+        .spi_controller0_sck(spi_controller0_sck),
+        .spi_controller0_ss(spi_controller0_ss),
+        .spi_controller1_miso(spi_controller1_miso),
+        .spi_controller1_mosi(spi_controller1_mosi),
+        .spi_controller1_sck(spi_controller1_sck),
+        .spi_controller1_ss(spi_controller1_ss),
         .spi_flash_ce_n(spi_flash_ce_n),
+        .spi_int_n(spi_int_n),
         .spi_miso(spi_miso),
         .spi_mosi(spi_mosi),
         .spi_sck(spi_sck),

@@ -105,7 +105,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
+  set_param bd.open.in_stealth_mode 3
   set_param chipscope.maxJobs 3
   set_param general.usePosixSpawnForFork 1
   set_param runs.launchOptions { -jobs 10  }
@@ -148,6 +148,7 @@ OPTRACE "read constraints: implementation" START { }
   read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/UART_pins.xdc
   read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/VGA_pins.xdc
   read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/imports/Downloads/pt_mig.xdc
+  read_xdc /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/constrs_1/new/KYB_pins.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

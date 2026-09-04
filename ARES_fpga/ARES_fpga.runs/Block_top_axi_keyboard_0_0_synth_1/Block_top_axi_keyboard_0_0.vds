@@ -1,0 +1,293 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Fri Sep  4 20:55:22 2026
+# Process ID         : 398683
+# Current directory  : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_keyboard_0_0_synth_1
+# Command line       : vivado -log Block_top_axi_keyboard_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Block_top_axi_keyboard_0_0.tcl
+# Log file           : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_keyboard_0_0_synth_1/Block_top_axi_keyboard_0_0.vds
+# Journal file       : /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_keyboard_0_0_synth_1/vivado.jou
+# Running On         : lovroLinuxM
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 5 5600 6-Core Processor
+# CPU Frequency      : 3294.326 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 33529 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 37824 MB
+# Available Virtual  : 19611 MB
+#-----------------------------------------------------------
+source Block_top_axi_keyboard_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/myip_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_IO_converter_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lovro/ARES/Alchistry_Labs/DDR3 test/cores/ip_repo/CPU_io_converter_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Vivado/2025.2/data/ip'.
+Command: synth_design -top Block_top_axi_keyboard_0_0 -part xc7a100tfgg484-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tfgg484-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 398809
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2208.723 ; gain = 480.875 ; free physical = 1452 ; free virtual = 17309
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Block_top_axi_keyboard_0_0' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_keyboard_0_0/synth/Block_top_axi_keyboard_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axi_keyboard' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/kyb_scan.v:1]
+	Parameter CLK_HZ bound to: 100000000 - type: integer 
+	Parameter COLS bound to: 8 - type: integer 
+	Parameter ROWS bound to: 11 - type: integer 
+	Parameter ROW_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter FULL_SCAN_HZ bound to: 1000 - type: integer 
+	Parameter FIFO_DEPTH bound to: 16 - type: integer 
+	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'msx_keyboard' [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/kyb_scan.v:397]
+	Parameter CLK_HZ bound to: 100000000 - type: integer 
+	Parameter ROWS bound to: 11 - type: integer 
+	Parameter COLS bound to: 8 - type: integer 
+	Parameter ROW_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter FULL_SCAN_HZ bound to: 1000 - type: integer 
+	Parameter FIFO_DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/kyb_scan.v:908]
+INFO: [Synth 8-6155] done synthesizing module 'msx_keyboard' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/kyb_scan.v:397]
+INFO: [Synth 8-6155] done synthesizing module 'axi_keyboard' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/kyb_scan.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Block_top_axi_keyboard_0_0' (0#1) [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_axi_keyboard_0_0/synth/Block_top_axi_keyboard_0_0.v:53]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2302.691 ; gain = 574.844 ; free physical = 1336 ; free virtual = 17194
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2314.566 ; gain = 586.719 ; free physical = 1336 ; free virtual = 17194
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2314.566 ; gain = 586.719 ; free physical = 1336 ; free virtual = 17194
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2314.566 ; gain = 0.000 ; free physical = 1336 ; free virtual = 17194
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2422.336 ; gain = 0.000 ; free physical = 1336 ; free virtual = 17194
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2422.371 ; gain = 0.000 ; free physical = 1336 ; free virtual = 17194
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2422.371 ; gain = 694.523 ; free physical = 1381 ; free virtual = 17239
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2430.340 ; gain = 702.492 ; free physical = 1381 ; free virtual = 17239
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2430.340 ; gain = 702.492 ; free physical = 1381 ; free virtual = 17239
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'msx_keyboard'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              STATE_SCAN |                               00 |                               00
+             STATE_CHECK |                               01 |                               01
+              STATE_EMIT |                               10 |                               10
+             STATE_DRAIN |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'msx_keyboard'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2430.340 ; gain = 702.492 ; free physical = 1380 ; free virtual = 17239
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 3     
++---XORs : 
+	   2 Input     88 Bit         XORs := 1     
++---Registers : 
+	               88 Bit    Registers := 5     
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 17    
+	               14 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   4 Input   88 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 1     
+	   4 Input   14 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 26    
+	   3 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 14    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3917] design Block_top_axi_keyboard_0_0 has port s_axi_bresp[1] driven by constant 0
+INFO: [Synth 8-3917] design Block_top_axi_keyboard_0_0 has port s_axi_bresp[0] driven by constant 0
+INFO: [Synth 8-3917] design Block_top_axi_keyboard_0_0 has port s_axi_rresp[1] driven by constant 0
+INFO: [Synth 8-3917] design Block_top_axi_keyboard_0_0 has port s_axi_rresp[0] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2430.340 ; gain = 702.492 ; free physical = 1465 ; free virtual = 17323
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2430.340 ; gain = 702.492 ; free physical = 1465 ; free virtual = 17323
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2430.340 ; gain = 702.492 ; free physical = 1465 ; free virtual = 17323
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2529.152 ; gain = 801.305 ; free physical = 1414 ; free virtual = 17272
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2529.152 ; gain = 801.305 ; free physical = 1414 ; free virtual = 17272
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2529.152 ; gain = 801.305 ; free physical = 1414 ; free virtual = 17272
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2529.152 ; gain = 801.305 ; free physical = 1414 ; free virtual = 17272
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2529.152 ; gain = 801.305 ; free physical = 1413 ; free virtual = 17272
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2529.152 ; gain = 801.305 ; free physical = 1413 ; free virtual = 17272
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     4|
+|2     |LUT1   |    26|
+|3     |LUT2   |    18|
+|4     |LUT3   |   181|
+|5     |LUT4   |   107|
+|6     |LUT5   |    31|
+|7     |LUT6   |    82|
+|8     |MUXF7  |    11|
+|9     |MUXF8  |     2|
+|10    |FDRE   |   659|
+|11    |FDSE   |    22|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2529.152 ; gain = 801.305 ; free physical = 1413 ; free virtual = 17272
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2529.152 ; gain = 693.500 ; free physical = 1413 ; free virtual = 17272
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2529.160 ; gain = 801.305 ; free physical = 1413 ; free virtual = 17272
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2544.027 ; gain = 0.000 ; free physical = 1513 ; free virtual = 17372
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Block_top_axi_keyboard_0_0' is not ideal for floorplanning, since the cellview 'msx_keyboard' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2692.680 ; gain = 0.000 ; free physical = 1445 ; free virtual = 17304
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 2bdc6473
+INFO: [Common 17-83] Releasing license: Synthesis
+30 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 2692.715 ; gain = 1079.141 ; free physical = 1445 ; free virtual = 17304
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1768.500; main = 1768.500; forked = 280.143
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3424.547; main = 2692.684; forked = 994.203
+INFO: [Coretcl 2-1174] Renamed 2 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2716.691 ; gain = 0.000 ; free physical = 1445 ; free virtual = 17303
+INFO: [Common 17-1381] The checkpoint '/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.runs/Block_top_axi_keyboard_0_0_synth_1/Block_top_axi_keyboard_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file Block_top_axi_keyboard_0_0_utilization_synth.rpt -pb Block_top_axi_keyboard_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Sep  4 20:55:44 2026...

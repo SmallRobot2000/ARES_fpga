@@ -1991,3 +1991,4 @@ Output: frame.ppm
 ====================================
 
 $finish called at time : 16545155 ns : File "/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/tb_VDP.sv" Line 1390
+INFO: xsimkernel Simulation Memory Usage: 339224 KB (Peak: 341872 KB), Simulation CPU Usage: 23140 ms

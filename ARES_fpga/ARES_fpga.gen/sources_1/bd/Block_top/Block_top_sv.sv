@@ -102,13 +102,11 @@ module Block_top_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   output wire test_tx,
   (* X_INTERFACE_IGNORE = "true" *)
-  inout wire [0:0] spi_controller_mosi,
+  inout wire [0:0] spi_controller0_mosi,
   (* X_INTERFACE_IGNORE = "true" *)
-  inout wire [0:0] spi_controller_miso,
+  inout wire [0:0] spi_controller0_miso,
   (* X_INTERFACE_IGNORE = "true" *)
-  inout wire [0:0] spi_controller_sck,
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout wire [3:0] spi_controller_ss,
+  inout wire [0:0] spi_controller0_sck,
   (* X_INTERFACE_IGNORE = "true" *)
   output wire [3:0] vga_r,
   (* X_INTERFACE_IGNORE = "true" *)
@@ -118,7 +116,27 @@ module Block_top_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   output wire v_sync,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [3:0] vga_b
+  output wire [3:0] vga_b,
+  (* X_INTERFACE_IGNORE = "true" *)
+  input wire spi_int_n,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire [0:0] spi_controller1_miso,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire [0:0] spi_controller1_mosi,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire [0:0] spi_controller1_sck,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire [0:0] spi_controller0_ss,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire [0:0] spi_controller1_ss,
+  (* X_INTERFACE_IGNORE = "true" *)
+  input wire [7:0] KYBD_COL,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [3:0] KYBD_ROW,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire KYBD_LED_CAPS,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire KYBD_LED_CODE
 );
 
   Block_top inst (
@@ -146,15 +164,24 @@ module Block_top_sv (
     .usb_rx(usb_rx),
     .usb_tx(usb_tx),
     .test_tx(test_tx),
-    .spi_controller_mosi(spi_controller_mosi),
-    .spi_controller_miso(spi_controller_miso),
-    .spi_controller_sck(spi_controller_sck),
-    .spi_controller_ss(spi_controller_ss),
+    .spi_controller0_mosi(spi_controller0_mosi),
+    .spi_controller0_miso(spi_controller0_miso),
+    .spi_controller0_sck(spi_controller0_sck),
     .vga_r(vga_r),
     .vga_g(vga_g),
     .h_sync(h_sync),
     .v_sync(v_sync),
-    .vga_b(vga_b)
+    .vga_b(vga_b),
+    .spi_int_n(spi_int_n),
+    .spi_controller1_miso(spi_controller1_miso),
+    .spi_controller1_mosi(spi_controller1_mosi),
+    .spi_controller1_sck(spi_controller1_sck),
+    .spi_controller0_ss(spi_controller0_ss),
+    .spi_controller1_ss(spi_controller1_ss),
+    .KYBD_COL(KYBD_COL),
+    .KYBD_ROW(KYBD_ROW),
+    .KYBD_LED_CAPS(KYBD_LED_CAPS),
+    .KYBD_LED_CODE(KYBD_LED_CODE)
   );
 
 endmodule

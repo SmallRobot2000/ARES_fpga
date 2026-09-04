@@ -2,3 +2,6 @@ Running: xsim.dir/tb_VDP_behav/xsimk -simmode gui -wdb tb_VDP_behav.wdb -simrunn
 Design successfully loaded
 Design Loading Memory Usage: 202604 KB (Peak: 202604 KB)
 Design Loading CPU Usage: 1060 ms
+Simulation completed
+Simulation Memory Usage: 339224 KB (Peak: 341872 KB)
+Simulation CPU Usage: 23140 ms

@@ -2,11 +2,11 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Fri Aug 14 21:37:15 2026
+// Date        : Fri Aug 21 15:47:11 2026
 // Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top Block_top_axi_quad_spi_0_1 -prefix
-//               Block_top_axi_quad_spi_0_1_ Block_top_axi_quad_spi_0_1_stub.v
-// Design      : Block_top_axi_quad_spi_0_1
+//               Block_top_axi_quad_spi_0_1_ Block_top_axi_quad_spi_0_2_stub.v
+// Design      : Block_top_axi_quad_spi_0_2
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tfgg484-2
 // --------------------------------------------------------------------------------
@@ -14,14 +14,14 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "Block_top_axi_quad_spi_0_1,axi_quad_spi,{}" *) (* core_generation_info = "Block_top_axi_quad_spi_0_1,axi_quad_spi,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_quad_spi,x_ipVersion=3.2,x_ipCoreRevision=35,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,Async_Clk=0,C_FAMILY=artix7,C_SELECT_XPM=0,C_SUB_FAMILY=artix7,C_INSTANCE=axi_quad_spi_inst,C_SPI_MEM_ADDR_BITS=24,C_TYPE_OF_AXI4_INTERFACE=0,C_XIP_MODE=0,C_XIP_PERF_MODE=1,C_BYTE_LEVEL_INTERRUPT_EN=0,C_UC_FAMILY=0,C_FIFO_DEPTH=16,C_SCK_RATIO=4,C_DUAL_QUAD_MODE=0,C_NUM_SS_BITS=4,C_NUM_TRANSFER_BITS=8,C_NEW_SEQ_EN=1,C_SPI_MODE=0,C_USE_STARTUP=0,C_USE_STARTUP_EXT=0,C_SPI_MEMORY=1,C_S_AXI_ADDR_WIDTH=7,C_S_AXI_DATA_WIDTH=32,C_S_AXI4_ADDR_WIDTH=24,C_S_AXI4_DATA_WIDTH=32,C_S_AXI4_ID_WIDTH=4,C_SHARED_STARTUP=0,C_S_AXI4_BASEADDR=0xFFFFFFFF,C_S_AXI4_HIGHADDR=0x00000000,C_LSB_STUP=0}" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "Block_top_axi_quad_spi_0_2,axi_quad_spi,{}" *) (* core_generation_info = "Block_top_axi_quad_spi_0_2,axi_quad_spi,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_quad_spi,x_ipVersion=3.2,x_ipCoreRevision=35,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,Async_Clk=0,C_FAMILY=artix7,C_SELECT_XPM=0,C_SUB_FAMILY=artix7,C_INSTANCE=axi_quad_spi_inst,C_SPI_MEM_ADDR_BITS=24,C_TYPE_OF_AXI4_INTERFACE=0,C_XIP_MODE=0,C_XIP_PERF_MODE=1,C_BYTE_LEVEL_INTERRUPT_EN=0,C_UC_FAMILY=0,C_FIFO_DEPTH=16,C_SCK_RATIO=8,C_DUAL_QUAD_MODE=0,C_NUM_SS_BITS=1,C_NUM_TRANSFER_BITS=8,C_NEW_SEQ_EN=1,C_SPI_MODE=0,C_USE_STARTUP=0,C_USE_STARTUP_EXT=0,C_SPI_MEMORY=1,C_S_AXI_ADDR_WIDTH=7,C_S_AXI_DATA_WIDTH=32,C_S_AXI4_ADDR_WIDTH=24,C_S_AXI4_DATA_WIDTH=32,C_S_AXI4_ID_WIDTH=4,C_SHARED_STARTUP=0,C_S_AXI4_BASEADDR=0xFFFFFFFF,C_S_AXI4_HIGHADDR=0x00000000,C_LSB_STUP=0}" *) (* downgradeipidentifiedwarnings = "yes" *) 
 (* x_core_info = "axi_quad_spi,Vivado 2025.2" *) 
 module Block_top_axi_quad_spi_0_1(ext_spi_clk, s_axi_aclk, s_axi_aresetn, 
   s_axi_awaddr, s_axi_awvalid, s_axi_awready, s_axi_wdata, s_axi_wstrb, s_axi_wvalid, 
   s_axi_wready, s_axi_bresp, s_axi_bvalid, s_axi_bready, s_axi_araddr, s_axi_arvalid, 
   s_axi_arready, s_axi_rdata, s_axi_rresp, s_axi_rvalid, s_axi_rready, io0_i, io0_o, io0_t, io1_i, 
   io1_o, io1_t, sck_i, sck_o, sck_t, ss_i, ss_o, ss_t, ip2intc_irpt)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_aresetn,s_axi_awaddr[6:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[6:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,io0_i,io0_o,io0_t,io1_i,io1_o,io1_t,sck_i,sck_o,sck_t,ss_i[3:0],ss_o[3:0],ss_t,ip2intc_irpt" */
+/* synthesis syn_black_box black_box_pad_pin="s_axi_aresetn,s_axi_awaddr[6:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[6:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,io0_i,io0_o,io0_t,io1_i,io1_o,io1_t,sck_i,sck_o,sck_t,ss_i[0:0],ss_o[0:0],ss_t,ip2intc_irpt" */
 /* synthesis syn_force_seq_prim="ext_spi_clk" */
 /* synthesis syn_force_seq_prim="s_axi_aclk" */;
   (* x_interface_info = "xilinx.com:signal:clock:1.0 spi_clk CLK" *) (* x_interface_mode = "slave spi_clk" *) (* x_interface_parameter = "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN Block_top_mig_axi_wrapper_0_0_ui_clk, INSERT_VIP 0" *) input ext_spi_clk /* synthesis syn_isclock = 1 */;
@@ -53,8 +53,8 @@ module Block_top_axi_quad_spi_0_1(ext_spi_clk, s_axi_aclk, s_axi_aresetn,
   (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_I" *) input sck_i;
   (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_O" *) output sck_o;
   (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_T" *) output sck_t;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_I" *) input [3:0]ss_i;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_O" *) output [3:0]ss_o;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_I" *) input [0:0]ss_i;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_O" *) output [0:0]ss_o;
   (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_T" *) output ss_t;
   (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT" *) (* x_interface_mode = "master interrupt" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SENSITIVITY EDGE_RISING, PortWidth 1" *) output ip2intc_irpt;
 endmodule

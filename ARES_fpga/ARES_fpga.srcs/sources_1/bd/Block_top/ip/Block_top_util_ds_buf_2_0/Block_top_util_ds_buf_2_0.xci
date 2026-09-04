@@ -8,7 +8,7 @@
     "gen_directory": "../../../../../../ARES_fpga.gen/sources_1/bd/Block_top/ip/Block_top_util_ds_buf_2_0",
     "parameters": {
       "component_parameters": {
-        "C_SIZE": [ { "value": "4", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_SIZE": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_BUF_TYPE": [ { "value": "IOBUF", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "Component_Name": [ { "value": "Block_top_util_ds_buf_2_0", "resolve_type": "user", "usage": "all" } ],
         "USE_BOARD_FLOW": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
@@ -23,7 +23,7 @@
         "C_DIVBY2": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ]
       },
       "model_parameters": {
-        "C_SIZE": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_SIZE": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_BUF_TYPE": [ { "value": "IOBUF", "resolve_type": "generated", "usage": "all" } ],
         "C_BUFGCE_DIV": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_BUFG_GT_SYNC": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -58,10 +58,10 @@
     },
     "boundary": {
       "ports": {
-        "IOBUF_IO_T": [ { "direction": "in", "size_left": "3", "size_right": "0", "driver_value": "0" } ],
-        "IOBUF_IO_I": [ { "direction": "in", "size_left": "3", "size_right": "0", "driver_value": "0" } ],
-        "IOBUF_IO_O": [ { "direction": "out", "size_left": "3", "size_right": "0", "driver_value": "0" } ],
-        "IOBUF_IO_IO": [ { "direction": "inout", "size_left": "3", "size_right": "0", "driver_value": "0" } ]
+        "IOBUF_IO_T": [ { "direction": "in", "size_left": "0", "size_right": "0", "driver_value": "0" } ],
+        "IOBUF_IO_I": [ { "direction": "in", "size_left": "0", "size_right": "0", "driver_value": "0" } ],
+        "IOBUF_IO_O": [ { "direction": "out", "size_left": "0", "size_right": "0", "driver_value": "0" } ],
+        "IOBUF_IO_IO": [ { "direction": "inout", "size_left": "0", "size_right": "0", "driver_value": "0" } ]
       },
       "interfaces": {
         "IOBUF_IO_O": {
@@ -103,5 +103,5 @@
       }
     }
   },
-  "checksum": "3ff4b4db"
+  "checksum": "af6ce5f0"
 }

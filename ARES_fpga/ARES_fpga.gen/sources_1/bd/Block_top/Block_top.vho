@@ -77,15 +77,24 @@ COMPONENT Block_top
     usb_rx : IN STD_LOGIC;
     usb_tx : OUT STD_LOGIC;
     test_tx : OUT STD_LOGIC;
-    spi_controller_mosi : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    spi_controller_miso : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    spi_controller_sck : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    spi_controller_ss : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    spi_controller0_mosi : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    spi_controller0_miso : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    spi_controller0_sck : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     vga_r : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     vga_g : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     h_sync : OUT STD_LOGIC;
     v_sync : OUT STD_LOGIC;
-    vga_b : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+    vga_b : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    spi_int_n : IN STD_LOGIC;
+    spi_controller1_miso : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    spi_controller1_mosi : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    spi_controller1_sck : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    spi_controller0_ss : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    spi_controller1_ss : INOUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    KYBD_COL : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    KYBD_ROW : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    KYBD_LED_CAPS : OUT STD_LOGIC;
+    KYBD_LED_CODE : OUT STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -120,15 +129,24 @@ your_instance_name : Block_top
     usb_rx => usb_rx,
     usb_tx => usb_tx,
     test_tx => test_tx,
-    spi_controller_mosi => spi_controller_mosi,
-    spi_controller_miso => spi_controller_miso,
-    spi_controller_sck => spi_controller_sck,
-    spi_controller_ss => spi_controller_ss,
+    spi_controller0_mosi => spi_controller0_mosi,
+    spi_controller0_miso => spi_controller0_miso,
+    spi_controller0_sck => spi_controller0_sck,
     vga_r => vga_r,
     vga_g => vga_g,
     h_sync => h_sync,
     v_sync => v_sync,
-    vga_b => vga_b
+    vga_b => vga_b,
+    spi_int_n => spi_int_n,
+    spi_controller1_miso => spi_controller1_miso,
+    spi_controller1_mosi => spi_controller1_mosi,
+    spi_controller1_sck => spi_controller1_sck,
+    spi_controller0_ss => spi_controller0_ss,
+    spi_controller1_ss => spi_controller1_ss,
+    KYBD_COL => KYBD_COL,
+    KYBD_ROW => KYBD_ROW,
+    KYBD_LED_CAPS => KYBD_LED_CAPS,
+    KYBD_LED_CODE => KYBD_LED_CODE
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

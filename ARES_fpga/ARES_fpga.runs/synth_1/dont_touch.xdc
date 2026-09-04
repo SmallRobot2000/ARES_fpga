@@ -11,6 +11,8 @@
 
 # XDC: imports/Downloads/pt_mig.xdc
 
+# XDC: new/KYB_pins.xdc
+
 # Block Designs: bd/Block_top/Block_top.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top || ORIG_REF_NAME==Block_top} -quiet] -quiet
 
@@ -112,5 +114,26 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_a
 
 # IP: bd/Block_top/ip/Block_top_smartconnect_0_2/Block_top_smartconnect_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_smartconnect_0_2 || ORIG_REF_NAME==Block_top_smartconnect_0_2} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_util_vector_logic_1_0/Block_top_util_vector_logic_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_util_vector_logic_1_0 || ORIG_REF_NAME==Block_top_util_vector_logic_1_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_quad_spi_0_2/Block_top_axi_quad_spi_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_quad_spi_0_2 || ORIG_REF_NAME==Block_top_axi_quad_spi_0_2} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_util_ds_buf_0_3/Block_top_util_ds_buf_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_util_ds_buf_0_3 || ORIG_REF_NAME==Block_top_util_ds_buf_0_3} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_util_ds_buf_1_0/Block_top_util_ds_buf_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_util_ds_buf_1_0 || ORIG_REF_NAME==Block_top_util_ds_buf_1_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_util_ds_buf_2_1/Block_top_util_ds_buf_2_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_util_ds_buf_2_1 || ORIG_REF_NAME==Block_top_util_ds_buf_2_1} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_util_ds_buf_3_0/Block_top_util_ds_buf_3_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_util_ds_buf_3_0 || ORIG_REF_NAME==Block_top_util_ds_buf_3_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_keyboard_0_0/Block_top_axi_keyboard_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_keyboard_0_0 || ORIG_REF_NAME==Block_top_axi_keyboard_0_0} -quiet] -quiet
 
 # XDC: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc

@@ -87,8 +87,8 @@ ENTITY Block_top_axi_quad_spi_0_1 IS
     sck_i : IN STD_LOGIC;
     sck_o : OUT STD_LOGIC;
     sck_t : OUT STD_LOGIC;
-    ss_i : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    ss_o : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    ss_i : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ss_o : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     ss_t : OUT STD_LOGIC;
     ip2intc_irpt : OUT STD_LOGIC
   );
@@ -216,8 +216,8 @@ ARCHITECTURE Block_top_axi_quad_spi_0_1_arch OF Block_top_axi_quad_spi_0_1 IS
       sck_i : IN STD_LOGIC;
       sck_o : OUT STD_LOGIC;
       sck_t : OUT STD_LOGIC;
-      ss_i : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      ss_o : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      ss_i : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+      ss_o : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       ss_t : OUT STD_LOGIC;
       ss_1_i : IN STD_LOGIC;
       ss_1_o : OUT STD_LOGIC;
@@ -301,9 +301,9 @@ BEGIN
       C_BYTE_LEVEL_INTERRUPT_EN => 0,
       C_UC_FAMILY => 0,
       C_FIFO_DEPTH => 16,
-      C_SCK_RATIO => 4,
+      C_SCK_RATIO => 8,
       C_DUAL_QUAD_MODE => 0,
-      C_NUM_SS_BITS => 4,
+      C_NUM_SS_BITS => 1,
       C_NUM_TRANSFER_BITS => 8,
       C_NEW_SEQ_EN => 1,
       C_SPI_MODE => 0,
