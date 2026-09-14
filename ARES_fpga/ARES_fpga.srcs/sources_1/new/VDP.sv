@@ -1028,8 +1028,105 @@ module VDP_sprite_gen #(
     reg [5:0]  att_pos = 6'b0;
     reg [10:0] data_pos = 11'b0;
 
-    wire [5:0] sprite_row = gen_line - y_pos;
     wire [5:0] sprite_width = size ? 6'd32 : 6'd16;
+    wire [5:0] sprite_height = size ? 6'd32 : 6'd16;
+
+        /*
+        * scale:
+        *
+        *   0 = 1x
+        *   1 = 2x
+        *   2 = 4x
+        *   3 = 8x
+        *
+        * Maximum displayed size:
+        *
+        *   32 * 8 = 256 pixels
+        */
+        wire [8:0] scaled_width = {3'b000, sprite_width} << scale;
+        wire [8:0] scaled_height = {3'b000, sprite_height} << scale;
+
+    /*
+     * ------------------------------------------------------------
+     * Vertical clipping / coordinate underflow
+     * ------------------------------------------------------------
+     *
+     * gen_line - y_pos is intentionally a 10-bit subtraction.
+     *
+     * Therefore:
+     *
+     *   y_pos = 1023 behaves like y = -1
+     *   y_pos = 1022 behaves like y = -2
+     *
+     * This allows the sprite to gradually enter from the top.
+     *
+     * It does NOT cause screen wrapping.
+     */
+    wire [9:0] sprite_scaled_row =
+        gen_line - y_pos;
+
+
+    /*
+     * Is this physical screen line inside the scaled sprite?
+     */
+    wire sprite_y_visible =
+        ({1'b0, sprite_scaled_row} <
+         {2'b00, scaled_height});
+
+
+    /*
+     * Convert scaled display row back into source sprite row.
+     */
+    wire [5:0] sprite_source_row =
+        sprite_scaled_row >> scale;
+
+
+    /*
+     * ------------------------------------------------------------
+     * Horizontal clipping / coordinate underflow
+     * ------------------------------------------------------------
+     *
+     * x_pos = 1023 means sprite starts at x = -1
+     * x_pos = 1022 means sprite starts at x = -2
+     * etc.
+     */
+    wire [9:0] x_left_clip =
+        10'd0 - x_pos;
+
+
+    /*
+     * Sprite is horizontally visible when:
+     *
+     *   1. it starts inside the screen, or
+     *   2. x_pos represents a negative/underflowed position and
+     *      some part of the sprite reaches screen X=0.
+     *
+     * Positions between the right screen edge and the negative
+     * coordinate region remain completely invisible.
+     */
+    wire sprite_x_visible =
+        (x_pos < SCREEN_WIDTH) ||
+        (
+            (x_pos != 10'd0) &&
+            ({1'b0, x_left_clip} <
+             {2'b00, scaled_width})
+        );
+
+
+    /*
+     * Exclusive right edge for an ordinary positive X position.
+     */
+    wire [10:0] x_end_exclusive =
+        {1'b0, x_pos} +
+        {2'b00, scaled_width};
+
+
+    /*
+     * Visible pixel count when entering from the left.
+     */
+    wire [10:0] left_visible_count =
+        {2'b00, scaled_width} -
+        {1'b0, x_left_clip};
 
     assign spr_data_vdp_addr = data_pos;
     assign spr_att_vdp_addr  = att_pos;
@@ -1040,8 +1137,15 @@ module VDP_sprite_gen #(
     // ============================================================
 
     reg [7:0]  line_pos;
+    reg [7:0]  line_end;
     reg [7:0]  line_pos_reg;
-    reg [1:0]  line_off;
+
+    /*
+     * Scaled sprite-relative X coordinate corresponding to
+     * pixel 0 of the current 4-pixel line-buffer word.
+     */
+    reg [9:0]  scaled_x_pos;
+
     reg [63:0] line_data;
     reg [7:0]  line_we;
 
@@ -1091,9 +1195,10 @@ module VDP_sprite_gen #(
 
     reg [11:0] state = STATE_WAIT;
 
-    reg [3:0] line_word;
     integer src_pixel;
     integer i;
+    integer scaled_pixel;
+
     reg [7:0] spr_cnt;
     reg [7:0] clear_pos = 8'b0;
 
@@ -1128,34 +1233,131 @@ module VDP_sprite_gen #(
             end
 
             STATE_START: begin
-                // Also commits the final pipelined clear/write from the
-                // previous state before line_we is dropped here.
+
                 line_we <= 8'b0;
 
-                if((y_pos <= gen_line) &&
-                   ((y_pos + (size ? SPRITEL_HEIGHT-1 : SPRITE_HEIGHT-1)) >= gen_line) &&
-                   active) begin
-
-                    data_pos <= offset +
-                        (size
-                            ? ((v_flip ? (SPRITEL_HEIGHT - 1 - sprite_row)
-                                       : sprite_row) << 1)
-                            :  (v_flip ? (SPRITE_HEIGHT - 1 - sprite_row)
-                                       : sprite_row));
+                if(active &&
+                   sprite_y_visible &&
+                   sprite_x_visible) begin
+                
+                    /*
+                     * Select source row.
+                     *
+                     * Scaling duplicates source rows:
+                     *
+                     * 1x: 0,1,2,3,...
+                     * 2x: 0,0,1,1,2,2,...
+                     * 4x: 0,0,0,0,1,1,1,1,...
+                     *
+                     * Vertical flip operates on the source row.
+                     */
+                    data_pos <=
+                        offset +
+                        (
+                            size
+                            ?
+                            (
+                                (
+                                    v_flip
+                                    ? (SPRITEL_HEIGHT - 1 - sprite_source_row)
+                                    : sprite_source_row
+                                ) << 1
+                            )
+                            :
+                            (
+                                v_flip
+                                ? (SPRITE_HEIGHT - 1 - sprite_source_row)
+                                : sprite_source_row
+                            )
+                        );
 
                     state <= STATE_C0;
-                end else begin
+
+                end
+                else begin
+                
                     att_pos <= att_pos + 1'b1;
                     state <= STATE_NEXT;
+
                 end
+
             end
 
             STATE_C0: begin
-                // First sprite-data BRAM read is becoming valid.
-                line_pos <= x_pos[9:2];
-                line_off <= x_pos[1:0];
-                line_word <= 4'b0;
+                        
+                /*
+                 * Sprite begins at an ordinary on-screen X coordinate.
+                 */
+                if(x_pos < SCREEN_WIDTH) begin
+                
+                    /*
+                     * First physical line-buffer word.
+                     */
+                    line_pos <=
+                        x_pos[9:2];
+
+
+                    /*
+                     * Sprite-relative coordinate corresponding to the
+                     * first pixel of this 4-pixel word.
+                     *
+                     * Example:
+                     *
+                     *     x_pos = 5
+                     *
+                     * line_pos = 1 -> screen pixels 4,5,6,7
+                     *
+                     * screen pixel 4 gets modular coordinate 1023 and
+                     * is therefore rejected.
+                     */
+                    scaled_x_pos <=
+                        {x_pos[9:2], 2'b00} -
+                        x_pos;
+
+
+                    /*
+                     * Clip at physical right edge.
+                     */
+                    if(x_end_exclusive > SCREEN_WIDTH)
+
+                        line_end <=
+                            (SCREEN_WIDTH - 1) >> 2;
+
+                    else
+
+                        line_end <=
+                            (x_end_exclusive - 1'b1) >> 2;
+
+                end
+
+                /*
+                 * Underflowed X coordinate.
+                 *
+                 * Example:
+                 *
+                 *     x_pos = 1023 -> x = -1
+                 *
+                 * Start at physical line-buffer word zero.
+                 *
+                 * We NEVER start from address 255 and therefore never
+                 * wrap the line buffer back to address zero.
+                 */
+                else begin
+                
+                    line_pos <=
+                        8'd0;
+
+                    scaled_x_pos <=
+                        x_left_clip;
+
+                    line_end <=
+                        (left_visible_count - 1'b1) >> 2;
+
+                end
+
+
                 state <= STATE_C1;
+
             end
 
             STATE_C1: begin
@@ -1210,7 +1412,7 @@ module VDP_sprite_gen #(
                         // Last palette result arrived.  row_buf is updated
                         // by this edge and is therefore valid throughout
                         // the following STATE_C4 cycle.
-                        line_word <= 4'b0;
+
                         pal_data_valid <= 1'b0;
                         state <= STATE_C4;
                     end
@@ -1227,32 +1429,94 @@ module VDP_sprite_gen #(
             end
 
             STATE_C4: begin
-                // Produce one 64-bit line-buffer word (four pixels).
-                // line_pos_reg/data/we are intentionally registered: the
-                // Block Memory Generator writes their previous values on
-                // this edge, which pipelines consecutive words correctly.
+                        
+                /*
+                 * One 64-bit line-buffer word = four 16-bit pixels.
+                 */
                 line_data <= 64'b0;
-                line_we <= 8'b0;
+                line_we   <= 8'b0;
+            
                 line_pos_reg <= line_pos;
-
+            
+            
                 for(i = 0; i < 4; i = i + 1) begin
-                    src_pixel = (line_word * 4) + i - line_off;
-
-                    if((src_pixel >= 0) &&
-                       (src_pixel < sprite_width) &&
-                       (row_buf[src_pixel][15:12] != 4'h0)) begin
-
-                        line_data[i*16 +: 16] <= row_buf[src_pixel];
-                        line_we[i*2 +: 2] <= 2'b11;
+                
+                    /*
+                     * Scaled sprite-relative coordinate of this
+                     * physical screen pixel.
+                     *
+                     * Keep it modulo 1024 so an unaligned pixel just
+                     * before the sprite gets a high value such as 1023
+                     * and is rejected below.
+                     */
+                    scaled_pixel =
+                        (scaled_x_pos + i) &
+                        32'h000003FF;
+            
+            
+                    /*
+                     * Is this pixel actually inside the scaled sprite?
+                     */
+                    if(scaled_pixel < scaled_width) begin
+                    
+                        /*
+                         * Nearest-neighbour horizontal scaling.
+                         *
+                         * scale 0 -> /1
+                         * scale 1 -> /2
+                         * scale 2 -> /4
+                         * scale 3 -> /8
+                         */
+                        src_pixel =
+                            scaled_pixel >> scale;
+            
+            
+                        if(src_pixel < sprite_width) begin
+                        
+                            /*
+                             * Alpha nibble zero = transparent.
+                             */
+                            if(row_buf[src_pixel][15:12] != 4'h0) begin
+                            
+                                line_data[i*16 +: 16] <=
+                                    row_buf[src_pixel];
+            
+                                line_we[i*2 +: 2] <=
+                                    2'b11;
+            
+                            end
+            
+                        end
+            
                     end
+            
                 end
-
-                if(((line_word + 1) * 4) >= (sprite_width + line_off)) begin
+            
+            
+                /*
+                 * line_end was already clipped to the physical
+                 * 640-pixel screen.
+                 *
+                 * Therefore line_pos never wraps around.
+                 */
+                if(line_pos == line_end) begin
+                
                     state <= STATE_C5;
-                end else begin
-                    line_word <= line_word + 1'b1;
-                    line_pos <= line_pos + 1'b1;
+            
                 end
+                else begin
+                
+                    line_pos <=
+                        line_pos + 1'b1;
+            
+                    /*
+                     * One line-buffer word represents four screen pixels.
+                     */
+                    scaled_x_pos <=
+                        scaled_x_pos + 10'd4;
+            
+                end
+            
             end
 
             STATE_C5: begin

@@ -107,7 +107,16 @@ Block_top_sv your_instance_name (
   .KYBD_COL(KYBD_COL), // input wire [7:0] KYBD_COL
   .KYBD_ROW(KYBD_ROW), // output wire [3:0] KYBD_ROW
   .KYBD_LED_CAPS(KYBD_LED_CAPS), // output wire KYBD_LED_CAPS
-  .KYBD_LED_CODE(KYBD_LED_CODE) // output wire KYBD_LED_CODE
+  .KYBD_LED_CODE(KYBD_LED_CODE), // output wire KYBD_LED_CODE
+  .ide_a(ide_a), // output wire [2:0] ide_a
+  .ide_wr_n(ide_wr_n), // output wire ide_wr_n
+  .ide_d(ide_d), // inout wire [15:0] ide_d
+  .ide_reset_n(ide_reset_n), // output wire ide_reset_n
+  .ide_cs1_n(ide_cs1_n), // output wire ide_cs1_n
+  .ide_rd_n(ide_rd_n), // output wire ide_rd_n
+  .ide_cs0_n(ide_cs0_n), // output wire ide_cs0_n
+  .ide_irq(ide_irq), // input wire ide_irq
+  .ide_dtack(ide_dtack) // output wire [0:0] ide_dtack
 );
 // INST_TAG_END ------  End cut for WRAPPER INSTANTIATION Template  ------
 

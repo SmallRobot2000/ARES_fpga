@@ -7,9 +7,9 @@ WARNING: [XSIM 43-3431] One or more environment variables have been detected whi
 Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-5021] port 't1_map_cpu_addr' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/tb_VDP.sv:141]
-WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:734]
-WARNING: [VRFC 10-5021] port 'dina' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:754]
-WARNING: [VRFC 10-5021] port 'dina' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:772]
+WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:768]
+WARNING: [VRFC 10-5021] port 'dina' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:788]
+WARNING: [VRFC 10-5021] port 'dina' is not connected on this instance [/home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/sources_1/new/VDP.sv:806]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

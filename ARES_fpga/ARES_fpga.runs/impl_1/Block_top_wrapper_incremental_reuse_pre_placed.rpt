@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Fri Sep  4 20:58:25 2026
+| Date         : Sun Sep 13 22:17:23 2026
 | Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_incremental_reuse -file Block_top_wrapper_incremental_reuse_pre_placed.rpt
 | Design       : Block_top_wrapper
@@ -45,10 +45,10 @@ Table of Contents
 +-------+----------------------+----------------------------+--------------------+--------+
 |  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) |  Total |
 +-------+----------------------+----------------------------+--------------------+--------+
-| Cells |                98.48 |                      98.48 |               0.33 |  67529 |
-| Nets  |                98.86 |                      98.31 |               0.00 |  48697 |
-| Pins  |                    - |                      98.66 |                  - | 292885 |
-| Ports |               100.00 |                     100.00 |             100.00 |     94 |
+| Cells |               100.00 |                     100.00 |               0.39 |  67696 |
+| Nets  |                99.99 |                      99.96 |               0.00 |  48918 |
+| Pins  |                    - |                      99.99 |                  - | 294033 |
+| Ports |               100.00 |                     100.00 |             100.00 |    120 |
 +-------+----------------------+----------------------------+--------------------+--------+
 
 
@@ -84,7 +84,7 @@ Table of Contents
 | synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | read_checkpoint |             |             |     < 1 min |     < 1 min |       00:01 |       00:01 |
-| place_design    |       0.180 |             |     < 1 min |             |       00:01 |             |
+| place_design    |       0.180 |             |     < 1 min |             |       00:02 |             |
 | route_design    |       0.179 |             |       00:01 |             |       00:02 |             |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -131,7 +131,7 @@ Table of Contents
 
 6.1 Reference:
 --------------
-synth_design -directive areaoptimized_high -control_set_opt 1 -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -top  Block_top_wrapper -part  xc7a100tfgg484-2 
+synth_design -directive areaoptimized_medium -control_set_opt 1 -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -top  Block_top_wrapper -part  xc7a100tfgg484-2 
 opt_design -directive ExploreWithRemap
 read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.srcs/utils_1/imports/impl_1/Block_top_wrapper_routed.dcp
 place_design
@@ -146,16 +146,13 @@ read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /hom
 7. Non Reuse Information
 ------------------------
 
-+------------------------------------------------------+------+
-|                         Type                         |   %  |
-+------------------------------------------------------+------+
-| Non-Reused Cells                                     | 1.51 |
-|   New                                                | 1.50 |
-|   Discarded illegal placement due to netlist changes | 0.01 |
-|   Discarded to improve timing                        | 0.01 |
-| Partially reused nets                                | 0.09 |
-| Non-Reused nets                                      | 1.59 |
-| Non-Reused Ports                                     | 0.00 |
-+------------------------------------------------------+------+
++-----------------------+------+
+|          Type         |   %  |
++-----------------------+------+
+| Non-Reused Cells      | 0.00 |
+| Partially reused nets | 0.01 |
+| Non-Reused nets       | 0.02 |
+| Non-Reused Ports      | 0.00 |
++-----------------------+------+
 
 

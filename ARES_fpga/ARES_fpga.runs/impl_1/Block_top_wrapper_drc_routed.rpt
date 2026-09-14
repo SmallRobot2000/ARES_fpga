@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Fri Sep  4 21:00:12 2026
+| Date         : Sun Sep 13 22:18:54 2026
 | Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_drc -file Block_top_wrapper_drc_routed.rpt -pb Block_top_wrapper_drc_routed.pb -rpx Block_top_wrapper_drc_routed.rpx
 | Design       : Block_top_wrapper
@@ -418,22 +418,22 @@ Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-102 net(s) have no routable loads. The problem bus(es) and/or net(s) are Block_top_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/data_valid,
+107 net(s) have no routable loads. The problem bus(es) and/or net(s) are Block_top_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/data_valid,
 Block_top_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/data_valid,
 Block_top_i/axi_quad_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/data_valid,
 Block_top_i/axi_quad_spi_1/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/data_valid,
-Block_top_i/smartconnect_io/inst/m03_nodes/m03_r_node/inst/mi_handler_m_sc_areset_pipe,
-Block_top_i/smartconnect_io/inst/m04_nodes/m04_aw_node/inst/mi_handler_m_sc_areset_pipe,
+Block_top_i/smartconnect_io/inst/m04_nodes/m04_ar_node/inst/mi_handler_m_sc_areset_pipe,
+Block_top_i/smartconnect_io/inst/m04_nodes/m04_b_node/inst/mi_handler_m_sc_areset_pipe,
 Block_top_i/smartconnect_io/inst/m05_nodes/m05_ar_node/inst/mi_handler_m_sc_areset_pipe,
-Block_top_i/smartconnect_io/inst/m05_nodes/m05_w_node/inst/mi_handler_m_sc_areset_pipe,
+Block_top_i/smartconnect_io/inst/m05_nodes/m05_r_node/inst/mi_handler_m_sc_areset_pipe,
 Block_top_i/smartconnect_io/inst/m06_nodes/m06_r_node/inst/mi_handler_m_sc_areset_pipe,
-Block_top_i/smartconnect_io/inst/m06_nodes/m06_w_node/inst/mi_handler_m_sc_areset_pipe,
-Block_top_i/smartconnect_io/inst/m08_nodes/m08_ar_node/inst/mi_handler_m_sc_areset_pipe,
-Block_top_i/smartconnect_io/inst/m08_nodes/m08_aw_node/inst/mi_handler_m_sc_areset_pipe,
-Block_top_i/smartconnect_io/inst/m09_nodes/m09_b_node/inst/mi_handler_m_sc_areset_pipe,
+Block_top_i/smartconnect_io/inst/m07_nodes/m07_aw_node/inst/mi_handler_m_sc_areset_pipe,
+Block_top_i/smartconnect_io/inst/m07_nodes/m07_b_node/inst/mi_handler_m_sc_areset_pipe,
+Block_top_i/smartconnect_io/inst/m07_nodes/m07_w_node/inst/mi_handler_m_sc_areset_pipe,
+Block_top_i/smartconnect_io/inst/m09_nodes/m09_w_node/inst/mi_handler_m_sc_areset_pipe,
 Block_top_i/util_ds_buf_3/U0/USE_IOBUF.GEN_IOBUF[0].IOBUF_I/O,
 Block_top_i/util_ds_buf_5/U0/USE_IOBUF.GEN_IOBUF[0].IOBUF_I/O
- (the first 15 of 86 listed nets/buses).
+ (the first 15 of 91 listed nets/buses).
 Related violations: <none>
 
 

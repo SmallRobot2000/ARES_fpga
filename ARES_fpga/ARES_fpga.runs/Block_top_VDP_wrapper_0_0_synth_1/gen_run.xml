@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="Block_top_VDP_wrapper_0_0_synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1787235307">
+<GenRun Id="Block_top_VDP_wrapper_0_0_synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1788559381">
   <File Type="RDS-DCP" Name="Block_top_VDP_wrapper_0_0.dcp"/>
   <File Type="RDS-RDS" Name="Block_top_VDP_wrapper_0_0.vds"/>
   <File Type="RDS-UTIL" Name="Block_top_VDP_wrapper_0_0_utilization_synth.rpt"/>
@@ -41,6 +41,8 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_3"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_4"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>
@@ -49,6 +51,7 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="impl_1"/>
+        <Attr Name="UsedInSteps" Val="impl_1_copy_1"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>

@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Fri Sep  4 20:55:10 2026
+//Date        : Sun Sep 13 22:14:32 2026
 //Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target Block_top_wrapper.bd
 //Design      : Block_top_wrapper
@@ -32,6 +32,15 @@ module Block_top_wrapper
     ddr3_reset_n,
     ddr3_we_n,
     h_sync,
+    ide_a,
+    ide_cs0_n,
+    ide_cs1_n,
+    ide_d,
+    ide_dtack,
+    ide_irq,
+    ide_rd_n,
+    ide_reset_n,
+    ide_wr_n,
     rst_n,
     spi_controller0_miso,
     spi_controller0_mosi,
@@ -74,6 +83,15 @@ module Block_top_wrapper
   output ddr3_reset_n;
   output ddr3_we_n;
   output h_sync;
+  output [2:0]ide_a;
+  output ide_cs0_n;
+  output ide_cs1_n;
+  inout [15:0]ide_d;
+  output [0:0]ide_dtack;
+  input ide_irq;
+  output ide_rd_n;
+  output ide_reset_n;
+  output ide_wr_n;
   input rst_n;
   inout [0:0]spi_controller0_miso;
   inout [0:0]spi_controller0_mosi;
@@ -117,6 +135,15 @@ module Block_top_wrapper
   wire ddr3_reset_n;
   wire ddr3_we_n;
   wire h_sync;
+  wire [2:0]ide_a;
+  wire ide_cs0_n;
+  wire ide_cs1_n;
+  wire [15:0]ide_d;
+  wire [0:0]ide_dtack;
+  wire ide_irq;
+  wire ide_rd_n;
+  wire ide_reset_n;
+  wire ide_wr_n;
   wire rst_n;
   wire [0:0]spi_controller0_miso;
   wire [0:0]spi_controller0_mosi;
@@ -161,6 +188,15 @@ module Block_top_wrapper
         .ddr3_reset_n(ddr3_reset_n),
         .ddr3_we_n(ddr3_we_n),
         .h_sync(h_sync),
+        .ide_a(ide_a),
+        .ide_cs0_n(ide_cs0_n),
+        .ide_cs1_n(ide_cs1_n),
+        .ide_d(ide_d),
+        .ide_dtack(ide_dtack),
+        .ide_irq(ide_irq),
+        .ide_rd_n(ide_rd_n),
+        .ide_reset_n(ide_reset_n),
+        .ide_wr_n(ide_wr_n),
         .rst_n(rst_n),
         .spi_controller0_miso(spi_controller0_miso),
         .spi_controller0_mosi(spi_controller0_mosi),

@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Fri Sep  4 20:55:09 2026
+//Date        : Sun Sep 13 22:14:32 2026
 //Host        : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 //Command     : generate_target Block_top.bd
 //Design      : Block_top
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Block_top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Block_top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=31,numReposBlks=31,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_clkrst_cnt=2,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "Block_top.hwdef" *) 
+(* CORE_GENERATION_INFO = "Block_top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Block_top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=33,numReposBlks=33,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_clkrst_cnt=2,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "Block_top.hwdef" *) 
 module Block_top
    (KYBD_COL,
     KYBD_LED_CAPS,
@@ -33,6 +33,15 @@ module Block_top
     ddr3_reset_n,
     ddr3_we_n,
     h_sync,
+    ide_a,
+    ide_cs0_n,
+    ide_cs1_n,
+    ide_d,
+    ide_dtack,
+    ide_irq,
+    ide_rd_n,
+    ide_reset_n,
+    ide_wr_n,
     rst_n,
     spi_controller0_miso,
     spi_controller0_mosi,
@@ -75,6 +84,15 @@ module Block_top
   output ddr3_reset_n;
   output ddr3_we_n;
   output h_sync;
+  output [2:0]ide_a;
+  output ide_cs0_n;
+  output ide_cs1_n;
+  inout [15:0]ide_d;
+  output [0:0]ide_dtack;
+  input ide_irq;
+  output ide_rd_n;
+  output ide_reset_n;
+  output ide_wr_n;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RST_N RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RST_N, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input rst_n;
   inout [0:0]spi_controller0_miso;
   inout [0:0]spi_controller0_mosi;
@@ -202,6 +220,7 @@ module Block_top
   wire [31:0]axi_bram_ctrl_vdp_t1_map_BRAM_PORTA_DOUT;
   wire axi_bram_ctrl_vdp_t1_map_BRAM_PORTA_EN;
   wire [3:0]axi_bram_ctrl_vdp_t1_map_BRAM_PORTA_WE;
+  wire axi_cf_controller_0_irq;
   wire axi_keyboard_0_irq;
   wire axi_quad_spi_0_io0_o;
   wire axi_quad_spi_0_io0_t;
@@ -241,6 +260,15 @@ module Block_top
   wire ddr3_reset_n;
   wire ddr3_we_n;
   wire h_sync;
+  wire [2:0]ide_a;
+  wire ide_cs0_n;
+  wire ide_cs1_n;
+  wire [15:0]ide_d;
+  wire [0:0]ide_dtack;
+  wire ide_irq;
+  wire ide_rd_n;
+  wire ide_reset_n;
+  wire ide_wr_n;
   wire mig_axi_wrapper_0_ui_clk;
   wire reset;
   wire [0:0]reset_n;
@@ -488,6 +516,25 @@ module Block_top
   wire smartconnect_io_M10_AXI_WREADY;
   wire [3:0]smartconnect_io_M10_AXI_WSTRB;
   wire smartconnect_io_M10_AXI_WVALID;
+  wire [16:0]smartconnect_io_M11_AXI_ARADDR;
+  wire [2:0]smartconnect_io_M11_AXI_ARPROT;
+  wire smartconnect_io_M11_AXI_ARREADY;
+  wire smartconnect_io_M11_AXI_ARVALID;
+  wire [16:0]smartconnect_io_M11_AXI_AWADDR;
+  wire [2:0]smartconnect_io_M11_AXI_AWPROT;
+  wire smartconnect_io_M11_AXI_AWREADY;
+  wire smartconnect_io_M11_AXI_AWVALID;
+  wire smartconnect_io_M11_AXI_BREADY;
+  wire [1:0]smartconnect_io_M11_AXI_BRESP;
+  wire smartconnect_io_M11_AXI_BVALID;
+  wire [31:0]smartconnect_io_M11_AXI_RDATA;
+  wire smartconnect_io_M11_AXI_RREADY;
+  wire [1:0]smartconnect_io_M11_AXI_RRESP;
+  wire smartconnect_io_M11_AXI_RVALID;
+  wire [31:0]smartconnect_io_M11_AXI_WDATA;
+  wire smartconnect_io_M11_AXI_WREADY;
+  wire [3:0]smartconnect_io_M11_AXI_WSTRB;
+  wire smartconnect_io_M11_AXI_WVALID;
   wire [31:0]smartconnect_mem_M01_AXI_ARADDR;
   wire [1:0]smartconnect_mem_M01_AXI_ARBURST;
   wire [3:0]smartconnect_mem_M01_AXI_ARCACHE;
@@ -885,6 +932,37 @@ module Block_top
         .s_axi_wready(smartconnect_io_M07_AXI_WREADY),
         .s_axi_wstrb(smartconnect_io_M07_AXI_WSTRB),
         .s_axi_wvalid(smartconnect_io_M07_AXI_WVALID));
+  Block_top_axi_cf_controller_0_0 axi_cf_controller_0
+       (.cf_cs0_n(ide_cs0_n),
+        .cf_cs1_n(ide_cs1_n),
+        .cf_da(ide_a),
+        .cf_dq(ide_d),
+        .cf_intrq(ide_irq),
+        .cf_iord_n(ide_rd_n),
+        .cf_iowr_n(ide_wr_n),
+        .cf_reset_n(ide_reset_n),
+        .irq(axi_cf_controller_0_irq),
+        .s_axi_aclk(mig_axi_wrapper_0_ui_clk),
+        .s_axi_araddr(smartconnect_io_M11_AXI_ARADDR),
+        .s_axi_aresetn(reset_n),
+        .s_axi_arprot(smartconnect_io_M11_AXI_ARPROT),
+        .s_axi_arready(smartconnect_io_M11_AXI_ARREADY),
+        .s_axi_arvalid(smartconnect_io_M11_AXI_ARVALID),
+        .s_axi_awaddr(smartconnect_io_M11_AXI_AWADDR),
+        .s_axi_awprot(smartconnect_io_M11_AXI_AWPROT),
+        .s_axi_awready(smartconnect_io_M11_AXI_AWREADY),
+        .s_axi_awvalid(smartconnect_io_M11_AXI_AWVALID),
+        .s_axi_bready(smartconnect_io_M11_AXI_BREADY),
+        .s_axi_bresp(smartconnect_io_M11_AXI_BRESP),
+        .s_axi_bvalid(smartconnect_io_M11_AXI_BVALID),
+        .s_axi_rdata(smartconnect_io_M11_AXI_RDATA),
+        .s_axi_rready(smartconnect_io_M11_AXI_RREADY),
+        .s_axi_rresp(smartconnect_io_M11_AXI_RRESP),
+        .s_axi_rvalid(smartconnect_io_M11_AXI_RVALID),
+        .s_axi_wdata(smartconnect_io_M11_AXI_WDATA),
+        .s_axi_wready(smartconnect_io_M11_AXI_WREADY),
+        .s_axi_wstrb(smartconnect_io_M11_AXI_WSTRB),
+        .s_axi_wvalid(smartconnect_io_M11_AXI_WVALID));
   Block_top_axi_keyboard_0_0 axi_keyboard_0
        (.caps_led(KYBD_LED_CAPS),
         .irq(axi_keyboard_0_irq),
@@ -1357,6 +1435,25 @@ module Block_top
         .M10_AXI_wready(smartconnect_io_M10_AXI_WREADY),
         .M10_AXI_wstrb(smartconnect_io_M10_AXI_WSTRB),
         .M10_AXI_wvalid(smartconnect_io_M10_AXI_WVALID),
+        .M11_AXI_araddr(smartconnect_io_M11_AXI_ARADDR),
+        .M11_AXI_arprot(smartconnect_io_M11_AXI_ARPROT),
+        .M11_AXI_arready(smartconnect_io_M11_AXI_ARREADY),
+        .M11_AXI_arvalid(smartconnect_io_M11_AXI_ARVALID),
+        .M11_AXI_awaddr(smartconnect_io_M11_AXI_AWADDR),
+        .M11_AXI_awprot(smartconnect_io_M11_AXI_AWPROT),
+        .M11_AXI_awready(smartconnect_io_M11_AXI_AWREADY),
+        .M11_AXI_awvalid(smartconnect_io_M11_AXI_AWVALID),
+        .M11_AXI_bready(smartconnect_io_M11_AXI_BREADY),
+        .M11_AXI_bresp(smartconnect_io_M11_AXI_BRESP),
+        .M11_AXI_bvalid(smartconnect_io_M11_AXI_BVALID),
+        .M11_AXI_rdata(smartconnect_io_M11_AXI_RDATA),
+        .M11_AXI_rready(smartconnect_io_M11_AXI_RREADY),
+        .M11_AXI_rresp(smartconnect_io_M11_AXI_RRESP),
+        .M11_AXI_rvalid(smartconnect_io_M11_AXI_RVALID),
+        .M11_AXI_wdata(smartconnect_io_M11_AXI_WDATA),
+        .M11_AXI_wready(smartconnect_io_M11_AXI_WREADY),
+        .M11_AXI_wstrb(smartconnect_io_M11_AXI_WSTRB),
+        .M11_AXI_wvalid(smartconnect_io_M11_AXI_WVALID),
         .S00_AXI_araddr(VexiiSocWrapper_0_pBus_ARADDR),
         .S00_AXI_arprot(VexiiSocWrapper_0_pBus_ARPROT),
         .S00_AXI_arready(VexiiSocWrapper_0_pBus_ARREADY),
@@ -1546,9 +1643,11 @@ module Block_top
         .In31(1'b0),
         .In4(util_vector_logic_2_Res),
         .In5(axi_keyboard_0_irq),
-        .In6(1'b0),
+        .In6(axi_cf_controller_0_irq),
         .In7(1'b0),
         .In8(1'b0),
         .In9(1'b0),
         .dout(xlconcat_0_dout));
+  Block_top_xlconstant_1_0 xlconstant_1
+       (.dout(ide_dtack));
 endmodule

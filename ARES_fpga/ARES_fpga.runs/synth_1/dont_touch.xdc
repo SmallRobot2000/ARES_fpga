@@ -13,6 +13,8 @@
 
 # XDC: new/KYB_pins.xdc
 
+# XDC: new/IDE_pins.xdc
+
 # Block Designs: bd/Block_top/Block_top.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top || ORIG_REF_NAME==Block_top} -quiet] -quiet
 
@@ -135,5 +137,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_u
 
 # IP: bd/Block_top/ip/Block_top_axi_keyboard_0_0/Block_top_axi_keyboard_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_keyboard_0_0 || ORIG_REF_NAME==Block_top_axi_keyboard_0_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_xlconstant_1_0/Block_top_xlconstant_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_xlconstant_1_0 || ORIG_REF_NAME==Block_top_xlconstant_1_0} -quiet] -quiet
+
+# IP: bd/Block_top/ip/Block_top_axi_cf_controller_0_0/Block_top_axi_cf_controller_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Block_top_axi_cf_controller_0_0 || ORIG_REF_NAME==Block_top_axi_cf_controller_0_0} -quiet] -quiet
 
 # XDC: /home/lovro/ARES/ARES_fpga/ARES_fpga/ARES_fpga.gen/sources_1/bd/Block_top/Block_top_ooc.xdc

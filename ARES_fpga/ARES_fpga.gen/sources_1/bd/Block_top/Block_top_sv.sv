@@ -136,7 +136,25 @@ module Block_top_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   output wire KYBD_LED_CAPS,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire KYBD_LED_CODE
+  output wire KYBD_LED_CODE,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [2:0] ide_a,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire ide_wr_n,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire [15:0] ide_d,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire ide_reset_n,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire ide_cs1_n,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire ide_rd_n,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire ide_cs0_n,
+  (* X_INTERFACE_IGNORE = "true" *)
+  input wire ide_irq,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [0:0] ide_dtack
 );
 
   Block_top inst (
@@ -181,7 +199,16 @@ module Block_top_sv (
     .KYBD_COL(KYBD_COL),
     .KYBD_ROW(KYBD_ROW),
     .KYBD_LED_CAPS(KYBD_LED_CAPS),
-    .KYBD_LED_CODE(KYBD_LED_CODE)
+    .KYBD_LED_CODE(KYBD_LED_CODE),
+    .ide_a(ide_a),
+    .ide_wr_n(ide_wr_n),
+    .ide_d(ide_d),
+    .ide_reset_n(ide_reset_n),
+    .ide_cs1_n(ide_cs1_n),
+    .ide_rd_n(ide_rd_n),
+    .ide_cs0_n(ide_cs0_n),
+    .ide_irq(ide_irq),
+    .ide_dtack(ide_dtack)
   );
 
 endmodule

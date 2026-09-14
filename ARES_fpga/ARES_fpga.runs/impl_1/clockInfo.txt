@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2025.2
-| Date         : Fri Sep  4 20:58:42 2026
+| Date         : Sun Sep 13 22:17:40 2026
 | Host         : lovroLinuxM
 | Design       : design_1
 | Device       : xc7a100t-fgg484-2--

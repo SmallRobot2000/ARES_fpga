@@ -1208,6 +1208,18 @@ for (s = 0; s < 32; s = s + 1) begin
     );
 
 end
+sprite_att = 64'h8010_0100_00F0_00AA;
+write_sprite_attribute(0, sprite_att);
+
+sprite_att = 64'h8030_0100_03F0_0044;
+write_sprite_attribute(1, sprite_att);
+
+sprite_att = 64'h8050_0100_0088_00AA;
+write_sprite_attribute(2, sprite_att);
+
+sprite_att = 64'h8070_0100_0030_03F2;
+write_sprite_attribute(3, sprite_att);
+
 //Enable all used layers
 
         

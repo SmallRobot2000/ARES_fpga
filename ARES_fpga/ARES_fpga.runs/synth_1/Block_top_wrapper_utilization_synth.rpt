@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Fri Sep  4 20:56:16 2026
+| Date         : Sun Sep 13 22:15:16 2026
 | Host         : lovroLinuxM running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file Block_top_wrapper_utilization_synth.rpt -pb Block_top_wrapper_utilization_synth.pb
 | Design       : Block_top_wrapper
@@ -95,7 +95,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   37 |     0 |          0 |       285 | 12.98 |
+| Bonded IOB                  |   47 |     0 |          0 |       285 | 16.49 |
 | Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         6 |  0.00 |
@@ -154,8 +154,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |   25 |                  IO |
-| IBUF     |   12 |                  IO |
+| OBUF     |   34 |                  IO |
+| IBUF     |   13 |                  IO |
 +----------+------+---------------------+
 
 
@@ -185,6 +185,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | Block_top_axi_quad_spi_0_2            |    1 |
 | Block_top_axi_quad_spi_0_1            |    1 |
 | Block_top_axi_keyboard_0_0            |    1 |
+| Block_top_axi_cf_controller_0_0       |    1 |
 | Block_top_axi_bram_ctrl_vdp_t0_map_0  |    1 |
 | Block_top_axi_bram_ctrl_vdp_t0_data_1 |    1 |
 | Block_top_axi_bram_ctrl_vdp_t0_data_0 |    1 |

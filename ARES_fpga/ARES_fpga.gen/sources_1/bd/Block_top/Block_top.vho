@@ -94,7 +94,16 @@ COMPONENT Block_top
     KYBD_COL : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     KYBD_ROW : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     KYBD_LED_CAPS : OUT STD_LOGIC;
-    KYBD_LED_CODE : OUT STD_LOGIC
+    KYBD_LED_CODE : OUT STD_LOGIC;
+    ide_a : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+    ide_wr_n : OUT STD_LOGIC;
+    ide_d : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    ide_reset_n : OUT STD_LOGIC;
+    ide_cs1_n : OUT STD_LOGIC;
+    ide_rd_n : OUT STD_LOGIC;
+    ide_cs0_n : OUT STD_LOGIC;
+    ide_irq : IN STD_LOGIC;
+    ide_dtack : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -146,7 +155,16 @@ your_instance_name : Block_top
     KYBD_COL => KYBD_COL,
     KYBD_ROW => KYBD_ROW,
     KYBD_LED_CAPS => KYBD_LED_CAPS,
-    KYBD_LED_CODE => KYBD_LED_CODE
+    KYBD_LED_CODE => KYBD_LED_CODE,
+    ide_a => ide_a,
+    ide_wr_n => ide_wr_n,
+    ide_d => ide_d,
+    ide_reset_n => ide_reset_n,
+    ide_cs1_n => ide_cs1_n,
+    ide_rd_n => ide_rd_n,
+    ide_cs0_n => ide_cs0_n,
+    ide_irq => ide_irq,
+    ide_dtack => ide_dtack
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 
