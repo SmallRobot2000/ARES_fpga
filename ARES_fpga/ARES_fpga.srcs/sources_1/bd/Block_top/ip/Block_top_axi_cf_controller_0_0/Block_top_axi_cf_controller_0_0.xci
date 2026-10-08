@@ -10,17 +10,23 @@
       "component_parameters": {
         "C_S_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_S_AXI_ADDR_WIDTH": [ { "value": "17", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "SETUP_CYCLES": [ { "value": "8", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "STROBE_CYCLES": [ { "value": "30", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "HOLD_CYCLES": [ { "value": "22", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "DATA_SETUP_CYCLES": [ { "value": "3", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "DATA_STROBE_CYCLES": [ { "value": "10", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "DATA_HOLD_CYCLES": [ { "value": "11", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "REG_SETUP_CYCLES": [ { "value": "3", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "REG_STROBE_CYCLES": [ { "value": "29", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "REG_HOLD_CYCLES": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "Block_top_axi_cf_controller_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "C_S_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S_AXI_ADDR_WIDTH": [ { "value": "17", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "SETUP_CYCLES": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "STROBE_CYCLES": [ { "value": "30", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "HOLD_CYCLES": [ { "value": "22", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "DATA_SETUP_CYCLES": [ { "value": "3", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "DATA_STROBE_CYCLES": [ { "value": "10", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "DATA_HOLD_CYCLES": [ { "value": "11", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "REG_SETUP_CYCLES": [ { "value": "3", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "REG_STROBE_CYCLES": [ { "value": "29", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "REG_HOLD_CYCLES": [ { "value": "2", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
@@ -133,9 +139,9 @@
             "RUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "BUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_PROT": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_BRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_RRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_PROT": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_BRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_RRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "SUPPORTS_NARROW_BURST": [ { "value": "0", "value_src": "auto", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "NUM_READ_OUTSTANDING": [ { "value": "1", "value_src": "auto", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "NUM_WRITE_OUTSTANDING": [ { "value": "1", "value_src": "auto", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
@@ -198,5 +204,5 @@
       }
     }
   },
-  "checksum": "68f76498"
+  "checksum": "4cac712a"
 }

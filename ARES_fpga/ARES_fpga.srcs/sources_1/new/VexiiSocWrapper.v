@@ -1,4 +1,46 @@
 module VexiiSocWrapper(
+
+  input  wire          dma_bus_awvalid,
+  output reg           dma_bus_awready,
+  input  wire [31:0]   dma_bus_awaddr,
+  input  wire [3:0]    dma_bus_awid,
+  input  wire [3:0]    dma_bus_awregion,
+  input  wire [7:0]    dma_bus_awlen,
+  input  wire [2:0]    dma_bus_awsize,
+  input  wire [1:0]    dma_bus_awburst,
+  input  wire [0:0]    dma_bus_awlock,
+  input  wire [3:0]    dma_bus_awcache,
+  input  wire [3:0]    dma_bus_awqos,
+  input  wire [2:0]    dma_bus_awprot,
+  input  wire          dma_bus_wvalid,
+  output reg           dma_bus_wready,
+  input  wire [63:0]   dma_bus_wdata,
+  input  wire [7:0]    dma_bus_wstrb,
+  input  wire          dma_bus_wlast,
+  output wire          dma_bus_bvalid,
+  input  wire          dma_bus_bready,
+  output wire [3:0]    dma_bus_bid,
+  output wire [1:0]    dma_bus_bresp,
+  input  wire          dma_bus_arvalid,
+  output reg           dma_bus_arready,
+  input  wire [31:0]   dma_bus_araddr,
+  input  wire [3:0]    dma_bus_arid,
+  input  wire [3:0]    dma_bus_arregion,
+  input  wire [7:0]    dma_bus_arlen,
+  input  wire [2:0]    dma_bus_arsize,
+  input  wire [1:0]    dma_bus_arburst,
+  input  wire [0:0]    dma_bus_arlock,
+  input  wire [3:0]    dma_bus_arcache,
+  input  wire [3:0]    dma_bus_arqos,
+  input  wire [2:0]    dma_bus_arprot,
+  output wire          dma_bus_rvalid,
+  input  wire          dma_bus_rready,
+  output wire [63:0]   dma_bus_rdata,
+  output wire [3:0]    dma_bus_rid,
+  output wire [1:0]    dma_bus_rresp,
+  output wire          dma_bus_rlast,
+  
+  
   output wire          mBus_awvalid,
   input  wire          mBus_awready,
   output wire [31:0]   mBus_awaddr,
@@ -52,7 +94,7 @@ module VexiiSocWrapper(
 
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *)
 (* X_INTERFACE_PARAMETER =
-   "ASSOCIATED_BUSIF mBus:pBus, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000" *)
+   "ASSOCIATED_BUSIF mBus:pBus:dma_bus, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000" *)
 input wire s_axi_aclk,
 
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 s_axi_aresetn RST" *)
@@ -63,6 +105,48 @@ input wire s_axi_aresetn,
 );
 VexiiSoc Soc
 (
+
+  .dma_bus_awvalid(dma_bus_awvalid),
+  .dma_bus_awready(dma_bus_awready),
+  .dma_bus_awaddr(dma_bus_awaddr),
+  .dma_bus_awid(dma_bus_awid),
+  .dma_bus_awregion(dma_bus_awregion),
+  .dma_bus_awlen(dma_bus_awlen),
+  .dma_bus_awsize(dma_bus_awsize),
+  .dma_bus_awburst(dma_bus_awburst),
+  .dma_bus_awlock(dma_bus_awlock),
+  .dma_bus_awcache(dma_bus_awcache),
+  .dma_bus_awqos(dma_bus_awqos),
+  .dma_bus_awprot(dma_bus_awprot),
+  .dma_bus_wvalid(dma_bus_wvalid),
+  .dma_bus_wready(dma_bus_wready),
+  .dma_bus_wdata(dma_bus_wdata),
+  .dma_bus_wstrb(dma_bus_wstrb),
+  .dma_bus_wlast(dma_bus_wlast),
+  .dma_bus_bvalid(dma_bus_bvalid),
+  .dma_bus_bready(dma_bus_bready),
+  .dma_bus_bid(dma_bus_bid),
+  .dma_bus_bresp(dma_bus_bresp),
+  .dma_bus_arvalid(dma_bus_arvalid),
+  .dma_bus_arready(dma_bus_arready),
+  .dma_bus_araddr(dma_bus_araddr),
+  .dma_bus_arid(dma_bus_arid),
+  .dma_bus_arregion(dma_bus_arregion),
+  .dma_bus_arlen(dma_bus_arlen),
+  .dma_bus_arsize(dma_bus_arsize),
+  .dma_bus_arburst(dma_bus_arburst),
+  .dma_bus_arlock(dma_bus_arlock),
+  .dma_bus_arcache(dma_bus_arcache),
+  .dma_bus_arqos(dma_bus_arqos),
+  .dma_bus_arprot(dma_bus_arprot),
+  .dma_bus_rvalid(dma_bus_rvalid),
+  .dma_bus_rready(dma_bus_rready),
+  .dma_bus_rdata(dma_bus_rdata),
+  .dma_bus_rid(dma_bus_rid),
+  .dma_bus_rresp(dma_bus_rresp),
+  .dma_bus_rlast(dma_bus_rlast),
+  
+  
   .mBus_awvalid(mBus_awvalid),
   .mBus_awready(mBus_awready),
   .mBus_awaddr(mBus_awaddr),
@@ -116,7 +200,8 @@ VexiiSoc Soc
 
   .litex_reset(~s_axi_aresetn),
   .litex_clk(s_axi_aclk),
-  .peripheral_externalInterrupts_port(peripheral_externalInterrupts_port)
+  .peripheral_externalInterrupts_port(peripheral_externalInterrupts_port),
+  .debug() //Not needed
 );
 
 endmodule

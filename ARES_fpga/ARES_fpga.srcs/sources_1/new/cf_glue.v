@@ -26,22 +26,37 @@
  * transaction.  The AXI response is withheld until the full CF PIO
  * cycle has completed, so no external wait-state signal is needed.
  *
- * Default timing at 100 MHz:
- *   setup   =  8 clocks =  80 ns
- *   strobe  = 30 clocks = 300 ns
- *   hold    = 22 clocks = 220 ns
- *   total   = 60 clocks = 600 ns
+ * PIO mode 2 timing at 100 MHz (10 ns/clock).
  *
- * This is deliberately conservative for ATA PIO mode 0.
+ * 16-bit DATA register (CS0#, DA=000):
+ *   setup   =  3 clocks =  30 ns
+ *   strobe  = 10 clocks = 100 ns
+ *   hold    = 11 clocks = 110 ns
+ *   total   = 24 clocks = 240 ns
+ *
+ * 8-bit task-file/control registers:
+ *   setup   =  3 clocks =  30 ns
+ *   strobe  = 29 clocks = 290 ns
+ *   hold    =  2 clocks =  20 ns
+ *   total   = 34 clocks = 340 ns
+ *
+ * The longer register strobe is required for PIO modes 0..2.
+ * PIO2 does not require IORDY cycle stretching.
  */
 
 module axi_cf_controller #(
     parameter integer C_S_AXI_DATA_WIDTH = 32,
     parameter integer C_S_AXI_ADDR_WIDTH = 17,
 
-    parameter integer SETUP_CYCLES  = 8,
-    parameter integer STROBE_CYCLES = 30,
-    parameter integer HOLD_CYCLES   = 22
+    /* PIO2 timing for the 16-bit ATA DATA register (DA=000). */
+    parameter integer DATA_SETUP_CYCLES  = 3,
+    parameter integer DATA_STROBE_CYCLES = 10,
+    parameter integer DATA_HOLD_CYCLES   = 11,
+
+    /* PIO2 timing for 8-bit task-file/control registers. */
+    parameter integer REG_SETUP_CYCLES   = 3,
+    parameter integer REG_STROBE_CYCLES  = 29,
+    parameter integer REG_HOLD_CYCLES    = 2
 )(
     /* AXI clock/reset */
     (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *)
@@ -139,6 +154,18 @@ module axi_cf_controller #(
     reg [2:0]  trans_da;
     reg [15:0] trans_wdata;
     reg [15:0] trans_rdata;
+
+    /*
+     * Timing for the current CF transaction.
+     *
+     * The 16-bit DATA register can use the normal PIO2 100 ns strobe,
+     * while 8-bit task-file/control registers require a 290 ns strobe.
+     * Latch the appropriate timing when the AXI transaction starts so
+     * it remains constant for the complete CF bus cycle.
+     */
+    reg [7:0] trans_setup_cycles;
+    reg [7:0] trans_strobe_cycles;
+    reg [7:0] trans_hold_cycles;
 
     /* Read address is consumed only when a CF transaction can start. */
     wire no_axi_response = !s_axi_bvalid && !s_axi_rvalid;
@@ -349,6 +376,10 @@ module axi_cf_controller #(
             trans_da       <= 3'b000;
             trans_wdata    <= 16'h0000;
             trans_rdata    <= 16'h0000;
+
+            trans_setup_cycles  <= REG_SETUP_CYCLES;
+            trans_strobe_cycles <= REG_STROBE_CYCLES;
+            trans_hold_cycles   <= REG_HOLD_CYCLES;
         end
         else begin
             /* Retire AXI responses. */
@@ -392,12 +423,21 @@ module axi_cf_controller #(
 
                             if (!next_awaddr[16] &&
                                 (address_to_da(next_awaddr) == 3'b000)) begin
+                                /* 16-bit DATA register: full PIO2 timing. */
+                                trans_setup_cycles  <= DATA_SETUP_CYCLES;
+                                trans_strobe_cycles <= DATA_STROBE_CYCLES;
+                                trans_hold_cycles   <= DATA_HOLD_CYCLES;
                                 trans_wdata <= selected_write_halfword(
                                     next_wdata,
                                     next_wstrb
                                 );
                             end
                             else begin
+                                /* 8-bit task-file/control register timing. */
+                                trans_setup_cycles  <= REG_SETUP_CYCLES;
+                                trans_strobe_cycles <= REG_STROBE_CYCLES;
+                                trans_hold_cycles   <= REG_HOLD_CYCLES;
+
                                 trans_wdata <= {
                                     8'h00,
                                     selected_write_byte(next_wdata, next_wstrb)
@@ -413,14 +453,29 @@ module axi_cf_controller #(
                         trans_bank     <= s_axi_araddr[16];
                         trans_da       <= address_to_da(s_axi_araddr);
                         trans_wdata    <= 16'h0000;
-                        s_axi_rresp    <= AXI_RESP_OKAY;
-                        cf_state       <= CF_SETUP;
+
+                        if (!s_axi_araddr[16] &&
+                            (address_to_da(s_axi_araddr) == 3'b000)) begin
+                            /* 16-bit DATA register: full PIO2 timing. */
+                            trans_setup_cycles  <= DATA_SETUP_CYCLES;
+                            trans_strobe_cycles <= DATA_STROBE_CYCLES;
+                            trans_hold_cycles   <= DATA_HOLD_CYCLES;
+                        end
+                        else begin
+                            /* 8-bit task-file/control register timing. */
+                            trans_setup_cycles  <= REG_SETUP_CYCLES;
+                            trans_strobe_cycles <= REG_STROBE_CYCLES;
+                            trans_hold_cycles   <= REG_HOLD_CYCLES;
+                        end
+
+                        s_axi_rresp <= AXI_RESP_OKAY;
+                        cf_state    <= CF_SETUP;
                     end
                 end
 
                 /* Address / chip-select setup before DIOR#/DIOW#. */
                 CF_SETUP: begin
-                    if (cf_count == SETUP_CYCLES - 1) begin
+                    if (cf_count == trans_setup_cycles - 1'b1) begin
                         cf_count <= 8'd0;
                         cf_state <= CF_STROBE;
                     end
@@ -429,12 +484,12 @@ module axi_cf_controller #(
                     end
                 end
 
-                /* DIOR#/DIOW# asserted for a fixed PIO0-compatible width. */
+                /* DIOR#/DIOW# asserted for the selected PIO2 width. */
                 CF_STROBE: begin
                     if (!trans_is_write)
                         trans_rdata <= cf_dq_i;
 
-                    if (cf_count == STROBE_CYCLES - 1) begin
+                    if (cf_count == trans_strobe_cycles - 1'b1) begin
                         /* Capture read data on the final active-strobe clock. */
                         if (!trans_is_write)
                             trans_rdata <= cf_dq_i;
@@ -449,7 +504,7 @@ module axi_cf_controller #(
 
                 /* Keep address/CS (and write data) stable after the strobe. */
                 CF_HOLD: begin
-                    if (cf_count == HOLD_CYCLES - 1) begin
+                    if (cf_count == trans_hold_cycles - 1'b1) begin
                         cf_count <= 8'd0;
                         cf_state <= CF_IDLE;
 
