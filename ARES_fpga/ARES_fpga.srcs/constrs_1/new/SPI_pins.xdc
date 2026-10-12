@@ -51,3 +51,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports {spi_controller1_ss[0]}]
 #SPI_INT_n A27
 set_property PACKAGE_PIN M5 [get_ports {spi_int_n}]             
 set_property IOSTANDARD LVCMOS33 [get_ports {spi_int_n}] 
+
+# Asynchronous ENC28J60 IRQ: exclude only the path into the first
+# synchronizer stage. The path between synchronizer stages remains timed.
+set_false_path -from [get_ports {spi_int_n}] -to [get_pins -hier -filter {NAME =~ */enc_irq_meta_reg/D}]

@@ -69,6 +69,10 @@ set_property IOSTANDARD LVCMOS33 [get_ports {ide_dtack}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ide_irq}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ide_reset_n}]
 
+# Asynchronous CF IRQ: exclude only the path into the first synchronizer
+# stage. The path from cf_irq_meta to cf_irq_sync must remain timed.
+set_false_path -from [get_ports {ide_irq}] -to [get_pins -hier -filter {NAME =~ */cf_irq_meta_reg/D}]
+
 
 
 

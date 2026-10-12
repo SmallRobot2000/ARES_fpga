@@ -325,7 +325,23 @@ module axi_cf_controller #(
     endgenerate
 
     assign cf_reset_n = s_axi_aresetn;
-    assign irq        = cf_intrq;
+
+    // CF INTRQ is asynchronous to s_axi_aclk. Preserve its active-high
+    // level, and expose only the second synchronizer stage to the PLIC.
+    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *) reg cf_irq_meta;
+    (* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *) reg cf_irq_sync;
+
+    always @(posedge s_axi_aclk) begin
+        if (!s_axi_aresetn) begin
+            cf_irq_meta <= 1'b0;
+            cf_irq_sync <= 1'b0;
+        end else begin
+            cf_irq_meta <= cf_intrq;
+            cf_irq_sync <= cf_irq_meta;
+        end
+    end
+
+    assign irq = cf_irq_sync;
 
     /*
      * Start-write condition.  Because AW and W can handshake on the

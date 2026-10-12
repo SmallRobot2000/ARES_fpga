@@ -4912,8 +4912,8 @@
             "segments": {
               "SEG_VexiiSocWrapper_0_reg0": {
                 "address_block": "/VexiiSocWrapper_0/dma_bus/reg0",
-                "offset": "0x00000000",
-                "range": "4G"
+                "offset": "0x90000000",
+                "range": "128M"
               }
             }
           }
@@ -4947,8 +4947,8 @@
             "segments": {
               "SEG_VexiiSocWrapper_0_reg0": {
                 "address_block": "/VexiiSocWrapper_0/dma_bus/reg0",
-                "offset": "0x00000000",
-                "range": "4G"
+                "offset": "0x90000000",
+                "range": "128M"
               }
             }
           }

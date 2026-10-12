@@ -103,6 +103,31 @@ input wire s_axi_aresetn,
   input  wire [31:0]   peripheral_externalInterrupts_port
 
 );
+
+// PLIC source 4 is the external ENC28J60 IRQ. The block design already
+// inverts its active-low pin, but it remains asynchronous to s_axi_aclk.
+// Source 6 (CF) is synchronized in axi_cf_controller; other sources pass
+// through unchanged.
+(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *) reg enc_irq_meta;
+(* ASYNC_REG = "TRUE", SHREG_EXTRACT = "NO" *) reg enc_irq_sync;
+
+always @(posedge s_axi_aclk) begin
+  if (!s_axi_aresetn) begin
+    enc_irq_meta <= 1'b0;
+    enc_irq_sync <= 1'b0;
+  end else begin
+    enc_irq_meta <= peripheral_externalInterrupts_port[4];
+    enc_irq_sync <= enc_irq_meta;
+  end
+end
+
+wire [31:0] plic_interrupts;
+assign plic_interrupts = {
+  peripheral_externalInterrupts_port[31:5],
+  enc_irq_sync,
+  peripheral_externalInterrupts_port[3:0]
+};
+
 VexiiSoc Soc
 (
 
@@ -200,7 +225,7 @@ VexiiSoc Soc
 
   .litex_reset(~s_axi_aresetn),
   .litex_clk(s_axi_aclk),
-  .peripheral_externalInterrupts_port(peripheral_externalInterrupts_port),
+  .peripheral_externalInterrupts_port(plic_interrupts),
   .debug() //Not needed
 );
 
