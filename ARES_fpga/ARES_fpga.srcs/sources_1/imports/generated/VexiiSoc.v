@@ -16270,30 +16270,30 @@ module Cache (
   wire                ctrl_loopback_fifo_io_pop_ready;
   wire                ctrl_inserter_arbiter_io_output_ready;
   wire                readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_ready;
-  reg        [2:0]    cache_plru_ram_spinal_port0;
-  reg        [95:0]   cache_tags_ram_spinal_port0;
+  reg        [0:0]    cache_plru_ram_spinal_port0;
+  reg        [47:0]   cache_tags_ram_spinal_port0;
   reg        [63:0]   cache_data_banks_0_ram_spinal_port1;
-  reg        [29:0]   gs_ctxDownD_ram_spinal_port1;
+  reg        [28:0]   gs_ctxDownD_ram_spinal_port1;
   reg        [71:0]   fromUpA_buffer_ram_spinal_port1;
   reg        [63:0]   victimBuffer_ram_spinal_port1;
-  wire       [58:0]   prober_ctx_ram_spinal_port1;
+  wire       [57:0]   prober_ctx_ram_spinal_port1;
   wire                streamDemux_4_io_input_ready;
   wire                streamDemux_4_io_outputs_0_valid;
-  wire       [11:0]   streamDemux_4_io_outputs_0_payload_address;
+  wire       [10:0]   streamDemux_4_io_outputs_0_payload_address;
   wire       [63:0]   streamDemux_4_io_outputs_0_payload_data;
   wire       [7:0]    streamDemux_4_io_outputs_0_payload_mask;
   wire                streamDemux_5_io_input_ready;
   wire                streamDemux_5_io_outputs_0_valid;
-  wire       [11:0]   streamDemux_5_io_outputs_0_payload_address;
+  wire       [10:0]   streamDemux_5_io_outputs_0_payload_address;
   wire       [63:0]   streamDemux_5_io_outputs_0_payload_data;
   wire       [7:0]    streamDemux_5_io_outputs_0_payload_mask;
   wire                streamDemux_6_io_input_ready;
   wire                streamDemux_6_io_outputs_0_valid;
-  wire       [11:0]   streamDemux_6_io_outputs_0_payload;
+  wire       [10:0]   streamDemux_6_io_outputs_0_payload;
   wire                cache_data_banks_0_writeArbiter_io_inputs_0_ready;
   wire                cache_data_banks_0_writeArbiter_io_inputs_1_ready;
   wire                cache_data_banks_0_writeArbiter_io_output_valid;
-  wire       [11:0]   cache_data_banks_0_writeArbiter_io_output_payload_address;
+  wire       [10:0]   cache_data_banks_0_writeArbiter_io_output_payload_address;
   wire       [63:0]   cache_data_banks_0_writeArbiter_io_output_payload_data;
   wire       [7:0]    cache_data_banks_0_writeArbiter_io_output_payload_mask;
   wire       [0:0]    cache_data_banks_0_writeArbiter_io_chosen;
@@ -16333,7 +16333,7 @@ module Cache (
   wire                ctrl_loopback_fifo_io_pop_payload_probedUnique;
   wire       [2:0]    ctrl_loopback_fifo_io_pop_payload_gsId;
   wire                ctrl_loopback_fifo_io_pop_payload_withDataUpC;
-  wire       [1:0]    ctrl_loopback_fifo_io_pop_payload_evictWay;
+  wire       [0:0]    ctrl_loopback_fifo_io_pop_payload_evictWay;
   wire       [2:0]    ctrl_loopback_fifo_io_occupancy;
   wire       [2:0]    ctrl_loopback_fifo_io_availability;
   wire                ctrl_inserter_arbiter_io_inputs_0_ready;
@@ -16352,14 +16352,14 @@ module Cache (
   wire                ctrl_inserter_arbiter_io_output_payload_probedUnique;
   wire       [2:0]    ctrl_inserter_arbiter_io_output_payload_gsId;
   wire                ctrl_inserter_arbiter_io_output_payload_withDataUpC;
-  wire       [1:0]    ctrl_inserter_arbiter_io_output_payload_evictWay;
+  wire       [0:0]    ctrl_inserter_arbiter_io_output_payload_evictWay;
   wire       [1:0]    ctrl_inserter_arbiter_io_chosen;
   wire       [3:0]    ctrl_inserter_arbiter_io_chosenOH;
   wire                writeBackend_putMerges_fifo_io_push_ready;
   wire                writeBackend_putMerges_fifo_io_pop_valid;
   wire       [2:0]    writeBackend_putMerges_fifo_io_pop_payload_gsId;
   wire       [6:0]    writeBackend_putMerges_fifo_io_pop_payload_setId;
-  wire       [1:0]    writeBackend_putMerges_fifo_io_pop_payload_wayId;
+  wire       [0:0]    writeBackend_putMerges_fifo_io_pop_payload_wayId;
   wire       [2:0]    writeBackend_putMerges_fifo_io_pop_payload_wordOffset;
   wire       [1:0]    writeBackend_putMerges_fifo_io_pop_payload_bufferAId;
   wire       [5:0]    writeBackend_putMerges_fifo_io_pop_payload_source;
@@ -16378,7 +16378,7 @@ module Cache (
   wire                readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_partialUpA;
   wire       [31:0]   readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_address;
   wire       [2:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_size;
-  wire       [1:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_wayId;
+  wire       [0:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_wayId;
   wire       [1:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_bufferAId;
   wire                readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_evict;
   wire       [3:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_occupancy;
@@ -16397,7 +16397,7 @@ module Cache (
   wire                writeBackend_inserter_arbiter_io_output_payload_partialUpA;
   wire       [31:0]   writeBackend_inserter_arbiter_io_output_payload_address;
   wire       [2:0]    writeBackend_inserter_arbiter_io_output_payload_size;
-  wire       [1:0]    writeBackend_inserter_arbiter_io_output_payload_wayId;
+  wire       [0:0]    writeBackend_inserter_arbiter_io_output_payload_wayId;
   wire       [1:0]    writeBackend_inserter_arbiter_io_output_payload_bufferAId;
   wire                writeBackend_inserter_arbiter_io_output_payload_evict;
   wire       [1:0]    writeBackend_inserter_arbiter_io_chosen;
@@ -16430,9 +16430,8 @@ module Cache (
   wire                toUpD_arbiter_io_output_payload_corrupt;
   wire       [1:0]    toUpD_arbiter_io_chosen;
   wire       [3:0]    toUpD_arbiter_io_chosenOH;
-  wire       [2:0]    _zz_cache_plru_ram_port;
-  wire       [95:0]   _zz_cache_tags_ram_port;
-  wire       [29:0]   _zz_gs_ctxDownD_ram_port;
+  wire       [47:0]   _zz_cache_tags_ram_port;
+  wire       [28:0]   _zz_gs_ctxDownD_ram_port;
   wire       [71:0]   _zz_fromUpA_buffer_ram_port;
   reg        [2:0]    _zz_fromUpA_halted_tracker_last;
   wire       [31:0]   _zz_fromUpA_halted_beatAddress;
@@ -16446,7 +16445,7 @@ module Cache (
   wire       [0:0]    _zz_prober_slots_2_done_1;
   wire       [1:0]    _zz_prober_slots_3_done;
   wire       [0:0]    _zz_prober_slots_3_done_1;
-  wire       [58:0]   _zz_prober_ctx_ram_port;
+  wire       [57:0]   _zz_prober_ctx_ram_port;
   reg        [1:0]    _zz_prober_toSlot_pending;
   wire       [1:0]    _zz_prober_toSlot_pending_1;
   wire                _zz_when;
@@ -16458,20 +16457,12 @@ module Cache (
   wire                _zz_ctrl_stages_1_preCtrl_GS_HITS_3;
   wire       [0:0]    _zz_ctrl_stages_1_preCtrl_GS_HITS_4;
   wire       [1:0]    _zz_ctrl_stages_1_preCtrl_GS_HITS_5;
-  wire       [0:0]    _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3;
-  wire       [20:0]   _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_1;
-  wire       [0:0]    _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_2;
-  wire       [20:0]   _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_3;
-  wire       [0:0]    _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_4;
-  wire       [20:0]   _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_5;
-  wire       [0:0]    _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_6;
-  wire       [20:0]   _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_7;
   reg                 _zz_ctrl_process_olderWay_tags_loaded;
   reg        [18:0]   _zz_ctrl_process_olderWay_tags_tag;
   reg                 _zz_ctrl_process_olderWay_tags_dirty;
   reg                 _zz_ctrl_process_olderWay_tags_trunk;
   reg        [1:0]    _zz_ctrl_process_olderWay_tags_owners;
-  wire       [3:0]    _zz_cache_tags_write_mask;
+  wire       [1:0]    _zz_cache_tags_write_mask;
   wire                _zz_when_1;
   wire       [7:0]    _zz_ctrl_process_toOrdering_payload_bytes;
   reg        [2:0]    _zz_readBackend_stages_0_inserter_LAST;
@@ -16508,6 +16499,7 @@ module Cache (
   wire       [5:0]    _zz_toFlushBus_rsp_payload_source_22;
   wire       [5:0]    _zz_toFlushBus_rsp_payload_source_23;
   wire       [5:0]    _zz_toFlushBus_rsp_payload_source_24;
+  wire       [0:0]    _zz_cache_plru_write_payload_data_0;
   wire                fromDownD_stages_2_isThrown;
   wire                fromDownD_stages_2_isFlushed;
   reg                 fromDownD_stages_1_inserter_LAST;
@@ -16525,7 +16517,7 @@ module Cache (
   reg                 writeBackend_stages_1_CMD_partialUpA;
   reg        [31:0]   writeBackend_stages_1_CMD_address;
   reg        [2:0]    writeBackend_stages_1_CMD_size;
-  reg        [1:0]    writeBackend_stages_1_CMD_wayId;
+  reg        [0:0]    writeBackend_stages_1_CMD_wayId;
   reg        [1:0]    writeBackend_stages_1_CMD_bufferAId;
   reg                 writeBackend_stages_1_CMD_evict;
   reg                 writeBackend_stages_1_inserter_IN_UP_A;
@@ -16539,7 +16531,7 @@ module Cache (
   reg        [2:0]    readBackend_stages_1_CMD_gsId;
   reg        [31:0]   readBackend_stages_1_CMD_address;
   reg        [2:0]    readBackend_stages_1_CMD_size;
-  reg        [1:0]    readBackend_stages_1_CMD_wayId;
+  reg        [0:0]    readBackend_stages_1_CMD_wayId;
   reg        [2:0]    readBackend_stages_1_CMD_upD_opcode;
   reg        [2:0]    readBackend_stages_1_CMD_upD_param;
   reg        [5:0]    readBackend_stages_1_CMD_upD_source;
@@ -16559,7 +16551,7 @@ module Cache (
   reg        [2:0]    fromDownD_stages_2_CTX_wordOffset;
   reg        [5:0]    fromDownD_stages_2_CTX_sourceId;
   reg        [6:0]    fromDownD_stages_2_CTX_setId;
-  reg        [1:0]    fromDownD_stages_2_CTX_wayId;
+  reg        [0:0]    fromDownD_stages_2_CTX_wayId;
   reg        [2:0]    fromDownD_stages_2_CTX_size;
   reg                 fromDownD_stages_2_CTX_acquire;
   reg                 fromDownD_stages_2_CTX_release;
@@ -16589,7 +16581,7 @@ module Cache (
   wire       [2:0]    fromDownD_stages_1_CTX_wordOffset;
   wire       [5:0]    fromDownD_stages_1_CTX_sourceId;
   wire       [6:0]    fromDownD_stages_1_CTX_setId;
-  wire       [1:0]    fromDownD_stages_1_CTX_wayId;
+  wire       [0:0]    fromDownD_stages_1_CTX_wayId;
   wire       [2:0]    fromDownD_stages_1_CTX_size;
   wire                fromDownD_stages_1_CTX_acquire;
   wire                fromDownD_stages_1_CTX_release;
@@ -16621,7 +16613,7 @@ module Cache (
   reg                 writeBackend_stages_2_CMD_partialUpA;
   reg        [31:0]   writeBackend_stages_2_CMD_address;
   reg        [2:0]    writeBackend_stages_2_CMD_size;
-  reg        [1:0]    writeBackend_stages_2_CMD_wayId;
+  reg        [0:0]    writeBackend_stages_2_CMD_wayId;
   reg        [1:0]    writeBackend_stages_2_CMD_bufferAId;
   reg                 writeBackend_stages_2_CMD_evict;
   reg                 writeBackend_stages_2_inserter_IN_UP_A;
@@ -16644,7 +16636,7 @@ module Cache (
   wire                writeBackend_stages_0_CMD_partialUpA;
   wire       [31:0]   writeBackend_stages_0_CMD_address;
   wire       [2:0]    writeBackend_stages_0_CMD_size;
-  wire       [1:0]    writeBackend_stages_0_CMD_wayId;
+  wire       [0:0]    writeBackend_stages_0_CMD_wayId;
   wire       [1:0]    writeBackend_stages_0_CMD_bufferAId;
   wire                writeBackend_stages_0_CMD_evict;
   reg                 readBackend_stages_2_inserter_WRITE_FORK;
@@ -16658,7 +16650,7 @@ module Cache (
   reg        [2:0]    readBackend_stages_2_CMD_gsId;
   reg        [31:0]   readBackend_stages_2_CMD_address;
   reg        [2:0]    readBackend_stages_2_CMD_size;
-  reg        [1:0]    readBackend_stages_2_CMD_wayId;
+  reg        [0:0]    readBackend_stages_2_CMD_wayId;
   reg        [2:0]    readBackend_stages_2_CMD_upD_opcode;
   reg        [2:0]    readBackend_stages_2_CMD_upD_param;
   reg        [5:0]    readBackend_stages_2_CMD_upD_source;
@@ -16671,7 +16663,7 @@ module Cache (
   wire       [2:0]    readBackend_stages_0_CMD_gsId;
   wire       [31:0]   readBackend_stages_0_CMD_address;
   wire       [2:0]    readBackend_stages_0_CMD_size;
-  wire       [1:0]    readBackend_stages_0_CMD_wayId;
+  wire       [0:0]    readBackend_stages_0_CMD_wayId;
   wire       [2:0]    readBackend_stages_0_CMD_upD_opcode;
   wire       [2:0]    readBackend_stages_0_CMD_upD_param;
   wire       [5:0]    readBackend_stages_0_CMD_upD_source;
@@ -16689,7 +16681,6 @@ module Cache (
   reg                 ctrl_stages_2_preCtrl_IS_PUT;
   reg                 ctrl_stages_2_preCtrl_ACQUIRE;
   reg        [0:0]    ctrl_stages_2_CACHE_PLRU_0;
-  reg        [1:0]    ctrl_stages_2_CACHE_PLRU_1;
   reg                 ctrl_stages_2_preCtrl_WRITE_DATA;
   reg        [7:0]    ctrl_stages_2_preCtrl_GS_OH;
   wire                ctrl_stages_2_process_ANY;
@@ -16712,21 +16703,11 @@ module Cache (
   reg                 ctrl_stages_2_CACHE_TAGS_1_dirty;
   reg                 ctrl_stages_2_CACHE_TAGS_1_trunk;
   reg        [1:0]    ctrl_stages_2_CACHE_TAGS_1_owners;
-  reg                 ctrl_stages_2_CACHE_TAGS_2_loaded;
-  reg        [18:0]   ctrl_stages_2_CACHE_TAGS_2_tag;
-  reg                 ctrl_stages_2_CACHE_TAGS_2_dirty;
-  reg                 ctrl_stages_2_CACHE_TAGS_2_trunk;
-  reg        [1:0]    ctrl_stages_2_CACHE_TAGS_2_owners;
-  reg                 ctrl_stages_2_CACHE_TAGS_3_loaded;
-  reg        [18:0]   ctrl_stages_2_CACHE_TAGS_3_tag;
-  reg                 ctrl_stages_2_CACHE_TAGS_3_dirty;
-  reg                 ctrl_stages_2_CACHE_TAGS_3_trunk;
-  reg        [1:0]    ctrl_stages_2_CACHE_TAGS_3_owners;
   wire                ctrl_stages_2_process_SOURCE_HIT;
-  reg        [3:0]    ctrl_stages_2_tags_SOURCE_HITS;
-  wire       [1:0]    ctrl_stages_2_process_CACHE_HIT_WAY_ID;
+  reg        [1:0]    ctrl_stages_2_tags_SOURCE_HITS;
+  wire       [0:0]    ctrl_stages_2_process_CACHE_HIT_WAY_ID;
   wire                ctrl_stages_2_process_CACHE_HIT;
-  reg        [3:0]    ctrl_stages_2_tags_CACHE_HITS;
+  reg        [1:0]    ctrl_stages_2_tags_CACHE_HITS;
   wire                ctrl_stages_2_isRemoved;
   reg                 ctrl_stages_2_preCtrl_GS_NEED;
   reg        [7:0]    ctrl_stages_2_preCtrl_GS_HITS;
@@ -16750,11 +16731,10 @@ module Cache (
   wire                ctrl_stages_1_preCtrl_FROM_A;
   reg                 ctrl_stages_1_preCtrl_ALLOCATE_ON_MISS;
   wire                ctrl_stages_1_preCtrl_PROBE_REGION;
-  wire       [3:0]    ctrl_stages_1_tags_SOURCE_HITS;
+  wire       [1:0]    ctrl_stages_1_tags_SOURCE_HITS;
   reg        [1:0]    ctrl_stages_1_inserter_SOURCE_OH;
-  wire       [3:0]    ctrl_stages_1_tags_CACHE_HITS;
+  wire       [1:0]    ctrl_stages_1_tags_CACHE_HITS;
   wire       [0:0]    ctrl_stages_1_CACHE_PLRU_0;
-  wire       [1:0]    ctrl_stages_1_CACHE_PLRU_1;
   wire                ctrl_stages_1_CACHE_TAGS_0_loaded;
   wire       [18:0]   ctrl_stages_1_CACHE_TAGS_0_tag;
   wire                ctrl_stages_1_CACHE_TAGS_0_dirty;
@@ -16765,16 +16745,6 @@ module Cache (
   wire                ctrl_stages_1_CACHE_TAGS_1_dirty;
   wire                ctrl_stages_1_CACHE_TAGS_1_trunk;
   wire       [1:0]    ctrl_stages_1_CACHE_TAGS_1_owners;
-  wire                ctrl_stages_1_CACHE_TAGS_2_loaded;
-  wire       [18:0]   ctrl_stages_1_CACHE_TAGS_2_tag;
-  wire                ctrl_stages_1_CACHE_TAGS_2_dirty;
-  wire                ctrl_stages_1_CACHE_TAGS_2_trunk;
-  wire       [1:0]    ctrl_stages_1_CACHE_TAGS_2_owners;
-  wire                ctrl_stages_1_CACHE_TAGS_3_loaded;
-  wire       [18:0]   ctrl_stages_1_CACHE_TAGS_3_tag;
-  wire                ctrl_stages_1_CACHE_TAGS_3_dirty;
-  wire                ctrl_stages_1_CACHE_TAGS_3_trunk;
-  wire       [1:0]    ctrl_stages_1_CACHE_TAGS_3_owners;
   wire       [1:0]    ctrl_stages_0_inserter_SOURCE_OH;
   wire       [3:0]    ctrl_stages_0_CTRL_CMD_opcode;
   wire       [0:0]    ctrl_stages_0_CTRL_CMD_args;
@@ -16787,7 +16757,7 @@ module Cache (
   wire                ctrl_stages_0_CTRL_CMD_probedUnique;
   wire       [2:0]    ctrl_stages_0_CTRL_CMD_gsId;
   wire                ctrl_stages_0_CTRL_CMD_withDataUpC;
-  wire       [1:0]    ctrl_stages_0_CTRL_CMD_evictWay;
+  wire       [0:0]    ctrl_stages_0_CTRL_CMD_evictWay;
   wire                ctrl_stages_0_ready;
   reg        [3:0]    ctrl_stages_2_CTRL_CMD_opcode;
   reg        [0:0]    ctrl_stages_2_CTRL_CMD_args;
@@ -16800,7 +16770,7 @@ module Cache (
   reg                 ctrl_stages_2_CTRL_CMD_probedUnique;
   reg        [2:0]    ctrl_stages_2_CTRL_CMD_gsId;
   reg                 ctrl_stages_2_CTRL_CMD_withDataUpC;
-  reg        [1:0]    ctrl_stages_2_CTRL_CMD_evictWay;
+  reg        [0:0]    ctrl_stages_2_CTRL_CMD_evictWay;
   reg        [3:0]    ctrl_stages_1_CTRL_CMD_opcode;
   reg        [0:0]    ctrl_stages_1_CTRL_CMD_args;
   reg        [31:0]   ctrl_stages_1_CTRL_CMD_address;
@@ -16812,7 +16782,7 @@ module Cache (
   reg                 ctrl_stages_1_CTRL_CMD_probedUnique;
   reg        [2:0]    ctrl_stages_1_CTRL_CMD_gsId;
   reg                 ctrl_stages_1_CTRL_CMD_withDataUpC;
-  reg        [1:0]    ctrl_stages_1_CTRL_CMD_evictWay;
+  reg        [0:0]    ctrl_stages_1_CTRL_CMD_evictWay;
   reg                 _zz_1;
   reg                 _zz_2;
   reg                 _zz_3;
@@ -16828,12 +16798,9 @@ module Cache (
   wire                cache_plru_read_cmd_valid;
   wire       [6:0]    cache_plru_read_cmd_payload;
   wire       [0:0]    cache_plru_read_rsp_0;
-  wire       [1:0]    cache_plru_read_rsp_1;
-  wire       [2:0]    _zz_cache_plru_read_rsp_0;
   reg                 cache_plru_write_valid;
   reg        [6:0]    cache_plru_write_payload_address;
   reg        [0:0]    cache_plru_write_payload_data_0;
-  reg        [1:0]    cache_plru_write_payload_data_1;
   wire                cache_tags_read_cmd_valid;
   wire       [6:0]    cache_tags_read_cmd_payload;
   wire                cache_tags_read_rsp_0_loaded;
@@ -16846,21 +16813,9 @@ module Cache (
   wire                cache_tags_read_rsp_1_dirty;
   wire                cache_tags_read_rsp_1_trunk;
   wire       [1:0]    cache_tags_read_rsp_1_owners;
-  wire                cache_tags_read_rsp_2_loaded;
-  wire       [18:0]   cache_tags_read_rsp_2_tag;
-  wire                cache_tags_read_rsp_2_dirty;
-  wire                cache_tags_read_rsp_2_trunk;
-  wire       [1:0]    cache_tags_read_rsp_2_owners;
-  wire                cache_tags_read_rsp_3_loaded;
-  wire       [18:0]   cache_tags_read_rsp_3_tag;
-  wire                cache_tags_read_rsp_3_dirty;
-  wire                cache_tags_read_rsp_3_trunk;
-  wire       [1:0]    cache_tags_read_rsp_3_owners;
-  wire       [95:0]   _zz_cache_tags_read_rsp_0_loaded;
+  wire       [47:0]   _zz_cache_tags_read_rsp_0_loaded;
   wire       [23:0]   _zz_cache_tags_read_rsp_0_loaded_1;
   wire       [23:0]   _zz_cache_tags_read_rsp_1_loaded;
-  wire       [23:0]   _zz_cache_tags_read_rsp_2_loaded;
-  wire       [23:0]   _zz_cache_tags_read_rsp_3_loaded;
   wire                cache_tags_writeRaw_valid;
   wire       [6:0]    cache_tags_writeRaw_payload_address;
   wire                cache_tags_writeRaw_payload_data_0_loaded;
@@ -16873,20 +16828,10 @@ module Cache (
   wire                cache_tags_writeRaw_payload_data_1_dirty;
   wire                cache_tags_writeRaw_payload_data_1_trunk;
   wire       [1:0]    cache_tags_writeRaw_payload_data_1_owners;
-  wire                cache_tags_writeRaw_payload_data_2_loaded;
-  wire       [18:0]   cache_tags_writeRaw_payload_data_2_tag;
-  wire                cache_tags_writeRaw_payload_data_2_dirty;
-  wire                cache_tags_writeRaw_payload_data_2_trunk;
-  wire       [1:0]    cache_tags_writeRaw_payload_data_2_owners;
-  wire                cache_tags_writeRaw_payload_data_3_loaded;
-  wire       [18:0]   cache_tags_writeRaw_payload_data_3_tag;
-  wire                cache_tags_writeRaw_payload_data_3_dirty;
-  wire                cache_tags_writeRaw_payload_data_3_trunk;
-  wire       [1:0]    cache_tags_writeRaw_payload_data_3_owners;
-  wire       [3:0]    cache_tags_writeRaw_payload_mask;
+  wire       [1:0]    cache_tags_writeRaw_payload_mask;
   reg                 cache_tags_write_valid;
   reg        [6:0]    cache_tags_write_address;
-  reg        [3:0]    cache_tags_write_mask;
+  reg        [1:0]    cache_tags_write_mask;
   reg                 cache_tags_write_data_loaded;
   reg        [18:0]   cache_tags_write_data_tag;
   reg                 cache_tags_write_data_dirty;
@@ -16894,27 +16839,27 @@ module Cache (
   reg        [1:0]    cache_tags_write_data_owners;
   wire                cache_data_upWrite_valid;
   wire                cache_data_upWrite_ready;
-  wire       [11:0]   cache_data_upWrite_payload_address;
+  wire       [10:0]   cache_data_upWrite_payload_address;
   wire       [63:0]   cache_data_upWrite_payload_data;
   wire       [7:0]    cache_data_upWrite_payload_mask;
   wire                cache_data_downWrite_valid;
   wire                cache_data_downWrite_ready;
-  wire       [11:0]   cache_data_downWrite_payload_address;
+  wire       [10:0]   cache_data_downWrite_payload_address;
   wire       [63:0]   cache_data_downWrite_payload_data;
   wire       [7:0]    cache_data_downWrite_payload_mask;
   wire                cache_data_upRead_valid;
   wire                cache_data_upRead_ready;
-  wire       [11:0]   cache_data_upRead_payload;
+  wire       [10:0]   cache_data_upRead_payload;
   wire       [63:0]   cache_data_banks_0_readed;
   wire                cache_data_banks_0_write_valid;
   wire                cache_data_banks_0_write_ready;
-  wire       [11:0]   cache_data_banks_0_write_payload_address;
+  wire       [10:0]   cache_data_banks_0_write_payload_address;
   wire       [63:0]   cache_data_banks_0_write_payload_data;
   wire       [7:0]    cache_data_banks_0_write_payload_mask;
   wire                cache_data_banks_0_read_valid;
   wire                cache_data_banks_0_read_ready;
-  wire       [11:0]   cache_data_banks_0_read_payload;
-  wire       [11:0]   _zz_cache_data_banks_0_readed;
+  wire       [10:0]   cache_data_banks_0_read_payload;
+  wire       [10:0]   _zz_cache_data_banks_0_readed;
   reg                 gs_slots_0_fire;
   reg                 gs_slots_0_valid;
   reg        [31:0]   gs_slots_0_address;
@@ -17050,7 +16995,7 @@ module Cache (
   wire       [2:0]    gs_ctxDownD_write_payload_data_wordOffset;
   wire       [5:0]    gs_ctxDownD_write_payload_data_sourceId;
   wire       [6:0]    gs_ctxDownD_write_payload_data_setId;
-  wire       [1:0]    gs_ctxDownD_write_payload_data_wayId;
+  wire       [0:0]    gs_ctxDownD_write_payload_data_wayId;
   wire       [2:0]    gs_ctxDownD_write_payload_data_size;
   wire                gs_ctxDownD_write_payload_data_acquire;
   wire                gs_ctxDownD_write_payload_data_release;
@@ -17069,7 +17014,7 @@ module Cache (
   wire                fromFlushBus_cmd_payload_probedUnique;
   wire       [2:0]    fromFlushBus_cmd_payload_gsId;
   wire                fromFlushBus_cmd_payload_withDataUpC;
-  wire       [1:0]    fromFlushBus_cmd_payload_evictWay;
+  wire       [0:0]    fromFlushBus_cmd_payload_evictWay;
   wire                _zz_io_up_a_ready;
   wire                fromUpA_halted_valid;
   wire                fromUpA_halted_ready;
@@ -17156,7 +17101,7 @@ module Cache (
   wire                fromUpA_toCtrl_payload_probedUnique;
   wire       [2:0]    fromUpA_toCtrl_payload_gsId;
   wire                fromUpA_toCtrl_payload_withDataUpC;
-  wire       [1:0]    fromUpA_toCtrl_payload_evictWay;
+  wire       [0:0]    fromUpA_toCtrl_payload_evictWay;
   reg        [3:0]    _zz_fromUpA_toCtrl_payload_opcode;
   wire                victimBuffer_write_valid;
   wire       [5:0]    victimBuffer_write_payload_address;
@@ -17263,7 +17208,7 @@ module Cache (
   wire                prober_ctx_write_payload_data_probedUnique;
   wire       [2:0]    prober_ctx_write_payload_data_gsId;
   wire                prober_ctx_write_payload_data_withDataUpC;
-  wire       [1:0]    prober_ctx_write_payload_data_evictWay;
+  wire       [0:0]    prober_ctx_write_payload_data_evictWay;
   wire                prober_cmd_valid;
   wire                prober_cmd_ready;
   reg        [3:0]    prober_cmd_payload_opcode;
@@ -17277,7 +17222,7 @@ module Cache (
   wire                prober_cmd_payload_probedUnique;
   wire       [2:0]    prober_cmd_payload_gsId;
   wire                prober_cmd_payload_withDataUpC;
-  wire       [1:0]    prober_cmd_payload_evictWay;
+  wire       [0:0]    prober_cmd_payload_evictWay;
   reg        [1:0]    prober_cmd_payload_mask;
   reg                 prober_cmd_payload_probeToN;
   reg                 prober_cmd_payload_evictClean;
@@ -17298,7 +17243,7 @@ module Cache (
   wire                prober_toSlot_halted_payload_probedUnique;
   wire       [2:0]    prober_toSlot_halted_payload_gsId;
   wire                prober_toSlot_halted_payload_withDataUpC;
-  wire       [1:0]    prober_toSlot_halted_payload_evictWay;
+  wire       [0:0]    prober_toSlot_halted_payload_evictWay;
   wire       [1:0]    prober_toSlot_halted_payload_mask;
   wire                prober_toSlot_halted_payload_probeToN;
   wire                prober_toSlot_halted_payload_evictClean;
@@ -17315,7 +17260,7 @@ module Cache (
   wire                prober_toSlot_halted_s2mPipe_payload_probedUnique;
   wire       [2:0]    prober_toSlot_halted_s2mPipe_payload_gsId;
   wire                prober_toSlot_halted_s2mPipe_payload_withDataUpC;
-  wire       [1:0]    prober_toSlot_halted_s2mPipe_payload_evictWay;
+  wire       [0:0]    prober_toSlot_halted_s2mPipe_payload_evictWay;
   wire       [1:0]    prober_toSlot_halted_s2mPipe_payload_mask;
   wire                prober_toSlot_halted_s2mPipe_payload_probeToN;
   wire                prober_toSlot_halted_s2mPipe_payload_evictClean;
@@ -17331,7 +17276,7 @@ module Cache (
   reg                 prober_toSlot_halted_rData_probedUnique;
   reg        [2:0]    prober_toSlot_halted_rData_gsId;
   reg                 prober_toSlot_halted_rData_withDataUpC;
-  reg        [1:0]    prober_toSlot_halted_rData_evictWay;
+  reg        [0:0]    prober_toSlot_halted_rData_evictWay;
   reg        [1:0]    prober_toSlot_halted_rData_mask;
   reg                 prober_toSlot_halted_rData_probeToN;
   reg                 prober_toSlot_halted_rData_evictClean;
@@ -17349,7 +17294,7 @@ module Cache (
   wire                prober_toUpB_sendUpB_payload_probedUnique;
   wire       [2:0]    prober_toUpB_sendUpB_payload_gsId;
   wire                prober_toUpB_sendUpB_payload_withDataUpC;
-  wire       [1:0]    prober_toUpB_sendUpB_payload_evictWay;
+  wire       [0:0]    prober_toUpB_sendUpB_payload_evictWay;
   wire       [1:0]    prober_toUpB_sendUpB_payload_mask;
   wire                prober_toUpB_sendUpB_payload_probeToN;
   wire                prober_toUpB_sendUpB_payload_evictClean;
@@ -17365,7 +17310,7 @@ module Cache (
   reg                 prober_toSlot_halted_s2mPipe_rData_probedUnique;
   reg        [2:0]    prober_toSlot_halted_s2mPipe_rData_gsId;
   reg                 prober_toSlot_halted_s2mPipe_rData_withDataUpC;
-  reg        [1:0]    prober_toSlot_halted_s2mPipe_rData_evictWay;
+  reg        [0:0]    prober_toSlot_halted_s2mPipe_rData_evictWay;
   reg        [1:0]    prober_toSlot_halted_s2mPipe_rData_mask;
   reg                 prober_toSlot_halted_s2mPipe_rData_probeToN;
   reg                 prober_toSlot_halted_s2mPipe_rData_evictClean;
@@ -17443,7 +17388,7 @@ module Cache (
   reg                 prober_schedule_merged_payload_probedUnique;
   wire       [2:0]    prober_schedule_merged_payload_gsId;
   reg                 prober_schedule_merged_payload_withDataUpC;
-  wire       [1:0]    prober_schedule_merged_payload_evictWay;
+  wire       [0:0]    prober_schedule_merged_payload_evictWay;
   wire       [3:0]    prober_schedule_hits;
   wire                prober_schedule_fromProbe_fire;
   wire       [3:0]    prober_schedule_hits_roundRobinNext_input;
@@ -17480,7 +17425,7 @@ module Cache (
   reg        [1:0]    prober_schedule_probeId;
   wire                when_Cache_l739;
   wire       [3:0]    _zz_prober_schedule_merged_payload_opcode;
-  wire       [58:0]   _zz_prober_schedule_merged_payload_args;
+  wire       [57:0]   _zz_prober_schedule_merged_payload_args;
   wire       [3:0]    _zz_prober_schedule_merged_payload_opcode_1;
   wire                when_Cache_l753;
   wire                when_Cache_l754;
@@ -17501,7 +17446,7 @@ module Cache (
   wire                prober_schedule_toCtrl_payload_probedUnique;
   wire       [2:0]    prober_schedule_toCtrl_payload_gsId;
   wire                prober_schedule_toCtrl_payload_withDataUpC;
-  wire       [1:0]    prober_schedule_toCtrl_payload_evictWay;
+  wire       [0:0]    prober_schedule_toCtrl_payload_evictWay;
   wire                when_Cache_l771;
   wire                ctrl_stages_0_valid;
   reg                 ctrl_stages_1_valid;
@@ -17534,7 +17479,7 @@ module Cache (
   wire                ctrl_inserter_loopbackPop_payload_probedUnique;
   wire       [2:0]    ctrl_inserter_loopbackPop_payload_gsId;
   wire                ctrl_inserter_loopbackPop_payload_withDataUpC;
-  wire       [1:0]    ctrl_inserter_loopbackPop_payload_evictWay;
+  wire       [0:0]    ctrl_inserter_loopbackPop_payload_evictWay;
   reg                 ctrl_loopback_fifo_io_pop_rValid;
   wire                ctrl_inserter_loopbackPop_fire;
   reg        [3:0]    ctrl_loopback_fifo_io_pop_rData_opcode;
@@ -17548,7 +17493,7 @@ module Cache (
   reg                 ctrl_loopback_fifo_io_pop_rData_probedUnique;
   reg        [2:0]    ctrl_loopback_fifo_io_pop_rData_gsId;
   reg                 ctrl_loopback_fifo_io_pop_rData_withDataUpC;
-  reg        [1:0]    ctrl_loopback_fifo_io_pop_rData_evictWay;
+  reg        [0:0]    ctrl_loopback_fifo_io_pop_rData_evictWay;
   wire                prober_schedule_toCtrl_s2mPipe_valid;
   reg                 prober_schedule_toCtrl_s2mPipe_ready;
   wire       [3:0]    prober_schedule_toCtrl_s2mPipe_payload_opcode;
@@ -17562,7 +17507,7 @@ module Cache (
   wire                prober_schedule_toCtrl_s2mPipe_payload_probedUnique;
   wire       [2:0]    prober_schedule_toCtrl_s2mPipe_payload_gsId;
   wire                prober_schedule_toCtrl_s2mPipe_payload_withDataUpC;
-  wire       [1:0]    prober_schedule_toCtrl_s2mPipe_payload_evictWay;
+  wire       [0:0]    prober_schedule_toCtrl_s2mPipe_payload_evictWay;
   reg                 prober_schedule_toCtrl_rValidN;
   reg        [3:0]    prober_schedule_toCtrl_rData_opcode;
   reg        [0:0]    prober_schedule_toCtrl_rData_args;
@@ -17575,7 +17520,7 @@ module Cache (
   reg                 prober_schedule_toCtrl_rData_probedUnique;
   reg        [2:0]    prober_schedule_toCtrl_rData_gsId;
   reg                 prober_schedule_toCtrl_rData_withDataUpC;
-  reg        [1:0]    prober_schedule_toCtrl_rData_evictWay;
+  reg        [0:0]    prober_schedule_toCtrl_rData_evictWay;
   wire       [3:0]    _zz_prober_schedule_toCtrl_s2mPipe_payload_opcode;
   wire                prober_schedule_toCtrl_s2mPipe_m2sPipe_valid;
   wire                prober_schedule_toCtrl_s2mPipe_m2sPipe_ready;
@@ -17590,7 +17535,7 @@ module Cache (
   wire                prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_probedUnique;
   wire       [2:0]    prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_gsId;
   wire                prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_withDataUpC;
-  wire       [1:0]    prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_evictWay;
+  wire       [0:0]    prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_evictWay;
   reg                 prober_schedule_toCtrl_s2mPipe_rValid;
   reg        [3:0]    prober_schedule_toCtrl_s2mPipe_rData_opcode;
   reg        [0:0]    prober_schedule_toCtrl_s2mPipe_rData_args;
@@ -17603,7 +17548,7 @@ module Cache (
   reg                 prober_schedule_toCtrl_s2mPipe_rData_probedUnique;
   reg        [2:0]    prober_schedule_toCtrl_s2mPipe_rData_gsId;
   reg                 prober_schedule_toCtrl_s2mPipe_rData_withDataUpC;
-  reg        [1:0]    prober_schedule_toCtrl_s2mPipe_rData_evictWay;
+  reg        [0:0]    prober_schedule_toCtrl_s2mPipe_rData_evictWay;
   wire                when_Stream_l477_2;
   wire                _zz_fromUpA_toCtrl_ready;
   wire                fromUpA_toCtrl_continueWhen_valid;
@@ -17619,7 +17564,7 @@ module Cache (
   wire                fromUpA_toCtrl_continueWhen_payload_probedUnique;
   wire       [2:0]    fromUpA_toCtrl_continueWhen_payload_gsId;
   wire                fromUpA_toCtrl_continueWhen_payload_withDataUpC;
-  wire       [1:0]    fromUpA_toCtrl_continueWhen_payload_evictWay;
+  wire       [0:0]    fromUpA_toCtrl_continueWhen_payload_evictWay;
   reg        [1:0]    ctrl_inserter_onLoopback_regulator;
   wire                fromUpA_toCtrl_fire;
   wire                when_Cache_l824;
@@ -17638,7 +17583,7 @@ module Cache (
   wire                fromFlushBus_cmd_continueWhen_payload_probedUnique;
   wire       [2:0]    fromFlushBus_cmd_continueWhen_payload_gsId;
   wire                fromFlushBus_cmd_continueWhen_payload_withDataUpC;
-  wire       [1:0]    fromFlushBus_cmd_continueWhen_payload_evictWay;
+  wire       [0:0]    fromFlushBus_cmd_continueWhen_payload_evictWay;
   wire                fromFlushBus_cmd_fire;
   wire                when_Cache_l859;
   wire                _zz_ctrl_inserter_arbiter_io_output_haltWhen_valid;
@@ -17655,7 +17600,7 @@ module Cache (
   wire                ctrl_inserter_arbiter_io_output_haltWhen_payload_probedUnique;
   wire       [2:0]    ctrl_inserter_arbiter_io_output_haltWhen_payload_gsId;
   wire                ctrl_inserter_arbiter_io_output_haltWhen_payload_withDataUpC;
-  wire       [1:0]    ctrl_inserter_arbiter_io_output_haltWhen_payload_evictWay;
+  wire       [0:0]    ctrl_inserter_arbiter_io_output_haltWhen_payload_evictWay;
   wire                ctrl_stages_0_isFiring;
   reg                 ctrl_process_redoUpA;
   wire                ctrl_stages_2_throwRequest_Cache_l917;
@@ -17700,7 +17645,7 @@ module Cache (
   wire       [2:0]    ctrl_process_toReadBackend_payload_gsId;
   reg        [31:0]   ctrl_process_toReadBackend_payload_address;
   reg        [2:0]    ctrl_process_toReadBackend_payload_size;
-  reg        [1:0]    ctrl_process_toReadBackend_payload_wayId;
+  reg        [0:0]    ctrl_process_toReadBackend_payload_wayId;
   reg        [2:0]    ctrl_process_toReadBackend_payload_upD_opcode;
   reg        [2:0]    ctrl_process_toReadBackend_payload_upD_param;
   wire       [5:0]    ctrl_process_toReadBackend_payload_upD_source;
@@ -17722,7 +17667,7 @@ module Cache (
   wire                ctrl_process_toWriteBackend_payload_partialUpA;
   wire       [31:0]   ctrl_process_toWriteBackend_payload_address;
   reg        [2:0]    ctrl_process_toWriteBackend_payload_size;
-  wire       [1:0]    ctrl_process_toWriteBackend_payload_wayId;
+  wire       [0:0]    ctrl_process_toWriteBackend_payload_wayId;
   wire       [1:0]    ctrl_process_toWriteBackend_payload_bufferAId;
   reg                 ctrl_process_toWriteBackend_payload_evict;
   wire                _zz_ctrl_stages_2_haltRequest_Cache_l957;
@@ -17746,13 +17691,9 @@ module Cache (
   wire                when_Cache_l958;
   wire                ctrl_process_toOrdering_valid;
   wire       [6:0]    ctrl_process_toOrdering_payload_bytes;
-  wire                _zz_ctrl_stages_2_process_CACHE_LINE_loaded;
-  wire                _zz_ctrl_stages_2_process_CACHE_LINE_loaded_1;
-  wire                _zz_ctrl_stages_2_process_CACHE_LINE_loaded_2;
   wire                _zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID;
-  wire                _zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID_1;
-  wire       [23:0]   _zz_ctrl_stages_2_process_CACHE_LINE_loaded_3;
-  wire       [1:0]    ctrl_process_backendWayId;
+  wire       [23:0]   _zz_ctrl_stages_2_process_CACHE_LINE_loaded;
+  wire       [0:0]    ctrl_process_backendWayId;
   reg                 ctrl_process_gotGs;
   wire                when_Cache_l972;
   reg        [7:0]    ctrl_process_gsOhLocked;
@@ -17771,7 +17712,7 @@ module Cache (
   wire       [31:0]   ctrl_process_gsAddress;
   reg                 ctrl_process_gsRefill;
   reg                 ctrl_process_gsWrite;
-  wire       [1:0]    ctrl_process_gsWay;
+  wire       [0:0]    ctrl_process_gsWay;
   reg                 ctrl_process_gsPendingVictim;
   reg                 ctrl_process_gsPendingVictimReadWrite;
   reg                 ctrl_process_gsPendingCacheWrite;
@@ -17784,20 +17725,14 @@ module Cache (
   wire                when_Cache_l1020;
   wire                ctrl_process_doIt;
   wire       [0:0]    ctrl_process_olderWay_plru_io_context_state_0;
-  wire       [1:0]    ctrl_process_olderWay_plru_io_context_state_1;
-  wire       [1:0]    ctrl_process_olderWay_plru_io_evict_id;
-  reg        [1:0]    ctrl_process_olderWay_plru_io_update_id;
+  wire       [0:0]    ctrl_process_olderWay_plru_io_evict_id;
+  reg        [0:0]    ctrl_process_olderWay_plru_io_update_id;
   wire       [0:0]    ctrl_process_olderWay_plru_io_update_state_0;
-  reg        [1:0]    ctrl_process_olderWay_plru_io_update_state_1;
   wire                ctrl_process_olderWay_plru_evict_sel_0;
-  wire                ctrl_process_olderWay_plru_evict_sel_1;
   wire                ctrl_process_olderWay_plru_evict_logic_0_state;
-  wire       [0:0]    ctrl_process_olderWay_plru_evict_logic_1_stateSel;
-  wire                ctrl_process_olderWay_plru_evict_logic_1_state;
-  wire       [0:0]    ctrl_process_olderWay_plru_update_logic_1_sel;
   wire                when_Cache_l1037;
   wire                ctrl_process_olderWay_unlocked;
-  wire       [1:0]    ctrl_process_olderWay_wayId;
+  wire       [0:0]    ctrl_process_olderWay_wayId;
   wire                ctrl_process_olderWay_tags_loaded;
   wire       [18:0]   ctrl_process_olderWay_tags_tag;
   wire                ctrl_process_olderWay_tags_dirty;
@@ -17872,7 +17807,7 @@ module Cache (
   wire       [2:0]    ctrl_process_toReadBackend_s2mPipe_payload_gsId;
   wire       [31:0]   ctrl_process_toReadBackend_s2mPipe_payload_address;
   wire       [2:0]    ctrl_process_toReadBackend_s2mPipe_payload_size;
-  wire       [1:0]    ctrl_process_toReadBackend_s2mPipe_payload_wayId;
+  wire       [0:0]    ctrl_process_toReadBackend_s2mPipe_payload_wayId;
   wire       [2:0]    ctrl_process_toReadBackend_s2mPipe_payload_upD_opcode;
   wire       [2:0]    ctrl_process_toReadBackend_s2mPipe_payload_upD_param;
   wire       [5:0]    ctrl_process_toReadBackend_s2mPipe_payload_upD_source;
@@ -17882,7 +17817,7 @@ module Cache (
   reg        [2:0]    ctrl_process_toReadBackend_rData_gsId;
   reg        [31:0]   ctrl_process_toReadBackend_rData_address;
   reg        [2:0]    ctrl_process_toReadBackend_rData_size;
-  reg        [1:0]    ctrl_process_toReadBackend_rData_wayId;
+  reg        [0:0]    ctrl_process_toReadBackend_rData_wayId;
   reg        [2:0]    ctrl_process_toReadBackend_rData_upD_opcode;
   reg        [2:0]    ctrl_process_toReadBackend_rData_upD_param;
   reg        [5:0]    ctrl_process_toReadBackend_rData_upD_source;
@@ -17894,7 +17829,7 @@ module Cache (
   wire       [2:0]    readBackend_inserter_cmd_payload_gsId;
   wire       [31:0]   readBackend_inserter_cmd_payload_address;
   wire       [2:0]    readBackend_inserter_cmd_payload_size;
-  wire       [1:0]    readBackend_inserter_cmd_payload_wayId;
+  wire       [0:0]    readBackend_inserter_cmd_payload_wayId;
   wire       [2:0]    readBackend_inserter_cmd_payload_upD_opcode;
   wire       [2:0]    readBackend_inserter_cmd_payload_upD_param;
   wire       [5:0]    readBackend_inserter_cmd_payload_upD_source;
@@ -17904,7 +17839,7 @@ module Cache (
   reg        [2:0]    ctrl_process_toReadBackend_s2mPipe_rData_gsId;
   reg        [31:0]   ctrl_process_toReadBackend_s2mPipe_rData_address;
   reg        [2:0]    ctrl_process_toReadBackend_s2mPipe_rData_size;
-  reg        [1:0]    ctrl_process_toReadBackend_s2mPipe_rData_wayId;
+  reg        [0:0]    ctrl_process_toReadBackend_s2mPipe_rData_wayId;
   reg        [2:0]    ctrl_process_toReadBackend_s2mPipe_rData_upD_opcode;
   reg        [2:0]    ctrl_process_toReadBackend_s2mPipe_rData_upD_param;
   reg        [5:0]    ctrl_process_toReadBackend_s2mPipe_rData_upD_source;
@@ -17961,7 +17896,7 @@ module Cache (
   wire                readBackend_process_toWriteBackend_payload_partialUpA;
   wire       [31:0]   readBackend_process_toWriteBackend_payload_address;
   wire       [2:0]    readBackend_process_toWriteBackend_payload_size;
-  wire       [1:0]    readBackend_process_toWriteBackend_payload_wayId;
+  wire       [0:0]    readBackend_process_toWriteBackend_payload_wayId;
   wire       [1:0]    readBackend_process_toWriteBackend_payload_bufferAId;
   wire                readBackend_process_toWriteBackend_payload_evict;
   wire                writeBackend_stages_0_valid;
@@ -17972,7 +17907,7 @@ module Cache (
   wire                writeBackend_putMerges_push_ready;
   wire       [2:0]    writeBackend_putMerges_push_payload_gsId;
   wire       [6:0]    writeBackend_putMerges_push_payload_setId;
-  wire       [1:0]    writeBackend_putMerges_push_payload_wayId;
+  wire       [0:0]    writeBackend_putMerges_push_payload_wayId;
   wire       [2:0]    writeBackend_putMerges_push_payload_wordOffset;
   wire       [1:0]    writeBackend_putMerges_push_payload_bufferAId;
   wire       [5:0]    writeBackend_putMerges_push_payload_source;
@@ -17981,7 +17916,7 @@ module Cache (
   wire                writeBackend_putMerges_buffered_ready;
   wire       [2:0]    writeBackend_putMerges_buffered_payload_gsId;
   wire       [6:0]    writeBackend_putMerges_buffered_payload_setId;
-  wire       [1:0]    writeBackend_putMerges_buffered_payload_wayId;
+  wire       [0:0]    writeBackend_putMerges_buffered_payload_wayId;
   wire       [2:0]    writeBackend_putMerges_buffered_payload_wordOffset;
   wire       [1:0]    writeBackend_putMerges_buffered_payload_bufferAId;
   wire       [5:0]    writeBackend_putMerges_buffered_payload_source;
@@ -17998,7 +17933,7 @@ module Cache (
   wire                writeBackend_putMerges_cmd_payload_partialUpA;
   reg        [31:0]   writeBackend_putMerges_cmd_payload_address;
   wire       [2:0]    writeBackend_putMerges_cmd_payload_size;
-  wire       [1:0]    writeBackend_putMerges_cmd_payload_wayId;
+  wire       [0:0]    writeBackend_putMerges_cmd_payload_wayId;
   wire       [1:0]    writeBackend_putMerges_cmd_payload_bufferAId;
   wire                writeBackend_putMerges_cmd_payload_evict;
   wire                readBackend_process_toWriteBackend_s2mPipe_valid;
@@ -18013,7 +17948,7 @@ module Cache (
   wire                readBackend_process_toWriteBackend_s2mPipe_payload_partialUpA;
   wire       [31:0]   readBackend_process_toWriteBackend_s2mPipe_payload_address;
   wire       [2:0]    readBackend_process_toWriteBackend_s2mPipe_payload_size;
-  wire       [1:0]    readBackend_process_toWriteBackend_s2mPipe_payload_wayId;
+  wire       [0:0]    readBackend_process_toWriteBackend_s2mPipe_payload_wayId;
   wire       [1:0]    readBackend_process_toWriteBackend_s2mPipe_payload_bufferAId;
   wire                readBackend_process_toWriteBackend_s2mPipe_payload_evict;
   reg                 readBackend_process_toWriteBackend_rValidN;
@@ -18027,7 +17962,7 @@ module Cache (
   reg                 readBackend_process_toWriteBackend_rData_partialUpA;
   reg        [31:0]   readBackend_process_toWriteBackend_rData_address;
   reg        [2:0]    readBackend_process_toWriteBackend_rData_size;
-  reg        [1:0]    readBackend_process_toWriteBackend_rData_wayId;
+  reg        [0:0]    readBackend_process_toWriteBackend_rData_wayId;
   reg        [1:0]    readBackend_process_toWriteBackend_rData_bufferAId;
   reg                 readBackend_process_toWriteBackend_rData_evict;
   wire       [2:0]    _zz_readBackend_process_toWriteBackend_s2mPipe_payload_toUpD;
@@ -18043,7 +17978,7 @@ module Cache (
   wire                writeBackend_inserter_fromReadBackend_payload_partialUpA;
   wire       [31:0]   writeBackend_inserter_fromReadBackend_payload_address;
   wire       [2:0]    writeBackend_inserter_fromReadBackend_payload_size;
-  wire       [1:0]    writeBackend_inserter_fromReadBackend_payload_wayId;
+  wire       [0:0]    writeBackend_inserter_fromReadBackend_payload_wayId;
   wire       [1:0]    writeBackend_inserter_fromReadBackend_payload_bufferAId;
   wire                writeBackend_inserter_fromReadBackend_payload_evict;
   reg                 readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_rValid;
@@ -18058,7 +17993,7 @@ module Cache (
   reg                 readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_rData_partialUpA;
   reg        [31:0]   readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_rData_address;
   reg        [2:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_rData_size;
-  reg        [1:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_rData_wayId;
+  reg        [0:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_rData_wayId;
   reg        [1:0]    readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_rData_bufferAId;
   reg                 readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_rData_evict;
   wire                writeBackend_inserter_arbiter_io_output_s2mPipe_valid;
@@ -18073,7 +18008,7 @@ module Cache (
   wire                writeBackend_inserter_arbiter_io_output_s2mPipe_payload_partialUpA;
   wire       [31:0]   writeBackend_inserter_arbiter_io_output_s2mPipe_payload_address;
   wire       [2:0]    writeBackend_inserter_arbiter_io_output_s2mPipe_payload_size;
-  wire       [1:0]    writeBackend_inserter_arbiter_io_output_s2mPipe_payload_wayId;
+  wire       [0:0]    writeBackend_inserter_arbiter_io_output_s2mPipe_payload_wayId;
   wire       [1:0]    writeBackend_inserter_arbiter_io_output_s2mPipe_payload_bufferAId;
   wire                writeBackend_inserter_arbiter_io_output_s2mPipe_payload_evict;
   reg                 writeBackend_inserter_arbiter_io_output_rValidN;
@@ -18087,7 +18022,7 @@ module Cache (
   reg                 writeBackend_inserter_arbiter_io_output_rData_partialUpA;
   reg        [31:0]   writeBackend_inserter_arbiter_io_output_rData_address;
   reg        [2:0]    writeBackend_inserter_arbiter_io_output_rData_size;
-  reg        [1:0]    writeBackend_inserter_arbiter_io_output_rData_wayId;
+  reg        [0:0]    writeBackend_inserter_arbiter_io_output_rData_wayId;
   reg        [1:0]    writeBackend_inserter_arbiter_io_output_rData_bufferAId;
   reg                 writeBackend_inserter_arbiter_io_output_rData_evict;
   wire       [2:0]    _zz_writeBackend_inserter_arbiter_io_output_s2mPipe_payload_toUpD;
@@ -18103,7 +18038,7 @@ module Cache (
   wire                writeBackend_inserter_cmd_payload_partialUpA;
   wire       [31:0]   writeBackend_inserter_cmd_payload_address;
   wire       [2:0]    writeBackend_inserter_cmd_payload_size;
-  wire       [1:0]    writeBackend_inserter_cmd_payload_wayId;
+  wire       [0:0]    writeBackend_inserter_cmd_payload_wayId;
   wire       [1:0]    writeBackend_inserter_cmd_payload_bufferAId;
   wire                writeBackend_inserter_cmd_payload_evict;
   reg                 writeBackend_inserter_arbiter_io_output_s2mPipe_rValid;
@@ -18117,7 +18052,7 @@ module Cache (
   reg                 writeBackend_inserter_arbiter_io_output_s2mPipe_rData_partialUpA;
   reg        [31:0]   writeBackend_inserter_arbiter_io_output_s2mPipe_rData_address;
   reg        [2:0]    writeBackend_inserter_arbiter_io_output_s2mPipe_rData_size;
-  reg        [1:0]    writeBackend_inserter_arbiter_io_output_s2mPipe_rData_wayId;
+  reg        [0:0]    writeBackend_inserter_arbiter_io_output_s2mPipe_rData_wayId;
   reg        [1:0]    writeBackend_inserter_arbiter_io_output_s2mPipe_rData_bufferAId;
   reg                 writeBackend_inserter_arbiter_io_output_s2mPipe_rData_evict;
   wire                when_Stream_l477_5;
@@ -18258,12 +18193,12 @@ module Cache (
   wire       [2:0]    fromDownD_readPort_rsp_wordOffset;
   wire       [5:0]    fromDownD_readPort_rsp_sourceId;
   wire       [6:0]    fromDownD_readPort_rsp_setId;
-  wire       [1:0]    fromDownD_readPort_rsp_wayId;
+  wire       [0:0]    fromDownD_readPort_rsp_wayId;
   wire       [2:0]    fromDownD_readPort_rsp_size;
   wire                fromDownD_readPort_rsp_acquire;
   wire                fromDownD_readPort_rsp_release;
   wire                fromDownD_readPort_rsp_toT;
-  wire       [29:0]   _zz_fromDownD_readPort_rsp_toUpD;
+  wire       [28:0]   _zz_fromDownD_readPort_rsp_toUpD;
   wire                fromDownD_stages_0_isFiring;
   wire                fromDownD_process_isVictim;
   wire                _zz_fromDownD_stages_2_haltRequest_Cache_l1771;
@@ -18274,7 +18209,7 @@ module Cache (
   wire                fromDownD_stages_2_haltRequest_Cache_l1771;
   wire                fromDownD_process_toCache_valid;
   wire                fromDownD_process_toCache_ready;
-  wire       [11:0]   fromDownD_process_toCache_payload_cmd_address;
+  wire       [10:0]   fromDownD_process_toCache_payload_cmd_address;
   wire       [63:0]   fromDownD_process_toCache_payload_cmd_data;
   wire       [7:0]    fromDownD_process_toCache_payload_cmd_mask;
   wire       [2:0]    fromDownD_process_toCache_payload_gsId;
@@ -18286,20 +18221,20 @@ module Cache (
   wire                _zz_fromDownD_process_toCache_ready;
   wire                fromDownD_process_toCache_haltWhen_valid;
   reg                 fromDownD_process_toCache_haltWhen_ready;
-  wire       [11:0]   fromDownD_process_toCache_haltWhen_payload_cmd_address;
+  wire       [10:0]   fromDownD_process_toCache_haltWhen_payload_cmd_address;
   wire       [63:0]   fromDownD_process_toCache_haltWhen_payload_cmd_data;
   wire       [7:0]    fromDownD_process_toCache_haltWhen_payload_cmd_mask;
   wire       [2:0]    fromDownD_process_toCache_haltWhen_payload_gsId;
   wire                fromDownD_process_toCache_haltWhen_payload_last;
   wire                fromDownD_process_toCacheBuffered_valid;
   wire                fromDownD_process_toCacheBuffered_ready;
-  wire       [11:0]   fromDownD_process_toCacheBuffered_payload_cmd_address;
+  wire       [10:0]   fromDownD_process_toCacheBuffered_payload_cmd_address;
   wire       [63:0]   fromDownD_process_toCacheBuffered_payload_cmd_data;
   wire       [7:0]    fromDownD_process_toCacheBuffered_payload_cmd_mask;
   wire       [2:0]    fromDownD_process_toCacheBuffered_payload_gsId;
   wire                fromDownD_process_toCacheBuffered_payload_last;
   reg                 fromDownD_process_toCache_haltWhen_rValid;
-  reg        [11:0]   fromDownD_process_toCache_haltWhen_rData_cmd_address;
+  reg        [10:0]   fromDownD_process_toCache_haltWhen_rData_cmd_address;
   reg        [63:0]   fromDownD_process_toCache_haltWhen_rData_cmd_data;
   reg        [7:0]    fromDownD_process_toCache_haltWhen_rData_cmd_mask;
   reg        [2:0]    fromDownD_process_toCache_haltWhen_rData_gsId;
@@ -18464,7 +18399,6 @@ module Cache (
   wire                when_Connection_l74_7;
   wire                when_Cache_l1883;
   wire       [23:0]   _zz_cache_tags_write_data_loaded;
-  wire       [2:0]    _zz_cache_plru_write_payload_data_0;
   `ifndef SYNTHESIS
   reg [119:0] writeBackend_stages_1_CMD_toUpD_string;
   reg [119:0] readBackend_stages_1_CMD_upD_opcode_string;
@@ -18565,23 +18499,19 @@ module Cache (
   reg [119:0] _zz_readBackend_process_toUpD_s2mPipe_payload_opcode_string;
   `endif
 
-  reg [2:0] cache_plru_ram [0:127];
+  reg [0:0] cache_plru_ram [0:127];
   reg [23:0] cache_tags_ram_symbol0 [0:127];
   reg [23:0] cache_tags_ram_symbol1 [0:127];
-  reg [23:0] cache_tags_ram_symbol2 [0:127];
-  reg [23:0] cache_tags_ram_symbol3 [0:127];
   reg [23:0] _zz_cache_tags_ramsymbol_read;
   reg [23:0] _zz_cache_tags_ramsymbol_read_1;
-  reg [23:0] _zz_cache_tags_ramsymbol_read_2;
-  reg [23:0] _zz_cache_tags_ramsymbol_read_3;
-  reg [7:0] cache_data_banks_0_ram_symbol0 [0:4095];
-  reg [7:0] cache_data_banks_0_ram_symbol1 [0:4095];
-  reg [7:0] cache_data_banks_0_ram_symbol2 [0:4095];
-  reg [7:0] cache_data_banks_0_ram_symbol3 [0:4095];
-  reg [7:0] cache_data_banks_0_ram_symbol4 [0:4095];
-  reg [7:0] cache_data_banks_0_ram_symbol5 [0:4095];
-  reg [7:0] cache_data_banks_0_ram_symbol6 [0:4095];
-  reg [7:0] cache_data_banks_0_ram_symbol7 [0:4095];
+  reg [7:0] cache_data_banks_0_ram_symbol0 [0:2047];
+  reg [7:0] cache_data_banks_0_ram_symbol1 [0:2047];
+  reg [7:0] cache_data_banks_0_ram_symbol2 [0:2047];
+  reg [7:0] cache_data_banks_0_ram_symbol3 [0:2047];
+  reg [7:0] cache_data_banks_0_ram_symbol4 [0:2047];
+  reg [7:0] cache_data_banks_0_ram_symbol5 [0:2047];
+  reg [7:0] cache_data_banks_0_ram_symbol6 [0:2047];
+  reg [7:0] cache_data_banks_0_ram_symbol7 [0:2047];
   reg [7:0] _zz_cache_data_banks_0_ramsymbol_read;
   reg [7:0] _zz_cache_data_banks_0_ramsymbol_read_1;
   reg [7:0] _zz_cache_data_banks_0_ramsymbol_read_2;
@@ -18590,10 +18520,10 @@ module Cache (
   reg [7:0] _zz_cache_data_banks_0_ramsymbol_read_5;
   reg [7:0] _zz_cache_data_banks_0_ramsymbol_read_6;
   reg [7:0] _zz_cache_data_banks_0_ramsymbol_read_7;
-  reg [29:0] gs_ctxDownD_ram [0:7];
+  reg [28:0] gs_ctxDownD_ram [0:7];
   reg [71:0] fromUpA_buffer_ram [0:31];
   reg [63:0] victimBuffer_ram [0:63];
-  (* ram_style = "distributed" *) reg [58:0] prober_ctx_ram [0:3];
+  (* ram_style = "distributed" *) reg [57:0] prober_ctx_ram [0:3];
 
   assign _zz_when = prober_allocate_oh[0];
   assign _zz_when_1 = ctrl_process_gsOh[0];
@@ -18608,7 +18538,7 @@ module Cache (
   assign _zz_prober_slots_3_done_1 = prober_slots_3_probeAckDataCompleted;
   assign _zz_prober_slots_3_done = {1'd0, _zz_prober_slots_3_done_1};
   assign _zz_prober_schedule_merged_payload_probedUnique_3 = (((prober_schedule_hitOh[0] ? prober_slots_0_unique : 1'b0) | (_zz_prober_schedule_merged_payload_probedUnique ? prober_slots_1_unique : 1'b0)) | ((_zz_prober_schedule_merged_payload_probedUnique_1 ? prober_slots_2_unique : 1'b0) | (_zz_prober_schedule_merged_payload_probedUnique_2 ? prober_slots_3_unique : 1'b0)));
-  assign _zz_cache_tags_write_mask = (4'b0001 <<< ctrl_process_olderWay_wayId);
+  assign _zz_cache_tags_write_mask = (2'b01 <<< ctrl_process_olderWay_wayId);
   assign _zz_ctrl_process_toOrdering_payload_bytes = ({7'd0,1'b1} <<< ctrl_stages_2_CTRL_CMD_size);
   assign _zz_readBackend_stages_0_CMD_address_1 = ({3'd0,readBackend_inserter_counter} <<< 2'd3);
   assign _zz_readBackend_stages_0_CMD_address = {26'd0, _zz_readBackend_stages_0_CMD_address_1};
@@ -18620,8 +18550,8 @@ module Cache (
   assign _zz_fromDownD_stages_1_preprocess_toUpDHead = (fromDownD_stages_1_CTX_wordOffset + _zz_fromDownD_stages_1_preprocess_toUpDHead_1);
   assign _zz_fromDownD_process_toUpD_payload_param = (fromDownD_stages_2_CTX_toT ? 1'b0 : 1'b1);
   assign _zz_toFlushBus_rsp_payload_source_8 = ((((_zz_toFlushBus_rsp_payload_source ? _zz_toFlushBus_rsp_payload_source_9 : _zz_toFlushBus_rsp_payload_source_10) | (_zz_toFlushBus_rsp_payload_source_1 ? _zz_toFlushBus_rsp_payload_source_11 : _zz_toFlushBus_rsp_payload_source_12)) | ((_zz_toFlushBus_rsp_payload_source_2 ? _zz_toFlushBus_rsp_payload_source_13 : _zz_toFlushBus_rsp_payload_source_14) | (_zz_toFlushBus_rsp_payload_source_3 ? _zz_toFlushBus_rsp_payload_source_15 : _zz_toFlushBus_rsp_payload_source_16))) | (((_zz_toFlushBus_rsp_payload_source_4 ? _zz_toFlushBus_rsp_payload_source_17 : _zz_toFlushBus_rsp_payload_source_18) | (_zz_toFlushBus_rsp_payload_source_5 ? _zz_toFlushBus_rsp_payload_source_19 : _zz_toFlushBus_rsp_payload_source_20)) | ((_zz_toFlushBus_rsp_payload_source_6 ? _zz_toFlushBus_rsp_payload_source_21 : _zz_toFlushBus_rsp_payload_source_22) | (_zz_toFlushBus_rsp_payload_source_7 ? _zz_toFlushBus_rsp_payload_source_23 : _zz_toFlushBus_rsp_payload_source_24))));
-  assign _zz_cache_plru_ram_port = {cache_plru_write_payload_data_1,cache_plru_write_payload_data_0};
-  assign _zz_cache_tags_ram_port = {{cache_tags_writeRaw_payload_data_3_owners,{cache_tags_writeRaw_payload_data_3_trunk,{cache_tags_writeRaw_payload_data_3_dirty,{cache_tags_writeRaw_payload_data_3_tag,cache_tags_writeRaw_payload_data_3_loaded}}}},{{cache_tags_writeRaw_payload_data_2_owners,{cache_tags_writeRaw_payload_data_2_trunk,{cache_tags_writeRaw_payload_data_2_dirty,{cache_tags_writeRaw_payload_data_2_tag,cache_tags_writeRaw_payload_data_2_loaded}}}},{{cache_tags_writeRaw_payload_data_1_owners,{cache_tags_writeRaw_payload_data_1_trunk,{cache_tags_writeRaw_payload_data_1_dirty,{cache_tags_writeRaw_payload_data_1_tag,cache_tags_writeRaw_payload_data_1_loaded}}}},{cache_tags_writeRaw_payload_data_0_owners,{cache_tags_writeRaw_payload_data_0_trunk,{cache_tags_writeRaw_payload_data_0_dirty,{cache_tags_writeRaw_payload_data_0_tag,cache_tags_writeRaw_payload_data_0_loaded}}}}}}};
+  assign _zz_cache_plru_write_payload_data_0 = 1'b0;
+  assign _zz_cache_tags_ram_port = {{cache_tags_writeRaw_payload_data_1_owners,{cache_tags_writeRaw_payload_data_1_trunk,{cache_tags_writeRaw_payload_data_1_dirty,{cache_tags_writeRaw_payload_data_1_tag,cache_tags_writeRaw_payload_data_1_loaded}}}},{cache_tags_writeRaw_payload_data_0_owners,{cache_tags_writeRaw_payload_data_0_trunk,{cache_tags_writeRaw_payload_data_0_dirty,{cache_tags_writeRaw_payload_data_0_tag,cache_tags_writeRaw_payload_data_0_loaded}}}}};
   assign _zz_gs_ctxDownD_ram_port = {gs_ctxDownD_write_payload_data_toT,{gs_ctxDownD_write_payload_data_release,{gs_ctxDownD_write_payload_data_acquire,{gs_ctxDownD_write_payload_data_size,{gs_ctxDownD_write_payload_data_wayId,{gs_ctxDownD_write_payload_data_setId,{gs_ctxDownD_write_payload_data_sourceId,{gs_ctxDownD_write_payload_data_wordOffset,{gs_ctxDownD_write_payload_data_bufferAId,{gs_ctxDownD_write_payload_data_mergeBufferA,{gs_ctxDownD_write_payload_data_toProbe,{gs_ctxDownD_write_payload_data_toCache,gs_ctxDownD_write_payload_data_toUpD}}}}}}}}}}}};
   assign _zz_fromUpA_buffer_ram_port = {fromUpA_buffer_write_payload_data_data,fromUpA_buffer_write_payload_data_mask};
   assign _zz_prober_ctx_ram_port = {prober_ctx_write_payload_data_evictWay,{prober_ctx_write_payload_data_withDataUpC,{prober_ctx_write_payload_data_gsId,{prober_ctx_write_payload_data_probedUnique,{prober_ctx_write_payload_data_probed,{prober_ctx_write_payload_data_bufferAId,{prober_ctx_write_payload_data_upParam,{prober_ctx_write_payload_data_source,{prober_ctx_write_payload_data_size,{prober_ctx_write_payload_data_address,{prober_ctx_write_payload_data_args,prober_ctx_write_payload_data_opcode}}}}}}}}}}};
@@ -18632,14 +18562,6 @@ module Cache (
   assign _zz_ctrl_stages_1_preCtrl_GS_HITS_3 = (gs_slots_3_valid && (ctrl_stages_1_CTRL_CMD_address[12 : 6] == gs_slots_3_address[12 : 6]));
   assign _zz_ctrl_stages_1_preCtrl_GS_HITS_4 = (gs_slots_2_valid && (ctrl_stages_1_CTRL_CMD_address[12 : 6] == gs_slots_2_address[12 : 6]));
   assign _zz_ctrl_stages_1_preCtrl_GS_HITS_5 = {(gs_slots_1_valid && (ctrl_stages_1_CTRL_CMD_address[12 : 6] == gs_slots_1_address[12 : 6])),(gs_slots_0_valid && (ctrl_stages_1_CTRL_CMD_address[12 : 6] == gs_slots_0_address[12 : 6]))};
-  assign _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3 = ctrl_stages_2_CACHE_TAGS_0_trunk;
-  assign _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_1 = {ctrl_stages_2_CACHE_TAGS_0_dirty,{ctrl_stages_2_CACHE_TAGS_0_tag,ctrl_stages_2_CACHE_TAGS_0_loaded}};
-  assign _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_2 = ctrl_stages_2_CACHE_TAGS_1_trunk;
-  assign _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_3 = {ctrl_stages_2_CACHE_TAGS_1_dirty,{ctrl_stages_2_CACHE_TAGS_1_tag,ctrl_stages_2_CACHE_TAGS_1_loaded}};
-  assign _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_4 = ctrl_stages_2_CACHE_TAGS_2_trunk;
-  assign _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_5 = {ctrl_stages_2_CACHE_TAGS_2_dirty,{ctrl_stages_2_CACHE_TAGS_2_tag,ctrl_stages_2_CACHE_TAGS_2_loaded}};
-  assign _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_6 = ctrl_stages_2_CACHE_TAGS_3_trunk;
-  assign _zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_7 = {ctrl_stages_2_CACHE_TAGS_3_dirty,{ctrl_stages_2_CACHE_TAGS_3_tag,ctrl_stages_2_CACHE_TAGS_3_loaded}};
   assign _zz_toFlushBus_rsp_payload_source_9 = gs_slots_0_sourceId;
   assign _zz_toFlushBus_rsp_payload_source_10 = 6'h0;
   assign _zz_toFlushBus_rsp_payload_source_11 = gs_slots_1_sourceId;
@@ -18664,19 +18586,17 @@ module Cache (
 
   always @(posedge litex_clk) begin
     if(_zz_5) begin
-      cache_plru_ram[cache_plru_write_payload_address] <= _zz_cache_plru_ram_port;
+      cache_plru_ram[cache_plru_write_payload_address] <= cache_plru_write_payload_data_0;
     end
   end
 
   always @(*) begin
-    cache_tags_ram_spinal_port0 = {_zz_cache_tags_ramsymbol_read_3, _zz_cache_tags_ramsymbol_read_2, _zz_cache_tags_ramsymbol_read_1, _zz_cache_tags_ramsymbol_read};
+    cache_tags_ram_spinal_port0 = {_zz_cache_tags_ramsymbol_read_1, _zz_cache_tags_ramsymbol_read};
   end
   always @(posedge litex_clk) begin
     if(cache_tags_read_cmd_valid) begin
       _zz_cache_tags_ramsymbol_read <= cache_tags_ram_symbol0[cache_tags_read_cmd_payload];
       _zz_cache_tags_ramsymbol_read_1 <= cache_tags_ram_symbol1[cache_tags_read_cmd_payload];
-      _zz_cache_tags_ramsymbol_read_2 <= cache_tags_ram_symbol2[cache_tags_read_cmd_payload];
-      _zz_cache_tags_ramsymbol_read_3 <= cache_tags_ram_symbol3[cache_tags_read_cmd_payload];
     end
   end
 
@@ -18686,12 +18606,6 @@ module Cache (
     end
     if(cache_tags_writeRaw_payload_mask[1] && cache_tags_writeRaw_valid) begin
       cache_tags_ram_symbol1[cache_tags_writeRaw_payload_address] <= _zz_cache_tags_ram_port[47 : 24];
-    end
-    if(cache_tags_writeRaw_payload_mask[2] && cache_tags_writeRaw_valid) begin
-      cache_tags_ram_symbol2[cache_tags_writeRaw_payload_address] <= _zz_cache_tags_ram_port[71 : 48];
-    end
-    if(cache_tags_writeRaw_payload_mask[3] && cache_tags_writeRaw_valid) begin
-      cache_tags_ram_symbol3[cache_tags_writeRaw_payload_address] <= _zz_cache_tags_ram_port[95 : 72];
     end
   end
 
@@ -18784,49 +18698,49 @@ module Cache (
   StreamDemux_1 streamDemux_4 (
     .io_input_valid               (cache_data_upWrite_valid                         ), //i
     .io_input_ready               (streamDemux_4_io_input_ready                     ), //o
-    .io_input_payload_address     (cache_data_upWrite_payload_address[11:0]         ), //i
+    .io_input_payload_address     (cache_data_upWrite_payload_address[10:0]         ), //i
     .io_input_payload_data        (cache_data_upWrite_payload_data[63:0]            ), //i
     .io_input_payload_mask        (cache_data_upWrite_payload_mask[7:0]             ), //i
     .io_outputs_0_valid           (streamDemux_4_io_outputs_0_valid                 ), //o
     .io_outputs_0_ready           (cache_data_banks_0_writeArbiter_io_inputs_1_ready), //i
-    .io_outputs_0_payload_address (streamDemux_4_io_outputs_0_payload_address[11:0] ), //o
+    .io_outputs_0_payload_address (streamDemux_4_io_outputs_0_payload_address[10:0] ), //o
     .io_outputs_0_payload_data    (streamDemux_4_io_outputs_0_payload_data[63:0]    ), //o
     .io_outputs_0_payload_mask    (streamDemux_4_io_outputs_0_payload_mask[7:0]     )  //o
   );
   StreamDemux_1 streamDemux_5 (
     .io_input_valid               (cache_data_downWrite_valid                       ), //i
     .io_input_ready               (streamDemux_5_io_input_ready                     ), //o
-    .io_input_payload_address     (cache_data_downWrite_payload_address[11:0]       ), //i
+    .io_input_payload_address     (cache_data_downWrite_payload_address[10:0]       ), //i
     .io_input_payload_data        (cache_data_downWrite_payload_data[63:0]          ), //i
     .io_input_payload_mask        (cache_data_downWrite_payload_mask[7:0]           ), //i
     .io_outputs_0_valid           (streamDemux_5_io_outputs_0_valid                 ), //o
     .io_outputs_0_ready           (cache_data_banks_0_writeArbiter_io_inputs_0_ready), //i
-    .io_outputs_0_payload_address (streamDemux_5_io_outputs_0_payload_address[11:0] ), //o
+    .io_outputs_0_payload_address (streamDemux_5_io_outputs_0_payload_address[10:0] ), //o
     .io_outputs_0_payload_data    (streamDemux_5_io_outputs_0_payload_data[63:0]    ), //o
     .io_outputs_0_payload_mask    (streamDemux_5_io_outputs_0_payload_mask[7:0]     )  //o
   );
   StreamDemux_3 streamDemux_6 (
     .io_input_valid       (cache_data_upRead_valid                 ), //i
     .io_input_ready       (streamDemux_6_io_input_ready            ), //o
-    .io_input_payload     (cache_data_upRead_payload[11:0]         ), //i
+    .io_input_payload     (cache_data_upRead_payload[10:0]         ), //i
     .io_outputs_0_valid   (streamDemux_6_io_outputs_0_valid        ), //o
     .io_outputs_0_ready   (cache_data_banks_0_read_ready           ), //i
-    .io_outputs_0_payload (streamDemux_6_io_outputs_0_payload[11:0])  //o
+    .io_outputs_0_payload (streamDemux_6_io_outputs_0_payload[10:0])  //o
   );
   StreamArbiter_22 cache_data_banks_0_writeArbiter (
     .io_inputs_0_valid           (streamDemux_5_io_outputs_0_valid                               ), //i
     .io_inputs_0_ready           (cache_data_banks_0_writeArbiter_io_inputs_0_ready              ), //o
-    .io_inputs_0_payload_address (streamDemux_5_io_outputs_0_payload_address[11:0]               ), //i
+    .io_inputs_0_payload_address (streamDemux_5_io_outputs_0_payload_address[10:0]               ), //i
     .io_inputs_0_payload_data    (streamDemux_5_io_outputs_0_payload_data[63:0]                  ), //i
     .io_inputs_0_payload_mask    (streamDemux_5_io_outputs_0_payload_mask[7:0]                   ), //i
     .io_inputs_1_valid           (streamDemux_4_io_outputs_0_valid                               ), //i
     .io_inputs_1_ready           (cache_data_banks_0_writeArbiter_io_inputs_1_ready              ), //o
-    .io_inputs_1_payload_address (streamDemux_4_io_outputs_0_payload_address[11:0]               ), //i
+    .io_inputs_1_payload_address (streamDemux_4_io_outputs_0_payload_address[10:0]               ), //i
     .io_inputs_1_payload_data    (streamDemux_4_io_outputs_0_payload_data[63:0]                  ), //i
     .io_inputs_1_payload_mask    (streamDemux_4_io_outputs_0_payload_mask[7:0]                   ), //i
     .io_output_valid             (cache_data_banks_0_writeArbiter_io_output_valid                ), //o
     .io_output_ready             (cache_data_banks_0_write_ready                                 ), //i
-    .io_output_payload_address   (cache_data_banks_0_writeArbiter_io_output_payload_address[11:0]), //o
+    .io_output_payload_address   (cache_data_banks_0_writeArbiter_io_output_payload_address[10:0]), //o
     .io_output_payload_data      (cache_data_banks_0_writeArbiter_io_output_payload_data[63:0]   ), //o
     .io_output_payload_mask      (cache_data_banks_0_writeArbiter_io_output_payload_mask[7:0]    ), //o
     .io_chosen                   (cache_data_banks_0_writeArbiter_io_chosen                      ), //o
@@ -18890,7 +18804,7 @@ module Cache (
     .io_push_payload_probedUnique (ctrl_stages_2_CTRL_CMD_probedUnique             ), //i
     .io_push_payload_gsId         (ctrl_stages_2_CTRL_CMD_gsId[2:0]                ), //i
     .io_push_payload_withDataUpC  (ctrl_stages_2_CTRL_CMD_withDataUpC              ), //i
-    .io_push_payload_evictWay     (ctrl_stages_2_CTRL_CMD_evictWay[1:0]            ), //i
+    .io_push_payload_evictWay     (ctrl_stages_2_CTRL_CMD_evictWay                 ), //i
     .io_pop_valid                 (ctrl_loopback_fifo_io_pop_valid                 ), //o
     .io_pop_ready                 (ctrl_loopback_fifo_io_pop_ready                 ), //i
     .io_pop_payload_opcode        (ctrl_loopback_fifo_io_pop_payload_opcode[3:0]   ), //o
@@ -18904,7 +18818,7 @@ module Cache (
     .io_pop_payload_probedUnique  (ctrl_loopback_fifo_io_pop_payload_probedUnique  ), //o
     .io_pop_payload_gsId          (ctrl_loopback_fifo_io_pop_payload_gsId[2:0]     ), //o
     .io_pop_payload_withDataUpC   (ctrl_loopback_fifo_io_pop_payload_withDataUpC   ), //o
-    .io_pop_payload_evictWay      (ctrl_loopback_fifo_io_pop_payload_evictWay[1:0] ), //o
+    .io_pop_payload_evictWay      (ctrl_loopback_fifo_io_pop_payload_evictWay      ), //o
     .io_flush                     (1'b0                                            ), //i
     .io_occupancy                 (ctrl_loopback_fifo_io_occupancy[2:0]            ), //o
     .io_availability              (ctrl_loopback_fifo_io_availability[2:0]         ), //o
@@ -18925,7 +18839,7 @@ module Cache (
     .io_inputs_0_payload_probedUnique (prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_probedUnique  ), //i
     .io_inputs_0_payload_gsId         (prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_gsId[2:0]     ), //i
     .io_inputs_0_payload_withDataUpC  (prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_withDataUpC   ), //i
-    .io_inputs_0_payload_evictWay     (prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_evictWay[1:0] ), //i
+    .io_inputs_0_payload_evictWay     (prober_schedule_toCtrl_s2mPipe_m2sPipe_payload_evictWay      ), //i
     .io_inputs_1_valid                (fromUpA_toCtrl_continueWhen_valid                            ), //i
     .io_inputs_1_ready                (ctrl_inserter_arbiter_io_inputs_1_ready                      ), //o
     .io_inputs_1_payload_opcode       (fromUpA_toCtrl_continueWhen_payload_opcode[3:0]              ), //i
@@ -18939,7 +18853,7 @@ module Cache (
     .io_inputs_1_payload_probedUnique (fromUpA_toCtrl_continueWhen_payload_probedUnique             ), //i
     .io_inputs_1_payload_gsId         (fromUpA_toCtrl_continueWhen_payload_gsId[2:0]                ), //i
     .io_inputs_1_payload_withDataUpC  (fromUpA_toCtrl_continueWhen_payload_withDataUpC              ), //i
-    .io_inputs_1_payload_evictWay     (fromUpA_toCtrl_continueWhen_payload_evictWay[1:0]            ), //i
+    .io_inputs_1_payload_evictWay     (fromUpA_toCtrl_continueWhen_payload_evictWay                 ), //i
     .io_inputs_2_valid                (ctrl_inserter_loopbackPop_valid                              ), //i
     .io_inputs_2_ready                (ctrl_inserter_arbiter_io_inputs_2_ready                      ), //o
     .io_inputs_2_payload_opcode       (ctrl_inserter_loopbackPop_payload_opcode[3:0]                ), //i
@@ -18953,7 +18867,7 @@ module Cache (
     .io_inputs_2_payload_probedUnique (ctrl_inserter_loopbackPop_payload_probedUnique               ), //i
     .io_inputs_2_payload_gsId         (ctrl_inserter_loopbackPop_payload_gsId[2:0]                  ), //i
     .io_inputs_2_payload_withDataUpC  (ctrl_inserter_loopbackPop_payload_withDataUpC                ), //i
-    .io_inputs_2_payload_evictWay     (ctrl_inserter_loopbackPop_payload_evictWay[1:0]              ), //i
+    .io_inputs_2_payload_evictWay     (ctrl_inserter_loopbackPop_payload_evictWay                   ), //i
     .io_inputs_3_valid                (fromFlushBus_cmd_continueWhen_valid                          ), //i
     .io_inputs_3_ready                (ctrl_inserter_arbiter_io_inputs_3_ready                      ), //o
     .io_inputs_3_payload_opcode       (fromFlushBus_cmd_continueWhen_payload_opcode[3:0]            ), //i
@@ -18967,7 +18881,7 @@ module Cache (
     .io_inputs_3_payload_probedUnique (fromFlushBus_cmd_continueWhen_payload_probedUnique           ), //i
     .io_inputs_3_payload_gsId         (fromFlushBus_cmd_continueWhen_payload_gsId[2:0]              ), //i
     .io_inputs_3_payload_withDataUpC  (fromFlushBus_cmd_continueWhen_payload_withDataUpC            ), //i
-    .io_inputs_3_payload_evictWay     (fromFlushBus_cmd_continueWhen_payload_evictWay[1:0]          ), //i
+    .io_inputs_3_payload_evictWay     (fromFlushBus_cmd_continueWhen_payload_evictWay               ), //i
     .io_output_valid                  (ctrl_inserter_arbiter_io_output_valid                        ), //o
     .io_output_ready                  (ctrl_inserter_arbiter_io_output_ready                        ), //i
     .io_output_payload_opcode         (ctrl_inserter_arbiter_io_output_payload_opcode[3:0]          ), //o
@@ -18981,7 +18895,7 @@ module Cache (
     .io_output_payload_probedUnique   (ctrl_inserter_arbiter_io_output_payload_probedUnique         ), //o
     .io_output_payload_gsId           (ctrl_inserter_arbiter_io_output_payload_gsId[2:0]            ), //o
     .io_output_payload_withDataUpC    (ctrl_inserter_arbiter_io_output_payload_withDataUpC          ), //o
-    .io_output_payload_evictWay       (ctrl_inserter_arbiter_io_output_payload_evictWay[1:0]        ), //o
+    .io_output_payload_evictWay       (ctrl_inserter_arbiter_io_output_payload_evictWay             ), //o
     .io_chosen                        (ctrl_inserter_arbiter_io_chosen[1:0]                         ), //o
     .io_chosenOH                      (ctrl_inserter_arbiter_io_chosenOH[3:0]                       )  //o
   );
@@ -18990,7 +18904,7 @@ module Cache (
     .io_push_ready              (writeBackend_putMerges_fifo_io_push_ready                 ), //o
     .io_push_payload_gsId       (writeBackend_putMerges_push_payload_gsId[2:0]             ), //i
     .io_push_payload_setId      (writeBackend_putMerges_push_payload_setId[6:0]            ), //i
-    .io_push_payload_wayId      (writeBackend_putMerges_push_payload_wayId[1:0]            ), //i
+    .io_push_payload_wayId      (writeBackend_putMerges_push_payload_wayId                 ), //i
     .io_push_payload_wordOffset (writeBackend_putMerges_push_payload_wordOffset[2:0]       ), //i
     .io_push_payload_bufferAId  (writeBackend_putMerges_push_payload_bufferAId[1:0]        ), //i
     .io_push_payload_source     (writeBackend_putMerges_push_payload_source[5:0]           ), //i
@@ -18999,7 +18913,7 @@ module Cache (
     .io_pop_ready               (writeBackend_putMerges_buffered_ready                     ), //i
     .io_pop_payload_gsId        (writeBackend_putMerges_fifo_io_pop_payload_gsId[2:0]      ), //o
     .io_pop_payload_setId       (writeBackend_putMerges_fifo_io_pop_payload_setId[6:0]     ), //o
-    .io_pop_payload_wayId       (writeBackend_putMerges_fifo_io_pop_payload_wayId[1:0]     ), //o
+    .io_pop_payload_wayId       (writeBackend_putMerges_fifo_io_pop_payload_wayId          ), //o
     .io_pop_payload_wordOffset  (writeBackend_putMerges_fifo_io_pop_payload_wordOffset[2:0]), //o
     .io_pop_payload_bufferAId   (writeBackend_putMerges_fifo_io_pop_payload_bufferAId[1:0] ), //o
     .io_pop_payload_source      (writeBackend_putMerges_fifo_io_pop_payload_source[5:0]    ), //o
@@ -19023,7 +18937,7 @@ module Cache (
     .io_push_payload_partialUpA (readBackend_process_toWriteBackend_s2mPipe_payload_partialUpA                ), //i
     .io_push_payload_address    (readBackend_process_toWriteBackend_s2mPipe_payload_address[31:0]             ), //i
     .io_push_payload_size       (readBackend_process_toWriteBackend_s2mPipe_payload_size[2:0]                 ), //i
-    .io_push_payload_wayId      (readBackend_process_toWriteBackend_s2mPipe_payload_wayId[1:0]                ), //i
+    .io_push_payload_wayId      (readBackend_process_toWriteBackend_s2mPipe_payload_wayId                     ), //i
     .io_push_payload_bufferAId  (readBackend_process_toWriteBackend_s2mPipe_payload_bufferAId[1:0]            ), //i
     .io_push_payload_evict      (readBackend_process_toWriteBackend_s2mPipe_payload_evict                     ), //i
     .io_pop_valid               (readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_valid                 ), //o
@@ -19038,7 +18952,7 @@ module Cache (
     .io_pop_payload_partialUpA  (readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_partialUpA    ), //o
     .io_pop_payload_address     (readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_address[31:0] ), //o
     .io_pop_payload_size        (readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_size[2:0]     ), //o
-    .io_pop_payload_wayId       (readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_wayId[1:0]    ), //o
+    .io_pop_payload_wayId       (readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_wayId         ), //o
     .io_pop_payload_bufferAId   (readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_bufferAId[1:0]), //o
     .io_pop_payload_evict       (readBackend_process_toWriteBackend_s2mPipe_fifo_io_pop_payload_evict         ), //o
     .io_flush                   (1'b0                                                                         ), //i
@@ -19060,7 +18974,7 @@ module Cache (
     .io_inputs_0_payload_partialUpA (ctrl_process_toWriteBackend_payload_partialUpA                ), //i
     .io_inputs_0_payload_address    (ctrl_process_toWriteBackend_payload_address[31:0]             ), //i
     .io_inputs_0_payload_size       (ctrl_process_toWriteBackend_payload_size[2:0]                 ), //i
-    .io_inputs_0_payload_wayId      (ctrl_process_toWriteBackend_payload_wayId[1:0]                ), //i
+    .io_inputs_0_payload_wayId      (ctrl_process_toWriteBackend_payload_wayId                     ), //i
     .io_inputs_0_payload_bufferAId  (ctrl_process_toWriteBackend_payload_bufferAId[1:0]            ), //i
     .io_inputs_0_payload_evict      (ctrl_process_toWriteBackend_payload_evict                     ), //i
     .io_inputs_1_valid              (writeBackend_putMerges_cmd_valid                              ), //i
@@ -19075,7 +18989,7 @@ module Cache (
     .io_inputs_1_payload_partialUpA (writeBackend_putMerges_cmd_payload_partialUpA                 ), //i
     .io_inputs_1_payload_address    (writeBackend_putMerges_cmd_payload_address[31:0]              ), //i
     .io_inputs_1_payload_size       (writeBackend_putMerges_cmd_payload_size[2:0]                  ), //i
-    .io_inputs_1_payload_wayId      (writeBackend_putMerges_cmd_payload_wayId[1:0]                 ), //i
+    .io_inputs_1_payload_wayId      (writeBackend_putMerges_cmd_payload_wayId                      ), //i
     .io_inputs_1_payload_bufferAId  (writeBackend_putMerges_cmd_payload_bufferAId[1:0]             ), //i
     .io_inputs_1_payload_evict      (writeBackend_putMerges_cmd_payload_evict                      ), //i
     .io_inputs_2_valid              (writeBackend_inserter_fromReadBackend_valid                   ), //i
@@ -19090,7 +19004,7 @@ module Cache (
     .io_inputs_2_payload_partialUpA (writeBackend_inserter_fromReadBackend_payload_partialUpA      ), //i
     .io_inputs_2_payload_address    (writeBackend_inserter_fromReadBackend_payload_address[31:0]   ), //i
     .io_inputs_2_payload_size       (writeBackend_inserter_fromReadBackend_payload_size[2:0]       ), //i
-    .io_inputs_2_payload_wayId      (writeBackend_inserter_fromReadBackend_payload_wayId[1:0]      ), //i
+    .io_inputs_2_payload_wayId      (writeBackend_inserter_fromReadBackend_payload_wayId           ), //i
     .io_inputs_2_payload_bufferAId  (writeBackend_inserter_fromReadBackend_payload_bufferAId[1:0]  ), //i
     .io_inputs_2_payload_evict      (writeBackend_inserter_fromReadBackend_payload_evict           ), //i
     .io_output_valid                (writeBackend_inserter_arbiter_io_output_valid                 ), //o
@@ -19105,7 +19019,7 @@ module Cache (
     .io_output_payload_partialUpA   (writeBackend_inserter_arbiter_io_output_payload_partialUpA    ), //o
     .io_output_payload_address      (writeBackend_inserter_arbiter_io_output_payload_address[31:0] ), //o
     .io_output_payload_size         (writeBackend_inserter_arbiter_io_output_payload_size[2:0]     ), //o
-    .io_output_payload_wayId        (writeBackend_inserter_arbiter_io_output_payload_wayId[1:0]    ), //o
+    .io_output_payload_wayId        (writeBackend_inserter_arbiter_io_output_payload_wayId         ), //o
     .io_output_payload_bufferAId    (writeBackend_inserter_arbiter_io_output_payload_bufferAId[1:0]), //o
     .io_output_payload_evict        (writeBackend_inserter_arbiter_io_output_payload_evict         ), //o
     .io_chosen                      (writeBackend_inserter_arbiter_io_chosen[1:0]                  ), //o
@@ -19249,33 +19163,19 @@ module Cache (
 
   always @(*) begin
     case(ctrl_process_olderWay_wayId)
-      2'b00 : begin
+      1'b0 : begin
         _zz_ctrl_process_olderWay_tags_loaded = ctrl_stages_2_CACHE_TAGS_0_loaded;
         _zz_ctrl_process_olderWay_tags_tag = ctrl_stages_2_CACHE_TAGS_0_tag;
         _zz_ctrl_process_olderWay_tags_dirty = ctrl_stages_2_CACHE_TAGS_0_dirty;
         _zz_ctrl_process_olderWay_tags_trunk = ctrl_stages_2_CACHE_TAGS_0_trunk;
         _zz_ctrl_process_olderWay_tags_owners = ctrl_stages_2_CACHE_TAGS_0_owners;
       end
-      2'b01 : begin
+      default : begin
         _zz_ctrl_process_olderWay_tags_loaded = ctrl_stages_2_CACHE_TAGS_1_loaded;
         _zz_ctrl_process_olderWay_tags_tag = ctrl_stages_2_CACHE_TAGS_1_tag;
         _zz_ctrl_process_olderWay_tags_dirty = ctrl_stages_2_CACHE_TAGS_1_dirty;
         _zz_ctrl_process_olderWay_tags_trunk = ctrl_stages_2_CACHE_TAGS_1_trunk;
         _zz_ctrl_process_olderWay_tags_owners = ctrl_stages_2_CACHE_TAGS_1_owners;
-      end
-      2'b10 : begin
-        _zz_ctrl_process_olderWay_tags_loaded = ctrl_stages_2_CACHE_TAGS_2_loaded;
-        _zz_ctrl_process_olderWay_tags_tag = ctrl_stages_2_CACHE_TAGS_2_tag;
-        _zz_ctrl_process_olderWay_tags_dirty = ctrl_stages_2_CACHE_TAGS_2_dirty;
-        _zz_ctrl_process_olderWay_tags_trunk = ctrl_stages_2_CACHE_TAGS_2_trunk;
-        _zz_ctrl_process_olderWay_tags_owners = ctrl_stages_2_CACHE_TAGS_2_owners;
-      end
-      default : begin
-        _zz_ctrl_process_olderWay_tags_loaded = ctrl_stages_2_CACHE_TAGS_3_loaded;
-        _zz_ctrl_process_olderWay_tags_tag = ctrl_stages_2_CACHE_TAGS_3_tag;
-        _zz_ctrl_process_olderWay_tags_dirty = ctrl_stages_2_CACHE_TAGS_3_dirty;
-        _zz_ctrl_process_olderWay_tags_trunk = ctrl_stages_2_CACHE_TAGS_3_trunk;
-        _zz_ctrl_process_olderWay_tags_owners = ctrl_stages_2_CACHE_TAGS_3_owners;
       end
     endcase
   end
@@ -20559,14 +20459,10 @@ module Cache (
     end
   end
 
-  assign _zz_cache_plru_read_rsp_0 = cache_plru_ram_spinal_port0;
-  assign cache_plru_read_rsp_0 = _zz_cache_plru_read_rsp_0[0 : 0];
-  assign cache_plru_read_rsp_1 = _zz_cache_plru_read_rsp_0[2 : 1];
+  assign cache_plru_read_rsp_0 = cache_plru_ram_spinal_port0[0 : 0];
   assign _zz_cache_tags_read_rsp_0_loaded = cache_tags_ram_spinal_port0;
   assign _zz_cache_tags_read_rsp_0_loaded_1 = _zz_cache_tags_read_rsp_0_loaded[23 : 0];
   assign _zz_cache_tags_read_rsp_1_loaded = _zz_cache_tags_read_rsp_0_loaded[47 : 24];
-  assign _zz_cache_tags_read_rsp_2_loaded = _zz_cache_tags_read_rsp_0_loaded[71 : 48];
-  assign _zz_cache_tags_read_rsp_3_loaded = _zz_cache_tags_read_rsp_0_loaded[95 : 72];
   assign cache_tags_read_rsp_0_loaded = _zz_cache_tags_read_rsp_0_loaded_1[0];
   assign cache_tags_read_rsp_0_tag = _zz_cache_tags_read_rsp_0_loaded_1[19 : 1];
   assign cache_tags_read_rsp_0_dirty = _zz_cache_tags_read_rsp_0_loaded_1[20];
@@ -20577,16 +20473,6 @@ module Cache (
   assign cache_tags_read_rsp_1_dirty = _zz_cache_tags_read_rsp_1_loaded[20];
   assign cache_tags_read_rsp_1_trunk = _zz_cache_tags_read_rsp_1_loaded[21];
   assign cache_tags_read_rsp_1_owners = _zz_cache_tags_read_rsp_1_loaded[23 : 22];
-  assign cache_tags_read_rsp_2_loaded = _zz_cache_tags_read_rsp_2_loaded[0];
-  assign cache_tags_read_rsp_2_tag = _zz_cache_tags_read_rsp_2_loaded[19 : 1];
-  assign cache_tags_read_rsp_2_dirty = _zz_cache_tags_read_rsp_2_loaded[20];
-  assign cache_tags_read_rsp_2_trunk = _zz_cache_tags_read_rsp_2_loaded[21];
-  assign cache_tags_read_rsp_2_owners = _zz_cache_tags_read_rsp_2_loaded[23 : 22];
-  assign cache_tags_read_rsp_3_loaded = _zz_cache_tags_read_rsp_3_loaded[0];
-  assign cache_tags_read_rsp_3_tag = _zz_cache_tags_read_rsp_3_loaded[19 : 1];
-  assign cache_tags_read_rsp_3_dirty = _zz_cache_tags_read_rsp_3_loaded[20];
-  assign cache_tags_read_rsp_3_trunk = _zz_cache_tags_read_rsp_3_loaded[21];
-  assign cache_tags_read_rsp_3_owners = _zz_cache_tags_read_rsp_3_loaded[23 : 22];
   assign cache_tags_writeRaw_valid = cache_tags_write_valid;
   assign cache_tags_writeRaw_payload_address = cache_tags_write_address;
   assign cache_tags_writeRaw_payload_mask = cache_tags_write_mask;
@@ -20600,16 +20486,6 @@ module Cache (
   assign cache_tags_writeRaw_payload_data_1_dirty = cache_tags_write_data_dirty;
   assign cache_tags_writeRaw_payload_data_1_trunk = cache_tags_write_data_trunk;
   assign cache_tags_writeRaw_payload_data_1_owners = cache_tags_write_data_owners;
-  assign cache_tags_writeRaw_payload_data_2_loaded = cache_tags_write_data_loaded;
-  assign cache_tags_writeRaw_payload_data_2_tag = cache_tags_write_data_tag;
-  assign cache_tags_writeRaw_payload_data_2_dirty = cache_tags_write_data_dirty;
-  assign cache_tags_writeRaw_payload_data_2_trunk = cache_tags_write_data_trunk;
-  assign cache_tags_writeRaw_payload_data_2_owners = cache_tags_write_data_owners;
-  assign cache_tags_writeRaw_payload_data_3_loaded = cache_tags_write_data_loaded;
-  assign cache_tags_writeRaw_payload_data_3_tag = cache_tags_write_data_tag;
-  assign cache_tags_writeRaw_payload_data_3_dirty = cache_tags_write_data_dirty;
-  assign cache_tags_writeRaw_payload_data_3_trunk = cache_tags_write_data_trunk;
-  assign cache_tags_writeRaw_payload_data_3_owners = cache_tags_write_data_owners;
   assign cache_data_upWrite_ready = streamDemux_4_io_input_ready;
   assign cache_data_downWrite_ready = streamDemux_5_io_input_ready;
   assign cache_data_upRead_ready = streamDemux_6_io_input_ready;
@@ -20731,7 +20607,7 @@ module Cache (
   assign fromFlushBus_cmd_payload_probedUnique = 1'b0;
   assign fromFlushBus_cmd_payload_gsId = 3'b000;
   assign fromFlushBus_cmd_payload_withDataUpC = 1'b0;
-  assign fromFlushBus_cmd_payload_evictWay = 2'b00;
+  assign fromFlushBus_cmd_payload_evictWay = 1'b0;
   assign fromFlushBus_cmd_payload_upParam = 3'b001;
   assign _zz_io_up_a_ready = (! (! initializer_done));
   assign fromUpA_halted_valid = (io_up_a_valid && _zz_io_up_a_ready);
@@ -20874,7 +20750,7 @@ module Cache (
   assign fromUpA_toCtrl_payload_probed = 1'b0;
   assign fromUpA_toCtrl_payload_gsId = 3'bxxx;
   assign fromUpA_toCtrl_payload_withDataUpC = 1'b0;
-  assign fromUpA_toCtrl_payload_evictWay = 2'bxx;
+  assign fromUpA_toCtrl_payload_evictWay = 1'bx;
   assign fromUpA_toCtrl_payload_probedUnique = 1'b0;
   assign fromUpA_toCtrl_payload_upParam = fromUpA_buffer_pusher_down_payload_param;
   assign victimBuffer_read_rsp = victimBuffer_ram_spinal_port1;
@@ -21310,7 +21186,7 @@ module Cache (
     end
   end
 
-  assign prober_schedule_merged_payload_evictWay = _zz_prober_schedule_merged_payload_args[58 : 57];
+  assign prober_schedule_merged_payload_evictWay = _zz_prober_schedule_merged_payload_args[57 : 57];
   always @(*) begin
     prober_schedule_merged_payload_probedUnique = _zz_prober_schedule_merged_payload_probedUnique_3[0];
     if(prober_schedule_fromUpC_valid) begin
@@ -21552,22 +21428,11 @@ module Cache (
   assign ctrl_stages_1_CACHE_TAGS_1_dirty = cache_tags_read_rsp_1_dirty;
   assign ctrl_stages_1_CACHE_TAGS_1_trunk = cache_tags_read_rsp_1_trunk;
   assign ctrl_stages_1_CACHE_TAGS_1_owners = cache_tags_read_rsp_1_owners;
-  assign ctrl_stages_1_CACHE_TAGS_2_loaded = cache_tags_read_rsp_2_loaded;
-  assign ctrl_stages_1_CACHE_TAGS_2_tag = cache_tags_read_rsp_2_tag;
-  assign ctrl_stages_1_CACHE_TAGS_2_dirty = cache_tags_read_rsp_2_dirty;
-  assign ctrl_stages_1_CACHE_TAGS_2_trunk = cache_tags_read_rsp_2_trunk;
-  assign ctrl_stages_1_CACHE_TAGS_2_owners = cache_tags_read_rsp_2_owners;
-  assign ctrl_stages_1_CACHE_TAGS_3_loaded = cache_tags_read_rsp_3_loaded;
-  assign ctrl_stages_1_CACHE_TAGS_3_tag = cache_tags_read_rsp_3_tag;
-  assign ctrl_stages_1_CACHE_TAGS_3_dirty = cache_tags_read_rsp_3_dirty;
-  assign ctrl_stages_1_CACHE_TAGS_3_trunk = cache_tags_read_rsp_3_trunk;
-  assign ctrl_stages_1_CACHE_TAGS_3_owners = cache_tags_read_rsp_3_owners;
   assign cache_plru_read_cmd_valid = ctrl_stages_0_isFiring;
   assign cache_plru_read_cmd_payload = ctrl_stages_0_CTRL_CMD_address[12 : 6];
   assign ctrl_stages_1_CACHE_PLRU_0 = cache_plru_read_rsp_0;
-  assign ctrl_stages_1_CACHE_PLRU_1 = cache_plru_read_rsp_1;
-  assign ctrl_stages_1_tags_CACHE_HITS = {(ctrl_stages_1_CACHE_TAGS_3_loaded && (ctrl_stages_1_CACHE_TAGS_3_tag == ctrl_stages_1_CTRL_CMD_address[31 : 13])),{(ctrl_stages_1_CACHE_TAGS_2_loaded && (ctrl_stages_1_CACHE_TAGS_2_tag == ctrl_stages_1_CTRL_CMD_address[31 : 13])),{(ctrl_stages_1_CACHE_TAGS_1_loaded && (ctrl_stages_1_CACHE_TAGS_1_tag == ctrl_stages_1_CTRL_CMD_address[31 : 13])),(ctrl_stages_1_CACHE_TAGS_0_loaded && (ctrl_stages_1_CACHE_TAGS_0_tag == ctrl_stages_1_CTRL_CMD_address[31 : 13]))}}};
-  assign ctrl_stages_1_tags_SOURCE_HITS = {(|(ctrl_stages_1_CACHE_TAGS_3_owners & ctrl_stages_1_inserter_SOURCE_OH)),{(|(ctrl_stages_1_CACHE_TAGS_2_owners & ctrl_stages_1_inserter_SOURCE_OH)),{(|(ctrl_stages_1_CACHE_TAGS_1_owners & ctrl_stages_1_inserter_SOURCE_OH)),(|(ctrl_stages_1_CACHE_TAGS_0_owners & ctrl_stages_1_inserter_SOURCE_OH))}}};
+  assign ctrl_stages_1_tags_CACHE_HITS = {(ctrl_stages_1_CACHE_TAGS_1_loaded && (ctrl_stages_1_CACHE_TAGS_1_tag == ctrl_stages_1_CTRL_CMD_address[31 : 13])),(ctrl_stages_1_CACHE_TAGS_0_loaded && (ctrl_stages_1_CACHE_TAGS_0_tag == ctrl_stages_1_CTRL_CMD_address[31 : 13]))};
+  assign ctrl_stages_1_tags_SOURCE_HITS = {(|(ctrl_stages_1_CACHE_TAGS_1_owners & ctrl_stages_1_inserter_SOURCE_OH)),(|(ctrl_stages_1_CACHE_TAGS_0_owners & ctrl_stages_1_inserter_SOURCE_OH))};
   assign ctrl_stages_1_preCtrl_PROBE_REGION = (|((ctrl_stages_1_CTRL_CMD_address & 32'hc0000000) == 32'h80000000));
   always @(*) begin
     ctrl_stages_1_preCtrl_ALLOCATE_ON_MISS = ((|((ctrl_stages_1_CTRL_CMD_address & 32'hc0000000) == 32'h80000000)) && (! ((|{(Cache_CtrlOpcode_GET == ctrl_stages_1_CTRL_CMD_opcode),{(Cache_CtrlOpcode_PUT_FULL_DATA == ctrl_stages_1_CTRL_CMD_opcode),(Cache_CtrlOpcode_PUT_PARTIAL_DATA == ctrl_stages_1_CTRL_CMD_opcode)}}) && (ctrl_stages_1_CTRL_CMD_upParam == 3'b010))));
@@ -21875,19 +21740,15 @@ module Cache (
   assign _zz_ctrl_process_toOrdering_valid = ((ctrl_stages_2_valid && (! _zz_ctrl_process_toOrdering_valid_1)) && (ctrl_process_askOrdering && (! ctrl_process_redoUpA)));
   assign ctrl_process_toOrdering_valid = _zz_ctrl_process_toOrdering_valid;
   assign ctrl_stages_2_process_CACHE_HIT = (|ctrl_stages_2_tags_CACHE_HITS);
-  assign _zz_ctrl_stages_2_process_CACHE_LINE_loaded = ctrl_stages_2_tags_CACHE_HITS[1];
-  assign _zz_ctrl_stages_2_process_CACHE_LINE_loaded_1 = ctrl_stages_2_tags_CACHE_HITS[2];
-  assign _zz_ctrl_stages_2_process_CACHE_LINE_loaded_2 = ctrl_stages_2_tags_CACHE_HITS[3];
-  assign _zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID = (_zz_ctrl_stages_2_process_CACHE_LINE_loaded || _zz_ctrl_stages_2_process_CACHE_LINE_loaded_2);
-  assign _zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID_1 = (_zz_ctrl_stages_2_process_CACHE_LINE_loaded_1 || _zz_ctrl_stages_2_process_CACHE_LINE_loaded_2);
-  assign ctrl_stages_2_process_CACHE_HIT_WAY_ID = {_zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID_1,_zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID};
+  assign _zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID = ctrl_stages_2_tags_CACHE_HITS[1];
+  assign ctrl_stages_2_process_CACHE_HIT_WAY_ID = _zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID;
   assign ctrl_stages_2_process_SOURCE_HIT = (|(ctrl_stages_2_tags_CACHE_HITS & ctrl_stages_2_tags_SOURCE_HITS));
-  assign _zz_ctrl_stages_2_process_CACHE_LINE_loaded_3 = (((ctrl_stages_2_tags_CACHE_HITS[0] ? {ctrl_stages_2_CACHE_TAGS_0_owners,{_zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3,_zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_1}} : 24'h0) | (_zz_ctrl_stages_2_process_CACHE_LINE_loaded ? {ctrl_stages_2_CACHE_TAGS_1_owners,{_zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_2,_zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_3}} : 24'h0)) | ((_zz_ctrl_stages_2_process_CACHE_LINE_loaded_1 ? {ctrl_stages_2_CACHE_TAGS_2_owners,{_zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_4,_zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_5}} : 24'h0) | (_zz_ctrl_stages_2_process_CACHE_LINE_loaded_2 ? {ctrl_stages_2_CACHE_TAGS_3_owners,{_zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_6,_zz__zz_ctrl_stages_2_process_CACHE_LINE_loaded_3_7}} : 24'h0)));
-  assign ctrl_stages_2_process_CACHE_LINE_loaded = _zz_ctrl_stages_2_process_CACHE_LINE_loaded_3[0];
-  assign ctrl_stages_2_process_CACHE_LINE_tag = _zz_ctrl_stages_2_process_CACHE_LINE_loaded_3[19 : 1];
-  assign ctrl_stages_2_process_CACHE_LINE_dirty = _zz_ctrl_stages_2_process_CACHE_LINE_loaded_3[20];
-  assign ctrl_stages_2_process_CACHE_LINE_trunk = _zz_ctrl_stages_2_process_CACHE_LINE_loaded_3[21];
-  assign ctrl_stages_2_process_CACHE_LINE_owners = _zz_ctrl_stages_2_process_CACHE_LINE_loaded_3[23 : 22];
+  assign _zz_ctrl_stages_2_process_CACHE_LINE_loaded = ((ctrl_stages_2_tags_CACHE_HITS[0] ? {ctrl_stages_2_CACHE_TAGS_0_owners,{ctrl_stages_2_CACHE_TAGS_0_trunk,{ctrl_stages_2_CACHE_TAGS_0_dirty,{ctrl_stages_2_CACHE_TAGS_0_tag,ctrl_stages_2_CACHE_TAGS_0_loaded}}}} : 24'h0) | (_zz_ctrl_stages_2_process_CACHE_HIT_WAY_ID ? {ctrl_stages_2_CACHE_TAGS_1_owners,{ctrl_stages_2_CACHE_TAGS_1_trunk,{ctrl_stages_2_CACHE_TAGS_1_dirty,{ctrl_stages_2_CACHE_TAGS_1_tag,ctrl_stages_2_CACHE_TAGS_1_loaded}}}} : 24'h0));
+  assign ctrl_stages_2_process_CACHE_LINE_loaded = _zz_ctrl_stages_2_process_CACHE_LINE_loaded[0];
+  assign ctrl_stages_2_process_CACHE_LINE_tag = _zz_ctrl_stages_2_process_CACHE_LINE_loaded[19 : 1];
+  assign ctrl_stages_2_process_CACHE_LINE_dirty = _zz_ctrl_stages_2_process_CACHE_LINE_loaded[20];
+  assign ctrl_stages_2_process_CACHE_LINE_trunk = _zz_ctrl_stages_2_process_CACHE_LINE_loaded[21];
+  assign ctrl_stages_2_process_CACHE_LINE_owners = _zz_ctrl_stages_2_process_CACHE_LINE_loaded[23 : 22];
   assign ctrl_stages_2_process_OTHERS = (ctrl_stages_2_process_CACHE_LINE_owners & (~ ctrl_stages_2_inserter_SOURCE_OH));
   assign ctrl_stages_2_process_SELF = (|(ctrl_stages_2_process_CACHE_LINE_owners & ctrl_stages_2_inserter_SOURCE_OH));
   assign ctrl_stages_2_process_OTHER = (|ctrl_stages_2_process_OTHERS);
@@ -22191,19 +22052,9 @@ module Cache (
   assign ctrl_process_doIt = (ctrl_stages_2_isFiring && (! ctrl_stages_2_isRemoved));
   assign ctrl_process_olderWay_plru_evict_logic_0_state = ctrl_process_olderWay_plru_io_context_state_0[0];
   assign ctrl_process_olderWay_plru_evict_sel_0 = (! ctrl_process_olderWay_plru_evict_logic_0_state);
-  assign ctrl_process_olderWay_plru_evict_logic_1_stateSel = ctrl_process_olderWay_plru_evict_sel_0;
-  assign ctrl_process_olderWay_plru_evict_logic_1_state = ctrl_process_olderWay_plru_io_context_state_1[ctrl_process_olderWay_plru_evict_logic_1_stateSel];
-  assign ctrl_process_olderWay_plru_evict_sel_1 = (! ctrl_process_olderWay_plru_evict_logic_1_state);
-  assign ctrl_process_olderWay_plru_io_evict_id = {ctrl_process_olderWay_plru_evict_sel_0,ctrl_process_olderWay_plru_evict_sel_1};
-  assign ctrl_process_olderWay_plru_io_update_state_0[0] = ctrl_process_olderWay_plru_io_update_id[1];
-  assign ctrl_process_olderWay_plru_update_logic_1_sel = ctrl_process_olderWay_plru_io_update_id[1 : 1];
-  always @(*) begin
-    ctrl_process_olderWay_plru_io_update_state_1 = ctrl_process_olderWay_plru_io_context_state_1;
-    ctrl_process_olderWay_plru_io_update_state_1[ctrl_process_olderWay_plru_update_logic_1_sel] = ctrl_process_olderWay_plru_io_update_id[0];
-  end
-
+  assign ctrl_process_olderWay_plru_io_evict_id = ctrl_process_olderWay_plru_evict_sel_0;
+  assign ctrl_process_olderWay_plru_io_update_state_0[0] = ctrl_process_olderWay_plru_io_update_id[0];
   assign ctrl_process_olderWay_plru_io_context_state_0 = ctrl_stages_2_CACHE_PLRU_0;
-  assign ctrl_process_olderWay_plru_io_context_state_1 = ctrl_stages_2_CACHE_PLRU_1;
   always @(*) begin
     cache_plru_write_valid = ctrl_stages_2_process_CACHE_HIT;
     if(ctrl_process_askAllocate) begin
@@ -22239,13 +22090,6 @@ module Cache (
     end
   end
 
-  always @(*) begin
-    cache_plru_write_payload_data_1 = ctrl_process_olderWay_plru_io_update_state_1;
-    if(when_Cache_l1883) begin
-      cache_plru_write_payload_data_1 = _zz_cache_plru_write_payload_data_0[2 : 1];
-    end
-  end
-
   assign ctrl_process_olderWay_unlocked = (! ctrl_stages_2_preCtrl_GS_HIT);
   assign ctrl_process_olderWay_wayId = ctrl_process_olderWay_plru_io_evict_id;
   assign ctrl_process_olderWay_tags_loaded = _zz_ctrl_process_olderWay_tags_loaded;
@@ -22254,7 +22098,7 @@ module Cache (
   assign ctrl_process_olderWay_tags_trunk = _zz_ctrl_process_olderWay_tags_trunk;
   assign ctrl_process_olderWay_tags_owners = _zz_ctrl_process_olderWay_tags_owners;
   assign ctrl_process_olderWay_address = {{ctrl_process_olderWay_tags_tag,ctrl_stages_2_CTRL_CMD_address[12 : 6]},6'h0};
-  assign ctrl_process_backendWayId = (ctrl_stages_2_process_CACHE_HIT_WAY_ID | (ctrl_process_askAllocate ? ctrl_process_olderWay_wayId : 2'b00));
+  assign ctrl_process_backendWayId = (ctrl_stages_2_process_CACHE_HIT_WAY_ID | (ctrl_process_askAllocate ? ctrl_process_olderWay_wayId : 1'b0));
   always @(*) begin
     cache_tags_write_valid = ((|ctrl_stages_2_tags_CACHE_HITS) || ctrl_process_askAllocate);
     if(ctrl_stages_2_preCtrl_FROM_C_RELEASE) begin
@@ -22281,9 +22125,9 @@ module Cache (
   end
 
   always @(*) begin
-    cache_tags_write_mask = (ctrl_stages_2_tags_CACHE_HITS | (ctrl_process_askAllocate ? _zz_cache_tags_write_mask : 4'b0000));
+    cache_tags_write_mask = (ctrl_stages_2_tags_CACHE_HITS | (ctrl_process_askAllocate ? _zz_cache_tags_write_mask : 2'b00));
     if(when_Cache_l1883) begin
-      cache_tags_write_mask = 4'b1111;
+      cache_tags_write_mask = 2'b11;
     end
   end
 
@@ -22860,7 +22704,7 @@ module Cache (
   assign readBackend_process_toWriteBackend_payload_partialUpA = 1'b0;
   assign readBackend_process_toWriteBackend_payload_address = readBackend_stages_2_CMD_address;
   assign readBackend_process_toWriteBackend_payload_size = 3'b110;
-  assign readBackend_process_toWriteBackend_payload_wayId = 2'b00;
+  assign readBackend_process_toWriteBackend_payload_wayId = 1'b0;
   assign readBackend_process_toWriteBackend_payload_bufferAId = 2'b00;
   assign readBackend_process_toWriteBackend_payload_evict = 1'b1;
   assign writeBackend_putMerges_push_ready = writeBackend_putMerges_fifo_io_push_ready;
@@ -23198,11 +23042,11 @@ module Cache (
   assign fromDownD_readPort_rsp_wordOffset = _zz_fromDownD_readPort_rsp_toUpD[8 : 6];
   assign fromDownD_readPort_rsp_sourceId = _zz_fromDownD_readPort_rsp_toUpD[14 : 9];
   assign fromDownD_readPort_rsp_setId = _zz_fromDownD_readPort_rsp_toUpD[21 : 15];
-  assign fromDownD_readPort_rsp_wayId = _zz_fromDownD_readPort_rsp_toUpD[23 : 22];
-  assign fromDownD_readPort_rsp_size = _zz_fromDownD_readPort_rsp_toUpD[26 : 24];
-  assign fromDownD_readPort_rsp_acquire = _zz_fromDownD_readPort_rsp_toUpD[27];
-  assign fromDownD_readPort_rsp_release = _zz_fromDownD_readPort_rsp_toUpD[28];
-  assign fromDownD_readPort_rsp_toT = _zz_fromDownD_readPort_rsp_toUpD[29];
+  assign fromDownD_readPort_rsp_wayId = _zz_fromDownD_readPort_rsp_toUpD[22 : 22];
+  assign fromDownD_readPort_rsp_size = _zz_fromDownD_readPort_rsp_toUpD[25 : 23];
+  assign fromDownD_readPort_rsp_acquire = _zz_fromDownD_readPort_rsp_toUpD[26];
+  assign fromDownD_readPort_rsp_release = _zz_fromDownD_readPort_rsp_toUpD[27];
+  assign fromDownD_readPort_rsp_toT = _zz_fromDownD_readPort_rsp_toUpD[28];
   assign fromDownD_stages_0_isFiring = (fromDownD_stages_0_valid && fromDownD_stages_0_ready);
   assign fromDownD_readPort_cmd_valid = fromDownD_stages_0_isFiring;
   assign fromDownD_readPort_cmd_payload = fromDownD_stages_0_inserter_CMD_source[2:0];
@@ -23569,7 +23413,6 @@ module Cache (
   assign when_Connection_l74_7 = (! fromDownD_stages_2_valid);
   assign when_Cache_l1883 = (! initializer_done);
   assign _zz_cache_tags_write_data_loaded = 24'h0;
-  assign _zz_cache_plru_write_payload_data_0 = 3'b000;
   always @(posedge litex_clk or posedge cpuResetCtrl_reset) begin
     if(cpuResetCtrl_reset) begin
       initializer_counter <= 8'h0;
@@ -24906,18 +24749,7 @@ module Cache (
       ctrl_stages_2_CACHE_TAGS_1_dirty <= ctrl_stages_1_CACHE_TAGS_1_dirty;
       ctrl_stages_2_CACHE_TAGS_1_trunk <= ctrl_stages_1_CACHE_TAGS_1_trunk;
       ctrl_stages_2_CACHE_TAGS_1_owners <= ctrl_stages_1_CACHE_TAGS_1_owners;
-      ctrl_stages_2_CACHE_TAGS_2_loaded <= ctrl_stages_1_CACHE_TAGS_2_loaded;
-      ctrl_stages_2_CACHE_TAGS_2_tag <= ctrl_stages_1_CACHE_TAGS_2_tag;
-      ctrl_stages_2_CACHE_TAGS_2_dirty <= ctrl_stages_1_CACHE_TAGS_2_dirty;
-      ctrl_stages_2_CACHE_TAGS_2_trunk <= ctrl_stages_1_CACHE_TAGS_2_trunk;
-      ctrl_stages_2_CACHE_TAGS_2_owners <= ctrl_stages_1_CACHE_TAGS_2_owners;
-      ctrl_stages_2_CACHE_TAGS_3_loaded <= ctrl_stages_1_CACHE_TAGS_3_loaded;
-      ctrl_stages_2_CACHE_TAGS_3_tag <= ctrl_stages_1_CACHE_TAGS_3_tag;
-      ctrl_stages_2_CACHE_TAGS_3_dirty <= ctrl_stages_1_CACHE_TAGS_3_dirty;
-      ctrl_stages_2_CACHE_TAGS_3_trunk <= ctrl_stages_1_CACHE_TAGS_3_trunk;
-      ctrl_stages_2_CACHE_TAGS_3_owners <= ctrl_stages_1_CACHE_TAGS_3_owners;
       ctrl_stages_2_CACHE_PLRU_0 <= ctrl_stages_1_CACHE_PLRU_0;
-      ctrl_stages_2_CACHE_PLRU_1 <= ctrl_stages_1_CACHE_PLRU_1;
       ctrl_stages_2_tags_CACHE_HITS <= ctrl_stages_1_tags_CACHE_HITS;
       ctrl_stages_2_inserter_SOURCE_OH <= ctrl_stages_1_inserter_SOURCE_OH;
       ctrl_stages_2_tags_SOURCE_HITS <= ctrl_stages_1_tags_SOURCE_HITS;
@@ -93677,7 +93509,7 @@ module StreamArbiter_24 (
   input  wire          io_inputs_0_payload_partialUpA,
   input  wire [31:0]   io_inputs_0_payload_address,
   input  wire [2:0]    io_inputs_0_payload_size,
-  input  wire [1:0]    io_inputs_0_payload_wayId,
+  input  wire [0:0]    io_inputs_0_payload_wayId,
   input  wire [1:0]    io_inputs_0_payload_bufferAId,
   input  wire          io_inputs_0_payload_evict,
   input  wire          io_inputs_1_valid,
@@ -93692,7 +93524,7 @@ module StreamArbiter_24 (
   input  wire          io_inputs_1_payload_partialUpA,
   input  wire [31:0]   io_inputs_1_payload_address,
   input  wire [2:0]    io_inputs_1_payload_size,
-  input  wire [1:0]    io_inputs_1_payload_wayId,
+  input  wire [0:0]    io_inputs_1_payload_wayId,
   input  wire [1:0]    io_inputs_1_payload_bufferAId,
   input  wire          io_inputs_1_payload_evict,
   input  wire          io_inputs_2_valid,
@@ -93707,7 +93539,7 @@ module StreamArbiter_24 (
   input  wire          io_inputs_2_payload_partialUpA,
   input  wire [31:0]   io_inputs_2_payload_address,
   input  wire [2:0]    io_inputs_2_payload_size,
-  input  wire [1:0]    io_inputs_2_payload_wayId,
+  input  wire [0:0]    io_inputs_2_payload_wayId,
   input  wire [1:0]    io_inputs_2_payload_bufferAId,
   input  wire          io_inputs_2_payload_evict,
   output wire          io_output_valid,
@@ -93722,7 +93554,7 @@ module StreamArbiter_24 (
   output wire          io_output_payload_partialUpA,
   output wire [31:0]   io_output_payload_address,
   output wire [2:0]    io_output_payload_size,
-  output wire [1:0]    io_output_payload_wayId,
+  output wire [0:0]    io_output_payload_wayId,
   output wire [1:0]    io_output_payload_bufferAId,
   output wire          io_output_payload_evict,
   output wire [1:0]    io_chosen,
@@ -93748,7 +93580,7 @@ module StreamArbiter_24 (
   reg                 _zz_io_output_payload_partialUpA;
   reg        [31:0]   _zz_io_output_payload_address;
   reg        [2:0]    _zz_io_output_payload_size;
-  reg        [1:0]    _zz_io_output_payload_wayId;
+  reg        [0:0]    _zz_io_output_payload_wayId;
   reg        [1:0]    _zz_io_output_payload_bufferAId;
   reg                 _zz_io_output_payload_evict;
   reg                 locked;
@@ -93955,7 +93787,7 @@ module StreamFifo_5 (
   input  wire          io_push_payload_partialUpA,
   input  wire [31:0]   io_push_payload_address,
   input  wire [2:0]    io_push_payload_size,
-  input  wire [1:0]    io_push_payload_wayId,
+  input  wire [0:0]    io_push_payload_wayId,
   input  wire [1:0]    io_push_payload_bufferAId,
   input  wire          io_push_payload_evict,
   output wire          io_pop_valid,
@@ -93970,7 +93802,7 @@ module StreamFifo_5 (
   output wire          io_pop_payload_partialUpA,
   output wire [31:0]   io_pop_payload_address,
   output wire [2:0]    io_pop_payload_size,
-  output wire [1:0]    io_pop_payload_wayId,
+  output wire [0:0]    io_pop_payload_wayId,
   output wire [1:0]    io_pop_payload_bufferAId,
   output wire          io_pop_payload_evict,
   input  wire          io_flush,
@@ -93986,8 +93818,8 @@ module StreamFifo_5 (
   localparam Cache_ToUpDOpcode_GRANT_DATA = 3'd4;
   localparam Cache_ToUpDOpcode_RELEASE_ACK = 3'd5;
 
-  reg        [56:0]   logic_ram_spinal_port1;
-  wire       [56:0]   _zz_logic_ram_port;
+  reg        [55:0]   logic_ram_spinal_port1;
+  wire       [55:0]   _zz_logic_ram_port;
   reg                 _zz_1;
   wire                logic_ptr_doPush;
   wire                logic_ptr_doPop;
@@ -94012,7 +93844,7 @@ module StreamFifo_5 (
   wire                logic_push_onRam_write_payload_data_partialUpA;
   wire       [31:0]   logic_push_onRam_write_payload_data_address;
   wire       [2:0]    logic_push_onRam_write_payload_data_size;
-  wire       [1:0]    logic_push_onRam_write_payload_data_wayId;
+  wire       [0:0]    logic_push_onRam_write_payload_data_wayId;
   wire       [1:0]    logic_push_onRam_write_payload_data_bufferAId;
   wire                logic_push_onRam_write_payload_data_evict;
   wire                logic_pop_addressGen_valid;
@@ -94037,11 +93869,11 @@ module StreamFifo_5 (
   wire                logic_pop_sync_readPort_rsp_partialUpA;
   wire       [31:0]   logic_pop_sync_readPort_rsp_address;
   wire       [2:0]    logic_pop_sync_readPort_rsp_size;
-  wire       [1:0]    logic_pop_sync_readPort_rsp_wayId;
+  wire       [0:0]    logic_pop_sync_readPort_rsp_wayId;
   wire       [1:0]    logic_pop_sync_readPort_rsp_bufferAId;
   wire                logic_pop_sync_readPort_rsp_evict;
   wire       [2:0]    _zz_logic_pop_sync_readPort_rsp_toUpD;
-  wire       [56:0]   _zz_logic_pop_sync_readPort_rsp_fromUpA;
+  wire       [55:0]   _zz_logic_pop_sync_readPort_rsp_fromUpA;
   wire       [2:0]    _zz_logic_pop_sync_readPort_rsp_toUpD_1;
   wire                logic_pop_addressGen_toFlowFire_valid;
   wire       [2:0]    logic_pop_addressGen_toFlowFire_payload;
@@ -94057,7 +93889,7 @@ module StreamFifo_5 (
   wire                logic_pop_sync_readArbitration_translated_payload_partialUpA;
   wire       [31:0]   logic_pop_sync_readArbitration_translated_payload_address;
   wire       [2:0]    logic_pop_sync_readArbitration_translated_payload_size;
-  wire       [1:0]    logic_pop_sync_readArbitration_translated_payload_wayId;
+  wire       [0:0]    logic_pop_sync_readArbitration_translated_payload_wayId;
   wire       [1:0]    logic_pop_sync_readArbitration_translated_payload_bufferAId;
   wire                logic_pop_sync_readArbitration_translated_payload_evict;
   wire                logic_pop_sync_readArbitration_fire;
@@ -94072,7 +93904,7 @@ module StreamFifo_5 (
   reg [119:0] logic_pop_sync_readArbitration_translated_payload_toUpD_string;
   `endif
 
-  reg [56:0] logic_ram [0:7];
+  reg [55:0] logic_ram [0:7];
 
   assign _zz_logic_ram_port = {logic_push_onRam_write_payload_data_evict,{logic_push_onRam_write_payload_data_bufferAId,{logic_push_onRam_write_payload_data_wayId,{logic_push_onRam_write_payload_data_size,{logic_push_onRam_write_payload_data_address,{logic_push_onRam_write_payload_data_partialUpA,{logic_push_onRam_write_payload_data_gsId,{logic_push_onRam_write_payload_data_source,{logic_push_onRam_write_payload_data_toT,{logic_push_onRam_write_payload_data_toUpD,{logic_push_onRam_write_payload_data_toDownA,{logic_push_onRam_write_payload_data_fromUpC,logic_push_onRam_write_payload_data_fromUpA}}}}}}}}}}}};
   always @(posedge litex_clk) begin
@@ -94223,9 +94055,9 @@ module StreamFifo_5 (
   assign logic_pop_sync_readPort_rsp_partialUpA = _zz_logic_pop_sync_readPort_rsp_fromUpA[16];
   assign logic_pop_sync_readPort_rsp_address = _zz_logic_pop_sync_readPort_rsp_fromUpA[48 : 17];
   assign logic_pop_sync_readPort_rsp_size = _zz_logic_pop_sync_readPort_rsp_fromUpA[51 : 49];
-  assign logic_pop_sync_readPort_rsp_wayId = _zz_logic_pop_sync_readPort_rsp_fromUpA[53 : 52];
-  assign logic_pop_sync_readPort_rsp_bufferAId = _zz_logic_pop_sync_readPort_rsp_fromUpA[55 : 54];
-  assign logic_pop_sync_readPort_rsp_evict = _zz_logic_pop_sync_readPort_rsp_fromUpA[56];
+  assign logic_pop_sync_readPort_rsp_wayId = _zz_logic_pop_sync_readPort_rsp_fromUpA[52 : 52];
+  assign logic_pop_sync_readPort_rsp_bufferAId = _zz_logic_pop_sync_readPort_rsp_fromUpA[54 : 53];
+  assign logic_pop_sync_readPort_rsp_evict = _zz_logic_pop_sync_readPort_rsp_fromUpA[55];
   assign logic_pop_addressGen_toFlowFire_valid = logic_pop_addressGen_fire;
   assign logic_pop_addressGen_toFlowFire_payload = logic_pop_addressGen_payload;
   assign logic_pop_sync_readPort_cmd_valid = logic_pop_addressGen_toFlowFire_valid;
@@ -94317,7 +94149,7 @@ module StreamFifo_4 (
   output wire          io_push_ready,
   input  wire [2:0]    io_push_payload_gsId,
   input  wire [6:0]    io_push_payload_setId,
-  input  wire [1:0]    io_push_payload_wayId,
+  input  wire [0:0]    io_push_payload_wayId,
   input  wire [2:0]    io_push_payload_wordOffset,
   input  wire [1:0]    io_push_payload_bufferAId,
   input  wire [5:0]    io_push_payload_source,
@@ -94326,7 +94158,7 @@ module StreamFifo_4 (
   input  wire          io_pop_ready,
   output wire [2:0]    io_pop_payload_gsId,
   output wire [6:0]    io_pop_payload_setId,
-  output wire [1:0]    io_pop_payload_wayId,
+  output wire [0:0]    io_pop_payload_wayId,
   output wire [2:0]    io_pop_payload_wordOffset,
   output wire [1:0]    io_pop_payload_bufferAId,
   output wire [5:0]    io_pop_payload_source,
@@ -94338,8 +94170,8 @@ module StreamFifo_4 (
   input  wire          cpuResetCtrl_reset
 );
 
-  reg        [25:0]   logic_ram_spinal_port1;
-  wire       [25:0]   _zz_logic_ram_port;
+  reg        [24:0]   logic_ram_spinal_port1;
+  wire       [24:0]   _zz_logic_ram_port;
   reg                 _zz_1;
   wire                logic_ptr_doPush;
   wire                logic_ptr_doPop;
@@ -94356,7 +94188,7 @@ module StreamFifo_4 (
   wire       [1:0]    logic_push_onRam_write_payload_address;
   wire       [2:0]    logic_push_onRam_write_payload_data_gsId;
   wire       [6:0]    logic_push_onRam_write_payload_data_setId;
-  wire       [1:0]    logic_push_onRam_write_payload_data_wayId;
+  wire       [0:0]    logic_push_onRam_write_payload_data_wayId;
   wire       [2:0]    logic_push_onRam_write_payload_data_wordOffset;
   wire       [1:0]    logic_push_onRam_write_payload_data_bufferAId;
   wire       [5:0]    logic_push_onRam_write_payload_data_source;
@@ -94375,26 +94207,26 @@ module StreamFifo_4 (
   wire       [1:0]    logic_pop_sync_readPort_cmd_payload;
   wire       [2:0]    logic_pop_sync_readPort_rsp_gsId;
   wire       [6:0]    logic_pop_sync_readPort_rsp_setId;
-  wire       [1:0]    logic_pop_sync_readPort_rsp_wayId;
+  wire       [0:0]    logic_pop_sync_readPort_rsp_wayId;
   wire       [2:0]    logic_pop_sync_readPort_rsp_wordOffset;
   wire       [1:0]    logic_pop_sync_readPort_rsp_bufferAId;
   wire       [5:0]    logic_pop_sync_readPort_rsp_source;
   wire       [2:0]    logic_pop_sync_readPort_rsp_size;
-  wire       [25:0]   _zz_logic_pop_sync_readPort_rsp_gsId;
+  wire       [24:0]   _zz_logic_pop_sync_readPort_rsp_gsId;
   wire                logic_pop_addressGen_toFlowFire_valid;
   wire       [1:0]    logic_pop_addressGen_toFlowFire_payload;
   wire                logic_pop_sync_readArbitration_translated_valid;
   wire                logic_pop_sync_readArbitration_translated_ready;
   wire       [2:0]    logic_pop_sync_readArbitration_translated_payload_gsId;
   wire       [6:0]    logic_pop_sync_readArbitration_translated_payload_setId;
-  wire       [1:0]    logic_pop_sync_readArbitration_translated_payload_wayId;
+  wire       [0:0]    logic_pop_sync_readArbitration_translated_payload_wayId;
   wire       [2:0]    logic_pop_sync_readArbitration_translated_payload_wordOffset;
   wire       [1:0]    logic_pop_sync_readArbitration_translated_payload_bufferAId;
   wire       [5:0]    logic_pop_sync_readArbitration_translated_payload_source;
   wire       [2:0]    logic_pop_sync_readArbitration_translated_payload_size;
   wire                logic_pop_sync_readArbitration_fire;
   reg        [2:0]    logic_pop_sync_popReg;
-  reg [25:0] logic_ram [0:3];
+  reg [24:0] logic_ram [0:3];
 
   assign _zz_logic_ram_port = {logic_push_onRam_write_payload_data_size,{logic_push_onRam_write_payload_data_source,{logic_push_onRam_write_payload_data_bufferAId,{logic_push_onRam_write_payload_data_wordOffset,{logic_push_onRam_write_payload_data_wayId,{logic_push_onRam_write_payload_data_setId,logic_push_onRam_write_payload_data_gsId}}}}}};
   always @(posedge litex_clk) begin
@@ -94449,11 +94281,11 @@ module StreamFifo_4 (
   assign _zz_logic_pop_sync_readPort_rsp_gsId = logic_ram_spinal_port1;
   assign logic_pop_sync_readPort_rsp_gsId = _zz_logic_pop_sync_readPort_rsp_gsId[2 : 0];
   assign logic_pop_sync_readPort_rsp_setId = _zz_logic_pop_sync_readPort_rsp_gsId[9 : 3];
-  assign logic_pop_sync_readPort_rsp_wayId = _zz_logic_pop_sync_readPort_rsp_gsId[11 : 10];
-  assign logic_pop_sync_readPort_rsp_wordOffset = _zz_logic_pop_sync_readPort_rsp_gsId[14 : 12];
-  assign logic_pop_sync_readPort_rsp_bufferAId = _zz_logic_pop_sync_readPort_rsp_gsId[16 : 15];
-  assign logic_pop_sync_readPort_rsp_source = _zz_logic_pop_sync_readPort_rsp_gsId[22 : 17];
-  assign logic_pop_sync_readPort_rsp_size = _zz_logic_pop_sync_readPort_rsp_gsId[25 : 23];
+  assign logic_pop_sync_readPort_rsp_wayId = _zz_logic_pop_sync_readPort_rsp_gsId[10 : 10];
+  assign logic_pop_sync_readPort_rsp_wordOffset = _zz_logic_pop_sync_readPort_rsp_gsId[13 : 11];
+  assign logic_pop_sync_readPort_rsp_bufferAId = _zz_logic_pop_sync_readPort_rsp_gsId[15 : 14];
+  assign logic_pop_sync_readPort_rsp_source = _zz_logic_pop_sync_readPort_rsp_gsId[21 : 16];
+  assign logic_pop_sync_readPort_rsp_size = _zz_logic_pop_sync_readPort_rsp_gsId[24 : 22];
   assign logic_pop_addressGen_toFlowFire_valid = logic_pop_addressGen_fire;
   assign logic_pop_addressGen_toFlowFire_payload = logic_pop_addressGen_payload;
   assign logic_pop_sync_readPort_cmd_valid = logic_pop_addressGen_toFlowFire_valid;
@@ -94542,7 +94374,7 @@ module StreamArbiter_23 (
   input  wire          io_inputs_0_payload_probedUnique,
   input  wire [2:0]    io_inputs_0_payload_gsId,
   input  wire          io_inputs_0_payload_withDataUpC,
-  input  wire [1:0]    io_inputs_0_payload_evictWay,
+  input  wire [0:0]    io_inputs_0_payload_evictWay,
   input  wire          io_inputs_1_valid,
   output wire          io_inputs_1_ready,
   input  wire [3:0]    io_inputs_1_payload_opcode,
@@ -94556,7 +94388,7 @@ module StreamArbiter_23 (
   input  wire          io_inputs_1_payload_probedUnique,
   input  wire [2:0]    io_inputs_1_payload_gsId,
   input  wire          io_inputs_1_payload_withDataUpC,
-  input  wire [1:0]    io_inputs_1_payload_evictWay,
+  input  wire [0:0]    io_inputs_1_payload_evictWay,
   input  wire          io_inputs_2_valid,
   output wire          io_inputs_2_ready,
   input  wire [3:0]    io_inputs_2_payload_opcode,
@@ -94570,7 +94402,7 @@ module StreamArbiter_23 (
   input  wire          io_inputs_2_payload_probedUnique,
   input  wire [2:0]    io_inputs_2_payload_gsId,
   input  wire          io_inputs_2_payload_withDataUpC,
-  input  wire [1:0]    io_inputs_2_payload_evictWay,
+  input  wire [0:0]    io_inputs_2_payload_evictWay,
   input  wire          io_inputs_3_valid,
   output wire          io_inputs_3_ready,
   input  wire [3:0]    io_inputs_3_payload_opcode,
@@ -94584,7 +94416,7 @@ module StreamArbiter_23 (
   input  wire          io_inputs_3_payload_probedUnique,
   input  wire [2:0]    io_inputs_3_payload_gsId,
   input  wire          io_inputs_3_payload_withDataUpC,
-  input  wire [1:0]    io_inputs_3_payload_evictWay,
+  input  wire [0:0]    io_inputs_3_payload_evictWay,
   output wire          io_output_valid,
   input  wire          io_output_ready,
   output wire [3:0]    io_output_payload_opcode,
@@ -94598,7 +94430,7 @@ module StreamArbiter_23 (
   output wire          io_output_payload_probedUnique,
   output wire [2:0]    io_output_payload_gsId,
   output wire          io_output_payload_withDataUpC,
-  output wire [1:0]    io_output_payload_evictWay,
+  output wire [0:0]    io_output_payload_evictWay,
   output wire [1:0]    io_chosen,
   output wire [3:0]    io_chosenOH
 );
@@ -94624,7 +94456,7 @@ module StreamArbiter_23 (
   reg                 _zz_io_output_payload_probedUnique;
   reg        [2:0]    _zz_io_output_payload_gsId;
   reg                 _zz_io_output_payload_withDataUpC;
-  reg        [1:0]    _zz_io_output_payload_evictWay;
+  reg        [0:0]    _zz_io_output_payload_evictWay;
   wire                maskProposal_0;
   wire                maskProposal_1;
   wire                maskProposal_2;
@@ -94846,7 +94678,7 @@ module StreamFifo_3 (
   input  wire          io_push_payload_probedUnique,
   input  wire [2:0]    io_push_payload_gsId,
   input  wire          io_push_payload_withDataUpC,
-  input  wire [1:0]    io_push_payload_evictWay,
+  input  wire [0:0]    io_push_payload_evictWay,
   output wire          io_pop_valid,
   input  wire          io_pop_ready,
   output wire [3:0]    io_pop_payload_opcode,
@@ -94860,7 +94692,7 @@ module StreamFifo_3 (
   output wire          io_pop_payload_probedUnique,
   output wire [2:0]    io_pop_payload_gsId,
   output wire          io_pop_payload_withDataUpC,
-  output wire [1:0]    io_pop_payload_evictWay,
+  output wire [0:0]    io_pop_payload_evictWay,
   input  wire          io_flush,
   output wire [2:0]    io_occupancy,
   output wire [2:0]    io_availability,
@@ -94877,8 +94709,8 @@ module StreamFifo_3 (
   localparam Cache_CtrlOpcode_EVICT = 4'd7;
   localparam Cache_CtrlOpcode_FLUSH = 4'd8;
 
-  reg        [58:0]   logic_ram_spinal_port1;
-  wire       [58:0]   _zz_logic_ram_port;
+  reg        [57:0]   logic_ram_spinal_port1;
+  wire       [57:0]   _zz_logic_ram_port;
   reg                 _zz_1;
   wire                logic_ptr_doPush;
   wire                logic_ptr_doPop;
@@ -94923,7 +94755,7 @@ module StreamFifo_3 (
   wire                logic_push_onRam_write_payload_data_probedUnique;
   wire       [2:0]    logic_push_onRam_write_payload_data_gsId;
   wire                logic_push_onRam_write_payload_data_withDataUpC;
-  wire       [1:0]    logic_push_onRam_write_payload_data_evictWay;
+  wire       [0:0]    logic_push_onRam_write_payload_data_evictWay;
   wire                logic_pop_addressGen_valid;
   reg                 logic_pop_addressGen_ready;
   wire       [1:0]    logic_pop_addressGen_payload;
@@ -94947,9 +94779,9 @@ module StreamFifo_3 (
   wire                logic_pop_sync_readPort_rsp_probedUnique;
   wire       [2:0]    logic_pop_sync_readPort_rsp_gsId;
   wire                logic_pop_sync_readPort_rsp_withDataUpC;
-  wire       [1:0]    logic_pop_sync_readPort_rsp_evictWay;
+  wire       [0:0]    logic_pop_sync_readPort_rsp_evictWay;
   wire       [3:0]    _zz_logic_pop_sync_readPort_rsp_opcode;
-  wire       [58:0]   _zz_logic_pop_sync_readPort_rsp_args;
+  wire       [57:0]   _zz_logic_pop_sync_readPort_rsp_args;
   wire       [3:0]    _zz_logic_pop_sync_readPort_rsp_opcode_1;
   wire                logic_pop_addressGen_toFlowFire_valid;
   wire       [1:0]    logic_pop_addressGen_toFlowFire_payload;
@@ -94966,7 +94798,7 @@ module StreamFifo_3 (
   wire                logic_pop_sync_readArbitration_translated_payload_probedUnique;
   wire       [2:0]    logic_pop_sync_readArbitration_translated_payload_gsId;
   wire                logic_pop_sync_readArbitration_translated_payload_withDataUpC;
-  wire       [1:0]    logic_pop_sync_readArbitration_translated_payload_evictWay;
+  wire       [0:0]    logic_pop_sync_readArbitration_translated_payload_evictWay;
   wire                logic_pop_sync_readArbitration_fire;
   reg        [2:0]    logic_pop_sync_popReg;
   wire                logic_fmaxAvail_incr;
@@ -94985,7 +94817,7 @@ module StreamFifo_3 (
   reg [127:0] logic_pop_sync_readArbitration_translated_payload_opcode_string;
   `endif
 
-  reg [58:0] logic_ram [0:3];
+  reg [57:0] logic_ram [0:3];
 
   assign _zz_logic_ram_port = {logic_push_onRam_write_payload_data_evictWay,{logic_push_onRam_write_payload_data_withDataUpC,{logic_push_onRam_write_payload_data_gsId,{logic_push_onRam_write_payload_data_probedUnique,{logic_push_onRam_write_payload_data_probed,{logic_push_onRam_write_payload_data_bufferAId,{logic_push_onRam_write_payload_data_upParam,{logic_push_onRam_write_payload_data_source,{logic_push_onRam_write_payload_data_size,{logic_push_onRam_write_payload_data_address,{logic_push_onRam_write_payload_data_args,logic_push_onRam_write_payload_data_opcode}}}}}}}}}}};
   always @(posedge litex_clk) begin
@@ -95173,7 +95005,7 @@ module StreamFifo_3 (
   assign logic_pop_sync_readPort_rsp_probedUnique = _zz_logic_pop_sync_readPort_rsp_args[52];
   assign logic_pop_sync_readPort_rsp_gsId = _zz_logic_pop_sync_readPort_rsp_args[55 : 53];
   assign logic_pop_sync_readPort_rsp_withDataUpC = _zz_logic_pop_sync_readPort_rsp_args[56];
-  assign logic_pop_sync_readPort_rsp_evictWay = _zz_logic_pop_sync_readPort_rsp_args[58 : 57];
+  assign logic_pop_sync_readPort_rsp_evictWay = _zz_logic_pop_sync_readPort_rsp_args[57 : 57];
   assign logic_pop_addressGen_toFlowFire_valid = logic_pop_addressGen_fire;
   assign logic_pop_addressGen_toFlowFire_payload = logic_pop_addressGen_payload;
   assign logic_pop_sync_readPort_cmd_valid = logic_pop_addressGen_toFlowFire_valid;
@@ -95582,17 +95414,17 @@ endmodule
 module StreamArbiter_22 (
   input  wire          io_inputs_0_valid,
   output wire          io_inputs_0_ready,
-  input  wire [11:0]   io_inputs_0_payload_address,
+  input  wire [10:0]   io_inputs_0_payload_address,
   input  wire [63:0]   io_inputs_0_payload_data,
   input  wire [7:0]    io_inputs_0_payload_mask,
   input  wire          io_inputs_1_valid,
   output wire          io_inputs_1_ready,
-  input  wire [11:0]   io_inputs_1_payload_address,
+  input  wire [10:0]   io_inputs_1_payload_address,
   input  wire [63:0]   io_inputs_1_payload_data,
   input  wire [7:0]    io_inputs_1_payload_mask,
   output wire          io_output_valid,
   input  wire          io_output_ready,
-  output wire [11:0]   io_output_payload_address,
+  output wire [10:0]   io_output_payload_address,
   output wire [63:0]   io_output_payload_data,
   output wire [7:0]    io_output_payload_mask,
   output wire [0:0]    io_chosen,
@@ -95626,10 +95458,10 @@ endmodule
 module StreamDemux_3 (
   input  wire          io_input_valid,
   output reg           io_input_ready,
-  input  wire [11:0]   io_input_payload,
+  input  wire [10:0]   io_input_payload,
   output reg           io_outputs_0_valid,
   input  wire          io_outputs_0_ready,
-  output wire [11:0]   io_outputs_0_payload
+  output wire [10:0]   io_outputs_0_payload
 );
 
   wire                when_Stream_l1266;
@@ -95659,12 +95491,12 @@ endmodule
 module StreamDemux_1 (
   input  wire          io_input_valid,
   output reg           io_input_ready,
-  input  wire [11:0]   io_input_payload_address,
+  input  wire [10:0]   io_input_payload_address,
   input  wire [63:0]   io_input_payload_data,
   input  wire [7:0]    io_input_payload_mask,
   output reg           io_outputs_0_valid,
   input  wire          io_outputs_0_ready,
-  output wire [11:0]   io_outputs_0_payload_address,
+  output wire [10:0]   io_outputs_0_payload_address,
   output wire [63:0]   io_outputs_0_payload_data,
   output wire [7:0]    io_outputs_0_payload_mask
 );

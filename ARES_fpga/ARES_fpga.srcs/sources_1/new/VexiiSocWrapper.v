@@ -1,7 +1,7 @@
 module VexiiSocWrapper(
 
   input  wire          dma_bus_awvalid,
-  output reg           dma_bus_awready,
+  output wire          dma_bus_awready,
   input  wire [31:0]   dma_bus_awaddr,
   input  wire [3:0]    dma_bus_awid,
   input  wire [3:0]    dma_bus_awregion,
@@ -13,7 +13,7 @@ module VexiiSocWrapper(
   input  wire [3:0]    dma_bus_awqos,
   input  wire [2:0]    dma_bus_awprot,
   input  wire          dma_bus_wvalid,
-  output reg           dma_bus_wready,
+  output wire          dma_bus_wready,
   input  wire [63:0]   dma_bus_wdata,
   input  wire [7:0]    dma_bus_wstrb,
   input  wire          dma_bus_wlast,
@@ -22,7 +22,7 @@ module VexiiSocWrapper(
   output wire [3:0]    dma_bus_bid,
   output wire [1:0]    dma_bus_bresp,
   input  wire          dma_bus_arvalid,
-  output reg           dma_bus_arready,
+  output wire          dma_bus_arready,
   input  wire [31:0]   dma_bus_araddr,
   input  wire [3:0]    dma_bus_arid,
   input  wire [3:0]    dma_bus_arregion,

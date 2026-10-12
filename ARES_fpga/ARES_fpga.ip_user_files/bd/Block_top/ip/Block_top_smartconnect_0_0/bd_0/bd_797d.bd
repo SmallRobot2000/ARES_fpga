@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x6FA6C75FF70BD2CB",
+      "boundary_crc": "0xE7B5831F7DF10BE2",
       "design_src": "SBD",
       "device": "xc7a100tfgg484-2",
       "name": "bd_797d",
@@ -340,20 +340,20 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "32",
-            "value_src": "default"
+            "value": "28",
+            "value_src": "ip_prop"
           },
           "ARUSER_WIDTH": {
-            "value": "114",
-            "value_src": "ip"
+            "value": "0",
+            "value_src": "default"
           },
           "AWUSER_WIDTH": {
-            "value": "114",
-            "value_src": "ip"
+            "value": "0",
+            "value_src": "default"
           },
           "BUSER_WIDTH": {
-            "value": "114",
-            "value_src": "ip"
+            "value": "0",
+            "value_src": "default"
           },
           "CLK_DOMAIN": {
             "value": "Block_top_mig_axi_wrapper_0_0_ui_clk",
@@ -404,8 +404,8 @@
             "value_src": "default"
           },
           "ID_WIDTH": {
-            "value": "2",
-            "value_src": "ip"
+            "value": "0",
+            "value_src": "default"
           },
           "INSERT_VIP": {
             "value": "0",
@@ -442,8 +442,8 @@
             "value": "0"
           },
           "RUSER_WIDTH": {
-            "value": "14",
-            "value_src": "ip"
+            "value": "0",
+            "value_src": "default"
           },
           "SUPPORTS_NARROW_BURST": {
             "value": "0"
@@ -452,8 +452,8 @@
             "value": "0"
           },
           "WUSER_WIDTH": {
-            "value": "14",
-            "value_src": "ip"
+            "value": "0",
+            "value_src": "default"
           }
         },
         "memory_map_ref": "M01_AXI",
@@ -827,7 +827,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "141"
+                "value": "139"
               },
               "S_LATENCY": {
                 "value": "0"
@@ -897,7 +897,7 @@
                 "value": "2"
               },
               "PAYLD_WIDTH": {
-                "value": "148"
+                "value": "147"
               },
               "S_LATENCY": {
                 "value": "0"
@@ -975,7 +975,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "141"
+                "value": "139"
               },
               "S_LATENCY": {
                 "value": "0"
@@ -1115,7 +1115,7 @@
                 "value": "2"
               },
               "PAYLD_WIDTH": {
-                "value": "6"
+                "value": "5"
               },
               "S_LATENCY": {
                 "value": "0"
@@ -1468,7 +1468,7 @@
                 "value": "1"
               },
               "MEP_IDENTIFIER_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "NUM_READ_OUTSTANDING": {
                 "value": "2"
@@ -1489,7 +1489,7 @@
                 "value": "READ_WRITE"
               },
               "SEP_ROUTE_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "SUPPORTS_READ_DEADLOCK": {
                 "value": "1"
@@ -1547,7 +1547,7 @@
                 "value": "1"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "IS_CASCADED": {
                 "value": "0"
@@ -1565,7 +1565,7 @@
                 "value": "0"
               },
               "MEP_IDENTIFIER_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "MSC000_RDATA_WIDTH": {
                 "value": "32"
@@ -1723,7 +1723,7 @@
             "value": "32"
           },
           "AXI_ID_WIDTH": {
-            "value": "2"
+            "value": "1"
           },
           "AXI_RDATA_WIDTH": {
             "value": "32"
@@ -1750,7 +1750,7 @@
             "value": "0"
           },
           "SC_ID_WIDTH": {
-            "value": "2"
+            "value": "1"
           },
           "SC_RDATA_WIDTH": {
             "value": "128"
@@ -1982,7 +1982,7 @@
                 "value": "2"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -2048,7 +2048,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "141"
+                "value": "139"
               },
               "S00_NUM_BYTES": {
                 "value": "4"
@@ -2154,7 +2154,7 @@
                 "value": "0"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "4"
@@ -2220,7 +2220,7 @@
                 "value": "2"
               },
               "PAYLD_WIDTH": {
-                "value": "148"
+                "value": "147"
               },
               "S00_NUM_BYTES": {
                 "value": "16"
@@ -2329,7 +2329,7 @@
                 "value": "3"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -2395,7 +2395,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "141"
+                "value": "139"
               },
               "S00_NUM_BYTES": {
                 "value": "4"
@@ -2501,7 +2501,7 @@
                 "value": "1"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -2673,7 +2673,7 @@
                 "value": "4"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "4"
@@ -2739,7 +2739,7 @@
                 "value": "2"
               },
               "PAYLD_WIDTH": {
-                "value": "6"
+                "value": "5"
               },
               "S00_NUM_BYTES": {
                 "value": "16"
@@ -2945,7 +2945,7 @@
             "value": "32"
           },
           "AXI_ID_WIDTH": {
-            "value": "2"
+            "value": "1"
           },
           "AXI_RDATA_WIDTH": {
             "value": "32"
@@ -2972,7 +2972,7 @@
             "value": "0"
           },
           "SC_ID_WIDTH": {
-            "value": "2"
+            "value": "1"
           },
           "SC_RDATA_WIDTH": {
             "value": "128"
@@ -3110,7 +3110,7 @@
                 "value": "2"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "4"
@@ -3176,7 +3176,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "141"
+                "value": "139"
               },
               "S00_NUM_BYTES": {
                 "value": "16"
@@ -3282,7 +3282,7 @@
                 "value": "0"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -3348,7 +3348,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "148"
+                "value": "147"
               },
               "S00_NUM_BYTES": {
                 "value": "4"
@@ -3548,7 +3548,7 @@
                 "value": "0"
               },
               "MEP_IDENTIFIER_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M_MAX_BURST_LENGTH": {
                 "value": "1"
@@ -3577,17 +3577,11 @@
               "SSC001_ROUTE": {
                 "value": "0b1"
               },
-              "SSC002_ROUTE": {
-                "value": "0b0"
-              },
-              "SSC003_ROUTE": {
-                "value": "0b0"
-              },
               "SSC_ROUTE_WIDTH": {
                 "value": "1"
               },
               "S_ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "WDATA_WIDTH": {
                 "value": "32"
@@ -3660,10 +3654,10 @@
         "has_run_ip_tcl": "true",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "32"
+            "value": "28"
           },
           "AXI_ID_WIDTH": {
-            "value": "2"
+            "value": "1"
           },
           "AXI_RDATA_WIDTH": {
             "value": "128"
@@ -3690,7 +3684,7 @@
             "value": "0"
           },
           "SC_ID_WIDTH": {
-            "value": "2"
+            "value": "1"
           },
           "SC_RDATA_WIDTH": {
             "value": "128"
@@ -3918,7 +3912,7 @@
                 "value": "2"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -3984,7 +3978,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "141"
+                "value": "139"
               },
               "S00_NUM_BYTES": {
                 "value": "16"
@@ -4090,7 +4084,7 @@
                 "value": "0"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -4156,7 +4150,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "148"
+                "value": "147"
               },
               "S00_NUM_BYTES": {
                 "value": "16"
@@ -4262,7 +4256,7 @@
                 "value": "3"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -4328,7 +4322,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "141"
+                "value": "139"
               },
               "S00_NUM_BYTES": {
                 "value": "16"
@@ -4434,7 +4428,7 @@
                 "value": "1"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -4609,7 +4603,7 @@
                 "value": "4"
               },
               "ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M00_NUM_BYTES": {
                 "value": "16"
@@ -4675,7 +4669,7 @@
                 "value": "1"
               },
               "PAYLD_WIDTH": {
-                "value": "6"
+                "value": "5"
               },
               "S00_NUM_BYTES": {
                 "value": "16"
@@ -4911,13 +4905,16 @@
             "has_run_ip_tcl": "true",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "32"
+                "value": "28"
               },
               "HAS_BURST": {
                 "value": "1"
               },
+              "HAS_LOCK": {
+                "value": "0"
+              },
               "IS_CASCADED": {
-                "value": "1"
+                "value": "0"
               },
               "MAX_RUSER_BITS_PER_BYTE": {
                 "value": "0"
@@ -4926,31 +4923,37 @@
                 "value": "0"
               },
               "MEP_IDENTIFIER_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "M_ARUSER_WIDTH": {
-                "value": "114"
+                "value": "0"
               },
               "M_AWUSER_WIDTH": {
-                "value": "114"
+                "value": "0"
               },
               "M_BUSER_WIDTH": {
-                "value": "114"
+                "value": "0"
+              },
+              "M_ID_WIDTH": {
+                "value": "0"
               },
               "M_MAX_BURST_LENGTH": {
                 "value": "64"
+              },
+              "M_PROTOCOL": {
+                "value": "AXI4"
               },
               "M_RUSER_BITS_PER_BYTE": {
                 "value": "0"
               },
               "M_RUSER_WIDTH": {
-                "value": "14"
+                "value": "0"
               },
               "M_WUSER_BITS_PER_BYTE": {
                 "value": "0"
               },
               "M_WUSER_WIDTH": {
-                "value": "14"
+                "value": "0"
               },
               "NUM_MSC": {
                 "value": "2"
@@ -4973,17 +4976,11 @@
               "SSC001_ROUTE": {
                 "value": "0b1"
               },
-              "SSC002_ROUTE": {
-                "value": "0b0"
-              },
-              "SSC003_ROUTE": {
-                "value": "0b0"
-              },
               "SSC_ROUTE_WIDTH": {
                 "value": "1"
               },
               "S_ID_WIDTH": {
-                "value": "2"
+                "value": "1"
               },
               "WDATA_WIDTH": {
                 "value": "128"
