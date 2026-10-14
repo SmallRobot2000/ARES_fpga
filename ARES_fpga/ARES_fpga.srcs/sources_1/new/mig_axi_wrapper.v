@@ -101,6 +101,11 @@ module mig_axi_wrapper(
   input			sys_rst
     );
 
+// Retain health signals even though the block-design outputs are unused.
+(* MARK_DEBUG = "TRUE" *) wire dbg_mig_reset = ui_clk_sync_rst;
+(* MARK_DEBUG = "TRUE" *) wire dbg_mig_calib = init_calib_complete;
+(* MARK_DEBUG = "TRUE" *) wire dbg_mig_locked = mmcm_locked;
+
 mig_7series_0 mig_inst (
 
   // DDR

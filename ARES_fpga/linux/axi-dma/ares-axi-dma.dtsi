@@ -1,0 +1,41 @@
+/* ARES Block_top: AXI DMA 7.1, direct/simple mode, coherent Vexii DMA port. */
+/ {
+    ares_dma_clk: clock-dma {
+        compatible = "fixed-clock";
+        #clock-cells = <0>;
+        clock-frequency = <100000000>; /* MIG ui_clk */
+    };
+};
+
+&{/soc} {
+    axi_dma_0: dma-controller@10080000 {
+        compatible = "xlnx,axi-dma-1.00.a";
+        reg = <0x10080000 0x00010000>;
+        #dma-cells = <1>;
+        #address-cells = <1>;
+        #size-cells = <1>;
+        dma-ranges = <0x90000000 0x90000000 0x10000000>;
+        dma-coherent;
+
+        clocks = <&ares_dma_clk>, <&ares_dma_clk>, <&ares_dma_clk>;
+        clock-names = "s_axi_lite_aclk", "m_axi_mm2s_aclk",
+                      "m_axi_s2mm_aclk";
+
+        xlnx,addrwidth = <32>;
+        xlnx,sg-length-width = <23>;
+        interrupt-parent = <&plic0>;
+        status = "okay";
+
+        dma-channel-mm2s {
+            compatible = "xlnx,axi-dma-mm2s-channel";
+            interrupts = <7>;
+            xlnx,datawidth = <32>; /* STREAM width; memory port is 64 bits. */
+        };
+
+        dma-channel-s2mm {
+            compatible = "xlnx,axi-dma-s2mm-channel";
+            interrupts = <8>;
+            xlnx,datawidth = <32>;
+        };
+    };
+};

@@ -1,0 +1,274 @@
+/dts-v1/;
+
+/ {
+    #address-cells = <1>;
+    #size-cells = <1>;
+
+    compatible = "vexii,vexii-soc";
+    model = "VexiiRiscv FPGA SoC";
+
+    chosen {
+        stdout-path = &uart0;
+        /*
+        * bootargs = "earlycon=sbi console=ttyUL0,115200 root=/dev/mmcblk0p2 uio_pdrv_genirq.of_id=generic-uio";
+        */
+        bootargs = "earlycon=sbi console=ttyUL0,115200 root=/dev/sda1 rootwait rw uio_pdrv_genirq.of_id=generic-uio";
+    };
+
+    aliases {
+        serial0 = &uart0;
+    };
+
+    memory@90000000 {
+        device_type = "memory";
+        reg = <0x90000000 0x10000000>;
+    };
+
+    reserved-memory {
+        #address-cells = <1>;
+        #size-cells = <1>;
+        ranges;
+
+        vdp_fb: framebuffer@9f800000 {
+                reg = <0x9f800000 0x00800000>;
+                no-map;
+        };
+    };
+
+    cpus {
+        #address-cells = <1>;
+        #size-cells = <0>;
+        timebase-frequency = <100000000>;
+
+        cpu0: cpu@0 {
+            device_type = "cpu";
+            reg = <0>;
+            status = "okay";
+            compatible = "riscv";
+
+            riscv,isa = "rv32imafdc_zicsr_zifencei_zicbom";
+            riscv,cbom-block-size = <64>;
+            mmu-type = "riscv,sv32";
+
+            cpu0_intc: interrupt-controller {
+                compatible = "riscv,cpu-intc";
+                interrupt-controller;
+                #interrupt-cells = <1>;
+                #address-cells = <0>;
+            };
+        };
+
+        cpu1: cpu@1 {
+            device_type = "cpu";
+            reg = <1>;
+            status = "okay";
+            compatible = "riscv";
+
+            riscv,isa = "rv32imafdc_zicsr_zifencei_zicbom";
+            riscv,cbom-block-size = <64>;
+            mmu-type = "riscv,sv32";
+
+            cpu1_intc: interrupt-controller {
+                compatible = "riscv,cpu-intc";
+                interrupt-controller;
+                #interrupt-cells = <1>;
+                #address-cells = <0>;
+            };
+        };
+    };
+
+    soc {
+        compatible = "simple-bus";
+        #address-cells = <1>;
+        #size-cells = <1>;
+        ranges;
+
+
+        clint0: timer@f0010000 {
+            compatible = "riscv,clint0";
+            reg = <0xf0010000 0x00010000>;
+
+            /*
+             * 3 = machine software interrupt
+             * 7 = machine timer interrupt
+             */
+            interrupts-extended =
+                <&cpu0_intc 3>,
+                <&cpu0_intc 7>,
+                <&cpu1_intc 3>,
+                <&cpu1_intc 7>;
+        };
+
+        plic0: interrupt-controller@f0c00000 {
+            compatible = "riscv,plic0";
+            reg = <0xf0c00000 0x00400000>;
+
+            interrupt-controller;
+            #interrupt-cells = <1>;
+            #address-cells = <0>;
+
+            /*
+             * 11 = machine external interrupt
+             * 9  = supervisor external interrupt
+             * FPGA context order: hart 0 M/S, then hart 1 M/S.
+             */
+            interrupts-extended =
+                <&cpu0_intc 11>,
+                <&cpu0_intc 9>,
+                <&cpu1_intc 11>,
+                <&cpu1_intc 9>;
+
+            /*
+             * Change to the actual number of implemented
+             * external interrupt sources.
+             */
+            riscv,ndev = <32>;
+            riscv,max-priority = <7>;
+        };
+
+        uart0: serial@10000000 {
+            compatible = "xlnx,xps-uartlite-1.00.a";
+            reg = <0x10000000 0x00010000>;
+
+            current-speed = <115200>;
+
+            interrupt-parent = <&plic0>;
+
+            /*
+             * Replace 1 with the PLIC source number actually
+             * connected to AXI UART Lite.
+             */
+            interrupts = <1>;
+        };
+
+
+	spi@10001000 {
+		compatible = "xlnx,axi-quad-spi-1.00.a";
+		reg = <0x10001000 0x1000>;
+		interrupt-parent = <&plic0>;
+		interrupts = <2>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+		xlnx,num-ss-bits = <1>;
+		xlnx,num-transfer-bits = <8>;
+		status = "okay";
+
+		sdcard@0 {
+			compatible = "mmc-spi-slot";
+			reg = <0>;
+			spi-max-frequency = <25000000>;
+			voltage-ranges = <3300 3300>;
+			broken-cd;
+			disable-wp;
+		};
+	};
+
+	spi@10002000 {
+                compatible = "xlnx,axi-quad-spi-1.00.a";
+                reg = <0x10002000 0x1000>;
+                interrupt-parent = <&plic0>;
+                interrupts = <3>;
+                #address-cells = <1>;
+                #size-cells = <0>;
+                xlnx,num-ss-bits = <1>;
+                xlnx,num-transfer-bits = <8>;
+                status = "okay";
+
+                ethernet@0 {
+                        compatible = "microchip,enc28j60";
+                        reg = <0>;
+                        spi-max-frequency = <12500000>;
+
+                        interrupt-parent = <&plic0>;
+                        interrupts = <4>;
+
+                        status = "okay";
+                };
+    };
+
+    vdp0: vdp@10032000 {
+            compatible = "generic-uio";
+
+            reg = <0x10032000 0x00001000>, /* R0 */
+                  <0x9f800000 0x00800000>, /* B0 */
+                  <0x10010000 0x00010000>, /* T0 DATA */
+                  <0x10020000 0x00008000>, /* T0 MAP */
+                  <0x10028000 0x00008000>; /* S0 DATA */
+
+            reg-names = "r0",
+                        "b0",
+                        "t0_data",
+                        "t0_map",
+                        "s0_data";
+
+            linux,uio-name = "vdp0";
+            status = "okay";
+    };
+
+    vdp1: vdp@10030000 {
+            compatible = "generic-uio";
+
+            reg = <0x10030000 0x00000200>, /* S0 ATT */
+                  <0x10040000 0x00010000>, /* T1 DATA */
+                  <0x10050000 0x00008000>; /* T1 MAP */
+
+            reg-names = "s0_att",
+                        "t1_data",
+                        "t1_map";
+
+            linux,uio-name = "vdp1";
+            status = "okay";
+    };
+
+
+
+	keyboard0: keyboard@10003000 {
+		compatible = "ares,msx-keyboard";
+
+		reg = <0x10003000 0x1000>;
+
+		interrupt-parent = <&plic0>;
+		interrupts = <5>;
+
+		status = "okay";
+	};
+
+    cf_ata: ide@10060000 {
+    compatible = "ata-generic";
+
+    /*
+     * Command/task-file block:
+     *
+     * 0x10060000 DATA
+     * 0x10060002 ERROR/FEATURE
+     * 0x10060004 SECTOR COUNT
+     * 0x10060006 LBA LOW
+     * 0x10060008 LBA MID
+     * 0x1006000a LBA HIGH
+     * 0x1006000c DEVICE
+     * 0x1006000e STATUS/COMMAND
+     *
+     * Control block:
+     *
+     * 0x10070000 Alternate Status / Device Control
+     */
+    reg = <0x10060000 0x10>,
+          <0x10070000 0x02>;
+
+    reg-shift = <1>;
+
+    pio-mode = <2>;
+
+    ata-generic,use16bit;
+
+    interrupt-parent = <&plic0>;
+    interrupts = <6>;
+
+    status = "okay";
+};
+
+    };
+
+};
+
+/include/ "ares-axi-dma.dtsi"

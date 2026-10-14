@@ -38,7 +38,9 @@
       "ARES_RasterIXWrapper_0": "",
       "axi_dma_0": "",
       "smartconnect_dma": "",
-      "ARES_RaxyerIX_frameb_0": ""
+      "ARES_RaxyerIX_frameb_0": "",
+      "ila_0": "",
+      "ila_1": ""
     },
     "ports": {
       "ddr3_dq": {
@@ -1290,6 +1292,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "1"
               },
@@ -1303,6 +1308,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1321,6 +1329,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "1"
               },
@@ -1334,6 +1345,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1352,6 +1366,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "1"
               },
@@ -1365,6 +1382,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1383,6 +1403,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "1"
               },
@@ -1396,6 +1419,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1414,6 +1440,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "1"
               },
@@ -1427,6 +1456,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1445,6 +1477,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "1"
               },
@@ -1458,6 +1493,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -4161,6 +4199,36 @@
             }
           }
         }
+      },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "ip_revision": "19",
+        "xci_name": "Block_top_ila_0_0",
+        "xci_path": "ip/Block_top_ila_0_0/Block_top_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "has_run_ip_tcl": "true"
+      },
+      "ila_1": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "ip_revision": "19",
+        "xci_name": "Block_top_ila_0_1",
+        "xci_path": "ip/Block_top_ila_0_1/Block_top_ila_0_1.xci",
+        "inst_hier_path": "ila_1",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "5"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "20"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -4179,7 +4247,8 @@
       "ARES_RaxyerIX_frameb_0_ram_axi": {
         "interface_ports": [
           "smartconnect_dma/S03_AXI",
-          "ARES_RaxyerIX_frameb_0/ram_axi"
+          "ARES_RaxyerIX_frameb_0/ram_axi",
+          "ila_0/SLOT_0_AXI"
         ]
       },
       "VexiiSocWrapper_0_mBus": {
@@ -4271,31 +4340,36 @@
       "ARES_RasterIXWrapper_0_fb_addr": {
         "ports": [
           "ARES_RasterIXWrapper_0/fb_addr",
-          "ARES_RaxyerIX_frameb_0/fb_addr"
+          "ARES_RaxyerIX_frameb_0/fb_addr",
+          "ila_1/probe0"
         ]
       },
       "ARES_RasterIXWrapper_0_fb_size": {
         "ports": [
           "ARES_RasterIXWrapper_0/fb_size",
-          "ARES_RaxyerIX_frameb_0/fb_size"
+          "ARES_RaxyerIX_frameb_0/fb_size",
+          "ila_1/probe1"
         ]
       },
       "ARES_RasterIXWrapper_0_swap_fb": {
         "ports": [
           "ARES_RasterIXWrapper_0/swap_fb",
-          "ARES_RaxyerIX_frameb_0/swap_fb"
+          "ARES_RaxyerIX_frameb_0/swap_fb",
+          "ila_1/probe3"
         ]
       },
       "ARES_RasterIXWrapper_0_swap_fb_enable_vsync": {
         "ports": [
           "ARES_RasterIXWrapper_0/swap_fb_enable_vsync",
-          "ARES_RaxyerIX_frameb_0/swap_fb_enable_vsync"
+          "ARES_RaxyerIX_frameb_0/swap_fb_enable_vsync",
+          "ila_1/probe4"
         ]
       },
       "ARES_RaxyerIX_frameb_0_fb_swapped": {
         "ports": [
           "ARES_RaxyerIX_frameb_0/fb_swapped",
-          "ARES_RasterIXWrapper_0/fb_swapped"
+          "ARES_RasterIXWrapper_0/fb_swapped",
+          "ila_1/probe2"
         ]
       },
       "ARES_RaxyerIX_frameb_0_vga_b": {
@@ -4458,6 +4532,18 @@
         "ports": [
           "axi_cf_controller_0/irq",
           "xlconcat_0/In6"
+        ]
+      },
+      "axi_dma_0_mm2s_introut": {
+        "ports": [
+          "axi_dma_0/mm2s_introut",
+          "xlconcat_0/In7"
+        ]
+      },
+      "axi_dma_0_s2mm_introut": {
+        "ports": [
+          "axi_dma_0/s2mm_introut",
+          "xlconcat_0/In8"
         ]
       },
       "axi_keyboard_0_caps_led": {
@@ -4719,14 +4805,16 @@
           "axi_quad_spi_1/s_axi_aclk",
           "axi_quad_spi_1/ext_spi_clk",
           "axi_keyboard_0/s_axi_aclk",
-          "axi_cf_controller_0/s_axi_aclk",
-          "VexiiSocWrapper_0/s_axi_aclk",
           "axi_dma_0/m_axi_mm2s_aclk",
           "axi_dma_0/s_axi_lite_aclk",
           "smartconnect_dma/aclk",
           "axi_dma_0/m_axi_s2mm_aclk",
           "ARES_RasterIXWrapper_0/aclk",
-          "ARES_RaxyerIX_frameb_0/ram_axi_aclk"
+          "ARES_RaxyerIX_frameb_0/ram_axi_aclk",
+          "VexiiSocWrapper_0/s_axi_aclk",
+          "axi_cf_controller_0/s_axi_aclk",
+          "ila_0/clk",
+          "ila_1/clk"
         ]
       },
       "reset": {
@@ -4739,19 +4827,19 @@
       "reset_n": {
         "ports": [
           "util_vector_logic_1/Res",
-          "mig_axi_wrapper_0/aresetn",
           "axi_quad_spi_0/s_axi_aresetn",
           "axi_uartlite_0/s_axi_aresetn",
           "smartconnect_mem/aresetn",
           "smartconnect_io/aresetn",
           "axi_quad_spi_1/s_axi_aresetn",
           "axi_keyboard_0/s_axi_aresetn",
-          "axi_cf_controller_0/s_axi_aresetn",
-          "VexiiSocWrapper_0/s_axi_aresetn",
           "axi_dma_0/axi_resetn",
           "smartconnect_dma/aresetn",
           "ARES_RasterIXWrapper_0/resetn",
-          "ARES_RaxyerIX_frameb_0/resetn"
+          "ARES_RaxyerIX_frameb_0/resetn",
+          "VexiiSocWrapper_0/s_axi_aresetn",
+          "axi_cf_controller_0/s_axi_aresetn",
+          "mig_axi_wrapper_0/aresetn"
         ]
       },
       "rst_in": {

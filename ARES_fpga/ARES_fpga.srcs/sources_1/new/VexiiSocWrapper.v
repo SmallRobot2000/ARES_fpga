@@ -128,6 +128,63 @@ assign plic_interrupts = {
   peripheral_externalInterrupts_port[3:0]
 };
 
+// Passive diagnostics. MARK_DEBUG retains these nets for debug/insert_ila.tcl.
+// No monitor output feeds back into the CPU, interrupts, or AXI handshakes.
+(* MARK_DEBUG = "TRUE" *) wire [15:0] dbg_dma_flags, dbg_io_flags, dbg_mem_flags;
+(* MARK_DEBUG = "TRUE" *) wire [31:0] dbg_dma_araddr, dbg_dma_awaddr;
+(* MARK_DEBUG = "TRUE" *) wire [31:0] dbg_io_araddr, dbg_io_awaddr;
+(* MARK_DEBUG = "TRUE" *) wire [31:0] dbg_mem_araddr, dbg_mem_awaddr;
+(* MARK_DEBUG = "TRUE" *) wire [23:0] dbg_dma_pending, dbg_io_pending, dbg_mem_pending;
+(* MARK_DEBUG = "TRUE" *) wire [15:0] dbg_dma_live, dbg_io_live, dbg_mem_live;
+(* MARK_DEBUG = "TRUE" *) wire [31:0] dbg_io_wdata = pBus_wdata;
+(* MARK_DEBUG = "TRUE" *) wire [31:0] dbg_io_rdata = pBus_rdata;
+(* MARK_DEBUG = "TRUE" *) wire [5:0] dbg_irq_levels = plic_interrupts[6:1];
+(* MARK_DEBUG = "TRUE" *) wire dbg_fault =
+    (|dbg_dma_flags[8:3]) || (|dbg_io_flags[8:3]) || (|dbg_mem_flags[8:3]);
+
+// Count reset reassertions since FPGA configuration (initial reset excluded).
+// These two registers intentionally are not cleared by the system reset.
+reg dbg_reset_previous = 1'b0;
+(* MARK_DEBUG = "TRUE" *) reg [7:0] dbg_reset_count = 8'd0;
+always @(posedge s_axi_aclk) begin
+  dbg_reset_previous <= s_axi_aresetn;
+  if (dbg_reset_previous && !s_axi_aresetn && dbg_reset_count != 8'hff)
+    dbg_reset_count <= dbg_reset_count + 1'b1;
+end
+
+ares_axi_debug_watch #(.CHECK_DDR(1)) debug_dma (
+  .clk(s_axi_aclk), .resetn(s_axi_aresetn),
+  .arvalid(dma_bus_arvalid), .arready(dma_bus_arready), .araddr(dma_bus_araddr),
+  .rvalid(dma_bus_rvalid), .rready(dma_bus_rready), .rlast(dma_bus_rlast), .rresp(dma_bus_rresp),
+  .awvalid(dma_bus_awvalid), .awready(dma_bus_awready), .awaddr(dma_bus_awaddr),
+  .wvalid(dma_bus_wvalid), .wready(dma_bus_wready), .wlast(dma_bus_wlast),
+  .bvalid(dma_bus_bvalid), .bready(dma_bus_bready), .bresp(dma_bus_bresp),
+  .flags(dbg_dma_flags), .read_address(dbg_dma_araddr), .write_address(dbg_dma_awaddr),
+  .pending(dbg_dma_pending), .live(dbg_dma_live)
+);
+
+ares_axi_debug_watch debug_io (
+  .clk(s_axi_aclk), .resetn(s_axi_aresetn),
+  .arvalid(pBus_arvalid), .arready(pBus_arready), .araddr(pBus_araddr),
+  .rvalid(pBus_rvalid), .rready(pBus_rready), .rlast(1'b1), .rresp(pBus_rresp),
+  .awvalid(pBus_awvalid), .awready(pBus_awready), .awaddr(pBus_awaddr),
+  .wvalid(pBus_wvalid), .wready(pBus_wready), .wlast(1'b1),
+  .bvalid(pBus_bvalid), .bready(pBus_bready), .bresp(pBus_bresp),
+  .flags(dbg_io_flags), .read_address(dbg_io_araddr), .write_address(dbg_io_awaddr),
+  .pending(dbg_io_pending), .live(dbg_io_live)
+);
+
+ares_axi_debug_watch debug_mem (
+  .clk(s_axi_aclk), .resetn(s_axi_aresetn),
+  .arvalid(mBus_arvalid), .arready(mBus_arready), .araddr(mBus_araddr),
+  .rvalid(mBus_rvalid), .rready(mBus_rready), .rlast(mBus_rlast), .rresp(mBus_rresp),
+  .awvalid(mBus_awvalid), .awready(mBus_awready), .awaddr(mBus_awaddr),
+  .wvalid(mBus_wvalid), .wready(mBus_wready), .wlast(mBus_wlast),
+  .bvalid(mBus_bvalid), .bready(mBus_bready), .bresp(mBus_bresp),
+  .flags(dbg_mem_flags), .read_address(dbg_mem_araddr), .write_address(dbg_mem_awaddr),
+  .pending(dbg_mem_pending), .live(dbg_mem_live)
+);
+
 VexiiSoc Soc
 (
 
@@ -229,4 +286,108 @@ VexiiSoc Soc
   .debug() //Not needed
 );
 
+endmodule
+
+// A no-progress watchdog, not a complete AXI protocol checker. Track AW and
+// completed W bursts independently because AXI permits W to arrive before AW.
+// Addresses are the latest presented addresses, frozen on the first anomaly;
+// they do not identify the oldest transaction when multiple IDs are active.
+module ares_axi_debug_watch #(
+  parameter integer STALL_CYCLES = 100000, // 1 ms at 100 MHz
+  parameter integer CHECK_DDR = 0
+)(
+  input wire clk, resetn,
+  input wire arvalid, arready,
+  input wire [31:0] araddr,
+  input wire rvalid, rready, rlast,
+  input wire [1:0] rresp,
+  input wire awvalid, awready,
+  input wire [31:0] awaddr,
+  input wire wvalid, wready, wlast,
+  input wire bvalid, bready,
+  input wire [1:0] bresp,
+  output wire [15:0] flags,
+  output reg [31:0] read_address, write_address,
+  output wire [23:0] pending,
+  output wire [15:0] live
+);
+  localparam integer AGE_WIDTH = (STALL_CYCLES > 1) ? $clog2(STALL_CYCLES) : 1;
+  localparam [AGE_WIDTH-1:0] AGE_LIMIT = STALL_CYCLES - 1;
+  reg [AGE_WIDTH-1:0] read_age, write_age;
+  reg [7:0] reads, writes, write_bursts;
+  reg partial_write;
+  reg [8:0] sticky;
+  wire ar_fire = arvalid && arready;
+  wire r_fire = rvalid && rready;
+  wire r_done = r_fire && rlast;
+  wire aw_fire = awvalid && awready;
+  wire w_fire = wvalid && wready;
+  wire w_done = w_fire && wlast;
+  wire b_fire = bvalid && bready;
+  wire read_busy = (reads != 0) || arvalid || rvalid;
+  wire write_busy = (writes != 0) || (write_bursts != 0) || partial_write ||
+                    awvalid || wvalid || bvalid;
+  wire read_progress = ar_fire || r_fire;
+  wire write_progress = aw_fire || w_fire || b_fire;
+  wire read_stalled = read_busy && !read_progress && (read_age == AGE_LIMIT);
+  wire write_stalled = write_busy && !write_progress && (write_age == AGE_LIMIT);
+
+  assign flags = {bvalid && !bready, rvalid && !rready,
+                  (write_bursts != 0) || partial_write, writes != 0, reads != 0,
+                  write_stalled, read_stalled, sticky};
+  assign pending = {write_bursts, writes, reads};
+  assign live = {bresp, rresp, wlast, rlast, bready, bvalid, wready, wvalid,
+                 awready, awvalid, rready, rvalid, arready, arvalid};
+
+  always @(posedge clk) begin
+    if (!resetn) begin
+      sticky <= 0;
+      reads <= 0;
+      writes <= 0;
+      write_bursts <= 0;
+      partial_write <= 0;
+      read_age <= 0;
+      write_age <= 0;
+      read_address <= 0;
+      write_address <= 0;
+    end else begin
+      if (arvalid) sticky[0] <= 1'b1;
+      if (awvalid) sticky[1] <= 1'b1;
+      if (wvalid) sticky[2] <= 1'b1;
+      if (read_stalled) sticky[3] <= 1'b1;
+      if (write_stalled) sticky[4] <= 1'b1;
+      if (rvalid && rresp[1]) sticky[5] <= 1'b1;
+      if (bvalid && bresp[1]) sticky[6] <= 1'b1;
+      if (CHECK_DDR && ((arvalid && araddr[31:28] != 4'h9) ||
+                        (awvalid && awaddr[31:28] != 4'h9)))
+        sticky[7] <= 1'b1;
+
+      if (!(|sticky[8:3])) begin
+        if (arvalid) read_address <= araddr;
+        if (awvalid) write_address <= awaddr;
+      end
+
+      if (!read_busy || read_progress) read_age <= 0;
+      else if (read_age != AGE_LIMIT) read_age <= read_age + 1'b1;
+      if (!write_busy || write_progress) write_age <= 0;
+      else if (write_age != AGE_LIMIT) write_age <= write_age + 1'b1;
+
+      case ({ar_fire, r_done})
+        2'b10: if (reads != 8'hff) reads <= reads + 1'b1; else sticky[8] <= 1'b1;
+        2'b01: if (reads != 0) reads <= reads - 1'b1; else sticky[8] <= 1'b1;
+        default: ;
+      endcase
+      case ({aw_fire, b_fire})
+        2'b10: if (writes != 8'hff) writes <= writes + 1'b1; else sticky[8] <= 1'b1;
+        2'b01: if (writes != 0) writes <= writes - 1'b1; else sticky[8] <= 1'b1;
+        default: ;
+      endcase
+      case ({w_done, b_fire})
+        2'b10: if (write_bursts != 8'hff) write_bursts <= write_bursts + 1'b1; else sticky[8] <= 1'b1;
+        2'b01: if (write_bursts != 0) write_bursts <= write_bursts - 1'b1; else sticky[8] <= 1'b1;
+        default: ;
+      endcase
+      if (w_fire) partial_write <= !wlast;
+    end
+  end
 endmodule

@@ -1,0 +1,3 @@
+/* Preserve the working controller/CF tree and add the userspace DMA client. */
+/include/ "tree-dma.dts"
+/include/ "ares-dma-proxy.dtsi"

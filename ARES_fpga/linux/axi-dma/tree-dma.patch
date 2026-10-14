@@ -1,0 +1,16 @@
+--- a/tree/tree.dts
++++ b/tree/tree.dts
+@@ -89,7 +89,6 @@
+         #size-cells = <1>;
+         ranges;
+ 
+-        /* DMA is not connected in this FPGA build; no DMA node is enabled. */
+ 
+         clint0: timer@f0010000 {
+             compatible = "riscv,clint0";
+@@ -277,3 +276,5 @@
+     };
+ 
+ };
++
++/include/ "ares-axi-dma.dtsi"
