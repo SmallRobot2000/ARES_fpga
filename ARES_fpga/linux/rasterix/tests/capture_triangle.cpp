@@ -31,9 +31,15 @@ public:
             std::abort();
         inspect(m_buffers[index].data(), size);
         ++m_transfers;
+        ++m_currentBatch;
     }
     void readData(uint8_t, uint32_t) override { std::abort(); }
-    void blockUntilTransferIsComplete() override { }
+    void blockUntilTransferIsComplete() override
+    {
+        if (m_currentBatch > m_maxBatch)
+            m_maxBatch = m_currentBatch;
+        m_currentBatch = 0;
+    }
     tcb::span<uint8_t> requestWriteBuffer(uint8_t index) override
     {
         return { m_buffers.at(index) };
@@ -45,6 +51,7 @@ public:
     unsigned int transfers() const { return m_transfers; }
     unsigned int triangles() const { return m_triangles; }
     unsigned int swaps() const { return m_swaps; }
+    unsigned int maxBatch() const { return m_maxBatch; }
     const std::vector<uint16_t>& yOffsets() const { return m_yOffsets; }
 
 private:
@@ -117,6 +124,8 @@ private:
     unsigned int m_transfers { 0 };
     unsigned int m_triangles { 0 };
     unsigned int m_swaps { 0 };
+    unsigned int m_currentBatch { 0 };
+    unsigned int m_maxBatch { 0 };
     std::vector<uint16_t> m_yOffsets;
 };
 }
@@ -170,8 +179,8 @@ int main()
     device.blockUntilDeviceIsIdle();
     uploadThread.wait();
     uploader.blockUntilDeviceIsIdle();
-    std::printf("captured %u display lists, %u strip-triangle commands, %u swaps, and %zu Y offsets\n",
-        bus.transfers(), bus.triangles(), bus.swaps(), bus.yOffsets().size());
+    std::printf("captured %u display lists in batches up to %u, %u strip-triangle commands, %u swaps, and %zu Y offsets\n",
+        bus.transfers(), bus.maxBatch(), bus.triangles(), bus.swaps(), bus.yOffsets().size());
 
     // The first rendered frame carries one explicit Y-offset write per strip.
     // Following frames also restore the preceding render state, so each list
@@ -187,10 +196,11 @@ int main()
     }
 
     // Three rendered frames plus the destructor's final flush/swap.
-    if (bus.transfers() != 30 || bus.triangles() < 12 || bus.swaps() != 4 || !offsetsCorrect) {
+    if (bus.transfers() != 30 || bus.maxBatch() != 6 || bus.triangles() < 12
+        || bus.swaps() != 4 || !offsetsCorrect) {
         std::fputs("FAIL: unexpected strip-list construction\n", stderr);
         return 1;
     }
-    std::puts("PASS: setup, three animated frames, and teardown have valid strip lists");
+    std::puts("PASS: valid strip lists submitted as six-transfer DMA batches");
     return 0;
 }

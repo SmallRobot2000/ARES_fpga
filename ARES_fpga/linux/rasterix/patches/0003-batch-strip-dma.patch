@@ -1,0 +1,24 @@
+diff --git a/lib/gl/renderer/devicedatauploader/DeviceDataUploader.cpp b/lib/gl/renderer/devicedatauploader/DeviceDataUploader.cpp
+index cc0d906..1981fe9 100644
+--- a/lib/gl/renderer/devicedatauploader/DeviceDataUploader.cpp
++++ b/lib/gl/renderer/devicedatauploader/DeviceDataUploader.cpp
+@@ -23,7 +23,6 @@ namespace rr::devicedatauploader
+ 
+ void DeviceDataUploader::streamDisplayList(const uint8_t index, uint32_t size)
+ {
+-    blockUntilDeviceIsIdle();
+     size = fillWhenDataIsTooSmall(index, size);
+     const uint32_t commandSize = addDduStreamCommand(index, size);
+     m_busConnector.writeData(index, size + commandSize);
+diff --git a/lib/gl/renderer/threadedvertextransformer/ThreadedVertexTransformer.hpp b/lib/gl/renderer/threadedvertextransformer/ThreadedVertexTransformer.hpp
+index 8f19efd..e003ef6 100644
+--- a/lib/gl/renderer/threadedvertextransformer/ThreadedVertexTransformer.hpp
++++ b/lib/gl/renderer/threadedvertextransformer/ThreadedVertexTransformer.hpp
+@@ -167,7 +167,6 @@ private:
+                 {
+                     if (dispatcher.getDisplayListSize(i) > 0)
+                     {
+-                        m_device.blockUntilDeviceIsIdle();
+                         m_device.streamDisplayList(
+                             dispatcher.getDisplayListBufferId(i),
+                             dispatcher.getDisplayListSize(i));

@@ -69,18 +69,38 @@ void DMAProxyBus::start(Channel& channel, uint8_t index, uint32_t size)
         errno = EINVAL;
         fail("invalid transfer", channel.path);
     }
-    blockUntilTransferIsComplete();
+    /* A buffer cannot be overwritten while DMA still owns it. RasterIX
+     * normally rotates through distinct strip buffers, so this is uncommon.
+     */
+    if (channel.busyIndex == index)
+        finish(channel);
     int bufferIndex = index;
     channel.buffers[index].length = size;
-    if (ioctl(channel.fd, START_XFER, &bufferIndex) < 0)
+    if (channel.busyIndex >= 0) {
+        proxy_finish_start chain { channel.busyIndex, bufferIndex };
+        if (ioctl(channel.fd, FINISH_START_XFER, &chain) < 0)
+            fail("FINISH_START_XFER", channel.path);
+        const uint8_t previous = static_cast<uint8_t>(channel.busyIndex);
+        if (channel.buffers[previous].status != channel_buffer::PROXY_NO_ERROR) {
+            errno = EIO;
+            fail("FINISH_START_XFER status", channel.path);
+        }
+        if (&channel == &m_tx) {
+            ++m_txTransferCount;
+            m_txByteCount += channel.busySize;
+        } else {
+            ++m_rxTransferCount;
+            m_rxByteCount += channel.busySize;
+        }
+    } else if (ioctl(channel.fd, START_XFER, &bufferIndex) < 0) {
         fail("START_XFER", channel.path);
+    }
     if (channel.buffers[index].status != channel_buffer::PROXY_NO_ERROR) {
         errno = EIO;
         fail("START_XFER status", channel.path);
     }
-    m_busyChannel = &channel;
-    m_busyIndex = bufferIndex;
-    m_busySize = size;
+    channel.busyIndex = bufferIndex;
+    channel.busySize = size;
 }
 
 void DMAProxyBus::writeData(uint8_t index, uint32_t size, uint32_t offset)
@@ -94,35 +114,44 @@ void DMAProxyBus::writeData(uint8_t index, uint32_t size, uint32_t offset)
 
 void DMAProxyBus::readData(uint8_t index, uint32_t size)
 {
+    blockUntilTransferIsComplete();
     start(m_rx, index, size);
+    finish(m_rx);
+}
+
+void DMAProxyBus::finish(Channel& channel)
+{
+    if (channel.busyIndex < 0)
+        return;
+    if (ioctl(channel.fd, FINISH_XFER, &channel.busyIndex) < 0)
+        fail("FINISH_XFER", channel.path);
+    if (channel.buffers[channel.busyIndex].status != channel_buffer::PROXY_NO_ERROR) {
+        errno = EIO;
+        fail("FINISH_XFER status", channel.path);
+    }
+    if (&channel == &m_tx) {
+        ++m_txTransferCount;
+        m_txByteCount += channel.busySize;
+    } else {
+        ++m_rxTransferCount;
+        m_rxByteCount += channel.busySize;
+    }
+    channel.busyIndex = -1;
+    channel.busySize = 0;
 }
 
 void DMAProxyBus::blockUntilTransferIsComplete()
 {
-    if (!m_busyChannel)
-        return;
-    if (ioctl(m_busyChannel->fd, FINISH_XFER, &m_busyIndex) < 0)
-        fail("FINISH_XFER", m_busyChannel->path);
-    if (m_busyChannel->buffers[m_busyIndex].status != channel_buffer::PROXY_NO_ERROR) {
-        errno = EIO;
-        fail("FINISH_XFER status", m_busyChannel->path);
-    }
-    if (m_busyChannel == &m_tx) {
-        ++m_txTransferCount;
-        m_txByteCount += m_busySize;
-    } else {
-        ++m_rxTransferCount;
-        m_rxByteCount += m_busySize;
-    }
-    m_busyChannel = nullptr;
-    m_busyIndex = -1;
-    m_busySize = 0;
+    finish(m_tx);
+    finish(m_rx);
 }
 
 tcb::span<uint8_t> DMAProxyBus::requestWriteBuffer(uint8_t index)
 {
     if (index >= proxyBufferCount)
         return {};
+    if (m_tx.busyIndex == index)
+        finish(m_tx);
     return { reinterpret_cast<uint8_t*>(m_tx.buffers[index].buffer), proxyBufferSize };
 }
 
@@ -130,6 +159,8 @@ tcb::span<uint8_t> DMAProxyBus::requestReadBuffer(uint8_t index)
 {
     if (index >= proxyBufferCount)
         return {};
+    if (m_rx.busyIndex == index)
+        finish(m_rx);
     return { reinterpret_cast<uint8_t*>(m_rx.buffers[index].buffer), proxyBufferSize };
 }
 

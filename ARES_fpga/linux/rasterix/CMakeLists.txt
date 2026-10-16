@@ -1,6 +1,17 @@
 cmake_minimum_required(VERSION 3.14)
 project(ares_rasterix_gl LANGUAGES C CXX)
 
+include(CheckIPOSupported)
+option(ARES_ENABLE_LTO "Enable link-time optimization in release builds" ON)
+if(ARES_ENABLE_LTO)
+    check_ipo_supported(RESULT ARES_LTO_SUPPORTED OUTPUT ARES_LTO_ERROR)
+    if(ARES_LTO_SUPPORTED)
+        set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON)
+    else()
+        message(WARNING "Link-time optimization is unavailable: ${ARES_LTO_ERROR}")
+    endif()
+endif()
+
 set(RASTERIX_SOURCE "/home/lovro/ARES/RasterIX" CACHE PATH
     "Path to the RasterIX source tree")
 if(NOT EXISTS "${RASTERIX_SOURCE}/CMakeLists.txt")

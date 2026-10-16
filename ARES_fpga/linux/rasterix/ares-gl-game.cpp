@@ -15,8 +15,11 @@
 #include <cstring>
 #include <cerrno>
 #include <fcntl.h>
+#include <sched.h>
 #include <termios.h>
 #include <unistd.h>
+#include <vector>
+#include <cstddef>
 
 namespace {
 volatile std::sig_atomic_t running = 1;
@@ -26,10 +29,14 @@ constexpr int WORLD_HALF = 32;
 constexpr int PICKUP_COUNT = 14;
 constexpr int TOWER_COUNT = 54;
 constexpr int TEX_SIZE = 64;
+constexpr int MARKER_SEGMENTS = 16;
+constexpr int MARKER_TRIANGLES = MARKER_SEGMENTS + 4;
 constexpr float CAMERA_HEIGHT = 2.6f;
 // Fog fades scenery into the sky; distant meshes are excluded CPU-side.
-constexpr float FOG_START = 13.0f;
-constexpr float FOG_END = 28.0f;
+//constexpr float FOG_START = 13.0f;
+//constexpr float FOG_END = 28.0f;
+constexpr float FOG_START = 7.0f;
+constexpr float FOG_END = 15.0f;
 // Conservative radius adds clearance for a whole terrain cell/tower.
 constexpr float CULL_DISTANCE = FOG_END + 2.0f;
 constexpr float SKY_COLOR[4] = {0.28f, 0.48f, 0.75f, 1.0f};
@@ -58,8 +65,23 @@ struct Terminal {
 };
 
 struct Vec2 { float x, z; };
-struct Pickup { float x, z; bool found = false; };
-struct Tower { float x, z, h, w; };
+struct Pickup { float x, z, groundY; bool found = false; };
+struct Tower { float x, z, h, w, groundY; };
+// Interleaved client-side arrays (OpenGL ES 1.1; no VBO needed).
+struct Vertex {
+    float x, y, z;
+    float u, v;
+    float r, g, b;
+};
+struct TerrainCell {
+    float midX, midZ, radius;
+    Vertex vertices[6];
+    Vertex indexed[4];
+};
+struct TowerMesh {
+    Vertex vertices[36];
+    Vertex indexed[24];
+};
 struct Game {
     float x = 0, z = 24, yaw = 0;
     float moveForward = 0, moveSide = 0, turn = 0;
@@ -76,6 +98,19 @@ struct Game {
     bool stencilEnabled = true;
     int trianglesSubmitted = 0;
     int escapeState = 0;
+    float viewSin = 0.0f;
+    float viewCos = 1.0f;
+    Vec2 markerDirection[MARKER_SEGMENTS + 1]{};
+    std::vector<TerrainCell> terrain;
+    TowerMesh towerMeshes[TOWER_COUNT]{};
+    std::vector<Vertex> visibleTerrain;
+    std::vector<Vertex> visibleTowers;
+    std::vector<Vertex> indexedTerrain;
+    std::vector<Vertex> indexedTowers;
+    std::vector<GLushort> terrainIndices;
+    std::vector<GLushort> towerIndices;
+    bool useArrays = true;
+    bool useElements = false;
 };
 
 float terrainHeight(float x, float z) {
@@ -87,6 +122,7 @@ void initWorld(Game& game) {
     for (int i = 0; i < PICKUP_COUNT; ++i) {
         game.pickups[i].x = 11.0f * std::sin(i * 2.17f);
         game.pickups[i].z = 18.0f - i * 3.2f;
+        game.pickups[i].groundY = terrainHeight(game.pickups[i].x, game.pickups[i].z);
     }
     for (int i = 0; i < TOWER_COUNT; ++i) {
         const int row = i / 9;
@@ -95,7 +131,88 @@ void initWorld(Game& game) {
         float z = -27.0f + row * 10.0f;
         // Keep the central flight path open.
         if (std::fabs(x) < 16.0f) x += (x < 0 ? -11.0f : 11.0f);
-        game.towers[i] = {x, z, 2.5f + float((i * 17) % 9), 1.7f + float(i % 3) * 0.35f};
+        game.towers[i] = {x, z, 2.5f + float((i * 17) % 9),
+                          1.7f + float(i % 3) * 0.35f, terrainHeight(x, z)};
+    }
+    for (int i = 0; i <= MARKER_SEGMENTS; ++i) {
+        const float angle = (2.0f * PI * i) / MARKER_SEGMENTS;
+        game.markerDirection[i] = {std::cos(angle), std::sin(angle)};
+    }
+
+    // Cache complete static terrain meshes once, preserving exactly the original
+    // triangle winding, texture coordinates and terrain-height function.
+    game.terrain.resize(static_cast<size_t>(game.grid) * game.grid);
+    game.visibleTerrain.reserve(static_cast<size_t>(game.grid) * game.grid * 6);
+    game.visibleTowers.reserve(TOWER_COUNT * 36);
+    game.indexedTerrain.reserve(static_cast<size_t>(game.grid) * game.grid * 4);
+    game.terrainIndices.reserve(static_cast<size_t>(game.grid) * game.grid * 6);
+    game.indexedTowers.reserve(TOWER_COUNT * 24);
+    game.towerIndices.reserve(TOWER_COUNT * 36);
+    const float step = (2.0f * WORLD_HALF) / game.grid;
+    for (int iz = 0; iz < game.grid; ++iz) {
+        for (int ix = 0; ix < game.grid; ++ix) {
+            const float x0 = -WORLD_HALF + ix * step;
+            const float x1 = x0 + step;
+            const float z0 = -WORLD_HALF + iz * step;
+            const float z1 = z0 + step;
+            const float h00 = terrainHeight(x0, z0);
+            const float h01 = terrainHeight(x0, z1);
+            const float h11 = terrainHeight(x1, z1);
+            const float h10 = terrainHeight(x1, z0);
+            TerrainCell& cell = game.terrain[static_cast<size_t>(iz) * game.grid + ix];
+            cell.midX = (x0 + x1) * 0.5f;
+            cell.midZ = (z0 + z1) * 0.5f;
+            cell.radius = step * 0.8f;
+            auto v = [](float x,float y,float z) -> Vertex {
+                return {x,y,z,x*.22f,z*.22f,.85f,.96f,.75f};
+            };
+            cell.vertices[0] = v(x0,h00,z0);
+            cell.vertices[1] = v(x0,h01,z1);
+            cell.vertices[2] = v(x1,h11,z1);
+            cell.vertices[3] = v(x0,h00,z0);
+            cell.vertices[4] = v(x1,h11,z1);
+            cell.vertices[5] = v(x1,h10,z0);
+            cell.indexed[0] = cell.vertices[0];
+            cell.indexed[1] = cell.vertices[1];
+            cell.indexed[2] = cell.vertices[2];
+            cell.indexed[3] = cell.vertices[5];
+        }
+    }
+
+    static const float corners[8][3] = {
+        {-1,0,-1}, {1,0,-1}, {1,0,1}, {-1,0,1},
+        {-1,1,-1}, {1,1,-1}, {1,1,1}, {-1,1,1}
+    };
+    static const int faces[6][4] = {
+        {0,1,5,4}, {1,2,6,5}, {2,3,7,6},
+        {3,0,4,7}, {4,5,6,7}, {3,2,1,0}
+    };
+    static const int indices[6] = {0,2,1,0,3,2};
+    static const float uv[4][2] = {{0,0},{1,0},{1,1},{0,1}};
+    for (int i = 0; i < TOWER_COUNT; ++i) {
+        const Tower& tower = game.towers[i];
+        TowerMesh& mesh = game.towerMeshes[i];
+        const float r = .63f + (i%3)*.1f;
+        for (int f = 0; f < 6; ++f) {
+            for (int k = 0; k < 6; ++k) {
+                const int j = indices[k];
+                const int c = faces[f][j];
+                mesh.vertices[f*6 + k] = {
+                    tower.x + corners[c][0] * tower.w,
+                    tower.groundY - .2f + corners[c][1] * tower.h,
+                    tower.z + corners[c][2] * tower.w,
+                    uv[j][0], uv[j][1] * tower.h * .3f,
+                    r, .65f, .85f
+                };
+            }
+        }
+        for (int f = 0; f < 6; ++f) {
+            // Original triangle sequence: 0,2,1,0,3,2.
+            mesh.indexed[f*4 + 0] = mesh.vertices[f*6 + 0];
+            mesh.indexed[f*4 + 1] = mesh.vertices[f*6 + 2];
+            mesh.indexed[f*4 + 2] = mesh.vertices[f*6 + 1];
+            mesh.indexed[f*4 + 3] = mesh.vertices[f*6 + 4];
+        }
     }
 }
 
@@ -137,19 +254,13 @@ void createTexture(Game& game) {
         std::fprintf(stderr, "Texture upload failed: GL error 0x%04x\n", error);
 }
 
-void texturedVertex(float x, float y, float z, float u, float v) {
-    glTexCoord2f(u, v);
-    glVertex3f(x, y, z);
-}
-
 // Conservative CPU-side view culling. GL_CULL_FACE removes backwards-facing
 // polygons, NOT entire objects outside the screen. This avoids submitting them.
 // Deliberately allow a wider field of view than the camera to avoid pop-in.
 bool possiblyVisible(const Game& game, float x, float z, float radius) {
     const float dx = x - game.x, dz = z - game.z;
-    const float angle = game.yaw * PI / 180.0f;
-    const float forward = dx * std::sin(angle) - dz * std::cos(angle);
-    const float side = dx * std::cos(angle) + dz * std::sin(angle);
+    const float forward = dx * game.viewSin - dz * game.viewCos;
+    const float side = dx * game.viewCos + dz * game.viewSin;
     if (forward + radius < 0.1f) return false;
     // This is real distance culling, not just back-face or side-view culling.
     // Avoid calculating sqrtf for every cell/mesh.
@@ -159,76 +270,112 @@ bool possiblyVisible(const Game& game, float x, float z, float radius) {
     return std::fabs(side) <= 1.35f * std::max(forward, 0.0f) + radius + 2.0f;
 }
 
-// grid*grid*2 terrain triangles.
-void drawTerrain(Game& game) {
-    const int grid = game.grid;
-    glColor3f(.85f, .96f, .75f);
-    glBegin(GL_TRIANGLES);
-    const float step = (2.0f * WORLD_HALF) / grid;
-    for (int iz = 0; iz < grid; ++iz) {
-        for (int ix = 0; ix < grid; ++ix) {
-            const float x0 = -WORLD_HALF + ix * step;
-            const float x1 = x0 + step;
-            const float z0 = -WORLD_HALF + iz * step;
-            const float z1 = z0 + step;
-            const float midX = (x0 + x1) * 0.5f;
-            const float midZ = (z0 + z1) * 0.5f;
-            if (!possiblyVisible(game, midX, midZ, step * 0.8f)) continue;
-            game.trianglesSubmitted += 2;
-            texturedVertex(x0, terrainHeight(x0,z0), z0, x0 * .22f, z0 * .22f);
-            texturedVertex(x0, terrainHeight(x0,z1), z1, x0 * .22f, z1 * .22f);
-            texturedVertex(x1, terrainHeight(x1,z1), z1, x1 * .22f, z1 * .22f);
-            texturedVertex(x0, terrainHeight(x0,z0), z0, x0 * .22f, z0 * .22f);
-            texturedVertex(x1, terrainHeight(x1,z1), z1, x1 * .22f, z1 * .22f);
-            texturedVertex(x1, terrainHeight(x1,z0), z0, x1 * .22f, z0 * .22f);
+// Each visible mesh is copied into one contiguous batch. This is an inexpensive
+// memcpy-like operation, avoiding thousands of libm calls and per-object GL calls.
+void drawBatch(Game& game, const std::vector<Vertex>& vertices) {
+    if (vertices.empty()) return;
+    if (game.useArrays) {
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+        glEnableClientState(GL_COLOR_ARRAY);
+        const char* base = reinterpret_cast<const char*>(vertices.data());
+        glVertexPointer(3, GL_FLOAT, sizeof(Vertex), base + offsetof(Vertex, x));
+        glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex), base + offsetof(Vertex, u));
+        glColorPointer(3, GL_FLOAT, sizeof(Vertex), base + offsetof(Vertex, r));
+        glDrawArrays(GL_TRIANGLES, 0, static_cast<GLsizei>(vertices.size()));
+        glDisableClientState(GL_COLOR_ARRAY);
+        glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+        glDisableClientState(GL_VERTEX_ARRAY);
+    } else {
+        // Useful for a like-for-like benchmark or if your RasterIX build
+        // does not implement client vertex arrays correctly.
+        glBegin(GL_TRIANGLES);
+        for (const Vertex& v : vertices) {
+            glColor3f(v.r, v.g, v.b);
+            glTexCoord2f(v.u, v.v);
+            glVertex3f(v.x, v.y, v.z);
         }
+        glEnd();
     }
-    glEnd();
 }
 
-// Six sides, two triangles per side = 12 triangles per cube.
-void cube(float halfWidth, float height) {
-    static const float corners[8][3] = {
-        {-1,0,-1}, { 1,0,-1}, { 1,0, 1}, {-1,0, 1},
-        {-1,1,-1}, { 1,1,-1}, { 1,1, 1}, {-1,1, 1}
-    };
-    static const int faces[6][4] = {
-        {0,1,5,4}, {1,2,6,5}, {2,3,7,6},
-        {3,0,4,7}, {4,5,6,7}, {3,2,1,0}
-    };
-    static const float uv[4][2] = {{0,0},{1,0},{1,1},{0,1}};
-    glBegin(GL_TRIANGLES);
-    for (int f = 0; f < 6; ++f) {
-        for (int k = 0; k < 6; ++k) {
-            // Outward-facing winding for GL_CCW / GL_BACK.
-            const int j = (k == 0 ? 0 : k == 1 ? 2 : k == 2 ? 1 :
-                           k == 3 ? 0 : k == 4 ? 3 : 2);
-            const int c = faces[f][j];
-            glTexCoord2f(uv[j][0], uv[j][1] * (height * 0.3f));
-            glVertex3f(corners[c][0] * halfWidth,
-                       corners[c][1] * height,
-                       corners[c][2] * halfWidth);
+// GL_UNSIGNED_SHORT indices are supported by OpenGL ES 1.1. A 128x128 grid
+// yields at most 65536 indexed vertices, addressable as indices 0..65535.
+void drawIndexedBatch(const std::vector<Vertex>& vertices,
+                      const std::vector<GLushort>& indices) {
+    if (indices.empty()) return;
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
+    const char* base = reinterpret_cast<const char*>(vertices.data());
+    glVertexPointer(3, GL_FLOAT, sizeof(Vertex), base + offsetof(Vertex, x));
+    glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex), base + offsetof(Vertex, u));
+    glColorPointer(3, GL_FLOAT, sizeof(Vertex), base + offsetof(Vertex, r));
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(indices.size()),
+                   GL_UNSIGNED_SHORT, indices.data());
+    glDisableClientState(GL_COLOR_ARRAY);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    glDisableClientState(GL_VERTEX_ARRAY);
+}
+
+void drawTerrain(Game& game) {
+    if (game.useElements) {
+        game.indexedTerrain.clear();
+        game.terrainIndices.clear();
+        for (const TerrainCell& cell : game.terrain) {
+            if (!possiblyVisible(game, cell.midX, cell.midZ, cell.radius)) continue;
+            const GLushort base = static_cast<GLushort>(game.indexedTerrain.size());
+            game.indexedTerrain.insert(game.indexedTerrain.end(), cell.indexed, cell.indexed + 4);
+            const GLushort local[6] = {0, 1, 2, 0, 2, 3};
+            for (GLushort i : local) game.terrainIndices.push_back(static_cast<GLushort>(base + i));
+            game.trianglesSubmitted += 2;
         }
+        drawIndexedBatch(game.indexedTerrain, game.terrainIndices);
+    } else {
+        game.visibleTerrain.clear();
+        for (const TerrainCell& cell : game.terrain) {
+            if (!possiblyVisible(game, cell.midX, cell.midZ, cell.radius)) continue;
+            game.visibleTerrain.insert(game.visibleTerrain.end(), cell.vertices, cell.vertices + 6);
+            game.trianglesSubmitted += 2;
+        }
+        drawBatch(game, game.visibleTerrain);
     }
-    glEnd();
 }
 
 void drawTowers(Game& game) {
-    for (int i = 0; i < TOWER_COUNT; ++i) {
-        const Tower& t = game.towers[i];
-        if (!possiblyVisible(game, t.x, t.z, t.w * 1.5f + 2.0f)) continue;
-        game.trianglesSubmitted += 12;
-        glPushMatrix();
-        glTranslatef(t.x, terrainHeight(t.x,t.z) - 0.2f, t.z);
-        glColor3f(.63f + (i%3)*.1f, .65f, .85f);
-        cube(t.w, t.h);
-        glPopMatrix();
+    if (game.useElements) {
+        game.indexedTowers.clear();
+        game.towerIndices.clear();
+        for (int i = 0; i < TOWER_COUNT; ++i) {
+            const Tower& tower = game.towers[i];
+            if (!possiblyVisible(game, tower.x, tower.z, tower.w * 1.5f + 2.0f)) continue;
+            const TowerMesh& mesh = game.towerMeshes[i];
+            const GLushort base = static_cast<GLushort>(game.indexedTowers.size());
+            game.indexedTowers.insert(game.indexedTowers.end(), mesh.indexed, mesh.indexed + 24);
+            for (GLushort face = 0; face < 6; ++face) {
+                const GLushort f = static_cast<GLushort>(base + face * 4);
+                const GLushort indices[6] = {0, 2, 1, 0, 3, 2};
+                for (GLushort j : indices) game.towerIndices.push_back(static_cast<GLushort>(f + j));
+            }
+            game.trianglesSubmitted += 12;
+        }
+        drawIndexedBatch(game.indexedTowers, game.towerIndices);
+    } else {
+        game.visibleTowers.clear();
+        for (int i = 0; i < TOWER_COUNT; ++i) {
+            const Tower& tower = game.towers[i];
+            if (!possiblyVisible(game, tower.x, tower.z, tower.w * 1.5f + 2.0f)) continue;
+            const TowerMesh& mesh = game.towerMeshes[i];
+            game.visibleTowers.insert(game.visibleTowers.end(), mesh.vertices, mesh.vertices + 36);
+            game.trianglesSubmitted += 12;
+        }
+        drawBatch(game, game.visibleTowers);
     }
 }
 
 // A double pyramid (8 triangles), rotating above the terrain.
 void drawPickup(const Pickup& p, float t) {
-    const float y = terrainHeight(p.x, p.z) + 2.1f;
+    const float y = p.groundY + 2.1f;
     glDisable(GL_TEXTURE_2D);
     glPushMatrix();
     glTranslatef(p.x, y + .20f * std::sin(t * 2.3f), p.z);
@@ -258,23 +405,20 @@ void drawPickup(const Pickup& p, float t) {
 // Pass 1 writes a circular mask into stencil without changing color or depth.
 // Pass 2 draws two long bars, which stencil clips to that circular mask.
 // No shaders, mipmaps or blending required; works with OpenGL ES 1.1.
-constexpr int MARKER_SEGMENTS = 16;
-constexpr int MARKER_TRIANGLES = MARKER_SEGMENTS + 4;
-
-void markerCircle(const Pickup& p, float time) {
+void markerCircle(const Game& game, const Pickup& p, float time) {
     const float radius = 1.25f + 0.12f * std::sin(time * 2.0f);
-    const float centerY = terrainHeight(p.x, p.z) + 0.12f;
+    const float centerY = p.groundY + 0.12f;
+    float x[MARKER_SEGMENTS + 1], y[MARKER_SEGMENTS + 1], z[MARKER_SEGMENTS + 1];
+    for (int i = 0; i <= MARKER_SEGMENTS; ++i) {
+        x[i] = p.x + radius * game.markerDirection[i].x;
+        z[i] = p.z + radius * game.markerDirection[i].z;
+        y[i] = terrainHeight(x[i], z[i]) + 0.12f;
+    }
     glBegin(GL_TRIANGLES);
     for (int i = 0; i < MARKER_SEGMENTS; ++i) {
-        const float a0 = (2.0f * PI * i) / MARKER_SEGMENTS;
-        const float a1 = (2.0f * PI * (i + 1)) / MARKER_SEGMENTS;
-        const float x0 = p.x + radius * std::cos(a0);
-        const float z0 = p.z + radius * std::sin(a0);
-        const float x1 = p.x + radius * std::cos(a1);
-        const float z1 = p.z + radius * std::sin(a1);
         glVertex3f(p.x, centerY, p.z);
-        glVertex3f(x0, terrainHeight(x0, z0) + 0.12f, z0);
-        glVertex3f(x1, terrainHeight(x1, z1) + 0.12f, z1);
+        glVertex3f(x[i], y[i], z[i]);
+        glVertex3f(x[i + 1], y[i + 1], z[i + 1]);
     }
     glEnd();
 }
@@ -290,10 +434,13 @@ void markerCross(const Pickup& p, float time) {
         const float zz = axis == 0 ? halfWidth : halfLength;
         const float x[4] = {p.x-xx, p.x+xx, p.x+xx, p.x-xx};
         const float z[4] = {p.z-zz, p.z-zz, p.z+zz, p.z+zz};
+        float y[4];
+        for (int j = 0; j < 4; ++j)
+            y[j] = terrainHeight(x[j], z[j]) + 0.15f;
         const int idx[6] = {0, 1, 2, 0, 2, 3};
         for (int j = 0; j < 6; ++j) {
             const int k = idx[j];
-            glVertex3f(x[k], terrainHeight(x[k], z[k]) + 0.15f, z[k]);
+            glVertex3f(x[k], y[k], z[k]);
         }
     }
     glEnd();
@@ -313,7 +460,7 @@ void drawStencilMarkers(Game& game, float time) {
 
     for (const Pickup& p : game.pickups)
         if (!p.found && possiblyVisible(game, p.x, p.z, 2.0f)) {
-            markerCircle(p, time);
+            markerCircle(game, p, time);
             game.trianglesSubmitted += MARKER_SEGMENTS;
         }
 
@@ -336,6 +483,9 @@ void drawStencilMarkers(Game& game, float time) {
 
 void drawFrame(Game& game, float t) {
     game.trianglesSubmitted = 0;
+    const float viewAngle = game.yaw * PI / 180.0f;
+    game.viewSin = std::sin(viewAngle);
+    game.viewCos = std::cos(viewAngle);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT |
             (game.stencilEnabled ? GL_STENCIL_BUFFER_BIT : 0));
     glMatrixMode(GL_MODELVIEW);
@@ -458,7 +608,7 @@ double processCpuSeconds() {
     return static_cast<double>(ts.tv_sec) + static_cast<double>(ts.tv_nsec) * 1e-9;
 }
 
-uint64_t parseOptions(int argc, char** argv, Game& game) {
+uint64_t parseOptions(int argc, char** argv, Game& game, int& cpu) {
     uint64_t frames = 0;
     for (int i = 1; i < argc; ++i) {
         if (std::strcmp(argv[i], "--frames") == 0 && i + 1 < argc) {
@@ -471,6 +621,19 @@ uint64_t parseOptions(int argc, char** argv, Game& game) {
             if (game.grid < 8 || game.grid > 128) {
                 std::fprintf(stderr, "--grid must be 8..128\n"); std::exit(1);
             }
+        } else if (std::strcmp(argv[i], "--cpu") == 0 && i + 1 < argc) {
+            char* end = nullptr;
+            long x = std::strtol(argv[++i], &end, 10);
+            if (!end || *end || x < 0 || x >= CPU_SETSIZE) {
+                std::fprintf(stderr, "Bad --cpu\n"); std::exit(1);
+            }
+            cpu = static_cast<int>(x);
+        } else if (std::strcmp(argv[i], "--elements") == 0) {
+            game.useElements = true;
+            game.useArrays = true;
+        } else if (std::strcmp(argv[i], "--immediate") == 0) {
+            game.useElements = false;
+            game.useArrays = false;
         } else if (std::strcmp(argv[i], "--rgba") == 0) {
             game.rgb565 = false;
         } else if (std::strcmp(argv[i], "--no-texture") == 0) {
@@ -482,7 +645,7 @@ uint64_t parseOptions(int argc, char** argv, Game& game) {
         } else if (std::strcmp(argv[i], "--solid-texture") == 0) {
             game.solidTexture = true;
         } else {
-            std::fprintf(stderr, "Usage: %s [--grid 8..128] [--frames COUNT] [--no-texture] [--no-depth] [--solid-texture] [--rgba] [--no-stencil]\n", argv[0]);
+            std::fprintf(stderr, "Usage: %s [--grid 8..128] [--frames COUNT] [--cpu CORE] [--no-texture] [--no-depth] [--solid-texture] [--rgba] [--no-stencil] [--immediate] [--elements]\n", argv[0]);
             std::exit(1);
         }
     }
@@ -492,7 +655,18 @@ uint64_t parseOptions(int argc, char** argv, Game& game) {
 
 int main(int argc, char** argv) {
     Game game;
-    const uint64_t frameLimit = parseOptions(argc, argv, game);
+    int cpu = -1;
+    const uint64_t frameLimit = parseOptions(argc, argv, game, cpu);
+    if (cpu >= 0) {
+        cpu_set_t affinity;
+        CPU_ZERO(&affinity);
+        CPU_SET(cpu, &affinity);
+        if (sched_setaffinity(0, sizeof(affinity), &affinity) != 0) {
+            std::fprintf(stderr, "Could not select CPU %d: %s\n", cpu, std::strerror(errno));
+            return 1;
+        }
+        std::printf("CPU affinity: core %d (inherited by RasterIX threads)\n", cpu);
+    }
     std::signal(SIGINT, stop);
     std::signal(SIGTERM, stop);
     ares::GLContext context;
@@ -537,6 +711,8 @@ int main(int argc, char** argv) {
                 PICKUP_COUNT, triangles, game.grid * game.grid * 2,
                 TOWER_COUNT * 12, PICKUP_COUNT * 8);
     std::printf("Terminal key autorepeat controls movement; input must come from a TTY.\n");
+    std::printf("Static mesh cache: ON | geometry: %s\n",
+                game.useElements ? "glDrawElements" : (game.useArrays ? "glDrawArrays" : "immediate mode"));
     GLint stencilBits = 0;
     glGetIntegerv(GL_STENCIL_BITS, &stencilBits);
     std::printf("Stencil crystal ground markers: %s | GL_STENCIL_BITS: %d\n",

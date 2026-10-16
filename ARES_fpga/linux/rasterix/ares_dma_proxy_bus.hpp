@@ -50,18 +50,18 @@ private:
         channel_buffer* buffers { nullptr };
         int fd { -1 };
         const char* path { nullptr };
+        int busyIndex { -1 };
+        uint32_t busySize { 0 };
     };
 
     static void openChannel(Channel& channel, const char* path);
     static void closeChannel(Channel& channel);
     static void fail(const char* operation, const char* path);
     void start(Channel& channel, uint8_t index, uint32_t size);
+    void finish(Channel& channel);
 
     Channel m_tx;
     Channel m_rx;
-    Channel* m_busyChannel { nullptr };
-    int m_busyIndex { -1 };
-    uint32_t m_busySize { 0 };
     uint64_t m_txTransferCount { 0 };
     uint64_t m_txByteCount { 0 };
     uint64_t m_rxTransferCount { 0 };
