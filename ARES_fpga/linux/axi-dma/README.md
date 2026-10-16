@@ -16,6 +16,11 @@ Prepared files:
 - `axi-dma.config`: kernel configuration fragment.
 - `ares-dma-proxy.dtsi`: client description for the [DMA-proxy module](../dma-proxy/README.md);
   it is not needed to register the controller.
+- `ares-rasterix-scratch.dtsi` and `tree-rasterix-memory.dts`: guarded
+  RasterIX STORE/LOAD diagnostic memory setup.
+- `ares-rasterix-framebuffers.dtsi` and `tree-rasterix-display.dts`: two
+  reserved framebuffer slots and the complete [display-test](../dma-proxy/DISPLAY-TEST.md)
+  boot tree.
 
 ## Hardware configuration used
 

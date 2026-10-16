@@ -2,8 +2,8 @@
 
 module ARES_RaxyerIX_framebuffer #(
     parameter ADDR_WIDTH    = 32,
-    parameter SCREEN_WIDTH  = 640,
-    parameter SCREEN_HEIGHT = 480
+    parameter SOURCE_WIDTH  = 512,
+    parameter SOURCE_HEIGHT = 384
 )(
     input  wire                     resetn,
 
@@ -74,7 +74,7 @@ module ARES_RaxyerIX_framebuffer #(
     localparam BYTES_PER_PIXEL = 2;
 
     localparam LINE_BYTES =
-        SCREEN_WIDTH * BYTES_PER_PIXEL;
+        SOURCE_WIDTH * BYTES_PER_PIXEL;
 
     // 128-bit AXI = 16 bytes per beat
     localparam AXI_BYTES_PER_BEAT = 16;
@@ -83,11 +83,7 @@ module ARES_RaxyerIX_framebuffer #(
     localparam BURST_BEATS = 16;
     localparam BURST_BYTES = 256;
 
-    // 640xRGB565:
-    //
-    // 640 * 2 = 1280 bytes
-    //
-    // 1280 / 256 = 5 bursts
+    // 512 RGB565 pixels = 1024 bytes = four 256-byte bursts.
     localparam BURSTS_PER_LINE =
         LINE_BYTES / BURST_BYTES;
 
@@ -174,8 +170,8 @@ module ARES_RaxyerIX_framebuffer #(
     wire video_active;
 
     assign video_active =
-        (h_count < SCREEN_WIDTH) &&
-        (v_count < SCREEN_HEIGHT);
+        (h_count < H_ACTIVE) &&
+        (v_count < V_ACTIVE);
 
 
     // =========================================================
@@ -188,41 +184,28 @@ module ARES_RaxyerIX_framebuffer #(
     reg [ADDR_WIDTH-1:0] pending_fb_addr;
 
     reg swap_seen;
+    reg swap_ack_pending;
 
 
     // =========================================================
     // Two line buffers
     //
-    // Existing blk_mem_gen_bit_line can be reused:
-    //
-    // Port A:
-    //   128-bit
-    //   depth >= 128
-    //
-    // Port B:
-    //   32-bit
-    //   depth >= 512
-    //
-    // One line:
-    //
-    // 640 pixels * 16 bit = 10240 bits
-    //                    = 80 × 128-bit entries
-    //
+    // 64 x 128-bit writes / 256 x 32-bit reads per source line.
     // =========================================================
 
-    wire [6:0] buf_addr_in;
-
-    wire [8:0] buf_out_addr;
+    wire [5:0] buf_addr_in;
+    wire [7:0] buf_out_addr;
 
     wire [31:0] buf0_out_data;
     wire [31:0] buf1_out_data;
 
-    wire [15:0] buf0_wen;
-    wire [15:0] buf1_wen;
+    wire         buf0_wen;
+    wire         buf1_wen;
 
 
     // Which buffer is currently displayed
     reg display_bank;
+    reg display_bank_d;
 
     // Buffer contains valid complete line
     reg [1:0] bank_ready;
@@ -239,7 +222,7 @@ module ARES_RaxyerIX_framebuffer #(
     reg [1:0] fetch_state;
 
     reg [2:0] burst_num;
-    reg [6:0] write_word;
+    reg [5:0] write_word;
 
     reg active_fetch_bank;
 
@@ -262,7 +245,6 @@ module ARES_RaxyerIX_framebuffer #(
     reg [ADDR_WIDTH-1:0]    fetch_req_base;
 
     reg fetch_accept;
-    reg fetch_accept_bank;
 
     reg fetch_done;
     reg fetch_done_bank;
@@ -288,32 +270,25 @@ module ARES_RaxyerIX_framebuffer #(
     // 128 bits = 8 × RGB565 pixels.
     //
     assign buf0_wen =
-        (r_fire && !active_fetch_bank)
-            ? 16'hFFFF
-            : 16'h0000;
+        r_fire && !active_fetch_bank;
 
     assign buf1_wen =
-        (r_fire && active_fetch_bank)
-            ? 16'hFFFF
-            : 16'h0000;
+        r_fire && active_fetch_bank;
 
 
     // =========================================================
     // Line buffer 0
     // =========================================================
 
-    blk_mem_gen_bit_line line_buf_0
+    ares_scanout_line_buffer line_buf_0
     (
-        .addra(buf_addr_in),
-        .clka(ram_axi_aclk),
-        .dina(ram_axi_rdata),
-        .wea(buf0_wen),
-
-        .addrb(buf_out_addr),
-        .clkb(ram_axi_aclk),
-        .dinb(32'b0),
-        .doutb(buf0_out_data),
-        .web(4'b0000)
+        .clk(ram_axi_aclk),
+        .reset(!resetn),
+        .write_enable(buf0_wen),
+        .write_addr(buf_addr_in),
+        .write_data(ram_axi_rdata),
+        .read_addr(buf_out_addr),
+        .read_data(buf0_out_data)
     );
 
 
@@ -321,30 +296,27 @@ module ARES_RaxyerIX_framebuffer #(
     // Line buffer 1
     // =========================================================
 
-    blk_mem_gen_bit_line line_buf_1
+    ares_scanout_line_buffer line_buf_1
     (
-        .addra(buf_addr_in),
-        .clka(ram_axi_aclk),
-        .dina(ram_axi_rdata),
-        .wea(buf1_wen),
-
-        .addrb(buf_out_addr),
-        .clkb(ram_axi_aclk),
-        .dinb(32'b0),
-        .doutb(buf1_out_data),
-        .web(4'b0000)
+        .clk(ram_axi_aclk),
+        .reset(!resetn),
+        .write_enable(buf1_wen),
+        .write_addr(buf_addr_in),
+        .write_data(ram_axi_rdata),
+        .read_addr(buf_out_addr),
+        .read_data(buf1_out_data)
     );
 
 
     // =========================================================
     // AXI line-fetch engine
     //
-    // Each VGA line:
+    // Each distinct source line:
     //
-    // 5 bursts
+    // 4 bursts
     // × 16 beats
     // × 16 bytes
-    // = 1280 bytes
+    // = 1024 bytes
     // =========================================================
 
     always @(posedge ram_axi_aclk) begin
@@ -360,14 +332,13 @@ module ARES_RaxyerIX_framebuffer #(
             ram_axi_arlen  <= 8'd15;
 
             burst_num <= 3'd0;
-            write_word <= 7'd0;
+            write_word <= 6'd0;
 
             active_fetch_bank <= 1'b0;
 
             active_line_base <= {ADDR_WIDTH{1'b0}};
 
             fetch_accept <= 1'b0;
-            fetch_accept_bank <= 1'b0;
 
             fetch_done <= 1'b0;
             fetch_done_bank <= 1'b0;
@@ -396,7 +367,7 @@ module ARES_RaxyerIX_framebuffer #(
                             fetch_req_base +
                             (fetch_req_line * LINE_BYTES);
 
-                        write_word <= 7'd0;
+                        write_word <= 6'd0;
                         burst_num <= 3'd0;
 
                         ram_axi_araddr <=
@@ -409,7 +380,6 @@ module ARES_RaxyerIX_framebuffer #(
                         ram_axi_arvalid <= 1'b1;
 
                         fetch_accept <= 1'b1;
-                        fetch_accept_bank <= fetch_req_bank;
 
                         fetch_state <= FETCH_AR;
 
@@ -464,7 +434,7 @@ module ARES_RaxyerIX_framebuffer #(
                                 // Every burst = 256 bytes
                                 ram_axi_araddr <=
                                     active_line_base +
-                                    ((burst_num + 1'b1)
+                                    (({29'b0, burst_num} + 1)
                                      * BURST_BYTES);
 
                                 ram_axi_arlen <= 8'd15;
@@ -501,7 +471,7 @@ module ARES_RaxyerIX_framebuffer #(
     assign entering_vblank =
         pixel_ce &&
         (h_count == H_TOTAL - 1) &&
-        (v_count == SCREEN_HEIGHT - 1);
+        (v_count == V_ACTIVE - 1);
 
 
     wire end_of_visible_line;
@@ -509,260 +479,167 @@ module ARES_RaxyerIX_framebuffer #(
     assign end_of_visible_line =
         pixel_ce &&
         (h_count == H_TOTAL - 1) &&
-        (v_count < SCREEN_HEIGHT - 1);
+        (v_count < V_ACTIVE - 1);
 
 
     // =========================================================
     // Line-buffer / framebuffer controller
     // =========================================================
 
-    reg need_line0;
     reg framebuffer_valid;
-    reg [ADDR_WIDTH-1:0] line0_base;
+    reg restart_pending;
+    reg replacement_fetch;
+    reg [8:0] bank_line [0:1];
+    reg [8:0] source_x;
+    reg [8:0] source_y;
+    reg [2:0] horizontal_phase;
+    reg [2:0] vertical_phase;
 
+    wire current_bank_ready = bank_ready[display_bank];
+    wire next_bank_ready = bank_ready[~display_bank];
+    wire new_swap = swap_fb && !swap_seen;
+    wire immediate_swap = new_swap && !swap_fb_enable_vsync;
+    wire advance_y = (vertical_phase != 0);
+    wire [8:0] next_source_y = source_y + (advance_y ? 9'd1 : 9'd0);
 
-    wire current_bank_ready;
-
-    assign current_bank_ready =
-        display_bank
-            ? bank_ready[1]
-            : bank_ready[0];
-
-
-    wire next_bank_ready;
-
-    assign next_bank_ready =
-        display_bank
-            ? bank_ready[0]
-            : bank_ready[1];
-
+    // Bresenham-style 4/5 stepping. Clamp during blanking; reset before
+    // the first active sample. There is no multiplier in the pixel path.
+    always @(posedge ram_axi_aclk) begin
+        if (!resetn) begin
+            source_x <= 0;
+            source_y <= 0;
+            horizontal_phase <= 0;
+            vertical_phase <= 0;
+        end else if (pixel_ce) begin
+            if (h_count == H_TOTAL - 1) begin
+                source_x <= 0;
+                horizontal_phase <= 0;
+                if (v_count >= V_ACTIVE - 1) begin
+                    source_y <= 0;
+                    vertical_phase <= 0;
+                end else begin
+                    source_y <= next_source_y;
+                    vertical_phase <= advance_y ? vertical_phase - 3'd1 : 3'd4;
+                end
+            end else if (h_count < H_ACTIVE - 1) begin
+                if (horizontal_phase == 0)
+                    horizontal_phase <= 3'd4;
+                else begin
+                    horizontal_phase <= horizontal_phase - 3'd1;
+                    source_x <= source_x + 1'b1;
+                end
+            end
+        end
+    end
 
     always @(posedge ram_axi_aclk) begin
-
         if (!resetn) begin
-
-        current_fb_addr <= {ADDR_WIDTH{1'b0}};
-        
-        framebuffer_valid <= 1'b0;
-        
-        pending_swap <= 1'b0;
-        pending_fb_addr <= {ADDR_WIDTH{1'b0}};
-        
-        swap_seen <= 1'b0;
-        
-        fb_swapped <= 1'b0;
-        
-        display_bank <= 1'b0;
-        
-        bank_ready <= 2'b00;
-        
-        fetch_req <= 1'b0;
-        fetch_req_bank <= 1'b0;
-        fetch_req_line <= 9'd0;
-        fetch_req_base <= {ADDR_WIDTH{1'b0}};
-        
-        need_line0 <= 1'b0;
-        line0_base <= {ADDR_WIDTH{1'b0}};
-
-        end
-        else begin
-
-            // Default: framebuffer swap acknowledge is a pulse
-            fb_swapped <= 1'b0;
-
-
-            // -------------------------------------------------
-            // Detect a new RasterIX swap request
-            // -------------------------------------------------
-
+            current_fb_addr <= 0;
+            framebuffer_valid <= 0;
+            pending_swap <= 0;
+            pending_fb_addr <= 0;
+            swap_seen <= 0;
+            swap_ack_pending <= 0;
+            fb_swapped <= 1;
+            display_bank <= 0;
+            bank_ready <= 0;
+            bank_line[0] <= 0;
+            bank_line[1] <= 0;
+            fetch_req <= 0;
+            fetch_req_bank <= 0;
+            fetch_req_line <= 0;
+            fetch_req_base <= 0;
+            restart_pending <= 0;
+            replacement_fetch <= 0;
+        end else begin
+            if (swap_ack_pending) begin
+                swap_ack_pending <= 0;
+                fb_swapped <= 1;
+            end
             if (!swap_fb)
-                swap_seen <= 1'b0;
-            
-            if (swap_fb && !swap_seen) begin
-            
-                swap_seen <= 1'b1;
-            
+                swap_seen <= 0;
+            if (new_swap) begin
+                swap_seen <= 1;
+                fb_swapped <= 0;
                 if (swap_fb_enable_vsync) begin
-            
-                    // Save new framebuffer.
-                    // Keep displaying the old framebuffer until VSync.
-                    pending_swap    <= 1'b1;
+                    pending_swap <= 1;
                     pending_fb_addr <= fb_addr;
-            
                 end
-                else begin
-            
-                    // Immediate framebuffer switch.
-                    current_fb_addr   <= fb_addr;
-                    line0_base        <= fb_addr;
-                    framebuffer_valid <= 1'b1;
-            
-                    fb_swapped <= 1'b1;
-            
-                    // Start fetching from the new framebuffer.
-                    need_line0 <= 1'b1;
-            
-                    // Do NOT invalidate the currently displayed bank.
-                    // That allows the old pixels to remain visible until
-                    // new line data has actually arrived.
-                    if (display_bank)
-                        bank_ready[0] <= 1'b0;
-                    else
-                        bank_ready[1] <= 1'b0;
-            
-                end
-            end 
-
-            // -------------------------------------------------
-            // AXI fetch accepted
-            // -------------------------------------------------
-
-            if (fetch_accept) begin
-
-                fetch_req <= 1'b0;
-
-                if (fetch_accept_bank)
-                    bank_ready[1] <= 1'b0;
-                else
-                    bank_ready[0] <= 1'b0;
-
             end
 
+            if (fetch_accept)
+                fetch_req <= 0;
 
-            // -------------------------------------------------
-            // Line completely fetched
-            // -------------------------------------------------
-
-            if (fetch_done) begin
-
-                if (fetch_done_bank)
-                    bank_ready[1] <= 1'b1;
-                else
-                    bank_ready[0] <= 1'b1;
-
+            // A restart drains any outstanding AXI transaction first. Its
+            // completion must not make a stale prefetched bank valid again.
+            if (fetch_done && !restart_pending && !immediate_swap && !entering_vblank) begin
+                bank_ready[fetch_done_bank] <= 1;
+                if (replacement_fetch) begin
+                    bank_ready[display_bank] <= 0;
+                    display_bank <= fetch_done_bank;
+                    replacement_fetch <= 0;
+                end
             end
 
-
-            // -------------------------------------------------
-            // End of active scanline
-            //
-            // Switch to the already-prefetched next line.
-            // -------------------------------------------------
-
-            if (end_of_visible_line) begin
-
-                if (next_bank_ready) begin
-
-                    // Old displayed bank is now free.
-                    if (display_bank)
-                        bank_ready[1] <= 1'b0;
-                    else
-                        bank_ready[0] <= 1'b0;
-
+            // Repeated output rows retain their bank. Underflow retains the
+            // previous complete line, never a partially overwritten buffer.
+            if (end_of_visible_line && !restart_pending && !replacement_fetch && !immediate_swap) begin
+                if (advance_y && next_bank_ready &&
+                    bank_line[~display_bank] == next_source_y) begin
+                    bank_ready[display_bank] <= 0;
                     display_bank <= ~display_bank;
-
-                end
+                end else if (next_bank_ready && bank_line[~display_bank] < next_source_y)
+                    bank_ready[~display_bank] <= 0;
             end
 
-
-            // -------------------------------------------------
-            // Start vertical blank
-            //
-            // This is the ideal time to accept a VSync swap
-            // and preload line 0 for the next frame.
-            // -------------------------------------------------
-
-            if (entering_vblank) begin
-            
-                display_bank <= 1'b0;
-            
-                // We are about to refill the line buffers for the next
-                // VGA frame.
-                bank_ready <= 2'b00;
-            
-                if (pending_swap) begin
-            
-                    // RasterIX has completed a new frame.
-                    // Start using it for the next VGA refresh.
-                    current_fb_addr   <= pending_fb_addr;
-                    line0_base        <= pending_fb_addr;
-            
-                    framebuffer_valid <= 1'b1;
-            
-                    pending_swap <= 1'b0;
-                    fb_swapped   <= 1'b1;
-            
-                    need_line0 <= 1'b1;
-            
-                end
-                else if (framebuffer_valid) begin
-            
-                    // RasterIX has NOT produced a new frame.
-                    //
-                    // Simply display the current framebuffer again.
-                    //
-                    // Example:
-                    // RasterIX = 30 FPS
-                    // VGA      = 60 Hz
-                    //
-                    // Each RasterIX frame is displayed twice.
-                    line0_base <= current_fb_addr;
-                    need_line0 <= 1'b1;
-            
-                end
-                else begin
-            
-                    // RasterIX has never supplied a valid framebuffer.
-                    // Don't issue memory reads.
-                    need_line0 <= 1'b0;
-            
-                end
-            end
-
-
-            // -------------------------------------------------
-            // Generate line fetch request
-            // -------------------------------------------------
-
-            if (framebuffer_valid &&
-                !fetch_req &&
-                !fetch_busy &&
-                !fetch_done) begin
-
-                // Highest priority:
-                // preload first line of framebuffer.
-                if (need_line0) begin
-
-                    fetch_req <= 1'b1;
-
-                    fetch_req_bank <= 1'b0;
-                    fetch_req_line <= 9'd0;
-                    fetch_req_base <= line0_base;
-
-                    need_line0 <= 1'b0;
-
-                end
-
-                // During active display, always keep the
-                // NEXT scanline prefetched.
-                else if (
-                    (v_count < SCREEN_HEIGHT - 1) &&
-                    (h_count < SCREEN_WIDTH) &&
-                    current_bank_ready &&
-                    !next_bank_ready
-                ) begin
-
-                    fetch_req <= 1'b1;
-
+            if (framebuffer_valid && !fetch_req && !fetch_busy &&
+                !fetch_done && !fetch_accept && !end_of_visible_line &&
+                !entering_vblank && !immediate_swap) begin
+                if (restart_pending) begin
+                    // Always fill the other bank, preserving displayed data.
+                    fetch_req <= 1;
                     fetch_req_bank <= ~display_bank;
-
-                    fetch_req_line <=
-                        v_count[8:0] + 1'b1;
-
-                    fetch_req_base <=
-                        current_fb_addr;
-
+                    fetch_req_line <= source_y;
+                    fetch_req_base <= current_fb_addr;
+                    bank_line[~display_bank] <= source_y;
+                    bank_ready[~display_bank] <= 0;
+                    restart_pending <= 0;
+                    replacement_fetch <= 1;
+                end else if (!replacement_fetch && current_bank_ready &&
+                             !next_bank_ready && source_y < SOURCE_HEIGHT - 1) begin
+                    fetch_req <= 1;
+                    fetch_req_bank <= ~display_bank;
+                    fetch_req_line <= source_y + 1'b1;
+                    fetch_req_base <= current_fb_addr;
+                    bank_line[~display_bank] <= source_y + 1'b1;
                 end
+            end
+
+            // Highest priority: discard queued/prefetched work on a frame
+            // boundary or immediate swap. In-flight bursts finish normally.
+            if (entering_vblank) begin
+                fetch_req <= 0;
+                replacement_fetch <= 0;
+                bank_ready[~display_bank] <= 0;
+                restart_pending <= framebuffer_valid || pending_swap;
+                // A request arriving on this exact edge stays busy until
+                // the next vblank, so the required low level is observable.
+                if (pending_swap) begin
+                    current_fb_addr <= pending_fb_addr;
+                    framebuffer_valid <= 1;
+                    pending_swap <= 0;
+                    fb_swapped <= 1;
+                end
+            end
+            if (immediate_swap) begin
+                current_fb_addr <= fb_addr;
+                framebuffer_valid <= 1;
+                pending_swap <= 0;
+                swap_ack_pending <= 1;
+                restart_pending <= 1;
+                replacement_fetch <= 0;
+                fetch_req <= 0;
+                bank_ready[~display_bank] <= 0;
             end
         end
     end
@@ -775,13 +652,13 @@ module ARES_RaxyerIX_framebuffer #(
     // =========================================================
 
     assign buf_out_addr =
-        h_count[9:1];
+        source_x[8:1];
 
 
     wire [31:0] selected_buf_data;
 
     assign selected_buf_data =
-        display_bank
+        display_bank_d
             ? buf1_out_data
             : buf0_out_data;
 
@@ -795,13 +672,15 @@ module ARES_RaxyerIX_framebuffer #(
 
         if (!resetn) begin
 
+            display_bank_d <= 1'b0;
             pixel_half_d   <= 1'b0;
             video_active_d <= 1'b0;
 
         end
         else begin
 
-            pixel_half_d <= h_count[0];
+            pixel_half_d <= source_x[0];
+            display_bank_d <= display_bank;
 
             video_active_d <=
                 video_active &&
@@ -851,6 +730,85 @@ module ARES_RaxyerIX_framebuffer #(
 
 
     // fb_size currently unused because this scanout is fixed
-    // to SCREEN_WIDTH x SCREEN_HEIGHT.
+    // to SOURCE_WIDTH x SOURCE_HEIGHT (196608 pixels).
 
+endmodule
+
+
+// One source scanline is 64 128-bit AXI beats / 256 32-bit read words.
+// Physical BRAM use must be measured after synthesis (the write port is wide).
+module ares_scanout_line_buffer (
+    input  wire         clk,
+    input  wire         reset,
+    input  wire         write_enable,
+    input  wire [5:0]   write_addr,
+    input  wire [127:0] write_data,
+    input  wire [7:0]   read_addr,
+    output wire [31:0]  read_data
+);
+
+`ifndef VERILATOR
+    xpm_memory_sdpram #(
+        .ADDR_WIDTH_A(6),
+        .ADDR_WIDTH_B(8),
+        .AUTO_SLEEP_TIME(0),
+        .BYTE_WRITE_WIDTH_A(128),
+        .CASCADE_HEIGHT(0),
+        .CLOCKING_MODE("common_clock"),
+        .ECC_MODE("no_ecc"),
+        .MEMORY_INIT_FILE("none"),
+        .MEMORY_INIT_PARAM("0"),
+        .MEMORY_OPTIMIZATION("true"),
+        .MEMORY_PRIMITIVE("block"),
+        .MEMORY_SIZE(8192),
+        .MESSAGE_CONTROL(0),
+        .READ_DATA_WIDTH_B(32),
+        .READ_LATENCY_B(1),
+        .READ_RESET_VALUE_B("0"),
+        .RST_MODE_A("SYNC"),
+        .RST_MODE_B("SYNC"),
+        .SIM_ASSERT_CHK(0),
+        .USE_EMBEDDED_CONSTRAINT(0),
+        .USE_MEM_INIT(0),
+        .WAKEUP_TIME("disable_sleep"),
+        .WRITE_DATA_WIDTH_A(128),
+        .WRITE_MODE_B("read_first")
+    ) line_memory (
+        .dbiterrb(),
+        .doutb(read_data),
+        .sbiterrb(),
+        .addra(write_addr),
+        .addrb(read_addr),
+        .clka(clk),
+        .clkb(clk),
+        .dina(write_data),
+        .ena(1'b1),
+        .enb(1'b1),
+        .injectdbiterra(1'b0),
+        .injectsbiterra(1'b0),
+        .regceb(1'b1),
+        .rstb(reset),
+        .sleep(1'b0),
+        .wea(write_enable)
+    );
+`else
+    reg [127:0] memory [0:63];
+    reg [31:0] read_data_reg;
+
+    assign read_data = read_data_reg;
+
+    always @(posedge clk) begin
+        if (write_enable)
+            memory[write_addr] <= write_data;
+        if (reset)
+            read_data_reg <= 32'b0;
+        else
+            case (read_addr[1:0])
+                2'd0: read_data_reg <= memory[read_addr[7:2]][31:0];
+                2'd1: read_data_reg <= memory[read_addr[7:2]][63:32];
+                2'd2: read_data_reg <= memory[read_addr[7:2]][95:64];
+                default: read_data_reg <= memory[read_addr[7:2]][127:96];
+            endcase
+    end
+`endif
 endmodule

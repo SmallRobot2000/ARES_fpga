@@ -1,0 +1,16 @@
+/* RasterIX external texture page pool. The DMA uploader and texture reader
+ * access this memory directly, so Linux must never allocate it.
+ */
+&{/reserved-memory} {
+    rasterix_textures: rasterix-textures@97800000 {
+        reg = <0x97800000 0x00400000>;
+        no-map;
+        status = "okay";
+    };
+
+    rasterix_auxiliary: rasterix-auxiliary@97e00000 {
+        reg = <0x97e00000 0x00100000>;
+        no-map;
+        status = "okay";
+    };
+};

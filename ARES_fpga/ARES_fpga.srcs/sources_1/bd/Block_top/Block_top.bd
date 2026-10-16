@@ -38,9 +38,7 @@
       "ARES_RasterIXWrapper_0": "",
       "axi_dma_0": "",
       "smartconnect_dma": "",
-      "ARES_RaxyerIX_frameb_0": "",
-      "ila_0": "",
-      "ila_1": ""
+      "ARES_RaxyerIX_frameb_0": ""
     },
     "ports": {
       "ddr3_dq": {
@@ -4199,36 +4197,6 @@
             }
           }
         }
-      },
-      "ila_0": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "ip_revision": "19",
-        "xci_name": "Block_top_ila_0_0",
-        "xci_path": "ip/Block_top_ila_0_0/Block_top_ila_0_0.xci",
-        "inst_hier_path": "ila_0",
-        "has_run_ip_tcl": "true"
-      },
-      "ila_1": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "ip_revision": "19",
-        "xci_name": "Block_top_ila_0_1",
-        "xci_path": "ip/Block_top_ila_0_1/Block_top_ila_0_1.xci",
-        "inst_hier_path": "ila_1",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "C_MONITOR_TYPE": {
-            "value": "Native"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "5"
-          },
-          "C_PROBE0_WIDTH": {
-            "value": "32"
-          },
-          "C_PROBE1_WIDTH": {
-            "value": "20"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -4247,8 +4215,7 @@
       "ARES_RaxyerIX_frameb_0_ram_axi": {
         "interface_ports": [
           "smartconnect_dma/S03_AXI",
-          "ARES_RaxyerIX_frameb_0/ram_axi",
-          "ila_0/SLOT_0_AXI"
+          "ARES_RaxyerIX_frameb_0/ram_axi"
         ]
       },
       "VexiiSocWrapper_0_mBus": {
@@ -4340,36 +4307,31 @@
       "ARES_RasterIXWrapper_0_fb_addr": {
         "ports": [
           "ARES_RasterIXWrapper_0/fb_addr",
-          "ARES_RaxyerIX_frameb_0/fb_addr",
-          "ila_1/probe0"
+          "ARES_RaxyerIX_frameb_0/fb_addr"
         ]
       },
       "ARES_RasterIXWrapper_0_fb_size": {
         "ports": [
           "ARES_RasterIXWrapper_0/fb_size",
-          "ARES_RaxyerIX_frameb_0/fb_size",
-          "ila_1/probe1"
+          "ARES_RaxyerIX_frameb_0/fb_size"
         ]
       },
       "ARES_RasterIXWrapper_0_swap_fb": {
         "ports": [
           "ARES_RasterIXWrapper_0/swap_fb",
-          "ARES_RaxyerIX_frameb_0/swap_fb",
-          "ila_1/probe3"
+          "ARES_RaxyerIX_frameb_0/swap_fb"
         ]
       },
       "ARES_RasterIXWrapper_0_swap_fb_enable_vsync": {
         "ports": [
           "ARES_RasterIXWrapper_0/swap_fb_enable_vsync",
-          "ARES_RaxyerIX_frameb_0/swap_fb_enable_vsync",
-          "ila_1/probe4"
+          "ARES_RaxyerIX_frameb_0/swap_fb_enable_vsync"
         ]
       },
       "ARES_RaxyerIX_frameb_0_fb_swapped": {
         "ports": [
           "ARES_RaxyerIX_frameb_0/fb_swapped",
-          "ARES_RasterIXWrapper_0/fb_swapped",
-          "ila_1/probe2"
+          "ARES_RasterIXWrapper_0/fb_swapped"
         ]
       },
       "ARES_RaxyerIX_frameb_0_vga_b": {
@@ -4809,12 +4771,10 @@
           "axi_dma_0/s_axi_lite_aclk",
           "smartconnect_dma/aclk",
           "axi_dma_0/m_axi_s2mm_aclk",
-          "ARES_RasterIXWrapper_0/aclk",
-          "ARES_RaxyerIX_frameb_0/ram_axi_aclk",
           "VexiiSocWrapper_0/s_axi_aclk",
           "axi_cf_controller_0/s_axi_aclk",
-          "ila_0/clk",
-          "ila_1/clk"
+          "ARES_RasterIXWrapper_0/aclk",
+          "ARES_RaxyerIX_frameb_0/ram_axi_aclk"
         ]
       },
       "reset": {
@@ -4835,11 +4795,11 @@
           "axi_keyboard_0/s_axi_aresetn",
           "axi_dma_0/axi_resetn",
           "smartconnect_dma/aresetn",
-          "ARES_RasterIXWrapper_0/resetn",
-          "ARES_RaxyerIX_frameb_0/resetn",
           "VexiiSocWrapper_0/s_axi_aresetn",
           "axi_cf_controller_0/s_axi_aresetn",
-          "mig_axi_wrapper_0/aresetn"
+          "mig_axi_wrapper_0/aresetn",
+          "ARES_RasterIXWrapper_0/resetn",
+          "ARES_RaxyerIX_frameb_0/resetn"
         ]
       },
       "rst_in": {

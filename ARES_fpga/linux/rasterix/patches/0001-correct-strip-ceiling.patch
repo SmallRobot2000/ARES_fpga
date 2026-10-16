@@ -1,0 +1,65 @@
+diff --git a/lib/gl/RenderConfigs.hpp b/lib/gl/RenderConfigs.hpp
+index 30c2ad9..54e7eb8 100644
+--- a/lib/gl/RenderConfigs.hpp
++++ b/lib/gl/RenderConfigs.hpp
+@@ -50,12 +50,9 @@ struct RenderConfig
+ 
+     static constexpr std::size_t getDisplayLines()
+     {
+-        constexpr std::size_t MAX_FRAMEBUFFER_SIZE = MAX_DISPLAY_WIDTH * MAX_DISPLAY_HEIGHT;
+-        if constexpr (MAX_FRAMEBUFFER_SIZE == FRAMEBUFFER_SIZE_IN_PIXEL)
+-        {
+-            return 1;
+-        }
+-        return (MAX_FRAMEBUFFER_SIZE / FRAMEBUFFER_SIZE_IN_PIXEL) + 1;
++        constexpr std::size_t pixels = MAX_DISPLAY_WIDTH * MAX_DISPLAY_HEIGHT;
++        return (pixels + FRAMEBUFFER_SIZE_IN_PIXEL - 1)
++            / FRAMEBUFFER_SIZE_IN_PIXEL;
+     }
+ 
+     static constexpr uint32_t getAlignedSize(const uint32_t size)
+diff --git a/unittest/software/CMakeLists.txt b/unittest/software/CMakeLists.txt
+index 60a7f6a..cff13cf 100644
+--- a/unittest/software/CMakeLists.txt
++++ b/unittest/software/CMakeLists.txt
+@@ -30,3 +30,5 @@ add_software_unittest(StencilOp)
+ add_software_unittest(TestFunc)
+ add_software_unittest(TexEnv)
+ add_software_unittest(TextureMap)
++
++add_software_unittest(RenderConfigs)
+diff --git a/unittest/software/test_RenderConfigs.cpp b/unittest/software/test_RenderConfigs.cpp
+new file mode 100644
+--- /dev/null
++++ b/unittest/software/test_RenderConfigs.cpp
+@@ -0,0 +1,30 @@
++#include "RenderConfigs.hpp"
++
++// Exercise the actual constexpr implementation under several configurations.
++// Rename the class so these independent configurations share one test TU.
++#undef _RENDER_CONFIG_HPP_
++#undef RIX_CORE_MAX_DISPLAY_WIDTH
++#undef RIX_CORE_MAX_DISPLAY_HEIGHT
++#define RIX_CORE_MAX_DISPLAY_WIDTH (1u << RIX_CORE_FRAMEBUFFER_SIZE_IN_PIXEL_LG)
++#define RIX_CORE_MAX_DISPLAY_HEIGHT 1
++#define RenderConfig SingleStripConfig
++#include "RenderConfigs.hpp"
++static_assert(rr::SingleStripConfig::getDisplayLines() == 1);
++
++#undef _RENDER_CONFIG_HPP_
++#undef RenderConfig
++#undef RIX_CORE_MAX_DISPLAY_HEIGHT
++#define RIX_CORE_MAX_DISPLAY_HEIGHT 6
++#define RenderConfig SixStripConfig
++#include "RenderConfigs.hpp"
++static_assert(rr::SixStripConfig::getDisplayLines() == 6);
++
++#undef _RENDER_CONFIG_HPP_
++#undef RenderConfig
++#undef RIX_CORE_MAX_DISPLAY_WIDTH
++#define RIX_CORE_MAX_DISPLAY_WIDTH ((1u << RIX_CORE_FRAMEBUFFER_SIZE_IN_PIXEL_LG) + 1)
++#define RenderConfig PartialStripConfig
++#include "RenderConfigs.hpp"
++static_assert(rr::PartialStripConfig::getDisplayLines() == 7);
++
++int main() { return 0; }

@@ -1,0 +1,3 @@
+/include/ "tree-rasterix-memory.dts"
+/include/ "ares-rasterix-textures.dtsi"
+/include/ "ares-rasterix-framebuffers.dtsi"

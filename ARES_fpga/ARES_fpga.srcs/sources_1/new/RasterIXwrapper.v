@@ -124,7 +124,7 @@ module ARES_RasterIXWrapper #(
         // -----------------------------------------------------
         .VARIANT("if"),
 
-        // 2^15 = 32768 pixels internal framebuffer
+        // 2^15 = 32768 pixels: six 64-line strips at 512x384
         .FRAMEBUFFER_SIZE_IN_PIXEL_LG(15),
 
         // RGB555 internal representation
@@ -139,15 +139,15 @@ module ARES_RasterIXWrapper #(
         .SUB_PIXEL_CALC_PRECISION(8),
 
         .ENABLE_DEPTH_BUFFER(1),
-        .ENABLE_STENCIL_BUFFER(0),
+        .ENABLE_STENCIL_BUFFER(1),
 
         // One texture unit
         .TMU_COUNT(1),
 
-        // Start simple
+        // Feature set used by the Linux OpenGL runtime
         .ENABLE_MIPMAPPING(0),
         .ENABLE_TEXTURE_FILTERING(0),
-        .ENABLE_FOG(0),
+        .ENABLE_FOG(1),
 
         // -----------------------------------------------------
         // Texture memory

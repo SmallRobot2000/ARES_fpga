@@ -1,0 +1,11 @@
+/* Two 1 MiB RasterIX framebuffer slots inside the current 128 MiB AXI window.
+ * 512x384 RGB565 consumes 0x60000 bytes in each slot. Linux must never use
+ * this memory while RasterIX and the VGA reader access it.
+ */
+&{/reserved-memory} {
+    rasterix_framebuffers: rasterix-framebuffers@97c00000 {
+        reg = <0x97c00000 0x00200000>;
+        no-map;
+        status = "okay";
+    };
+};

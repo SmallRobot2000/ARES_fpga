@@ -11,6 +11,7 @@
 #include <unistd.h>
 
 #include "dma-proxy.h"
+#include "framebuffer-reservation.h"
 #include "rasterix-loopback.h"
 #include "rasterix-memory.h"
 #include "scratch-reservation.h"
@@ -39,6 +40,24 @@ static int memory_settle(void)
 		if (errno != EINTR)
 			return -1;
 	}
+	return 0;
+}
+
+static int display_test(int fd, struct channel_buffer *tx)
+{
+	int index = 0;
+
+	if (RIX_DISPLAY_BYTES + 8 > BUFFER_SIZE)
+		return -1;
+	rix_make_display_store(tx->buffer);
+	tx->length = RIX_DISPLAY_BYTES + 8;
+	if (memory_tx(fd, tx, index) || memory_settle())
+		return -1;
+
+	rix_make_display_swap(tx->buffer);
+	tx->length = 24;
+	if (memory_tx(fd, tx, index))
+		return -1;
 	return 0;
 }
 
@@ -182,13 +201,14 @@ int main(int argc, char **argv)
 	int stress = argc >= 2 && !strcmp(argv[1], "--stress");
 	int memory = argc == 2 && !strcmp(argv[1], "--memory");
 	int memory_stress = argc >= 2 && !strcmp(argv[1], "--memory-stress");
+	int display = argc == 2 && !strcmp(argv[1], "--display");
 	unsigned long rounds = (stress || memory_stress) ? 100 : 1;
 	int result = 1, i, index, duplicate;
 	void *bad;
 
-	if (argc > 3 || (argc > 1 && !nop && !echo && !stress && !memory && !memory_stress) ||
+	if (argc > 3 || (argc > 1 && !nop && !echo && !stress && !memory && !memory_stress && !display) ||
 	    (argc == 3 && !stress && !memory_stress)) {
-		fprintf(stderr, "Usage: %s [--nop | --loopback | --stress [1..100000] | --memory | --memory-stress [1..100000]]\n", argv[0]);
+		fprintf(stderr, "Usage: %s [--nop | --loopback | --stress [1..100000] | --memory | --memory-stress [1..100000] | --display]\n", argv[0]);
 		return 2;
 	}
 	if (argc == 3) {
@@ -203,6 +223,9 @@ int main(int argc, char **argv)
 	}
 	if ((memory || memory_stress) &&
 	    rix_check_scratch_reserved("/sys/firmware/devicetree/base", "/proc/iomem"))
+		return 1;
+	if (display &&
+	    rix_check_framebuffer_reserved("/sys/firmware/devicetree/base", "/proc/iomem"))
 		return 1;
 	for (i = 0; i < 2; i++) {
 		fd[i] = open(names[i], O_RDWR | O_CLOEXEC);
@@ -313,6 +336,13 @@ int main(int argc, char **argv)
 		}
 		printf("PASS: %lu RasterIX memory round-trip(s), %llu payload bytes plus memory guards verified\n",
 		       rounds, total);
+	} else if (display) {
+		if (display_test(fd[0], &buf[0][0])) {
+			fprintf(stderr, "Display test failed; stop and capture dmesg/ILA.\n"
+				"After a stream timeout, reset/reboot the FPGA system before retrying.\n");
+			goto out;
+		}
+		puts("PASS: RGB565 color bars stored and RasterIX VSync framebuffer swap acknowledged");
 	} else {
 		puts("PASS: no DMA transfers submitted (use --nop for the TX test)");
 	}

@@ -4,9 +4,9 @@ This supplies `/dev/dma_proxy_tx` and `/dev/dma_proxy_rx` for the existing
 RasterIX RV32 userspace interface. The Xilinx controller remains the owner of
 the DMA registers and IRQs; this module is its DMAengine client.
 
-The source is prepared for the local **Linux 7.2-rc5** kernel. It has been
-cross-compiled against that tree's current headers, but has **not** been loaded
-or tested on the FPGA. Build the final `.ko` against the same configuration and
+The source is prepared for the local **Linux 7.2-rc5** kernel. Module loading,
+NOP, both-direction stream loopback, and guarded RasterIX memory round-trips
+have been reported working on ARES. Build the final `.ko` against the same configuration and
 kernel image you will boot; the old kernel with `CONFIG_MODULES=n` cannot load it.
 
 ## 1. Enable modules and contiguous allocations; rebuild Linux once
@@ -264,8 +264,17 @@ Run from the FPGA repository on a host with Verilator and a C++ compiler.
 It checks 48 successive packets across all four sizes, continuous streams,
 input gaps and output backpressure. It verifies exact payload/TLAST and asserts
 that neither the rendering stream nor RasterIX AXI memory requests are active.
-This simulation passes; hardware validation of the new RX test remains required.
+This simulation passes, and the stream loopback has also passed on ARES.
 
 DMA lifetime/allocation rules follow the kernel's
 [DMAengine client API](https://docs.kernel.org/driver-api/dmaengine/client.html)
 and [DMA mapping API](https://www.kernel.org/doc/html/latest/core-api/dma-api.html).
+
+After stream loopback passes, continue with the guarded RasterIX AXI
+[memory test](MEMORY-TEST.md).
+
+After the memory round-trip passes, rebuild the FPGA for the corrected
+framebuffer acknowledgement and run the [color-bar display test](DISPLAY-TEST.md).
+
+After the color-bar test passes, continue with the [RasterIX OpenGL clear and
+triangle test](../rasterix/README.md).
