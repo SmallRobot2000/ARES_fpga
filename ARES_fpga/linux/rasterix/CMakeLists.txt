@@ -83,8 +83,21 @@ target_link_libraries(ares-gl-game PRIVATE ares-gl-runtime)
 target_compile_options(ares-gl-game PRIVATE -Wall -Wextra -Werror)
 target_link_options(ares-gl-game PRIVATE -static)
 
+add_executable(ares-gl-texture-check tests/texture_upload.cpp)
+target_include_directories(ares-gl-texture-check PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/../dma-proxy"
+    "${RASTERIX_SOURCE}/lib/driver"
+    "${RASTERIX_SOURCE}/lib/threadrunner")
+target_link_libraries(ares-gl-texture-check PRIVATE ares-gl-runtime)
+target_compile_options(ares-gl-texture-check PRIVATE -Wall -Wextra -Werror)
+target_link_options(ares-gl-texture-check PRIVATE -static)
+
 if(NOT CMAKE_CROSSCOMPILING)
     enable_testing()
+    add_test(NAME texture-rgb565 COMMAND ares-gl-texture-check)
+    add_test(NAME texture-rgb565-white COMMAND ares-gl-texture-check --white)
+    add_test(NAME texture-rgba COMMAND ares-gl-texture-check --rgba)
+    add_test(NAME texture-rgba-white COMMAND ares-gl-texture-check --rgba --white)
     add_executable(ares-render-config-tests
         "${RASTERIX_SOURCE}/unittest/software/test_RenderConfigs.cpp")
     target_link_libraries(ares-render-config-tests PRIVATE gl)

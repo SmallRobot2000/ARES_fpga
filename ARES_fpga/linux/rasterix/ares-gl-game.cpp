@@ -5,6 +5,8 @@
 
 #include <algorithm>
 #include <chrono>
+#include <ctime>
+#include <limits>
 #include <cmath>
 #include <csignal>
 #include <cstdint>
@@ -25,6 +27,12 @@ constexpr int PICKUP_COUNT = 14;
 constexpr int TOWER_COUNT = 54;
 constexpr int TEX_SIZE = 64;
 constexpr float CAMERA_HEIGHT = 2.6f;
+// Fog fades scenery into the sky; distant meshes are excluded CPU-side.
+constexpr float FOG_START = 13.0f;
+constexpr float FOG_END = 28.0f;
+// Conservative radius adds clearance for a whole terrain cell/tower.
+constexpr float CULL_DISTANCE = FOG_END + 2.0f;
+constexpr float SKY_COLOR[4] = {0.28f, 0.48f, 0.75f, 1.0f};
 
 struct Terminal {
     termios saved{};
@@ -65,6 +73,7 @@ struct Game {
     bool rgb565 = true;
     bool depthEnabled = true;
     bool solidTexture = false;
+    bool stencilEnabled = true;
     int trianglesSubmitted = 0;
     int escapeState = 0;
 };
@@ -142,7 +151,11 @@ bool possiblyVisible(const Game& game, float x, float z, float radius) {
     const float forward = dx * std::sin(angle) - dz * std::cos(angle);
     const float side = dx * std::cos(angle) + dz * std::sin(angle);
     if (forward + radius < 0.1f) return false;
-    if (forward - radius > 55.0f) return false;
+    // This is real distance culling, not just back-face or side-view culling.
+    // Avoid calculating sqrtf for every cell/mesh.
+    const float maxDist = CULL_DISTANCE + radius;
+    if (dx * dx + dz * dz > maxDist * maxDist) return false;
+    if (forward - radius > CULL_DISTANCE) return false;
     return std::fabs(side) <= 1.35f * std::max(forward, 0.0f) + radius + 2.0f;
 }
 
@@ -241,9 +254,90 @@ void drawPickup(const Pickup& p, float t) {
     glPopMatrix();
 }
 
+// Stencil demo: glowing cross-shaped landing markers beneath uncollected crystals.
+// Pass 1 writes a circular mask into stencil without changing color or depth.
+// Pass 2 draws two long bars, which stencil clips to that circular mask.
+// No shaders, mipmaps or blending required; works with OpenGL ES 1.1.
+constexpr int MARKER_SEGMENTS = 16;
+constexpr int MARKER_TRIANGLES = MARKER_SEGMENTS + 4;
+
+void markerCircle(const Pickup& p, float time) {
+    const float radius = 1.25f + 0.12f * std::sin(time * 2.0f);
+    const float centerY = terrainHeight(p.x, p.z) + 0.12f;
+    glBegin(GL_TRIANGLES);
+    for (int i = 0; i < MARKER_SEGMENTS; ++i) {
+        const float a0 = (2.0f * PI * i) / MARKER_SEGMENTS;
+        const float a1 = (2.0f * PI * (i + 1)) / MARKER_SEGMENTS;
+        const float x0 = p.x + radius * std::cos(a0);
+        const float z0 = p.z + radius * std::sin(a0);
+        const float x1 = p.x + radius * std::cos(a1);
+        const float z1 = p.z + radius * std::sin(a1);
+        glVertex3f(p.x, centerY, p.z);
+        glVertex3f(x0, terrainHeight(x0, z0) + 0.12f, z0);
+        glVertex3f(x1, terrainHeight(x1, z1) + 0.12f, z1);
+    }
+    glEnd();
+}
+
+// Each bar extends far beyond the disc. The stencil test clips it to a disc.
+void markerCross(const Pickup& p, float time) {
+    const float halfLength = 2.0f;
+    const float halfWidth = 0.10f + 0.035f * (1.0f + std::sin(time * 3.0f));
+    glColor3f(0.08f, 0.95f, 0.9f);
+    glBegin(GL_TRIANGLES);
+    for (int axis = 0; axis < 2; ++axis) {
+        const float xx = axis == 0 ? halfLength : halfWidth;
+        const float zz = axis == 0 ? halfWidth : halfLength;
+        const float x[4] = {p.x-xx, p.x+xx, p.x+xx, p.x-xx};
+        const float z[4] = {p.z-zz, p.z-zz, p.z+zz, p.z+zz};
+        const int idx[6] = {0, 1, 2, 0, 2, 3};
+        for (int j = 0; j < 6; ++j) {
+            const int k = idx[j];
+            glVertex3f(x[k], terrainHeight(x[k], z[k]) + 0.15f, z[k]);
+        }
+    }
+    glEnd();
+}
+
+void drawStencilMarkers(Game& game, float time) {
+    if (!game.stencilEnabled) return;
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_FOG);
+    glDisable(GL_CULL_FACE);
+    glEnable(GL_STENCIL_TEST);
+    glStencilMask(0xFF);
+    glStencilFunc(GL_ALWAYS, 1, 0xFF);
+    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+    glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
+    glDepthMask(GL_FALSE);
+
+    for (const Pickup& p : game.pickups)
+        if (!p.found && possiblyVisible(game, p.x, p.z, 2.0f)) {
+            markerCircle(p, time);
+            game.trianglesSubmitted += MARKER_SEGMENTS;
+        }
+
+    glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
+    glStencilMask(0x00);
+    glStencilFunc(GL_EQUAL, 1, 0xFF);
+    glStencilOp(GL_KEEP, GL_KEEP, GL_KEEP);
+    for (const Pickup& p : game.pickups)
+        if (!p.found && possiblyVisible(game, p.x, p.z, 2.0f)) {
+            markerCross(p, time);
+            game.trianglesSubmitted += 4;
+        }
+
+    glStencilMask(0xFF);
+    glDisable(GL_STENCIL_TEST);
+    glDepthMask(GL_TRUE);
+    glEnable(GL_CULL_FACE);
+    glEnable(GL_FOG);
+}
+
 void drawFrame(Game& game, float t) {
     game.trianglesSubmitted = 0;
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT |
+            (game.stencilEnabled ? GL_STENCIL_BUFFER_BIT : 0));
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     // Positive yaw is a right turn, matching movement in update().
@@ -257,6 +351,7 @@ void drawFrame(Game& game, float t) {
     }
     drawTerrain(game);
     drawTowers(game);
+    drawStencilMarkers(game, t);
     for (const Pickup& p : game.pickups) {
         if (!p.found && possiblyVisible(game, p.x, p.z, 1.5f)) {
             game.trianglesSubmitted += 8;
@@ -326,6 +421,43 @@ void update(Game& game, float dt) {
     if (game.found == PICKUP_COUNT) game.wantQuit = true;
 }
 
+// Measurements are grouped by completed swap intervals. A long swap can include
+// GPU work, DMA backpressure, driver synchronization and upload-thread waits.
+struct TimingStats {
+    double sumMs = 0.0;
+    double minMs = std::numeric_limits<double>::infinity();
+    double maxMs = 0.0;
+    void add(double ms) {
+        sumMs += ms;
+        minMs = std::min(minMs, ms);
+        maxMs = std::max(maxMs, ms);
+    }
+    double average(uint64_t n) const { return n ? sumMs / static_cast<double>(n) : 0.0; }
+};
+struct BenchWindow {
+    uint64_t frames = 0;
+    uint64_t tris = 0;
+    uint64_t minTris = UINT64_MAX;
+    uint64_t maxTris = 0;
+    TimingStats input, draw, glcheck, swap, frame;
+    void addTriangles(uint64_t n) {
+        tris += n;
+        minTris = std::min(minTris, n);
+        maxTris = std::max(maxTris, n);
+    }
+};
+
+template<class Duration>
+double milliseconds(Duration d) {
+    return std::chrono::duration<double, std::milli>(d).count();
+}
+
+double processCpuSeconds() {
+    struct timespec ts {};
+    if (clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &ts) != 0) return -1.0;
+    return static_cast<double>(ts.tv_sec) + static_cast<double>(ts.tv_nsec) * 1e-9;
+}
+
 uint64_t parseOptions(int argc, char** argv, Game& game) {
     uint64_t frames = 0;
     for (int i = 1; i < argc; ++i) {
@@ -345,10 +477,12 @@ uint64_t parseOptions(int argc, char** argv, Game& game) {
             game.texturesEnabled = false;
         } else if (std::strcmp(argv[i], "--no-depth") == 0) {
             game.depthEnabled = false;
+        } else if (std::strcmp(argv[i], "--no-stencil") == 0) {
+            game.stencilEnabled = false;
         } else if (std::strcmp(argv[i], "--solid-texture") == 0) {
             game.solidTexture = true;
         } else {
-            std::fprintf(stderr, "Usage: %s [--grid 8..128] [--frames COUNT] [--no-texture] [--no-depth] [--solid-texture] [--rgba]\n", argv[0]);
+            std::fprintf(stderr, "Usage: %s [--grid 8..128] [--frames COUNT] [--no-texture] [--no-depth] [--solid-texture] [--rgba] [--no-stencil]\n", argv[0]);
             std::exit(1);
         }
     }
@@ -369,7 +503,7 @@ int main(int argc, char** argv) {
     glLoadIdentity();
     const float aspect = float(ares::GLContext::width) / float(ares::GLContext::height);
     glFrustum(-.08f * aspect, .08f * aspect, -.08f, .08f, .1f, 110.0f);
-    glClearColor(.28f, .48f, .75f, 1);
+    glClearColor(SKY_COLOR[0], SKY_COLOR[1], SKY_COLOR[2], SKY_COLOR[3]);
     glClearDepth(1);
     if (game.depthEnabled) glEnable(GL_DEPTH_TEST);
     else glDisable(GL_DEPTH_TEST);
@@ -379,14 +513,23 @@ int main(int argc, char** argv) {
     glCullFace(GL_BACK);
     glEnable(GL_CULL_FACE);
     glDisable(GL_STENCIL_TEST);
+    glClearStencil(0);
+    glStencilMask(0xFF);
     glDisable(GL_BLEND);
     glDisable(GL_LIGHTING);
-    glDisable(GL_FOG);
+    // OpenGL ES 1.1 fixed-function fog: no shader or mipmap required.
+    // Fog color matches the clear color so distant surfaces disappear smoothly.
+    glFogfv(GL_FOG_COLOR, SKY_COLOR);
+    glFogi(GL_FOG_MODE, GL_LINEAR);
+    glFogf(GL_FOG_START, FOG_START);
+    glFogf(GL_FOG_END, FOG_END);
+    glEnable(GL_FOG);
     glShadeModel(GL_SMOOTH);
     glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
     initWorld(game);
     createTexture(game);
-    const int triangles = game.grid * game.grid * 2 + TOWER_COUNT * 12 + PICKUP_COUNT * 8;
+    const int triangles = game.grid * game.grid * 2 + TOWER_COUNT * 12 +
+                          PICKUP_COUNT * (8 + (game.stencilEnabled ? MARKER_TRIANGLES : 0));
     std::printf("GL_VENDOR: %s\nGL_RENDERER: %s\nGL_VERSION: %s\n",
                 glGetString(GL_VENDOR), glGetString(GL_RENDERER), glGetString(GL_VERSION));
     std::printf("RasterIX Crystal Flight | W/S: forward/back | A/D: turn | J/L: strafe | Q: quit\n");
@@ -394,6 +537,15 @@ int main(int argc, char** argv) {
                 PICKUP_COUNT, triangles, game.grid * game.grid * 2,
                 TOWER_COUNT * 12, PICKUP_COUNT * 8);
     std::printf("Terminal key autorepeat controls movement; input must come from a TTY.\n");
+    GLint stencilBits = 0;
+    glGetIntegerv(GL_STENCIL_BITS, &stencilBits);
+    std::printf("Stencil crystal ground markers: %s | GL_STENCIL_BITS: %d\n",
+                game.stencilEnabled ? "ON" : "OFF", stencilBits);
+    if (game.stencilEnabled && stencilBits == 0)
+        std::puts("WARNING: No stencil bits reported; enable stencil in RasterIX FPGA config if the markers do not appear.");
+    std::printf("Fog: linear %.1f..%.1f units | CPU distance cull: %.1f units | rendering: %dx%d\n",
+                FOG_START, FOG_END, CULL_DISTANCE,
+                ares::GLContext::width, ares::GLContext::height);
     std::printf("Textures: %s (%s, %s) | depth: %s | backface + CPU visibility culling | no mipmaps\n",
                 game.texturesEnabled ? "ON" : "OFF", game.rgb565 ? "RGB565" : "RGBA8888",
                 game.solidTexture ? "solid white" : "checker", game.depthEnabled ? "ON" : "OFF");
@@ -401,37 +553,88 @@ int main(int argc, char** argv) {
     Terminal terminal;
     if (!terminal.active) std::fprintf(stderr, "Warning: stdin is not a TTY, controls disabled.\n");
     using Clock = std::chrono::steady_clock;
+    using Counters = ares::GLPerformanceCounters;
     const auto start = Clock::now();
-    auto previous = start, report = start;
-    uint64_t reportFrames = 0;
+    auto previous = start;
+    auto reportStart = start;
+    double reportCpuStart = processCpuSeconds();
+    Counters previousCounters = context.performanceCounters();
+    BenchWindow bench;
+    const uint64_t totalFramesLimit = frameLimit;
+    uint64_t renderedFrames = 0;
+
     while (running && !game.wantQuit &&
-           (!frameLimit || context.performanceCounters().frames < frameLimit)) {
-        const auto now = Clock::now();
-        float dt = std::chrono::duration<float>(now - previous).count();
-        previous = now;
+           (!totalFramesLimit || renderedFrames < totalFramesLimit)) {
+        const auto t0 = Clock::now();
+        float dt = std::chrono::duration<float>(t0 - previous).count();
+        previous = t0;
         dt = std::max(.0f, std::min(.05f, dt));
         handleInput(game);
         update(game, dt);
-        const float seconds = std::chrono::duration<float>(now - start).count();
+        const auto t1 = Clock::now();
+        const float seconds = std::chrono::duration<float>(t0 - start).count();
         drawFrame(game, seconds);
+        const auto t2 = Clock::now();
         const GLenum err = glGetError();
+        const auto t3 = Clock::now();
         if (err != GL_NO_ERROR) {
             std::fprintf(stderr, "OpenGL error 0x%04x\n", err);
             glDeleteTextures(1, &game.texture);
             return 1;
         }
         context.swapBuffers();
-        ++reportFrames;
-        const auto after = Clock::now();
-        const double elapsed = std::chrono::duration<double>(after - report).count();
-        if (elapsed >= 2.0) {
-            const auto c = context.performanceCounters();
-            std::printf("FPS %5.1f | crystals %2d/%d | submitted triangles %d/%d | MM2S %llu bytes | position %.1f,%.1f\n",
-                        reportFrames / elapsed, game.found, PICKUP_COUNT, game.trianglesSubmitted, triangles,
-                        static_cast<unsigned long long>(c.mm2sBytes), game.x, game.z);
+        const auto t4 = Clock::now();
+        ++renderedFrames;
+        ++bench.frames;
+        bench.addTriangles(static_cast<uint64_t>(game.trianglesSubmitted));
+        bench.input.add(milliseconds(t1 - t0));
+        bench.draw.add(milliseconds(t2 - t1));
+        bench.glcheck.add(milliseconds(t3 - t2));
+        bench.swap.add(milliseconds(t4 - t3));
+        bench.frame.add(milliseconds(t4 - t0));
+
+        const double reportSeconds = std::chrono::duration<double>(t4 - reportStart).count();
+        const bool lastFrame = totalFramesLimit && renderedFrames >= totalFramesLimit;
+        if (reportSeconds >= 2.0 || lastFrame) {
+            const Counters counters = context.performanceCounters();
+            const double cpuNow = processCpuSeconds();
+            const uint64_t txBytes = counters.mm2sBytes - previousCounters.mm2sBytes;
+            const uint64_t txTransfers = counters.mm2sTransfers - previousCounters.mm2sTransfers;
+            const uint64_t rxTransfers = counters.s2mmTransfers - previousCounters.s2mmTransfers;
+            const double cpuDelta = (cpuNow >= 0.0 && reportCpuStart >= 0.0) ?
+                                    cpuNow - reportCpuStart : -1.0;
+            const double invSeconds = reportSeconds > 0.0 ? 1.0 / reportSeconds : 0.0;
+            const double n = static_cast<double>(bench.frames);
+            std::printf("\n[PERF] %.2f s | %llu frames | %.1f FPS | %.2f ms/frame\n",
+                        reportSeconds, static_cast<unsigned long long>(bench.frames),
+                        n * invSeconds, bench.frame.average(bench.frames));
+            std::printf("  CPU input/update: %.2f ms | GL submit: %.2f ms | glGetError: %.2f ms | swap/wait: %.2f ms\n",
+                        bench.input.average(bench.frames), bench.draw.average(bench.frames),
+                        bench.glcheck.average(bench.frames), bench.swap.average(bench.frames));
+            std::printf("  swap/wait range: %.2f..%.2f ms | complete-frame range: %.2f..%.2f ms\n",
+                        bench.swap.minMs, bench.swap.maxMs, bench.frame.minMs, bench.frame.maxMs);
+            std::printf("  triangles: %.0f/frame (min %llu, max %llu), %.0f/sec | culling %.1f%% vs %d nominal\n",
+                        bench.tris / n,
+                        static_cast<unsigned long long>(bench.minTris),
+                        static_cast<unsigned long long>(bench.maxTris),
+                        bench.tris * invSeconds,
+                        100.0 * (1.0 - (bench.tris / n) / triangles), triangles);
+            std::printf("  DMA MM2S: %.2f MiB/s | %.0f bytes/frame | %llu transfers | S2MM %llu transfers\n",
+                        txBytes * invSeconds / (1024.0 * 1024.0), txBytes / n,
+                        static_cast<unsigned long long>(txTransfers),
+                        static_cast<unsigned long long>(rxTransfers));
+            if (cpuDelta >= 0.0)
+                std::printf("  process CPU: %.1f%% of one core equivalent (across all threads)\n",
+                            100.0 * cpuDelta * invSeconds);
+            std::printf("  state: grid %d | texture %s | depth %s | crystals %d/%d | camera %.1f,%.1f\n",
+                        game.grid, game.texturesEnabled ? "on" : "off",
+                        game.depthEnabled ? "on" : "off", game.found, PICKUP_COUNT,
+                        game.x, game.z);
             std::fflush(stdout);
-            reportFrames = 0;
-            report = after;
+            bench = BenchWindow{};
+            previousCounters = counters;
+            reportStart = t4;
+            reportCpuStart = cpuNow;
         }
     }
     glDeleteTextures(1, &game.texture);

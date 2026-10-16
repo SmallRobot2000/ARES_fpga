@@ -1,0 +1,30 @@
+diff --git a/rtl/RasterIX/RasterIXRenderCore.v b/rtl/RasterIX/RasterIXRenderCore.v
+index 90f98b4..11c0ee1 100644
+--- a/rtl/RasterIX/RasterIXRenderCore.v
++++ b/rtl/RasterIX/RasterIXRenderCore.v
+@@ -543,7 +543,8 @@ module RasterIXRenderCore #(
+     wire [TEXEL_WIDTH - 1 : 0]          tr0_texel_11;
+     wire                                tr0_texel_valid;
+     wire                                tr0_texel_ready;
+-    wire textureCacheEnableTmu0 = ENABLE_TEXTURE_FILTERING && 
++    // Nearest sampling still needs DDR/cache reads when filtering is disabled.
++    wire textureCacheEnableTmu0 =
+         confFeatureEnable[RENDER_CONFIG_FEATURE_ENABLE_TMU0_POS] &&
+         ((confTMU0TexEnvConfig[RENDER_CONFIG_TMU_TEX_ENV_SRC_REG_RGB0_POS +: RENDER_CONFIG_TMU_TEX_ENV_SRC_REG_RGB0_SIZE] == SRC_TEXTURE) ||
+          (confTMU0TexEnvConfig[RENDER_CONFIG_TMU_TEX_ENV_SRC_REG_RGB1_POS +: RENDER_CONFIG_TMU_TEX_ENV_SRC_REG_RGB1_SIZE] == SRC_TEXTURE) ||
+@@ -687,7 +688,7 @@ module RasterIXRenderCore #(
+     wire [TEXEL_WIDTH - 1 : 0]      tr1_texel_11;
+     wire                            tr1_texel_valid;
+     wire                            tr1_texel_ready;
+-    wire textureCacheEnableTmu1 = ENABLE_TEXTURE_FILTERING &&
++    wire textureCacheEnableTmu1 =
+         confFeatureEnable[RENDER_CONFIG_FEATURE_ENABLE_TMU1_POS] &&
+         ((confTMU1TexEnvConfig[RENDER_CONFIG_TMU_TEX_ENV_SRC_REG_RGB0_POS +: RENDER_CONFIG_TMU_TEX_ENV_SRC_REG_RGB0_SIZE] == SRC_TEXTURE) ||
+          (confTMU1TexEnvConfig[RENDER_CONFIG_TMU_TEX_ENV_SRC_REG_RGB1_POS +: RENDER_CONFIG_TMU_TEX_ENV_SRC_REG_RGB1_SIZE] == SRC_TEXTURE) ||
+@@ -1756,4 +1757,4 @@ module RasterIXRenderCore #(
+     assign m_stencil_wdata = framebuffer_stencil_bc_wdata[0 * STENCIL_WIDTH +: STENCIL_WIDTH];
+     assign m_stencil_wstrb = framebuffer_stencil_bc_wstrb[0];
+     assign framebuffer_bc_wfull[0] = !m_stencil_wready;
+-endmodule
+\ No newline at end of file
++endmodule
