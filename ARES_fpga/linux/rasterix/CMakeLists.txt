@@ -89,7 +89,7 @@ target_link_libraries(ares-gl-animate PRIVATE ares-gl-runtime)
 target_compile_options(ares-gl-animate PRIVATE -Wall -Wextra -Werror)
 target_link_options(ares-gl-animate PRIVATE -static)
 
-add_executable(ares-gl-game ares-gl-game.cpp)
+add_executable(ares-gl-game ares-gl-game.cpp kbd_hw.c)
 target_link_libraries(ares-gl-game PRIVATE ares-gl-runtime)
 target_compile_options(ares-gl-game PRIVATE -Wall -Wextra -Werror)
 target_link_options(ares-gl-game PRIVATE -static)
