@@ -129,7 +129,7 @@ int main(int argc,char** argv) {
     glTexCoord2f(.5f,1);glVertex3f(0,.9f,0);
     glEnd();check(glGetError()==GL_NO_ERROR,"GL draw");
     rr::RIXGL::getInstance().swapDisplayList();finish();
-    check(bus.pages.size()==4 && bus.tables>=6,"four uploaded pages and per-strip page tables");
+    check(bus.pages.size()==4 && bus.tables>=3,"four uploaded pages and per-strip page tables");
     for(unsigned page=0;page<4;++page) {
         const auto& data=bus.pages.at(bus.table[page]);
         for(unsigned j=0;j<1024;++j) {
@@ -148,7 +148,7 @@ int main(int argc,char** argv) {
             std::printf("PASS: DDR readback %08x (2048 bytes)\n",bus.table[page]);
         }
     }
-    std::puts("PASS: texture payload, addresses, upload-before-use and six-strip page tables");
+    std::puts("PASS: texture payload, addresses, upload-before-use and three-strip page tables");
     if(hardware)std::puts("Inspect VGA: a white/checker triangle on blue, without lighting or fog.");
     rr::RIXGL::destroy();finish();
 }

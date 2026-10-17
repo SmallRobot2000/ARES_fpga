@@ -1,5 +1,11 @@
 # AI implementation handoff: 512x384 RasterIX framebuffer scaled to 640x480 VGA
 
+> **Current configuration update:** this document records the original LG15
+> conversion plan. The FPGA was subsequently changed to LG16: 65,536 internal
+> pixels, three 512x128 strips, and texture filtering enabled. Current software,
+> tests, and operational documentation follow that newer configuration; the
+> LG15 recommendations below are retained only as historical design context.
+
 Use this document as the implementation prompt and project context. Work in:
 
 ```text

@@ -73,7 +73,7 @@ private:
                     if (command != 0x23000094U)
                         std::abort();
                     ++m_swaps;
-                } else if (((command >> 8) & 0xfffffU) != 32768U) {
+                } else if (((command >> 8) & 0xfffffU) != 65536U) {
                     std::abort();
                 }
                 break;
@@ -84,7 +84,7 @@ private:
                     std::printf("  y-offset register: %u\n", yOffset);
                 }
                 if ((command & 0x1fU) == 9U) {
-                    if (words[pos] != 0x00400200U) // 512 x 64 per strip
+                    if (words[pos] != 0x00800200U) // 512 x 128 per strip
                         std::abort();
                     std::printf("  resolution register: 0x%08x\n", words[pos]);
                 }
@@ -185,22 +185,22 @@ int main()
     // The first rendered frame carries one explicit Y-offset write per strip.
     // Following frames also restore the preceding render state, so each list
     // contains the restored write followed by the new-frame write.
-    bool offsetsCorrect = bus.yOffsets().size() == 36;
+    bool offsetsCorrect = bus.yOffsets().size() == 18;
     std::size_t offsetIndex = 0;
     static constexpr unsigned int writesPerStripByPhase[] = { 1, 2, 2, 1 };
     for (const unsigned int writesPerStrip : writesPerStripByPhase) {
-        for (unsigned int strip = 0; offsetsCorrect && strip < 6; ++strip) {
+        for (unsigned int strip = 0; offsetsCorrect && strip < 3; ++strip) {
             for (unsigned int write = 0; write < writesPerStrip; ++write)
-                offsetsCorrect = bus.yOffsets()[offsetIndex++] == (5 - strip) * 64;
+                offsetsCorrect = bus.yOffsets()[offsetIndex++] == (2 - strip) * 128;
         }
     }
 
     // Three rendered frames plus the destructor's final flush/swap.
-    if (bus.transfers() != 30 || bus.maxBatch() != 6 || bus.triangles() < 12
+    if (bus.transfers() != 15 || bus.maxBatch() != 3 || bus.triangles() < 6
         || bus.swaps() != 4 || !offsetsCorrect) {
         std::fputs("FAIL: unexpected strip-list construction\n", stderr);
         return 1;
     }
-    std::puts("PASS: valid strip lists submitted as six-transfer DMA batches");
+    std::puts("PASS: valid strip lists submitted as three-transfer DMA batches");
     return 0;
 }

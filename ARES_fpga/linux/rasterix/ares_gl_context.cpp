@@ -20,9 +20,9 @@ namespace ares
 static_assert(GLContext::width == 512 && GLContext::height == 384);
 static_assert(rr::RenderConfig::MAX_DISPLAY_WIDTH == GLContext::width);
 static_assert(rr::RenderConfig::MAX_DISPLAY_HEIGHT == GLContext::height);
-static_assert(rr::RenderConfig::FRAMEBUFFER_SIZE_IN_PIXEL == 32768);
-static_assert(rr::RenderConfig::FRAMEBUFFER_SIZE_IN_PIXEL_LG == 15);
-static_assert(rr::RenderConfig::getDisplayLines() == 6);
+static_assert(rr::RenderConfig::FRAMEBUFFER_SIZE_IN_PIXEL == 65536);
+static_assert(rr::RenderConfig::FRAMEBUFFER_SIZE_IN_PIXEL_LG == 16);
+static_assert(rr::RenderConfig::getDisplayLines() == 3);
 static_assert(rr::RenderConfig::TMU_COUNT == 1);
 static_assert(!rr::RenderConfig::ENABLE_MIPMAPPING);
 // Depth/stencil/fog and texture filtering have no RenderConfig switches;

@@ -2,12 +2,12 @@
 
 This is the first real OpenGL rendering test after the DMA, RasterIX memory,
 and framebuffer-display tests. It runs RasterIX's OpenGL 1.x software API on
-Linux, uses RasterIX's threaded CPU-side vertex path, initializes six hardware
-strips, then sends six triangle display lists through AXI DMA MM2S, rasterizes
+Linux, uses RasterIX's threaded CPU-side vertex path, initializes three hardware
+strips, then sends three triangle display lists through AXI DMA MM2S, rasterizes
 them in the FPGA, commits the RGB565 strips to DDR, and switches the VGA reader
 to the completed buffer at VSync. Each source frame uses `0x60000` bytes
-within its unchanged 1 MiB slot. Depth, stencil, and fog are enabled in RTL;
-mipmapping and texture filtering are disabled.
+within its unchanged 1 MiB slot. Depth, stencil, fog, and texture filtering are
+enabled in RTL; mipmapping is disabled.
 
 The test draws one smooth red/green/blue triangle on a dark blue background.
 It deliberately disables textures, depth, and stencil so the first render
@@ -28,9 +28,9 @@ linux/rasterix/build.sh
 
 The result is `linux/rasterix/ares-gl-triangle`, a static RV32 Linux binary.
 The CMake configuration is tied to the current FPGA parameters: IF variant,
-32768-pixel internal framebuffer, one TMU, 2048-byte texture pages, and six
-64-line strips for 512x384. Compile-time checks require at least 13 proxy
-buffers (the allocation remains 21) and the exact two framebuffer addresses.
+65536-pixel internal framebuffer, one TMU, 2048-byte texture pages, and three
+128-line strips for 512x384. Compile-time checks require seven proxy buffers,
+matching the driver allocation, and the exact two framebuffer addresses.
 
 After changing the RTL module parameters, refresh Vivado's module references
 with `source linux/rasterix/tests/refresh-framebuffer-module.tcl` in the open
@@ -70,10 +70,10 @@ PASS: RasterIX OpenGL clear and RGB triangle frame completed
 
 The VGA display should change from the color bars to one large, smoothly
 colored RGB triangle on a dark blue background. During rendering, PLIC source
-7/MM2S increases by twelve: six setup lists followed by six render lists because
-512x384 is divided into six 64-line hardware strips. Clean context destruction
-submits six teardown lists, so a before/after `/proc/interrupts` measurement of
-the complete process normally increases by eighteen. Source 8/S2MM should remain
+7/MM2S increases by six: three setup lists followed by three render lists because
+512x384 is divided into three 128-line hardware strips. Clean context destruction
+submits three teardown lists, so a before/after `/proc/interrupts` measurement of
+the complete process normally increases by nine. Source 8/S2MM should remain
 unchanged because this test does not read data back from RasterIX.
 
 A console PASS means every display list completed and the final VSync swap was
@@ -87,7 +87,7 @@ Do not immediately rerun after a DMA timeout; save `dmesg` and reset or reboot
 first. Use the existing ILA probes and trigger on the first missing event:
 
 1. DMA MM2S: `TVALID`, `TREADY`, `TDATA`, and `TLAST`. Expect eighteen packets
-   over the complete process: six setup, six render, and six teardown packets.
+   over the complete process: three setup, three render, and three teardown packets.
 2. RasterIX parser input: the same stream after FrameStreamingCore routes each
    DDU STREAM payload to the command parser.
 3. RasterIX status: `perf_busy`, `perf_triangle_rendering`, and
@@ -122,8 +122,8 @@ use a finite hardware test:
 ```
 
 Press Ctrl-C to stop the indefinite run cleanly. Each animation frame submits
-six MM2S strip lists; S2MM remains unused. The program's counters exclude six
-startup and six teardown lists, while `/proc/interrupts` includes them. See
+three MM2S strip lists; S2MM remains unused. The program's counters exclude three
+startup and three teardown lists, while `/proc/interrupts` includes them. See
 [PROGRAMMING.md](PROGRAMMING.md) for the reusable `ares::GLContext`, conventional
 `<GL/gl.h>` headers, a minimal application template, supported API scope, and
 memory-map limitations.

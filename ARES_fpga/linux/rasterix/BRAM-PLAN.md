@@ -3,6 +3,15 @@
 This audit uses the routed `XC7A100T` design and a temporary out-of-context
 RasterIX synthesis. The temporary synthesis did not modify the FPGA project.
 
+## Current selected configuration
+
+The current hardware uses an LG16 internal framebuffer: 65,536 pixels per
+strip and three 512x128 strips per frame. Depth, stencil, fog, and texture
+filtering are enabled; mipmapping and framebuffer alpha are disabled. Software
+uses the matching LG16 setting. This supersedes the earlier LG15 recommendation
+below and requires a fresh implementation/timing result for the enlarged
+internal color, depth, and stencil buffers.
+
 ## Historical routed baseline
 
 The routed design uses 124 of 135 BRAM tiles (91.85%):
@@ -34,7 +43,7 @@ Depth is already instantiated. Enabling `GL_DEPTH_TEST` therefore costs no
 additional BRAM, provided every strip is cleared before use while framebuffer
 autoload remains disabled.
 
-## Recommended configuration
+## Previous LG15 recommendation
 
 Use a 32,768-pixel internal strip at 512x384, with depth, stencil, and fog.
 Keep mipmapping disabled in both hardware and software:
@@ -87,8 +96,8 @@ Mipmapping also adds no BRAM in this build because external texture memory is
 enabled; it adds LOD, reciprocal, and coordinate arithmetic. Stencil is the
 feature that adds eight BRAM tile equivalents.
 
-The current conversion submits six strip lists per frame. Measure complex
-scenes on hardware after implementation meets timing.
+The current LG16 conversion submits three strip lists per frame. Measure
+complex scenes on hardware after implementation meets timing.
 
 ## 512-pixel scanout buffers
 

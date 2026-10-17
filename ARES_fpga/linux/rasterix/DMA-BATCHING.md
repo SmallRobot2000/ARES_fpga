@@ -1,8 +1,8 @@
 # RasterIX strip DMA batching
 
-At 512x384, RasterIX produces six display lists per frame. The previous path
+At 512x384, RasterIX produces three display lists per frame. The previous path
 waited for each MM2S transaction before submitting the next one. That caused
-six kernel sleep/wake cycles and left a software gap between strips.
+three kernel sleep/wake cycles and left a software gap between strips.
 
 The AXI DMA core is configured in direct/simple mode, so only one DMAengine
 descriptor may be active. The optimized path uses `FINISH_START_XFER` to wait
@@ -42,7 +42,7 @@ RasterIX threads:
 Expected chain-test result:
 
 ```text
-PASS: six MM2S NOP buffers chained without userspace submission gaps
+PASS: three MM2S NOP buffers chained without userspace submission gaps
 ```
 
 Compare the game's `swap/wait` and FPS lines with the earlier run. Transfer
@@ -50,7 +50,7 @@ count and bytes per frame should remain essentially the same; this change
 reduces the gaps between those transfers. The exact gain must be measured on
 the board because native tests do not model Linux scheduling or FPGA backpressure.
 
-The native capture regression verifies groups of exactly six display lists.
+The native capture regression verifies groups of exactly three display lists.
 The kernel module, RV32 smoke test, and RV32 graphics executables all compile;
-the six existing native rendering tests pass. The chained ioctl still needs the
+the six native rendering tests pass. The chained ioctl still needs the
 hardware smoke test above.

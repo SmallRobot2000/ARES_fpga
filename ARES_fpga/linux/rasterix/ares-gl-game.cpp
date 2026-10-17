@@ -43,8 +43,8 @@ constexpr float MAX_TURN_INPUT = 35.0f;
 // Fog fades scenery into the sky; distant meshes are excluded CPU-side.
 //constexpr float FOG_START = 13.0f;
 //constexpr float FOG_END = 28.0f;
-constexpr float FOG_START = 10.0f;
-constexpr float FOG_END = 15.0f;
+constexpr float FOG_START = 20.0f;
+constexpr float FOG_END = 28.0f;
 // Conservative radius adds clearance for a whole terrain cell/tower.
 constexpr float CULL_DISTANCE = FOG_END + 2.0f;
 constexpr float SKY_COLOR[4] = {0.28f, 0.48f, 0.75f, 1.0f};
@@ -84,6 +84,7 @@ struct Game {
     bool stencilEnabled = true;
     bool lowResolution = false;
     bool lightingEnabled = false;
+    bool clearColorBuffer = true;
     int trianglesSubmitted = 0;
     int preparedTriangles = 0;
     float viewSin = 0.0f;
@@ -586,8 +587,10 @@ void updateAtmosphere(float time) {
 void drawFrame(Game& game, float t) {
     game.trianglesSubmitted = game.preparedTriangles;
     updateAtmosphere(t);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT |
-            (game.stencilEnabled ? GL_STENCIL_BUFFER_BIT : 0));
+    GLbitfield clearMask = GL_DEPTH_BUFFER_BIT;
+    if (game.clearColorBuffer) clearMask |= GL_COLOR_BUFFER_BIT;
+    if (game.stencilEnabled) clearMask |= GL_STENCIL_BUFFER_BIT;
+    glClear(clearMask);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     // Positive yaw is a right turn, matching movement in update().
@@ -757,8 +760,10 @@ uint64_t parseOptions(int argc, char** argv, Game& game, int& cpu) {
             game.solidTexture = true;
         } else if (std::strcmp(argv[i], "--lighting") == 0) {
             game.lightingEnabled = true;
+        } else if (std::strcmp(argv[i], "--no-clear") == 0) {
+            game.clearColorBuffer = false;
         } else {
-            std::fprintf(stderr, "Usage: %s [--frames COUNT] [--cpu CORE] [--low-res] [--lighting] [--no-texture] [--no-depth] [--solid-texture] [--rgba] [--no-stencil] [--immediate] [--elements]\n", argv[0]);
+            std::fprintf(stderr, "Usage: %s [--frames COUNT] [--cpu CORE] [--low-res] [--lighting] [--no-clear] [--no-texture] [--no-depth] [--solid-texture] [--rgba] [--no-stencil] [--immediate] [--elements]\n", argv[0]);
             std::exit(1);
         }
     }
@@ -871,10 +876,11 @@ int main(int argc, char** argv) {
                 FOG_START, FOG_END, CULL_DISTANCE,
                 renderWidth, renderHeight,
                 game.lowResolution ? " centered in 512x384" : "");
-    std::printf("Textures: %s (%s, %s) | depth: %s | lighting: %s | backface + CPU visibility culling | no mipmaps\n",
+    std::printf("Textures: %s (%s, %s) | depth: %s | lighting: %s | color clear: %s | backface + CPU visibility culling | no mipmaps\n",
                 game.texturesEnabled ? "ON" : "OFF", game.rgb565 ? "RGB565" : "RGBA8888",
                 game.solidTexture ? "solid white" : "checker", game.depthEnabled ? "ON" : "OFF",
-                game.lightingEnabled ? "one directional ambient/diffuse light" : "OFF");
+                game.lightingEnabled ? "one directional ambient/diffuse light" : "OFF",
+                game.clearColorBuffer ? "ON" : "OFF (persistent trails)");
     std::fflush(stdout);
     using Clock = std::chrono::steady_clock;
     using Counters = ares::GLPerformanceCounters;
@@ -952,10 +958,11 @@ int main(int argc, char** argv) {
             if (cpuDelta >= 0.0)
                 std::printf("  process CPU: %.1f%% of one core equivalent (across all threads)\n",
                             100.0 * cpuDelta * invSeconds);
-            std::printf("  state: flat low-poly world | texture %s | depth %s | lighting %s | crystals %d/%d | camera %.1f,%.1f\n",
+            std::printf("  state: flat low-poly world | texture %s | depth %s | lighting %s | color clear %s | crystals %d/%d | camera %.1f,%.1f\n",
                         game.texturesEnabled ? "on" : "off",
                         game.depthEnabled ? "on" : "off",
-                        game.lightingEnabled ? "on" : "off", game.found, PICKUP_COUNT,
+                        game.lightingEnabled ? "on" : "off",
+                        game.clearColorBuffer ? "on" : "off", game.found, PICKUP_COUNT,
                         game.x, game.z);
             std::fflush(stdout);
             bench = BenchWindow{};

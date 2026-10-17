@@ -53,7 +53,7 @@ int main()
 
     if (!checkGl("triangle construction"))
         return 1;
-    std::puts("Submitting six 64-line RasterIX triangle lists...");
+    std::puts("Submitting three 128-line RasterIX triangle lists...");
     std::fflush(stdout);
     context.swapBuffers();
 

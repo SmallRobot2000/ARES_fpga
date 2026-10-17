@@ -9,18 +9,21 @@ cmake -S "$script_dir" -B "$build_dir" \
     -DCMAKE_BUILD_TYPE=Release
 
 cmake --build "$build_dir" \
-    --target ares-gl-triangle ares-gl-animate ares-gl-game \
+    --target ares-gl-triangle ares-gl-animate ares-gl-game ares-gl-texture-check \
     -j"$(nproc)"
 
 cp "$build_dir/ares-gl-triangle" "$script_dir/ares-gl-triangle"
 cp "$build_dir/ares-gl-animate" "$script_dir/ares-gl-animate"
 cp "$build_dir/ares-gl-game" "$script_dir/ares-gl-game"
+cp "$build_dir/ares-gl-texture-check" "$script_dir/ares-gl-texture-check"
 
 "/home/lovro/ARES/buildroot/output/host/bin/riscv32-buildroot-linux-gnu-strip" \
     "$script_dir/ares-gl-triangle" \
     "$script_dir/ares-gl-animate" \
-    "$script_dir/ares-gl-game"
+    "$script_dir/ares-gl-game" \
+    "$script_dir/ares-gl-texture-check"
 
 file "$script_dir/ares-gl-triangle"
 file "$script_dir/ares-gl-animate"
 file "$script_dir/ares-gl-game"
+file "$script_dir/ares-gl-texture-check"
